@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Open World Epic Bosses -->
+	<!-- Queen Ant -->
+	<npc id="29001" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="36252" min="1" max="1" chance="70" /> <!-- Bottle of Queen Ant's Soul -->
+		<itemDrop itemId="6660" min="1" max="1" chance="90" /> <!-- Queen Ant's Ring -->
+		<itemDrop itemId="36514" min="1" max="2" chance="100" />	<!-- Elcyum Crystal -->
+		<itemDrop itemId="57" min="140000" max="170000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="140000" max="170000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="140000" max="170000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="140000" max="170000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="140000" max="170000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="140000" max="170000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="120000" max="150000" chance="100" /> <!-- Adena -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="200000" max="300000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Core -->
+	<npc id="29006" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="6662" min="1" max="1" chance="90" /> <!-- Ring of Core -->
+		<itemDrop itemId="57" min="100000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="100000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="100000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="100000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="100000" max="150000" chance="100" /> <!-- Adena -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="200000" max="300000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Orfen -->
+	<npc id="29014" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="6661" min="1" max="1" chance="80" /> <!-- Orfen's Earring -->
+		<itemDrop itemId="36253" min="1" max="1" chance="65" /> <!-- Bottle of Orfen's Soul -->
+		<itemDrop itemId="36514" min="1" max="2" chance="100.0" />	<!-- Elcyum Crystal -->
+		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="200000" max="300000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Baium -->
+	<npc id="29020" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="37520" min="1" max="1" chance="65" /> <!-- Bottle of Baium's Soul -->
+		<itemDrop itemId="6658" min="1" max="1" chance="90" /> <!-- Baium's Ring -->
+		<itemDrop itemId="8620" min="5" max="15" chance="100" /> <!-- Ancient Book: Divine Inspiration (Manuscript) -->
+		<itemDrop itemId="36514" min="1" max="2" chance="100.0" />	<!-- Elcyum Crystal -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="200000" max="300000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Antharas -->
+	<npc id="29068" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="6656" min="1" max="2" chance="100" />	<!-- Antharas' Earring -->
+		<itemDrop itemId="19465" min="5" max="8" chance="100" />	<!-- Bottle of Antharas' Soul -->
+		<itemDrop itemId="36414" min="5" max="10" chance="100" />	<!-- Dragon Claw -->
+		<!-- Epic Weapons -->
+		<dropCategory chance="20" >
+			<itemDrop itemId="36425" min="1" max="1" chance="10" />	<!-- Antharas Dual Blunt Weapon (Fragment) -->
+			<itemDrop itemId="36424" min="1" max="1" chance="10" />	<!-- Antharas Avenger (Fragment) -->
+			<itemDrop itemId="36423" min="1" max="1" chance="10" />	<!-- Antharas Fighter (Fragment) -->
+			<itemDrop itemId="36422" min="1" max="1" chance="10" />	<!-- Antharas Stormer (Fragment) -->
+			<itemDrop itemId="36421" min="1" max="1" chance="10" />	<!-- Antharas Cutter (Fragment) -->
+			<itemDrop itemId="36420" min="1" max="1" chance="10" />	<!-- Antharas Buster (Fragment) -->
+			<itemDrop itemId="36419" min="1" max="1" chance="10" />	<!-- Antharas Thrower (Fragment) -->
+			<itemDrop itemId="36418" min="1" max="1" chance="10" />	<!-- Antharas Slasher (Fragment) -->
+			<itemDrop itemId="36417" min="1" max="1" chance="10" />	<!-- Antharas Shaper (Fragment) -->
+			<itemDrop itemId="36426" min="1" max="1" chance="10" />	<!-- Antharas Dualsword (Fragment) -->
+		</dropCategory>
+		<!-- Other Important Items -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="35569" min="1" max="3" chance="70" />	<!-- Bloody Eternal Enhancement Stone -->
+			<itemDrop itemId="35568" min="1" max="1" chance="30" />	<!-- Amaranthine Enhancement Stone (PvE) -->
+		</dropCategory>
+		<!-- Other Shit -->
+		<itemDrop itemId="19447" min="4" max="8" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19448" min="5" max="10" chance="100" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="37781" min="1" max="1" chance="100" />	<!-- Scroll of Blessing: Armor (R99-grade) -->
+		<itemDrop itemId="37772" min="1" max="1" chance="100" />	<!-- Scroll of Blessing: Weapon (R99-grade) -->
+		<itemDrop itemId="57" min="14000000" max="18000000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="2000000" max="6000000" chance="100" /> <!-- Adena -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="8000000" max="12000000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Valakas -->
+	<npc id="29028" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="6657" min="1" max="2" chance="100" /> <!-- Valakas' Necklace -->
+		<itemDrop itemId="19466" min="5" max="8" chance="100" /> <!-- Bottle of Valakas' Soul -->
+		<itemDrop itemId="36414" min="5" max="10" chance="100" />	<!-- Dragon Claw -->
+		<!-- Epic Weapons -->
+		<dropCategory chance="20" >
+			<itemDrop itemId="36427" min="1" max="1" chance="14" />	<!-- Valakas Shaper (Fragment) -->
+			<itemDrop itemId="36428" min="1" max="1" chance="14" />	<!-- Valakas Cutter (Fragment) -->
+			<itemDrop itemId="36429" min="1" max="1" chance="14" />	<!-- Valakas Slasher (Fragment) -->
+			<itemDrop itemId="36430" min="1" max="1" chance="14" />	<!-- Valakas Thrower (Fragment) -->
+			<itemDrop itemId="36431" min="1" max="1" chance="14" />	<!-- Valakas Buster (Fragment) -->
+			<itemDrop itemId="36432" min="1" max="1" chance="14" />	<!-- Valakas Caster (Fragment) -->
+			<itemDrop itemId="36433" min="1" max="1" chance="16" />	<!-- Valakas Retributer (Fragment) -->	
+		</dropCategory>
+		<!-- Enhancement Stones -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="35568" min="1" max="1" chance="30" />	<!-- Amaranthine Enhancement Stone (PvE) -->
+			<itemDrop itemId="35569" min="1" max="3" chance="70" />	<!-- Bloody Eternal Enhancement Stone -->
+		</dropCategory>
+		<!-- Other Shits -->
+		<itemDrop itemId="19447" min="1" max="2" chance="50" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19448" min="1" max="2" chance="50" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="53.12" /> <!-- Unbind Scroll (R99-grade) -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="10000000" max="15000000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Lilith -->
+	<npc id="25283" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="37714" min="1" max="1" chance="43.21" />	<!-- Talisman - Lilith -->
+		<itemDrop itemId="36257" min="1" max="1" chance="17.01" />	<!-- Lilith's Soul Necklace -->
+		<itemDrop itemId="37716" min="1" max="1" chance="11.06" />	<!-- Seven Signs' Energy -->
+		<!-- Random Shit -->
+		<itemDrop itemId="36515" min="2" max="2" chance="100.0" />	<!-- Elcyum -->
+		<itemDrop itemId="36978" min="1" max="1" chance="100.0" />	<!-- Scroll: Enchant Hair Accessory -->
+		<itemDrop itemId="36979" min="1" max="1" chance="100.0" />	<!-- Life Stone: Hair Accessory -->
+		<itemDrop itemId="19448" min="2" max="4" chance="52.25" />	<!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19447" min="2" max="2" chance="51.68" />	<!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+	</npc>
+	<!-- Anakim -->
+	<npc id="25286" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="37715" min="1" max="1" chance="44.88" /> <!-- Talisman - Anakim -->
+		<itemDrop itemId="37716" min="1" max="1" chance="11.016" /> <!-- Seven Signs' Energy -->
+		<!-- Random Shit -->
+		<itemDrop itemId="36515" min="2" max="2" chance="100" /> <!-- Elcyum -->
+		<itemDrop itemId="36978" min="2" max="2" chance="100" /> <!-- Scroll: Enchant Hair Accessory -->
+		<itemDrop itemId="36979" min="2" max="2" chance="100" /> <!-- Life Stone: Hair Accessory -->
+		<itemDrop itemId="19448" min="2" max="4" chance="52.26" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19447" min="2" max="2" chance="51.69" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="10296" min="1" max="1" chance="16.21" /> <!-- Transformation Sealbook: Anakim -->
+	</npc>
+	<!-- Lindvior (Open World) -->
+	<npc id="29240" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="36946" min="1" max="2" chance="100" /> <!-- Lindvior's Earring -->
+		<itemDrop itemId="36414" min="5" max="10" chance="100" /> <!-- Dragon Claw -->
+		<!-- Epic Boss Weapons -->
+		<dropCategory chance="20" >
+			<itemDrop itemId="36436" min="1" max="1" chance="14" /> <!-- Lindvior Slasher - Fragment -->
+			<itemDrop itemId="36439" min="1" max="1" chance="14" /> <!-- Lindvior Shooter - Fragment -->
+			<itemDrop itemId="36435" min="1" max="1" chance="14" /> <!-- Lindvior Thrower - Fragment -->
+			<itemDrop itemId="36437" min="1" max="1" chance="14" /> <!-- Lindvior Caster - Fragment -->
+			<itemDrop itemId="36438" min="1" max="1" chance="14" /> <!-- Lindvior Cutter - Fragment -->
+			<itemDrop itemId="36440" min="1" max="1" chance="14" /> <!-- Lindvior Dual Dagger - Fragment -->
+			<itemDrop itemId="36434" min="1" max="1" chance="16" /> <!-- Lindvior Shaper - Fragment -->
+		</dropCategory>
+		<!-- Other Important Items -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="35569" min="1" max="3" chance="70" />	<!-- Bloody Eternal Enhancement Stone -->
+			<itemDrop itemId="35568" min="1" max="1" chance="30" />	<!-- Amaranthine Enhancement Stone (PvE) -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19447" min="4" max="8" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19448" min="5" max="10" chance="100" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="37781" min="1" max="1" chance="100" /> <!-- Scroll of Blessing: Armor (R99-grade) -->
+		<itemDrop itemId="37772" min="1" max="1" chance="100" /> <!-- Scroll of Blessing: Weapon (R99-grade) -->
+		<itemDrop itemId="36290" min="1" max="1" chance="100" /> <!-- Unbind Scroll: Weapon (R99-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="100" /> <!-- Unbind Scroll (R99-grade) -->
+		<itemDrop itemId="36287" min="1" max="3" chance="100" /> <!-- Unbind Scroll: Armor (R99-grade) -->
+		<!-- Custom Drop -->
+		<itemDrop itemId="4357" min="20000000" max="30000000" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<!-- Instance Epic Bosses -->
+	<!-- Beleth (Currently only accessible on Tenkai)-->
+	<npc id="29118" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="10314" min="1" max="1" chance="80" /> <!-- Beleth' Ring -->
+		<itemDrop itemId="13893" min="1" max="1" chance="40" /> <!-- Sealed Holy Spirit's Cloak -->
+	</npc>
+	<!-- Freya (Easy Mode) -->
+	<npc id="29180" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="16025" min="1" max="1" chance="40" /> <!-- Freya's Necklace -->
+		<itemDrop itemId="21714" min="1" max="1" chance="40" /> <!-- Sealed Cloak of Freya -->
+		<!-- Cosmetic -->
+		<itemDrop itemId="21894" min="1" max="1" chance="40" /> <!-- Ice Queen's Tiara -->
+		<dropCategory chance="7.6776" >
+			<itemDrop itemId="6577" min="1" max="1" chance="6.9787" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
+			<itemDrop itemId="6578" min="1" max="1" chance="46.5224" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+		</dropCategory>
+		<dropCategory chance="100" >
+			<itemDrop itemId="16164" min="2" max="4" chance="60" /> <!-- Life Stone - Lv. 86 -->
+			<itemDrop itemId="16165" min="2" max="4" chance="40" /> <!-- Mid-grade Life Stone - Lv. 86 -->
+		</dropCategory>
+	</npc>
+	<!-- Freya (Extreme Mode) -->
+	<npc id="29180" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="16026" min="1" max="1" chance="20" /> <!-- Blessed Freya's Necklace -->
+		<itemDrop itemId="16027" min="1" max="1" chance="65" /> <!-- Bottle of Freya's Soul -->
+		<itemDrop itemId="21714" min="1" max="1" chance="80" /> <!-- Sealed Cloak of Freya -->
+		<!-- Cosmetic -->
+		<itemDrop itemId="21894" min="1" max="1" chance="80" /> <!-- Ice Queen's Tiara -->
+		<itemDrop itemId="6577" min="4" max="8" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
+		<itemDrop itemId="6578" min="5" max="10" chance="100" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+		<itemDrop itemId="36513" min="1" max="1" chance="100" />	<!-- Elcyum Powder -->
+	</npc>
+	<!-- Zaken (Day Time Easy) -->
+	<npc id="29176" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="6659" min="1" max="1" chance="15" /> <!-- Zaken's Earring -->
+		<!-- Cosmetic -->
+		<itemDrop itemId="8922" min="1" max="1" chance="40" /> <!-- Pirate Hat -->
+		<dropCategory chance="74.3337" >
+			<itemDrop itemId="729" min="1" max="1" chance="11.6009" /> <!-- Scroll: Enchant Weapon (A-grade) -->
+			<itemDrop itemId="730" min="1" max="1" chance="87.007" /> <!-- Scroll: Enchant Armor (A-grade) -->
+			<itemDrop itemId="6569" min="1" max="1" chance="1.3921" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
+		</dropCategory>
+		<itemDrop itemId="8619" min="1" max="1" chance="20" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
+	</npc>
+	<!-- Zaken (Day Time Hard) -->
+	<npc id="29181" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="21712" min="1" max="1" chance="10" /> <!-- Blessed Zaken's Earring -->
+		<itemDrop itemId="21713" min="1" max="1" chance="40" /> <!-- Zaken's Sealed Cloak -->
+		<!-- Cosmetic -->
+		<itemDrop itemId="21892" min="1" max="1" chance="40" /> <!-- Pirate King Hat -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="16162" min="2" max="4" chance="60" /> <!-- High-grade Life Stone - Lv. 85 -->
+			<itemDrop itemId="16166" min="2" max="4" chance="40" /> <!-- High-grade Life Stone - Lv. 86 -->
+		</dropCategory>
+		<itemDrop itemId="1538" min="1" max="30" chance="100" /> <!-- Blessed Scroll of Escape -->
+		<itemDrop itemId="3936" min="1" max="10" chance="100" /> <!-- Blessed Scroll of Resurrection -->
+		<itemDrop itemId="3936" min="1" max="10" chance="100" /> <!-- Blessed Scroll of Resurrection -->
+		<itemDrop itemId="57" min="9000000" max="1100000" chance="100" /> <!-- Adena -->
+	</npc>
+	<!-- Zaken (Night Time) -->
+	<npc id="29022" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="6659" min="1" max="1" chance="100" /> <!-- Zaken's Earring -->
+		<!-- Cosmetic -->
+		<itemDrop itemId="8922" min="1" max="1" chance="100" /> <!-- Pirate Hat -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="8747" min="2" max="4" chance="45" /> <!-- High-grade Life Stone - Lv. 58 -->
+			<itemDrop itemId="8748" min="2" max="4" chance="40" /> <!-- High-grade Life Stone - Lv. 61 -->
+			<itemDrop itemId="8757" min="1" max="2" chance="10" /> <!-- Top-grade Life Stone - Lv. 58 -->
+			<itemDrop itemId="8758" min="1" max="2" chance="5" /> <!-- Top-grade Life Stone - Lv. 61 -->
+		</dropCategory>
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="180000" max="220000" chance="100" /> <!-- Adena -->
+	</npc>
+	<!-- Scarlet van Halisha (Frintezza Instanced) -->
+	<npc id="29047" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="8191" min="1" max="1" chance="30" /> <!-- Frintezza's Necklace -->
+		<itemDrop itemId="37519" min="1" max="1" chance="20" /> <!-- Bottle of Frintezza's Soul -->
+		<itemDrop itemId="21715" min="1" max="1" chance="80" /> <!-- Frintezza's Sealed Cloak -->
+		<!-- Cosmetic -->
+		<itemDrop itemId="21893" min="1" max="1" chance="10" /> <!-- Halisha's Helmet -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="16162" min="2" max="4" chance="60" /> <!-- High-grade Life Stone - Lv. 85 -->
+			<itemDrop itemId="16166" min="2" max="4" chance="40" /> <!-- High-grade Life Stone - Lv. 86 -->
+		</dropCategory>
+		<itemDrop itemId="36514" min="1" max="2" chance="100.0" />	<!-- Elcyum Crystal -->
+		<itemDrop itemId="1538" min="1" max="30" chance="60" /> <!-- Blessed Scroll of Escape -->
+		<itemDrop itemId="3936" min="1" max="10" chance="60" /> <!-- Blessed Scroll of Resurrection -->
+		<itemDrop itemId="57" min="9000000" max="11000000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="57" min="9000000" max="11000000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="8620" min="5" max="25" chance="60" /> <!-- Ancient Book: Divine Inspiration (Manuscript) -->
+	</npc>
+	<!-- Tauti (Easy Mode) -->
+	<npc id="29236" overrideDrops="true">
+		<!-- Epic Items -->
+		<dropCategory chance="30" >
+			<itemDrop itemId="35570" min="1" max="1" chance="10" /> <!-- Tauti's Ring -->
+			<itemDrop itemId="35293" min="1" max="1" chance="90" /> <!-- Tauti's Bracelet -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19447" min="1" max="2" chance="100" />	<!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19448" min="2" max="4" chance="100" />	<!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="36386" min="1" max="1" chance="100" />	<!-- Giant's Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="36389" min="1" max="1" chance="100" />	<!-- Giant's Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="36287" min="1" max="1" chance="100" />	<!-- Unbind Scroll: Armor (R99-grade) -->
+		<itemDrop itemId="36290" min="1" max="1" chance="100" />	<!-- Unbind Scroll: Weapon (R99-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="100" />	<!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Tauti (Extreme Mode) -->
+	<npc id="29237" overrideDrops="true">
+		<!-- Epic Items, Obtainable by Quests in off, we have it at custom way -->
+		<itemDrop itemId="35295" min="1" max="1" chance="30" /> <!-- Bottle of Tauti's Soul -->
+		<!-- Epic Items -->
+		<dropCategory chance="60" >
+			<itemDrop itemId="35570" min="1" max="1" chance="60" /> <!-- Tauti's Ring -->
+			<itemDrop itemId="35667" min="1" max="1" chance="40" /> <!-- Tauti's Fragment -->
+		</dropCategory>
+		<dropCategory chance="40" >
+			<itemDrop itemId="35568" min="1" max="1" chance="60" /> <!-- Bloody Amaranthine Enhancement Stone -->
+			<itemDrop itemId="35566" min="1" max="1" chance="40" /> <!-- Dark Amaranthine Enhancement Stone -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19448" min="2" max="5" chance="100" />	<!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19447" min="3" max="8" chance="100" />	<!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="36389" min="1" max="1" chance="100" />	<!-- Giant's Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="36386" min="1" max="1" chance="100" />	<!-- Giant's Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="36287" min="1" max="1" chance="100" />	<!-- Unbind Scroll: Armor (R99-grade) -->
+		<itemDrop itemId="36290" min="1" max="1" chance="100" />	<!-- Unbind Scroll: Weapon (R99-grade) -->
+	</npc>
+	<!-- Octavis (Easy Mode) -->
+	<npc id="29194" overrideDrops="true">
+		<!--Epics -->
+		<dropCategory chance="50" >
+			<itemDrop itemId="19462" min="1" max="1" chance="25" /> <!-- Octavis' Shirt -->
+			<itemDrop itemId="19457" min="1" max="1" chance="25" /> <!-- Octavis' Ring -->
+			<itemDrop itemId="19458" min="1" max="1" chance="25" /> <!-- Octavis' Earring -->
+			<itemDrop itemId="19459" min="1" max="1" chance="25" /> <!-- Octavis' Necklace -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19447" min="2" max="4" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="17747" min="1" max="1" chance="100" /> <!-- Trace of Decaying Darkness -->
+		<itemDrop itemId="19445" min="1" max="1" chance="100" /> <!-- Unbind Scroll (R95-grade) -->
+	</npc>
+	<!-- Octavis (Extreme Mode) -->
+	<npc id="29212" overrideDrops="true">
+		<!-- Epic Items, Obtainable by Quests in off, we have it at custom way -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="19460" min="1" max="1" chance="50" /> <!-- Octavis' Belt -->
+			<itemDrop itemId="19461" min="1" max="1" chance="50" /> <!-- Octavis' Bracelet -->
+		</dropCategory>
+		<itemDrop itemId="34884" min="1" max="1" chance="30" /> <!-- Bottle of Octavis' Soul -->
+		<!-- Epic Items -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="19462" min="1" max="1" chance="25" /> <!-- Octavis' Shirt -->
+			<itemDrop itemId="19457" min="1" max="1" chance="25" /> <!-- Octavis' Ring -->
+			<itemDrop itemId="19458" min="1" max="1" chance="25" /> <!-- Octavis' Earring -->
+			<itemDrop itemId="19459" min="1" max="1" chance="25" /> <!-- Octavis' Necklace -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19447" min="2" max="4" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="17747" min="1" max="1" chance="100" /> <!-- Trace of Decaying Darkness -->
+		<itemDrop itemId="19446" min="1" max="1" chance="100" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Istina (Easy Mode) -->
+	<npc id="29195" overrideDrops="true">
+		<!-- Epic Items -->
+		<dropCategory chance="50" >
+			<itemDrop itemId="19456" min="1" max="1" chance="25" /> <!-- Istina's Shirt -->
+			<itemDrop itemId="19453" min="1" max="1" chance="25" /> <!-- Istina's Necklace -->
+			<itemDrop itemId="19451" min="1" max="1" chance="25" /> <!-- Istina's Ring -->
+			<itemDrop itemId="19452" min="1" max="1" chance="25" /> <!-- Istina's Earring -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19448" min="2" max="4" chance="100" />	<!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="36285" min="1" max="1" chance="100" />	<!-- Unbind Scroll: Armor (R-grade) -->
+		<itemDrop itemId="19444" min="1" max="1" chance="100" />	<!-- Unbind Scroll (R-grade) -->
+		<itemDrop itemId="36286" min="1" max="1" chance="100" />	<!-- Unbind Scroll: Armor (R95-grade) -->
+		<itemDrop itemId="19445" min="1" max="1" chance="100" />	<!-- Unbind Scroll (R95-grade) -->
+	</npc>
+	<!-- Istina (Extreme Mode) -->
+	<npc id="29196" overrideDrops="true">
+		<!-- Epic Items, Obtainable by Quests in off, we have it at custom way -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="19455" min="1" max="1" chance="50" /> <!-- Istina's Bracelet -->
+			<itemDrop itemId="19454" min="1" max="1" chance="50" /> <!-- Istina's Belt -->
+		</dropCategory>
+		<itemDrop itemId="34883" min="1" max="1" chance="30" /> <!-- Bottle of Istina's Soul -->
+		<!-- Epic Items -->
+		<dropCategory chance="100" >
+			<itemDrop itemId="19456" min="1" max="1" chance="25" /> <!-- Istina's Shirt -->
+			<itemDrop itemId="19453" min="1" max="1" chance="25" /> <!-- Istina's Necklace -->
+			<itemDrop itemId="19451" min="1" max="1" chance="25" /> <!-- Istina's Ring -->
+			<itemDrop itemId="19452" min="1" max="1" chance="25" /> <!-- Istina's Earring -->
+		</dropCategory>
+		<!-- Random Shit -->
+		<itemDrop itemId="19447" min="2" max="4" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19448" min="4" max="5" chance="100" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="36386" min="1" max="1" chance="100" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="36389" min="1" max="1" chance="100" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="36290" min="1" max="1" chance="100" /> <!-- Unbind Scroll: Weapon (R99-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="100" /> <!-- Unbind Scroll (R99-grade) -->
+		<itemDrop itemId="36287" min="1" max="1" chance="100" /> <!-- Unbind Scroll: Armor (R99-grade) -->
+	</npc>
+	<!-- Earth Wyrm Trasken -->
+	<npc id="19159" overrideDrops="true">
+		<!-- Epic Items -->
+		<itemDrop itemId="17623" min="1" max="1" chance="70" /> <!-- Earth Wyrm Heart Ring -->
+		<!-- Other Important Items -->
+		<itemDrop itemId="35568" min="1" max="1" chance="30" />	<!-- Amaranthine Enhancement Stone (PvE) -->
+		<!-- Random Shit -->
+		<itemDrop itemId="19447" min="3" max="8" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19448" min="5" max="10" chance="100" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="100" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+</list>

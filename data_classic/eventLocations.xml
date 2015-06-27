@@ -1,0 +1,226 @@
+<list>
+	<location id="0" name="Coliseum" globalZ="-3350" maxTeamPlayers="50" hill="false">
+		<spawn x="148391" y="46724" z="-3414" />
+		<spawn x="150547" y="46724" z="-3414" />
+	</location>
+	<location id="1" name="Emerald Square" globalZ="-11750" maxTeamPlayers="50" hill="false">
+		<spawn x="149210" y="144517" z="-12266" />
+		<spawn x="142473" y="143542" z="-11883" />
+	</location>
+	<location id="2" name="Jail" globalZ="-2950" maxTeamPlayers="25" hill="false">
+		<spawn x="-113986" y="-249920" z="-2994" />
+		<spawn x="-113986" y="-248812" z="-2994" />
+		<spawn x="-115090" y="-248812" z="-2994" />
+		<spawn x="-115090" y="-249920" z="-2994" />
+	</location>
+	<location id="3" name="Tower of Naia" globalZ="-9300" maxTeamPlayers="50" hill="false">
+		<spawn x="14155" y="213145" z="-9357" />
+		<spawn x="18459" y="213145" z="-9357" />
+	</location>
+	<location id="4" name="Cruma Tower" globalZ="-11800" maxTeamPlayers="20" hill="false">
+		<spawn x="16097" y="115172" z="-11983" />
+		<spawn x="16097" y="113126" z="-11983" />
+	</location>
+	<!--<location id="5" name="Necropolis of sacrifice" globalZ="-5000" maxTeamPlayers="20" hill="false">
+		<spawn x="-49915" y="217276" z="-5087" />
+		<spawn x="-47048" y="217276" z="-5087" />
+	</location>-->
+	<location id="6" name="Caron's Dungeon" globalZ="-1500" maxTeamPlayers="30" hill="false">
+		<spawn x="78961" y="-110383" z="-1593" />
+		<spawn x="76269" y="-110172" z="-1683" />
+	</location>
+	<location id="7" name="Monastery of Silence" globalZ="-2830" maxTeamPlayers="30" hill="true">
+		<spawn x="122860" y="-74846" z="-2884" />
+		<spawn x="125378" y="-75815" z="-2932" />
+	</location>
+	<!--<location id="8" name="Elven Ruins" globalZ="-6400" maxTeamPlayers="15" hill="false">
+		<spawn x="44731" y="246577" z="-6562" />
+		<spawn x="46823" y="246577" z="-6662" />
+		<spawn x="45567" y="247967" z="-6512" />
+		<spawn x="45567" y="245193" z="-6512" />
+	</location>-->
+	<location id="9" name="Ruins of Despair" globalZ="-3450" maxTeamPlayers="30" hill="false">
+		<spawn x="-6438" y="143467" z="-3576" />
+		<spawn x="-6419" y="144885" z="-3606" />
+		<spawn x="-4629" y="144639" z="-3627" />
+		<spawn x="-4839" y="143589" z="-3646" />
+	</location>
+	<!--<location id="10" name="Steam Corridor" globalZ="-12100" maxTeamPlayers="20" hill="false">
+		<spawn x="147057" y="152619" z="-12169" />
+		<spawn x="144816" y="152619" z="-12169" />
+	</location>-->
+	<location id="11" name="Primeval Isle" globalZ="-3400" maxTeamPlayers="30" hill="true">
+		<spawn x="11470" y="-24441" z="-3643" />
+		<spawn x="5667" y="-23757" z="-3727" />
+	</location>
+	<location id="12" name="Railroad Station" globalZ="-1580" maxTeamPlayers="30" hill="true">
+		<spawn x="113515" y="-156602" z="-1532" />
+		<spawn x="113515" y="-153898" z="-1532" />
+		<spawn x="111760" y="-155265" z="-1532" />
+		<spawn x="115195" y="-155265" z="-1532" />
+	</location>
+	<location id="13" name="Valley of Saints" globalZ="-3420" maxTeamPlayers="30" hill="true">
+		<spawn x="80713" y="-84254" z="-3645" />
+		<spawn x="78285" y="-82750" z="-3644" />
+	</location>
+	<location id="14" name="Bandit's Stronghold" globalZ="-1590" maxTeamPlayers="50" hill="false">
+		<spawn x="81438" y="-15421" z="-1829" />
+		<spawn x="84921" y="-17652" z="-1847" />
+	</location>
+	<location id="15" name="Aden Castle Garden" globalZ="-400" maxTeamPlayers="30" hill="false">
+		<spawn x="145908" y="12058" z="-874" />
+		<spawn x="149033" y="12058" z="-874" />
+		<spawn x="147460" y="10550" z="-695" />
+		<spawn x="147460" y="13621" z="-1134" />
+	</location>
+	<location id="16" name="Anghel Waterfall" globalZ="-1900" maxTeamPlayers="15" hill="false">
+		<spawn x="169858" y="85194" z="-1990" />
+		<spawn x="167955" y="85385" z="-1992" />
+	</location>
+	<location id="17" name="Tower of Insolence" globalZ="10126" maxTeamPlayers="30" hill="false">
+		<spawn x="114045" y="15475" z="9563" />
+		<spawn x="112801" y="14177" z="10064" />
+	</location>
+	<location id="18" name="School of Dark Arts" globalZ="-5300" maxTeamPlayers="20" hill="true">
+		<spawn x="-44320" y="50162" z="-5404" />
+		<spawn x="-44320" y="48108" z="-5404" />
+	</location>
+	<location id="19" name="Aden Territory Mountain" globalZ="3662" maxTeamPlayers="20" hill="false">
+		<spawn x="131154" y="59976" z="3560" />
+		<spawn x="130269" y="58884" z="3608" />
+	</location>
+	<location id="20" name="Blazing Swamp" globalZ="-4450" maxTeamPlayers="30" hill="true">
+		<spawn x="148586" y="-8640" z="-4548" />
+		<spawn x="151199" y="-8364" z="-4548" />
+	</location>
+	<location id="21" name="Four Sepulchers Entrance" globalZ="-7200" maxTeamPlayers="20" hill="false">
+		<spawn x="178304" y="-84823" z="-7216" />
+		<spawn x="177573" y="-85580" z="-7216" />
+		<spawn x="178304" y="-86180" z="-7216" />
+		<spawn x="179018" y="-85580" z="-7216" />
+	</location>
+	<location id="22" name="Garden of Eva" globalZ="-11600" maxTeamPlayers="20" hill="false">
+		<spawn x="85565" y="258069" z="-11672" />
+		<spawn x="86841" y="256955" z="-11672" />
+		<spawn x="85565" y="255658" z="-11672" />
+		<spawn x="84274" y="256955" z="-11672" />
+	</location>
+	<location id="23" name="Town of Goddard" globalZ="-2685" maxTeamPlayers="20" hill="false">
+		<spawn x="147711" y="-55141" z="-2735" />
+		<spawn x="146295" y="-56325" z="-2782" />
+		<spawn x="147716" y="-57067" z="-2782" />
+		<spawn x="149104" y="-56313" z="-2782" />
+	</location>
+	<location id="24" name="Theme Park" globalZ="-2300" maxTeamPlayers="20" hill="false">
+		<spawn x="-55418" y="-63769" z="-2354" />
+		<spawn x="-54618" y="-62961" z="-2354" />
+		<spawn x="-55418" y="-62160" z="-2354" />
+		<spawn x="-56185" y="-62961" z="-2354" />
+	</location>
+	<location id="25" name="Giran Castle Town" globalZ="-3400" maxTeamPlayers="20" hill="false">
+		<spawn x="82723" y="149322" z="-3470" />
+		<spawn x="81143" y="149322" z="-3470" />
+		<spawn x="81143" y="147892" z="-3470" />
+		<spawn x="82723" y="147892" z="-3470" />
+	</location>
+	<location id="26" name="Town of Dion" globalZ="-3000" maxTeamPlayers="30" hill="false">
+		<spawn x="17667" y="146795" z="-3122" />
+		<spawn x="19213" y="143605" z="-3062" />
+	</location>
+	<location id="27" name="Execution Grounds" globalZ="-3520" maxTeamPlayers="30" hill="true">
+		<spawn x="41946" y="148029" z="-3683" />
+		<spawn x="37722" y="148040" z="-3684" />
+	</location>
+	<location id="28" name="Sea of Spores" globalZ="-2500" maxTeamPlayers="20" hill="true">
+		<spawn x="51670" y="20101" z="-2652" />
+		<spawn x="56215" y="19869" z="-2879" />
+	</location>
+	<location id="29" name="Dragon Valley" globalZ="-1907" maxTeamPlayers="30" hill="false">
+		<spawn x="110149" y="118055" z="-2018" />
+		<spawn x="110551" y="114778" z="-2022" />
+	</location>
+	<location id="30" name="Nornil's Garden" globalZ="-12850" maxTeamPlayers="20" hill="false">
+		<spawn x="-110468" y="81723" z="-12971" />
+		<spawn x="-111573" y="80650" z="-12912" />
+		<spawn x="-110468" y="79546" z="-12912" />
+		<spawn x="-110468" y="80650" z="-12912" />
+	</location>
+	<location id="31" name="Hot Springs Arena" globalZ="-2200" maxTeamPlayers="20" hill="false">
+		<spawn x="153490" y="-127530" z="-2235" />
+		<spawn x="153890" y="-127938" z="-2237" />
+		<spawn x="153890" y="-127139" z="-2237" />
+		<spawn x="154284" y="-127530" z="-2235" />
+	</location>
+	<location id="32" name="Rainbow Springs Chateau" globalZ="-1850" maxTeamPlayers="20" hill="false">
+		<spawn x="140365" y="-124085" z="-1903" />
+		<spawn x="139570" y="-123560" z="-1903" />
+		<spawn x="139049" y="-124354" z="-1903" />
+		<spawn x="139835" y="-124875" z="-1903" />
+	</location>
+	<location id="33" name="Infinity Platform" globalZ="4500" maxTeamPlayers="20" hill="false">
+		<spawn x="-213678" y="210670" z="4408" />
+		<spawn x="-211930" y="208922" z="4404" />
+		<spawn x="-211954" y="210708" z="4407" />
+		<spawn x="-213620" y="209035" z="4413" />
+	</location>
+	<location id="34" name="Jinryong's Throne" globalZ="-11900" maxTeamPlayers="25" hill="false">
+		<spawn x="-248831" y="206471" z="-11961" />
+		<spawn x="-248974" y="209924" z="-11969" />
+		<spawn x="-251938" y="209996" z="-11971" />
+		<spawn x="-251988" y="206472" z="-11961" />
+	</location>
+	<location id="50" name="Alligator Beach" globalZ="-3337" maxTeamPlayers="20" hill="false">
+		<spawn x="111682" y="193865" z="-3726" />
+		<spawn x="115546" y="193503" z="-3655" />
+		<spawn x="114946" y="191973" z="-3537" />
+		<spawn x="112435" y="192130" z="-3691" />
+	</location>
+	<location id="51" name="Uninhabited Island" globalZ="-3308" maxTeamPlayers="20" hill="false">
+		<spawn x="128382" y="158632" z="-3446" />
+		<spawn x="129495" y="157087" z="-3564" />
+	</location>
+	<location id="52" name="Shrine of Loyalty Corridor" globalZ="-2985" maxTeamPlayers="20" hill="false">
+		<spawn x="179582" y="-62870" z="-3032" />
+		<spawn x="183917" y="-62798" z="-3035" />
+	</location>
+	<location id="53" name="Dark Cloud Mansion" globalZ="-2887" maxTeamPlayers="30" hill="true">
+		<spawn x="141409" y="149961" z="-2937" />
+		<spawn x="139314" y="150113" z="-3112" />
+	</location>
+	<location id="54" name="Giants Cave Roof" globalZ="-3450" maxTeamPlayers="25" hill="false">
+		<spawn x="173398" y="56347" z="-3471" />
+		<spawn x="175627" y="55850" z="-3471" />
+		<spawn x="175343" y="54535" z="-3471" />
+		<spawn x="173164" y="54929" z="-3471" />
+	</location>
+	<location id="55" name="Cruma Tower Roof" globalZ="4054" maxTeamPlayers="20" hill="false">
+		<spawn x="17066" y="114174" z="4004" />
+		<spawn x="18335" y="114164" z="4004" />
+	</location>
+	<location id="56" name="Mining Zone Bridge" globalZ="2559" maxTeamPlayers="20" hill="false">
+		<spawn x="118523" y="-168613" z="2509" />
+		<spawn x="121418" y="-168395" z="2509" />
+	</location>
+	<location id="57" name="Forgotten Temple Passage" globalZ="-4766" maxTeamPlayers="25" hill="false">
+		<spawn x="-62649" y="180049" z="-4816" />
+		<spawn x="-62641" y="182341" z="-4816" />
+	</location>
+	<location id="58" name="Town of Oren" globalZ="-1447" maxTeamPlayers="20" hill="false">
+		<spawn x="81722" y="53417" z="-1497" />
+		<spawn x="82998" y="54067" z="-1497" />
+	</location>
+	<location id="59" name="Town of Aden" globalZ="-2155" maxTeamPlayers="20" hill="false">
+		<spawn x="148392" y="27227" z="-2006" />
+		<spawn x="146486" y="26699" z="-2006" />
+	</location>
+	<location id="60" name="Rune Walkway" globalZ="722" maxTeamPlayers="25" hill="true">
+		<spawn x="37201" y="-45401" z="586" />
+		<spawn x="40014" y="-46368" z="-307" />
+	</location>
+	<location id="61" name="Heine" globalZ="-3616" maxTeamPlayers="50" hill="false">
+		<spawn x="110742" y="219581" z="-3673" />
+		<spawn x="110691" y="220751" z="-3673" />
+		<spawn x="112086" y="220754" z="-3673" />
+		<spawn x="112096" y="219551" z="-3672" />
+	</location>
+</list>

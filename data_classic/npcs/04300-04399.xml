@@ -1,0 +1,6 @@
+<list>
+	<npc id="4308" name="Angel Cat" title="Love's Envoy" level="70" type="L2Npc" baseAtkRange="40" baseHpMax="2705.058" baseHpReg="10.0" baseMpMax="1500.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" basePAtk="1000.0" baseMAtk="750.0" basePDef="500.0" baseMDef="350.0" basePAtkSpd="230" baseCritRate="5" baseWalkSpd="48.0" baseRunSpd="140.0" collisionRadius="6.0" collisionHeight="16.0"
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
+			aiType="fighter">
+	</npc>
+</list>

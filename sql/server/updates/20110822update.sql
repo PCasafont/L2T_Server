@@ -1,0 +1,1 @@
+alter table `characters` drop `death_penalty_level`;

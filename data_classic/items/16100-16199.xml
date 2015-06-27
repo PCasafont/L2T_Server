@@ -1,0 +1,2396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Refined Green Skeleton Circlet. Uses 2 hair accessory slots. -->
+	<item id="16100" type="Armor" name="Refined Green Skeleton Circlet">
+		<set name="icon" val="icon.accessory_animal_warrior_skeleton_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Brown Skeleton Circlet. Uses 2 hair accessory slots. -->
+	<item id="16101" type="Armor" name="Refined Brown Skeleton Circlet">
+		<set name="icon" val="icon.accessory_animal_rage_skeleton_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Shark Hat. Uses 2 hair accessory slots. -->
+	<item id="16102" type="Armor" name="Refined Shark Hat">
+		<set name="icon" val="icon.accessory_shark_of_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Chic Gold Horn Cap. Uses 2 hair accessory slots. -->
+	<item id="16103" type="Armor" name="Chic Gold Horn Cap">
+		<set name="icon" val="icon.accessory_horn01_hat_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Chic Silver Horn Cap. Uses 2 hair accessory slots. -->
+	<item id="16104" type="Armor" name="Chic Silver Horn Cap">
+		<set name="icon" val="icon.accessory_horn01_hat_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Penguin Hat. Uses 2 hair accessory slots. -->
+	<item id="16105" type="Armor" name="Refined Penguin Hat">
+		<set name="icon" val="icon.accessory_penguin_of_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Brown Turban. Uses 2 hair accessory slots. -->
+	<item id="16106" type="Armor" name="Refined Brown Turban">
+		<set name="icon" val="icon.accessory_turban_yellow_hat_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Yellow Turban. Uses 2 hair accessory slots. -->
+	<item id="16107" type="Armor" name="Refined Yellow Turban">
+		<set name="icon" val="icon.accessory_turban_yellow_hat_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Turtle Hat. Uses 2 hair accessory slots. -->
+	<item id="16108" type="Armor" name="Refined Turtle Hat">
+		<set name="icon" val="icon.accessory_turtle_of_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Cow Hat. Uses 2 hair accessory slots. -->
+	<item id="16109" type="Armor" name="Refined Cow Hat">
+		<set name="icon" val="icon.accessory_cow_of_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Black Skeleton Circlet. Requires the Create Common Item skill level 6. -->
+	<item id="16110" type="EtcItem" name="Recipe: Refined Black Skeleton Circlet (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="988" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Orange Skeleton Circlet. Requires the Create Common Item skill level 6. -->
+	<item id="16111" type="EtcItem" name="Recipe: Refined Orange Skeleton Circlet (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="989" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Green Skeleton Circlet. Requires the Create Common Item skill level 6. -->
+	<item id="16112" type="EtcItem" name="Recipe: Refined Green Skeleton Circlet (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="990" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Brown Skeleton Circlet. Requires the Create Common Item skill level 6. -->
+	<item id="16113" type="EtcItem" name="Recipe: Refined Brown Skeleton Circlet (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="991" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Shark Hat. Requires the Create Common Item skill level 6. -->
+	<item id="16114" type="EtcItem" name="Recipe: Refined Shark Hat (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="992" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Chic Gold Horn Cap. Requires the Create Common Item skill level 6. -->
+	<item id="16115" type="EtcItem" name="Recipe: Chick Gold Horn Cap (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="993" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Chic Silver Horn Cap. Requires the Create Common Item skill level 6. -->
+	<item id="16116" type="EtcItem" name="Recipe: Chick Silver Horn Cap (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="994" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Penguin Hat. Requires the Create Common Item skill level 6. -->
+	<item id="16117" type="EtcItem" name="Recipe: Refined Penguin Hat (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="995" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Brown Turban. Requires the Create Common Item skill level 6. -->
+	<item id="16118" type="EtcItem" name="Recipe: Refined Brown Turban (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="996" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Yellow Turban. Requires the Create Common Item skill level 6. -->
+	<item id="16119" type="EtcItem" name="Recipe: Refined Yellow Turban (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="997" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Turtle Hat. Requires the Create Common Item skill level 6. -->
+	<item id="16120" type="EtcItem" name="Recipe: Refined Turtle Hat (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="998" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- All race crafting possible. Recipe needed to make a Refined Cow Hat. Requires the Create Common Item skill level 6. -->
+	<item id="16121" type="EtcItem" name="Recipe: Refined Cow Hat (10%)">
+		<set name="icon" val="icon.etc_recipe_green_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="300000" />
+		<set name="recipe_id" val="999" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Black Skeleton Circlet. It can be sold at ordinary stores. -->
+	<item id="16122" type="EtcItem" name="Refined Black Skeleton Circlet Piece">
+		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Orange Skeleton Circlet. It can be sold at ordinary stores. -->
+	<item id="16123" type="EtcItem" name="Refined Orange Skeleton Circlet Piece">
+		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Green Skeleton Circlet. It can be sold at ordinary stores. -->
+	<item id="16124" type="EtcItem" name="Refined Green Skeleton Circlet Piece">
+		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Brown Skeleton Circlet. It can be sold at ordinary stores. -->
+	<item id="16125" type="EtcItem" name="Refined Brown Skeleton Circlet Piece">
+		<set name="icon" val="icon.etc_broken_crystal_green_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Shark Hat. It can be sold at ordinary stores. -->
+	<item id="16126" type="EtcItem" name="Refined Shark Hat Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Chic Gold Horn Cap. It can be sold at ordinary stores. -->
+	<item id="16127" type="EtcItem" name="Chic Gold Horn Cap Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Chic Silver Horn Cap. It can be sold at ordinary stores. -->
+	<item id="16128" type="EtcItem" name="Chic Silver Horn Cap Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Penguin Hat. It can be sold at ordinary stores. -->
+	<item id="16129" type="EtcItem" name="Refined Penguin Hat Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Brown Turban. It can be sold at ordinary stores. -->
+	<item id="16130" type="EtcItem" name="Refined Brown Turban Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Yellow Turban. It can be sold at ordinary stores. -->
+	<item id="16131" type="EtcItem" name="Refined Yellow Turban Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Turtle Hat. It can be sold at ordinary stores. -->
+	<item id="16132" type="EtcItem" name="Refined Turtle Hat Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ingredient that a Dwarf needs to make a Refined Cow Hat. It can be sold at ordinary stores. -->
+	<item id="16133" type="EtcItem" name="Refined Cow Hat Fabric">
+		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="price" val="23000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate.
+		Bestows one of the following functions: Haste, Focus, or Health. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16134" type="Weapon" name="Vesper Cutter - Thunder {PvP}">
+		<set name="icon" val="icon.weapon_vesper_cutter_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3653-1;3851-2" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd.
+		Bestows one of the following functions: Haste, Focus, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16135" type="Weapon" name="Vesper Slasher - Great Gale {PvP}">
+		<set name="icon" val="icon.weapon_vesper_slasher_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1;3846-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that decreases MP Consumption.
+		Bestows one of the following functions: Acumen, Mana Up, or Magic Hold. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+	-->
+	<item id="16136" type="Weapon" name="Vesper Buster - Cleverness {PvP}">
+		<set name="icon" val="icon.weapon_vesper_burster_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3552-3;3650-1;3853-2;3014-2" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd.
+		Bestows one of the following functions: Critical Damage, HP Drain, or Haste. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16137" type="Weapon" name="Vesper Shaper - Great Gale {PvP}">
+		<set name="icon" val="icon.weapon_vesper_shaper_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3654-1;3859-2" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd.
+		Bestows one of the following functions: Focus, Health, or Critical Stun. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16138" type="Weapon" name="Vesper Fighter - Great Gale {PvP}">
+		<set name="icon" val="icon.weapon_vesper_fighter_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1550" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3654-1;3880-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Critical Rate.
+		Bestows one of the following functions: Health, Guidance, or Haste. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16139" type="Weapon" name="Vesper Stormer - Thunder {PvP}">
+		<set name="icon" val="icon.weapon_vesper_stormer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2010" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-4;3653-1;3851-2;3599-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that inflicts Stun with a certain chance during an attack.
+		Bestows one of the following functions: HP Regeneration, HP Drain, or Health. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16140" type="Weapon" name="Vesper Avenger - Landslide {PvP}">
+		<set name="icon" val="icon.weapon_vesper_avenger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3650-1;3885-2" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd.
+		Bestows one of the following functions: HP Regeneration, HP Drain, or Health. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16141" type="Weapon" name="Vesper Retributer - Great Gale {PvP}">
+		<set name="icon" val="icon.weapon_vesper_retributer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3654-1;3896-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Max Regeneration.
+		Bestows one of the following functions: Acumen, MP Regeneration, or Mana Up. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+	-->
+	<item id="16142" type="Weapon" name="Vesper Caster - Cleverness {PvP}">
+		<set name="icon" val="icon.weapon_vesper_caster_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1080" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3552-3;3655-1;3853-2;3014-2" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases M. Atk.
+		Bestows one of the following functions: Empower, MP Regeneration, or Magic Hold. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. during an attack.
+	-->
+	<item id="16143" type="Weapon" name="Vesper Singer - Hail {PvP}">
+		<set name="icon" val="icon.weapon_vesper_singer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1080" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1;3889-3" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases range.
+		Bestows one of the following functions: Cheap Shot, Critical Slow, or Focus. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+	-->
+	<item id="16144" type="Weapon" name="Vesper Thrower - Clairvoyance {PvP}">
+		<set name="icon" val="icon.weapon_vesper_thrower_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="500" />
+		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3656-1;3657-1;3865-1" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. Kamael-exclusive Weapon: Vesper Cutter Conversion
+		Haste, Focus, or Health can be bestowed.
+		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16145" type="Weapon" name="Vesper Pincer - Thunder {PvP}">
+		<set name="icon" val="icon.weapon_vesper_pincer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="40" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1280" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3655-1;3851-2" />
+		<cond msgId="1518">
+			<player races="Kamael" />
+		</cond>
+		<for>
+			<set stat="pAtk" val="359" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases range.
+		Kamael-exclusive Weapon: Vesper Thrower Conversion
+		Bestows one of the following functions: Cheap Shot, Critical Slow, or Focus. Increases damage inflicted during PvP. Has a chance of increasing Atk. Spd. of bows/crossbows during an attack.
+	-->
+	<item id="16146" type="Weapon" name="Vesper Shooter - Clairvoyance {PvP}">
+		<set name="icon" val="icon.weapon_vesper_schutze_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="400" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1580" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1;3865-1" />
+		<cond msgId="1518">
+			<player races="Kamael" />
+		</cond>
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. Kamael-exclusive Weapon: Vesper Slasher Conversion
+		Bestows one of the following functions: Haste, Focus, or Health. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16147" type="Weapon" name="Vesper Nagan - Great Gale {PvP}">
+		<set name="icon" val="icon.weapon_vesper_nagen_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="15" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1800" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3653-1;3846-2" />
+		<cond msgId="1518">
+			<player races="Kamael" />
+		</cond>
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd.
+		Dual daggers. P. Atk. Increases more than regular one-handed swords when enchanted. When enchanted to 4 or more, increases Critical by 109. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters above level 81.
+	-->
+	<item id="16148" type="Weapon" name="Vesper Dual Daggers - Great Gale">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="8233" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2050" />
+		<set name="price" val="171530000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="8298-1" />
+		<set name="item_skill" val="3859-2;3552-1" />
+		<set name="equip_condition" val="{{ec_requiredlevel;81};{ec_category;{@dagger_master}}}" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd.
+		Dual daggers, P. Atk. + more than regular one-handed swords when enchanted. Increases damage inflicted during PvP. Has a chance to cancel the target's enhanced status by more than 1 or to decrease the target's Shield Defense. during an attack. Can be equipped by Dagger Masters above level 81.
+	-->
+	<item id="16149" type="Weapon" name="Vesper Dual Daggers - Great Gale {PvP}">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="8233" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2050" />
+		<set name="price" val="171530000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="8298-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1;3859-2" />
+		<set name="equip_condition" val="{{ec_requiredlevel;81};{ec_category;{@dagger_master}}}" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Atk.
+		When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases damage inflicted during PvP.
+	-->
+	<item id="16150" type="Weapon" name="Vesper Dualsword - Destruction">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3411-1" />
+		<set name="item_skill" val="3835-3;3552-1" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Atk.
+		When the dualsword is enchanted with a two-handed sword, two-handed blunt, or fist weapon, P. Atk. Increases more than if it were enchanted with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Has a chance of decreasing the shooting range of the target's bow/crossbow during an attack.
+	-->
+	<item id="16151" type="Weapon" name="Vesper Dualsword - Destruction {PvP}">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3411-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3656-1;3835-3" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. of Dual Daggers increases more than regular one-handed swords when enchanted. When enchanted to 4 or more, increases Critical by 109. Can be equipped by Dagger Masters of level 81 or above. Increases damage inflicted during PvP. -->
+	<item id="16152" type="Weapon" name="Skull Edge Dual Daggers">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="9872" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2050" />
+		<set name="price" val="205668000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="8298-1" />
+		<set name="item_skill" val="3552-1" />
+		<set name="equip_condition" val="{{ec_requiredlevel;84};{ec_category;{@dagger_master}}}" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="415" />
+			<set stat="mAtk" val="183" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted, P. Atk. of a dual dagger increases more significantly than that of a one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Can be equipped by Dagger Masters level 81 or above. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack. -->
+	<item id="16153" type="Weapon" name="Skull Edge Dual Daggers {PvP}">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="9872" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2050" />
+		<set name="price" val="205668000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="8298-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1" />
+		<set name="equip_condition" val="{{ec_requiredlevel;84};{ec_category;{@dagger_master}}}" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="415" />
+			<set stat="mAtk" val="183" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. -->
+	<item id="16154" type="Weapon" name="Periel Dualsword">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="8233" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="171530000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3411-1" />
+		<set name="item_skill" val="3552-1" />
+		<for>
+			<set stat="pAtk" val="505" />
+			<set stat="mAtk" val="183" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. Has a chance to decrease the range of bows/crossbows during an attack. -->
+	<item id="16155" type="Weapon" name="Periel Dualsword {PvP}">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="8233" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="171530000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3411-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3656-1" />
+		<for>
+			<set stat="pAtk" val="505" />
+			<set stat="mAtk" val="183" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. of daggers and dual daggers increases more than that of regular one-handed daggers when enchanted. When enchanted to 4 or more, increases Critical by 109. Increases the damage inflicted during PvP. Can be equipped by Dagger Masters level 81 or above. -->
+	<item id="16156" type="Weapon" name="Mamba Edge Dual Daggers">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="11421" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2050" />
+		<set name="price" val="237930000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="8298-1" />
+		<set name="item_skill" val="3552-1" />
+		<set name="equip_condition" val="{{ec_requiredlevel;85};{ec_category;{@dagger_master}}}" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="437" />
+			<set stat="mAtk" val="192" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. of daggers and dual daggers increases more than that of regular one-handed daggers when enchanted. When enchanted to 4 or more, increases Critical by 109. Increases the damage inflicted during PvP. Can be equipped at above level 81 by Dagger Masters. During an attack, there is a chance to cancels the target's enhanced status by more than 1, or of decreasing the target's Shield Defense. -->
+	<item id="16157" type="Weapon" name="Mamba Edge Dual Daggers {PvP}">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="11421" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2050" />
+		<set name="price" val="237930000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="8298-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1" />
+		<set name="equip_condition" val="{{ec_requiredlevel;85};{ec_category;{@dagger_master}}}" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="437" />
+			<set stat="mAtk" val="192" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. -->
+	<item id="16158" type="Weapon" name="Eternal Core Dualsword">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="9872" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="205668000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3411-1" />
+		<set name="item_skill" val="3552-1" />
+		<for>
+			<set stat="pAtk" val="532" />
+			<set stat="mAtk" val="192" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted with a two-handed sword, a two-handed blunt weapon or a fist weapon, its P. Atk. Increases more than that of a regular one-handed sword. When enchanted to 4 or more, increases Critical Attack by 109 and Max HP by 10%. Increases the damage inflicted during PvP. Has a chance to decrease the range of bows/crossbows during an attack. -->
+	<item id="16159" type="Weapon" name="Eternal Core Dualsword {PvP}">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="9872" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="205668000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3411-1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-3;3656-1" />
+		<for>
+			<set stat="pAtk" val="532" />
+			<set stat="mAtk" val="192" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16160" type="EtcItem" name="Life Stone - Lv. 85">
+		<set name="icon" val="icon.etc_mineral_general_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="49680" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- Mid-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16161" type="EtcItem" name="Mid-grade Life Stone - Lv. 85">
+		<set name="icon" val="icon.etc_mineral_special_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="198960" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- High-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16162" type="EtcItem" name="High-grade Life Stone - Lv. 85">
+		<set name="icon" val="icon.etc_mineral_rare_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="1989600" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- Top-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16163" type="EtcItem" name="Top-grade Life Stone - Lv. 85">
+		<set name="icon" val="icon.etc_mineral_unique_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="9950400" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- General mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16164" type="EtcItem" name="Life Stone - Lv. 86">
+		<set name="icon" val="icon.etc_mineral_general_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="59616" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- Mid-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16165" type="EtcItem" name="Mid-grade Life Stone - Lv. 86">
+		<set name="icon" val="icon.etc_mineral_special_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="238752" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- High-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16166" type="EtcItem" name="High-grade Life Stone - Lv. 86">
+		<set name="icon" val="icon.etc_mineral_rare_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="2387520" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- Top-grade mineral created when a stone in a monster is solidified by physical/magic hit. Key component used in weapon Augmentation by characters level 85 or above. -->
+	<item id="16167" type="EtcItem" name="Top-grade Life Stone - Lv. 86">
+		<set name="icon" val="icon.etc_mineral_unique_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="11940480" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of decreasing all Speeds of the attacker. -->
+	<item id="16168" type="Armor" name="Elegia Breastplate {PvP}">
+		<set name="icon" val="icon.armor_t97_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="3214" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="7520" />
+		<set name="price" val="66953000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16168" />
+		<for>
+			<baseAdd stat="pDef" val="272" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of canceling the opponent's target when attacked. -->
+	<item id="16169" type="Armor" name="Elegia Leather Breastplate {PvP}">
+		<set name="icon" val="icon.armor_t98_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="2410" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="4140" />
+		<set name="price" val="50215000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16169" />
+		<for>
+			<baseAdd stat="pDef" val="204" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of decreasing the chance of receiving Critical Damage and P. Critical Damage amount. -->
+	<item id="16170" type="Armor" name="Elegia Tunic {PvP}">
+		<set name="icon" val="icon.armor_t99_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="2410" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1750" />
+		<set name="price" val="50215000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16170" />
+		<for>
+			<baseAdd stat="pDef" val="136" />
+			<add stat="maxMp" val="661" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of decreasing all Speeds of the attacker. -->
+	<item id="16171" type="Armor" name="Vorpal Breastplate {PvP}">
+		<set name="icon" val="icon.armor_t94_u_i03" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="2680" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="7520" />
+		<set name="price" val="55840000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16171" />
+		<for>
+			<baseAdd stat="pDef" val="263" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of canceling the opponent's target when attacked. -->
+	<item id="16172" type="Armor" name="Vorpal Leather Breastplate {PvP}">
+		<set name="icon" val="icon.armor_t95_u_i03" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="2010" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="4140" />
+		<set name="price" val="41880000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16172" />
+		<for>
+			<baseAdd stat="pDef" val="197" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of decreasing the chance of receiving Critical Damage and P. Critical Damage amount. -->
+	<item id="16173" type="Armor" name="Vorpal Tunic {PvP}">
+		<set name="icon" val="icon.armor_t96_u_i03" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="2010" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1750" />
+		<set name="price" val="41880000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16173" />
+		<for>
+			<baseAdd stat="pDef" val="132" />
+			<add stat="maxMp" val="649" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of decreasing all Speeds of the attacker. -->
+	<item id="16174" type="Armor" name="Moirai Breastplate {PvP}">
+		<set name="icon" val="icon.armor_t100_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1616" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="7520" />
+		<set name="price" val="33673000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16174" />
+		<for>
+			<baseAdd stat="pDef" val="238" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of canceling the opponent's target when attacked. -->
+	<item id="16175" type="Armor" name="Moirai Leather Breastplate {PvP}">
+		<set name="icon" val="icon.armor_t101_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="4140" />
+		<set name="price" val="25255000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16175" />
+		<for>
+			<baseAdd stat="pDef" val="178" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Decreases damage received during PvP. Has a chance of decreasing the chance of receiving Critical Damage and P. Critical Damage amount. -->
+	<item id="16176" type="Armor" name="Moirai Tunic {PvP}">
+		<set name="icon" val="icon.armor_t102_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1750" />
+		<set name="price" val="25255000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="armorSet" val="16176" />
+		<for>
+			<baseAdd stat="pDef" val="119" />
+			<add stat="maxMp" val="614" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Mineral stone that solidifies inside a monster by a physical or magic hit. It can be used when augmenting accessories, and characters level 85 or above can use it. -->
+	<item id="16177" type="EtcItem" name="Life Stone: Accessory - Lv. 85">
+		<set name="icon" val="icon.etc_mineral_general_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="49680" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!-- Mineral stone that solidifies inside a monster by a physical or magic hit. It can be used when augmenting accessories, and characters level 85 or above can use it. -->
+	<item id="16178" type="EtcItem" name="Life Stone: Accessory - Lv. 86">
+		<set name="icon" val="icon.etc_mineral_general_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="price" val="59616" />
+		<set name="is_stackable" val="true" />
+		<cond msgId="113">
+			<player level="85" />
+		</cond>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16179" type="Weapon" name="Vesper Cutter - Thunder {PvP} - Haste">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3650-1;3564-3;3828-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16180" type="Weapon" name="Vesper Cutter - Thunder {PvP} - Health">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3650-1;3013-3;3828-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>
+		Increases Critical by 131. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16181" type="Weapon" name="Vesper Cutter - Thunder {PvP} - Focus">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3650-1;3566-3;3828-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16182" type="Weapon" name="Vesper Slasher - Great Gale {PvP} - Haste">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3653-1;3564-3;3840-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16183" type="Weapon" name="Vesper Slasher - Great Gale {PvP} - Health">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3653-1;3013-3;3840-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Increases Critical by 131. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16184" type="Weapon" name="Vesper Slasher - Great Gale {PvP} - Focus">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3653-1;3566-3;3840-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases MP Recovery. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+	-->
+	<item id="16185" type="Weapon" name="Vesper Buster - Cleverness {PvP} - Mana Up">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3552-1;3654-1;3014-2;3853-2" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases MP Recovery. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+	-->
+	<item id="16186" type="Weapon" name="Vesper Buster - Cleverness {PvP} - Acumen">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3552-1;3654-1;3047-2;3853-2" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases MP Recovery. <Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Has a chance of increasing Casting Spd. when attacked.
+	-->
+	<item id="16187" type="Weapon" name="Vesper Buster - Cleverness {PvP} - Magic Hold">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-3;3654-1;3853-2" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16188" type="Weapon" name="Vesper Shaper - Great Gale {PvP} - Critical Damage">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3651-1;3652-1;3572-2;3859-2" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of enemy's enchants, or decreasing their Shield Defense during an attack.
+	-->
+	<item id="16189" type="Weapon" name="Vesper Shaper - Great Gale {PvP} - HP Drain">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3651-1;3652-1;3568-2;3859-2" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16190" type="Weapon" name="Vesper Shaper - Great Gale {PvP} - Haste">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3651-1;3652-1;3564-3;3859-2" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Increases Critical by 123. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16191" type="Weapon" name="Vesper Fighter - Great Gale {PvP} - Focus">
+		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1550" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3651-1;3652-1;3565-3;3880-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16192" type="Weapon" name="Vesper Fighter - Great Gale {PvP} - Health">
+		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1550" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3651-1;3652-1;3013-3;3880-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases Atk. Spd. <Soul Crystal Enhancement>
+		Inflicts Stun with about a 43% chance during a Critical Attack. Increases damage inflicted during PvP. Has a chance of canceling 1 or more of the target's enhanced status, or of decreasing the target's Shield Defense during an attack.
+	-->
+	<item id="16193" type="Weapon" name="Vesper Fighter - Great Gale {PvP} - Critical Stun">
+		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1550" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="oncrit_skill" val="3571-2" />
+		<set name="item_skill" val="3552-3;3651-1;3652-1;3880-2" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16194" type="Weapon" name="Vesper Stormer - Thunder {PvP} - Health">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2010" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3653-1;3013-4;3874-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>
+		Increases Accuracy by 7.5. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16195" type="Weapon" name="Vesper Stormer - Thunder {PvP} - Guidance">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2010" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3653-1;3602-10;3874-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that increases P. Critical Rate. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Has a chance of inflicting additional damage during an attack.
+	-->
+	<item id="16196" type="Weapon" name="Vesper Stormer - Thunder {PvP} - Haste">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2010" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3653-1;3601-10;3874-1" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that has a chance of casting Stun on the target during an attack.
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16197" type="Weapon" name="Vesper Avenger - Landslide {PvP} - HP Drain">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3650-1;3568-2;3885-2" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that has a chance of casting Stun on the target during an attack.
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16198" type="Weapon" name="Vesper Avenger - Landslide {PvP} - Health">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3650-1;3013-3;3885-2" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Masterwork Item that has a chance of casting Stun on the target during an attack.
+		<Soul Crystal Enhancement>
+		Increases HP Recovery Rate. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
+	-->
+	<item id="16199" type="Weapon" name="Vesper Avenger - Landslide {PvP} - HP Regeneration">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="7050" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="143356000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3552-1;3650-1;3569-2;3885-2" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<skill id="16100" levels="1" name="Presentation">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="10000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- One of Bremnon's weapons, named by Shilen as the Lord of Hellfire. With its own ego and the ability to control living beings' emotions, Tauti is manipulating the class warfare among the races in the Seed in order to evolve itself and complete the sacrifices for Shilen. -->
+	<skill id="16101" levels="1" name="Tauti">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Powerful magical attack on target and nearby enemies. -->
+	<skill id="16102" levels="1" name="Dark Storm">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="500" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Deals damage and cancels target. -->
+	<skill id="16103" levels="6" name="Death Lift">
+		<table name="#mpConsume"> 50 65 80 95 110 125 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="1000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="16104" levels="7" name="Fatal Strike">
+		<table name="#mpConsume"> 50 65 80 95 110 125 140 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Powerful blow on a vital spot. Possible to achieve Critical. -->
+	<skill id="16107" levels="3" name="Fatal Blow">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="32" />
+		<set name="hitTime" val="830" />
+		<set name="coolTime" val="700" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="16108" levels="7" name="Bloody Blades">
+		<table name="#hitTime"> 1500 1500 1500 1500 1500 1500 3000 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="79" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<!-- Critical Damage increased. -->
+	<skill id="16109" levels="1" name="Heavy Armor Rise">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- P. Atk. increased. -->
+	<skill id="16110" levels="1" name="Light Armor Rise">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- M. Atk. increased. -->
+	<skill id="16111" levels="1" name="Robe Rise">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Atk. Spd. and Casting Spd. increased. -->
+	<skill id="16112" levels="1" name="Speed Rise">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Inflicts Bleed. 12 Power. -->
+	<skill id="16113" levels="1" name="Tragic Bleed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Cuts target and party members' HP by 95%. -->
+	<skill id="16114" levels="1" name="Curse of the Dead">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="59" />
+		<set name="hitTime" val="300" />
+		<set name="castRange" val="1300" />
+		<set name="effectRange" val="1800" />
+	</skill>
+	<skill id="16116" levels="2" name="Self-Devastation">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Damage + 20% toward normal monsters. -->
+	<skill id="16117" levels="1" name="Amplify Damage">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<!-- Damage + 30% toward normal monsters. -->
+	<skill id="16118" levels="1" name="Amplify Damage">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<!-- Deals fire damage to target and nearby enemies. -->
+	<skill id="16119" levels="1" name="Flare Chain">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="90" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="450" />
+		<set name="effectRange" val="950" />
+	</skill>
+	<!-- Inflicts Sleep on nearby enemies for 30 sec. -->
+	<skill id="16121" levels="5" name="Sleeping Cloud">
+		<table name="#mpConsume"> 107 122 138 154 160 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Powerful flame attack, draining HP for 5 sec. -->
+	<skill id="16122" levels="1" name="Flare Breath">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="40" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="450" />
+		<set name="effectRange" val="950" />
+	</skill>
+	<skill id="16123" levels="1" name="Flare Outburst">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="90" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="450" />
+		<set name="effectRange" val="950" />
+	</skill>
+	<!-- Restores Deathmoz' HP. -->
+	<skill id="16124" levels="1" name="Flare Life">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="90" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="10000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="16125" levels="1" name="Volcano Sword Dance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="20" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<skill id="16126" levels="1" name="Volcano Buster">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="25" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="16127" levels="1" name="Blind Flame">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="40" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="5000" />
+	</skill>
+	<!-- Powerful flame attack on target and nearby enemies, draining HP for 5 sec. -->
+	<skill id="16128" levels="1" name="Flame Bog">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="81" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="450" />
+		<set name="effectRange" val="950" />
+	</skill>
+	<!-- 
+		Level 1: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%,  M. Atk. + 10%. Atk. Spd./ Casting Spd. -  3%.
+		Level 2: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 10%, M. Atk. + 21%. Atk. Spd./ Casting Spd. -  5%.
+		Level 3: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 15%, M. Atk. + 32%. Atk. Spd./ Casting Spd. -  5%.
+		Level 4: Kefensis has an effect on your terrible thirst, heightening your senses. P. Atk. + 5%, M. Atk. + 10%. Atk. Spd./ Casting Spd. -  10%.
+		Level 5: Kefensis has an effect on your terrible thirst, heightening your senses. Atk. Spd./ Casting Spd. -  15%.
+	-->
+	<skill id="16129" levels="5" name="Desert Thirst">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="1300" />
+		<set name="effectRange" val="1800" />
+	</skill>
+	<!-- The Oasis has quenched your thirst, suddenly wearing you out. Atk./ Casting Spd. - 25%, and Speed - 50. -->
+	<skill id="16130" levels="1" name="Oasis Energy">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="1300" />
+		<set name="effectRange" val="1800" />
+	</skill>
+	<!-- Your thirst has been quenched. P./M. Atk., and Atk./Casting Spd. + 50%. -->
+	<skill id="16131" levels="1" name="Thirst Quench">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="1300" />
+		<set name="effectRange" val="1800" />
+	</skill>
+	<skill id="16132" levels="1" name="Oasis Mirage">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="89" />
+		<set name="hitTime" val="5000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="15000" />
+	</skill>
+	<skill id="16133" levels="1" name="Watery Grave">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="89" />
+		<set name="hitTime" val="5000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="15000" />
+	</skill>
+	<skill id="16134" levels="1" name="Doom Shrieker">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="45" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16135" levels="1" name="Begin Research">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hero's powers give you x  2 the rewards. Disappears upon death or expiration. -->
+	<skill id="16136" levels="1" name="Reward x 2">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hero's powers give you x  4 the rewards. Disappears upon death or expiration. -->
+	<skill id="16137" levels="1" name="Reward x 4">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hero's powers give you x  8 the rewards. Disappears upon death or expiration. -->
+	<skill id="16138" levels="1" name="Reward x 8">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hero's powers give you x  16 the rewards. Disappears upon death or expiration. -->
+	<skill id="16139" levels="1" name="Reward x 16">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hero's powers give you x  32 the rewards. Disappears upon death or expiration. -->
+	<skill id="16140" levels="1" name="Reward x 32">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16141" levels="1" name="Research Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16142" levels="1" name="Research Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16143" levels="1" name="Research Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16144" levels="1" name="Research Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16145" levels="1" name="Research Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Researching the Heroes' Power. -->
+	<skill id="16146" levels="1" name="Research Fail">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="16147" levels="7" name="Fatal Wave">
+		<table name="#mpConsume"> 86 87 88 89 90 91 92 </table>
+		<table name="#hitTime"> 1200 1200 1200 3000 1200 1200 1200 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="coolTime" val="570" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Compelled to move due to Fear. -->
+	<skill id="16148" levels="5" name="Fear">
+		<table name="#mpConsume"> 81 84 87 90 94 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- 
+		Level 1: HP cut due to Poison. 11 power.
+		Level 2: HP cut due to Poison. 12 power.
+		Level 3: HP cut due to Poison. 13 power.
+		Level 4: HP cut due to Poison. 14 power.
+		Level 5: HP cut due to Poison. 15 power.
+	-->
+	<skill id="16149" levels="5" name="Poison">
+		<table name="#mpConsume"> 80 88 100 108 120 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- 
+		Level 1: Speed momentarily decreased. 9 power.
+		Level 2: Speed momentarily decreased. 10 power.
+		Level 3: Speed momentarily decreased. 11 power.
+	-->
+	<skill id="16150" levels="5" name="Slow">
+		<table name="#mpConsume"> 137 154 160 160 160 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Deals non-attribute magic damage to target. -->
+	<skill id="16151" levels="7" name="Aura Spike">
+		<table name="#mpConsume"> 30 36 42 48 54 54 60 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="500" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Deals fire damage to target. -->
+	<skill id="16152" levels="7" name="Fire Spike">
+		<table name="#mpConsume"> 30 36 42 48 54 54 60 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="500" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="16155" levels="1" name="Charmed Kefensis">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="89" />
+		<set name="hitTime" val="5000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Decreases Atk. Spd. and Speed. -->
+	<skill id="16156" levels="7" name="Mass Droop">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="94" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="570" />
+		<set name="reuseDelay" val="6000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- 
+		Level 1: Bleed instantly cuts HP. 1 power.
+		Level 2: Bleed instantly cuts HP. 2 power.
+		Level 3: Bleed instantly cuts HP. 3 power.
+		Level 4: Bleed instantly cuts HP. 4 power.
+		Level 5: Bleed instantly cuts HP. 5 power.
+	-->
+	<skill id="16157" levels="5" name="Bleed">
+		<table name="#mpConsume"> 65 70 75 80 85 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Deals fire damage to target. -->
+	<skill id="16158" levels="1" name="Beleth's Volcano">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="51" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Deals powerful fire damage to nearby enemies. -->
+	<skill id="16159" levels="1" name="Beleth's Blaze">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="51" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="10000" />
+	</skill>
+	<!-- Powerful flames burn off HP. -->
+	<skill id="16160" levels="1" name="Beleth's Flame">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="96" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<!-- Bleed instantly cuts HP. -->
+	<skill id="16161" levels="1" name="Darion's Bleed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="91" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<skill id="16162" levels="1" name="Beleth's Meteor">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="96" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<skill id="16163" levels="1" name="Darion's Sword Storm">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="96" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<skill id="16164" levels="1" name="Flame Blade">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="101" />
+		<set name="hitTime" val="1200" />
+		<set name="coolTime" val="570" />
+		<set name="reuseDelay" val="6000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="16165" levels="1" name="Dark Blade">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="96" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+	</skill>
+	<!-- 
+		Level 1: For some time, P. Evasion + 10, M. Evasion + 10, Evasion Rate against P. Skills + 10%.
+		Level 2: For 3 min., P. Evasion + 20, M. Evasion + 20, Evasion Rate against P. Skills + 20%.
+		Level 3: For 3 min., P. Evasion + 40, M. Evasion + 40, Evasion Rate against P. Skills + 40%.
+	-->
+	<skill id="16166" levels="3" name="Escape Death">
+		<table name="#reuseDelay"> 5000 120000 120000 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="#reuseDelay" />
+	</skill>
+	<!-- 
+		Level 1: P./M. Evasion strengthened.
+		Level 2: P./M. Evasion very much strengthened.
+	-->
+	<skill id="16167" levels="2" name="Increase Evasion 1">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Cute target's HP in half. -->
+	<skill id="16168" levels="1" name="Half-kill">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="830" />
+		<set name="coolTime" val="700" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="16171" levels="1" name="Summon Poison Zone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="300" />
+		<set name="reuseDelay" val="5000" />
+	</skill>
+	<!-- HP drops by 75 per second due to a poisonous fog. -->
+	<skill id="16172" levels="1" name="Poisoned">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+	</skill>
+	<!-- Invincible. -->
+	<skill id="16173" levels="1" name="Invincibility">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Hellbound's mysterious powers give you 10min of SP/XP gain + 50% through hunting. Entire party. -->
+	<skill id="16174" levels="1" name="Herb of Growth">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hellbound's mysterious powers give you 10min of SP/XP gain + 100% through hunting. Entire party. -->
+	<skill id="16175" levels="1" name="Major Herb of Growth">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Hellbound's mysterious powers give you 2min of SP/XP gain + 300% through hunting. Entire party. -->
+	<skill id="16176" levels="1" name="Superior Herb of Growth">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Resistant to Knock Down. -->
+	<skill id="16177" levels="5" name="Knock Down Resistance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Attack the enemy's surroundings to stun them. -->
+	<skill id="16178" levels="1" name="Leona's Thunder Spear">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="10" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- The greatest wizard in history, and also the most demonic. Through contact with the forbidden, he gained possession of a mysterious power unknown even to the gods. His most recent tracks have been through Hellbound, which underwent an astonishing transformation after he began experimenting with Chaos, a Human attribute. No one knows what he is thinking, or what he is after. -->
+	<skill id="16179" levels="1" name="Beleth">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Originally of the demon world, he was placed among the people by Beleth in order to rule Hellbound. He seeks to gain control over Hellbound whenever Beleth disappears for one of his experiments. -->
+	<skill id="16180" levels="1" name="Darion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Special armor reduces damage received from servitors. -->
+	<skill id="16181" levels="10" name="Special Armor">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Cast Petrify on an enemy that has used a skill. -->
+	<skill id="16183" levels="1" name="Skill Reflect Barrier">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="5000" />
+	</skill>
+	<!-- Petrified for 5 sec. -->
+	<skill id="16184" levels="1" name="Vengeful Petrify">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- A powerful AoE attack with sword aura. -->
+	<skill id="16185" levels="1" name="Sword Storm">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- A powerful physical attack near the target. -->
+	<skill id="16186" levels="1" name="Belly Cut">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Physical damage on a single target. -->
+	<skill id="16187" levels="1" name="Head-on Crash">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Magical AoE attack to target and surrounding area. -->
+	<skill id="16188" levels="1" name="Darkness">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Magical damage on a single target. -->
+	<skill id="16189" levels="1" name="Disciple's Blow">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- For 5 sec., P. Atk. + 100%. -->
+	<skill id="16190" levels="1" name="Recharge Fury">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Physical attck on target and surrounding area. -->
+	<skill id="16191" levels="1" name="Pandemonium">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Powerful magical AoE attack. -->
+	<skill id="16192" levels="1" name="Tyranny">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Casts Fear on target and nearby enemies for 2 sec. -->
+	<skill id="16193" levels="1" name="Lurking Lunacy">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- A lethal magical AoE attack. -->
+	<skill id="16194" levels="1" name="Quiet Path to Death">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="10000" />
+		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1500" />
+	</skill>
+	<!-- A powerful magical AoE attack. -->
+	<skill id="16195" levels="1" name="Guided Death">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="5000" />
+		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1500" />
+	</skill>
+	<!-- A magical AoE attack with Bleed. -->
+	<skill id="16196" levels="1" name="Blood Shower">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Physical AoE attack. -->
+	<skill id="16197" levels="1" name="Haughty Slaughter">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Physical AoE attack. -->
+	<skill id="16198" levels="1" name="Continuing Pain">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Magical attack on a single target. -->
+	<skill id="16199" levels="1" name="Howling Abyss">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="1" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+</list>

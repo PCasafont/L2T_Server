@@ -1,0 +1,1935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Bestows one of the following functions: Rsk. Evasion, Magic Poison, or Magic Weakness. -->
+	<item id="32400" type="Weapon" name="Fantasy Pa'agrio Hammer - Not in Use">
+		<set name="icon" val="icon.weapon_paagrio_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1010" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="135" />
+			<set stat="mAtk" val="111" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Critical Stun, Long Blow or Light. -->
+	<item id="32401" type="Weapon" name="Fantasy Bec de Corbin - Not in Use">
+		<set name="icon" val="icon.weapon_bech_de_corbin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="2020" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="122" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Wide Blow, Long Blow or Critical Stun. -->
+	<item id="32402" type="Weapon" name="Fantasy Poleaxe - Not in Use">
+		<set name="icon" val="icon.weapon_poleaxe_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="139" />
+			<set stat="mAtk" val="76" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions, Rsk. Evasion, Rsk. Haste or Haste. -->
+	<item id="32403" type="Weapon" name="Fantasy Knuckle Duster - Not in Use">
+		<set name="icon" val="icon.weapon_knuckle_dust_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1490" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="148" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Rsk. Evasion, Rsk. Haste or Haste. -->
+	<item id="32404" type="Weapon" name="Fantasy Fisted Blade - Not in Use">
+		<set name="icon" val="icon.weapon_fist_blade_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1480" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="76" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. -->
+	<item id="32405" type="Weapon" name="Fantasy Sword of Revolution*Sword of Revolution - Not in Use">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="2360" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="148" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 2. -->
+	<item id="32406" type="Weapon" name="Fantasy StormBringer*StormBringer - Not in Use">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="2330" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="175" />
+			<set stat="mAtk" val="78" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Full body armor. -->
+	<item id="32407" type="Armor" name="Fantasy Compound Armor - Not in Use">
+		<set name="icon" val="icon.armor_t61_ul_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="fullarmor" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="10980" />
+		<for>
+			<baseAdd stat="pDef" val="224" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32408" type="Armor" name="Fantasy Theca Leather Armor - Not in Use">
+		<set name="icon" val="icon.armor_t63_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="4370" />
+		<for>
+			<baseAdd stat="pDef" val="121" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32409" type="Armor" name="Fantasy Theca Leather Gaiters - Not in Use">
+		<set name="icon" val="icon.armor_t63_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1530" />
+		<for>
+			<baseAdd stat="pDef" val="66" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32410" type="Armor" name="Fantasy Demon's Tunic - Not in Use">
+		<set name="icon" val="icon.armor_t54_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1990" />
+		<for>
+			<baseAdd stat="pDef" val="76" />
+			<add stat="maxMp" val="284" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32411" type="Armor" name="Fantasy Demon's Stockings - Not in Use">
+		<set name="icon" val="icon.armor_t54_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="980" />
+		<for>
+			<baseAdd stat="pDef" val="43" />
+			<add stat="maxMp" val="177" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32412" type="Armor" name="Fantasy Mithril Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t61_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="600" />
+		<for>
+			<baseAdd stat="pDef" val="36" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32413" type="Armor" name="Fantasy Theca Leather Gloves - Not in Use">
+		<set name="icon" val="icon.armor_t63_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="600" />
+		<for>
+			<baseAdd stat="pDef" val="37" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32414" type="Armor" name="Fantasy Demon's Gloves - Not in Use">
+		<set name="icon" val="icon.armor_t54_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="610" />
+		<for>
+			<baseAdd stat="pDef" val="36" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32415" type="Armor" name="Fantasy Theca Leather Boots - Not in Use">
+		<set name="icon" val="icon.armor_t63_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1210" />
+		<for>
+			<baseAdd stat="pDef" val="37" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32416" type="Armor" name="Fantasy Demon's Boots - Not in Use">
+		<set name="icon" val="icon.armor_t54_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1220" />
+		<for>
+			<baseAdd stat="pDef" val="36" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32417" type="Armor" name="Fantasy Compound Boots - Not in Use">
+		<set name="icon" val="icon.armor_t61_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1220" />
+		<for>
+			<baseAdd stat="pDef" val="36" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32418" type="Armor" name="Fantasy Shining Circlet - Not in Use">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="600" />
+		<for>
+			<baseAdd stat="pDef" val="54" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32419" type="Armor" name="Fantasy Compound Helmet - Not in Use">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="610" />
+		<for>
+			<baseAdd stat="pDef" val="54" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32420" type="Armor" name="Fantasy Compound Shield - Not in Use">
+		<set name="icon" val="icon.shield_composite_shield_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1230" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="190" />
+			<enchant stat="sDef" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Evasion, Focus, or Back Blow. -->
+	<item id="32421" type="Weapon" name="Fantasy Kris - Not in Use">
+		<set name="icon" val="icon.weapon_kris_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="980" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="153" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Acumen, Magic Weakness or Magic Regeneration. -->
+	<item id="32422" type="Weapon" name="Fantasy Sword of Valhalla - Not in Use">
+		<set name="icon" val="icon.weapon_sword_of_valhalla_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="900" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="140" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Guidance, Focus or Back Blow -->
+	<item id="32423" type="Weapon" name="Fantasy Keshanberk - Not in Use">
+		<set name="icon" val="icon.weapon_kshanberk_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1370" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="175" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Keshanberk
+		Bestows one of the following functions: Guidance, Focus or Back Blow.
+		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack.
+	-->
+	<item id="32424" type="Weapon" name="Fantasy Military Fleuret - Not in Use">
+		<set name="icon" val="icon.weapon_assult_fleuret_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1370" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="159" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Health, P. Critical Damage or Focus. -->
+	<item id="32425" type="Weapon" name="Fantasy Great Sword - Not in Use">
+		<set name="icon" val="icon.weapon_great_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1930" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="213" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Great Sword
+		Bestows one of the following functions: Health, P. Critical Damage or Focus.
+	-->
+	<item id="32426" type="Weapon" name="Fantasy Innominate Victory - Not in Use">
+		<set name="icon" val="icon.weapon_nameless_victory_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1930" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Guardian's Sword Conversion
+		Bestows one of the following functions: Critical Drain, Health or Critical Bleed.
+	-->
+	<item id="32427" type="Weapon" name="Fantasy Dismantler - Not in Use">
+		<set name="icon" val="icon.weapon_dismantler_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1930" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="210" />
+			<set stat="mAtk" val="99" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Evasion, Critical Bleed or Miser. -->
+	<item id="32428" type="Weapon" name="Fantasy Dark Elven Longbow - Not in Use">
+		<set name="icon" val="icon.weapon_dark_elven_long_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1720" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="4" />
+		<set name="reuse_delay" val="820" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="397" />
+			<set stat="mAtk" val="100" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="227" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Dark Elven Longbow conversion
+		Bestows one of the following functions: Evasion, Critical Bleed or Miser.
+	-->
+	<item id="32429" type="Weapon" name="Fantasy Peacemaker - Not in Use">
+		<set name="icon" val="icon.weapon_peace_maker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1720" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="221" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Anger, Health or Rsk. Focus. -->
+	<item id="32430" type="Weapon" name="Fantasy Heavy War Axe - Not in Use">
+		<set name="icon" val="icon.weapon_heavy_war_axe_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1620" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="175" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Regeneration, Mental Shield or Hold. -->
+	<item id="32431" type="Weapon" name="Fantasy Spirit's Staff - Not in Use">
+		<set name="icon" val="icon.weapon_sprites_staff_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="960" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="170" />
+			<set stat="mAtk" val="134" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Anger, Critical Stun or Light. -->
+	<item id="32432" type="Weapon" name="Fantasy Great Axe - Not in Use">
+		<set name="icon" val="icon.weapon_great_axe_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1940" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="175" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Critical Poison, Rsk. Evasion or Rsk. Haste. -->
+	<item id="32433" type="Weapon" name="Fantasy Arthro Nail - Not in Use">
+		<set name="icon" val="icon.weapon_arthro_nail_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1420" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="213" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, its Accuracy increases by 4. -->
+	<item id="32434" type="Weapon" name="Fantasy Sword of Delusion*Sword of Delusion - Not in Use">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="2150" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="213" />
+			<set stat="mAtk" val="91" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="32435" type="Armor" name="Fantasy Zubei's Breastplate - Not in Use">
+		<set name="icon" val="icon.armor_t64_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="7970" />
+		<for>
+			<baseAdd stat="pDef" val="157" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32436" type="Armor" name="Fantasy Zubei's Gaiters - Not in Use">
+		<set name="icon" val="icon.armor_t64_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="3570" />
+		<for>
+			<baseAdd stat="pDef" val="98" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32437" type="Armor" name="Fantasy Zubei's Leather Shirt - Not in Use">
+		<set name="icon" val="icon.armor_t65_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="4330" />
+		<for>
+			<baseAdd stat="pDef" val="117" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32438" type="Armor" name="Fantasy Zubei's Leather Gaiters - Not in Use">
+		<set name="icon" val="icon.armor_t65_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1480" />
+		<for>
+			<baseAdd stat="pDef" val="73" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32439" type="Armor" name="Fantasy Tunic of Zubei - Not in Use">
+		<set name="icon" val="icon.armor_t56_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1960" />
+		<for>
+			<baseAdd stat="pDef" val="84" />
+			<add stat="maxMp" val="345" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32440" type="Armor" name="Fantasy Stockings of Zubei - Not in Use">
+		<set name="icon" val="icon.armor_t56_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="940" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<add stat="maxMp" val="216" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the heavy Zubei's set. -->
+	<item id="32441" type="Armor" name="Fantasy Zubei's Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t64_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="590" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the light Zubei's set. -->
+	<item id="32442" type="Armor" name="Fantasy Zubei's Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t65_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="590" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the Zubei's robe set. -->
+	<item id="32443" type="Armor" name="Fantasy Zubei's Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t56_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="590" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the heavy Zubei's set. -->
+	<item id="32444" type="Armor" name="Fantasy Zubei's Boots - Not in Use">
+		<set name="icon" val="icon.armor_t64_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1180" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the light Zubei's set. -->
+	<item id="32445" type="Armor" name="Fantasy Zubei's Boots - Not in Use">
+		<set name="icon" val="icon.armor_t65_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1180" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the Zubei's robe set. -->
+	<item id="32446" type="Armor" name="Fantasy Zubei's Boots - Not in Use">
+		<set name="icon" val="icon.armor_t56_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1180" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32447" type="Armor" name="Fantasy Zubei's Helmet - Not in Use">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="590" />
+		<for>
+			<baseAdd stat="pDef" val="62" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32448" type="Armor" name="Fantasy Zubei's Shield - Not in Use">
+		<set name="icon" val="icon.shield_shrnoens_shield_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1210" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="216" />
+			<enchant stat="sDef" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Focus, Back Blow, or Critical Bleed. -->
+	<item id="32449" type="Weapon" name="Fantasy Bloody Orchid - Not in Use">
+		<set name="icon" val="icon.weapon_bloody_orchid_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="960" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="186" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Guidance, P. Critical Damage, or Rsk. Haste. -->
+	<item id="32450" type="Weapon" name="Fantasy Soul Separator - Not in Use">
+		<set name="icon" val="icon.weapon_soul_separator_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="950" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="203" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: M. Atk., Magic Silence or Acumen. -->
+	<item id="32451" type="Weapon" name="Fantasy Sword of Miracles - Not in Use">
+		<set name="icon" val="icon.weapon_sword_of_miracle_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="840" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="186" />
+			<set stat="mAtk" val="152" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Critical Poison, Haste or Anger. -->
+	<item id="32452" type="Weapon" name="Fantasy Tallum Blade - Not in Use">
+		<set name="icon" val="icon.weapon_tallum_blade_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1330" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="213" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: P. Critical Damage, Health, or Rsk. Focus. -->
+	<item id="32453" type="Weapon" name="Fantasy Dark Legion's Edge - Not in Use">
+		<set name="icon" val="icon.weapon_dark_legions_edge_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1320" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="232" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Tallum Blade Conversion
+		Bestows one of the following functions: Critical Poison, Haste or Anger.
+		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack.
+	-->
+	<item id="32454" type="Weapon" name="Fantasy White Lightning - Not in Use">
+		<set name="icon" val="icon.weapon_lightning_blaze_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1330" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="193" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Dark Legion Conversion
+		Bestows one of the following functions: Critical Damage, Health or Rsk. Focus.
+		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack.
+	-->
+	<item id="32455" type="Weapon" name="Fantasy Lacerator - Not in Use">
+		<set name="icon" val="icon.weapon_greed_stinger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1320" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="210" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Haste, P. Critical Damage, or Focus. -->
+	<item id="32456" type="Weapon" name="Fantasy Infernal Master - Not in Use">
+		<set name="icon" val="icon.weapon_inferno_master_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1900" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="259" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Health, Critical Bleed or Critical Drain. -->
+	<item id="32457" type="Weapon" name="Fantasy Dragon Slayer - Not in Use">
+		<set name="icon" val="icon.weapon_dragon_slayer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1840" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="282" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Infernal Master conversion
+		Bestows one of the following functions: Haste, P. Critical Damage, or Focus.
+	-->
+	<item id="32458" type="Weapon" name="Fantasy Divine Pain - Not in Use">
+		<set name="icon" val="icon.weapon_pain_of_godness_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1900" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="231" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Dragon Slayer Conversion
+		Bestows one of the following functions: Health, Critical Bleed or Critical Drain.
+	-->
+	<item id="32459" type="Weapon" name="Fantasy Undertaker - Not in Use">
+		<set name="icon" val="icon.weapon_death_bringer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1840" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="251" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Light, Critical Bleed, or Mana Up. -->
+	<item id="32460" type="Weapon" name="Fantasy Carnage Bow - Not in Use">
+		<set name="icon" val="icon.weapon_carnium_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1670" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="5" />
+		<set name="reuse_delay" val="1500" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="440" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Cheap Shot, Quick Recovery, or Critical Poison. -->
+	<item id="32461" type="Weapon" name="Fantasy Soul Bow - Not in Use">
+		<set name="icon" val="icon.weapon_soul_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1660" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="5" />
+		<set name="reuse_delay" val="820" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="528" />
+			<set stat="mAtk" val="125" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="227" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Carnage Bow Conversion
+		Bestows one of the following functions: Light, Critical Bleed, or Mana Up.
+	-->
+	<item id="32462" type="Weapon" name="Fantasy Doomchanter - Not in Use">
+		<set name="icon" val="icon.weapon_doom_singer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1670" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="270" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Soul Bow conversion.
+		Bestows one of the following functions: Cheap Shot, Quick Recovery or Critical Poison.
+	-->
+	<item id="32463" type="Weapon" name="Fantasy Reaper - Not in Use">
+		<set name="icon" val="icon.weapon_soul_shooter_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1660" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="294" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Focus, Critical Bleed, or Rsk. Haste. -->
+	<item id="32464" type="Weapon" name="Fantasy Meteor Shower - Not in Use">
+		<set name="icon" val="icon.weapon_meteor_shower_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1600" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="213" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Health, Anger, or a Critical Drain. -->
+	<item id="32465" type="Weapon" name="Fantasy Elysian - Not in Use">
+		<set name="icon" val="icon.weapon_elysian_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="232" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the follow three functions, Mana Up, Conversion or Acumen. -->
+	<item id="32466" type="Weapon" name="Fantasy Dasparion's Staff - Not in Use">
+		<set name="icon" val="icon.weapon_dasparions_staff_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="920" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="207" />
+			<set stat="mAtk" val="157" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Conversion, Magic Damage, or Acumen. -->
+	<item id="32467" type="Weapon" name="Fantasy Branch of the Mother Tree - Not in Use">
+		<set name="icon" val="icon.weapon_worldtrees_branch_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="900" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="226" />
+			<set stat="mAtk" val="167" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Haste, Critical Stun or Wide Blow. -->
+	<item id="32468" type="Weapon" name="Fantasy Halberd - Not in Use">
+		<set name="icon" val="icon.weapon_halbard_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1900" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="213" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Guidance, Health, or Wide Blow. -->
+	<item id="32469" type="Weapon" name="Fantasy Tallum Glaive - Not in Use">
+		<set name="icon" val="icon.weapon_tallum_glaive_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1840" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="232" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Haste, Focus, or Anger. -->
+	<item id="32470" type="Weapon" name="Fantasy Blood Tornado - Not in Use">
+		<set name="icon" val="icon.weapon_blood_tornado_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1370" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="259" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Rsk. Evasion, Guidance, or Health. -->
+	<item id="32471" type="Weapon" name="Fantasy Dragon Grinder - Not in Use">
+		<set name="icon" val="icon.weapon_dragon_grinder_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1350" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="282" />
+			<set stat="mAtk" val="114" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of one-handed or fist weapon. When enchanted to 4 or more, Atk. Spd. Increases by 8%. Increases damage inflicted during PvP. -->
+	<item id="32472" type="Weapon" name="Fantasy Keshanberk*Keshanberk - Not in Use">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="2080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="259" />
+			<set stat="mAtk" val="107" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When enchanted, P. Atk. of a dualsword increases more significantly than that of a one-handed or fist weapon. When enchanted to 4 or more, Max HP increases by 25%. Inflicts additional damage to target during PvP. -->
+	<item id="32473" type="Weapon" name="Fantasy Keshanberk*Damascus - Not in Use">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="2080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="275" />
+			<set stat="mAtk" val="112" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="32474" type="Armor" name="Fantasy Dark Crystal Breastplate - Not in Use">
+		<set name="icon" val="icon.armor_t74_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="7700" />
+		<for>
+			<baseAdd stat="pDef" val="171" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32475" type="Armor" name="Fantasy Dark Crystal Gaiters - Not in Use">
+		<set name="icon" val="icon.armor_t74_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="3320" />
+		<for>
+			<baseAdd stat="pDef" val="107" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Full body armor. -->
+	<item id="32476" type="Armor" name="Fantasy Majestic Plate Armor - Not in Use">
+		<set name="icon" val="icon.armor_t83_ul_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="fullarmor" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="9200" />
+		<for>
+			<baseAdd stat="pDef" val="293" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32477" type="Armor" name="Fantasy Dark Crystal Leather Armor - Not in Use">
+		<set name="icon" val="icon.armor_t75_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="4300" />
+		<for>
+			<baseAdd stat="pDef" val="152" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32478" type="Armor" name="Fantasy Dark Crystal Leggings - Not in Use">
+		<set name="icon" val="icon.armor_t75_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1480" />
+		<for>
+			<baseAdd stat="pDef" val="95" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Full body armor. -->
+	<item id="32479" type="Armor" name="Fantasy Majestic Leather Armor - Not in Use">
+		<set name="icon" val="icon.armor_t84_ul_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="fullarmor" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="5350" />
+		<for>
+			<baseAdd stat="pDef" val="220" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32480" type="Armor" name="Fantasy Tallum Tunic - Not in Use">
+		<set name="icon" val="icon.armor_t79_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1860" />
+		<for>
+			<baseAdd stat="pDef" val="86" />
+			<add stat="maxMp" val="409" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32481" type="Armor" name="Fantasy Tallum Stockings - Not in Use">
+		<set name="icon" val="icon.armor_t79_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="920" />
+		<for>
+			<baseAdd stat="pDef" val="53" />
+			<add stat="maxMp" val="256" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Full body armor. -->
+	<item id="32482" type="Armor" name="Fantasy Dark Crystal Robe - Not in Use">
+		<set name="icon" val="icon.armor_t76_ul_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="fullarmor" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="2450" />
+		<for>
+			<baseAdd stat="pDef" val="139" />
+			<add stat="maxMp" val="665" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Full body armor. -->
+	<item id="32483" type="Armor" name="Fantasy Majestic Robe - Not in Use">
+		<set name="icon" val="icon.armor_t85_ul_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="fullarmor" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="2330" />
+		<for>
+			<baseAdd stat="pDef" val="147" />
+			<add stat="maxMp" val="718" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the heavy dark crystal set. -->
+	<item id="32484" type="Armor" name="Fantasy Dark Crystal Gloves - Not in Use">
+		<set name="icon" val="icon.armor_t74_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="580" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the light dark crystal set. -->
+	<item id="32485" type="Armor" name="Fantasy Dark Crystal Gloves - Not in Use">
+		<set name="icon" val="icon.armor_t75_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="580" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the dark crystal robe set. -->
+	<item id="32486" type="Armor" name="Fantasy Dark Crystal Gloves - Not in Use">
+		<set name="icon" val="icon.armor_t76_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="580" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the heavy majestic set. -->
+	<item id="32487" type="Armor" name="Fantasy Majestic Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t83_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="540" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the light majestic set. -->
+	<item id="32488" type="Armor" name="Fantasy Majestic Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t84_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="540" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the majestic robe set. -->
+	<item id="32489" type="Armor" name="Fantasy Majestic Gauntlets - Not in Use">
+		<set name="icon" val="icon.armor_t85_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="540" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the heavy dark crystal set. -->
+	<item id="32490" type="Armor" name="Fantasy Dark Crystal Boots - Not in Use">
+		<set name="icon" val="icon.armor_t74_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1110" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the light dark crystal set. -->
+	<item id="32491" type="Armor" name="Fantasy Dark Crystal Boots - Not in Use">
+		<set name="icon" val="icon.armor_t75_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1110" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the dark crystal robe set. -->
+	<item id="32492" type="Armor" name="Fantasy Dark Crystal Boots - Not in Use">
+		<set name="icon" val="icon.armor_t76_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1110" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the heavy majestic set. -->
+	<item id="32493" type="Armor" name="Fantasy Majestic Boots - Not in Use">
+		<set name="icon" val="icon.armor_t83_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1110" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the light majestic set. -->
+	<item id="32494" type="Armor" name="Fantasy Majestic Boots - Not in Use">
+		<set name="icon" val="icon.armor_t84_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1110" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Part of the majestic robe set. -->
+	<item id="32495" type="Armor" name="Fantasy Majestic Boots - Not in Use">
+		<set name="icon" val="icon.armor_t85_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1110" />
+		<for>
+			<baseAdd stat="pDef" val="49" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32496" type="Armor" name="Fantasy Dark Crystal Helmet - Not in Use">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="570" />
+		<for>
+			<baseAdd stat="pDef" val="76" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32497" type="Armor" name="Fantasy Majestic Circlet - Not in Use">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="550" />
+		<for>
+			<baseAdd stat="pDef" val="73" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="32498" type="Armor" name="Fantasy Dark Crystal Shield - Not in Use">
+		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1190" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="243" />
+			<enchant stat="sDef" val="0" />
+		</for>
+	</item>
+	<item id="32499" type="Armor" name="Fantasy Shield of Nightmare - Not in Use">
+		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1180" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="256" />
+			<enchant stat="sDef" val="0" />
+		</for>
+	</item>
+</list>

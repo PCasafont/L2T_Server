@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Transforms you into a Saber Tooth Tiger for 30 min. No effect if used while transformed. -->
+	<item id="23400" type="EtcItem" name="Transformation Scroll: Saber Tooth Tiger">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Oel Mahum for 30 min. No effect if used while transformed. -->
+	<item id="23401" type="EtcItem" name="Transformation Scroll: Oel Mahum">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into a Doll Blader for 30 min. No effect if used while transformed. -->
+	<item id="23402" type="EtcItem" name="Transformation Scroll: Doll Blader">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Zaken for 30 min. No effect if used while transformed. -->
+	<item id="23403" type="EtcItem" name="Transformation Scroll: Zaken">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Anakim for 30 min. No effect if used while transformed. -->
+	<item id="23404" type="EtcItem" name="Transformation Scroll: Anakim">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Venom for 30 min. No effect if used while transformed. -->
+	<item id="23405" type="EtcItem" name="Transformation Scroll: Venom">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Gordon for 30 min. No effect if used while transformed. -->
+	<item id="23406" type="EtcItem" name="Transformation Scroll: Gordon">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Ranku for 30 min. No effect if used while transformed. -->
+	<item id="23407" type="EtcItem" name="Transformation Scroll: Ranku">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Kechi for 30 min. No effect if used while transformed. -->
+	<item id="23408" type="EtcItem" name="Transformation Scroll: Kechi">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Transforms you into Demon Prince for 30 min. No effect if used while transformed. -->
+	<item id="23409" type="EtcItem" name="Transformation Scroll: Demon Prince">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (R-grade) + 6, and two-handed sword/blunt/fist, dagger, crossbow + 7. P. Atk. for bows + 12. M. Atk. for all weapons + 5. When enchanted to +4 or above, P. Atk. and M. Atk. Increase greatly. Blessed weapons have greater increases than standard weapons. -->
+	<item id="23410" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)">
+		<set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (S-grade) + 5, and two-handed sword/blunt/fist, and dagger + 6. P. Atk. for bows + 10. M. Atk. for all weapons + 4. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. -->
+	<item id="23411" type="EtcItem" name="Scroll: Enchant Weapon (S-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i05" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (A-grade) + 4, and two-handed sword/blunt/fist, and dagger + 5. P. Atk. for bows + 8. M. Atk. for all weapons + 3. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. -->
+	<item id="23412" type="EtcItem" name="Scroll: Enchant Weapon (A-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (B-grade) + 3, and two-handed sword/blunt/fist, and dagger + 4. P. Atk. for bows + 6. M. Atk. for all weapons + 3. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. -->
+	<item id="23413" type="EtcItem" name="Scroll: Enchant Weapon (B-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (C-grade) + 3, and two-handed sword/blunt/fist, and dagger + 4. P. Atk. for bows + 6. M. Atk. for all weapons + 3. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. -->
+	<item id="23414" type="EtcItem" name="Scroll: Enchant Weapon (C-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc., two-handed sword/blunt/fist, and dagger (D-grade) + 2. P. Atk. for bows + 4. M. Atk. for all weapons + 2. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. -->
+	<item id="23415" type="EtcItem" name="Scroll: Enchant Weapon (D-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_weapon_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (R-grade) + 2. When enchanted to +4 or above, P. Def. Increases greatly. Can be safely enchanted up to +3. HP gradually increases with each enchant level starting from + 4. -->
+	<item id="23416" type="EtcItem" name="Scroll: Enchant Armor (R-grade)">
+		<set name="icon" val="icon.scroll_of_enchant_armor_i06" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (S-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
+	<item id="23417" type="EtcItem" name="Scroll: Enchant Armor (S-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i05" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (A-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
+	<item id="23418" type="EtcItem" name="Scroll: Enchant Armor (A-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (B-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
+	<item id="23419" type="EtcItem" name="Scroll: Enchant Armor (B-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (C-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
+	<item id="23420" type="EtcItem" name="Scroll: Enchant Armor (C-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (D-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
+	<item id="23421" type="EtcItem" name="Scroll: Enchant Armor (D-grade)">
+		<set name="icon" val="icon.etc_scroll_of_enchant_armor_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (R-grade) + 6, and two-handed sword/blunt/fist, dagger, crossbow + 7. P. Atk. for bows + 12. M. Atk. for all weapons + 5. When enchanted to +4 or above, P. Atk. and M. Atk. Increase greatly. Blessed weapons have greater increases than standard weapons. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23422" type="EtcItem" name="Blessed Scroll: Enchant Weapon (R-grade)">
+		<set name="icon" val="icon.blessed_scroll_of_enchant_weapon_i06" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (S-grade) + 5, and two-handed sword/blunt/fist, and dagger + 6. P. Atk. for bows + 10. M. Atk. for all weapons + 4. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23423" type="EtcItem" name="Blessed Scroll: Enchant Weapon (S-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_wp_s_i05" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (A-grade) + 4, and two-handed sword/blunt/fist, and dagger + 5. P. Atk. for bows + 8. M. Atk. for all weapons + 3. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23424" type="EtcItem" name="Blessed Scroll: Enchant Weapon (A-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_wp_a_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (B-grade) + 3, and two-handed sword/blunt/fist, and dagger + 4. P. Atk. for bows + 6. M. Atk. for all weapons + 3. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23425" type="EtcItem" name="Blessed Scroll: Enchant Weapon (B-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_wp_b_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (C-grade) + 3, and two-handed sword/blunt/fist, and dagger + 4. P. Atk. for bows + 6. M. Atk. for all weapons + 3. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23426" type="EtcItem" name="Blessed Scroll: Enchant Weapon (C-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_wp_c_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc., two-handed sword/blunt/fist, and dagger (D-grade) + 2. P. Atk. for bows + 4. M. Atk. for all weapons + 2. When enchanted to +4 or above, P. Atk. and M. Atk. Increase twofold. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23427" type="EtcItem" name="Blessed Scroll: Enchant Weapon (D-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_wp_d_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (R-grade) + 2. When enchanted to +4 or above, P. Def. Increases greatly. Can be safely enchanted up to +3. HP gradually increases with each enchant level starting from + 4. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23428" type="EtcItem" name="Blessed Scroll: Enchant Armor (R-grade)">
+		<set name="icon" val="icon.blessed_scroll_of_enchant_armor_i06" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (S-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23429" type="EtcItem" name="Blessed Scroll: Enchant Armor (S-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_am_s_i05" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (A-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23430" type="EtcItem" name="Blessed Scroll: Enchant Armor (A-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_am_a_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (B-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23431" type="EtcItem" name="Blessed Scroll: Enchant Armor (B-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_am_b_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (C-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23432" type="EtcItem" name="Blessed Scroll: Enchant Armor (C-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_am_c_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When enchanted, P. Def. for armor/accessories (D-grade) + 1. When enchanted to + 4 or above, P. Def. Increases by 3. Can be safely enchanted up to + 3, and one-piece armor can be safely enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. If enchanting fails, the item will not be crystallized but the enchant value will be reset to 0. -->
+	<item id="23433" type="EtcItem" name="Blessed Scroll: Enchant Armor (D-grade)">
+		<set name="icon" val="icon.etc_blessed_scrl_of_ench_am_d_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wrapped Pack containing Phoenix (7-day). -->
+	<item id="23434" type="EtcItem" name="Agathion - Phoenix Pack (7-day) - Nirvana Rebirth">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wrapped Pack containing Blue Opera (7-day; Sword of Recovery). -->
+	<item id="23435" type="EtcItem" name="Agathion - Blue Opera Pack (7-day) - Sword of Recovery">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wrapped Pack containing Button-eyed Bear Doll (7-day). -->
+	<item id="23436" type="EtcItem" name="Agathion - Button-eyed Bear Doll Pack (7-day) - Vitality">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wrapped Pack containing Mysterious Friend Summon Bracelet (30-day). -->
+	<item id="23437" type="EtcItem" name="Mysterious Friend Summon Bracelet Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wrapped Pack containing Party Cake. Cannot be exchanged or dropped once open. -->
+	<item id="23438" type="EtcItem" name="Party Cake Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Feather of Blessing. Cannot be exchanged or dropped once open. -->
+	<item id="23439" type="EtcItem" name="Feather of Blessing Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing 3 Super Healthy Juices (HP). Cannot be exchanged or dropped once open. -->
+	<item id="23440" type="EtcItem" name="Super Healthy Juice Pack (HP)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing 5 Super Healthy Juices (CP). Cannot be exchanged or dropped once open. -->
+	<item id="23441" type="EtcItem" name="Super Healthy Juice Pack (CP)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Hair accessory commemorating Lineage II's 4th anniversary. Looks like a traditional Russian kokoshnik. Uses 2 hair accessory slots. Female only. -->
+	<item id="23442" type="Armor" name="Kokoshnik">
+		<set name="icon" val="BranchSys3.icon1.g_hair_kokoshnik_f" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hair accessory commemorating Lineage II's 4th anniversary. Looks like a Russian navy cap. Uses 2 hair accessory slots. Male only. -->
+	<item id="23443" type="Armor" name="Russian Navy Cap">
+		<set name="icon" val="BranchSys3.icon1.g_hair_peakless_cap_m" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Cloak commemorating Lineage II's 4th anniversary. Elaborately embroidered. -->
+	<item id="23444" type="Armor" name="Russian Commemorative Cloak">
+		<set name="icon" val="BranchSys3.icon1.g_cloak_anniversary" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="25" />
+		</for>
+	</item>
+	<!-- Hair accessory commemorating Lineage II's 4th anniversary. Looks like a traditional Russian kokoshnik. Uses 2 hair accessory slots. Female only. -->
+	<item id="23445" type="Armor" name="Kokoshnik">
+		<set name="icon" val="BranchSys3.icon1.g_hair_kokoshnik_f" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hair accessory commemorating Lineage II's 4th anniversary. Looks like a Russian navy cap. Uses 2 hair accessory slots. Male only. -->
+	<item id="23446" type="Armor" name="Russian Navy Cap">
+		<set name="icon" val="BranchSys3.icon1.g_hair_peakless_cap_m" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Cloak commemorating Lineage II's 4th anniversary. Elaborately embroidered. -->
+	<item id="23447" type="Armor" name="Russian Commemorative Cloak">
+		<set name="icon" val="BranchSys3.icon1.g_cloak_anniversary" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<for>
+			<baseAdd stat="pDef" val="25" />
+		</for>
+	</item>
+	<!-- Metal Suit Top. Part of a costume. -->
+	<item id="23448" type="Armor" name="Metal Suit Top">
+		<set name="icon" val="BranchSys3.icon1.g_co_sf_u" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Metal Suit Pants. Part of a costume. -->
+	<item id="23449" type="Armor" name="Metal Suit Pants">
+		<set name="icon" val="BranchSys3.icon1.g_co_sf_l" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Metal Suit Gloves. Part of a costume. -->
+	<item id="23450" type="Armor" name="Metal Suit Gloves">
+		<set name="icon" val="BranchSys3.icon1.g_co_sf_g" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Metal Suit Shoes. Part of a costume. -->
+	<item id="23451" type="Armor" name="Metal Suit Shoes">
+		<set name="icon" val="BranchSys3.icon1.g_co_sf_b" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Metal Suit Hair Accessory. Hat form. Part of a costume. -->
+	<item id="23452" type="Armor" name="Metal Suit Hair Accessory">
+		<set name="icon" val="BranchSys3.icon1.g_co_sf_hair" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Military Top. Part of a costume. -->
+	<item id="23453" type="Armor" name="Military Top">
+		<set name="icon" val="BranchSys3.icon1.g_co_military_u" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Military Pants. Part of a costume. -->
+	<item id="23454" type="Armor" name="Military Pants">
+		<set name="icon" val="BranchSys3.icon1.g_co_military_l" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Military Gloves. Part of a costume. -->
+	<item id="23455" type="Armor" name="Military Gloves">
+		<set name="icon" val="BranchSys3.icon1.g_co_military_g" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Military Shoes. Part of a costume. -->
+	<item id="23456" type="Armor" name="Military Shoes">
+		<set name="icon" val="BranchSys3.icon1.g_co_military_b" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Military Hair Accessory. Hat form. Part of a costume. Sailor hat for women, and navy cap for men. -->
+	<item id="23457" type="Armor" name="Military Hair Accessory">
+		<set name="icon" val="BranchSys3.icon1.g_co_military_hair_m" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Maid costume. Female only. -->
+	<item id="23458" type="Armor" name="Maid Costume">
+		<set name="icon" val="BranchSys3.icon1.g_co_cutie_maid" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="none" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+	</item>
+	<!-- Maid hair accessory. Part of a costume. Female only. -->
+	<item id="23459" type="Armor" name="Maid Hair Accessory">
+		<set name="icon" val="BranchSys3.icon1.g_co_cutie_maid_hair" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<item id="23460" type="EtcItem" name="Ink Herb - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_ink_02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="23461" type="EtcItem" name="Greater Ink Herb - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_ink_03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Invitation for Aden's celebrities to attend the Fantasy Isle Festival, entrusted to you by Small Bard. -->
+	<item id="23462" type="EtcItem" name="Fantasy Isle Invitation - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_invitation" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- VIP Invitation for Aden's celebrities to attend the Fantasy Isle Festival, entrusted to you by Small Bard. -->
+	<item id="23463" type="EtcItem" name="Fantasy Isle VIP Invitation - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_vip_invitation" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Notices from celebrities of Aden, accepting the invitation to the Fantasy Isle Festival. Bring 10 to the Sponsorship Manager to receive a gift. -->
+	<item id="23464" type="EtcItem" name="RSVP Notice - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_attendance" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Notices from celebrities of Aden, declining the invitation to the Fantasy Isle Festival. Bring this to the Sponsorship Manager to exchange for a matching number of rewards. -->
+	<item id="23465" type="EtcItem" name="Declining Letter - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_nonparticipation" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Gift from the Fantasy Isle Festival Manager. Has a chance of obtaining one of many items. -->
+	<item id="23466" type="EtcItem" name="Fantasy Gift Box - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_fantasy_box" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Restores 3000 HP, and the remaining power restores CP. Instant effect with no duration. -->
+	<item id="23467" type="EtcItem" name="Fantasy Health Potion - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_red_potion" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Restores 100 MP. Instant effect with no duration. -->
+	<item id="23468" type="EtcItem" name="Fantasy Mana Potion - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_invite_blue_potion" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Cookie made for the Fantasy Isle Festival. For 60 min., Speed + 33. -->
+	<item id="23469" type="EtcItem" name="Fantasy Cookie - Event">
+		<set name="icon" val="BranchSys3.Icon.ev_halloween_cookie" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Homemade cookie made for the Fantasy Isle Festival. For 60 min., with the help of a powerful spirit, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, and P. Def. Increases when receiving a critical attack. Speed - 15%. Party members equipped with melee and ranged weapons have increased Critical Damage after receiving an amount of damage. -->
+	<item id="23470" type="EtcItem" name="Fantasy Homemade Cookie - Event">
+		<set name="icon" val="BranchSys3.Icon.ev_halloween_cookie" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Special cookie made for the Fantasy Isle Festival. For 60 min., SP/XP obtained through hunt + 100% for characters Lv.1-95. -->
+	<item id="23471" type="EtcItem" name="Fantasy Special Cookie - Event">
+		<set name="icon" val="BranchSys3.Icon.ev_halloween_cookie" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Cookie set made for the Fantasy Isle Festival. Contains 1 Fantasy Cookie, 1 Fantasy Homemade Cookie, and 1 Fantasy Special Cookie. -->
+	<item id="23472" type="EtcItem" name="Fantasy Cookie Set - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Medal obtained with Fantasy Isle Coins. Use to increase your individual fame by 200. Cannot be exchanged or dropped, -->
+	<item id="23473" type="EtcItem" name="Fantasy Isle Medal of Glory">
+		<set name="icon" val="icon.etc_badge_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to decrease the PK count by 1. Floran Village only. Can only be used when the PK count is 1 or above. Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23474" type="EtcItem" name="Scroll: PK (Low-grade)">
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ScrollOfPkReduce" />
+		<set name="item_skill" val="9504-1" />
+	</item>
+	<!-- Double-click to decrease the PK count by 3. Floran Village only. Can only be used when the PK count is 1 or above. Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23475" type="EtcItem" name="Scroll: PK (Mid-grade)">
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ScrollOfPkReduce" />
+		<set name="item_skill" val="9505-1" />
+	</item>
+	<!-- Double-click to decrease the PK count by 5. Floran Village only. Can only be used when the PK count is 1 or above. Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23476" type="EtcItem" name="Scroll: PK (High-grade)">
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ScrollOfPkReduce" />
+		<set name="item_skill" val="9506-1" />
+	</item>
+	<!-- Double-click to decrease the PK count by 10. Floran Village only. Can only be used when the PK count is 1 or above. Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23477" type="EtcItem" name="Scroll: PK (Top-grade)">
+		<set name="icon" val="icon.etc_ev_draco_pk_count_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ScrollOfPkReduce" />
+		<set name="item_skill" val="9507-1" />
+	</item>
+	<!-- Double-click to increase reputation points by 1000. Floran Village only. Can only be used when in Chaotic state (reputation is 0 or below). Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23478" type="EtcItem" name="Scroll: Reputation (Low-grade)">
+		<set name="icon" val="icon.etc_ev_draco_karma_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to increase reputation points by 5000. Floran Village only. Can only be used when in Chaotic state (reputation is 0 or below). Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23479" type="EtcItem" name="Scroll: Reputation (Mid-grade)">
+		<set name="icon" val="icon.etc_ev_draco_karma_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to increase reputation points by 30000. Floran Village only. Can only be used when in Chaotic state (reputation is 0 or below). Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23480" type="EtcItem" name="Scroll: Reputation (High-grade)">
+		<set name="icon" val="icon.etc_ev_draco_karma_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to change reputation points to 0. Floran Village only. Can only be used when in Chaotic state (reputation is 0 or below). Cannot be used when equipped with Demonic Sword Zariche or Blood Sword Akamanah. -->
+	<item id="23481" type="EtcItem" name="Scroll: Reputation (Top-grade)">
+		<set name="icon" val="icon.etc_ev_draco_karma_down" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Hat with the secretive air of magicians. Uses 2 hair accessory slots. -->
+	<item id="23482" type="Armor" name="Top Hat">
+		<set name="icon" val="icon.accessory_magicial_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hairpin in the shape of a butterfly. Female only. -->
+	<item id="23483" type="Armor" name="Butterfly Hairpin">
+		<set name="icon" val="icon.Accessary_butterfly_hearpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="8" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wizard's hat with a wide rim and slumped, pointy top. Uses 2 hair accessory slots. -->
+	<item id="23484" type="Armor" name="Wizard Hat">
+		<set name="icon" val="icon.accessory_magic_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Santa outfit to celebrate the holiday season. -->
+	<item id="23485" type="Armor" name="Santa Outfit">
+		<set name="icon" val="Branchsys3.icon1.armor_ev_santas_clothes" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="none" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+	</item>
+	<!-- Appearance stone that modifies into a Santa outfit. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Santa outfit. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="23486" type="EtcItem" name="Santa Outfit Appearance Stone - 14-day">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Appearance stone that modifies into a Santa outfit. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Santa outfit. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="23487" type="EtcItem" name="Santa Outfit Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23485" />
+	</item>
+	<!-- Wrapped Pack containing Santa Outfit Appearance Stone (14-day). -->
+	<item id="23488" type="EtcItem" name="Santa Outfit Appearance Stone Pack (14-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Santa Outfit Appearance Stone. -->
+	<item id="23489" type="EtcItem" name="Santa Outfit Appearance Stone Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- For 1 hr., restores vitality with XP acquired through hunting. Cooldown is 60 min. Vitality item with limited usage. -->
+	<item id="23490" type="EtcItem" name="PC Vitality (1-hour) - Event">
+		<set name="icon" val="icon.etc_pccafe_point_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Maintains vitality for 10 min. Cooldown is 30 min. Vitality item with limited usage. -->
+	<item id="23491" type="EtcItem" name="Vitality Maintaining Potion (10-minute) (Event)">
+		<set name="icon" val="icon.etc_lesser_potion_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Maintains vitality for 30 min. Cooldown is 60 min. Vitality item with limited usage. -->
+	<item id="23492" type="EtcItem" name="Vitality Maintaining Potion (30-minute)">
+		<set name="icon" val="icon.etc_lesser_potion_scarlet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a top into that of a Metal Suit. An appearance-modified item has no change in abilities. All armor types. -->
+	<item id="23493" type="EtcItem" name="Metal Suit Top Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23448" />
+	</item>
+	<!-- Changes the appearance of pants into that of a Metal Suit. An appearance-modified item has no change in abilities. All armor types. -->
+	<item id="23494" type="EtcItem" name="Metal Suit Pants Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23449" />
+	</item>
+	<!-- Changes the appearance of gloves into that of a Metal Suit. An appearance-modified item has no change in abilities. -->
+	<item id="23495" type="EtcItem" name="Metal Suit Gloves Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23450" />
+	</item>
+	<!-- Changes the appearance of shoes into that of a Metal Suit. An appearance-modified item has no change in abilities. -->
+	<item id="23496" type="EtcItem" name="Metal Suit Shoes Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23451" />
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Metal Suit. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="23497" type="EtcItem" name="Metal Suit Hair Accessory Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23452" />
+	</item>
+</list>

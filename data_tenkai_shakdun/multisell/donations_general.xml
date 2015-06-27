@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tenkai Donations Manager -->
+<list>
+	<!-- Coin of Luck x Silver Shilen -->
+	<item>
+		<ingredient id="4037" count="1" />
+		<production id="4357" count="25000000" />
+	</item>
+	<!-- Gold Einhasad x Coin of Luck -->
+	<item>
+		<ingredient id="4356" count="20" />
+		<production id="4037" count="1" />
+	</item>
+	<!-- Coin of Luck x Lion mount -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="13547" count="1" />
+	</item>
+	<!-- Coin of Luck x Jet bike -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="21088" count="1" />
+	</item>
+	<!-- Coin of Luck x Steam beetle -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="20396" count="1" />
+	</item>
+	<!-- Coin of Luck x Light purple horse -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="20029" count="1" />
+	</item>
+	<!-- Coin of Luck x Dark bear -->
+	<item>
+		<ingredient id="4037" count="5" />
+		<production id="22364" count="1" />
+	</item>
+	<!-- Coin of Luck x Halloween Witch's -->
+	<item>
+		<ingredient id="4037" count="5" />
+		<production id="22384" count="1" />
+	</item>
+	<!-- Coin of Luck x Princess Ant -->
+	<item>
+		<ingredient id="4037" count="5" />
+		<production id="22356" count="1" />
+	</item>
+	<!-- Coin of Luck x Kukuri -->
+	<item>
+		<ingredient id="4037" count="5" />
+		<production id="33642" count="1" />
+	</item>
+	<!-- Coin of Luck x Lyn Draco -->
+	<item>
+		<ingredient id="4037" count="10" />
+		<production id="37496" count="1" />
+	</item>
+	<!-- Coin of Luck x Air Bike -->
+	<item>
+		<ingredient id="4037" count="10" />
+		<production id="36952" count="1" />
+	</item>
+	<!-- Coin of Luck x Mount Unicorn -->
+	<item>
+		<ingredient id="4037" count="5" />
+		<production id="22887" count="1" />
+	</item>
+	<!-- Coin of Luck x White Weasel Hunting Helper Necklace -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="13017" count="1" />
+	</item>
+	<!-- Coin of Luck x Fairy Princess Hunting Helper Necklace -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="13018" count="1" />
+	</item>
+	<!-- Coin of Luck x Wild Beast Fighter Hunting Helper Necklace -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="13019" count="1" />
+	</item>
+	<!-- Coin of Luck x Fox Shaman Hunting Helper Necklace -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="13020" count="1" />
+	</item>
+	<!-- Coin of Luck x Toy Knight Summon Bracelet -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="14061" count="1" />
+	</item>
+	<!-- Coin of Luck x Spirit Shaman Summon Bracelet -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="14062" count="1" />
+	</item>
+	<!-- Coin of Luck x Owl Monk Summon Bracelet -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="14063" count="1" />
+	</item>
+	<!-- Coin of Luck x Turtle Ascetic Summon Bracelet -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="14064" count="1" />
+	</item>
+	<!-- Coin of Luck x Elite Maguen Pet Collar -->
+	<item>
+		<ingredient id="4037" count="3" />
+		<production id="15489" count="1" />
+	</item>
+	<!-- Coin of Luck x Rocking Horse -->
+	<item>
+		<ingredient id="4037" count="5" />
+		<production id="22193" count="1" />
+	</item>
+	<!-- Coin of Luck x Zaken Agathion -->
+	<item>
+		<ingredient id="4037" count="10" />
+		<production id="21165" count="1" />
+	</item>
+	<!-- Coin of Luck x Agathion - Anakim -->
+	<item>
+		<ingredient id="4037" count="15" />
+		<production id="23900" count="1" />
+	</item>
+</list>

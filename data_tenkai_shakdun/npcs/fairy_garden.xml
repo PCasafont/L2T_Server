@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Satyr Witch -->
+	<npc id="22910">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Witch -->
+	<npc id="22907">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Witch -->
+	<npc id="22903">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Summoner -->
+	<npc id="22902">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Summoner -->
+	<npc id="22899">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Summoner -->
+	<npc id="22895">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Wizard -->
+	<npc id="22894">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Wizard -->
+	<npc id="22891">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Wizard -->
+	<npc id="22890">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Satyr Wizard -->
+	<npc id="22887">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Knight -->
+	<npc id="22886">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Knight -->
+	<npc id="22883">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Knight -->
+	<npc id="22881">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Knight -->
+	<npc id="22879">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Rogue -->
+	<npc id="22875">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Rogue -->
+	<npc id="22874">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Rogue -->
+	<npc id="22871">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Warrior -->
+	<npc id="22870">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Warrior -->
+	<npc id="22867">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+	<!-- Fairy Warrior -->
+	<npc id="22865">
+		<dropCategory chance="25" >
+			<itemDrop itemId="19511" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19512" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+			<itemDrop itemId="19513" min="1" max="1" chance="33" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		</dropCategory>
+	</npc>
+</list>

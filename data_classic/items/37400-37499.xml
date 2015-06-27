@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Changes the appearance of a one-handed sword to that of an Emerald one-handed sword. 15-day. -->
+	<item id="37400" type="EtcItem" name="Emerald Weapon Appearance Stone: Sword - 15-day">
+		<set name="icon" val="icon.shape_shifting_sword_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a dagger to that of an Emerald dagger. 15-day. -->
+	<item id="37401" type="EtcItem" name="Emerald Weapon Appearance Stone: Dagger - 15-day">
+		<set name="icon" val="icon.shape_shifting_dagger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a two-handed sword to that of an Emerald two-handed sword. 15-day. -->
+	<item id="37402" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Sword - 15-day">
+		<set name="icon" val="icon.shape_shifting_twohand_sword_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a fist weapon to that of an Emerald fist weapon. 15-day. -->
+	<item id="37403" type="EtcItem" name="Emerald Weapon Appearance Stone: Fist Weapon - 15-day">
+		<set name="icon" val="icon.shape_shifting_dualfist_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a spear to that of an Emerald spear. 15-day. -->
+	<item id="37404" type="EtcItem" name="Emerald Weapon Appearance Stone: Spear - 15-day">
+		<set name="icon" val="icon.shape_shifting_pole_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a bow to that of an Emerald bow. 15-day. -->
+	<item id="37405" type="EtcItem" name="Emerald Weapon Appearance Stone: Bow - 15-day">
+		<set name="icon" val="icon.shape_shifting_bow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a crossbow to that of an Emerald crossbow. 15-day. -->
+	<item id="37406" type="EtcItem" name="Emerald Weapon Appearance Stone: Crossbow - 15-day">
+		<set name="icon" val="icon.shape_shifting_twohand_crossbow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a one-handed blunt to that of an Emerald one-handed blunt. 15-day. -->
+	<item id="37407" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Blunt Weapon - 15-day">
+		<set name="icon" val="icon.shape_shifting_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a two-handed blunt to that of an Emerald two-handed blunt. 15-day. -->
+	<item id="37408" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Blunt Weapon - 15-day">
+		<set name="icon" val="Icon.shape_shifting_twohand_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a one-handed blunt to that of an Emerald magic blunt. 15-day. -->
+	<item id="37409" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon - 15-day">
+		<set name="icon" val="Icon.shape_shifting_magic_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a two-handed blunt to that of an Emerald two-handed magic blunt. 15-day. -->
+	<item id="37410" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon - 15-day">
+		<set name="icon" val="icon.shape_shifting_magic_twohand_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a dualsword to that of an Emerald dualsword. 15-day. -->
+	<item id="37411" type="EtcItem" name="Emerald Weapon Appearance Stone: Dualsword - 15-day">
+		<set name="icon" val="icon.shape_shifting_dual_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a dual dagger to that of an Emerald dual dagger. 15-day. -->
+	<item id="37412" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Dagger - 15-day">
+		<set name="icon" val="icon.shape_shifting_dualdagger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a dual blunt to that of an Emerald dual blunt. 15-day. -->
+	<item id="37413" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Blunt Weapon - 15-day">
+		<set name="icon" val="icon.shape_shifting_dualblunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a shield to that of an Emerald shield. 15-day. -->
+	<item id="37414" type="EtcItem" name="Emerald Weapon Appearance Stone: Shield - 15-day">
+		<set name="icon" val="icon.shape_shifting_shield_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a sigil to that of an Emerald sigil. 15-day. -->
+	<item id="37415" type="EtcItem" name="Emerald Weapon Appearance Stone: Sigil - 15-day">
+		<set name="icon" val="Icon.shape_shifting_sigil_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of a one-handed sword to that of an Emerald one-handed sword. -->
+	<item id="37416" type="EtcItem" name="Emerald Weapon Appearance Stone: Sword">
+		<set name="icon" val="icon.shape_shifting_sword_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a dagger to that of an Emerald dagger. -->
+	<item id="37417" type="EtcItem" name="Emerald Weapon Appearance Stone: Dagger">
+		<set name="icon" val="icon.shape_shifting_dagger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a two-handed sword to that of an Emerald two-handed sword. -->
+	<item id="37418" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Sword">
+		<set name="icon" val="icon.shape_shifting_twohand_sword_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a fist weapon to that of an Emerald fist weapon. -->
+	<item id="37419" type="EtcItem" name="Emerald Weapon Appearance Stone: Fist Weapon">
+		<set name="icon" val="icon.shape_shifting_dualfist_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a spear to that of an Emerald spear. -->
+	<item id="37420" type="EtcItem" name="Emerald Weapon Appearance Stone: Spear">
+		<set name="icon" val="icon.shape_shifting_pole_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a bow to that of an Emerald bow. -->
+	<item id="37421" type="EtcItem" name="Emerald Weapon Appearance Stone: Bow">
+		<set name="icon" val="icon.shape_shifting_bow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a crossbow to that of an Emerald crossbow. -->
+	<item id="37422" type="EtcItem" name="Emerald Weapon Appearance Stone: Crossbow">
+		<set name="icon" val="icon.shape_shifting_twohand_crossbow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a one-handed blunt to that of an Emerald one-handed blunt. -->
+	<item id="37423" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Blunt Weapon">
+		<set name="icon" val="icon.shape_shifting_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a two-handed blunt to that of an Emerald two-handed blunt. -->
+	<item id="37424" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Blunt Weapon">
+		<set name="icon" val="Icon.shape_shifting_twohand_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a one-handed blunt to that of an Emerald magic blunt. -->
+	<item id="37425" type="EtcItem" name="Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon">
+		<set name="icon" val="Icon.shape_shifting_magic_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a two-handed blunt to that of an Emerald two-handed magic blunt. -->
+	<item id="37426" type="EtcItem" name="Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon">
+		<set name="icon" val="icon.shape_shifting_magic_twohand_blunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a dualsword to that of an Emerald dualsword. -->
+	<item id="37427" type="EtcItem" name="Emerald Weapon Appearance Stone: Dualsword">
+		<set name="icon" val="icon.shape_shifting_dual_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a dual dagger to that of an Emerald dual dagger. -->
+	<item id="37428" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Dagger">
+		<set name="icon" val="icon.shape_shifting_dualdagger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a dual blunt to that of an Emerald dual blunt. -->
+	<item id="37429" type="EtcItem" name="Emerald Weapon Appearance Stone: Dual Blunt Weapon">
+		<set name="icon" val="icon.shape_shifting_dualblunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a shield to that of an Emerald shield. -->
+	<item id="37430" type="EtcItem" name="Emerald Weapon Appearance Stone: Shield">
+		<set name="icon" val="icon.shape_shifting_shield_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a sigil to that of an Emerald sigil. -->
+	<item id="37431" type="EtcItem" name="Emerald Weapon Appearance Stone: Sigil">
+		<set name="icon" val="Icon.shape_shifting_sigil_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Can be exchanged for an Emerald Weapon Appearance Scroll Ticket (Expiratory) through an Aden Reconstruction Society Member. -->
+	<item id="37432" type="EtcItem" name="Scroll: Modify Emerald Weapon Ticket (Expiratory)">
+		<set name="icon" val="icon.etc_level_bustup_ticket_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Can be exchanged for an Emerald Weapon Appearance Scroll Ticket through an Aden Reconstruction Society Member. -->
+	<item id="37433" type="EtcItem" name="Scroll: Modify Emerald Weapon Ticket">
+		<set name="icon" val="icon.etc_level_bustup_ticket_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Use it to escape to the Town of Gludio. -->
+	<item id="37434" type="Armor" name="Talisman - Escape: Town of Gludio">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17059-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Dion. -->
+	<item id="37435" type="Armor" name="Talisman - Escape: Town of Dion">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17060-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Giran. -->
+	<item id="37436" type="Armor" name="Talisman - Escape: Town of Giran">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17061-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Heine. -->
+	<item id="37437" type="Armor" name="Talisman - Escape: Heine">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17062-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Oren. -->
+	<item id="37438" type="Armor" name="Talisman - Escape: Town of Oren">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17063-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Aden. -->
+	<item id="37439" type="Armor" name="Talisman - Escape: Town of Aden">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17064-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Goddard. -->
+	<item id="37440" type="Armor" name="Talisman - Escape: Town of Goddard">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17065-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Rune. -->
+	<item id="37441" type="Armor" name="Talisman - Escape: Town of Rune">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17066-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Town of Schuttgart. -->
+	<item id="37442" type="Armor" name="Talisman - Escape: Town of Schuttgart">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17067-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Talking Island Village. -->
+	<item id="37443" type="Armor" name="Talisman - Escape: Talking Island Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17068-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Elven Village. -->
+	<item id="37444" type="Armor" name="Talisman - Escape: Elven Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17069-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Dark Elf Village. -->
+	<item id="37445" type="Armor" name="Talisman - Escape: Dark Elf Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17070-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Orc Village. -->
+	<item id="37446" type="Armor" name="Talisman - Escape: Orc Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17071-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Dwarven Village. -->
+	<item id="37447" type="Armor" name="Talisman - Escape: Dwarven Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17072-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Floran Village. -->
+	<item id="37448" type="Armor" name="Talisman - Escape: Floran Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17073-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Hardin's Academy. -->
+	<item id="37449" type="Armor" name="Talisman - Escape: Hardin's Academy">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17074-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to the Ivory Tower. -->
+	<item id="37450" type="Armor" name="Talisman - Escape: Ivory Tower">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17075-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Hunters' Village. -->
+	<item id="37451" type="Armor" name="Talisman - Escape: Hunters' Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17076-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Ketra Orc Village. -->
+	<item id="37452" type="Armor" name="Talisman - Escape: Ketra Orc Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17077-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Varka Silenos Village. -->
+	<item id="37453" type="Armor" name="Talisman - Escape: Varka Silenos Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17078-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Use it to escape to Kamael Village. -->
+	<item id="37454" type="Armor" name="Talisman - Escape: Kamael Village">
+		<set name="icon" val="icon.etc_talisman_i07" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="17079-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Gludio. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37455" type="EtcItem" name="Talisman Pack - Escape: Town of Gludio">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Dion. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37456" type="EtcItem" name="Talisman Pack - Escape: Town of Dion">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Giran. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37457" type="EtcItem" name="Talisman Pack - Escape: Town of Giran">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Heine. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37458" type="EtcItem" name="Talisman Pack - Escape: Heine">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Oren. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37459" type="EtcItem" name="Talisman Pack - Escape: Town of Oren">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Aden. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37460" type="EtcItem" name="Talisman Pack - Escape: Town of Aden">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Goddard. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37461" type="EtcItem" name="Talisman Pack - Escape: Town of Goddard">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Rune. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37462" type="EtcItem" name="Talisman Pack - Escape: Town of Rune">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Town of Schuttgart. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37463" type="EtcItem" name="Talisman Pack - Escape: Town of Schuttgart">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Talking Island Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37464" type="EtcItem" name="Talisman Pack - Escape: Talking Island Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Elven Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37465" type="EtcItem" name="Talisman Pack - Escape: Elven Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Dark Elf Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37466" type="EtcItem" name="Talisman Pack - Escape: Dark Elf Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Orc Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37467" type="EtcItem" name="Talisman Pack - Escape: Orc Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Dwarven Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37468" type="EtcItem" name="Talisman Pack - Escape: Dwarven Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Floran Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37469" type="EtcItem" name="Talisman Pack - Escape: Floran Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Hardin's Academy. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37470" type="EtcItem" name="Talisman Pack - Escape: Hardin's Academy">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Ivory Tower. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37471" type="EtcItem" name="Talisman Pack - Escape: Ivory Tower">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Hunters' Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37472" type="EtcItem" name="Talisman Pack - Escape: Hunters' Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Ketra Orc Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37473" type="EtcItem" name="Talisman Pack - Escape: Ketra Orc Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Varka Silenos Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37474" type="EtcItem" name="Talisman Pack - Escape: Varka Silenos Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive Talisman - Escape: Kamael Village. Once obtained, a talisman cannot be exchanged, dropped, sold in a private store, or transferred to another character within the same account. -->
+	<item id="37475" type="EtcItem" name="Talisman Pack - Escape: Kamael Village">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- An awakened warrior's weapon. This one-handed sword increases your attack speed. Cannot be used in the Olympiad. Kamaels can transform it into a rapier through the 'Change Weapon' skill. -->
+	<item id="37476" type="Weapon" name="Awakened Warrior's Blade - Haste">
+		<set name="icon" val="icon.weapon_the_sword_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="435" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This two-handed sword increases your attack speed. Cannot be used in the Olympiad. Kamaels can transform it into a rapier through the 'Change Weapon' skill. -->
+	<item id="37477" type="Weapon" name="Awakened Warrior's Cleaver - Haste">
+		<set name="icon" val="icon.weapon_the_two_handed_sword_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This one-handed blunt increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37478" type="Weapon" name="Awakened Warrior's Axe - Haste">
+		<set name="icon" val="icon.weapon_the_axe_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="435" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This one-handed magic blunt increases your casting speed. Cannot be used in the Olympiad. -->
+	<item id="37479" type="Weapon" name="Awakened Warrior's Rod - Acumen">
+		<set name="icon" val="icon.weapon_the_mace_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This two-handed blunt increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37480" type="Weapon" name="Awakened Warrior's Crusher - Haste">
+		<set name="icon" val="icon.weapon_the_hammer_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="643" />
+			<set stat="mAtk" val="230" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This two-handed magic blunt increases your casting speed. Cannot be used in the Olympiad. -->
+	<item id="37481" type="Weapon" name="Awakened Warrior's Scepter - Acumen">
+		<set name="icon" val="icon.weapon_the_staff_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="423" />
+			<set stat="mAtk" val="278" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This one-handed dagger increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37482" type="Weapon" name="Awakened Warrior's Stinger - Haste">
+		<set name="icon" val="icon.weapon_the_dagger_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="380" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This fist weapon increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37483" type="Weapon" name="Awakened Warrior's Fang - Haste">
+		<set name="icon" val="icon.weapon_the_fist_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This bow increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37484" type="Weapon" name="Awakened Warrior's Bow - Haste">
+		<set name="icon" val="icon.weapon_the_bow_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="856" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This dualsword increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37485" type="Weapon" name="Awakened Warrior's Wing - Haste">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This spear increases your attack speed. Cannot be used in the Olympiad. -->
+	<item id="37486" type="Weapon" name="Awakened Warrior's Spear - Haste">
+		<set name="icon" val="icon.weapon_the_pole_of_hero_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="435" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This rapier increases your attack speed. Cannot be used in the Olympiad. Kamaels can transform it into a one-handed sword through the 'Change Weapon' skill. -->
+	<item id="37487" type="Weapon" name="Awakened Warrior's Rapier - Haste">
+		<set name="icon" val="icon.weapon_infinity_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="479" />
+			<set stat="mAtk" val="230" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This ancient sword increases your attack speed. Cannot be used in the Olympiad. Kamaels can transform it into a two-handed sword through the 'Change Weapon' skill. -->
+	<item id="37488" type="Weapon" name="Awakened Warrior's Sword - Haste">
+		<set name="icon" val="icon.weapon_infinity_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="572" />
+			<set stat="mAtk" val="230" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+		</for>
+	</item>
+	<!-- An awakened warrior's weapon. This crossbow increases your attack speed. Cannot be used in the Olympiad. Kamaels can transform it into a bow through the 'Change Weapon' skill. -->
+	<item id="37489" type="Weapon" name="Awakened Warrior's Shooter - Haste">
+		<set name="icon" val="icon.weapon_infinity_shooter_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="771" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!--
+		Dimensional Item Pack
+		Talk to a Dimensional Merchant to exchange this for an awakened warrior's weapon.
+		
+		Note: Cannot be shared once open.
+	-->
+	<item id="37490" type="EtcItem" name="Awakened Warrior's Weapon Ticket">
+		<set name="icon" val="icon.etc_lottery_card_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive 50 Fire/Water/Earth/Wind/Darkness/Holy Attribute Stones. Cannot be used in the Olympiad. -->
+	<item id="37491" type="EtcItem" name="Awakened Warrior's Attribute Stone Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Dimensional Item Pack
+		Double-click to receive 1 Talisman - Destruction. Cannot be used in the Olympiad.
+		
+		Note: Cannot be shared once open.
+	-->
+	<item id="37492" type="EtcItem" name="Awakened Warrior's Talisman Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Restores a modified hair accessory to its original form. Double-click to start the process. -->
+	<item id="37493" type="EtcItem" name="Hair Accessory Restoration Stone">
+		<set name="icon" val="Icon.restore_processing_stone_r_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="price" val="280000" />
+	</item>
+	<!-- Mysterious essence with the power of chaos. Take it to 'Hardin' at the Reliquary of the Giants to change your specialized awakened class. Can be used only by dual classes. 30-day. -->
+	<item id="37494" type="EtcItem" name="Chaos Essence (Dual Class)">
+		<set name="icon" val="icon.etc_water_of_silen_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+	</item>
+	<!-- Scales that occasionally fall off Lindvior. It has the power of Lindvior. -->
+	<item id="37495" type="EtcItem" name="Lindvior's Scale">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Double-click to learn how to ride a Lyn Draco. -->
+	<item id="37496" type="EtcItem" name="Riding Manual: Lyn Draco">
+		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="17081-1" />
+	</item>
+	<!-- Glorious circlet given to the player who successfully attacks Lindvior. -->
+	<item id="37497" type="Armor" name="Lindvior Slayer's Helmet">
+		<set name="icon" val="icon.br_noblesse_oblige_of_vesper_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Buff for people who share a world with the victorious clan in a dimensional siege. Atk. Spd. + 10%, Casting Spd. + 10%, Speed + 10, and Max HP/MP/CP + 10%. Cooldown is 60 min. Cannot be used in the Olympiad. -->
+	<item id="37498" type="EtcItem" name="Energy of Dimensions">
+		<set name="icon" val="icon.tersi_specter_seed" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Fire attack attribute increases by 5 when bestowed on a weapon. Water defense attribute increases by 6 when bestowed on armor. Attribute Stones. levels 1- 3. Additionally, a maximum of three types of Elemental defense attribute can be bestowed, and one type of Elemental attack attribute. Opposite attributes cannot be bestowed together. -->
+	<item id="37499" type="EtcItem" name="Fire Stone - Event">
+		<set name="icon" val="icon.etc_fire_stone_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

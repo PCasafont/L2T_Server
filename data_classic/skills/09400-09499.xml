@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- For 60 min., P. Atk. + 5%, M. Atk. + 20%, P. Def./M. Def. + 5%, Atk. Spd./Casting Spd. + 5%, Max HP/MP + 5%, and XP/SP gained through hunting + 30%. -->
+	<skill id="9487" levels="1" name="Angel Cat's Blessing">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="isPotion" val="true" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="False" />
+		</cond>
+		<for>
+			<abnormal duration="3600" stackLvl="1" stackType="special_event_buff">
+				<effect type="Buff" val="1" />
+				<addPercent stat="pAtk" val="5" />
+				<addPercent stat="mAtk" val="20" />
+				<addPercent stat="pDef" val="5" />
+				<addPercent stat="mDef" val="5" />
+				<addPercent stat="pAtkSpd" val="5" />
+				<addPercent stat="mAtkSpd" val="5" />
+				<addPercent stat="maxHp" val="5" />
+				<addPercent stat="maxMp" val="5" />
+				<addPercent stat="rExp" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+</list>

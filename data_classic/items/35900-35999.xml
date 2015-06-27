@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Evasion + 5 when equipped. -->
+	<item id="35900" type="Armor" name="Refined Devil Horn - Evasion">
+		<set name="icon" val="icon.accessory_devil_horn_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9564-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- You can bestow STR + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35901" type="EtcItem" name="STR Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow DEX + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35902" type="EtcItem" name="DEX Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow CON + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35903" type="EtcItem" name="CON Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow MEN + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35904" type="EtcItem" name="MEN Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow INT + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35905" type="EtcItem" name="INT Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow WIT + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35906" type="EtcItem" name="WIT Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow Critical Rate + 50 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35907" type="EtcItem" name="Critical Rate Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow Critical Damage + 90 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35908" type="EtcItem" name="Critical Damage Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow P. Def. + 5% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35909" type="EtcItem" name="P. Def. Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow M. Def. + 5% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35910" type="EtcItem" name="M. Def. Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow Evasion + 5 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35911" type="EtcItem" name="Evasion Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow P. Atk. + 5% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35912" type="EtcItem" name="P. Atk. Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow M. Atk. + 10% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35913" type="EtcItem" name="M. Atk. Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- You can bestow Accuracy + 5 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<item id="35914" type="EtcItem" name="Accuracy Pendant">
+		<set name="icon" val="icon.etc_hairacc_pandent_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- STR + 3 when equipped. -->
+	<item id="35915" type="Armor" name="Draco's Hat - STR (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3 when equipped. -->
+	<item id="35916" type="Armor" name="Draco's Hat - DEX (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 3 when equipped. -->
+	<item id="35917" type="Armor" name="Draco's Hat - CON (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9556-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MEN + 3 when equipped. -->
+	<item id="35918" type="Armor" name="Draco's Hat - MEN (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9557-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 3 when equipped. -->
+	<item id="35919" type="Armor" name="Draco's Hat - INT (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9558-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- WIT + 3 when equipped. -->
+	<item id="35920" type="Armor" name="Draco's Hat - WIT (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9559-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Critical Rate + 50 when equipped. -->
+	<item id="35921" type="Armor" name="Draco's Hat - Critical Rate (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9560-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Critical Damage + 90 and M. Critical Damage + 68 when equipped. -->
+	<item id="35922" type="Armor" name="Draco's Hat - Critical Damage (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9561-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Def. + 5% when equipped. -->
+	<item id="35923" type="Armor" name="Draco's Hat - P. Def. (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9562-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Def. + 5% when equipped. -->
+	<item id="35924" type="Armor" name="Draco's Hat - M. Def. (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9563-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Evasion + 5 when equipped. -->
+	<item id="35925" type="Armor" name="Draco's Hat - Evasion (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9564-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. + 5% when equipped. -->
+	<item id="35926" type="Armor" name="Draco's Hat - P. Atk. (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9565-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Atk. + 10% when equipped. -->
+	<item id="35927" type="Armor" name="Draco's Hat - M. Atk. (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9566-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Accuracy + 5 when equipped. -->
+	<item id="35928" type="Armor" name="Draco's Hat - Accuracy (Event)">
+		<set name="icon" val="icon.etc_ev_draco_hair_acc" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9567-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. 60 days. It summons the selected clan member to your location. Cooldown is 1 hour. Cannot be used in the Olympiad. -->
+	<item id="35929" type="Armor" name="Mysterious Ring">
+		<set name="icon" val="icon.accessory_shiny_couple_ring" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Healing potion purchased at the Mysterious Mansion. Upon use, it restores 2500 HP and the remaining power restores CP. There is Instant effect with no duration. -->
+	<item id="35930" type="EtcItem" name="Healing Potion of Chaos">
+		<set name="icon" val="icon.etc_potion_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Scroll purchased at the Mysterious Mansion. You can faintly feel the power of darkness. It can only be used on chaotic characters. It summons the selected chaotic character. Cooldown is 30 min. -->
+	<item id="35931" type="EtcItem" name="Mysterious Scroll">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+	</item>
+	<!-- Replenishes some vitality upon use. Cooldown is 60 min. For 1 week, up to 5 uses do not apply to the limit. -->
+	<item id="35932" type="EtcItem" name="Dragon Vitality Replenishing Potion">
+		<set name="icon" val="icon.etc_potion_of_energy_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune II (Lv. 1-95) 100% 7-day. Can only be used by characters level 95 or below. -->
+	<item id="35933" type="EtcItem" name="XP Rune II (Lv. 1-95) 100% Pack (7-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- When possessed in the inventory, increases XP and SP acquired through hunting by 100%. The effect only applies to characters level 95 or below. 7-day. -->
+	<item id="35934" type="EtcItem" name="XP Rune II (Lv. 1-95) 100% - 7-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="35935" type="EtcItem" name="Verdof's Vitality Replenishing Herb">
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!--
+		15-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, M. Def. 5%, Max HP 5%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35936" type="Armor" name="Star Agathion - Heejin Jang - 15-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		15-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Def. 5%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35937" type="Armor" name="Star Agathion - Hyuk Jang - 15-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		15-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Def. 5%, Max HP 5%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35938" type="Armor" name="Star Agathion - Sooro Kim - 15-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		15-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Atk. 6%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35939" type="Armor" name="Star Agathion - Jaebum Park - 15-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		15-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, and Attribute Resistance + 10. Skill cooldown 3% and skill MP consumption - 3%. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35940" type="Armor" name="Star Agathion - Shin-young Kim - 15-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		30-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, M. Def. 5%, Max HP 5%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35941" type="Armor" name="Star Agathion - Heejin Jang - 30-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		30-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Def. 5%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35942" type="Armor" name="Star Agathion - Hyuk Jang - 30-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		30-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Def. 5%, Max HP 5%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35943" type="Armor" name="Star Agathion - Sooro Kim - 30-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		30-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Atk. 6%, and Attribute Resistance + 10. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35944" type="Armor" name="Star Agathion - Jaebum Park - 30-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		30-day
+		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, and Attribute Resistance+ 10. Skill cooldown 3% and skill MP consumption - 3%. 
+		Used skill: Blessed Escape ability.
+	-->
+	<item id="35945" type="Armor" name="Star Agathion - Shin-young Kim - 30-day">
+		<set name="icon" val="icon.bracelet_agathion_bm_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Heejin Jang (7-day). -->
+	<item id="35946" type="EtcItem" name="Agathion - Heejin Jang Pack (7-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Hyuk Jang (7-day). -->
+	<item id="35947" type="EtcItem" name="Agathion - Hyuk Jang Pack (7-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Sooro Kim (7-day). -->
+	<item id="35948" type="EtcItem" name="Agathion - Sooro Kim Pack (7-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Jaebum Park (7-day). -->
+	<item id="35949" type="EtcItem" name="Agathion - Jaebum Park Pack (7-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Shin-young Kim (7-day). -->
+	<item id="35950" type="EtcItem" name="Agathion - Shin-young Kim Pack (7-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Heejin Jang (15-day). -->
+	<item id="35951" type="EtcItem" name="Agathion - Heejin Jang Pack (15-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Hyuk Jang (15-day). -->
+	<item id="35952" type="EtcItem" name="Agathion - Hyuk Jang Pack (15-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Sooro Kim (15-day). -->
+	<item id="35953" type="EtcItem" name="Agathion - Sooro Kim Pack (15-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Jaebum Park (15-day). -->
+	<item id="35954" type="EtcItem" name="Agathion - Jaebum Park Pack (15-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Shin-young Kim (15-day). -->
+	<item id="35955" type="EtcItem" name="Agathion - Shin-young Kim Pack (15-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Heejin Jang (30-day). -->
+	<item id="35956" type="EtcItem" name="Agathion - Heejin Jang Pack (30-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Hyuk Jang (30-day). -->
+	<item id="35957" type="EtcItem" name="Agathion - Hyuk Jang Pack (30-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Sooro Kim (30-day). -->
+	<item id="35958" type="EtcItem" name="Agathion - Sooro Kim Pack (30-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Jaebum Park (30-day). -->
+	<item id="35959" type="EtcItem" name="Agathion - Jaebum Park Pack (30-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Shin-young Kim (30-day). -->
+	<item id="35960" type="EtcItem" name="Agathion - Shin-young Kim Pack (30-day)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Heejin Jang (7-day). -->
+	<item id="35961" type="EtcItem" name="Agathion - Heejin Jang Pack (7-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Hyuk Jang (7-day). -->
+	<item id="35962" type="EtcItem" name="Agathion - Hyuk Jang Pack (7-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Sooro Kim (7-day). -->
+	<item id="35963" type="EtcItem" name="Agathion - Sooro Kim Pack (7-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Jaebum Park (7-day). -->
+	<item id="35964" type="EtcItem" name="Agathion - Jaebum Park Pack (7-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Shin-young Kim (7-day). -->
+	<item id="35965" type="EtcItem" name="Agathion - Shin-young Kim Pack (7-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Heejin Jang (15-day). -->
+	<item id="35966" type="EtcItem" name="Agathion - Heejin Jang Pack (15-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Hyuk Jang (15-day). -->
+	<item id="35967" type="EtcItem" name="Agathion - Hyuk Jang Pack (15-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Sooro Kim (15-day). -->
+	<item id="35968" type="EtcItem" name="Agathion - Sooro Kim Pack (15-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Jaebum Park (15-day). -->
+	<item id="35969" type="EtcItem" name="Agathion - Jaebum Park Pack (15-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Shin-young Kim (15-day). -->
+	<item id="35970" type="EtcItem" name="Agathion - Shin-young Kim Pack (15-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Heejin Jang (30-day). -->
+	<item id="35971" type="EtcItem" name="Agathion - Heejin Jang Pack (30-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Hyuk Jang (30-day). -->
+	<item id="35972" type="EtcItem" name="Agathion - Hyuk Jang Pack (30-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Sooro Kim (30-day). -->
+	<item id="35973" type="EtcItem" name="Agathion - Sooro Kim Pack (30-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Jaebum Park (30-day). -->
+	<item id="35974" type="EtcItem" name="Agathion - Jaebum Park Pack (30-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Agathion - Shin-young Kim (30-day). -->
+	<item id="35975" type="EtcItem" name="Agathion - Shin-young Kim Pack (30-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Replenishes some vitality upon use. Cooldown is 60 min. For 1 week, up to 5 uses do not apply to the limit. -->
+	<item id="35976" type="EtcItem" name="Dragon Vitality Replenishing Potion - Event">
+		<set name="icon" val="icon.etc_potion_of_energy_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune II (Lv. 1-95) 100% (7-day). -->
+	<item id="35977" type="EtcItem" name="XP Rune II (Lv. 1-95) 100% Pack (7-day) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Mysterious Ring. 7-day. It summons the selected clan member to your location. Cooldown is 1 hour. Cannot be used in the Olympiad. -->
+	<item id="35978" type="Armor" name="Mysterious Ring (7-day) - Event">
+		<set name="icon" val="icon.accessory_shiny_couple_ring" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Box containing Mysterious Ring: 7-day. Cannot be used in the Olympiad. -->
+	<item id="35979" type="EtcItem" name="Mysterious Ring Pack - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Talisman - Annihilation (3-day). When equipped, increases Max HP, MP, and CP by 300, P./M. Accuracy by 2, P./M. Evasion by 2, Vampiric Rage 3%, Atk. Spd./Casting Spd. by 20, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, and M. Atk. by 156. -->
+	<item id="35980" type="Armor" name="Talisman - Annihilation - 3-day (Event)">
+		<set name="icon" val="icon.accessory_extermination_talisman_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Talisman - Annihilation (7-day). When equipped, increases Max HP, MP, and CP by 300, P./M. Accuracy by 2, P./M. Evasion by 2, Vampiric Rage 3%, Atk. Spd./Casting Spd. by 20, Critical Rate by 30, M. Critical Rate by 10, P. Atk. by 103, and M. Atk. by 156. -->
+	<item id="35981" type="Armor" name="Talisman - Annihilation - 7-day (Event)">
+		<set name="icon" val="icon.accessory_extermination_talisman_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Pouch acquired by those who fought bravely in the Ceremony of Chaos but failed to win. Double-click to acquire a Life Stone and a soul crystal fragment. You may acquire more than one, or you may acquire none. -->
+	<item id="35982" type="EtcItem" name="Ruler's Consideration">
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="35983" type="EtcItem" name="HP Recovery Herb">
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="35984" type="EtcItem" name="Power Herb">
+		<set name="icon" val="icon.etc_warrior_set_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Increases XP and SP acquired in hunt by 100%. The effect only applies to characters Lv. 86 or below. -->
+	<item id="35985" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% (1-hour) - Event">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Increases XP and SP acquired in hunt by 200%. The effect only applies to characters Lv. 86 or below. -->
+	<item id="35986" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% (1-hour) - Event">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 100% (1-hour). -->
+	<item id="35987" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (1-hour) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 200% (1-hour). -->
+	<item id="35988" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (1-hour) - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="35989" type="Armor" name="Festival's Cloak - Ceremony of Chaos">
+		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+	</item>
+	<item id="35990" type="Armor" name="Circlet of Ice - Ceremony of Chaos">
+		<set name="icon" val="icon.accessory_ice_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Item that can be used at the Ceremony of Chaos Arena but nowhere else. For 7 minutes, provides the effects of Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, Drum Melody, and Warrior's Harmony Lv. 1. -->
+	<item id="35991" type="EtcItem" name="Ceremony of Chaos - Attack">
+		<set name="icon" val="icon.etc_super_potion_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Item that can be used at the Ceremony of Chaos Arena but nowhere else. For 7 minutes, provides the effects of Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, Drum Melody, and Wizard's Harmony Lv. 1. -->
+	<item id="35992" type="EtcItem" name="Ceremony of Chaos - Magic">
+		<set name="icon" val="icon.etc_super_potion_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Item that can be used at the Ceremony of Chaos Arena but nowhere else. For 7 minutes, provides the effects of Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, Drum Melody, and Knight's Harmony Lv. 1. -->
+	<item id="35993" type="EtcItem" name="Ceremony of Chaos - Defense">
+		<set name="icon" val="icon.etc_super_potion_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click to receive a reward. -->
+	<item id="35994" type="EtcItem" name="Tauti's Treasure Chest - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Not in Use -->
+	<item id="35995" type="EtcItem" name="Gemstone - Not in Use">
+		<set name="icon" val="icon.etc_crystal_ball_silver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Rough stat data inserted -->
+	<item id="35996" type="Weapon" name="Test - Strange Crossbow">
+		<set name="icon" val="icon.weapon_stilla_i20" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="100" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="1067" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Rough stat data inserted -->
+	<item id="35997" type="Armor" name="Test - M. Accuracy Heavy Armor">
+		<set name="icon" val="icon.armor_t701_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="100" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="pDef" val="385" />
+			<baseAdd stat="accMagic" val="10" />
+		</for>
+	</item>
+	<!-- Rough stat data inserted -->
+	<item id="35998" type="Armor" name="Test - M. Evasion Heavy Armor">
+		<set name="icon" val="icon.armor_t701_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="100" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="pDef" val="385" />
+			<baseAdd stat="mEvasRate" val="11" />
+		</for>
+	</item>
+	<!-- For 1 hour, increases Atk. by 35%, P. Critical Damage by 35%, P. Critical Rate by 100%, Atk. Spd. by 8%, M. Atk. by 16%, Casting Spd. by 8%, and Speed by 8. Cooldown 60 min. Buff does not get deleted even after death. Cannot use Olympiad. -->
+	<item id="35999" type="EtcItem" name="Heavenly P. Atk. Cookie">
+		<set name="icon" val="icon.etc_bm_attack_cookie" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+	</item>
+</list>

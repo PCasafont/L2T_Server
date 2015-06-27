@@ -1,0 +1,150 @@
+<list>
+	<!-- [giran_chamberlain_etc] -->
+	<spawn npcId="35184" x="117110" y="144970" z="-2541" heading="32768" respawn="60" /> <!-- Chamberlain of Light -->
+	<spawn npcId="35188" x="107094" y="145655" z="-3375" heading="32768" respawn="60" /> <!-- Holmes -->
+	<spawn npcId="35180" x="112967" y="144696" z="-2839" heading="359" respawn="10800" /> <!-- Outer Castle Gatekeeper -->
+	<spawn npcId="35180" x="112674" y="144718" z="-2816" heading="29412" respawn="10800" /> <!-- Outer Castle Gatekeeper -->
+	<spawn npcId="35181" x="115604" y="144900" z="-2583" heading="0" respawn="60" /> <!-- Inner Castle Gatekeeper -->
+	<spawn npcId="35181" x="115279" y="144926" z="-2537" heading="32767" respawn="60" /> <!-- Inner Castle Gatekeeper -->
+	<!-- [giran_mass_teleporter] -->
+	<spawn npcId="35179" x="116550" y="146650" z="-1853" heading="49152" respawn="60" /> <!-- Mass Gatekeeper -->
+	<!-- [22_21_NPC_031201_01] -->
+	<!-- [NPC_t22_21_030917_02] -->
+	<spawn npcId="30630" x="69976" y="109692" z="-3702" heading="0" respawn="60" /> <!-- Orim -->
+	<!-- [22_21_NPC_031130] -->
+	<spawn npcId="30615" x="80100" y="119991" z="-2264" heading="19000" respawn="60" /> <!-- Voltar -->
+	<!-- [22_21_NPC_101] -->
+	<spawn npcId="30557" x="70932" y="124558" z="-3460" heading="32768" respawn="60" /> <!-- Torai -->
+	<!-- [22_22_NPC_031201_01] -->
+	<spawn npcId="30081" x="80518" y="147922" z="-3506" heading="32768" respawn="60" /> <!-- Helvetia -->
+	<spawn npcId="30082" x="80518" y="147873" z="-3506" heading="32768" respawn="60" /> <!-- Denkus -->
+	<!-- [22_22_NPC_031201_02] -->
+	<spawn npcId="30084" x="79747" y="146492" z="-3518" heading="16384" respawn="60" /> <!-- Graham -->
+	<spawn npcId="30085" x="79801" y="146493" z="-3518" heading="16384" respawn="60" /> <!-- Stanford -->
+	<!-- [22_22_NPC_031201_03] -->
+	<spawn npcId="30087" x="79711" y="150788" z="-3520" heading="49152" respawn="60" /> <!-- Peta -->
+	<spawn npcId="30088" x="79654" y="150788" z="-3520" heading="49152" respawn="60" /> <!-- Radia -->
+	<!-- [22_22_NPC_031201_04] -->
+	<spawn npcId="30093" x="83305" y="150521" z="-3514" heading="32768" respawn="60" /> <!-- Groot -->
+	<spawn npcId="30094" x="83317" y="150821" z="-3514" heading="32768" respawn="60" /> <!-- Gentler -->
+	<!-- [22_22_NPC_031201_05] -->
+	<spawn npcId="30511" x="83263" y="146667" z="-3464" heading="32768" respawn="60" /> <!-- Gesto -->
+	<spawn npcId="30103" x="83264" y="146602" z="-3464" heading="32768" respawn="60" /> <!-- Valkon -->
+	<spawn npcId="30104" x="83263" y="146736" z="-3464" heading="32768" respawn="60" /> <!-- Parman -->
+	<!-- [22_22_NPC_031201_06] -->
+	<spawn npcId="30512" x="77659" y="148089" z="-3595" heading="16384" respawn="60" /> <!-- Kusto -->
+	<spawn npcId="30300" x="77458" y="148169" z="-3595" heading="0" respawn="60" /> <!-- Pushkin -->
+	<spawn npcId="30471" x="77712" y="148288" z="-3595" heading="28672" respawn="60" /> <!-- Rupio -->
+	<!-- [22_22_NPC_031201_07] -->
+	<spawn npcId="30115" x="85823" y="153248" z="-3494" heading="49152" respawn="60" /> <!-- Jurek -->
+	<spawn npcId="30110" x="85289" y="153341" z="-3494" heading="57344" respawn="60" /> <!-- Iker -->
+	<spawn npcId="30111" x="86359" y="152970" z="-3494" heading="24576" respawn="60" /> <!-- Dieter -->
+	<spawn npcId="30112" x="86362" y="153337" z="-3494" heading="40960" respawn="60" /> <!-- Maurius -->
+	<spawn npcId="30113" x="85253" y="153153" z="-3494" heading="0" respawn="60" /> <!-- Juris -->
+	<spawn npcId="30114" x="85297" y="152963" z="-3494" heading="8192" respawn="60" /> <!-- Roa -->
+	<!-- [22_22_NPC_031201_08] -->
+	<spawn npcId="30829" x="81150" y="145840" z="-3531" heading="32768" respawn="60" /> <!-- Cooper -->
+	<!-- [22_22_NPC_031201_09] -->
+	<spawn npcId="30756" x="84521" y="146372" z="-3404" heading="16384" respawn="60" /> <!-- Sir Kristof Rodemai -->
+	<spawn npcId="30753" x="81296" y="149728" z="-3469" heading="49152" respawn="60" /> <!-- Gabrielle -->
+	<!-- [22_22_NPC_100] -->
+	<spawn npcId="30120" x="87058" y="148634" z="-3392" heading="32768" respawn="60" /> <!-- Maximilian -->
+	<spawn npcId="30116" x="86912" y="148802" z="-3392" heading="40960" respawn="60" /> <!-- Dustin -->
+	<!-- [22_22_NPC_101] -->
+	<spawn npcId="30118" x="86485" y="148384" z="-3392" heading="16384" respawn="60" /> <!-- Pupina -->
+	<spawn npcId="30117" x="86472" y="148848" z="-3392" heading="49152" respawn="60" /> <!-- Primos -->
+	<spawn npcId="30473" x="85829" y="148365" z="-3392" heading="16384" respawn="60" /> <!-- Bandellos -->
+	<spawn npcId="30119" x="85828" y="148894" z="-3392" heading="49152" respawn="60" /> <!-- Isabellin -->
+	<!-- [22_22_NPC_102] -->
+	<spawn npcId="30108" x="85055" y="146560" z="-3399" heading="32768" respawn="60" /> <!-- Macken -->
+	<!-- [22_22_NPC_103] -->
+	<spawn npcId="30109" x="85655" y="146471" z="-3399" heading="32768" respawn="60" /> <!-- Hannavalt -->
+	<spawn npcId="30105" x="85505" y="146208" z="-3399" heading="16384" respawn="60" /> <!-- Genwitter -->
+	<spawn npcId="30107" x="85502" y="146752" z="-3399" heading="49152" respawn="60" /> <!-- Goldian -->
+	<spawn npcId="30106" x="85234" y="146634" z="-3399" heading="0" respawn="60" /> <!-- Dufner -->
+	<spawn npcId="30472" x="85231" y="146328" z="-3399" heading="0" respawn="60" /> <!-- Rosheria -->
+	<!-- [22_22_NPC_106] -->
+	<spawn npcId="30513" x="80444" y="144368" z="-3520" heading="0" respawn="60" /> <!-- Penatus -->
+	<spawn npcId="30515" x="80399" y="144496" z="-3520" heading="0" respawn="60" /> <!-- Manakia -->
+	<spawn npcId="30514" x="80399" y="144254" z="-3520" heading="0" respawn="60" /> <!-- Vokian -->
+	<!-- [NPC_t22_22_030917_01] -->
+	<spawn npcId="30645" x="84274" y="143740" z="-3403" heading="32768" respawn="60" /> <!-- Martien -->
+	<!-- [NPC_t22_22_030917_02] -->
+	<spawn npcId="30624" x="79253" y="147049" z="-3529" heading="0" respawn="60" /> <!-- Ascalon -->
+	<!-- [NPC_t22_22_030917_03] -->
+	<spawn npcId="30614" x="87509" y="149655" z="-3402" heading="0" respawn="60" /> <!-- Metheus -->
+	<!-- [t22_22_NPC_030708] -->
+	<spawn npcId="30090" x="80511" y="149183" z="-3508" heading="32768" respawn="60" /> <!-- Sandra -->
+	<spawn npcId="30091" x="80510" y="149250" z="-3508" heading="32768" respawn="60" /> <!-- Ellie -->
+	<!-- [22_22_NPC_02] -->
+	<spawn npcId="30474" x="79059" y="149457" z="-3596" heading="41500" respawn="60" /> <!-- Angus -->
+	<spawn npcId="30475" x="78766" y="149239" z="-3596" heading="16384" respawn="60" /> <!-- Stapin -->
+	<spawn npcId="30476" x="78928" y="149041" z="-3596" heading="0" respawn="60" /> <!-- Kaira -->
+	<!-- [22_22_NPC_08] -->
+	<spawn npcId="30097" x="79599" y="145522" z="-3494" heading="0" respawn="60" /> <!-- Galladucci -->
+	<spawn npcId="30098" x="79599" y="145457" z="-3494" heading="0" respawn="60" /> <!-- Alexandria -->
+	<!-- [22_22_NPC_16] -->
+	<spawn npcId="30128" x="90498" y="147535" z="-3528" heading="0" respawn="60" /> <!-- Atanas -->
+	<spawn npcId="30478" x="90501" y="147180" z="-3530" heading="0" respawn="60" /> <!-- Reikin -->
+	<!-- [22_22_NPC_17] -->
+	<spawn npcId="30126" x="84064" y="141438" z="-3526" heading="49152" respawn="60" /> <!-- Rath -->
+	<spawn npcId="30125" x="83705" y="141439" z="-3530" heading="49152" respawn="60" /> <!-- Belton -->
+	<!-- [22_22_NPC_18] -->
+	<spawn npcId="30123" x="81424" y="143472" z="-3529" heading="49152" respawn="60" /> <!-- Vesa -->
+	<spawn npcId="30124" x="81616" y="143472" z="-3529" heading="49152" respawn="60" /> <!-- Zerome -->
+	<!-- [22_22_NPC_19] -->
+	<spawn npcId="30452" x="77026" y="148813" z="-3598" heading="32768" respawn="60" /> <!-- Kurt -->
+	<spawn npcId="30477" x="77029" y="148447" z="-3599" heading="32768" respawn="60" /> <!-- Sir Ortho Lancer -->
+	<!-- [22_22_NPC_20] -->
+	<spawn npcId="30121" x="81436" y="152950" z="-3532" heading="16384" respawn="60" /> <!-- Jeronin -->
+	<spawn npcId="30122" x="81642" y="152955" z="-3526" heading="16384" respawn="60" /> <!-- Bane -->
+	<!-- [22_22_NPC_21] -->
+	<spawn npcId="30083" x="80329" y="145482" z="-3533" heading="0" respawn="60" /> <!-- Pochi -->
+	<!-- [22_22_NPC_22] -->
+	<spawn npcId="30086" x="80752" y="146400" z="-3533" heading="16384" respawn="60" /> <!-- Taurin -->
+	<!-- [22_22_NPC_23] -->
+	<spawn npcId="30092" x="79248" y="149552" z="-3531" heading="0" respawn="60" /> <!-- Collob -->
+	<!-- [22_22_NPC_24] -->
+	<spawn npcId="30095" x="82405" y="149905" z="-3520" heading="16384" respawn="60" /> <!-- Randolf -->
+	<!-- [22_22_NPC_25] -->
+	<spawn npcId="30080" x="83396" y="147904" z="-3404" heading="16384" respawn="60" /> <!-- Clarissa -->
+	<!-- [23_21_NPC_031201_01] -->
+	<spawn npcId="30832" x="105745" y="114255" z="-3136" heading="49152" respawn="60" /> <!-- Hardin -->
+	<!-- [23_21_NPC_031201_02] -->
+	<spawn npcId="30835" x="106581" y="113352" z="-3193" heading="28672" respawn="60" /> <!-- Icarus -->
+	<!-- [23_21_NPC_031201_03] -->
+	<spawn npcId="30833" x="104870" y="113221" z="-3190" heading="4096" respawn="60" /> <!-- Kaspar -->
+	<!-- [23_21_NPC_031201_04] -->
+	<spawn npcId="30834" x="105876" y="111733" z="-3062" heading="32768" respawn="60" /> <!-- Cema -->
+	<!-- [23_21_NPC_031201_05] -->
+	<spawn npcId="30836" x="105888" y="109808" z="-3200" heading="45056" respawn="60" /> <!-- Minerva -->
+	<!-- [23_21_NPC_031201_06] -->
+	<spawn npcId="30758" x="102069" y="103120" z="-3506" heading="6000" respawn="60" /> <!-- Athrea -->
+	<!-- [23_21_NPC_031201_07] -->
+	<spawn npcId="30761" x="103898" y="116896" z="-3022" heading="0" respawn="60" /> <!-- Corpse Of Fritz -->
+	<!-- [23_21_NPC_031201_08] -->
+	<spawn npcId="30762" x="112268" y="112761" z="-2773" heading="0" respawn="60" /> <!-- Corpse Of Lutz -->
+	<!-- [23_21_NPC_031201_09] -->
+	<spawn npcId="30763" x="124664" y="110047" z="-3110" heading="0" respawn="60" /> <!-- Corpse Of Kurtz -->
+	<!-- [NPC_23_22_031224_01] -->
+	<spawn npcId="35186" x="116973" y="145294" z="-2567" heading="32461" respawn="60" /> <!-- Arvid -->
+	<!-- [NPC_t23_22_030917_01] -->
+	<spawn npcId="30640" x="106345" y="135523" z="-3415" heading="0" respawn="60" /> <!-- Brynthea -->
+	<!-- [quest_030919_23_21_001] -->
+	<group minZ="-3460" maxZ="-2260">
+		<vertex x="116152" y="127176" />
+		<vertex x="118560" y="127056" />
+		<vertex x="118776" y="128632" />
+		<vertex x="117652" y="130068" />
+		<vertex x="115928" y="128716" />
+		<spawn npcId="27108" respawn="180" amount="1" /> <!-- Stenoa Gorgon Queen -->
+	</group>
+	<!-- [quest_030919_23_22_001] -->
+	<group minZ="-3531" maxZ="-3331">
+		<vertex x="106252" y="135416" />
+		<vertex x="106452" y="135416" />
+		<vertex x="106452" y="135616" />
+		<vertex x="106252" y="135616" />
+		<spawn npcId="27107" respawn="180" amount="1" /> <!-- Silhouette Tilfo -->
+	</group>
+</list>

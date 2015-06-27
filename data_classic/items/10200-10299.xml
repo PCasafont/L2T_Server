@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Blue Coda. For best results, a level 14- 24 character must plant it on a level 14- 24 monster. -->
+	<item id="10200" type="EtcItem" name="Seed: Alternative Blue Coda">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="default_action" val="seed" />
+		<set name="etcitem_type" val="seed2" />
+		<set name="weight" val="1" />
+		<set name="price" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Seed" />
+		<set name="item_skill" val="2097-1" />
+	</item>
+	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Alternative Golden Coda. For best results, a level 17- 27 character must plant it on a level 17- 27 monster. -->
+	<item id="10201" type="EtcItem" name="Seed: Alternative Golden Coda">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="default_action" val="seed" />
+		<set name="etcitem_type" val="seed2" />
+		<set name="weight" val="1" />
+		<set name="price" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Seed" />
+		<set name="item_skill" val="2097-1" />
+	</item>
+	<!-- Plant this seed onto a monster in the Aden area and it will bear the fruit of the Golden Coda. For best results, a level 17- 27 character must plant it on a level 17- 27 monster. -->
+	<item id="10202" type="EtcItem" name="Seed: Golden Coda">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="default_action" val="seed" />
+		<set name="etcitem_type" val="seed" />
+		<set name="weight" val="1" />
+		<set name="price" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Seed" />
+		<set name="item_skill" val="2097-1" />
+	</item>
+	<!-- Spellbook needed to learn Empower of Echo. Used by Storm Screamers. -->
+	<item id="10203" type="EtcItem" name="Spellbook: Empowering Echo">
+		<set name="icon" val="icon.etc_spell_books_element_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="40000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Battle Manual needed to learn Soul Gathering. Used by Berserkers, Arbalesters, Soul Breakers, and Inspectors.
+		Required level: 46
+	-->
+	<item id="10204" type="EtcItem" name="Battle Manual - Soul Gathering">
+		<set name="icon" val="icon.etc_kamael_skill_book_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="4250" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Double-click to obtain white seed of evil. -->
+	<item id="10205" type="EtcItem" name="White Seed of Evil Lump">
+		<set name="icon" val="icon.etc_poison_pouch_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2420-1" />
+	</item>
+	<!-- Double-click to obtain black seed of evil. -->
+	<item id="10206" type="EtcItem" name="Black Seed of Evil Lump">
+		<set name="icon" val="icon.etc_poison_pouch_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="21000" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2421-1" />
+	</item>
+	<!-- Increases Max MP by 35, M. Def. Increases. -->
+	<item id="10207" type="Armor" name="Enhanced Striped Scale Shirt">
+		<set name="icon" val="icon.etc_stripe_shirts_a_i04" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="59" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="130" />
+		<set name="price" val="880000" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="pDef" val="26" />
+			<addPercent stat="magicSuccRes" val="15" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Increases Max MP by 70, M. Def. Increases by 50. -->
+	<item id="10208" type="Armor" name="Enhanced Striped Mithril Shirt">
+		<set name="icon" val="icon.etc_stripe_shirts_s_i05" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="122" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="130" />
+		<set name="price" val="2540000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="3419-1" />
+		<for>
+			<baseAdd stat="pDef" val="30" />
+			<add stat="maxMp" val="70" />
+			<addPercent stat="magicSuccRes" val="50" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Activates 3 talisman slots when equipped. Increases Max MP by 60. -->
+	<item id="10209" type="Armor" name="Enhanced Steel Bracelet">
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="76" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="price" val="1144000" />
+		<set name="item_skill" val="3324-1" />
+		<for>
+			<add stat="maxMp" val="60" />
+		</for>
+	</item>
+	<!-- Activates 4 talisman slots when equipped. Increases Max MP by 120. -->
+	<item id="10210" type="Armor" name="Enhanced Mithril Bracelet">
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="170" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="price" val="3556000" />
+		<set name="item_skill" val="3325-1" />
+		<for>
+			<add stat="maxMp" val="120" />
+		</for>
+	</item>
+	<!-- Makes a Blessed Resurrection available for up to 180 min. Only one effect is applied, even if you wear two identical rings. -->
+	<item id="10211" type="Armor" name="Blessed Ring of Resurrection">
+		<set name="icon" val="icon.accessary_ring_of_mana_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3409-1" />
+		<set name="duration" val="180" />
+		<for>
+			<baseAdd stat="mDef" val="24" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<item id="10212" type="Weapon" name="For NPC (Bow)">
+		<set name="icon" val="icon.weapon_monster_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1530" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<for>
+			<set stat="pAtk" val="31" />
+			<set stat="mAtk" val="21" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<item id="10213" type="EtcItem" name="Inventory">
+		<set name="immediate_effect" val="1" />
+		<set name="ex_immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Can only be worn by Arcana Lords, Elemental Masters and Spectral Masters. -->
+	<item id="10214" type="Armor" name="Dynasty Leather Armor - Summoner">
+		<set name="icon" val="icon.armor_t92_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="878" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="4180" />
+		<set name="price" val="18298000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10214" />
+		<set name="equip_condition" val="{{ec_category;{@summon_master}}}" />
+		<cond msgId="1518">
+			<player class_id_restriction="96, 104, 111" />
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="170" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Focus, Health or Light. -->
+	<item id="10215" type="Weapon" name="Icarus Sawsword">
+		<set name="icon" val="icon.weapon_icarus_sowsword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1520" />
+		<set name="price" val="103439000" />
+		<set name="change_weaponId" val="10224" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="363" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Focus, Evasion or P. Critical Damage. -->
+	<item id="10216" type="Weapon" name="Icarus Disperser">
+		<set name="icon" val="icon.weapon_icarus_disperser_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="103439000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="318" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Acumen, Mana Up or Conversion. -->
+	<item id="10217" type="Weapon" name="Icarus Spirit">
+		<set name="icon" val="icon.weapon_icarus_spirits_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="103439000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<for>
+			<set stat="pAtk" val="290" />
+			<set stat="mAtk" val="217" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Focus, Health or Light. -->
+	<item id="10218" type="Weapon" name="Icarus Heavy Arms">
+		<set name="icon" val="icon.weapon_icarus_heavy_arms_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="103439000" />
+		<set name="change_weaponId" val="10225" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="442" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Anger, Critical Stun or Light. -->
+	<item id="10219" type="Weapon" name="Icarus Trident">
+		<set name="icon" val="icon.weapon_icarus_trident_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="2010" />
+		<set name="price" val="103439000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="3599-1" />
+		<for>
+			<set stat="pAtk" val="363" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Anger, Health or Rsk. Focus. -->
+	<item id="10220" type="Weapon" name="Icarus Hammer">
+		<set name="icon" val="icon.weapon_icarus_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1740" />
+		<set name="price" val="103439000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="363" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Rsk. Evasion, Focus, or Haste. -->
+	<item id="10221" type="Weapon" name="Icarus Hand">
+		<set name="icon" val="icon.weapon_icarus_knuckle_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;32;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1550" />
+		<set name="price" val="103439000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="442" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the follow three functions, Mana Up, Conversion or Acumen. -->
+	<item id="10222" type="Weapon" name="Icarus Hall">
+		<set name="icon" val="icon.weapon_icarus_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1080" />
+		<set name="price" val="103439000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<for>
+			<set stat="pAtk" val="290" />
+			<set stat="mAtk" val="217" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Cheap Shot, Guidance or Focus. -->
+	<item id="10223" type="Weapon" name="Icarus Spitter">
+		<set name="icon" val="icon.weapon_icarus_spiter_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="attack_range" val="500" />
+		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1520" />
+		<set name="price" val="103439000" />
+		<set name="change_weaponId" val="10226" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<for>
+			<set stat="pAtk" val="689" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Icarus Sawsword Conversion
+		Bestows one of the following functions: Focus, Health or Light.
+		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
+	-->
+	<item id="10224" type="Weapon" name="Icarus Stinger">
+		<set name="icon" val="icon.weapon_icarus_stinger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="40" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1280" />
+		<set name="price" val="103439000" />
+		<set name="change_weaponId" val="10215" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="enchant4_skill" val="3426-1" />
+		<cond msgId="1518">
+			<player races="Kamael" />
+		</cond>
+		<for>
+			<set stat="pAtk" val="329" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Icarus Heavy Arms Conversion
+		Bestows one of the following functions: Focus, Health or Light.
+	-->
+	<item id="10225" type="Weapon" name="Icarus Wingblade">
+		<set name="icon" val="icon.weapon_icarus_wing_blade_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="15" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1800" />
+		<set name="price" val="103439000" />
+		<set name="change_weaponId" val="10218" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<cond msgId="1518">
+			<player races="Kamael" />
+		</cond>
+		<for>
+			<set stat="pAtk" val="393" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive Weapon: Icarus Spitter Conversion
+		Bestows one of the following functions: Cheap Shot, Guidance or Focus.
+	-->
+	<item id="10226" type="Weapon" name="Icarus Shooter">
+		<set name="icon" val="icon.weapon_icarus_shooter_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="400" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="4965" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1580" />
+		<set name="price" val="103439000" />
+		<set name="change_weaponId" val="10223" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="reuse_delay" val="400" />
+		<cond msgId="1518">
+			<player races="Kamael" />
+		</cond>
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="163" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="10227" type="Armor" name="Dynasty Platinum Plate">
+		<set name="icon" val="icon.armor_t91_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1616" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="7570" />
+		<set name="price" val="33673000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="pDef" val="226" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Phoenix Knights, Hell Knights, Eva's Templars and Shillien Templars. -->
+	<item id="10228" type="Armor" name="Dynasty Platinum Plate - Shield Master">
+		<set name="icon" val="icon.armor_t91_uk_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1616" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="7570" />
+		<set name="price" val="33673000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10228" />
+		<set name="equip_condition" val="{{ec_category;{@shield_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="90, 91, 99, 106" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="226" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Dreadnoughts, Titans, Fortune Seekers and Maestros can wear it. -->
+	<item id="10229" type="Armor" name="Dynasty Platinum Plate - Weapon Master">
+		<set name="icon" val="icon.armor_t91_uw_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1616" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="7570" />
+		<set name="price" val="33673000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10229" />
+		<set name="equip_condition" val="{{ec_category;{@weapon_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="89, 113, 117, 118" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="226" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Duelists and Grand Khavataris. -->
+	<item id="10230" type="Armor" name="Dynasty Platinum Plate - Force Master">
+		<set name="icon" val="icon.armor_t91_uf_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1616" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="7570" />
+		<set name="price" val="33673000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10230" />
+		<set name="equip_condition" val="{{ec_category;{@force_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="88, 114" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="226" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Sword Muses and Spectral Dancers. -->
+	<item id="10231" type="Armor" name="Dynasty Platinum Plate - Bard">
+		<set name="icon" val="icon.armor_t91_uke_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1616" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="7570" />
+		<set name="price" val="33673000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10231" />
+		<set name="equip_condition" val="{{ec_category;{@bard}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="100, 107" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="226" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="10232" type="Armor" name="Dynasty Jewel Leather Armor">
+		<set name="icon" val="icon.armor_t92_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="4180" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="pDef" val="170" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can be equipped by Adventurers, Wind Riders, Ghost Hunters, and Fortune Seekers. -->
+	<item id="10233" type="Armor" name="Dynasty Jewel Leather Armor - Dagger Master">
+		<set name="icon" val="icon.armor_t92_ud_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="4180" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10233" />
+		<cond msgId="1518">
+			<player class_id_restriction="93, 101, 108" />
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="170" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Sagittarius', Moonlight Sentinels, Ghost Sentinels and Tricksters. -->
+	<item id="10234" type="Armor" name="Dynasty Jewel Leather Armor - Bow Master">
+		<set name="icon" val="icon.armor_t92_ub_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="4180" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10234" />
+		<set name="equip_condition" val="{{ec_category;{@bow_master}}}" />
+		<cond msgId="1518">
+			<player class_id_restriction="92, 102, 109, 134" />
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="170" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<item id="10235" type="Armor" name="Dynasty Silver Satin Tunic">
+		<set name="icon" val="icon.armor_t93_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1780" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="pDef" val="113" />
+			<add stat="maxMp" val="592" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Cardinals, Eva's Saints and Shillien Saints. -->
+	<item id="10236" type="Armor" name="Dynasty Silver Satin Tunic - Healer">
+		<set name="icon" val="icon.armor_t93_uh_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1780" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10236" />
+		<set name="equip_condition" val="{{ec_category;{@heal_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="97, 105, 112" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="113" />
+			<add stat="maxMp" val="592" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Hierophants, Dominators and Doomcryers -->
+	<item id="10237" type="Armor" name="Dynasty Silver Satin Tunic - Enchanter">
+		<set name="icon" val="icon.armor_t93_ue_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1780" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10237" />
+		<set name="equip_condition" val="{{ec_category;{@buff_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="98, 115, 116" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="113" />
+			<add stat="maxMp" val="592" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Arcana Lords, Elemental Masters and Spectral Masters. -->
+	<item id="10238" type="Armor" name="Dynasty Silver Satin Tunic - Summoner">
+		<set name="icon" val="icon.armor_t93_us_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1780" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10238" />
+		<set name="equip_condition" val="{{ec_category;{@summon_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="96, 104, 111" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="113" />
+			<add stat="maxMp" val="592" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Can only be worn by Archmages, Mystic Muses, Storm Screamers and Soultakers. -->
+	<item id="10239" type="Armor" name="Dynasty Silver Satin Tunic - Wizard">
+		<set name="icon" val="icon.armor_t93_uw_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1212" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1780" />
+		<set name="price" val="25255000" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="armorSet" val="10239" />
+		<set name="equip_condition" val="{{ec_category;{@wizard_master}}}" />
+		<cond msgId="1518">
+			<and>
+				<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+				<player class_id_restriction="94, 95, 103, 110" />
+			</and>
+		</cond>
+		<for>
+			<baseAdd stat="pDef" val="113" />
+			<add stat="maxMp" val="592" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Hair accessory that looks like a bird nest. Uses 2 hair accessory slots. -->
+	<item id="10240" type="Armor" name="Bird Nest">
+		<set name="icon" val="icon.accessory_nest_hat_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Purple Viking Circlet. Uses 2 hair accessory slots. -->
+	<item id="10241" type="Armor" name="Purple Viking Circlet">
+		<set name="icon" val="icon.accessory_viking_circlet_violet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Golden Viking Circlet. Uses 2 hair accessory slots. -->
+	<item id="10242" type="Armor" name="Golden Viking Circlet">
+		<set name="icon" val="icon.accessory_viking_circlet_gold_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Interesting hair accessory that looks like a panda. Uses 2 hair accessory slots. -->
+	<item id="10243" type="Armor" name="Panda Hat">
+		<set name="icon" val="icon.accessory_panda_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Fun hair accessory in the shape of a white sheep. Uses 2 hair accessory slots. -->
+	<item id="10244" type="Armor" name="White Sheep Hat">
+		<set name="icon" val="icon.accessory_sheep_cap_white_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Funny hair accessory that looks like a black sheep. Uses 2 hair accessory slots. -->
+	<item id="10245" type="Armor" name="Black Sheep Hat">
+		<set name="icon" val="icon.accessory_sheep_cap_black_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Interesting hair accessory that looks like a frog. Uses 2 hair accessory slots. -->
+	<item id="10246" type="Armor" name="Frog Hat">
+		<set name="icon" val="icon.accessory_frog_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Interesting hair accessory that looks like a fish. Uses 2 hair accessory slots. -->
+	<item id="10247" type="Armor" name="Fish Hat">
+		<set name="icon" val="icon.accessory_fish_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Straw Hat. Uses 2 hair accessory slots. -->
+	<item id="10248" type="Armor" name="Straw Hat">
+		<set name="icon" val="icon.accessory_straw_hat_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Interesting hair accessory that looks like a chicken. Uses 2 hair accessory slots. -->
+	<item id="10249" type="Armor" name="Chicken Hat">
+		<set name="icon" val="icon.accessory_chicken_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Adventurer hat commemorating the 1st character creation. Uses 2 hair accessory slots. -->
+	<item id="10250" type="Armor" name="Adventurer Hat (Event)">
+		<set name="icon" val="icon.accessory_explorer_hat_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Medieval-style party mask. Uses 2 hair accessory slots. -->
+	<item id="10251" type="Armor" name="Medieval Party Mask">
+		<set name="icon" val="icon.accessory_middle_age_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Acumen, Mana Up or Conversion. -->
+	<item id="10252" type="Weapon" name="Dynasty Staff">
+		<set name="icon" val="icon.weapon_dynasty_twohand_staff_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="3597" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1080" />
+		<set name="price" val="74946000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<for>
+			<set stat="pAtk" val="325" />
+			<set stat="mAtk" val="222" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bestows one of the following functions: Anger, Health or Rsk. Focus. -->
+	<item id="10253" type="Weapon" name="Dynasty Crusher">
+		<set name="icon" val="icon.weapon_dynasty_crusher_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="3597" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1740" />
+		<set name="price" val="74946000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="element_enabled" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- When Double-clicked, a random 1st Place prize is granted. -->
+	<item id="10254" type="EtcItem" name="1st Place Treasure Sack - Event">
+		<set name="icon" val="icon.etc_treasure_sack_1_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2422-1" />
+	</item>
+	<!-- When Double-clicked, a random 2nd Place prize is granted. -->
+	<item id="10255" type="EtcItem" name="2nd Place Treasure Sack - Event">
+		<set name="icon" val="icon.etc_treasure_sack_2_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2423-2" />
+	</item>
+	<!-- When Double-clicked, a random 3rd Place prize is granted. -->
+	<item id="10256" type="EtcItem" name="3rd Place Treasure Sack - Event">
+		<set name="icon" val="icon.etc_treasure_sack_3_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2424-3" />
+	</item>
+	<!-- When Double-clicked, a random 4th Place prize is granted. -->
+	<item id="10257" type="EtcItem" name="4th Place Treasure Sack - Event">
+		<set name="icon" val="icon.etc_treasure_sack_4_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2425-4" />
+	</item>
+	<!-- When Double-clicked, a random 5th Place prize is granted. -->
+	<item id="10258" type="EtcItem" name="5th Place Treasure Sack - Event">
+		<set name="icon" val="icon.etc_treasure_sack_5_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2426-5" />
+	</item>
+	<!-- When Double-clicked, a random 6th Place prize is granted. -->
+	<item id="10259" type="EtcItem" name="6th Place Treasure Sack - Event">
+		<set name="icon" val="icon.etc_treasure_sack_6_i00" />
+		<set name="default_action" val="capsule" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2427-6" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Increases Atk. Spd. by 33% when used. -->
+	<item id="10260" type="EtcItem" name="Haste Potion">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2429-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Increases Accuracy by 4 when used. -->
+	<item id="10261" type="EtcItem" name="Accuracy Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i01" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2430-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Increases P. Critical Damage by 35% when used. -->
+	<item id="10262" type="EtcItem" name="Critical Damage Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i02" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2431-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. P. Critical Rate increases by 30% when used. -->
+	<item id="10263" type="EtcItem" name="Critical Rate Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i03" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2432-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Increases Casting Spd. by 30% when used. -->
+	<item id="10264" type="EtcItem" name="Casting Spd. Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i04" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2433-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Increases Evasion by 4 when used. -->
+	<item id="10265" type="EtcItem" name="Evasion Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i05" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2434-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. M. Atk. + 75% when used. -->
+	<item id="10266" type="EtcItem" name="M. Atk. Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i06" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2435-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. P. Atk. + 15% when used. -->
+	<item id="10267" type="EtcItem" name="P. Atk. Potion">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2436-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Speed increases by 33 when used. -->
+	<item id="10268" type="EtcItem" name="Wind Walk Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i08" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2437-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. P. Def. Increases by 15% when used. -->
+	<item id="10269" type="EtcItem" name="P. Def. Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i09" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2438-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Delicious beverage made with rare fruits. Decreases physical skill MP consumption by 10%, magic skill MP consumption by 4%, and song/dance skill MP consumption by 10%. -->
+	<item id="10270" type="EtcItem" name="MP Consumption Juice">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i10" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2439-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<item id="10271" type="EtcItem" name="Marvelous Fruit Juice #12">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i11" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+	</item>
+	<!-- You can exchange 50 Treasure Sack Pieces for a Treasure Sack if you bring them to Snow. -->
+	<item id="10272" type="EtcItem" name="Treasure Sack Piece">
+		<set name="icon" val="icon.etc_treasure_sack_fragment_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Bracelet that summons a wolf that the character can ride. 200 minutes once equipped. -->
+	<item id="10273" type="Armor" name="Wolf Summoning Bracelet">
+		<set name="icon" val="icon.etc_rbracelet_aga_agit_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="unequip_skill" val="3422-1" />
+		<set name="item_skill" val="3421-1;3422-1" />
+		<set name="duration" val="200" />
+	</item>
+	<!-- Transforms you into a rabbit for 10 min. Locates treasure when used on Fantasy Isle. It will have no effect if used while a pet or servitor is summoned or while in a transformed state. -->
+	<item id="10274" type="EtcItem" name="Transformation Scroll: Rabbit">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2428-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!--
+		Battle Manual needed to learn Warp. Used by Warders.
+		Required level: 32
+	-->
+	<item id="10275" type="EtcItem" name="Battle Manual - Warp">
+		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="2050" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Battle Manual needed to learn Soul Shock. Used by Warders.
+		Required level: 36
+	-->
+	<item id="10276" type="EtcItem" name="Battle Manual - Soul Shock">
+		<set name="icon" val="icon.etc_kamael_skill_book_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="2600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="10277" type="Weapon" name="Monster Only (Behamah Pole)">
+		<set name="icon" val="icon.weapon_short_spear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2140" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="item_skill" val="3599-1" />
+		<for>
+			<set stat="pAtk" val="24" />
+			<set stat="mAtk" val="17" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<item id="10278" type="Weapon" name="Monster Only (Behamah Dual)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="2530" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<set stat="pAtk" val="73" />
+			<set stat="mAtk" val="37" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Documents the method for transforming into an Onyx Beast. -->
+	<item id="10279" type="EtcItem" name="Transformation Scroll: Onyx Beast">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn an Emergent Ability. Only main classes can learn this skill. -->
+	<item id="10280" type="EtcItem" name="Certificate - Subclass">
+		<set name="icon" val="icon.etc_all_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn a Warrior Ability. Only main classes can learn this skill. -->
+	<item id="10281" type="EtcItem" name="Certificate - Warrior Ability">
+		<set name="icon" val="icon.etc_warrior_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn a Knight Ability. Only main classes can learn this skill. -->
+	<item id="10282" type="EtcItem" name="Certificate - Knight Ability">
+		<set name="icon" val="icon.etc_knight_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn a Rogue Ability. Only main classes can learn this skill. -->
+	<item id="10283" type="EtcItem" name="Certificate - Rogue Ability">
+		<set name="icon" val="icon.etc_archer_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn a Wizard Ability. Only main classes can learn this skill. -->
+	<item id="10284" type="EtcItem" name="Certificate - Wizard Ability">
+		<set name="icon" val="icon.etc_wizard_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn a Healer Ability. Only main classes can learn this skill. -->
+	<item id="10285" type="EtcItem" name="Certificate - Healer Ability">
+		<set name="icon" val="icon.etc_healer_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn a Summoner Ability. Only main classes can learn this skill. -->
+	<item id="10286" type="EtcItem" name="Certificate - Summoner Ability">
+		<set name="icon" val="icon.etc_summon_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Certificate needed to learn an Enchanter Ability. Only main classes can learn this skill. -->
+	<item id="10287" type="EtcItem" name="Certificate - Enchanter Ability">
+		<set name="icon" val="icon.etc_enchanter_subjob_skillbook_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10288" type="EtcItem" name="Transformation Sealbook: Divine Knight">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10289" type="EtcItem" name="Transformation Sealbook: Divine Warrior">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10290" type="EtcItem" name="Transformation Sealbook: Divine Rogue">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10291" type="EtcItem" name="Transformation Sealbook: Divine Healer">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10292" type="EtcItem" name="Transformation Sealbook: Divine Wizard">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10293" type="EtcItem" name="Transformation Sealbook: Divine Enchanter">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Allows for transformation into a highly specialized form, by transferring the powerful energy of the subclass to the main class. -->
+	<item id="10294" type="EtcItem" name="Transformation Sealbook: Divine Summoner">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Documents the method for transforming into Zaken. -->
+	<item id="10295" type="EtcItem" name="Transformation Sealbook: Zaken">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Documents the method for transforming into Anakim. -->
+	<item id="10296" type="EtcItem" name="Transformation Sealbook: Anakim">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Documents the method for transforming into a Venom. -->
+	<item id="10297" type="EtcItem" name="Transformation Sealbook: Venom">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Documents the method for transforming into a Gordon. -->
+	<item id="10298" type="EtcItem" name="Transformation Sealbook: Gordon">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Documents the method for transforming into a Ranku. -->
+	<item id="10299" type="EtcItem" name="Transformation Sealbook: Ranku">
+		<set name="icon" val="BranchSys2.icon.etc_sb_transform_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

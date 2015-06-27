@@ -1,0 +1,1305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Necklace purchased at the Mysterious Mansion. Wind Resistance + 30, MP + 46. -->
+	<item id="35600" type="Armor" name="Wind Royal Guard Necklace">
+		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Water Resistance + 15, MP + 23. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35601" type="Armor" name="Water Royal Guard Ring">
+		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Earth Resistance + 15, MP + 23. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35602" type="Armor" name="Earth Royal Guard Ring">
+		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Fire Resistance + 15, MP + 23. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35603" type="Armor" name="Fire Royal Guard Ring">
+		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Holy Resistance + 15, MP + 23. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35604" type="Armor" name="Holy Royal Guard Ring">
+		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Dark Resistance + 15, MP + 23. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35605" type="Armor" name="Dark Royal Guard Ring">
+		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Wind Resistance + 15, MP + 23. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35606" type="Armor" name="Wind Royal Guard Ring">
+		<set name="icon" val="icon.accessory_ring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Stun attack + 15%, Bleed Resistance + 15%, Water Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35607" type="Armor" name="Resistance Earring A">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Hold attack + 15%, Poison Resistance + 15%, Holy Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35608" type="Armor" name="Resistance Earring B">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Bleed attack + 15%, Paralysis Resistance + 15%, Wind Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35609" type="Armor" name="Resistance Earring C">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Paralysis attack + 15%, Hold Resistance + 15%, Dark Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35610" type="Armor" name="Resistance Earring D">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Mental attack + 15%, Stun Resistance + 15%, Earth Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35611" type="Armor" name="Resistance Earring E">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Sleep attack + 15%, Stun Resistance + 15%, Water Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35612" type="Armor" name="Resistance Earring F">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Stun attack + 15%, Sleep Resistance + 15%, Fire Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35613" type="Armor" name="Resistance Earring G">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Poison attack + 15%, Hold Resistance + 15%, Fire Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35614" type="Armor" name="Resistance Earring H">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Mental Attack Resistance + 15%, hold attack 15%, Wind Resistance + 8, MP + 25. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35615" type="Armor" name="Resistance Earring I">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="63" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases shock attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35616" type="Armor" name="Top-grade Resistance Earring - Stun">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8881-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases hold attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35617" type="Armor" name="Top-grade Resistance Earring - Hold">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8882-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases bleed attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35618" type="Armor" name="Top-grade Resistance Earring - Bleed">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8883-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases paralysis attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35619" type="Armor" name="Top-grade Resistance Earring - Paralyze">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8884-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases Mental attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35620" type="Armor" name="Top-grade Resistance Earring - Mental Attack">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8885-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases sleep attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35621" type="Armor" name="Top-grade Resistance Earring - Sleep">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8886-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases poison attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35622" type="Armor" name="Top-grade Resistance Earring - Poison">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8887-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases Knock Back and Knock Down attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35623" type="Armor" name="Top-grade Resistance Earring - Knock Back/Knock Down">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8888-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. MP + 46, CP + 5%. Increases aerial yoke attack/resistance by 20%. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35624" type="Armor" name="Top-grade Resistance Earring - Aerial Yoke">
+		<set name="icon" val="icon.accessary_inferno_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8889-1" />
+		<for>
+			<baseAdd stat="mDef" val="118" />
+			<add stat="maxMp" val="46" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Stun attack + 15%, Bleed Resistance + 15%, Water Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35625" type="Armor" name="Royal Guard Earring A">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Hold attack + 15%, Poison Resistance + 15%, Holy Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35626" type="Armor" name="Royal Guard Earring B">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Bleed attack + 15%, Paralysis Resistance + 15%, Wind Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35627" type="Armor" name="Royal Guard Earring C">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Paralysis attack + 15%, Hold Resistance + 15%, Dark Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35628" type="Armor" name="Royal Guard Earring D">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Mental attack + 15%, Stun Resistance + 15%, Earth Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35629" type="Armor" name="Royal Guard Earring E">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Sleep attack + 15%, Stun Resistance + 15%, Water Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35630" type="Armor" name="Royal Guard Earring F">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Stun attack + 15%, Sleep Resistance + 15%, Fire Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35631" type="Armor" name="Royal Guard Earring G">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Poison attack + 15%, Hold Resistance + 15%, Fire Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35632" type="Armor" name="Royal Guard Earring H">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Earring purchased at the Mysterious Mansion. Hold attack + 15%, Mental Resistance + 15%, Wind Resistance + 10. CP + 5%, MP + 35. Only one effect is applied when two earrings with the same effect are equipped. -->
+	<item id="35633" type="Armor" name="Royal Guard Earring I">
+		<set name="icon" val="icon.accessory_earring_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+		</for>
+	</item>
+	<!-- Long Sword created to develop the Revolutionaries. -->
+	<item id="35634" type="Weapon" name="Sword of Protection">
+		<set name="icon" val="icon.weapon_dynasty_blade_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="333" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Bow created to develop the Revolutionaries. -->
+	<item id="35635" type="Weapon" name="Bow of Protection">
+		<set name="icon" val="icon.weapon_dynasty_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="654" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!-- Magic sword created to develop the Revolutionaries. -->
+	<item id="35636" type="Weapon" name="Magic Sword of Protection">
+		<set name="icon" val="icon.weapon_dynasty_magic_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="267" />
+			<set stat="mAtk" val="202" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Dagger created to develop the Revolutionaries. -->
+	<item id="35637" type="Weapon" name="Dagger of Protection">
+		<set name="icon" val="icon.weapon_dynasty_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="291" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- Dual weapon created to develop the Revolutionaries. -->
+	<item id="35638" type="Weapon" name="Dual Weapon of Protection">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Two-handed sword created to develop the Revolutionaries. -->
+	<item id="35639" type="Weapon" name="Two-handed Sword of Protection">
+		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Item related to the secret of the darkness. -->
+	<item id="35640" type="EtcItem" name="Nucleus of Darkness">
+		<set name="icon" val="icon.tiat_seal_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a low grade magic pin that can be attached to a belt. -->
+	<item id="35641" type="EtcItem" name="Mysterious Supply Box - Magic Pin (B, C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a low grade magic pin that can be attached to a belt. -->
+	<item id="35642" type="EtcItem" name="Mysterious Supply Box - Magic Pouch (B, C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a low grade belt. -->
+	<item id="35643" type="EtcItem" name="Mysterious Supply Box - Belt (B, C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a high grade magic pin that can be attached to a belt. -->
+	<item id="35644" type="EtcItem" name="Mysterious Supply Box - Magic Pin (S, A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a high grade magic pouch that can be attached to a belt. -->
+	<item id="35645" type="EtcItem" name="Mysterious Supply Box - Magic Pouch (S, A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a high grade belt. -->
+	<item id="35646" type="EtcItem" name="Mysterious Supply Box - Belt (S, A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a high grade magic rune clip that can be attached to a belt. -->
+	<item id="35647" type="EtcItem" name="Mysterious Supply Box - Magic Rune Clip (S, A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box carved with mysterious symbols. Chance of acquiring a high grade magic ornament that can be attached to a belt. -->
+	<item id="35648" type="EtcItem" name="Mysterious Supply Box - Magic Ornament (S, A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Can be used at level 85 or above. Double-click to acquire the Talisman - Longing. The acquired Talisman - Longing cannot be exchanged, dropped or sold in a private store. -->
+	<item id="35649" type="EtcItem" name="Sealed Talisman - Longing">
+		<set name="icon" val="icon.accessory_longing_talisman_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="34989,1,1,100" />
+	</item>
+	<!-- Item that can summon a combat-type Bratty Angma. Can be used at levels 76 - 84. If you can reduce the Bratty Angma's HP to 0 within 30 seconds, you will acquire 100 Clan Reputation, 100 individual fame, and receive an additional item. Only PC's who belong to a clan can summon it. The requirements for acquiring individual fame and Clan Reputation must be met. -->
+	<item id="35650" type="EtcItem" name="Summon Scroll: Bratty Angma">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Item that can summon a combat-type Bratty Angma. Can be used at levels 85 - 89. If you can reduce the Bratty Angma's HP to 0 within 30 seconds, you will acquire 100 Clan Reputation, 100 individual fame, and receive an additional item. Only PC's who belong to a clan can summon it. The requirements for acquiring individual fame and Clan Reputation must be met. -->
+	<item id="35651" type="EtcItem" name="Summon Scroll: Bratty Angma">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Item that can summon a combat-type Bratty Angma. Can be used at levels 90 - 94. If you can reduce the Bratty Angma's HP to 0 within 30 seconds, you will acquire 100 Clan Reputation, 100 individual fame, and receive an additional item. Only PC's who belong to a clan can summon it. The requirements for acquiring individual fame and Clan Reputation must be met. -->
+	<item id="35652" type="EtcItem" name="Summon Scroll: Bratty Angma">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Item that can summon a combat-type Bratty Angma. Can be used at levels 95 - 99. If you can reduce the Bratty Angma's HP to 0 within 30 seconds, you will acquire 100 Clan Reputation, 100 individual fame, and receive an additional item. Only PC's who belong to a clan can summon it. The requirements for acquiring individual fame and Clan Reputation must be met. -->
+	<item id="35653" type="EtcItem" name="Summon Scroll: Bratty Angma">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Character Collector's Transformed Dual Dagger -->
+	<item id="35654" type="Weapon" name="Amaranthine Dual Dagger">
+		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="602" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Double-click to acquire the reward. You may acquire nothing. -->
+	<item id="35655" type="EtcItem" name="Mysterious Pouch">
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Energy that sustains life for all creatures in the Seed of Hellfire. Seed of Hellfire special product. -->
+	<item id="35656" type="EtcItem" name="Petra">
+		<set name="icon" val="icon.etc_torch_on_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35657" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35658" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35659" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35660" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35661" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35662" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mysterious plant seed that is need to make the flower bloom. Plant it in the Mandragora Farm to grow a flower. Double-click to use. -->
+	<item id="35663" type="EtcItem" name="Mysterious Seed">
+		<set name="icon" val="icon.etc_coda_seed_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Scroll that replenishes 10,000 individual fame. -->
+	<item id="35664" type="EtcItem" name="Scroll: 10,000 Individual Fame">
+		<set name="icon" val="icon.etc_pvppoint_scroll1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Scroll that replenishes 50,000 individual fame. -->
+	<item id="35665" type="EtcItem" name="Scroll: 50,000 Individual Fame">
+		<set name="icon" val="icon.etc_pvppoint_scroll5" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Scroll that replenishes 100,000 individual fame. -->
+	<item id="35666" type="EtcItem" name="Scroll: 100,000 Individual Fame">
+		<set name="icon" val="icon.etc_pvppoint_scroll10" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- It seems to have broken away from a part of Tauti. It contains Tauti's strength. -->
+	<item id="35667" type="EtcItem" name="Tauti's Fragment">
+		<set name="icon" val="icon.etc_tauti_piece" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Core containing the energy of powerful evil creatures. If you use the twisted energy correctly, you may be able to awaken the hidden power. -->
+	<item id="35668" type="EtcItem" name="Core of Twisted Magic">
+		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i07" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- For 60 minutes, P. Atk. + 5%, M. Atk. by 20%, P. Def. by 5%, M. Def. by 5%, Atk. Spd. by 5%, Casting Spd. by 5%, Max HP/MP by 5%, and XP and SP acquired through hunting by 30%. Cannot be used in the Olympiad. Cannot be applied along with event buffs such as Letter Collector's Gift. -->
+	<item id="35669" type="EtcItem" name="Angel Cat's Blessing">
+		<set name="icon" val="icon.skilltransform4" />
+		<set name="etcitem_type" val="potion" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="false" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="9487-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+		<set name="time" val="43200" />
+	</item>
+	<!-- The light of Spirits fill the pet/servitor to instantly inflict a powerful attack on the enemy. You can check the number of consumed soulshots at the pet/servitor info screen. (They are used from the master's inventory.) -->
+	<item id="35670" type="EtcItem" name="Beast Soulshot - Wynn Summoners Only">
+		<set name="icon" val="BranchSys.icon.br_beast_soul_shot_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- High-level light of Spirits fill the pet/servitor to instantly strengthen the pet/servitor's M. Atk. It is very light. You can check the number of consumed spiritshots at the pet/servitor info screen. (They are used from the master's inventory.) -->
+	<item id="35671" type="EtcItem" name="Blessed Beast Spiritshot - Wynn Summoners Only">
+		<set name="icon" val="BranchSys.icon.br_blessed_beast_spirit_shot_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Fist weapon created to develop the Revolutionaries. -->
+	<item id="35672" type="Weapon" name="Pata of Protection">
+		<set name="icon" val="icon.weapon_dynasty_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Short sword created to develop the Revolutionaries. -->
+	<item id="35673" type="Weapon" name="Rapier of Protection">
+		<set name="icon" val="icon.weapon_dynasty_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="302" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+		</for>
+	</item>
+	<!-- Blunt created to develop the Revolutionaries. -->
+	<item id="35674" type="Weapon" name="Mace of Protection">
+		<set name="icon" val="icon.weapon_dynasty_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="333" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Recovers HP. Only characters above level 85 can use on themselves. Cooldown is 2 min. -->
+	<item id="35675" type="EtcItem" name="High-grade Elixir of Life (R-grade)">
+		<set name="icon" val="icon.etc_super_potion_i02" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="elixir" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="shared_reuse_group" val="7" />
+		<set name="reuse_delay" val="120000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="Elixir" />
+		<set name="item_skill" val="9985-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Recovers MP. Only characters above level 85 can use on themselves. Cooldown is 2 min. -->
+	<item id="35676" type="EtcItem" name="High-grade Elixir of Mind (R-grade)">
+		<set name="icon" val="icon.etc_super_potion_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="elixir" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="shared_reuse_group" val="7" />
+		<set name="reuse_delay" val="120000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="Elixir" />
+		<set name="item_skill" val="9986-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Recovers CP. Only characters above level 85 can use on themselves. Cooldown is 2 min. -->
+	<item id="35677" type="EtcItem" name="High-grade Elixir of CP (R-grade)">
+		<set name="icon" val="icon.etc_super_potion_i01" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="elixir" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="shared_reuse_group" val="7" />
+		<set name="reuse_delay" val="120000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="Elixir" />
+		<set name="item_skill" val="9987-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35678" type="Weapon" name="Test Shaper - Test">
+		<set name="icon" val="icon.weapon_stanpid_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="527" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35679" type="Weapon" name="Test Cutter - Test">
+		<set name="icon" val="icon.weapon_plenitas_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="602" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35680" type="Weapon" name="Test Slasher - Test">
+		<set name="icon" val="icon.weapon_bauen_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="733" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35681" type="Weapon" name="Test Avenger - Test">
+		<set name="icon" val="icon.weapon_qutram_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="602" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35682" type="Weapon" name="Test Fighter - Test">
+		<set name="icon" val="icon.weapon_durga_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="733" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35683" type="Weapon" name="Test Stormer - Test">
+		<set name="icon" val="icon.weapon_crabel_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="602" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35684" type="Weapon" name="Test Thrower - Test">
+		<set name="icon" val="icon.weapon_castron_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="1185" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35685" type="Weapon" name="Test Shooter - Test">
+		<set name="icon" val="icon.weapon_stilla_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="1067" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35686" type="Weapon" name="Test Buster - Test">
+		<set name="icon" val="icon.weaon_serapear_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="350" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35687" type="Weapon" name="Test Caster - Test">
+		<set name="icon" val="icon.weapon_pilia_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="350" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35688" type="Weapon" name="Test Retributer - Test">
+		<set name="icon" val="icon.weapon_shaelon_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="587" />
+			<set stat="mAtk" val="385" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35689" type="Weapon" name="Test Dualsword - Test">
+		<set name="icon" val="icon.weapon_r_dualsword_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="733" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35690" type="Weapon" name="Test Dual Dagger - Test">
+		<set name="icon" val="icon.weapon_r_dualdagger_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="602" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- For Test (not GD2.0 update content) -->
+	<item id="35691" type="Weapon" name="Test Dual Blunt Weapon - Test">
+		<set name="icon" val="icon.weapon_r_dualblunt_i10" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="733" />
+			<set stat="mAtk" val="298" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Test weapon. -->
+	<item id="35692" type="Weapon" name="Monster's Weapon - Test">
+		<set name="icon" val="BranchSys2.icon.br_wp_Caladbulg_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="10" />
+			<set stat="mAtk" val="10" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Warm and festive winter cloak to celebrate the holidays. This Santa Girl's Holiday Event reward item. 1 day. -->
+	<item id="35693" type="Armor" name="Santa Girl's Cloak - 1-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_christmas_cloak" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="40" />
+			<baseAdd stat="pDef" val="50" />
+		</for>
+	</item>
+	<!-- Warm and festive winter cloak to celebrate the holidays. This Santa Girl's Holiday Event reward item. 3 days. -->
+	<item id="35694" type="Armor" name="Santa Girl's Cloak - 3-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_christmas_cloak" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="40" />
+			<baseAdd stat="pDef" val="50" />
+		</for>
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the trees. -->
+	<item id="35695" type="EtcItem" name="Holiday Tree - Star Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_star" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the trees. -->
+	<item id="35696" type="EtcItem" name="Holiday Tree - Globe Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_bead" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the trees. -->
+	<item id="35697" type="EtcItem" name="Holiday Tree - Garland Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_band" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the trees. -->
+	<item id="35698" type="EtcItem" name="Holiday Tree - Bow Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_ribbon" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Double-click to acquire Santa Girl's Cloak Box and Hat Box (1-day). If you are lucky, you can acquire an additional reward. -->
+	<item id="35699" type="EtcItem" name="Santa Girl's Gift Box - Event">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+</list>

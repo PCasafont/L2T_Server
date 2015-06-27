@@ -1,0 +1,3208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 81.9. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19000" type="Weapon" name="Bound Amaranthine Shaper - Focus">
+		<set name="icon" val="icon.weapon_stanpid_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18958" />
+		<set name="enchant4_skill" val="13282-3" />
+		<for>
+			<set stat="pAtk" val="542" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19001" type="Weapon" name="Bound Amaranthine Cutter - Haste">
+		<set name="icon" val="icon.weapon_plenitas_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18959" />
+		<set name="blessedItem" val="19043" />
+		<set name="enchant4_skill" val="13252-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19002" type="Weapon" name="Bound Amaranthine Cutter - Focus">
+		<set name="icon" val="icon.weapon_plenitas_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18960" />
+		<set name="blessedItem" val="19044" />
+		<set name="enchant4_skill" val="13252-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19003" type="Weapon" name="Bound Amaranthine Cutter - Health">
+		<set name="icon" val="icon.weapon_plenitas_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3013-4" />
+		<set name="standardItem" val="18961" />
+		<set name="blessedItem" val="19045" />
+		<set name="enchant4_skill" val="13252-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19004" type="Weapon" name="Bound Amaranthine Slasher - Focus">
+		<set name="icon" val="icon.weapon_bauen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18962" />
+		<set name="blessedItem" val="19046" />
+		<set name="enchant4_skill" val="13261-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19005" type="Weapon" name="Bound Amaranthine Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_bauen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18963" />
+		<set name="blessedItem" val="19047" />
+		<set name="enchant4_skill" val="13261-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19006" type="Weapon" name="Bound Amaranthine Slasher - Haste">
+		<set name="icon" val="icon.weapon_bauen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18964" />
+		<set name="blessedItem" val="19048" />
+		<set name="enchant4_skill" val="13261-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19007" type="Weapon" name="Bound Amaranthine Avenger - Haste">
+		<set name="icon" val="icon.weapon_qutram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18965" />
+		<set name="blessedItem" val="19049" />
+		<set name="enchant4_skill" val="13256-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1232 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19008" type="Weapon" name="Bound Amaranthine Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_qutram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3572-8" />
+		<set name="standardItem" val="18966" />
+		<set name="blessedItem" val="19050" />
+		<set name="enchant4_skill" val="13256-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19009" type="Weapon" name="Bound Amaranthine Avenger - Focus">
+		<set name="icon" val="icon.weapon_qutram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18967" />
+		<set name="blessedItem" val="19051" />
+		<set name="enchant4_skill" val="13256-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 75.5. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19010" type="Weapon" name="Bound Amaranthine Fighter - Focus">
+		<set name="icon" val="icon.weapon_durga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18968" />
+		<set name="blessedItem" val="19052" />
+		<set name="enchant4_skill" val="13267-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19011" type="Weapon" name="Bound Amaranthine Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_durga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18969" />
+		<set name="blessedItem" val="19053" />
+		<set name="enchant4_skill" val="13267-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19012" type="Weapon" name="Bound Amaranthine Fighter - Haste">
+		<set name="icon" val="icon.weapon_durga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18970" />
+		<set name="blessedItem" val="19054" />
+		<set name="enchant4_skill" val="13267-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. Cannot be exchanged or dropped. Can be stored in a private warehouse.
+	-->
+	<item id="19013" type="Weapon" name="Bound Amaranthine Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_crabel_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3568-2" />
+		<set name="standardItem" val="18971" />
+		<set name="blessedItem" val="19055" />
+		<set name="enchant4_skill" val="13263-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19014" type="Weapon" name="Bound Amaranthine Stormer - Guidance">
+		<set name="icon" val="icon.weapon_crabel_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18972" />
+		<set name="blessedItem" val="19056" />
+		<set name="enchant4_skill" val="13263-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19015" type="Weapon" name="Bound Amaranthine Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_crabel_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18973" />
+		<set name="blessedItem" val="19057" />
+		<set name="enchant4_skill" val="13263-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19016" type="Weapon" name="Bound Amaranthine Thrower - Damage Up">
+		<set name="icon" val="icon.weapon_castron_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18974" />
+		<set name="blessedItem" val="19058" />
+		<set name="enchant4_skill" val="13292-3" />
+		<for>
+			<set stat="pAtk" val="1221" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19017" type="Weapon" name="Bound Amaranthine Thrower - Focus">
+		<set name="icon" val="icon.weapon_castron_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18975" />
+		<set name="blessedItem" val="19059" />
+		<set name="enchant4_skill" val="13292-3" />
+		<for>
+			<set stat="pAtk" val="1221" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19018" type="Weapon" name="Bound Amaranthine Thrower - Long Blow">
+		<set name="icon" val="icon.weapon_castron_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="standardItem" val="18976" />
+		<set name="blessedItem" val="19060" />
+		<set name="enchant4_skill" val="13292-3" />
+		<set name="item_skill" val="13061-1" />
+		<for>
+			<set stat="pAtk" val="1221" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19019" type="Weapon" name="Bound Amaranthine Shooter - Focus">
+		<set name="icon" val="icon.weapon_stilla_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18977" />
+		<set name="blessedItem" val="19061" />
+		<set name="enchant4_skill" val="13294-3" />
+		<for>
+			<set stat="pAtk" val="1099" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19020" type="Weapon" name="Bound Amaranthine Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_stilla_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18978" />
+		<set name="blessedItem" val="19062" />
+		<set name="enchant4_skill" val="13294-3" />
+		<for>
+			<set stat="pAtk" val="1099" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19021" type="Weapon" name="Bound Amaranthine Shooter - Haste">
+		<set name="icon" val="icon.weapon_stilla_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18979" />
+		<set name="blessedItem" val="19063" />
+		<set name="enchant4_skill" val="13294-3" />
+		<for>
+			<set stat="pAtk" val="1099" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19022" type="Weapon" name="Bound Amaranthine Buster - Acumen">
+		<set name="icon" val="icon.weaon_serapear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18980" />
+		<set name="blessedItem" val="19064" />
+		<set name="enchant4_skill" val="13295-3" />
+		<for>
+			<set stat="pAtk" val="496" />
+			<set stat="mAtk" val="360" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19023" type="Weapon" name="Bound Amaranthine Buster - Magic Hold">
+		<set name="icon" val="icon.weaon_serapear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18981" />
+		<set name="blessedItem" val="19065" />
+		<set name="enchant4_skill" val="13295-3" />
+		<for>
+			<set stat="pAtk" val="496" />
+			<set stat="mAtk" val="360" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19024" type="Weapon" name="Bound Amaranthine Buster - Mana Up">
+		<set name="icon" val="icon.weaon_serapear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="standardItem" val="18982" />
+		<set name="blessedItem" val="19066" />
+		<set name="enchant4_skill" val="13295-3" />
+		<for>
+			<set stat="pAtk" val="496" />
+			<set stat="mAtk" val="360" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 460. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19025" type="Weapon" name="Bound Amaranthine Caster - Empower">
+		<set name="icon" val="icon.weapon_pilia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="standardItem" val="18983" />
+		<set name="blessedItem" val="19067" />
+		<set name="enchant4_skill" val="13299-3" />
+		<for>
+			<set stat="pAtk" val="496" />
+			<set stat="mAtk" val="360" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19026" type="Weapon" name="Bound Amaranthine Caster - Acumen">
+		<set name="icon" val="icon.weapon_pilia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18984" />
+		<set name="blessedItem" val="19068" />
+		<set name="enchant4_skill" val="13299-3" />
+		<for>
+			<set stat="pAtk" val="496" />
+			<set stat="mAtk" val="360" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19027" type="Weapon" name="Bound Amaranthine Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_pilia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18985" />
+		<set name="blessedItem" val="19069" />
+		<set name="enchant4_skill" val="13299-3" />
+		<for>
+			<set stat="pAtk" val="496" />
+			<set stat="mAtk" val="360" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19028" type="Weapon" name="Bound Amaranthine Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_shaelon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3576-4" />
+		<set name="standardItem" val="18986" />
+		<set name="blessedItem" val="19070" />
+		<set name="enchant4_skill" val="13304-3" />
+		<for>
+			<set stat="pAtk" val="604" />
+			<set stat="mAtk" val="396" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19029" type="Weapon" name="Bound Amaranthine Retributer - Acumen">
+		<set name="icon" val="icon.weapon_shaelon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18987" />
+		<set name="blessedItem" val="19071" />
+		<set name="enchant4_skill" val="13304-3" />
+		<for>
+			<set stat="pAtk" val="604" />
+			<set stat="mAtk" val="396" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 460. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19030" type="Weapon" name="Bound Amaranthine Retributer - Empower">
+		<set name="icon" val="icon.weapon_shaelon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="standardItem" val="18988" />
+		<set name="blessedItem" val="19072" />
+		<set name="enchant4_skill" val="13304-3" />
+		<for>
+			<set stat="pAtk" val="604" />
+			<set stat="mAtk" val="396" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19031" type="Weapon" name="Bound Amaranthine Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18989" />
+		<set name="blessedItem" val="19073" />
+		<set name="enchant4_skill" val="13277-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19032" type="Weapon" name="Bound Amaranthine Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18990" />
+		<set name="blessedItem" val="19074" />
+		<set name="enchant4_skill" val="13277-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19033" type="Weapon" name="Bound Amaranthine Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3013-4" />
+		<set name="standardItem" val="18991" />
+		<set name="blessedItem" val="19075" />
+		<set name="enchant4_skill" val="13277-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19034" type="Weapon" name="Bound Amaranthine Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18992" />
+		<set name="blessedItem" val="19076" />
+		<set name="enchant4_skill" val="13287-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19035" type="Weapon" name="Bound Amaranthine Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18993" />
+		<set name="blessedItem" val="19077" />
+		<set name="enchant4_skill" val="13287-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19036" type="Weapon" name="Bound Amaranthine Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18994" />
+		<set name="blessedItem" val="19078" />
+		<set name="enchant4_skill" val="13287-3" />
+		<for>
+			<set stat="pAtk" val="620" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19037" type="Weapon" name="Bound Amaranthine Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18995" />
+		<set name="blessedItem" val="19079" />
+		<set name="enchant4_skill" val="13272-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19038" type="Weapon" name="Bound Amaranthine Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18996" />
+		<set name="blessedItem" val="19080" />
+		<set name="enchant4_skill" val="13272-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="19039" type="Weapon" name="Bound Amaranthine Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-4" />
+		<set name="standardItem" val="18997" />
+		<set name="blessedItem" val="19081" />
+		<set name="enchant4_skill" val="13272-3" />
+		<for>
+			<set stat="pAtk" val="754" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19040" type="Weapon" name="Blessed Amaranthine Shaper - Guidance">
+		<set name="icon" val="icon.weapon_stanpid_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13282-3" />
+		<set name="item_skill" val="3602-10" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="575" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19041" type="Weapon" name="Blessed Amaranthine Shaper - Haste">
+		<set name="icon" val="icon.weapon_stanpid_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13282-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="575" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 81.9. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19042" type="Weapon" name="Blessed Amaranthine Shaper - Focus">
+		<set name="icon" val="icon.weapon_stanpid_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13282-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="575" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19043" type="Weapon" name="Blessed Amaranthine Cutter - Haste">
+		<set name="icon" val="icon.weapon_plenitas_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13252-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19044" type="Weapon" name="Blessed Amaranthine Cutter - Focus">
+		<set name="icon" val="icon.weapon_plenitas_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13252-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19045" type="Weapon" name="Blessed Amaranthine Cutter - Health">
+		<set name="icon" val="icon.weapon_plenitas_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13252-3" />
+		<set name="item_skill" val="3013-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="19046" type="Weapon" name="Blessed Amaranthine Slasher - Focus">
+		<set name="icon" val="icon.weapon_bauen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13261-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="19047" type="Weapon" name="Blessed Amaranthine Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_bauen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13261-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="19048" type="Weapon" name="Blessed Amaranthine Slasher - Haste">
+		<set name="icon" val="icon.weapon_bauen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13261-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19049" type="Weapon" name="Blessed Amaranthine Avenger - Haste">
+		<set name="icon" val="icon.weapon_qutram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13256-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1232 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19050" type="Weapon" name="Blessed Amaranthine Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_qutram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13256-3" />
+		<set name="item_skill" val="3572-8" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19051" type="Weapon" name="Blessed Amaranthine Avenger - Focus">
+		<set name="icon" val="icon.weapon_qutram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13256-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 75.5. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19052" type="Weapon" name="Blessed Amaranthine Fighter - Focus">
+		<set name="icon" val="icon.weapon_durga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13267-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19053" type="Weapon" name="Blessed Amaranthine Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_durga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13267-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19054" type="Weapon" name="Blessed Amaranthine Fighter - Haste">
+		<set name="icon" val="icon.weapon_durga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13267-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="19055" type="Weapon" name="Blessed Amaranthine Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_crabel_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13263-3" />
+		<set name="item_skill" val="3568-2" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="19056" type="Weapon" name="Blessed Amaranthine Stormer - Guidance">
+		<set name="icon" val="icon.weapon_crabel_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13263-3" />
+		<set name="item_skill" val="3602-10" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="19057" type="Weapon" name="Blessed Amaranthine Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_crabel_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13263-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="19058" type="Weapon" name="Blessed Amaranthine Thrower - Damage Up">
+		<set name="icon" val="icon.weapon_castron_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant4_skill" val="13292-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="1295" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="19059" type="Weapon" name="Blessed Amaranthine Thrower - Focus">
+		<set name="icon" val="icon.weapon_castron_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant4_skill" val="13292-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="1295" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="19060" type="Weapon" name="Blessed Amaranthine Thrower - Long Blow">
+		<set name="icon" val="icon.weapon_castron_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant4_skill" val="13292-3" />
+		<set name="item_skill" val="13061-1" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="1295" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="19061" type="Weapon" name="Blessed Amaranthine Shooter - Focus">
+		<set name="icon" val="icon.weapon_stilla_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="1166" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="19062" type="Weapon" name="Blessed Amaranthine Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_stilla_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="1166" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="19063" type="Weapon" name="Blessed Amaranthine Shooter - Haste">
+		<set name="icon" val="icon.weapon_stilla_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="1166" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19064" type="Weapon" name="Blessed Amaranthine Buster - Acumen">
+		<set name="icon" val="icon.weaon_serapear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="526" />
+			<set stat="mAtk" val="382" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19065" type="Weapon" name="Blessed Amaranthine Buster - Magic Hold">
+		<set name="icon" val="icon.weaon_serapear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="526" />
+			<set stat="mAtk" val="382" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19066" type="Weapon" name="Blessed Amaranthine Buster - Mana Up">
+		<set name="icon" val="icon.weaon_serapear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="526" />
+			<set stat="mAtk" val="382" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 460. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19067" type="Weapon" name="Blessed Amaranthine Caster - Empower">
+		<set name="icon" val="icon.weapon_pilia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13299-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="526" />
+			<set stat="mAtk" val="382" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19068" type="Weapon" name="Blessed Amaranthine Caster - Acumen">
+		<set name="icon" val="icon.weapon_pilia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13299-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="526" />
+			<set stat="mAtk" val="382" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19069" type="Weapon" name="Blessed Amaranthine Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_pilia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13299-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="526" />
+			<set stat="mAtk" val="382" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="19070" type="Weapon" name="Blessed Amaranthine Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_shaelon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13304-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3576-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="640" />
+			<set stat="mAtk" val="420" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="19071" type="Weapon" name="Blessed Amaranthine Retributer - Acumen">
+		<set name="icon" val="icon.weapon_shaelon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13304-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="640" />
+			<set stat="mAtk" val="420" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 460. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="19072" type="Weapon" name="Blessed Amaranthine Retributer - Empower">
+		<set name="icon" val="icon.weapon_shaelon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13304-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="640" />
+			<set stat="mAtk" val="420" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19073" type="Weapon" name="Blessed Amaranthine Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13277-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19074" type="Weapon" name="Blessed Amaranthine Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13277-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19075" type="Weapon" name="Blessed Amaranthine Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13277-3" />
+		<set name="item_skill" val="3013-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19076" type="Weapon" name="Blessed Amaranthine Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13287-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19077" type="Weapon" name="Blessed Amaranthine Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13287-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19078" type="Weapon" name="Blessed Amaranthine Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13287-3" />
+		<set name="item_skill" val="3602-10" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="658" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.7. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19079" type="Weapon" name="Blessed Amaranthine Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13272-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.9. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19080" type="Weapon" name="Blessed Amaranthine Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13272-3" />
+		<set name="item_skill" val="3602-10" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 415. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19081" type="Weapon" name="Blessed Amaranthine Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13272-3" />
+		<set name="item_skill" val="13062-4" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="800" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 8.0. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19082" type="Weapon" name="Blessed Kaliel Shaper - Guidance">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<for>
+			<set stat="pAtk" val="629" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19083" type="Weapon" name="Blessed Kaliel Shaper - Haste">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="629" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 81.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19084" type="Weapon" name="Blessed Kaliel Shaper - Focus">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="629" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19085" type="Weapon" name="Blessed Kaliel Cutter - Haste">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.5. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19086" type="Weapon" name="Blessed Kaliel Cutter - Focus">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="19087" type="Weapon" name="Blessed Kaliel Cutter - Health">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3013-4" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.5. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="19088" type="Weapon" name="Blessed Kaliel Slasher - Focus">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="875" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 457. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="19089" type="Weapon" name="Blessed Kaliel Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-5" />
+		<for>
+			<set stat="pAtk" val="875" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="19090" type="Weapon" name="Blessed Kaliel Slasher - Haste">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="875" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19091" type="Weapon" name="Blessed Kaliel Avenger - Haste">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1254 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19092" type="Weapon" name="Blessed Kaliel Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3572-8" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 78.5. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="19093" type="Weapon" name="Blessed Kaliel Avenger - Focus">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 75.4. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19094" type="Weapon" name="Blessed Kaliel Fighter - Focus">
+		<set name="icon" val="icon.weapon_octoclaw_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="875" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 457. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19095" type="Weapon" name="Blessed Kaliel Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_octoclaw_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-5" />
+		<for>
+			<set stat="pAtk" val="875" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="19096" type="Weapon" name="Blessed Kaliel Fighter - Haste">
+		<set name="icon" val="icon.weapon_octoclaw_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="875" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="19097" type="Weapon" name="Blessed Kaliel Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3568-2" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 8.0. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="19098" type="Weapon" name="Blessed Kaliel Stormer - Guidance">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 457. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="19099" type="Weapon" name="Blessed Kaliel Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-5" />
+		<for>
+			<set stat="pAtk" val="719" />
+			<set stat="mAtk" val="313" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

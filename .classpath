@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/*|.svn" kind="src" path="java"/>
+	<classpathentry excluding="**/.svn/*|.svn" kind="src" path="data/scripts"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/jython.jar"/>
+	<classpathentry kind="lib" path="lib/bonecp-0.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/guava-r08.jar"/>
+	<classpathentry kind="lib" path="lib/mchange-commons-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/netcon.jar"/>
+	<classpathentry kind="lib" path="lib/jython-engine.jar"/>
+	<classpathentry kind="lib" path="lib/trove-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jogl.jar"/>
+	<classpathentry kind="lib" path="lib/worldwind.jar"/>
+	<classpathentry kind="lib" path="lib/mail.jar"/>
+	<classpathentry kind="lib" path="lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="lib/smtp.jar"/>
+	<classpathentry kind="lib" path="lib/bsh-2.0b5.jar"/>
+	<classpathentry kind="lib" path="lib/bsh-engine.jar"/>
+	<classpathentry kind="lib" path="lib/java-engine.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

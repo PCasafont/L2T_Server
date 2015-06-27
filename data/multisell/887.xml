@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35420" /> <!-- Recipe: Specter Shaper (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35421" /> <!-- Recipe: Specter Cutter (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35422" /> <!-- Recipe: Specter Slasher (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35423" /> <!-- Recipe: Specter Avenger (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35424" /> <!-- Recipe: Specter Fighter (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35425" /> <!-- Recipe: Specter Stormer (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35426" /> <!-- Recipe: Specter Thrower (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35427" /> <!-- Recipe: Specter Shooter (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35428" /> <!-- Recipe: Specter Buster (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35429" /> <!-- Recipe: Specter Caster (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="34637940" id="57" /> <!-- Adena -->
+		<production count="1" id="35430" /> <!-- Recipe: Specter Retributer (60%) -->
+	</item>
+	<item>
+		<ingredient count="22" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="21116600" id="57" /> <!-- Adena -->
+		<production count="1" id="35431" /> <!-- Recipe: Seraph Helmet (60%) -->
+	</item>
+	<item>
+		<ingredient count="58" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="56977700" id="57" /> <!-- Adena -->
+		<production count="1" id="35432" /> <!-- Recipe: Seraph Breastplate (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="35861100" id="57" /> <!-- Adena -->
+		<production count="1" id="35433" /> <!-- Recipe: Seraph Gaiters (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35434" /> <!-- Recipe: Seraph Gauntlets (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35435" /> <!-- Recipe: Seraph Boots (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35436" /> <!-- Recipe: Seraph Shield (60%) -->
+	</item>
+	<item>
+		<ingredient count="22" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="21116600" id="57" /> <!-- Adena -->
+		<production count="1" id="35437" /> <!-- Recipe: Seraph Leather Helmet (60%) -->
+	</item>
+	<item>
+		<ingredient count="58" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="56977700" id="57" /> <!-- Adena -->
+		<production count="1" id="35438" /> <!-- Recipe: Seraph Leather Armor (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="35861100" id="57" /> <!-- Adena -->
+		<production count="1" id="35439" /> <!-- Recipe: Seraph Leather Leggings (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35440" /> <!-- Recipe: Seraph Leather Gloves (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35441" /> <!-- Recipe: Seraph Leather Boots (60%) -->
+	</item>
+	<item>
+		<ingredient count="22" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="21116600" id="57" /> <!-- Adena -->
+		<production count="1" id="35442" /> <!-- Recipe: Seraph Circlet (60%) -->
+	</item>
+	<item>
+		<ingredient count="58" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="56977700" id="57" /> <!-- Adena -->
+		<production count="1" id="35443" /> <!-- Recipe: Seraph Tunic (60%) -->
+	</item>
+	<item>
+		<ingredient count="36" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="35861100" id="57" /> <!-- Adena -->
+		<production count="1" id="35444" /> <!-- Recipe: Seraph Stockings (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35445" /> <!-- Recipe: Seraph Gloves (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35446" /> <!-- Recipe: Seraph Shoes (60%) -->
+	</item>
+	<item>
+		<ingredient count="15" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="13744500" id="57" /> <!-- Adena -->
+		<production count="1" id="35447" /> <!-- Recipe: Seraph Sigil (60%) -->
+	</item>
+	<item>
+		<ingredient count="38" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="36857800" id="57" /> <!-- Adena -->
+		<production count="1" id="35448" /> <!-- Recipe: Seraph Necklace (60%) -->
+	</item>
+	<item>
+		<ingredient count="29" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="27143200" id="57" /> <!-- Adena -->
+		<production count="1" id="35449" /> <!-- Recipe: Seraph Earring (60%) -->
+	</item>
+	<item>
+		<ingredient count="19" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="18429200" id="57" /> <!-- Adena -->
+		<production count="1" id="35450" /> <!-- Recipe: Seraph Ring (60%) -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35296" /> <!-- Specter Shaper Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35297" /> <!-- Specter Cutter Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35298" /> <!-- Specter Slasher Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35299" /> <!-- Specter Avenger Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35300" /> <!-- Specter Fighter Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35301" /> <!-- Specter Stormer Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35302" /> <!-- Specter Thrower Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35303" /> <!-- Specter Shooter Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35304" /> <!-- Specter Buster Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35305" /> <!-- Specter Caster Fragment -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3063800" id="57" /> <!-- Adena -->
+		<production count="1" id="35306" /> <!-- Specter Retributer Fragment -->
+	</item>
+	<item>
+		<ingredient count="3" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="1311600" id="57" /> <!-- Adena -->
+		<production count="1" id="35307" /> <!-- Seraph Helmet Ingredient -->
+	</item>
+	<item>
+		<ingredient count="6" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="5497800" id="57" /> <!-- Adena -->
+		<production count="1" id="35308" /> <!-- Seraph Breastplate Ingredient -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3186200" id="57" /> <!-- Adena -->
+		<production count="1" id="35309" /> <!-- Seraph Gaiter Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35310" /> <!-- Seraph Gauntlet Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35311" /> <!-- Seraph Boot Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35312" /> <!-- Seraph Shield Ingredient -->
+	</item>
+	<item>
+		<ingredient count="3" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="1311600" id="57" /> <!-- Adena -->
+		<production count="1" id="35313" /> <!-- Seraph Leather Helmet Ingredient -->
+	</item>
+	<item>
+		<ingredient count="6" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="5497800" id="57" /> <!-- Adena -->
+		<production count="1" id="35314" /> <!-- Seraph Leather Armor Ingredient -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3186200" id="57" /> <!-- Adena -->
+		<production count="1" id="35315" /> <!-- Seraph Leather Legging Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35316" /> <!-- Seraph Leather Glove Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35317" /> <!-- Seraph Leather Boot Ingredient -->
+	</item>
+	<item>
+		<ingredient count="3" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="1311600" id="57" /> <!-- Adena -->
+		<production count="1" id="35318" /> <!-- Seraph Circlet Ingredient -->
+	</item>
+	<item>
+		<ingredient count="6" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="5497800" id="57" /> <!-- Adena -->
+		<production count="1" id="35319" /> <!-- Seraph Tunic Ingredient -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3186200" id="57" /> <!-- Adena -->
+		<production count="1" id="35320" /> <!-- Seraph Stocking Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35321" /> <!-- Seraph Glove Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35322" /> <!-- Seraph Shoe Ingredient -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="874300" id="57" /> <!-- Adena -->
+		<production count="1" id="35323" /> <!-- Seraph Sigil Ingredient -->
+	</item>
+	<item>
+		<ingredient count="4" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="3485600" id="57" /> <!-- Adena -->
+		<production count="1" id="35324" /> <!-- Seraph Necklace Gem -->
+	</item>
+	<item>
+		<ingredient count="3" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="2614200" id="57" /> <!-- Adena -->
+		<production count="1" id="35325" /> <!-- Seraph Earring Gem -->
+	</item>
+	<item>
+		<ingredient count="2" id="37791" /> <!-- Sealed Demonic Tome -->
+		<ingredient count="1742800" id="57" /> <!-- Adena -->
+		<production count="1" id="35326" /> <!-- Seraph Ring Gem -->
+	</item>
+</list>

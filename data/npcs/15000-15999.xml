@@ -1,0 +1,1808 @@
+<list>
+	<npc id="15000" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="16929" hpReg="14.75" mpMax="1830"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10388" mAtk="5887" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15001" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17029" hpReg="14.75" mpMax="1880"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10541" mAtk="5893" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15002" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17129" hpReg="14.75" mpMax="1930"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10694" mAtk="5899" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15003" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17229" hpReg="14.75" mpMax="1980"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10847" mAtk="5905" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15004" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17329" hpReg="14.75" mpMax="2030"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="11000" mAtk="5911" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15005" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17429" hpReg="14.75" mpMax="2080"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="11153" mAtk="5917" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15006" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17529" hpReg="14.75" mpMax="2130"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="11306" mAtk="5923" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15007" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17629" hpReg="14.75" mpMax="2180"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="11459" mAtk="5929" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15008" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17729" hpReg="14.75" mpMax="2230"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="11612" mAtk="5935" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15009" name="Unison of Lights" level="99" type="L2Pet" atkRange="900" hpMax="17829" hpReg="14.75" mpMax="2280"
+			mpReg="5.46" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="11771" mAtk="5940" pDef="1808" mDef="1879"
+			pAtkSpd="398" mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="75" runSpd="180" rHand="35708" collisionRadius="9"
+			collisionHeight="18" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced"
+			skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15010" name="Tree of Life" level="95" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1770" mDef="1583" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="3" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15011" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15012" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15013" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15014" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15015" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15016" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15017" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15018" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15019" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15020" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15021" name="Tree of Life" level="99" type="L2Pet" atkRange="40" hpMax="3460" hpReg="9.04" mpMax="1783" mpReg="3.59"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2" mAtk="5" pDef="1808" mDef="1617" pAtkSpd="299" mAtkSpd="398"
+			pCritRate="40" mCritRate="40" walkSpd="90" runSpd="120" collisionRadius="12" collisionHeight="50.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" canMove="false">
+		<skill id="11806" level="4" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15022" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4290" mAtk="5689" pDef="3901" mDef="7755" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="101" />
+		<skill id="11279" level="101" />
+	</npc>
+	<npc id="15023" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4390" mAtk="5789" pDef="3951" mDef="7805" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="102" />
+		<skill id="11279" level="102" />
+	</npc>
+	<npc id="15024" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4490" mAtk="5889" pDef="4001" mDef="7855" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="103" />
+		<skill id="11279" level="103" />
+	</npc>
+	<npc id="15025" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4590" mAtk="5989" pDef="4051" mDef="7905" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="104" />
+		<skill id="11279" level="104" />
+	</npc>
+	<npc id="15026" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4690" mAtk="6089" pDef="4101" mDef="7955" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="105" />
+		<skill id="11279" level="105" />
+	</npc>
+	<npc id="15027" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4790" mAtk="6189" pDef="4151" mDef="8005" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="106" />
+		<skill id="11279" level="106" />
+	</npc>
+	<npc id="15028" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4890" mAtk="6289" pDef="4201" mDef="8055" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="107" />
+		<skill id="11279" level="107" />
+	</npc>
+	<npc id="15029" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4990" mAtk="6389" pDef="4251" mDef="8105" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="108" />
+		<skill id="11279" level="108" />
+	</npc>
+	<npc id="15030" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5090" mAtk="6489" pDef="4301" mDef="8155" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="109" />
+		<skill id="11279" level="109" />
+	</npc>
+	<npc id="15031" name="Cute Bear" level="99" type="L2Pet" atkRange="40" hpMax="26927" hpReg="16.0" mpMax="1783" mpReg="4.5"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5190" mAtk="6589" pDef="4351" mDef="8205" pAtkSpd="447"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" collisionRadius="18" collisionHeight="18" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15" soulshots="1"
+			spiritshots="1">
+		<skill id="11278" level="110" />
+		<skill id="11279" level="110" />
+	</npc>
+	<npc id="15032" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="101" />
+		<skill id="11281" level="101" />
+	</npc>
+	<npc id="15033" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="102" />
+		<skill id="11281" level="102" />
+	</npc>
+	<npc id="15034" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="103" />
+		<skill id="11281" level="103" />
+	</npc>
+	<npc id="15035" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="104" />
+		<skill id="11281" level="104" />
+	</npc>
+	<npc id="15036" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="105" />
+		<skill id="11281" level="105" />
+	</npc>
+	<npc id="15037" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="106" />
+		<skill id="11281" level="106" />
+	</npc>
+	<npc id="15038" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="107" />
+		<skill id="11281" level="107" />
+	</npc>
+	<npc id="15039" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="108" />
+		<skill id="11281" level="108" />
+	</npc>
+	<npc id="15040" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="109" />
+		<skill id="11281" level="109" />
+	</npc>
+	<npc id="15041" name="Saber Tooth Cougar" level="99" type="L2Pet" atkRange="40" hpMax="17950" hpReg="10.0" mpMax="1783"
+			mpReg="4.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4821" mAtk="4313" pDef="2534" mDef="7899" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="120" mCritRate="120" walkSpd="90" runSpd="180" collisionRadius="19" collisionHeight="12.25"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11280" level="110" />
+		<skill id="11281" level="110" />
+	</npc>
+	<npc id="15042" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="101" />
+		<skill id="11283" level="101" />
+	</npc>
+	<npc id="15043" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="102" />
+		<skill id="11283" level="102" />
+	</npc>
+	<npc id="15044" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="103" />
+		<skill id="11283" level="103" />
+	</npc>
+	<npc id="15045" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="104" />
+		<skill id="11283" level="104" />
+	</npc>
+	<npc id="15046" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="105" />
+		<skill id="11283" level="105" />
+	</npc>
+	<npc id="15047" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="106" />
+		<skill id="11283" level="106" />
+	</npc>
+	<npc id="15048" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="107" />
+		<skill id="11283" level="107" />
+	</npc>
+	<npc id="15049" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="108" />
+		<skill id="11283" level="108" />
+	</npc>
+	<npc id="15050" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="109" />
+		<skill id="11283" level="109" />
+	</npc>
+	<npc id="15051" name="Grim Reaper" level="99" type="L2Pet" atkRange="900" hpMax="17950" hpReg="10.0" mpMax="2675" mpReg="5.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5348" mAtk="16809" pDef="2534" mDef="3400" pAtkSpd="398"
+			mAtkSpd="398" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" rHand="30329" collisionRadius="14" collisionHeight="32"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="balanced" skillChance="15"
+			soulshots="1" spiritshots="1">
+		<skill id="11282" level="110" />
+		<skill id="11283" level="110" />
+	</npc>
+	<npc id="15052" name="Naviarope" level="99" type="L2Pet" atkRange="40" hpMax="22616" hpReg="0.0" mpMax="1872" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="175" collisionRadius="25" collisionHeight="39.5" fireRes="260" waterRes="260"
+			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15053" name="Clan Guardian" level="85" type="L2Pet" atkRange="40" hpMax="117783" hpReg="20.0" mpMax="1398" mpReg="10.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="175" collisionRadius="12" collisionHeight="30" fireRes="260" waterRes="260"
+			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+		<skill id="19018" level="1" /> <!-- Clan Guardian Recovery -->
+	</npc>
+	<npc id="15054" name="Siege Golem" level="85" type="L2SiegeSummon" atkRange="80" hpMax="3081130" hpReg="6.5" mpMax="1466"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2150" mAtk="465" pDef="937" mDef="674" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="40" collisionRadius="60" collisionHeight="140" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="30">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="11" /> <!-- Spear -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="14767" level="1" /> <!-- Siege Punch -->
+	</npc>
+	<npc id="15055" name="Siege Golem" level="90" type="L2SiegeSummon" atkRange="80" hpMax="3488199" hpReg="6.5" mpMax="1636"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2450" mAtk="565" pDef="1037" mDef="774" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="40" collisionRadius="60" collisionHeight="140" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="30">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="11" /> <!-- Spear -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="14767" level="1" /> <!-- Siege Punch -->
+	</npc>
+	<npc id="15056" name="Siege Golem" level="95" type="L2SiegeSummon" atkRange="80" hpMax="3697356" hpReg="6.5" mpMax="1752"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2850" mAtk="665" pDef="1337" mDef="874" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="40" collisionRadius="60" collisionHeight="140" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="30">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="11" /> <!-- Spear -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="14767" level="1" /> <!-- Siege Punch -->
+	</npc>
+	<npc id="15057" name="Siege Golem" level="99" type="L2SiegeSummon" atkRange="80" hpMax="4598980" hpReg="6.5" mpMax="1872"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3050" mAtk="1065" pDef="1637" mDef="1074" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="40" collisionRadius="60" collisionHeight="140" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="30">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="11" /> <!-- Spear -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="14767" level="1" /> <!-- Siege Punch -->
+	</npc>
+	<npc id="15058" name="Wild Hog Cannon" level="85" type="L2SiegeSummon" atkRange="40" hpMax="46963" hpReg="6.5" mpMax="1466"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="994" mAtk="711" pDef="341" mDef="350" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="10" runSpd="10" collisionRadius="93" collisionHeight="90" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="100">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
+		<skill id="4413" level="18" /> <!-- Extremely Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="4230" level="1" /> <!-- Wild Cannon -->
+	</npc>
+	<npc id="15059" name="Wild Hog Cannon" level="90" type="L2SiegeSummon" atkRange="40" hpMax="89863" hpReg="6.5" mpMax="1636"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1494" mAtk="811" pDef="441" mDef="450" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="10" runSpd="10" collisionRadius="93" collisionHeight="90" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="100">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
+		<skill id="4413" level="18" /> <!-- Extremely Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="4230" level="1" /> <!-- Wild Cannon -->
+	</npc>
+	<npc id="15060" name="Wild Hog Cannon" level="95" type="L2SiegeSummon" atkRange="40" hpMax="52735" hpReg="6.5" mpMax="1752"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1794" mAtk="911" pDef="541" mDef="650" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="10" runSpd="10" collisionRadius="93" collisionHeight="90" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="100">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
+		<skill id="4413" level="18" /> <!-- Extremely Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="4230" level="1" /> <!-- Wild Cannon -->
+	</npc>
+	<npc id="15061" name="Wild Hog Cannon" level="99" type="L2SiegeSummon" atkRange="40" hpMax="157718" hpReg="6.5" mpMax="1872"
+			mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1994" mAtk="1411" pDef="641" mDef="1250" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="10" runSpd="10" collisionRadius="93" collisionHeight="90" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter" skillChance="15" soulshots="100">
+		<skill id="4416" level="21" /> <!-- Siege Weapons -->
+		<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
+		<skill id="4413" level="18" /> <!-- Extremely Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4332" level="1" /> <!-- Mental Aegis -->
+		<skill id="4230" level="1" /> <!-- Wild Cannon -->
+	</npc>
+	<npc id="15062" name="Swoop Cannon" level="85" type="L2Pet" atkRange="80" hpMax="173000" hpReg="0.0" mpMax="1466" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17" mAtk="265" pDef="837" mDef="674" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="40" collisionRadius="45" collisionHeight="47.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15063" name="Swoop Cannon" level="90" type="L2Pet" atkRange="80" hpMax="457547" hpReg="0.0" mpMax="1636" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17" mAtk="265" pDef="837" mDef="674" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="40" collisionRadius="45" collisionHeight="47.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15064" name="Swoop Cannon" level="95" type="L2Pet" atkRange="80" hpMax="380530" hpReg="0.0" mpMax="1752" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17" mAtk="265" pDef="837" mDef="674" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="40" collisionRadius="45" collisionHeight="47.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15065" name="Swoop Cannon" level="99" type="L2Pet" atkRange="80" hpMax="418089" hpReg="0.0" mpMax="1872" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17" mAtk="265" pDef="837" mDef="674" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="40" collisionRadius="45" collisionHeight="47.5" fireRes="160" waterRes="160"
+			windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced" skillChance="15" soulshots="1" spiritshots="1">
+	</npc>
+	<npc id="15066" name="Wynn Kai the Cat" level="85" type="L2Pet" atkRange="40" hpMax="21856" hpReg="18.5" mpMax="2096" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1859" mAtk="1367" pDef="2286" mDef="4298" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11323" level="1" /> <!-- Feline Aggression -->
+		<skill id="11324" level="1" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15067" name="Wynn Kai the Cat" level="87" type="L2Pet" atkRange="40" hpMax="22367" hpReg="18.5" mpMax="2177" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1994" mAtk="1494" pDef="2405" mDef="4567" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="180"
+			waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11323" level="2" /> <!-- Feline Aggression -->
+		<skill id="11324" level="2" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15068" name="Wynn Kai the Cat" level="89" type="L2Pet" atkRange="40" hpMax="22889" hpReg="18.5" mpMax="2258" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2139" mAtk="1619" pDef="2531" mDef="4854" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="200"
+			waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11323" level="3" /> <!-- Feline Aggression -->
+		<skill id="11324" level="3" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15069" name="Wynn Kai the Cat" level="91" type="L2Pet" atkRange="40" hpMax="23427" hpReg="18.5" mpMax="2339" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2294" mAtk="1755" pDef="2662" mDef="5158" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="220"
+			waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11323" level="4" /> <!-- Feline Aggression -->
+		<skill id="11324" level="4" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15070" name="Wynn Kai the Cat" level="93" type="L2Pet" atkRange="40" hpMax="23976" hpReg="18.5" mpMax="2422" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2462" mAtk="1906" pDef="2800" mDef="5480" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="240"
+			waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11323" level="5" /> <!-- Feline Aggression -->
+		<skill id="11324" level="5" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15071" name="Wynn Kai the Cat" level="95" type="L2Pet" atkRange="40" hpMax="30202" hpReg="18.5" mpMax="2505" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3519" mAtk="3674" pDef="3437" mDef="6790" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="260"
+			waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11323" level="6" /> <!-- Feline Aggression -->
+		<skill id="11324" level="6" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15072" name="Wynn Kai the Cat" level="97" type="L2Pet" atkRange="40" hpMax="31992" hpReg="18.5" mpMax="2590" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3776" mAtk="3982" pDef="3615" mDef="7211" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11323" level="7" /> <!-- Feline Aggression -->
+		<skill id="11324" level="7" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15073" name="Wynn Kai the Cat" level="99" type="L2Pet" atkRange="40" hpMax="32311" hpReg="18.5" mpMax="2675" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4050" mAtk="4313" pDef="3801" mDef="7655" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="7" collisionHeight="15" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11323" level="8" /> <!-- Feline Aggression -->
+		<skill id="11324" level="8" /> <!-- Feline Stun -->
+	</npc>
+	<npc id="15074" name="Wynn Feline King" level="85" type="L2Pet" atkRange="40" hpMax="15298" hpReg="18.5" mpMax="1466" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2657" mAtk="1367" pDef="1599" mDef="3005" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11325" level="1" /> <!-- Feline Bite -->
+		<skill id="11326" level="1" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15075" name="Wynn Feline King" level="87" type="L2Pet" atkRange="40" hpMax="15656" hpReg="18.5" mpMax="1522" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2849" mAtk="1494" pDef="1682" mDef="3195" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="180" waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11325" level="2" /> <!-- Feline Bite -->
+		<skill id="11326" level="2" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15076" name="Wynn Feline King" level="89" type="L2Pet" atkRange="40" hpMax="16021" hpReg="18.5" mpMax="1580" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3056" mAtk="1619" pDef="1771" mDef="3397" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="200" waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11325" level="3" /> <!-- Feline Bite -->
+		<skill id="11326" level="3" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15077" name="Wynn Feline King" level="91" type="L2Pet" atkRange="40" hpMax="16398" hpReg="18.5" mpMax="1636" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3280" mAtk="1755" pDef="1863" mDef="3607" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="220" waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11325" level="4" /> <!-- Feline Bite -->
+		<skill id="11326" level="4" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15078" name="Wynn Feline King" level="93" type="L2Pet" atkRange="40" hpMax="16782" hpReg="18.5" mpMax="1695" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3518" mAtk="1906" pDef="1960" mDef="3834" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="240" waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11325" level="5" /> <!-- Feline Bite -->
+		<skill id="11326" level="5" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15079" name="Wynn Feline King" level="95" type="L2Pet" atkRange="40" hpMax="21140" hpReg="18.5" mpMax="1752" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5031" mAtk="3674" pDef="2404" mDef="4750" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11325" level="6" /> <!-- Feline Bite -->
+		<skill id="11326" level="6" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15080" name="Wynn Feline King" level="97" type="L2Pet" atkRange="40" hpMax="22394" hpReg="18.5" mpMax="1813" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5397" mAtk="3982" pDef="2529" mDef="5046" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11325" level="7" /> <!-- Feline Bite -->
+		<skill id="11326" level="7" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15081" name="Wynn Feline King" level="99" type="L2Pet" atkRange="40" hpMax="22616" hpReg="18.5" mpMax="1872" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5787" mAtk="4313" pDef="2660" mDef="5357" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="6" collisionHeight="16.01"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11325" level="8" /> <!-- Feline Bite -->
+		<skill id="11326" level="8" /> <!-- Feline Pounce -->
+	</npc>
+	<npc id="15082" name="Wynn Feline Queen" level="85" type="L2Pet" atkRange="1000" hpMax="10928" hpReg="18.5" mpMax="1048"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2652" mAtk="1367" pDef="1143" mDef="2147" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11327" level="1" /> <!-- Feline Touch -->
+		<skill id="11328" level="1" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15083" name="Wynn Feline Queen" level="87" type="L2Pet" atkRange="1000" hpMax="11182" hpReg="18.5" mpMax="1087"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2846" mAtk="1494" pDef="1202" mDef="2283" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="180" waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11327" level="2" /> <!-- Feline Touch -->
+		<skill id="11328" level="2" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15084" name="Wynn Feline Queen" level="89" type="L2Pet" atkRange="1000" hpMax="11443" hpReg="18.5" mpMax="1128"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3054" mAtk="1619" pDef="1265" mDef="2427" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="200" waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11327" level="3" /> <!-- Feline Touch -->
+		<skill id="11328" level="3" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15085" name="Wynn Feline Queen" level="91" type="L2Pet" atkRange="1000" hpMax="11713" hpReg="18.5" mpMax="1169"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3277" mAtk="1755" pDef="1330" mDef="2577" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="220" waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11327" level="4" /> <!-- Feline Touch -->
+		<skill id="11328" level="4" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15086" name="Wynn Feline Queen" level="93" type="L2Pet" atkRange="1000" hpMax="11987" hpReg="18.5" mpMax="1210"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3515" mAtk="1906" pDef="1399" mDef="2737" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="240" waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11327" level="5" /> <!-- Feline Touch -->
+		<skill id="11328" level="5" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15087" name="Wynn Feline Queen" level="95" type="L2Pet" atkRange="1000" hpMax="15101" hpReg="18.5" mpMax="1252"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5030" mAtk="3674" pDef="1718" mDef="3395" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11327" level="6" /> <!-- Feline Touch -->
+		<skill id="11328" level="6" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15088" name="Wynn Feline Queen" level="97" type="L2Pet" atkRange="1000" hpMax="15995" hpReg="18.5" mpMax="1295"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5392" mAtk="3982" pDef="1807" mDef="3605" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11327" level="7" /> <!-- Feline Touch -->
+		<skill id="11328" level="7" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15089" name="Wynn Feline Queen" level="99" type="L2Pet" atkRange="1000" hpMax="16154" hpReg="18.5" mpMax="1337"
+			mpReg="13.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5782" mAtk="4313" pDef="1900" mDef="3827" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37014" collisionRadius="8" collisionHeight="15"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11327" level="8" /> <!-- Feline Touch -->
+		<skill id="11328" level="8" /> <!-- Feline Power -->
+	</npc>
+	<npc id="15090" name="Wynn Nightshade" level="85" type="L2Pet" atkRange="40" hpMax="21856" hpReg="18.5" mpMax="2096" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1859" mAtk="1367" pDef="2286" mDef="4298" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11341" level="1" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="1" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15091" name="Wynn Nightshade" level="87" type="L2Pet" atkRange="40" hpMax="22367" hpReg="18.5" mpMax="2177" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1994" mAtk="1494" pDef="2405" mDef="4567" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="180"
+			waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11341" level="2" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="2" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15092" name="Wynn Nightshade" level="89" type="L2Pet" atkRange="40" hpMax="22889" hpReg="18.5" mpMax="2258" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2139" mAtk="1619" pDef="2531" mDef="4854" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="200"
+			waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11341" level="3" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="3" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15093" name="Wynn Nightshade" level="91" type="L2Pet" atkRange="40" hpMax="23427" hpReg="18.5" mpMax="2339" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2294" mAtk="1755" pDef="2662" mDef="5158" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="220"
+			waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11341" level="4" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="4" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15094" name="Wynn Nightshade" level="93" type="L2Pet" atkRange="40" hpMax="23976" hpReg="18.5" mpMax="2422" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2462" mAtk="1906" pDef="2800" mDef="5480" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="240"
+			waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11341" level="5" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="5" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15095" name="Wynn Nightshade" level="95" type="L2Pet" atkRange="40" hpMax="30202" hpReg="18.5" mpMax="2505" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3519" mAtk="3674" pDef="3437" mDef="6790" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="260"
+			waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11341" level="6" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="6" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15096" name="Wynn Nightshade" level="97" type="L2Pet" atkRange="40" hpMax="31992" hpReg="18.5" mpMax="2590" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3776" mAtk="3982" pDef="3615" mDef="7211" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11341" level="7" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="7" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15097" name="Wynn Nightshade" level="99" type="L2Pet" atkRange="40" hpMax="32311" hpReg="18.5" mpMax="2675" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4050" mAtk="4313" pDef="3801" mDef="7655" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="35.5" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11341" level="8" /> <!-- Phantom Aggression -->
+		<skill id="11342" level="8" /> <!-- Phantom Stun -->
+	</npc>
+	<npc id="15098" name="Wynn Spectral Lord" level="85" type="L2Pet" atkRange="40" hpMax="15298" hpReg="18.5" mpMax="1466"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2657" mAtk="1367" pDef="1599" mDef="3005" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11343" level="1" /> <!-- Phantom Bite -->
+		<skill id="11344" level="1" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15099" name="Wynn Spectral Lord" level="87" type="L2Pet" atkRange="40" hpMax="15656" hpReg="18.5" mpMax="1522"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2849" mAtk="1494" pDef="1682" mDef="3195" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="180" waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11343" level="2" /> <!-- Phantom Bite -->
+		<skill id="11344" level="2" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15100" name="Wynn Spectral Lord" level="89" type="L2Pet" atkRange="40" hpMax="16021" hpReg="18.5" mpMax="1580"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3056" mAtk="1619" pDef="1771" mDef="3397" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="200" waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11343" level="3" /> <!-- Phantom Bite -->
+		<skill id="11344" level="3" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15101" name="Wynn Spectral Lord" level="91" type="L2Pet" atkRange="40" hpMax="16398" hpReg="18.5" mpMax="1636"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3280" mAtk="1755" pDef="1863" mDef="3607" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="220" waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11343" level="4" /> <!-- Phantom Bite -->
+		<skill id="11344" level="4" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15102" name="Wynn Spectral Lord" level="93" type="L2Pet" atkRange="40" hpMax="16782" hpReg="18.5" mpMax="1695"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3518" mAtk="1906" pDef="1960" mDef="3834" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="240" waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11343" level="5" /> <!-- Phantom Bite -->
+		<skill id="11344" level="5" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15103" name="Wynn Spectral Lord" level="95" type="L2Pet" atkRange="40" hpMax="21140" hpReg="18.5" mpMax="1752"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5031" mAtk="3674" pDef="2404" mDef="4750" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11343" level="6" /> <!-- Phantom Bite -->
+		<skill id="11344" level="6" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15104" name="Wynn Spectral Lord" level="97" type="L2Pet" atkRange="40" hpMax="22394" hpReg="18.5" mpMax="1813"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5397" mAtk="3982" pDef="2529" mDef="5046" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11343" level="7" /> <!-- Phantom Bite -->
+		<skill id="11344" level="7" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15105" name="Wynn Spectral Lord" level="99" type="L2Pet" atkRange="40" hpMax="22616" hpReg="18.5" mpMax="1872"
+			mpReg="16.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5787" mAtk="4313" pDef="2660" mDef="5357" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="12.5" collisionHeight="33.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11343" level="8" /> <!-- Phantom Bite -->
+		<skill id="11344" level="8" /> <!-- Phantom Pounce -->
+	</npc>
+	<npc id="15106" name="Wynn Soulless" level="85" type="L2Pet" atkRange="1000" hpMax="10928" hpReg="18.5" mpMax="1048" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2652" mAtk="1367" pDef="1143" mDef="2147" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11345" level="1" /> <!-- Phantom Touch -->
+		<skill id="11346" level="1" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15107" name="Wynn Soulless" level="87" type="L2Pet" atkRange="1000" hpMax="11182" hpReg="18.5" mpMax="1087" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2846" mAtk="1494" pDef="1202" mDef="2283" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="180" waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11345" level="2" /> <!-- Phantom Touch -->
+		<skill id="11346" level="2" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15108" name="Wynn Soulless" level="89" type="L2Pet" atkRange="1000" hpMax="11443" hpReg="18.5" mpMax="1128" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3054" mAtk="1619" pDef="1265" mDef="2427" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="200" waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11345" level="3" /> <!-- Phantom Touch -->
+		<skill id="11346" level="3" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15109" name="Wynn Soulless" level="91" type="L2Pet" atkRange="1000" hpMax="11713" hpReg="18.5" mpMax="1169" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3277" mAtk="1755" pDef="1330" mDef="2577" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="220" waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11345" level="4" /> <!-- Phantom Touch -->
+		<skill id="11346" level="4" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15110" name="Wynn Soulless" level="93" type="L2Pet" atkRange="1000" hpMax="11987" hpReg="18.5" mpMax="1210" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3515" mAtk="1906" pDef="1399" mDef="2737" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="240" waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11345" level="5" /> <!-- Phantom Touch -->
+		<skill id="11346" level="5" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15111" name="Wynn Soulless" level="95" type="L2Pet" atkRange="1000" hpMax="15101" hpReg="18.5" mpMax="1252" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5030" mAtk="3674" pDef="1718" mDef="3395" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11345" level="6" /> <!-- Phantom Touch -->
+		<skill id="11346" level="6" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15112" name="Wynn Soulless" level="97" type="L2Pet" atkRange="1000" hpMax="15995" hpReg="18.5" mpMax="1295" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5392" mAtk="3982" pDef="1807" mDef="3605" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11345" level="7" /> <!-- Phantom Touch -->
+		<skill id="11346" level="7" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15113" name="Wynn Soulless" level="99" type="L2Pet" atkRange="1000" hpMax="16154" hpReg="18.5" mpMax="1337" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5782" mAtk="4313" pDef="1900" mDef="3827" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37016" collisionRadius="7" collisionHeight="33"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11345" level="8" /> <!-- Phantom Touch -->
+		<skill id="11346" level="8" /> <!-- Phantom Power -->
+	</npc>
+	<npc id="15114" name="Wynn Merrow" level="85" type="L2Pet" atkRange="40" hpMax="21856" hpReg="18.5" mpMax="2096" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1859" mAtk="1367" pDef="2286" mDef="4298" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11332" level="1" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="1" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15115" name="Wynn Merrow" level="87" type="L2Pet" atkRange="40" hpMax="22367" hpReg="18.5" mpMax="2177" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1994" mAtk="1494" pDef="2405" mDef="4567" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="180"
+			waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11332" level="2" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="2" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15116" name="Wynn Merrow" level="89" type="L2Pet" atkRange="40" hpMax="22889" hpReg="18.5" mpMax="2258" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2139" mAtk="1619" pDef="2531" mDef="4854" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="200"
+			waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11332" level="3" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="3" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15117" name="Wynn Merrow" level="91" type="L2Pet" atkRange="40" hpMax="23427" hpReg="18.5" mpMax="2339" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2294" mAtk="1755" pDef="2662" mDef="5158" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="220"
+			waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11332" level="4" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="4" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15118" name="Wynn Merrow" level="93" type="L2Pet" atkRange="40" hpMax="23976" hpReg="18.5" mpMax="2422" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2462" mAtk="1906" pDef="2800" mDef="5480" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="240"
+			waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11332" level="5" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="5" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15119" name="Wynn Merrow" level="95" type="L2Pet" atkRange="40" hpMax="30202" hpReg="18.5" mpMax="2505" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3519" mAtk="3674" pDef="3437" mDef="6790" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="260"
+			waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11332" level="6" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="6" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15120" name="Wynn Merrow" level="97" type="L2Pet" atkRange="40" hpMax="31992" hpReg="18.5" mpMax="2590" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3776" mAtk="3982" pDef="3615" mDef="7211" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11332" level="7" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="7" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15121" name="Wynn Merrow" level="99" type="L2Pet" atkRange="40" hpMax="32311" hpReg="18.5" mpMax="2675" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4050" mAtk="4313" pDef="3801" mDef="7655" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="17" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11332" level="8" /> <!-- Unicorn's Aggression -->
+		<skill id="11333" level="8" /> <!-- Unicorn's Stun -->
+	</npc>
+	<npc id="15122" name="Wynn Magnus" level="85" type="L2Pet" atkRange="40" hpMax="15298" hpReg="18.5" mpMax="1466" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2657" mAtk="1367" pDef="1599" mDef="3005" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11334" level="1" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="1" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15123" name="Wynn Magnus" level="87" type="L2Pet" atkRange="40" hpMax="15656" hpReg="18.5" mpMax="1522" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2849" mAtk="1494" pDef="1682" mDef="3195" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="180" waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11334" level="2" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="2" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15124" name="Wynn Magnus" level="89" type="L2Pet" atkRange="40" hpMax="16021" hpReg="18.5" mpMax="1580" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3056" mAtk="1619" pDef="1771" mDef="3397" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="200" waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11334" level="3" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="3" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15125" name="Wynn Magnus" level="91" type="L2Pet" atkRange="40" hpMax="16398" hpReg="18.5" mpMax="1636" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3280" mAtk="1755" pDef="1863" mDef="3607" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="220" waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11334" level="4" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="4" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15126" name="Wynn Magnus" level="93" type="L2Pet" atkRange="40" hpMax="16782" hpReg="18.5" mpMax="1695" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3518" mAtk="1906" pDef="1960" mDef="3834" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="240" waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11334" level="5" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="5" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15127" name="Wynn Magnus" level="95" type="L2Pet" atkRange="40" hpMax="21140" hpReg="18.5" mpMax="1752" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5031" mAtk="3674" pDef="2404" mDef="4750" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11334" level="6" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="6" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15128" name="Wynn Magnus" level="97" type="L2Pet" atkRange="40" hpMax="22394" hpReg="18.5" mpMax="1813" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5397" mAtk="3982" pDef="2529" mDef="5046" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11334" level="7" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="7" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15129" name="Wynn Magnus" level="99" type="L2Pet" atkRange="40" hpMax="22616" hpReg="18.5" mpMax="1872" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5787" mAtk="4313" pDef="2660" mDef="5357" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="13.5" collisionHeight="26.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11334" level="8" /> <!-- Unicorn's Bite -->
+		<skill id="11335" level="8" /> <!-- Unicorn's Pounce -->
+	</npc>
+	<npc id="15130" name="Wynn Seraphim" level="85" type="L2Pet" atkRange="1000" hpMax="10928" hpReg="18.5" mpMax="1048" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2652" mAtk="1367" pDef="1143" mDef="2147" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="11336" level="1" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="1" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15131" name="Wynn Seraphim" level="87" type="L2Pet" atkRange="1000" hpMax="11182" hpReg="18.5" mpMax="1087" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2846" mAtk="1494" pDef="1202" mDef="2283" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="180" waterRes="180" windRes="180" earthRes="180" holyRes="180" darkRes="180" aiType="fighter">
+		<skill id="11336" level="2" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="2" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15132" name="Wynn Seraphim" level="89" type="L2Pet" atkRange="1000" hpMax="11443" hpReg="18.5" mpMax="1128" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3054" mAtk="1619" pDef="1265" mDef="2427" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="200" waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="11336" level="3" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="3" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15133" name="Wynn Seraphim" level="91" type="L2Pet" atkRange="1000" hpMax="11713" hpReg="18.5" mpMax="1169" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3277" mAtk="1755" pDef="1330" mDef="2577" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="220" waterRes="220" windRes="220" earthRes="220" holyRes="220" darkRes="220" aiType="fighter">
+		<skill id="11336" level="4" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="4" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15134" name="Wynn Seraphim" level="93" type="L2Pet" atkRange="1000" hpMax="11987" hpReg="18.5" mpMax="1210" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3515" mAtk="1906" pDef="1399" mDef="2737" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="240" waterRes="240" windRes="240" earthRes="240" holyRes="240" darkRes="240" aiType="fighter">
+		<skill id="11336" level="5" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="5" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15135" name="Wynn Seraphim" level="95" type="L2Pet" atkRange="1000" hpMax="15101" hpReg="18.5" mpMax="1252" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5030" mAtk="3674" pDef="1718" mDef="3395" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="fighter">
+		<skill id="11336" level="6" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="6" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15136" name="Wynn Seraphim" level="97" type="L2Pet" atkRange="1000" hpMax="15995" hpReg="18.5" mpMax="1295" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5392" mAtk="3982" pDef="1807" mDef="3605" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="fighter">
+		<skill id="11336" level="7" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="7" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15137" name="Wynn Seraphim" level="99" type="L2Pet" atkRange="1000" hpMax="16154" hpReg="18.5" mpMax="1337" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5782" mAtk="4313" pDef="1900" mDef="3827" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" rHand="37015" collisionRadius="13.5" collisionHeight="25.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="11336" level="8" /> <!-- Unicorn's Touch -->
+		<skill id="11337" level="8" /> <!-- Unicorn's Power -->
+	</npc>
+	<npc id="15138" name="Blood Panther" level="85" type="L2Pet" atkRange="40" hpMax="15298" hpReg="18.5" mpMax="1466" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1951" mAtk="1367" pDef="1371" mDef="1718" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="20" collisionHeight="14.5" fireRes="160"
+			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
+		<skill id="10087" level="1" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="1" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15139" name="Blood Panther" level="90" type="L2Pet" atkRange="40" hpMax="16398" hpReg="18.5" mpMax="1636" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2395" mAtk="1736" pDef="1587" mDef="2050" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="20" collisionHeight="14.5" fireRes="200"
+			waterRes="200" windRes="200" earthRes="200" holyRes="200" darkRes="200" aiType="fighter">
+		<skill id="10087" level="2" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="2" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15140" name="Blood Panther" level="95" type="L2Pet" atkRange="40" hpMax="21140" hpReg="18.5" mpMax="1752" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3695" mAtk="3674" pDef="2060" mDef="2715" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="20" collisionHeight="14.5" fireRes="250"
+			waterRes="250" windRes="250" earthRes="250" holyRes="250" darkRes="250" aiType="fighter">
+		<skill id="10087" level="3" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="3" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15141" name="Blood Panther" level="99" type="L2Pet" atkRange="40" hpMax="22616" hpReg="18.5" mpMax="1872" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4252" mAtk="4313" pDef="2280" mDef="3061" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="20" collisionHeight="14.5" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="10087" level="4" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="4" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15142" name="Cursed Man" level="85" type="L2Pet" atkRange="40" hpMax="15943" hpReg="18.5" mpMax="1352" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="1482" mAtk="955" pDef="1725" mDef="3779" pAtkSpd="328" mAtkSpd="453"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="20" collisionHeight="42" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="8" /> <!-- Cursed Blow -->
+		<skill id="4708" level="8" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15143" name="Cursed Man" level="88" type="L2Pet" atkRange="40" hpMax="16260" hpReg="18.5" mpMax="1379" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="2149" mAtk="1385" pDef="2174" mDef="4759" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="20" collisionHeight="42" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="9" /> <!-- Cursed Blow -->
+		<skill id="4708" level="9" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15144" name="Cursed Man" level="91" type="L2Pet" atkRange="40" hpMax="16418" hpReg="18.5" mpMax="1392" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="2836" mAtk="1827" pDef="2627" mDef="5750" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="20" collisionHeight="42" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="10" /> <!-- Cursed Blow -->
+		<skill id="4708" level="10" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15145" name="Cursed Man" level="94" type="L2Pet" atkRange="40" hpMax="16733" hpReg="18.5" mpMax="1419" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="3588" mAtk="2312" pDef="3130" mDef="6851" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="20" collisionHeight="42" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="11" /> <!-- Cursed Blow -->
+		<skill id="4708" level="11" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15146" name="Cursed Man" level="97" type="L2Pet" atkRange="40" hpMax="16891" hpReg="18.5" mpMax="1432" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="4350" mAtk="2804" pDef="3629" mDef="7945" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="20" collisionHeight="42" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="12" /> <!-- Cursed Blow -->
+		<skill id="4708" level="12" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15147" name="Cursed Man" level="99" type="L2Pet" atkRange="40" hpMax="17049" hpReg="18.5" mpMax="1446" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="4892" mAtk="3152" pDef="3987" mDef="8728" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="20" collisionHeight="42" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="13" /> <!-- Cursed Blow -->
+		<skill id="4708" level="13" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15148" name="Reanimated Man" level="85" type="L2Pet" atkRange="40" hpMax="15943" hpReg="18.5" mpMax="1352" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="1482" mAtk="955" pDef="1725" mDef="3779" pAtkSpd="328" mAtkSpd="453"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="11" collisionHeight="25" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15149" name="Reanimated Man" level="88" type="L2Pet" atkRange="40" hpMax="16260" hpReg="18.5" mpMax="1379" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="2149" mAtk="1385" pDef="2174" mDef="4759" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="11" collisionHeight="25" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15150" name="Reanimated Man" level="91" type="L2Pet" atkRange="40" hpMax="16418" hpReg="18.5" mpMax="1392" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="2836" mAtk="1827" pDef="2627" mDef="5750" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="11" collisionHeight="25" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15151" name="Reanimated Man" level="94" type="L2Pet" atkRange="40" hpMax="16733" hpReg="18.5" mpMax="1419" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="3588" mAtk="2312" pDef="3130" mDef="6851" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="11" collisionHeight="25" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15152" name="Reanimated Man" level="97" type="L2Pet" atkRange="40" hpMax="16891" hpReg="18.5" mpMax="1432" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="4350" mAtk="2804" pDef="3629" mDef="7945" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="11" collisionHeight="25" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15153" name="Reanimated Man" level="99" type="L2Pet" atkRange="40" hpMax="17049" hpReg="18.5" mpMax="1446" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="70" MEN="77" pAtk="4892" mAtk="3152" pDef="3987" mDef="8728" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="11" collisionHeight="25" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15154" name="Mother Tree" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="150" pDef="100" mDef="100" pAtkSpd="250" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="75.5" targetable="false"
+			showName="false" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" canMove="false">
+		<skill id="19219" level="1" /> <!-- Blessing of Tree -->
+	</npc>
+	<npc id="15155" name="Commando Cat" level="100" type="L2Pet" atkRange="40" hpMax="23738" hpReg="18.5" mpMax="1922" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5721" mAtk="4221" pDef="2681" mDef="5349" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="16.75"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11375" level="1" /> <!-- Commando Jumping Attack -->
+		<skill id="11376" level="1" /> <!-- Commando Double Smash -->
+	</npc>
+	<npc id="15156" name="Commando Cat" level="101" type="L2Pet" atkRange="40" hpMax="23975" hpReg="18.5" mpMax="1941" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5778" mAtk="4263" pDef="2708" mDef="5402" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="16.75"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11375" level="1" /> <!-- Commando Jumping Attack -->
+		<skill id="11376" level="1" /> <!-- Commando Double Smash -->
+	</npc>
+	<npc id="15157" name="Commando Cat" level="102" type="L2Pet" atkRange="40" hpMax="24215" hpReg="18.5" mpMax="1960" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5836" mAtk="4306" pDef="2735" mDef="5456" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="16.75"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11375" level="1" /> <!-- Commando Jumping Attack -->
+		<skill id="11376" level="1" /> <!-- Commando Double Smash -->
+	</npc>
+	<npc id="15158" name="Commando Cat" level="103" type="L2Pet" atkRange="40" hpMax="24457" hpReg="18.5" mpMax="1980" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5894" mAtk="4349" pDef="2762" mDef="5511" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="16.75"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11375" level="2" /> <!-- Commando Jumping Attack -->
+		<skill id="11376" level="2" /> <!-- Commando Double Smash -->
+	</npc>
+	<npc id="15159" name="Commando Cat" level="104" type="L2Pet" atkRange="40" hpMax="24702" hpReg="18.5" mpMax="2000" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5953" mAtk="4392" pDef="2790" mDef="5566" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="16.75"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11375" level="2" /> <!-- Commando Jumping Attack -->
+		<skill id="11376" level="2" /> <!-- Commando Double Smash -->
+	</npc>
+	<npc id="15160" name="Commando Cat" level="105" type="L2Pet" atkRange="40" hpMax="24949" hpReg="18.5" mpMax="2020" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6013" mAtk="4436" pDef="2818" mDef="5622" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="16.75"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11375" level="3" /> <!-- Commando Jumping Attack -->
+		<skill id="11376" level="3" /> <!-- Commando Double Smash -->
+	</npc>
+	<npc id="15161" name="Witch Cat" level="100" type="L2Pet" atkRange="900" hpMax="17123" hpReg="18.5" mpMax="1417" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6129" mAtk="4572" pDef="2014" mDef="4057" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="15.9"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11377" level="1" /> <!-- Witch Cat Power -->
+		<skill id="11378" level="1" /> <!-- Elemental Slam -->
+	</npc>
+	<npc id="15162" name="Witch Cat" level="101" type="L2Pet" atkRange="900" hpMax="17294" hpReg="18.5" mpMax="1431" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6190" mAtk="4618" pDef="2034" mDef="4098" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="15.9"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11377" level="1" /> <!-- Witch Cat Power -->
+		<skill id="11378" level="1" /> <!-- Elemental Slam -->
+	</npc>
+	<npc id="15163" name="Witch Cat" level="102" type="L2Pet" atkRange="900" hpMax="17467" hpReg="18.5" mpMax="1445" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6252" mAtk="4664" pDef="2054" mDef="4139" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="15.9"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11377" level="1" /> <!-- Witch Cat Power -->
+		<skill id="11378" level="1" /> <!-- Elemental Slam -->
+	</npc>
+	<npc id="15164" name="Witch Cat" level="103" type="L2Pet" atkRange="900" hpMax="17642" hpReg="18.5" mpMax="1459" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6315" mAtk="4711" pDef="2075" mDef="4180" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="15.9"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11377" level="2" /> <!-- Witch Cat Power -->
+		<skill id="11378" level="2" /> <!-- Elemental Slam -->
+	</npc>
+	<npc id="15165" name="Witch Cat" level="104" type="L2Pet" atkRange="900" hpMax="17818" hpReg="18.5" mpMax="1474" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6378" mAtk="4758" pDef="2096" mDef="4222" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="15.9"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11377" level="2" /> <!-- Witch Cat Power -->
+		<skill id="11378" level="2" /> <!-- Elemental Slam -->
+	</npc>
+	<npc id="15166" name="Witch Cat" level="105" type="L2Pet" atkRange="900" hpMax="17996" hpReg="18.5" mpMax="1489" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6442" mAtk="4806" pDef="2117" mDef="4264" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="15.9"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11377" level="3" /> <!-- Witch Cat Power -->
+		<skill id="11378" level="3" /> <!-- Elemental Slam -->
+	</npc>
+	<npc id="15167" name="Unicorn Lancer" level="100" type="L2Pet" atkRange="40" hpMax="23738" hpReg="18.5" mpMax="1922" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5721" mAtk="4221" pDef="2681" mDef="5349" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11379" level="1" /> <!-- Lancer Rush -->
+		<skill id="11380" level="1" /> <!-- Power Stump -->
+	</npc>
+	<npc id="15168" name="Unicorn Lancer" level="101" type="L2Pet" atkRange="40" hpMax="23975" hpReg="18.5" mpMax="1941" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5778" mAtk="4263" pDef="2708" mDef="5402" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11379" level="1" /> <!-- Lancer Rush -->
+		<skill id="11380" level="1" /> <!-- Power Stump -->
+	</npc>
+	<npc id="15169" name="Unicorn Lancer" level="102" type="L2Pet" atkRange="40" hpMax="24215" hpReg="18.5" mpMax="1960" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5836" mAtk="4306" pDef="2735" mDef="5456" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11379" level="1" /> <!-- Lancer Rush -->
+		<skill id="11380" level="1" /> <!-- Power Stump -->
+	</npc>
+	<npc id="15170" name="Unicorn Lancer" level="103" type="L2Pet" atkRange="40" hpMax="24457" hpReg="18.5" mpMax="1980" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5894" mAtk="4349" pDef="2762" mDef="5511" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11379" level="2" /> <!-- Lancer Rush -->
+		<skill id="11380" level="2" /> <!-- Power Stump -->
+	</npc>
+	<npc id="15171" name="Unicorn Lancer" level="104" type="L2Pet" atkRange="40" hpMax="24702" hpReg="18.5" mpMax="2000" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5953" mAtk="4392" pDef="2790" mDef="5566" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11379" level="2" /> <!-- Lancer Rush -->
+		<skill id="11380" level="2" /> <!-- Power Stump -->
+	</npc>
+	<npc id="15172" name="Unicorn Lancer" level="105" type="L2Pet" atkRange="40" hpMax="24949" hpReg="18.5" mpMax="2020" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6013" mAtk="4436" pDef="2818" mDef="5622" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="280"
+			waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11379" level="3" /> <!-- Lancer Rush -->
+		<skill id="11380" level="3" /> <!-- Power Stump -->
+	</npc>
+	<npc id="15173" name="Unicorn Cherub" level="100" type="L2Pet" atkRange="900" hpMax="17123" hpReg="18.5" mpMax="1417" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6129" mAtk="4572" pDef="2014" mDef="4057" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11381" level="1" /> <!-- Cherub Power -->
+		<skill id="11382" level="1" /> <!-- Multiple Icicles -->
+	</npc>
+	<npc id="15174" name="Unicorn Cherub" level="101" type="L2Pet" atkRange="900" hpMax="17294" hpReg="18.5" mpMax="1431" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6190" mAtk="4618" pDef="2034" mDef="4098" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11381" level="1" /> <!-- Cherub Power -->
+		<skill id="11382" level="1" /> <!-- Multiple Icicles -->
+	</npc>
+	<npc id="15175" name="Unicorn Cherub" level="102" type="L2Pet" atkRange="900" hpMax="17467" hpReg="18.5" mpMax="1445" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6252" mAtk="4664" pDef="2054" mDef="4139" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11381" level="1" /> <!-- Cherub Power -->
+		<skill id="11382" level="1" /> <!-- Multiple Icicles -->
+	</npc>
+	<npc id="15176" name="Unicorn Cherub" level="103" type="L2Pet" atkRange="900" hpMax="17642" hpReg="18.5" mpMax="1459" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6315" mAtk="4711" pDef="2075" mDef="4180" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11381" level="2" /> <!-- Cherub Power -->
+		<skill id="11382" level="2" /> <!-- Multiple Icicles -->
+	</npc>
+	<npc id="15177" name="Unicorn Cherub" level="104" type="L2Pet" atkRange="900" hpMax="17818" hpReg="18.5" mpMax="1474" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6378" mAtk="4758" pDef="2096" mDef="4222" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11381" level="2" /> <!-- Cherub Power -->
+		<skill id="11382" level="2" /> <!-- Multiple Icicles -->
+	</npc>
+	<npc id="15178" name="Unicorn Cherub" level="105" type="L2Pet" atkRange="900" hpMax="17996" hpReg="18.5" mpMax="1489" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6442" mAtk="4806" pDef="2117" mDef="4264" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11381" level="3" /> <!-- Cherub Power -->
+		<skill id="11382" level="3" /> <!-- Multiple Icicles -->
+	</npc>
+	<npc id="15179" name="Soul Specter" level="100" type="L2Pet" atkRange="40" hpMax="23738" hpReg="18.5" mpMax="1922" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5721" mAtk="4221" pDef="2681" mDef="5349" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="28.6"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11383" level="1" /> <!-- Phantom Sword Attack -->
+		<skill id="11384" level="1" /> <!-- Phantom Blow -->
+	</npc>
+	<npc id="15180" name="Soul Specter" level="101" type="L2Pet" atkRange="40" hpMax="23975" hpReg="18.5" mpMax="1941" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5778" mAtk="4263" pDef="2708" mDef="5402" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="28.6"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11383" level="1" /> <!-- Phantom Sword Attack -->
+		<skill id="11384" level="1" /> <!-- Phantom Blow -->
+	</npc>
+	<npc id="15181" name="Soul Specter" level="102" type="L2Pet" atkRange="40" hpMax="24215" hpReg="18.5" mpMax="1960" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5836" mAtk="4306" pDef="2735" mDef="5456" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="28.6"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11383" level="1" /> <!-- Phantom Sword Attack -->
+		<skill id="11384" level="1" /> <!-- Phantom Blow -->
+	</npc>
+	<npc id="15182" name="Soul Specter" level="103" type="L2Pet" atkRange="40" hpMax="24457" hpReg="18.5" mpMax="1980" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5894" mAtk="4349" pDef="2762" mDef="5511" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="28.6"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11383" level="2" /> <!-- Phantom Sword Attack -->
+		<skill id="11384" level="2" /> <!-- Phantom Blow -->
+	</npc>
+	<npc id="15183" name="Soul Specter" level="104" type="L2Pet" atkRange="40" hpMax="24702" hpReg="18.5" mpMax="2000" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="5953" mAtk="4392" pDef="2790" mDef="5566" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="28.6"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11383" level="2" /> <!-- Phantom Sword Attack -->
+		<skill id="11384" level="2" /> <!-- Phantom Blow -->
+	</npc>
+	<npc id="15184" name="Soul Specter" level="105" type="L2Pet" atkRange="40" hpMax="24949" hpReg="18.5" mpMax="2020" mpReg="16.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6013" mAtk="4436" pDef="2818" mDef="5622" pAtkSpd="491"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="28.6"
+			fireRes="280" waterRes="280" windRes="280" earthRes="280" holyRes="280" darkRes="280" aiType="">
+		<skill id="11383" level="3" /> <!-- Phantom Sword Attack -->
+		<skill id="11384" level="3" /> <!-- Phantom Blow -->
+	</npc>
+	<npc id="15185" name="Banshee Queen" level="100" type="L2Pet" atkRange="900" hpMax="17123" hpReg="18.5" mpMax="1417" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6129" mAtk="4572" pDef="2014" mDef="4057" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11385" level="1" /> <!-- Phantom Spike -->
+		<skill id="11386" level="1" /> <!-- Phantom Crash -->
+	</npc>
+	<npc id="15186" name="Banshee Queen" level="101" type="L2Pet" atkRange="900" hpMax="17294" hpReg="18.5" mpMax="1431" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6190" mAtk="4618" pDef="2034" mDef="4098" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11385" level="1" /> <!-- Phantom Spike -->
+		<skill id="11386" level="1" /> <!-- Phantom Crash -->
+	</npc>
+	<npc id="15187" name="Banshee Queen" level="102" type="L2Pet" atkRange="900" hpMax="17467" hpReg="18.5" mpMax="1445" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6252" mAtk="4664" pDef="2054" mDef="4139" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11385" level="1" /> <!-- Phantom Spike -->
+		<skill id="11386" level="1" /> <!-- Phantom Crash -->
+	</npc>
+	<npc id="15188" name="Banshee Queen" level="103" type="L2Pet" atkRange="900" hpMax="17642" hpReg="18.5" mpMax="1459" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6315" mAtk="4711" pDef="2075" mDef="4180" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11385" level="2" /> <!-- Phantom Spike -->
+		<skill id="11386" level="2" /> <!-- Phantom Crash -->
+	</npc>
+	<npc id="15189" name="Banshee Queen" level="104" type="L2Pet" atkRange="900" hpMax="17818" hpReg="18.5" mpMax="1474" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6378" mAtk="4758" pDef="2096" mDef="4222" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11385" level="2" /> <!-- Phantom Spike -->
+		<skill id="11386" level="2" /> <!-- Phantom Crash -->
+	</npc>
+	<npc id="15190" name="Banshee Queen" level="105" type="L2Pet" atkRange="900" hpMax="17996" hpReg="18.5" mpMax="1489" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="6442" mAtk="4806" pDef="2117" mDef="4264" pAtkSpd="343"
+			mAtkSpd="398" pCritRate="142" mCritRate="142" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="23.5"
+			fireRes="300" waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="">
+		<skill id="11385" level="3" /> <!-- Phantom Spike -->
+		<skill id="11386" level="3" /> <!-- Phantom Crash -->
+	</npc>
+	<npc id="15191" name="Blood Panther" level="101" type="L2Npc" atkRange="40" hpMax="23973" hpReg="18.5" mpMax="1984" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="4507" mAtk="4572" pDef="2417" mDef="3245" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="24" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="10087" level="5" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="5" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15192" name="Blood Panther" level="103" type="L2Npc" atkRange="40" hpMax="24213" hpReg="18.5" mpMax="2004" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="4552" mAtk="4618" pDef="2441" mDef="3277" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="24" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="10087" level="6" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="6" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15193" name="Blood Panther" level="105" type="L2Npc" atkRange="40" hpMax="24455" hpReg="18.5" mpMax="2024" mpReg="13.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="4598" mAtk="4664" pDef="2465" mDef="3310" pAtkSpd="360"
+			mAtkSpd="398" pCritRate="95" mCritRate="95" walkSpd="99" runSpd="198" collisionRadius="10" collisionHeight="24" fireRes="300"
+			waterRes="300" windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
+		<skill id="10087" level="7" /> <!-- Blood Panther Roar -->
+		<skill id="10088" level="7" /> <!-- Blood Panther Rush -->
+		<skill id="10095" level="1" /> <!-- Blood Panther's Death Touch -->
+	</npc>
+	<npc id="15194" name="Cursed Man" level="101" type="L2Npc" atkRange="40" hpMax="18072" hpReg="18.5" mpMax="1533" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="40" MEN="77" pAtk="5186" mAtk="3341" pDef="4226" mDef="9252" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="14" /> <!-- Cursed Blow -->
+		<skill id="4708" level="14" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15195" name="Cursed Man" level="103" type="L2Npc" atkRange="40" hpMax="18253" hpReg="18.5" mpMax="1548" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="40" MEN="77" pAtk="5238" mAtk="3374" pDef="4268" mDef="9345" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="15" /> <!-- Cursed Blow -->
+		<skill id="4708" level="15" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15196" name="Cursed Man" level="105" type="L2Npc" atkRange="40" hpMax="18436" hpReg="18.5" mpMax="1563" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="40" MEN="77" pAtk="5290" mAtk="3408" pDef="4311" mDef="9438" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
+		<skill id="4709" level="17" /> <!-- Cursed Blow -->
+		<skill id="4708" level="17" /> <!-- Cursed Strike -->
+	</npc>
+	<npc id="15197" name="Reanimated Man" level="101" type="L2Npc" atkRange="40" hpMax="18072" hpReg="18.5" mpMax="1533" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="40" MEN="77" pAtk="5186" mAtk="3341" pDef="4226" mDef="9252" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15198" name="Reanimated Man" level="103" type="L2Npc" atkRange="40" hpMax="18253" hpReg="18.5" mpMax="1548" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="40" MEN="77" pAtk="5238" mAtk="3374" pDef="4268" mDef="9345" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15199" name="Reanimated Man" level="105" type="L2Npc" atkRange="40" hpMax="18436" hpReg="18.5" mpMax="1563" mpReg="13.0"
+			STR="80" CON="61" DEX="61" INT="28" WIT="40" MEN="77" pAtk="5290" mAtk="3408" pDef="4311" mDef="9438" pAtkSpd="328"
+			mAtkSpd="453" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="140" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
+	</npc>
+	<npc id="15200" name="Death Gate" level="101" type="L2Npc" atkRange="40" hpMax="52952" hpReg="0.0" mpMax="3250" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="1029" mAtk="703" pDef="361" mDef="265" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="260" waterRes="260"
+			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced">
+		<skill id="11291" level="2" /> <!-- Gate Vortex -->
+		<skill id="11289" level="2" /> <!-- Gate Root -->
+	</npc>
+	<npc id="15201" name="Death Gate" level="103" type="L2Npc" atkRange="40" hpMax="53482" hpReg="0.0" mpMax="3283" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="1039" mAtk="710" pDef="365" mDef="268" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="260" waterRes="260"
+			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced">
+		<skill id="11291" level="3" /> <!-- Gate Vortex -->
+		<skill id="11289" level="3" /> <!-- Gate Root -->
+	</npc>
+	<npc id="15202" name="Death Gate" level="105" type="L2Npc" atkRange="40" hpMax="54017" hpReg="0.0" mpMax="3316" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="1049" mAtk="717" pDef="369" mDef="271" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="260" waterRes="260"
+			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced">
+		<skill id="11291" level="4" /> <!-- Gate Vortex -->
+		<skill id="11289" level="4" /> <!-- Gate Root -->
+	</npc>
+	<npc id="15922" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15923" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="10" collisionHeight="10" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15924" name="Deko" title="Performer" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="5" collisionHeight="12" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15925" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15926" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15927" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="1" runSpd="210" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15928" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="210" collisionRadius="12" collisionHeight="27.5" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15929" name="Seed Teleport Device" level="99" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714"
+			mpReg="10.33" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="20" collisionHeight="40" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<spawn x="-186692" y="243539" z="2608" heading="0" respawn="250" />
+	</npc>
+	<npc id="15930" name="Suppressed Tumor" title="Protection Target" level="97" type="L2Npc" atkRange="40" hpMax="20760000"
+			hpReg="144.87" mpMax="4328920" mpReg="105.12" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2"
+			pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="42"
+			collisionHeight="55" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+		<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+	</npc>
+	<npc id="15931" name="Suppressed Tumor" title="Protection Target" level="97" type="L2Npc" atkRange="40" hpMax="20760000"
+			hpReg="144.87" mpMax="4328920" mpReg="105.12" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2"
+			pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="42"
+			collisionHeight="55" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+		<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+	</npc>
+	<npc id="15932" name="Suppressed Tumor" title="Protection Target" level="97" type="L2Npc" atkRange="40" hpMax="20760000"
+			hpReg="144.87" mpMax="4328920" mpReg="105.12" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2"
+			pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="42"
+			collisionHeight="55" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+		<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+	</npc>
+	<npc id="15933" name="Suppressed Tumor" title="Protection Target" level="97" type="L2Npc" atkRange="40" hpMax="20760000"
+			hpReg="144.87" mpMax="4328920" mpReg="105.12" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2"
+			pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="42"
+			collisionHeight="55" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+		<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+	</npc>
+	<npc id="15934" name="Suppressed Tumor" title="Protection Target" level="97" type="L2Npc" atkRange="40" hpMax="20760000"
+			hpReg="144.87" mpMax="4328920" mpReg="105.12" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2"
+			pDef="4" mDef="2" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="42"
+			collisionHeight="55" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+		<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+	</npc>
+	<npc id="15935" name="Evil Tumor" title="Attack Target" level="99" type="L2Npc" atkRange="40" hpMax="3697861" hpReg="79.2"
+			mpMax="771086" mpReg="57.47" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2"
+			pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="42" collisionHeight="55"
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+		<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+	</npc>
+	<npc id="15936" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15937" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15938" name="" level="120" type="L2Npc" atkRange="40" hpMax="27404" hpReg="14.23" mpMax="5714" mpReg="10.33" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15939" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15940" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15941" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="1" runSpd="210" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="15942" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="1" runSpd="210" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+</list>

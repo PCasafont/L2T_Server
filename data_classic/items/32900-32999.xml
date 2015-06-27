@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Scallop Jamadhr of Destiny (Fire) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32900" type="Weapon" name="Scallop Jamadhr of Destiny (Fire)">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword of Destiny (Fire) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32901" type="Weapon" name="Bastard Sword of Destiny*Crimson Sword (Fire)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Dagger (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32902" type="Weapon" name="Mithril Dagger of Destiny (Water)">
+		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32903" type="Weapon" name="Elven Long Sword of Destiny (Water)">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Grand Épée (Water) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32904" type="Weapon" name="Grand Épée of Destiny (Water)">
+		<set name="icon" val="icon.weapon_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="83" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32905" type="Weapon" name="Claymore of Destiny (Water)">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32906" type="Weapon" name="General's Katzbalger of Destiny (Water)">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32907" type="Weapon" name="Light Crossbow of Destiny (Water)">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="reuse_delay" val="1500" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32908" type="Weapon" name="Cranequin of Destiny (Water)">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32909" type="Weapon" name="Bonebreaker of Destiny (Water)">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32910" type="Weapon" name="Staff of Life of Destiny (Water)">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32911" type="Weapon" name="Atuba Hammer of Destiny (Water)">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Glaive of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32912" type="Weapon" name="Glaive of Destiny (Water)">
+		<set name="icon" val="icon.weapon_glaive_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32913" type="Weapon" name="Scallop Jamadhr of Destiny (Water)">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword of Destiny (Water) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32914" type="Weapon" name="Bastard Sword of Destiny*Crimson Sword (Water)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Dagger (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32915" type="Weapon" name="Mithril Dagger of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32916" type="Weapon" name="Elven Long Sword of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Grand Épée (Wind) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32917" type="Weapon" name="Grand Épée of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="83" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32918" type="Weapon" name="Claymore of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32919" type="Weapon" name="General's Katzbalger of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32920" type="Weapon" name="Light Crossbow of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="reuse_delay" val="1500" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32921" type="Weapon" name="Cranequin of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32922" type="Weapon" name="Bonebreaker of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32923" type="Weapon" name="Staff of Life of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32924" type="Weapon" name="Atuba Hammer of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Glaive of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32925" type="Weapon" name="Glaive of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_glaive_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32926" type="Weapon" name="Scallop Jamadhr of Destiny (Wind)">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword of Destiny (Wind) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32927" type="Weapon" name="Bastard Sword of Destiny*Crimson Sword (Wind)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Dagger (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32928" type="Weapon" name="Mithril Dagger of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32929" type="Weapon" name="Elven Long Sword of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Grand Épée (Earth) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32930" type="Weapon" name="Grand Épée of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="83" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32931" type="Weapon" name="Claymore of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32932" type="Weapon" name="General's Katzbalger of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32933" type="Weapon" name="Light Crossbow of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="reuse_delay" val="1500" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32934" type="Weapon" name="Cranequin of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32935" type="Weapon" name="Bonebreaker of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32936" type="Weapon" name="Staff of Life of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32937" type="Weapon" name="Atuba Hammer of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Glaive of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32938" type="Weapon" name="Glaive of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_glaive_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32939" type="Weapon" name="Scallop Jamadhr of Destiny (Earth)">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword of Destiny (Earth) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32940" type="Weapon" name="Bastard Sword of Destiny*Crimson Sword (Earth)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Dagger (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32941" type="Weapon" name="Mithril Dagger of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32942" type="Weapon" name="Elven Long Sword of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Grand Épée (Holy) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32943" type="Weapon" name="Grand Épée of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="83" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32944" type="Weapon" name="Claymore of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32945" type="Weapon" name="General's Katzbalger of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32946" type="Weapon" name="Light Crossbow of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="reuse_delay" val="1500" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32947" type="Weapon" name="Cranequin of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32948" type="Weapon" name="Bonebreaker of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32949" type="Weapon" name="Staff of Life of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32950" type="Weapon" name="Atuba Hammer of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Glaive of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32951" type="Weapon" name="Glaive of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_glaive_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32952" type="Weapon" name="Scallop Jamadhr of Destiny (Holy)">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword of Destiny (Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32953" type="Weapon" name="Bastard Sword of Destiny*Crimson Sword (Holy)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Dagger (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32954" type="Weapon" name="Mithril Dagger of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32955" type="Weapon" name="Elven Long Sword of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Grand Épée (Dark) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32956" type="Weapon" name="Grand Épée of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_rapier_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="83" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32957" type="Weapon" name="Claymore of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32958" type="Weapon" name="General's Katzbalger of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32959" type="Weapon" name="Light Crossbow of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="reuse_delay" val="1500" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32960" type="Weapon" name="Cranequin of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="reuse_delay" val="400" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32961" type="Weapon" name="Bonebreaker of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32962" type="Weapon" name="Staff of Life of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32963" type="Weapon" name="Atuba Hammer of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Glaive of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32964" type="Weapon" name="Glaive of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_glaive_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32965" type="Weapon" name="Scallop Jamadhr of Destiny (Dark)">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword of Destiny (Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32966" type="Weapon" name="Bastard Sword of Destiny*Crimson Sword (Dark)">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Helmet of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32967" type="Armor" name="Brigandine Helmet of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="63" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32968" type="Armor" name="Brigandine of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t43_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="832" />
+		<for>
+			<baseAdd stat="pDef" val="103" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Gaiters of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32969" type="Armor" name="Brigandine Gaiters of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t43_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="382" />
+		<for>
+			<baseAdd stat="pDef" val="64" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Shield of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32970" type="Armor" name="Brigandine Shield of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.shield_brigandine_shield_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="132" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="142" />
+			<enchant stat="sDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Boots of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32971" type="Armor" name="Brigandine Boots of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t43_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="125" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Gauntlets of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32972" type="Armor" name="Brigandine Gauntlets of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t43_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="63" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Shirt of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32973" type="Armor" name="Manticore Skin Shirt of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t42_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="452" />
+		<for>
+			<baseAdd stat="pDef" val="77" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Gaiters of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32974" type="Armor" name="Manticore Skin Gaiters of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t42_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="155" />
+		<for>
+			<baseAdd stat="pDef" val="48" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Boots of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32975" type="Armor" name="Manticore Skin Boots of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t42_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="126" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Gloves of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32976" type="Armor" name="Manticore Skin Gloves of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t42_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="63" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Tunic of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32977" type="Armor" name="Mithril Tunic of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t51_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<for>
+			<baseAdd stat="pDef" val="52" />
+			<add stat="maxMp" val="169" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Stockings of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32978" type="Armor" name="Mithril Stockings of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t51_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="98" />
+		<for>
+			<baseAdd stat="pDef" val="32" />
+			<add stat="maxMp" val="105" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Elven Mithril Gloves of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32979" type="Armor" name="Elven Mithril Gloves of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t51_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="64" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Elven Mithril Boots of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32980" type="Armor" name="Elven Mithril Boots of Destiny (Fire, Wind, Dark)">
+		<set name="icon" val="icon.armor_t51_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="125" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Helmet of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32981" type="Armor" name="Brigandine Helmet of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="63" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32982" type="Armor" name="Brigandine of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t43_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="832" />
+		<for>
+			<baseAdd stat="pDef" val="103" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Gaiters of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32983" type="Armor" name="Brigandine Gaiters of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t43_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="382" />
+		<for>
+			<baseAdd stat="pDef" val="64" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Shield of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32984" type="Armor" name="Brigandine Shield of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.shield_brigandine_shield_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="132" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="142" />
+			<enchant stat="sDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Boots of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32985" type="Armor" name="Brigandine Boots of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t43_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="125" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Brigandine Gauntlets of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32986" type="Armor" name="Brigandine Gauntlets of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t43_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="63" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Shirt of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32987" type="Armor" name="Manticore Skin Shirt of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t42_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="452" />
+		<for>
+			<baseAdd stat="pDef" val="77" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Gaiters of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32988" type="Armor" name="Manticore Skin Gaiters of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t42_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="heavy" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="155" />
+		<for>
+			<baseAdd stat="pDef" val="48" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Boots of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32989" type="Armor" name="Manticore Skin Boots of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t42_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="126" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Manticore Skin Gloves of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32990" type="Armor" name="Manticore Skin Gloves of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t42_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="63" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Tunic of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32991" type="Armor" name="Mithril Tunic of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t51_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<for>
+			<baseAdd stat="pDef" val="52" />
+			<add stat="maxMp" val="169" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Mithril Stockings of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32992" type="Armor" name="Mithril Stockings of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t51_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="98" />
+		<for>
+			<baseAdd stat="pDef" val="32" />
+			<add stat="maxMp" val="105" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Elven Mithril Gloves of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32993" type="Armor" name="Elven Mithril Gloves of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t51_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="64" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Elven Mithril Boots of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32994" type="Armor" name="Elven Mithril Boots of Destiny (Water, Earth, Holy)">
+		<set name="icon" val="icon.armor_t51_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="125" />
+		<for>
+			<baseAdd stat="pDef" val="27" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!--
+		Crystal Dagger of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 140 during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="32995" type="Weapon" name="Crystal Dagger of Destiny (Fire) - Critical Damage">
+		<set name="icon" val="icon.weapon_crystal_dagger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="100" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="136" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Samurai Long Sword of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Critical by 73. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="32996" type="Weapon" name="Samurai Long Sword of Destiny (Fire) - Focus">
+		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="156" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Admiral's Estoc of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Critical by 73.
+		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="32997" type="Weapon" name="Admiral's Estoc of Destiny (Fire) - Focus">
+		<set name="icon" val="icon.weapon_blink_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="141" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Critical by 73. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="32998" type="Weapon" name="Berserker Blade of Destiny (Fire) - Focus">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Critical by 73. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="32999" type="Weapon" name="Saber Tooth of Destiny (Fire) - Focus">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

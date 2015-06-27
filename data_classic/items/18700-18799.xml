@@ -1,0 +1,3178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18700" type="Weapon" name="Blessed Requiem Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18701" type="Weapon" name="Blessed Requiem Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13269-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18702" type="Weapon" name="Blessed Requiem Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="enchant4_skill" val="13269-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18703" type="Weapon" name="Blessed Requiem Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13269-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18704" type="Weapon" name="Apocalypse Shaper - Guidance">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="boundItem" val="18746" />
+		<set name="blessedItem" val="18788" />
+		<for>
+			<set stat="pAtk" val="441" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18705" type="Weapon" name="Apocalypse Shaper - Haste">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18747" />
+		<set name="blessedItem" val="18789" />
+		<for>
+			<set stat="pAtk" val="441" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 82.3. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18706" type="Weapon" name="Apocalypse Shaper - Focus">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18748" />
+		<set name="blessedItem" val="18790" />
+		<for>
+			<set stat="pAtk" val="441" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18707" type="Weapon" name="Apocalypse Cutter - Haste">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18749" />
+		<set name="blessedItem" val="18791" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18708" type="Weapon" name="Apocalypse Cutter - Focus">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18750" />
+		<set name="blessedItem" val="18792" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18709" type="Weapon" name="Apocalypse Cutter - Health">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3013-4" />
+		<set name="boundItem" val="18751" />
+		<set name="blessedItem" val="18793" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18710" type="Weapon" name="Apocalypse Slasher - Focus">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18752" />
+		<set name="blessedItem" val="18794" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18711" type="Weapon" name="Apocalypse Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<set name="boundItem" val="18753" />
+		<set name="blessedItem" val="18795" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18712" type="Weapon" name="Apocalypse Slasher - Haste">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18754" />
+		<set name="blessedItem" val="18796" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18713" type="Weapon" name="Apocalypse Avenger - Haste">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18755" />
+		<set name="blessedItem" val="18797" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1158 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18714" type="Weapon" name="Apocalypse Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3572-6" />
+		<set name="boundItem" val="18756" />
+		<set name="blessedItem" val="18798" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18715" type="Weapon" name="Apocalypse Avenger - Focus">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18757" />
+		<set name="blessedItem" val="18799" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 76. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18716" type="Weapon" name="Apocalypse Fighter - Focus">
+		<set name="icon" val="icon.weapon_kirche_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18758" />
+		<set name="blessedItem" val="18800" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18717" type="Weapon" name="Apocalypse Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_kirche_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<set name="boundItem" val="18759" />
+		<set name="blessedItem" val="18801" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18718" type="Weapon" name="Apocalypse Fighter - Haste">
+		<set name="icon" val="icon.weapon_kirche_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18760" />
+		<set name="blessedItem" val="18802" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="18719" type="Weapon" name="Apocalypse Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_grave_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3568-2" />
+		<set name="boundItem" val="18761" />
+		<set name="blessedItem" val="18803" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="18720" type="Weapon" name="Apocalypse Stormer - Guidance">
+		<set name="icon" val="icon.weapon_grave_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="boundItem" val="18762" />
+		<set name="blessedItem" val="18804" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="18721" type="Weapon" name="Apocalypse Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_grave_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<set name="boundItem" val="18763" />
+		<set name="blessedItem" val="18805" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18722" type="Weapon" name="Apocalypse Thrower - Damage Up">
+		<set name="icon" val="icon.weapon_spina_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="item_skill" val="13062-2" />
+		<set name="boundItem" val="18764" />
+		<set name="blessedItem" val="18806" />
+		<for>
+			<set stat="pAtk" val="992" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18723" type="Weapon" name="Apocalypse Thrower - Focus">
+		<set name="icon" val="icon.weapon_spina_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18765" />
+		<set name="blessedItem" val="18807" />
+		<for>
+			<set stat="pAtk" val="992" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18724" type="Weapon" name="Apocalypse Thrower - Long Blow">
+		<set name="icon" val="icon.weapon_spina_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="item_skill" val="13061-1" />
+		<set name="boundItem" val="18766" />
+		<set name="blessedItem" val="18808" />
+		<for>
+			<set stat="pAtk" val="992" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18725" type="Weapon" name="Apocalypse Shooter - Focus">
+		<set name="icon" val="icon.weapon_medianox_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18767" />
+		<set name="blessedItem" val="18809" />
+		<for>
+			<set stat="pAtk" val="894" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18726" type="Weapon" name="Apocalypse Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_medianox_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="boundItem" val="18768" />
+		<set name="blessedItem" val="18810" />
+		<for>
+			<set stat="pAtk" val="894" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18727" type="Weapon" name="Apocalypse Shooter - Haste">
+		<set name="icon" val="icon.weapon_medianox_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18769" />
+		<set name="blessedItem" val="18811" />
+		<for>
+			<set stat="pAtk" val="894" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18728" type="Weapon" name="Apocalypse Buster - Acumen">
+		<set name="icon" val="icon.weapon_imerose_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="boundItem" val="18770" />
+		<set name="blessedItem" val="18812" />
+		<for>
+			<set stat="pAtk" val="403" />
+			<set stat="mAtk" val="293" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18729" type="Weapon" name="Apocalypse Buster - Magic Hold">
+		<set name="icon" val="icon.weapon_imerose_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="boundItem" val="18771" />
+		<set name="blessedItem" val="18813" />
+		<for>
+			<set stat="pAtk" val="403" />
+			<set stat="mAtk" val="293" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18730" type="Weapon" name="Apocalypse Buster - Mana Up">
+		<set name="icon" val="icon.weapon_imerose_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="boundItem" val="18772" />
+		<set name="blessedItem" val="18814" />
+		<for>
+			<set stat="pAtk" val="403" />
+			<set stat="mAtk" val="293" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18731" type="Weapon" name="Apocalypse Caster - Empower">
+		<set name="icon" val="icon.weapon_yuke_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="boundItem" val="18773" />
+		<set name="blessedItem" val="18815" />
+		<for>
+			<set stat="pAtk" val="403" />
+			<set stat="mAtk" val="293" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18732" type="Weapon" name="Apocalypse Caster - Acumen">
+		<set name="icon" val="icon.weapon_yuke_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="boundItem" val="18774" />
+		<set name="blessedItem" val="18816" />
+		<for>
+			<set stat="pAtk" val="403" />
+			<set stat="mAtk" val="293" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18733" type="Weapon" name="Apocalypse Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_yuke_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="boundItem" val="18775" />
+		<set name="blessedItem" val="18817" />
+		<for>
+			<set stat="pAtk" val="403" />
+			<set stat="mAtk" val="293" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18734" type="Weapon" name="Apocalypse Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_herencia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3576-4" />
+		<set name="boundItem" val="18776" />
+		<set name="blessedItem" val="18818" />
+		<for>
+			<set stat="pAtk" val="491" />
+			<set stat="mAtk" val="322" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18735" type="Weapon" name="Apocalypse Retributer - Acumen">
+		<set name="icon" val="icon.weapon_herencia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="boundItem" val="18777" />
+		<set name="blessedItem" val="18819" />
+		<for>
+			<set stat="pAtk" val="491" />
+			<set stat="mAtk" val="322" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18736" type="Weapon" name="Apocalypse Retributer - Empower">
+		<set name="icon" val="icon.weapon_herencia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="boundItem" val="18778" />
+		<set name="blessedItem" val="18820" />
+		<for>
+			<set stat="pAtk" val="491" />
+			<set stat="mAtk" val="322" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18737" type="Weapon" name="Apocalypse Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18738" type="Weapon" name="Apocalypse Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18739" type="Weapon" name="Apocalypse Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3013-4" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18740" type="Weapon" name="Apocalypse Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<set name="boundItem" val="18782" />
+		<set name="blessedItem" val="18824" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18741" type="Weapon" name="Apocalypse Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18783" />
+		<set name="blessedItem" val="18825" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18742" type="Weapon" name="Apocalypse Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="boundItem" val="18784" />
+		<set name="blessedItem" val="18826" />
+		<for>
+			<set stat="pAtk" val="504" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18743" type="Weapon" name="Apocalypse Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18785" />
+		<set name="blessedItem" val="18827" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18744" type="Weapon" name="Apocalypse Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="boundItem" val="18786" />
+		<set name="blessedItem" val="18828" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18745" type="Weapon" name="Apocalypse Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<set name="boundItem" val="18787" />
+		<set name="blessedItem" val="18829" />
+		<for>
+			<set stat="pAtk" val="613" />
+			<set stat="mAtk" val="219" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18746" type="Weapon" name="Bound Apocalypse Shaper - Guidance">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18704" />
+		<set name="blessedItem" val="18788" />
+		<for>
+			<set stat="pAtk" val="428" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18747" type="Weapon" name="Bound Apocalypse Shaper - Haste">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18705" />
+		<set name="blessedItem" val="18789" />
+		<for>
+			<set stat="pAtk" val="428" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 82.3. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18748" type="Weapon" name="Bound Apocalypse Shaper - Focus">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18706" />
+		<set name="blessedItem" val="18790" />
+		<for>
+			<set stat="pAtk" val="428" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18749" type="Weapon" name="Bound Apocalypse Cutter - Haste">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18707" />
+		<set name="blessedItem" val="18791" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18750" type="Weapon" name="Bound Apocalypse Cutter - Focus">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18708" />
+		<set name="blessedItem" val="18792" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18751" type="Weapon" name="Bound Apocalypse Cutter - Health">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3013-4" />
+		<set name="standardItem" val="18709" />
+		<set name="blessedItem" val="18793" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18752" type="Weapon" name="Bound Apocalypse Slasher - Focus">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18710" />
+		<set name="blessedItem" val="18794" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18753" type="Weapon" name="Bound Apocalypse Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18711" />
+		<set name="blessedItem" val="18795" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18754" type="Weapon" name="Bound Apocalypse Slasher - Haste">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18712" />
+		<set name="blessedItem" val="18796" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18755" type="Weapon" name="Bound Apocalypse Avenger - Haste">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18713" />
+		<set name="blessedItem" val="18797" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1158 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18756" type="Weapon" name="Bound Apocalypse Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3572-6" />
+		<set name="standardItem" val="18714" />
+		<set name="blessedItem" val="18798" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18757" type="Weapon" name="Bound Apocalypse Avenger - Focus">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18715" />
+		<set name="blessedItem" val="18799" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 76. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18758" type="Weapon" name="Bound Apocalypse Fighter - Focus">
+		<set name="icon" val="icon.weapon_kirche_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18716" />
+		<set name="blessedItem" val="18800" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18759" type="Weapon" name="Bound Apocalypse Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_kirche_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18717" />
+		<set name="blessedItem" val="18801" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18760" type="Weapon" name="Bound Apocalypse Fighter - Haste">
+		<set name="icon" val="icon.weapon_kirche_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18718" />
+		<set name="blessedItem" val="18802" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. Increases Multi Attack when enchanted to + 4. Cannot be exchanged or dropped. Can be stored in a private warehouse.
+	-->
+	<item id="18761" type="Weapon" name="Bound Apocalypse Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_grave_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3568-2" />
+		<set name="standardItem" val="18719" />
+		<set name="blessedItem" val="18803" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18762" type="Weapon" name="Bound Apocalypse Stormer - Guidance">
+		<set name="icon" val="icon.weapon_grave_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18720" />
+		<set name="blessedItem" val="18804" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18763" type="Weapon" name="Bound Apocalypse Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_grave_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18721" />
+		<set name="blessedItem" val="18805" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18764" type="Weapon" name="Bound Apocalypse Thrower - Damage Up">
+		<set name="icon" val="icon.weapon_spina_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18722" />
+		<set name="blessedItem" val="18806" />
+		<for>
+			<set stat="pAtk" val="963" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18765" type="Weapon" name="Bound Apocalypse Thrower - Focus">
+		<set name="icon" val="icon.weapon_spina_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18723" />
+		<set name="blessedItem" val="18807" />
+		<for>
+			<set stat="pAtk" val="963" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases the attack range. Increases damage inflicted during PvP. Can use an Unbind Scroll to change this item into a Standard item. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18766" type="Weapon" name="Bound Apocalypse Thrower - Long Blow">
+		<set name="icon" val="icon.weapon_spina_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13061-1" />
+		<set name="standardItem" val="18724" />
+		<set name="blessedItem" val="18808" />
+		<for>
+			<set stat="pAtk" val="963" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18767" type="Weapon" name="Bound Apocalypse Shooter - Focus">
+		<set name="icon" val="icon.weapon_medianox_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18725" />
+		<set name="blessedItem" val="18809" />
+		<for>
+			<set stat="pAtk" val="866" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18768" type="Weapon" name="Bound Apocalypse Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_medianox_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18726" />
+		<set name="blessedItem" val="18810" />
+		<for>
+			<set stat="pAtk" val="866" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18769" type="Weapon" name="Bound Apocalypse Shooter - Haste">
+		<set name="icon" val="icon.weapon_medianox_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18727" />
+		<set name="blessedItem" val="18811" />
+		<for>
+			<set stat="pAtk" val="866" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18770" type="Weapon" name="Bound Apocalypse Buster - Acumen">
+		<set name="icon" val="icon.weapon_imerose_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18728" />
+		<set name="blessedItem" val="18812" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="285" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18771" type="Weapon" name="Bound Apocalypse Buster - Magic Hold">
+		<set name="icon" val="icon.weapon_imerose_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18729" />
+		<set name="blessedItem" val="18813" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="285" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18772" type="Weapon" name="Bound Apocalypse Buster - Mana Up">
+		<set name="icon" val="icon.weapon_imerose_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="standardItem" val="18730" />
+		<set name="blessedItem" val="18814" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="285" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18773" type="Weapon" name="Bound Apocalypse Caster - Empower">
+		<set name="icon" val="icon.weapon_yuke_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="standardItem" val="18731" />
+		<set name="blessedItem" val="18815" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="285" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18774" type="Weapon" name="Bound Apocalypse Caster - Acumen">
+		<set name="icon" val="icon.weapon_yuke_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18732" />
+		<set name="blessedItem" val="18816" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="285" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18775" type="Weapon" name="Bound Apocalypse Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_yuke_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18733" />
+		<set name="blessedItem" val="18817" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="285" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18776" type="Weapon" name="Bound Apocalypse Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_herencia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3576-4" />
+		<set name="standardItem" val="18734" />
+		<set name="blessedItem" val="18818" />
+		<for>
+			<set stat="pAtk" val="477" />
+			<set stat="mAtk" val="314" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18777" type="Weapon" name="Bound Apocalypse Retributer - Acumen">
+		<set name="icon" val="icon.weapon_herencia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18735" />
+		<set name="blessedItem" val="18819" />
+		<for>
+			<set stat="pAtk" val="477" />
+			<set stat="mAtk" val="314" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 322. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18778" type="Weapon" name="Bound Apocalypse Retributer - Empower">
+		<set name="icon" val="icon.weapon_herencia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="standardItem" val="18736" />
+		<set name="blessedItem" val="18820" />
+		<for>
+			<set stat="pAtk" val="477" />
+			<set stat="mAtk" val="314" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18779" type="Weapon" name="Bound Apocalypse Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18737" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18780" type="Weapon" name="Bound Apocalypse Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18738" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18781" type="Weapon" name="Bound Apocalypse Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3013-4" />
+		<set name="standardItem" val="18739" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. P. Critical Damage and P. Atk. Increases when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18782" type="Weapon" name="Bound Apocalypse Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18740" />
+		<set name="blessedItem" val="18824" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18783" type="Weapon" name="Bound Apocalypse Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18741" />
+		<set name="blessedItem" val="18825" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18784" type="Weapon" name="Bound Apocalypse Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18742" />
+		<set name="blessedItem" val="18826" />
+		<for>
+			<set stat="pAtk" val="489" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18785" type="Weapon" name="Bound Apocalypse Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18743" />
+		<set name="blessedItem" val="18827" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18786" type="Weapon" name="Bound Apocalypse Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18744" />
+		<set name="blessedItem" val="18828" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18787" type="Weapon" name="Bound Apocalypse Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-2" />
+		<set name="standardItem" val="18745" />
+		<set name="blessedItem" val="18829" />
+		<for>
+			<set stat="pAtk" val="595" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18788" type="Weapon" name="Blessed Apocalypse Shaper - Guidance">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<for>
+			<set stat="pAtk" val="454" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18789" type="Weapon" name="Blessed Apocalypse Shaper - Haste">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="454" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 82.3. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18790" type="Weapon" name="Blessed Apocalypse Shaper - Focus">
+		<set name="icon" val="icon.weapon_phasian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="454" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18791" type="Weapon" name="Blessed Apocalypse Cutter - Haste">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="519" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18792" type="Weapon" name="Blessed Apocalypse Cutter - Focus">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="519" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18793" type="Weapon" name="Blessed Apocalypse Cutter - Health">
+		<set name="icon" val="icon.weapon_pasis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3013-4" />
+		<for>
+			<set stat="pAtk" val="519" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18794" type="Weapon" name="Blessed Apocalypse Slasher - Focus">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="632" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 332. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18795" type="Weapon" name="Blessed Apocalypse Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-2" />
+		<for>
+			<set stat="pAtk" val="632" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18796" type="Weapon" name="Blessed Apocalypse Slasher - Haste">
+		<set name="icon" val="icon.weapon_volver_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="632" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18797" type="Weapon" name="Blessed Apocalypse Avenger - Haste">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<for>
+			<set stat="pAtk" val="519" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1158 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18798" type="Weapon" name="Blessed Apocalypse Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3572-6" />
+		<for>
+			<set stat="pAtk" val="519" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.2. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18799" type="Weapon" name="Blessed Apocalypse Avenger - Focus">
+		<set name="icon" val="icon.weapon_raksilion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<for>
+			<set stat="pAtk" val="519" />
+			<set stat="mAtk" val="226" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

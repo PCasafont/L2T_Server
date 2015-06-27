@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Nerva Kaiser -->
+	<npc id="23329">
+		<itemDrop itemId="4357" min="450" max="600" chance="100" /> <!-- Silver Shilen -->
+		<itemDrop itemId="30297" min="1" max="1" chance="70" /> <!-- Superior Giant's Codex -->
+		<itemDrop itemId="30298" min="1" max="1" chance="30" /> <!-- Superior Giant's CoDEX - Mastery -->
+	</npc>
+</list>

@@ -1,0 +1,8 @@
+<list>
+	<npc id="50007" templateId="31324" name="Andromeda" serverSideName="true" title="Wedding Manager" serverSideTitle="true"
+			level="70" type="L2WeddingManager" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74"
+			DEX="61" INT="28" WIT="53" MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+</list>

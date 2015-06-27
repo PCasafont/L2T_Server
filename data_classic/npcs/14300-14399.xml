@@ -1,0 +1,1468 @@
+<list>
+	<npc id="14300" name="Boxer the Unicorn" level="46" type="L2Pet" baseAtkRange="40" baseHpMax="1269.4845" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="256.05975" baseMAtk="169.38777" basePDef="188.06921" baseMDef="133.31738" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14301" name="Boxer the Unicorn" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14302" name="Boxer the Unicorn" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14303" name="Boxer the Unicorn" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14304" name="Boxer the Unicorn" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14305" name="Boxer the Unicorn" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14306" name="Boxer the Unicorn" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14307" name="Boxer the Unicorn" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="4" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14308" name="Boxer the Unicorn" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14309" name="Boxer the Unicorn" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14310" name="Boxer the Unicorn" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14311" name="Boxer the Unicorn" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14312" name="Boxer the Unicorn" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14313" name="Boxer the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14314" name="Boxer the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14315" name="Boxer the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14316" name="Boxer the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14317" name="Boxer the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14318" name="Boxer the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14319" name="Boxer the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14320" name="Boxer the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
+			aiType="fighter" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14321" name="Boxer the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14322" name="Boxer the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14323" name="Boxer the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14324" name="Boxer the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14325" name="Boxer the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14326" name="Boxer the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14327" name="Boxer the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14328" name="Boxer the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14329" name="Boxer the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14330" name="Boxer the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14331" name="Boxer the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14332" name="Boxer the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14333" name="Boxer the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14334" name="Boxer the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14335" name="Boxer the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14336" name="Boxer the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14337" name="Boxer the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14338" name="Boxer the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14339" name="Boxer the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14340" name="Boxer the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14341" name="Boxer the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14342" name="Boxer the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
+			aiType="balanced" skillChance="15" soulshots="5" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+	</npc>
+	<npc id="14343" name="Mirage the Unicorn" level="22" type="L2Pet" baseAtkRange="40" baseHpMax="399.5221" baseHpReg="3.5" baseMpMax="218.52" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="2" basePAtk="53.42337" baseMAtk="35.340443" basePDef="95.64791" baseMDef="67.80232" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="2" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="2" /> <!-- Gust -->
+	</npc>
+	<npc id="14344" name="Mirage the Unicorn" level="27" type="L2Pet" baseAtkRange="40" baseHpMax="531.8086" baseHpReg="3.5" baseMpMax="286.92" baseMpReg="1.5" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="4" basePAtk="77.411934" baseMAtk="51.209274" basePDef="111.78321" baseMDef="79.24022" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="2" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="2" /> <!-- Gust -->
+	</npc>
+	<npc id="14345" name="Mirage the Unicorn" level="32" type="L2Pet" baseAtkRange="40" baseHpMax="690.0496" baseHpReg="4.5" baseMpMax="358.32" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="5" basePAtk="109.59228" baseMAtk="72.49711" basePDef="129.63092" baseMDef="91.89199" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="3" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="3" /> <!-- Gust -->
+	</npc>
+	<npc id="14346" name="Mirage the Unicorn" level="37" type="L2Pet" baseAtkRange="40" baseHpMax="874.66907" baseHpReg="4.5" baseMpMax="432.72" baseMpReg="1.8" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="7" basePAtk="151.56543" baseMAtk="100.26304" basePDef="149.14134" baseMDef="105.72243" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="3" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="3" /> <!-- Gust -->
+	</npc>
+	<npc id="14347" name="Mirage the Unicorn" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="1084.7369" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="9" basePAtk="204.74854" baseMAtk="135.44455" basePDef="170.20764" baseMDef="120.655785" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="4" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="4" /> <!-- Gust -->
+	</npc>
+	<npc id="14348" name="Mirage the Unicorn" level="47" type="L2Pet" baseAtkRange="40" baseHpMax="1317.743" baseHpReg="5.5" baseMpMax="665.0" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="11" basePAtk="270.14304" baseMAtk="178.7041" basePDef="192.66031" baseMDef="136.5719" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="4" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="4" /> <!-- Gust -->
+	</npc>
+	<npc id="14349" name="Mirage the Unicorn" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1466.8711" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="13" basePAtk="315.41223" baseMAtk="208.6504" basePDef="206.70216" baseMDef="146.5258" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="5" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="5" /> <!-- Gust -->
+	</npc>
+	<npc id="14350" name="Mirage the Unicorn" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1674.1067" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="15" basePAtk="382.65494" baseMAtk="253.13257" basePDef="225.96187" baseMDef="160.17851" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="1" spiritshots="1" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="5" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="5" /> <!-- Gust -->
+	</npc>
+	<npc id="14351" name="Mirage the Unicorn" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1887.7128" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="40" CON="43" DEX="30" INT="21" WIT="20" MEN="25" exp="17" basePAtk="457.19604" baseMAtk="302.44275" basePDef="245.67677" baseMDef="174.1539" basePAtkSpd="257" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2" clanRange="300">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="5" /> <!-- Mega Storm Strike -->
+		<skill id="4001" level="5" /> <!-- Gust -->
+	</npc>
+	<npc id="14352" name="Mirage the Unicorn" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1212.4336" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14353" name="Mirage the Unicorn" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1278.0028" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14354" name="Mirage the Unicorn" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1343.1746" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14355" name="Mirage the Unicorn" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1407.949" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14356" name="Mirage the Unicorn" level="68" type="L2Pet" baseAtkRange="40" baseHpMax="1471.1338" baseHpReg="7.5" baseMpMax="1282.4" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="646.1797" baseMAtk="441.25696" basePDef="286.3615" baseMDef="209.54692" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="6" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14357" name="Mirage the Unicorn" level="70" type="L2Pet" baseAtkRange="40" baseHpMax="1533.1263" baseHpReg="7.5" baseMpMax="1345.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="688.8637" baseMAtk="470.40463" basePDef="295.916" baseMDef="216.53847" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14358" name="Mirage the Unicorn" level="72" type="L2Pet" baseAtkRange="40" baseHpMax="1593.1322" baseHpReg="8.5" baseMpMax="1410.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="731.5251" baseMAtk="499.5368" basePDef="305.35947" baseMDef="223.4488" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14359" name="Mirage the Unicorn" level="74" type="L2Pet" baseAtkRange="40" baseHpMax="1650.7535" baseHpReg="8.5" baseMpMax="1475.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="773.816" baseMAtk="528.416" basePDef="314.65988" baseMDef="230.25444" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14360" name="Mirage the Unicorn" level="76" type="L2Pet" baseAtkRange="40" baseHpMax="1705.9907" baseHpReg="8.5" baseMpMax="1540.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="815.37146" baseMAtk="556.793" basePDef="323.78455" baseMDef="236.93149" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="7" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14361" name="Mirage the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1758.0486" baseHpReg="8.5" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="855.81384" baseMAtk="584.4099" basePDef="332.70062" baseMDef="243.45587" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="40" waterRes="40" windRes="40" earthRes="40" holyRes="40" darkRes="40"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14362" name="Mirage the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1764.0094" baseHpReg="8.5" baseMpMax="1615.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="860.7348" baseMAtk="587.7703" basePDef="333.79297" baseMDef="244.25522" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="50" waterRes="50" windRes="50" earthRes="50" holyRes="50" darkRes="50"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14363" name="Mirage the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1770.3677" baseHpReg="8.5" baseMpMax="1624.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="865.6557" baseMAtk="591.1307" basePDef="334.88535" baseMDef="245.05457" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="60" waterRes="60" windRes="60" earthRes="60" holyRes="60" darkRes="60"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14364" name="Mirage the Unicorn" level="78" type="L2Pet" baseAtkRange="40" baseHpMax="1776.7258" baseHpReg="8.5" baseMpMax="1632.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="870.57666" baseMAtk="594.491" basePDef="335.97772" baseMDef="245.85391" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="70" waterRes="70" windRes="70" earthRes="70" holyRes="70" darkRes="70"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14365" name="Mirage the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1782.6866" baseHpReg="8.5" baseMpMax="1641.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="875.4976" baseMAtk="597.8514" basePDef="337.07007" baseMDef="246.65326" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="80" waterRes="80" windRes="80" earthRes="80" holyRes="80" darkRes="80"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14366" name="Mirage the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1789.0449" baseHpReg="8.5" baseMpMax="1649.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="880.4185" baseMAtk="601.21173" basePDef="338.16245" baseMDef="247.4526" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="85" waterRes="85" windRes="85" earthRes="85" holyRes="85" darkRes="85"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="8" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14367" name="Mirage the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1795.0057" baseHpReg="8.5" baseMpMax="1657.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="885.3395" baseMAtk="604.5721" basePDef="339.25482" baseMDef="248.25195" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="90" waterRes="90" windRes="90" earthRes="90" holyRes="90" darkRes="90"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14368" name="Mirage the Unicorn" level="79" type="L2Pet" baseAtkRange="40" baseHpMax="1801.364" baseHpReg="8.5" baseMpMax="1666.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="890.2604" baseMAtk="607.93243" basePDef="340.34717" baseMDef="249.0513" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="95" waterRes="95" windRes="95" earthRes="95" holyRes="95" darkRes="95"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14369" name="Mirage the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1806.53" baseHpReg="8.5" baseMpMax="1674.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="894.75854" baseMAtk="611.0041" basePDef="341.375" baseMDef="249.8034" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="100" waterRes="100" windRes="100" earthRes="100" holyRes="100" darkRes="100"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14370" name="Mirage the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1812.4908" baseHpReg="8.5" baseMpMax="1683.25" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="899.5738" baseMAtk="614.2923" basePDef="342.45123" baseMDef="250.59094" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="102" waterRes="102" windRes="102" earthRes="102" holyRes="102" darkRes="102"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14371" name="Mirage the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1818.4518" baseHpReg="8.5" baseMpMax="1691.7" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="904.38904" baseMAtk="617.58044" basePDef="343.52747" baseMDef="251.37848" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="104" waterRes="104" windRes="104" earthRes="104" holyRes="104" darkRes="104"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14372" name="Mirage the Unicorn" level="80" type="L2Pet" baseAtkRange="40" baseHpMax="1824.4126" baseHpReg="8.5" baseMpMax="1700.15" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="909.2042" baseMAtk="620.86865" basePDef="344.6037" baseMDef="252.16602" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="106" waterRes="106" windRes="106" earthRes="106" holyRes="106" darkRes="106"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="9" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14373" name="Mirage the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1829.5786" baseHpReg="8.5" baseMpMax="1708.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="913.54846" baseMAtk="623.8352" basePDef="345.61127" baseMDef="252.90334" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="109" waterRes="109" windRes="109" earthRes="109" holyRes="109" darkRes="109"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14374" name="Mirage the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1835.142" baseHpReg="8.5" baseMpMax="1717.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="918.246" baseMAtk="627.04297" basePDef="346.67035" baseMDef="253.67831" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="111" waterRes="111" windRes="111" earthRes="111" holyRes="111" darkRes="111"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14375" name="Mirage the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1841.1028" baseHpReg="8.5" baseMpMax="1725.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="922.9434" baseMAtk="630.25073" basePDef="347.7294" baseMDef="254.4533" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="113" waterRes="113" windRes="113" earthRes="113" holyRes="113" darkRes="113"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14376" name="Mirage the Unicorn" level="81" type="L2Pet" baseAtkRange="40" baseHpMax="1846.6664" baseHpReg="8.5" baseMpMax="1734.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="927.6409" baseMAtk="633.4585" basePDef="348.78848" baseMDef="255.22827" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="115" waterRes="115" windRes="115" earthRes="115" holyRes="115" darkRes="115"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14377" name="Mirage the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1851.4349" baseHpReg="8.5" baseMpMax="1743.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="931.81946" baseMAtk="636.3119" basePDef="349.77478" baseMDef="255.95" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="118" waterRes="118" windRes="118" earthRes="118" holyRes="118" darkRes="118"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14378" name="Mirage the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1856.9983" baseHpReg="8.5" baseMpMax="1751.55" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="936.3872" baseMAtk="639.431" basePDef="350.81564" baseMDef="256.71167" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="120" waterRes="120" windRes="120" earthRes="120" holyRes="120" darkRes="120"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="10" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14379" name="Mirage the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1862.5619" baseHpReg="8.5" baseMpMax="1760.1" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="940.9549" baseMAtk="642.55023" basePDef="351.8565" baseMDef="257.47333" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="122" waterRes="122" windRes="122" earthRes="122" holyRes="122" darkRes="122"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14380" name="Mirage the Unicorn" level="82" type="L2Pet" baseAtkRange="40" baseHpMax="1867.7279" baseHpReg="8.5" baseMpMax="1768.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="945.52264" baseMAtk="645.66943" basePDef="352.8974" baseMDef="258.23502" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="124" waterRes="124" windRes="124" earthRes="124" holyRes="124" darkRes="124"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14381" name="Mirage the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1872.4966" baseHpReg="8.5" baseMpMax="1777.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="949.524" baseMAtk="648.4018" basePDef="353.86145" baseMDef="258.94046" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="127" waterRes="127" windRes="127" earthRes="127" holyRes="127" darkRes="127"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14382" name="Mirage the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1877.6626" baseHpReg="8.5" baseMpMax="1786.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="953.95013" baseMAtk="651.4243" basePDef="354.88312" baseMDef="259.68805" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="129" waterRes="129" windRes="129" earthRes="129" holyRes="129" darkRes="129"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14383" name="Mirage the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1882.8287" baseHpReg="8.5" baseMpMax="1794.6" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="958.3763" baseMAtk="654.4468" basePDef="355.9048" baseMDef="260.43567" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="131" waterRes="131" windRes="131" earthRes="131" holyRes="131" darkRes="131"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14384" name="Mirage the Unicorn" level="83" type="L2Pet" baseAtkRange="40" baseHpMax="1887.9948" baseHpReg="8.5" baseMpMax="1803.2" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="962.8024" baseMAtk="657.46924" basePDef="356.92645" baseMDef="261.1833" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="133" waterRes="133" windRes="133" earthRes="133" holyRes="133" darkRes="133"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="11" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14385" name="Mirage the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1891.9686" baseHpReg="8.5" baseMpMax="1812.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="966.6154" baseMAtk="660.07306" basePDef="357.86722" baseMDef="261.8717" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="136" waterRes="136" windRes="136" earthRes="136" holyRes="136" darkRes="136"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="12" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14386" name="Mirage the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1897.1348" baseHpReg="8.5" baseMpMax="1820.65" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="970.8883" baseMAtk="662.99084" basePDef="358.86868" baseMDef="262.60452" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="138" waterRes="138" windRes="138" earthRes="138" holyRes="138" darkRes="138"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="12" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14387" name="Mirage the Unicorn" level="84" type="L2Pet" baseAtkRange="40" baseHpMax="1901.9034" baseHpReg="8.5" baseMpMax="1829.3" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="975.16113" baseMAtk="665.9086" basePDef="359.87012" baseMDef="263.33734" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="140" waterRes="140" windRes="140" earthRes="140" holyRes="140" darkRes="140"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="12" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14388" name="Mirage the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1911.0433" baseHpReg="8.5" baseMpMax="1846.8" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="983.0479" baseMAtk="671.29425" basePDef="361.78815" baseMDef="264.74088" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="143" waterRes="143" windRes="143" earthRes="143" holyRes="143" darkRes="143"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="12" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14389" name="Mirage the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1917.0042" baseHpReg="8.5" baseMpMax="1858.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="988.5254" baseMAtk="675.03467" basePDef="363.09512" baseMDef="265.69724" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="145" waterRes="145" windRes="145" earthRes="145" holyRes="145" darkRes="145"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="12" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14390" name="Mirage the Unicorn" level="85" type="L2Pet" baseAtkRange="40" baseHpMax="1923.3624" baseHpReg="8.5" baseMpMax="1870.0" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="994.00287" baseMAtk="678.7751" basePDef="364.40207" baseMDef="266.65363" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="140.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="147" waterRes="147" windRes="147" earthRes="147" holyRes="147" darkRes="147"
+			aiType="balanced" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="6" /> <!-- HP Very High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4261" level="12" /> <!-- Mega Storm Strike -->
+	</npc>
+	<npc id="14391" name="Merrow the Unicorn" level="42" type="L2Pet" baseAtkRange="40" baseHpMax="877.2082" baseHpReg="5.5" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="198.34592" baseMAtk="135.44453" basePDef="164.88513" baseMDef="120.65578" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="4" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14392" name="Merrow the Unicorn" level="46" type="L2Pet" baseAtkRange="40" baseHpMax="1026.3176" baseHpReg="5.5" baseMpMax="637.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="248.0526" baseMAtk="169.38777" basePDef="182.18816" baseMDef="133.31738" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="4" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14393" name="Merrow the Unicorn" level="50" type="L2Pet" baseAtkRange="40" baseHpMax="1186.0023" baseHpReg="5.5" baseMpMax="747.8" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="305.54907" baseMAtk="208.6504" basePDef="200.23843" baseMDef="146.5258" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="5" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14394" name="Merrow the Unicorn" level="54" type="L2Pet" baseAtkRange="40" baseHpMax="1353.6183" baseHpReg="6.5" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="370.68903" baseMAtk="253.13255" basePDef="218.89589" baseMDef="160.17851" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="2" spiritshots="1">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="5" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14395" name="Merrow the Unicorn" level="58" type="L2Pet" baseAtkRange="40" baseHpMax="1525.9932" baseHpReg="6.5" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="442.8992" baseMAtk="302.44275" basePDef="237.9943" baseMDef="174.1539" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="5" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14396" name="Merrow the Unicorn" level="60" type="L2Pet" baseAtkRange="40" baseHpMax="1613.238" baseHpReg="6.5" baseMpMax="1036.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="481.34552" baseMAtk="328.6966" basePDef="247.65009" baseMDef="181.21957" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="6" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14397" name="Merrow the Unicorn" level="62" type="L2Pet" baseAtkRange="40" baseHpMax="1700.483" baseHpReg="7.5" baseMpMax="1097.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="521.1239" baseMAtk="355.86008" basePDef="257.34268" baseMDef="188.3122" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="6" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14398" name="Merrow the Unicorn" level="64" type="L2Pet" baseAtkRange="40" baseHpMax="1787.1992" baseHpReg="7.5" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="562.02277" baseMAtk="383.78867" basePDef="267.04468" baseMDef="195.41171" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="6" /> <!-- Hydro Screw -->
+	</npc>
+	<npc id="14399" name="Merrow the Unicorn" level="66" type="L2Pet" baseAtkRange="40" baseHpMax="1873.3866" baseHpReg="7.5" baseMpMax="1219.8" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" basePAtk="603.799" baseMAtk="412.31647" basePDef="276.7275" baseMDef="202.4972" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="180.0" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" soulshots="3" spiritshots="2">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="3" /> <!-- HP Medium-High -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+		<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
+		<skill id="4137" level="6" /> <!-- Hydro Screw -->
+	</npc>
+</list>

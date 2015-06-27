@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tenkai Donations Manager -->
+<list>
+	<item>
+		<ingredient id="4357" count="500000" /> <!-- Silver Shilen -->
+		<production id="6662" count="1" /> <!-- Ring of Core -->
+	</item>
+	<item>
+		<ingredient id="4357" count="1000000" /> <!-- Silver Shilen -->
+		<production id="6661" count="1" /> <!-- Earring of Orfen -->
+	</item>
+	<item>
+		<ingredient id="4357" count="1500000" /> <!-- Silver Shilen -->
+		<production id="6659" count="1" /> <!-- Earring of Zaken -->
+	</item>
+	<item>
+		<ingredient id="4357" count="1500000" /> <!-- Silver Shilen -->
+		<production id="10314" count="1" /> <!-- Ring of Beleth -->
+	</item>
+	<item>
+		<ingredient id="4357" count="2500000" /> <!-- Silver Shilen -->
+		<production id="6658" count="1" /> <!-- Ring of Baium -->
+	</item>
+	<item>
+		<ingredient id="4357" count="3000000" /> <!-- Silver Shilen -->
+		<production id="21712" count="1" /> <!-- Blessed Earring of Zaken -->
+	</item>
+	<item>
+		<ingredient id="4357" count="4000000" /> <!-- Silver Shilen -->
+		<production id="6660" count="1" /> <!-- Ring of Queen Ant -->
+	</item>
+	<item>
+		<ingredient id="4357" count="4000000" /> <!-- Silver Shilen -->
+		<production id="19451" count="1" /> <!-- Istina's Ring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="4000000" /> <!-- Silver Shilen -->
+		<production id="19452" count="1" /> <!-- Istina's Earring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="4000000" /> <!-- Silver Shilen -->
+		<production id="19453" count="1" /> <!-- Istina's Necklace -->
+	</item>
+	<item>
+		<ingredient id="4357" count="5000000" /> <!-- Silver Shilen -->
+		<production id="19457" count="1" /> <!-- Octavis' Ring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="5000000" /> <!-- Silver Shilen -->
+		<production id="19458" count="1" /> <!-- Octavis' Earring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="5000000" /> <!-- Silver Shilen -->
+		<production id="19459" count="1" /> <!-- Octavis' Necklace  -->
+	</item>
+	<item>
+		<ingredient id="4357" count="6500000" /> <!-- Silver Shilen -->
+		<production id="16025" count="1" /> <!-- Necklace of Freya  -->
+	</item>
+	<item>
+		<ingredient id="4357" count="10000000" /> <!-- Silver Shilen -->
+		<production id="8191" count="1" /> <!-- Necklace of Frintezza  -->
+	</item>
+	<item>
+		<ingredient id="4357" count="10000000" /> <!-- Silver Shilen -->
+		<production id="35294" count="1" /> <!-- Refined Tauti's Bracelet  -->
+	</item>
+	<item>
+		<ingredient id="4357" count="10000000" /> <!-- Silver Shilen -->
+		<production id="34860" count="1" /> <!-- Refined Octavis' Bracelet  -->
+	</item>
+	<item>
+		<ingredient id="4357" count="10000000" /> <!-- Silver Shilen -->
+		<production id="34859" count="1" /> <!-- Refined Istina's Bracelet -->
+	</item>
+	<item>
+		<ingredient id="4357" count="12000000" /> <!-- Silver Shilen -->
+		<production id="6656" count="1" /> <!-- Earring of Antharas -->
+	</item>
+	<item>
+		<ingredient id="4357" count="12000000" /> <!-- Silver Shilen -->
+		<production id="6657" count="1" /> <!-- Necklace of Valakas -->
+	</item>
+	<item>
+		<ingredient id="4357" count="15000000" /> <!-- Silver Shilen -->
+		<production id="16026" count="1" /> <!-- Blessed Necklace of Freya -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000000" /> <!-- Silver Shilen -->
+		<production id="19463" count="1" /> <!-- Blessed Earring of Antharas -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000000" /> <!-- Silver Shilen -->
+		<production id="19464" count="1" /> <!-- Blessed Necklace of Valakas -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000000" /> <!-- Silver Shilen -->
+		<production id="36946" count="1" /> <!-- Lindvior's Earring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000000" /> <!-- Silver Shilen -->
+		<production id="35570" count="1" /> <!-- Tauti's Ring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="40000000" /> <!-- Silver Shilen -->
+		<production id="17623" count="1" /> <!-- Earth Wyrm Heart Ring  -->
+	</item>
+	<!-- Soul Epics -->
+	<item>
+		<ingredient id="4357" count="9000000" /> <!-- Silver Shilen -->
+		<production count="1" id="36254" /> <!-- Queen Ant's Soul Ring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="12000000" /> <!-- Silver Shilen -->
+		<production count="1" id="37522" /> <!-- Frintezza's Soul Necklace -->
+	</item>
+	<item>
+		<ingredient id="4357" count="3000000" /> <!-- Silver Shilen -->
+		<production count="1" id="36255" /> <!-- Orfen's Soul Earring -->
+	</item>
+	<item>
+		<ingredient id="4357" count="7500000" /> <!-- Silver Shilen -->
+		<production count="1" id="37521" /> <!-- Baium's Soul Ring -->
+	</item>
+	<!-- Bottles -->
+	<item>
+		<ingredient id="4357" count="7500000" /> <!-- Silver Shilen -->
+		<production count="1" id="36252" /> <!-- Bottle of Queen Ant's Soul -->
+	</item>
+	<item>
+		<ingredient id="4357" count="5000000" /> <!-- Silver Shilen -->
+		<production count="1" id="37519" /> <!-- Bottle of Frintezza's Soul -->
+	</item>
+	<item>
+		<ingredient id="4357" count="2000000" /> <!-- Silver Shilen -->
+		<production count="1" id="36253" /> <!-- Bottle of Orfen's Soul -->
+	</item>
+	<item>
+		<ingredient id="4357" count="6000000" /> <!-- Silver Shilen -->
+		<production count="1" id="37520" /> <!-- Bottle of Baium's Soul -->
+	</item>
+	<item>
+		<ingredient id="4357" count="2250000" /> <!-- Silver Shilen -->
+		<production id="19465" count="1" /> <!-- Bottle of Antharas' Soul -->
+	</item>
+	<item>
+		<ingredient id="4357" count="2250000" /> <!-- Silver Shilen -->
+		<production id="19466" count="1" /> <!-- Bottle of Valakas' Soul -->
+	</item>
+	<item>
+		<ingredient id="4357" count="10000000" /> <!-- Silver Shilen -->
+		<production id="16027" count="1" /> <!-- Bottle of Freya's Soul -->
+	</item>
+</list>

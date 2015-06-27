@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+ 	<item>
+		<ingredient count="1" id="37586" /> <!-- Hidden Card -->
+		<ingredient count="1" id="37571" /> <!-- Legendary Card: Antharas -->
+		<ingredient count="1" id="37572" /> <!-- Legendary Card: Valakas -->
+		<ingredient count="1" id="37573" /> <!-- Legendary Card: Lindvior -->
+		<ingredient count="1" id="37574" /> <!-- Legendary Card: Astair van Halter -->
+		<ingredient count="1" id="37575" /> <!-- Legendary Card: Amadeo Cadmus -->
+		<ingredient count="1" id="37576" /> <!-- Legendary Card: Lionel Hunter -->
+		<ingredient count="1" id="37577" /> <!-- Legendary Card: Sieghardt Ein -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia -->
+		<ingredient count="1" id="37579" /> <!-- Legendary Card: Baium -->
+		<ingredient count="1" id="37580" /> <!-- Legendary Card: Beleth -->
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37582" /> <!-- Legendary Card: Lilith -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<ingredient count="1" id="37584" /> <!-- Legendary Card: Anakim -->
+		<ingredient count="1" id="37625" /> <!-- Legendary Card: Frintezza -->
+		<ingredient count="1" id="38074" /> <!-- Territory Card: Guillotine Fortress -->
+		<ingredient count="1" id="38075" /> <!-- Territory Card: Pagan Temple -->
+		<ingredient count="1" id="38076" /> <!-- Territory Card: Raider's Crossroads -->
+		<ingredient count="1" id="38077" /> <!-- Territory Card: Prison of Darkness -->
+		<ingredient count="1" id="38078" /> <!-- Territory Card: Seed of Hellfire -->
+		<ingredient count="1" id="38079" /> <!-- Territory Card: Imperial Tomb -->
+		<ingredient count="1" id="38080" /> <!-- Territory Card: Seed of Annihilation -->
+		<ingredient count="1" id="38081" /> <!-- Territory Card: Ketra Orc Outpost -->
+		<ingredient count="1" id="38082" /> <!-- Territory Card: Fairy Settlement -->
+		<ingredient count="1" id="38083" /> <!-- Territory Card: Sea of Spores -->
+		<ingredient count="1" id="38084" /> <!-- Territory Card: Hellbound -->
+		<ingredient count="1" id="38085" /> <!-- Territory Card: Land of Chaos -->
+		<production count="1" id="35564" /> <!-- Ruler's Authority -->
+	</item>
+	<item>
+		<ingredient count="1" id="37572" /> <!-- Legendary Card: Valakas -->
+		<ingredient count="1" id="37579" /> <!-- Legendary Card: Baium -->
+		<ingredient count="1" id="37584" /> <!-- Legendary Card: Anakim -->
+		<production count="1" id="6657" /> <!-- Necklace of Valakas -->
+	</item>
+	<item>
+		<ingredient count="1" id="37572" /> <!-- Legendary Card: Antharas -->
+		<ingredient count="1" id="37579" /> <!-- Legendary Card: Baium -->
+		<ingredient count="1" id="37582" /> <!-- Legendary Card: Lilith -->
+		<production count="1" id="6656" /> <!-- Earring of Antharas -->
+	</item>
+	<item>
+		<ingredient count="1" id="37573" /> <!-- Legendary Card: Lindvior -->
+		<ingredient count="1" id="37584" /> <!-- Legendary Card: Anakim -->
+		<ingredient count="1" id="37582" /> <!-- Legendary Card: Lilith -->
+		<production count="1" id="36946" /> <!-- Lindvior's Earring -->
+	</item>
+	<item>
+		<ingredient count="1" id="37572" /> <!-- Legendary Card: Valakas -->
+		<ingredient count="1" id="37579" /> <!-- Legendary Card: Baium -->
+		<ingredient count="1" id="37584" /> <!-- Legendary Card: Anakim -->
+		<ingredient count="1" id="37586" /> <!-- Hidden Card -->
+		<production count="1" id="19464" /> <!-- Blessed Necklace of Valakas -->
+	</item>
+	<item>
+		<ingredient count="1" id="37572" /> <!-- Legendary Card: Antharas -->
+		<ingredient count="1" id="37579" /> <!-- Legendary Card: Baium -->
+		<ingredient count="1" id="37582" /> <!-- Legendary Card: Lilith -->
+		<ingredient count="1" id="37586" /> <!-- Hidden Card -->
+		<production count="1" id="19463" /> <!-- Blessed Earring of Antharas -->
+	</item>
+	<item>
+		<ingredient count="1" id="37580" /> <!-- Legendary Card: Beleth -->
+		<ingredient count="1" id="37574" /> <!-- Legendary Card: Astair van Halter -->
+		<ingredient count="1" id="37576" /> <!-- Legendary Card: Lionel Hunter -->
+		<production count="5" id="19466" /> <!-- Bottle of Valakas' Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37625" /> <!-- Legendary Card: Frintezza -->
+		<ingredient count="1" id="37577" /> <!-- Legendary Card: Sieghardt Ein -->
+		<ingredient count="1" id="37575" /> <!-- Legendary Card: Amadeo Cadmus -->
+		<production count="5" id="19465" /> <!-- Bottle of Antharas' Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="16027" /> <!-- Bottle of Freya's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="36252" /> <!-- Bottle of Queen Ant's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="36253" /> <!-- Bottle of Orfen's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="37520" /> <!-- Bottle of Baium's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="37519" /> <!-- Bottle of Frintezza's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="34884" /> <!-- Bottle of Octavi's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="35295" /> <!-- Bottle of Tauti's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37581" /> <!-- Legendary Card: Tiat -->
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="1" id="34883" /> <!-- Bottle of istina's Soul -->
+	</item>
+	<item>
+		<ingredient count="1" id="37575" /> <!-- Legendary Card: Amadeo Cadmus -->
+		<ingredient count="1" id="37574" /> <!-- Legendary Card: Astair van Halter -->
+		<production count="5" id="36731" /> <!-- Life Stone Instilled with Giants' Power -->
+	</item>
+	<item>
+		<ingredient count="1" id="37576" /> <!-- Legendary Card: Lionel Hunter -->
+		<ingredient count="1" id="37577" /> <!-- Legendary Card: Sieghardt Ein -->
+		<production count="10" id="46151" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+	</item>
+	<item>
+		<ingredient count="1" id="37578" /> <!-- Legendary Card: Elcadia  -->
+		<ingredient count="1" id="37583" /> <!-- Legendary Card: Paulina -->
+		<production count="20" id="30298" /> <!-- Superior Giant's Codex - Mastery -->
+	</item>
+ </list>

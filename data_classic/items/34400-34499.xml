@@ -1,0 +1,3063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Tallum Blade*Damascus (Dark) with limited ability enhancement. P. Atk. Increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Atk. Spd. by 8%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34400" type="Weapon" name="Player Commendation - Tallum Blade*Damascus (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="189" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="305" />
+			<set stat="mAtk" val="121" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Themis' Tongue (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34401" type="Weapon" name="Player Commendation - Themis' Tongue (Earth) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_tongue_of_themis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="82" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Themis' Tongue (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34402" type="Weapon" name="Player Commendation - Themis' Tongue (Water) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_tongue_of_themis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="82" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Themis' Tongue (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34403" type="Weapon" name="Player Commendation - Themis' Tongue (Wind) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_tongue_of_themis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="82" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Themis' Tongue (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34404" type="Weapon" name="Player Commendation - Themis' Tongue (Fire) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_tongue_of_themis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="82" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Themis' Tongue (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34405" type="Weapon" name="Player Commendation - Themis' Tongue (Holy) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_tongue_of_themis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="82" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Themis' Tongue (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34406" type="Weapon" name="Player Commendation - Themis' Tongue (Dark) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_tongue_of_themis_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="82" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Cabrio's Hand (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34407" type="Weapon" name="Player Commendation - Cabrio's Hand (Earth) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_hand_of_cabrio_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="151" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Cabrio's Hand (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34408" type="Weapon" name="Player Commendation - Cabrio's Hand (Water) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_hand_of_cabrio_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="151" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Cabrio's Hand (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34409" type="Weapon" name="Player Commendation - Cabrio's Hand (Wind) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_hand_of_cabrio_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="151" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Cabrio's Hand (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34410" type="Weapon" name="Player Commendation - Cabrio's Hand (Fire) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_hand_of_cabrio_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="151" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Cabrio's Hand (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34411" type="Weapon" name="Player Commendation - Cabrio's Hand (Holy) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_hand_of_cabrio_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="151" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Cabrio's Hand (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34412" type="Weapon" name="Player Commendation - Cabrio's Hand (Dark) - Mana Up (PC-exclusive)">
+		<set name="icon" val="icon.weapon_hand_of_cabrio_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="151" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="202" />
+			<set stat="mAtk" val="161" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Nagan (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34413" type="Weapon" name="Player Commendation - Vesper Nagan (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="180" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Nagan (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34414" type="Weapon" name="Player Commendation - Vesper Nagan (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="180" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Nagan (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34415" type="Weapon" name="Player Commendation - Vesper Nagan (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="180" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Nagan (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34416" type="Weapon" name="Player Commendation - Vesper Nagan (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="180" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Nagan (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34417" type="Weapon" name="Player Commendation - Vesper Nagan (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="180" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Nagan (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34418" type="Weapon" name="Player Commendation - Vesper Nagan (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="180" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dual Daggers (Earth) with limited ability enhancement. When enchanted, P. Atk. of dual daggers increases more than that of a normal one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Increases damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34419" type="Weapon" name="Player Commendation - Vesper Dual Daggers (Earth) - PC-exclusive">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dual Daggers (Water) with limited ability enhancement. When enchanted, P. Atk. of dual daggers increases more than that of a normal one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Increases damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34420" type="Weapon" name="Player Commendation - Vesper Dual Daggers (Water) - PC-exclusive">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dual Daggers (Wind) with limited ability enhancement. When enchanted, P. Atk. of dual daggers increases more than that of a normal one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Increases damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34421" type="Weapon" name="Player Commendation - Vesper Dual Daggers (Wind) - PC-exclusive">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dual Daggers (Fire) with limited ability enhancement. When enchanted, P. Atk. of dual daggers increases more than that of a normal one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Increases damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34422" type="Weapon" name="Player Commendation - Vesper Dual Daggers (Fire) - PC-exclusive">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dual Daggers (Holy) with limited ability enhancement. When enchanted, P. Atk. of dual daggers increases more than that of a normal one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Increases damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34423" type="Weapon" name="Player Commendation - Vesper Dual Daggers (Holy) - PC-exclusive">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dual Daggers (Dark) with limited ability enhancement. When enchanted, P. Atk. of dual daggers increases more than that of a normal one-handed weapon. When enchanted to 4 or more, Critical increases by 109. Increases damage inflicted during PvP. Can be equipped by Dagger Masters above level 81. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34424" type="Weapon" name="Player Commendation - Vesper Dual Daggers (Dark) - PC-exclusive">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dualsword (Earth) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34425" type="Weapon" name="Player Commendation - Vesper Dualsword (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dualsword (Water) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34426" type="Weapon" name="Player Commendation - Vesper Dualsword (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dualsword (Wind) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34427" type="Weapon" name="Player Commendation - Vesper Dualsword (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dualsword (Fire) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34428" type="Weapon" name="Player Commendation - Vesper Dualsword (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dualsword (Holy) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34429" type="Weapon" name="Player Commendation - Vesper Dualsword (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Vesper Dualsword (Dark) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, Critical increases by 109 and Max HP increases by 10%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34430" type="Weapon" name="Player Commendation - Vesper Dualsword (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Retributer (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34431" type="Weapon" name="Player Commendation - Vesper Retributer (Earth) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Retributer (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34432" type="Weapon" name="Player Commendation - Vesper Retributer (Water) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Retributer (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34433" type="Weapon" name="Player Commendation - Vesper Retributer (Wind) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Retributer (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34434" type="Weapon" name="Player Commendation - Vesper Retributer (Fire) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Retributer (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34435" type="Weapon" name="Player Commendation - Vesper Retributer (Holy) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Retributer (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34436" type="Weapon" name="Player Commendation - Vesper Retributer (Dark) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Buster (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34437" type="Weapon" name="Player Commendation - Vesper Buster (Earth) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Buster (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34438" type="Weapon" name="Player Commendation - Vesper Buster (Water) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Buster (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34439" type="Weapon" name="Player Commendation - Vesper Buster (Wind) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Buster (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34440" type="Weapon" name="Player Commendation - Vesper Buster (Fire) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Buster (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34441" type="Weapon" name="Player Commendation - Vesper Buster (Holy) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Buster (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34442" type="Weapon" name="Player Commendation - Vesper Buster (Dark) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_burster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shaper (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34443" type="Weapon" name="Player Commendation - Vesper Shaper (Earth) - Critical Damage (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shaper (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34444" type="Weapon" name="Player Commendation - Vesper Shaper (Water) - Critical Damage (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shaper (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34445" type="Weapon" name="Player Commendation - Vesper Shaper (Wind) - Critical Damage (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shaper (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34446" type="Weapon" name="Player Commendation - Vesper Shaper (Fire) - Critical Damage (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shaper (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34447" type="Weapon" name="Player Commendation - Vesper Shaper (Holy) - Critical Damage (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shaper (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		P. Atk. + 906 during a Critical Attack. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34448" type="Weapon" name="Player Commendation - Vesper Shaper (Dark) - Critical Damage (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_shaper_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="346" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shooter (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34449" type="Weapon" name="Player Commendation - Vesper Shooter (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="158" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shooter (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34450" type="Weapon" name="Player Commendation - Vesper Shooter (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="158" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shooter (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34451" type="Weapon" name="Player Commendation - Vesper Shooter (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="158" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shooter (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34452" type="Weapon" name="Player Commendation - Vesper Shooter (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="158" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shooter (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34453" type="Weapon" name="Player Commendation - Vesper Shooter (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="158" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Shooter (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34454" type="Weapon" name="Player Commendation - Vesper Shooter (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="158" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Thrower (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34455" type="Weapon" name="Player Commendation - Vesper Thrower (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Thrower (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34456" type="Weapon" name="Player Commendation - Vesper Thrower (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Thrower (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34457" type="Weapon" name="Player Commendation - Vesper Thrower (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Thrower (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34458" type="Weapon" name="Player Commendation - Vesper Thrower (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Thrower (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34459" type="Weapon" name="Player Commendation - Vesper Thrower (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Thrower (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 133. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34460" type="Weapon" name="Player Commendation - Vesper Thrower (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Stormer (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34461" type="Weapon" name="Player Commendation - Vesper Stormer (Earth) - Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Stormer (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34462" type="Weapon" name="Player Commendation - Vesper Stormer (Water) - Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Stormer (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34463" type="Weapon" name="Player Commendation - Vesper Stormer (Wind) - Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Stormer (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34464" type="Weapon" name="Player Commendation - Vesper Stormer (Fire) - Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Stormer (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34465" type="Weapon" name="Player Commendation - Vesper Stormer (Holy) - Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Stormer (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 11%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34466" type="Weapon" name="Player Commendation - Vesper Stormer (Dark) - Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_stormer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Slasher (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34467" type="Weapon" name="Player Commendation - Vesper Slasher (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Slasher (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34468" type="Weapon" name="Player Commendation - Vesper Slasher (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Slasher (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34469" type="Weapon" name="Player Commendation - Vesper Slasher (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Slasher (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34470" type="Weapon" name="Player Commendation - Vesper Slasher (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Slasher (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34471" type="Weapon" name="Player Commendation - Vesper Slasher (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Slasher (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34472" type="Weapon" name="Player Commendation - Vesper Slasher (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_slasher_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Singer (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		M. Atk. + 151. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34473" type="Weapon" name="Player Commendation - Vesper Singer (Earth) - Empower (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Singer (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		M. Atk. + 151. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34474" type="Weapon" name="Player Commendation - Vesper Singer (Water) - Empower (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Singer (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		M. Atk. + 151. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34475" type="Weapon" name="Player Commendation - Vesper Singer (Wind) - Empower (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Singer (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		M. Atk. + 151. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34476" type="Weapon" name="Player Commendation - Vesper Singer (Fire) - Empower (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Singer (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		M. Atk. + 151. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34477" type="Weapon" name="Player Commendation - Vesper Singer (Holy) - Empower (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Singer (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		M. Atk. + 151. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34478" type="Weapon" name="Player Commendation - Vesper Singer (Dark) - Empower (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Avenger (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34479" type="Weapon" name="Player Commendation - Vesper Avenger (Earth) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Avenger (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34480" type="Weapon" name="Player Commendation - Vesper Avenger (Water) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Avenger (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34481" type="Weapon" name="Player Commendation - Vesper Avenger (Wind) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Avenger (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34482" type="Weapon" name="Player Commendation - Vesper Avenger (Fire) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Avenger (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34483" type="Weapon" name="Player Commendation - Vesper Avenger (Holy) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Avenger (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34484" type="Weapon" name="Player Commendation - Vesper Avenger (Dark) - Health (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_avenger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Caster (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34485" type="Weapon" name="Player Commendation - Vesper Caster (Earth) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Caster (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34486" type="Weapon" name="Player Commendation - Vesper Caster (Water) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Caster (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34487" type="Weapon" name="Player Commendation - Vesper Caster (Wind) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Caster (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34488" type="Weapon" name="Player Commendation - Vesper Caster (Fire) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Caster (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34489" type="Weapon" name="Player Commendation - Vesper Caster (Holy) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Caster (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34490" type="Weapon" name="Player Commendation - Vesper Caster (Dark) - Acumen (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="108" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Cutter (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34491" type="Weapon" name="Player Commendation - Vesper Cutter (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Cutter (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34492" type="Weapon" name="Player Commendation - Vesper Cutter (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Cutter (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34493" type="Weapon" name="Player Commendation - Vesper Cutter (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Cutter (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34494" type="Weapon" name="Player Commendation - Vesper Cutter (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Cutter (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34495" type="Weapon" name="Player Commendation - Vesper Cutter (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Cutter (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 131. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34496" type="Weapon" name="Player Commendation - Vesper Cutter (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_cutter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="396" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Fighter (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 123. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34497" type="Weapon" name="Player Commendation - Vesper Fighter (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="155" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Fighter (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 123. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34498" type="Weapon" name="Player Commendation - Vesper Fighter (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="155" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Vesper Fighter (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 123. Increases damage inflicted during PvP. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34499" type="Weapon" name="Player Commendation - Vesper Fighter (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_vesper_fighter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="155" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

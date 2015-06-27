@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Greater INT Dye <Int + 1 Wit - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4500" type="EtcItem" name="Greater INT Dye &lt;Int + 1 Wit - 2&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 1 Int - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4501" type="EtcItem" name="Greater MEN Dye &lt;Men + 1 Int - 2&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 1 Wit - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4502" type="EtcItem" name="Greater MEN Dye &lt;Men + 1 Wit - 2&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 1 Int - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4503" type="EtcItem" name="Greater WIT Dye &lt;Wit + 1 Int - 2&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 1 Men - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4504" type="EtcItem" name="Greater WIT Dye &lt;Wit + 1 Men - 2&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="21000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 2 Con - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4505" type="EtcItem" name="Greater STR Dye &lt;STR + 2 CON - 4&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 2 Dex - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4506" type="EtcItem" name="Greater STR Dye &lt;STR + 2 DEX - 4&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 2 Str - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4507" type="EtcItem" name="Greater CON Dye &lt;Con + 2 Str - 4&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 2 Dex - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4508" type="EtcItem" name="Greater CON Dye &lt;Con + 2 DEX - 4&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 2 Str - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4509" type="EtcItem" name="Greater DEX Dye &lt;Dex + 2 Str - 4&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 2 Con - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4510" type="EtcItem" name="Greater DEX Dye &lt;Dex + 2 CON - 4&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 2 Men - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4511" type="EtcItem" name="Greater INT Dye &lt;Int + 2 Men - 4&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 2 Wit - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4512" type="EtcItem" name="Greater INT Dye &lt;Int + 2 Wit - 4&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 2 Int - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4513" type="EtcItem" name="Greater MEN Dye &lt;Men + 2 Int - 4&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 2 Wit - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4514" type="EtcItem" name="Greater MEN Dye &lt;Men + 2 Wit - 4&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 2 Int - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4515" type="EtcItem" name="Greater WIT Dye &lt;Wit + 2 Int - 4&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 2 Men - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4516" type="EtcItem" name="Greater WIT Dye &lt;Wit + 2 Men - 4&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="24600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 2 Con - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4517" type="EtcItem" name="Greater STR Dye &lt;STR + 2 CON - 3&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 2 Dex - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4518" type="EtcItem" name="Greater STR Dye &lt;STR + 2 DEX - 3&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 2 Str - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4519" type="EtcItem" name="Greater CON Dye &lt;Con + 2 Str - 3&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 2 Dex - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4520" type="EtcItem" name="Greater CON Dye &lt;Con + 2 DEX - 3&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 2 Str - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4521" type="EtcItem" name="Greater DEX Dye &lt;Dex + 2 Str - 3&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 2 Con - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4522" type="EtcItem" name="Greater DEX Dye &lt;Dex + 2 CON - 3&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 2 Men - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4523" type="EtcItem" name="Greater INT Dye &lt;Int + 2 Men - 3&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 2 Wit - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4524" type="EtcItem" name="Greater INT Dye &lt;Int + 2 Wit - 3&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 2 Int - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4525" type="EtcItem" name="Greater MEN Dye &lt;Men + 2 Int - 3&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 2 Wit - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4526" type="EtcItem" name="Greater MEN Dye &lt;Men + 2 Wit - 3&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 2 Int - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4527" type="EtcItem" name="Greater WIT Dye &lt;Wit + 2 Int - 3&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 2 Men - 3>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4528" type="EtcItem" name="Greater WIT Dye &lt;Wit + 2 Men - 3&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="27000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 3 Con - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4529" type="EtcItem" name="Greater STR Dye &lt;STR + 3 CON - 5&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 3 Dex - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4530" type="EtcItem" name="Greater STR Dye &lt;STR + 3 DEX - 5&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 3 Str - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4531" type="EtcItem" name="Greater CON Dye &lt;Con + 3 Str - 5&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 3 Dex - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4532" type="EtcItem" name="Greater CON Dye &lt;Con + 3 DEX - 5&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 3 Str - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4533" type="EtcItem" name="Greater DEX Dye &lt;Dex + 3 Str - 5&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 3 Con - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4534" type="EtcItem" name="Greater DEX Dye &lt;Dex + 3 CON - 5&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 3 Men - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4535" type="EtcItem" name="Greater INT Dye &lt;Int + 3 Men - 5&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 3 Wit - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4536" type="EtcItem" name="Greater INT Dye &lt;Int + 3 Wit - 5&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 3 Int - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4537" type="EtcItem" name="Greater MEN Dye &lt;Men + 3 Int - 5&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 3 Wit - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4538" type="EtcItem" name="Greater MEN Dye &lt;Men + 3 Wit - 5&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 3 Int - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4539" type="EtcItem" name="Greater WIT Dye &lt;Wit + 3 Int - 5&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 3 Men - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4540" type="EtcItem" name="Greater WIT Dye &lt;Wit + 3 Men - 5&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 3 Con - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4541" type="EtcItem" name="Greater STR Dye &lt;STR + 3 CON - 4&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 3 Dex - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4542" type="EtcItem" name="Greater STR Dye &lt;STR + 3 DEX - 4&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 3 Str - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4543" type="EtcItem" name="Greater CON Dye &lt;Con + 3 Str - 4&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 3 Dex - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4544" type="EtcItem" name="Greater CON Dye &lt;Con + 3 DEX - 4&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 3 Str - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4545" type="EtcItem" name="Greater DEX Dye &lt;Dex + 3 Str - 4&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 3 Con - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4546" type="EtcItem" name="Greater DEX Dye &lt;Dex + 3 CON - 4&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 3 Men - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4547" type="EtcItem" name="Greater INT Dye &lt;Int + 3 Men - 4&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 3 Wit - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4548" type="EtcItem" name="Greater INT Dye &lt;Int + 3 Wit - 4&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 3 Int - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4549" type="EtcItem" name="Greater MEN Dye &lt;Men + 3 Int - 4&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 3 Wit - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4550" type="EtcItem" name="Greater MEN Dye &lt;Men + 3 Wit - 4&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 3 Int - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4551" type="EtcItem" name="Greater WIT Dye &lt;Wit + 3 Int - 4&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 3 Men - 4>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4552" type="EtcItem" name="Greater WIT Dye &lt;Wit + 3 Men - 4&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="30000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 1 Con -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4553" type="EtcItem" name="Greater STR Dye &lt;STR + 1 CON - 1&gt;">
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 1 Dex -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4554" type="EtcItem" name="Greater STR Dye &lt;STR + 1 DEX - 1&gt;">
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 1 Str -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4555" type="EtcItem" name="Greater CON Dye &lt;Con + 1 Str - 1&gt;">
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 1 Dex -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4556" type="EtcItem" name="Greater CON Dye &lt;Con + 1 DEX - 1&gt;">
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 1 Str -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4557" type="EtcItem" name="Greater DEX Dye &lt;Dex + 1 Str - 1&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 1 Con -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4558" type="EtcItem" name="Greater DEX Dye &lt;Dex + 1 CON - 1&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 1 Men -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4559" type="EtcItem" name="Greater INT Dye &lt;Int + 1 Men - 1&gt;">
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 1 Wit -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4560" type="EtcItem" name="Greater INT Dye &lt;Int + 1 Wit - 1&gt;">
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 1 Int -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4561" type="EtcItem" name="Greater MEN Dye &lt;Men + 1 Int - 1&gt;">
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 1 Wit -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4562" type="EtcItem" name="Greater MEN Dye &lt;Men + 1 Wit - 1&gt;">
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 1 Int -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4563" type="EtcItem" name="Greater WIT Dye &lt;Wit + 1 Int - 1&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 1 Men -1>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used by the Wizard class and the Healer the Wizard class after completion of their second class transfer, and can be kept and used after the completion of the third class transfer as well. -->
+	<item id="4564" type="EtcItem" name="Greater WIT Dye &lt;Wit + 1 Men - 1&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 4 Con - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4565" type="EtcItem" name="Greater STR Dye &lt;STR + 4 CON - 6&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 4 Dex - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4566" type="EtcItem" name="Greater STR Dye &lt;STR + 4 DEX - 6&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 4 Str - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4567" type="EtcItem" name="Greater CON Dye &lt;Con + 4 Str - 6&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 4 Dex - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4568" type="EtcItem" name="Greater CON Dye &lt;Con + 4 DEX - 6&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 4 Str - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4569" type="EtcItem" name="Greater DEX Dye &lt;Dex + 4 Str - 6&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 4 Con - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4570" type="EtcItem" name="Greater DEX Dye &lt;Dex + 4 CON - 6&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 4 Men - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4571" type="EtcItem" name="Greater INT Dye &lt;Int + 4 Men - 6&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 4 Wit - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4572" type="EtcItem" name="Greater INT Dye &lt;Int + 4 Wit - 6&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 4 Int - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4573" type="EtcItem" name="Greater MEN Dye &lt;Men + 4 Int - 6&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 4 Wit - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4574" type="EtcItem" name="Greater MEN Dye &lt;Men + 4 Wit - 6&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 4 Int - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4575" type="EtcItem" name="Greater WIT Dye &lt;Wit + 4 Int - 6&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 4 Men - 6>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4576" type="EtcItem" name="Greater WIT Dye &lt;Wit + 4 Men - 6&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 4 Con - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4577" type="EtcItem" name="Greater STR Dye &lt;STR + 4 CON - 5&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 4 Dex - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4578" type="EtcItem" name="Greater STR Dye &lt;STR + 4 DEX - 5&gt;">
+		<set name="icon" val="icon.etc_str_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 4 Str - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4579" type="EtcItem" name="Greater CON Dye &lt;Con + 4 Str - 5&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 4 Dex - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4580" type="EtcItem" name="Greater CON Dye &lt;Con + 4 DEX - 5&gt;">
+		<set name="icon" val="icon.etc_con_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 4 Str - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4581" type="EtcItem" name="Greater DEX Dye &lt;Dex + 4 Str - 5&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 4 Con - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4582" type="EtcItem" name="Greater DEX Dye &lt;Dex + 4 CON - 5&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 4 Men - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4583" type="EtcItem" name="Greater INT Dye &lt;Int + 4 Men - 5&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 4 Wit - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4584" type="EtcItem" name="Greater INT Dye &lt;Int + 4 Wit - 5&gt;">
+		<set name="icon" val="icon.etc_int_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 4 Int - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4585" type="EtcItem" name="Greater MEN Dye &lt;Men + 4 Int - 5&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 4 Wit - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4586" type="EtcItem" name="Greater MEN Dye &lt;Men + 4 Wit - 5&gt;">
+		<set name="icon" val="icon.etc_men_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 4 Int - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4587" type="EtcItem" name="Greater WIT Dye &lt;Wit + 4 Int - 5&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 4 Men - 5>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4588" type="EtcItem" name="Greater WIT Dye &lt;Wit + 4 Men - 5&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i01" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="36000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 2 Con - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4589" type="EtcItem" name="Greater STR Dye &lt;STR + 2 CON - 2&gt;">
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater STR Dye <Str + 2 Dex - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4590" type="EtcItem" name="Greater STR Dye &lt;STR + 2 DEX - 2&gt;">
+		<set name="icon" val="icon.etc_str_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 2 Str - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4591" type="EtcItem" name="Greater CON Dye &lt;Con + 2 Str - 2&gt;">
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater CON Dye <Con + 2 Dex - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4592" type="EtcItem" name="Greater CON Dye &lt;Con + 2 DEX - 2&gt;">
+		<set name="icon" val="icon.etc_con_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 2 Str - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4593" type="EtcItem" name="Greater DEX Dye &lt;Dex + 2 Str - 2&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater DEX Dye <Dex + 2 Con - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. All classes. -->
+	<item id="4594" type="EtcItem" name="Greater DEX Dye &lt;Dex + 2 CON - 2&gt;">
+		<set name="icon" val="icon.etc_dex_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 2 Men - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4595" type="EtcItem" name="Greater INT Dye &lt;Int + 2 Men - 2&gt;">
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater INT Dye <Int + 2 Wit - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4596" type="EtcItem" name="Greater INT Dye &lt;Int + 2 Wit - 2&gt;">
+		<set name="icon" val="icon.etc_int_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 2 Int - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class trasfer, or 1st Liberation for Ertheia. Wizard classes. -->
+	<item id="4597" type="EtcItem" name="Greater MEN Dye &lt;Men + 2 Int - 2&gt;">
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater MEN Dye <Men + 2 Wit - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Wizard and Healer classes. -->
+	<item id="4598" type="EtcItem" name="Greater MEN Dye &lt;Men + 2 Wit - 2&gt;">
+		<set name="icon" val="icon.etc_men_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greater WIT Dye <Wit + 2 Int - 2>. Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after 2nd class transfer, or 1st Liberation for Ertheia. Warrior and Wizard classes. -->
+	<item id="4599" type="EtcItem" name="Greater WIT Dye &lt;Wit + 2 Int - 2&gt;">
+		<set name="icon" val="icon.etc_wit_hena_i02" />
+		<set name="etcitem_type" val="dye" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

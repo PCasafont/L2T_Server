@@ -1,0 +1,1 @@
+alter table `characters` drop `vitality_points`;

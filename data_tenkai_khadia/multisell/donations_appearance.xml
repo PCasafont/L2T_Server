@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22402" count="1" /> <!-- Weapon Appearance Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22403" count="1" /> <!-- Weapon Appearance Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22404" count="1" /> <!-- Weapon Appearance Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22405" count="1" /> <!-- Weapon Appearance Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22406" count="1" /> <!-- Weapon Appearance Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22407" count="1" /> <!-- Weapon Appearance Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="22682" count="1" /> <!-- Armor Appearance Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="22683" count="1" /> <!-- Armor Appearance Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="22684" count="1" /> <!-- Armor Appearance Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="22685" count="1" /> <!-- Armor Appearance Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="22686" count="1" /> <!-- Armor Appearance Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="22687" count="1" /> <!-- Armor Appearance Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="22414" count="1" /> <!-- Weapon Restoration Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="22415" count="1" /> <!-- Weapon Restoration Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="22416" count="1" /> <!-- Weapon Restoration Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="22417" count="1" /> <!-- Weapon Restoration Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="22418" count="1" /> <!-- Weapon Restoration Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000" /> <!-- Adena -->
+		<production id="22419" count="1" /> <!-- Weapon Restoration Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22694" count="1" /> <!-- Armor Restoration Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22695" count="1" /> <!-- Armor Restoration Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22696" count="1" /> <!-- Armor Restoration Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22697" count="1" /> <!-- Armor Restoration Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22698" count="1" /> <!-- Armor Restoration Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22699" count="1" /> <!-- Armor Restoration Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000" /> <!-- Adena -->
+		<production id="22882" count="1" /> <!-- Hair Accessory Restoration Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22727" count="1" /> <!-- Japanese Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22728" count="1" /> <!-- Japanese Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22729" count="1" /> <!-- Japanese Long Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22730" count="1" /> <!-- Japanese Fist Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22731" count="1" /> <!-- Japanese Great Spear Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22732" count="1" /> <!-- Japanese Bow Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22733" count="1" /> <!-- Japanese Crossbow Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22734" count="1" /> <!-- Japanese Blunt Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22735" count="1" /> <!-- Japanese Giant Blunt Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22736" count="1" /> <!-- Japanese Magic Blunt Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22737" count="1" /> <!-- Japanese Giant Magic Blunt Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22738" count="1" /> <!-- Japanese Dualsword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22739" count="1" /> <!-- Japanese Double Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22740" count="1" /> <!-- Japanese Double Blunt Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22741" count="1" /> <!-- Japanese Shield Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22742" count="1" /> <!-- Japanese Sigil Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22666" count="1" /> <!-- Emerald Weapon Appearance Stone: Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22667" count="1" /> <!-- Emerald Weapon Appearance Stone: Dagger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22668" count="1" /> <!-- Emerald Weapon Appearance Stone: Two-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22669" count="1" /> <!-- Emerald Weapon Appearance Stone: Fist Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22670" count="1" /> <!-- Emerald Weapon Appearance Stone: Spear -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22671" count="1" /> <!-- Emerald Weapon Appearance Stone: Bow -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22672" count="1" /> <!-- Emerald Weapon Appearance Stone: Crossbow -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22673" count="1" /> <!-- Emerald Weapon Appearance Stone: One-handed Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22674" count="1" /> <!-- Emerald Weapon Appearance Stone: Two-handed Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22675" count="1" /> <!-- Emerald Weapon Appearance Stone: One-handed Magic Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22676" count="1" /> <!-- Emerald Weapon Appearance Stone: Two-handed Magic Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22677" count="1" /> <!-- Emerald Weapon Appearance Stone: Dualsword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22678" count="1" /> <!-- Emerald Weapon Appearance Stone: Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22679" count="1" /> <!-- Emerald Weapon Appearance Stone: Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22680" count="1" /> <!-- Emerald Weapon Appearance Stone: Shield -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="22681" count="1" /> <!-- Emerald Weapon Appearance Stone: Sigil -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="22708" count="1" /> <!-- Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="23200" count="1" /> <!-- Traditional Taiwanese Costume Appearance Stone Pack -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="23199" count="1" /> <!-- Ninja Outfit Appearance Stone Pack -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="22706" count="1" /> <!-- (Test) Formal Wear Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23503" count="1" /> <!-- Military Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23504" count="1" /> <!-- Military Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23505" count="1" /> <!-- Military Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23506" count="1" /> <!-- Military Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23507" count="1" /> <!-- Military Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23493" count="1" /> <!-- Metal Suit Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23494" count="1" /> <!-- Metal Suit Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23495" count="1" /> <!-- Metal Suit Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23496" count="1" /> <!-- Metal Suit Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23497" count="1" /> <!-- Metal Suit Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="23513" count="1" /> <!-- Maid Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="23487" count="1" /> <!-- Santa Outfit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="7" /> <!-- Coin of Luck -->
+		<production id="23172" count="1" /> <!-- Beach Swimsuit Appearance Stone - Event -->
+	</item>
+	<item>
+		<ingredient id="4037" count="7" /> <!-- Coin of Luck -->
+		<production id="23234" count="1" /> <!-- Alluring Swimsuit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="7" /> <!-- Coin of Luck -->
+		<production id="23235" count="1" /> <!-- Seductive Swimsuit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23888" count="1" /> <!-- Vampire Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23889" count="1" /> <!-- Vampire Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23890" count="1" /> <!-- Vampire Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23891" count="1" /> <!-- Vampire Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23892" count="1" /> <!-- Vampire Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="23878" count="1" /> <!-- Samurai Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+		<production id="23880" count="1" /> <!-- Samurai Outfit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="23882" count="1" /> <!-- Anakim Outfit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+		<production id="38956" count="1" /> <!-- NC Dinos Appearance Stone (100-day) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="38959" count="1" /> <!-- NC Dinos Hat Appearance Stone (100-day) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23929" count="1" /> <!-- Tears One-handed Sword Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23930" count="1" /> <!-- Tears Dagger Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23931" count="1" /> <!-- Tears Two-handed Sword Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23932" count="1" /> <!-- Tears Fist Weapon Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23933" count="1" /> <!-- Tears Spear Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23934" count="1" /> <!-- Tears Bow Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23935" count="1" /> <!-- Tears Crossbow Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23936" count="1" /> <!-- Tears One-handed Blunt Weapon Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23937" count="1" /> <!-- Tears Magic Sword Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23938" count="1" /> <!-- Tears One-handed Magic Blunt Weapon Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23939" count="1" /> <!-- Tears Two-handed Magic Blunt Weapon Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23940" count="1" /> <!-- Tears Dualsword Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23941" count="1" /> <!-- Tears Dual Dagger Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23942" count="1" /> <!-- Tears Dual Blunt Weapon Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23943" count="1" /> <!-- Tears Shield Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="23944" count="1" /> <!-- Tears Sigil Appearance Stone - 7-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37832" count="1" /> <!-- Valentine Appearance Stone: Dagger - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37833" count="1" /> <!-- Valentine Appearance Stone: One-handed Sword - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37834" count="1" /> <!-- Valentine Appearance Stone: Two-handed Sword - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37835" count="1" /> <!-- Valentine Appearance Stone: One-handed Blunt Weapon - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37836" count="1" /> <!-- Valentine Appearance Stone: Fist Weapon - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37837" count="1" /> <!-- Valentine Appearance Stone: Spear - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37838" count="1" /> <!-- Valentine Appearance Stone: Bow - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37839" count="1" /> <!-- Valentine Appearance Stone: Crossbow - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37840" count="1" /> <!-- Valentine Appearance Stone: One-handed Magic Sword - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37841" count="1" /> <!-- Valentine Appearance Stone: One-handed Magic Blunt Weapon - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37842" count="1" /> <!-- Valentine Appearance Stone: Two-handed Magic Blunt Weapon - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37843" count="1" /> <!-- Valentine Appearance Stone: Dualsword - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37844" count="1" /> <!-- Valentine Appearance Stone: Dual Dagger - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37845" count="1" /> <!-- Valentine Appearance Stone: Dual Blunt Weapon - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37846" count="1" /> <!-- Valentine Appearance Stone: Shield - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37847" count="1" /> <!-- Valentine Appearance Stone: Sigil - 15-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23189" count="1" /> <!-- Ninja Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23190" count="1" /> <!-- Ninja Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23191" count="1" /> <!-- Ninja Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23192" count="1" /> <!-- Ninja Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23193" count="1" /> <!-- Ninja Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23194" count="1" /> <!-- Traditional Taiwanese Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23195" count="1" /> <!-- Traditional Taiwanese Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23196" count="1" /> <!-- Traditional Taiwanese Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23197" count="1" /> <!-- Traditional Taiwanese Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
+		<production id="23198" count="1" /> <!-- Traditional Taiwanese Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38200" count="1" /> <!-- Blue Mackerel Appearance Stone: One-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38201" count="1" /> <!-- Trumpetfish Appearance Stone: Dagger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38202" count="1" /> <!-- Shark Appearance Stone: Two-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38203" count="1" /> <!-- Squid Appearance Stone: Spear -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38204" count="1" /> <!-- Sea Horse Appearance Stone: Two-handed Magic Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38205" count="1" /> <!-- Lobster Appearance Stone: Fist Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38206" count="1" /> <!-- Giant Crab Appearance Stone: Bow -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38207" count="1" /> <!-- Crayfish Appearance Stone: Crossbow -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38208" count="1" /> <!-- Starfish Appearance Stone: Sigil -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38209" count="1" /> <!-- Turtle Appearance Stone: Shield -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="38210" count="1" /> <!-- Blue Mackerel Appearance Stone: Dualsword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37915" count="1" /> <!-- Scarecrow Sword Appearance Stone: One-handed Magic Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37914" count="1" /> <!-- Pumpkin Dual Dagger Appearance Stone: Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37913" count="1" /> <!-- Pumpkin Dagger Appearance Stone: Dagger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37912" count="1" /> <!-- Chrono Maracas Appearance Stone: Dualsword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37911" count="1" /> <!-- Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37910" count="1" /> <!-- Chrono Campana Appearance Stone: Spear -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37909" count="1" /> <!-- Chrono Unitus Appearance Stone: Fist Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37908" count="1" /> <!-- Chrono Cithara Appearance Stone: One-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="37907" count="1" /> <!-- Pig Lollipop Appearance Stone: One-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="24134" count="1" /> <!-- Appearance Stone: Dark Assassin Suit -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="40220" count="1" /> <!-- Appearance Stone: Cat Staff (Ertheia Only) - 90-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="40219" count="1" /> <!-- Appearance Stone: Cat Fighter (Ertheia Only) - 90-day -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26256" count="1" /> <!-- Halloween Shaper -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26257" count="1" /> <!-- Halloween Cutter -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26258" count="1" /> <!-- Halloween Slasher -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26259" count="1" /> <!-- Halloween Avenger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26260" count="1" /> <!-- Halloween Fighter -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26261" count="1" /> <!-- Halloween Stormer -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26262" count="1" /> <!-- Halloween Thrower -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26263" count="1" /> <!-- Halloween Shooter -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26264" count="1" /> <!-- Halloween Buster -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26265" count="1" /> <!-- Halloween Caster -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26266" count="1" /> <!-- Halloween Retributer -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26267" count="1" /> <!-- Halloween Dualsword -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26268" count="1" /> <!-- Halloween Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26269" count="1" /> <!-- Halloween Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26270" count="1" /> <!-- Halloween Shield -->
+	</item>
+	<item>
+		<ingredient id="4037" count="8" /> <!-- Coin of Luck -->
+		<production id="26271" count="1" /> <!-- Halloween Sigil -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="26273" count="1" /> <!-- Halloween Outfit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="26337" count="1" /> <!-- School Uniform Hair B Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+		<production id="26336" count="1" /> <!-- School Uniform B Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="26335" count="1" /> <!-- School Uniform Hair A Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+		<production id="26334" count="1" /> <!-- School Uniform A Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="26333" count="1" /> <!-- Lineage II Baseball Cap Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+		<production id="26332" count="1" /> <!-- Lineage II Baseball Uniform Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="10" /> <!-- Coin of Luck -->
+		<production id="26358" count="1" /> <!-- Pirate Crew Appeareance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="26357" count="1" /> <!-- Pirate Captain Appeareance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
+		<production id="46270" count="1" /> <!-- Knight Suit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
+		<production id="23853" count="1" /> <!-- Knight Suit Appearance Stone -->
+	</item>
+ </list>

@@ -1,0 +1,2561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Immobilizes the enemy for 30 seconds. -->
+	<skill id="1201" levels="33" name="Dryad Root">
+		<table name="#mpConsume"> 22 22 23 25 27 27 29 30 30 34 34 35 38 38 39 42 43 44 45 47 48 49 50 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 23 24 25 28 29 30 33 34 35 38 39 40 42 43 44 46 47 48 50 51 52 54 55 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="80" stackLvl="1" stackType="root_magically" visualEffect="root">
+				<effect type="Root" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Speed by 20 for 20 minutes.
+		Level 2: Increases Speed by 33 for 20 minutes.
+	-->
+	<skill id="1204" levels="2" name="Wind Walk">
+		<table name="#mpConsume"> 20 27 </table>
+		<table name="#runSpd"> 20 33 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#aggroPoints"> 204 285 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="speed_up">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="#runSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Decreases the enemy's Atk. Spd. by 17% for 30 seconds.
+		Level 2: Decreases the enemy's Atk. Spd. by 20% for 30 seconds.
+		Level 6: Decreases the enemy's Atk. Spd. by 23% for 30 seconds.
+	-->
+	<skill id="1206" levels="19" name="Wind Shackle">
+		<table name="#mpConsume"> 3 10 12 14 15 35 39 44 48 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 14 20 25 30 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#pAtkSpd"> 17 20 20 20 20 23 23 23 23 23 23 23 23 23 23 23 23 23 23 </table>
+		<table name="#abnormalLvl"> 1 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="attack_time_up">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="pAtkSpd" val="#pAtkSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Holds nearby enemies for 30 seconds. -->
+	<skill id="1208" levels="17" name="Seal of Binding">
+		<table name="#mpConsume"> 34 40 45 53 59 65 70 77 80 83 87 89 93 95 98 100 103 </table>
+		<table name="#magicLvl"> 25 30 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="40" stackLvl="1" stackType="root_magically" visualEffect="root">
+				<effect type="Root" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Poisons nearby enemies, causing loss of 14 HP per second for 30 seconds.
+		Level 2: Poisons nearby enemies, causing loss of 19 HP per second for 30 seconds.
+		Level 3: Poisons nearby enemies, causing loss of 24 HP per second for 30 seconds.
+		Level 4: Poisons nearby enemies, causing loss of 30 HP per second for 30 seconds.
+		Level 5: Poisons nearby enemies, causing loss of 34 HP per second for 30 seconds.
+		Level 6: Poisons nearby enemies, causing loss of 37 HP per second for 30 seconds.
+	-->
+	<skill id="1209" levels="6" name="Seal of Poison">
+		<table name="#dot"> 42 57 72 90 102 111 </table>
+		<table name="#mpConsume"> 29 40 53 70 87 98 </table>
+		<table name="#magicLvl"> 20 30 40 52 62 70 </table>
+		<table name="#abnormalLvl"> 3 4 5 6 7 8 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="CON" />
+		<for>
+			<abnormal count="10" duration="3" landRate="60" stackLvl="#abnormalLvl" visualEffect="poison">
+				<effect type="DamOverTime" val="#dot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 15 seconds, decreases nearby enemies' MP by 9 with 29 Power added to M. Atk.
+		Level 2: For 15 seconds, decreases nearby enemies' MP by 11 with 36 Power added to M. Atk.
+		Level 3: For 15 seconds, decreases nearby enemies' MP by 14 with 46 Power added to M. Atk.
+		Level 4: For 15 seconds, decreases nearby enemies' MP by 15 with 53 Power added to M. Atk.
+	-->
+	<skill id="1210" levels="4" name="Seal of Gloom">
+		<table name="#mpConsume"> 88 105 134 150 </table>
+		<table name="#magicLvl"> 44 52 64 72 </table>
+		<table name="#mdot"> 27 33 42 45 </table>
+		<table name="#power"> 29 36 46 53 </table>
+		<table name="#abnormalLvl"> 5 6 7 8 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="MANADAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal count="5" duration="3" landRate="60" stackLvl="#abnormalLvl" stackType="dot_mp">
+				<effect type="ManaDamOverTime" val="#mdot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Throws nearby enemies into chaos, causing them to attack anybody randomly. -->
+	<skill id="1213" levels="13" name="Seal of Mirage">
+		<table name="#mpConsume"> 59 65 70 77 80 83 87 89 93 95 98 100 103 </table>
+		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<abnormal count="5" duration="4" landRate="40">
+				<effect type="Confusion" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Restores HP with 42 Power. -->
+	<skill id="1216" levels="1" name="Self Heal">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="9" />
+		<set name="power" val="42" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="3000" />
+		<set name="aggroPoints" val="10" />
+	</skill>
+	<!-- 
+		Level 1: Restores the target's HP with 204 Power, and additionally restores 14 HP per second for 15 seconds.
+		Level 2: Restores the target's HP with 212 Power, and additionally restores 15 HP per second for 15 seconds.
+		Level 3: Restores the target's HP with 219 Power, and additionally restores 15 HP per second for 15 seconds.
+		Level 4: Restores the target's HP with 235 Power, and additionally restores 16 HP per second for 15 seconds.
+		Level 5: Restores the target's HP with 243 Power, and additionally restores 17 HP per second for 15 seconds.
+		Level 6: Restores the target's HP with 251 Power, and additionally restores 17 HP per second for 15 seconds.
+		Level 7: Restores the target's HP with 267 Power, and additionally restores 18 HP per second for 15 seconds.
+		Level 8: Restores the target's HP with 275 Power, and additionally restores 19 HP per second for 15 seconds.
+		Level 9: Restores the target's HP with 283 Power, and additionally restores 19 HP per second for 15 seconds.
+		Level 10: Restores the target's HP with 299 Power, and additionally restores 20 HP per second for 15 seconds.
+		Level 11: Restores the target's HP with 307 Power, and additionally restores 21 HP per second for 15 seconds.
+		Level 12: Restores the target's HP with 316 Power, and additionally restores 22 HP per second for 15 seconds.
+		Level 13: Restores the target's HP with 332 Power, and additionally restores 23 HP per second for 15 seconds.
+		Level 14: Restores the target's HP with 340 Power, and additionally restores 23 HP per second for 15 seconds.
+		Level 15: Restores the target's HP with 348 Power, and additionally restores 24 HP per second for 15 seconds.
+		Level 16: Restores the target's HP with 356 Power, and additionally restores 24 HP per second for 15 seconds.
+		Level 17: Restores the target's HP with 364 Power, and additionally restores 25 HP per second for 15 seconds.
+		Level 18: Restores the target's HP with 372 Power, and additionally restores 25 HP per second for 15 seconds.
+		Level 19: Restores the target's HP with 380 Power, and additionally restores 26 HP per second for 15 seconds.
+		Level 20: Restores the target's HP with 388 Power, and additionally restores 26 HP per second for 15 seconds.
+		Level 21: Restores the target's HP with 395 Power, and additionally restores 27 HP per second for 15 seconds.
+		Level 22: Restores the target's HP with 402 Power, and additionally restores 27 HP per second for 15 seconds.
+		Level 23: Restores the target's HP with 410 Power, and additionally restores 28 HP per second for 15 seconds.
+		Level 24: Restores the target's HP with 417 Power, and additionally restores 28 HP per second for 15 seconds.
+		Level 25: Restores the target's HP with 424 Power, and additionally restores 29 HP per second for 15 seconds.
+		Level 26: Restores the target's HP with 431 Power, and additionally restores 29 HP per second for 15 seconds.
+		Level 27: Restores the target's HP with 437 Power, and additionally restores 30 HP per second for 15 seconds.
+		Level 28: Restores the target's HP with 444 Power, and additionally restores 30 HP per second for 15 seconds.
+		Level 29: Restores the target's HP with 450 Power, and additionally restores 30 HP per second for 15 seconds.
+		Level 30: Restores the target's HP with 456 Power, and additionally restores 31 HP per second for 15 seconds.
+		Level 31: Restores the target's HP with 462 Power, and additionally restores 31 HP per second for 15 seconds.
+		Level 32: Restores the target's HP with 467 Power, and additionally restores 32 HP per second for 15 seconds.
+		Level 33: Restores the target's HP with 472 Power, and additionally restores 32 HP per second for 15 seconds.
+	-->
+	<skill id="1217" levels="33" name="Greater Heal">
+		<table name="#mpConsume"> 58 60 62 64 65 68 72 74 77 80 80 83 87 89 90 93 95 97 98 98 100 102 104 105 108 109 112 113 114 115 117 119 120 </table>
+		<table name="#power"> 204 212 219 235 243 251 267 275 283 299 307 316 332 340 348 356 364 372 380 388 395 402 410 417 424 431 437 444 450 456 462 467 472 </table>
+		<table name="#hotValue"> 14 15 15 16 17 17 18 19 19 20 21 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 30 30 30 31 31 32 32 </table>
+		<table name="#aggroPoints"> 337 349 362 388 401 414 440 454 467 494 508 521 548 562 575 588 602 615 627 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
+		<table name="#abnormalLvl"> 2 2 2 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 7 7 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal count="15" duration="1" stackLvl="#abnormalLvl" stackType="life_force_others">
+				<effect type="HealOverTime" val="#hotValue" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Immediately restores the target's HP with 371 Power.
+		Level 2: Immediately restores the target's HP with 384 Power.
+		Level 3: Immediately restores the target's HP with 398 Power.
+		Level 4: Immediately restores the target's HP with 426 Power.
+		Level 5: Immediately restores the target's HP with 441 Power.
+		Level 6: Immediately restores the target's HP with 455 Power.
+		Level 7: Immediately restores the target's HP with 484 Power.
+		Level 8: Immediately restores the target's HP with 499 Power.
+		Level 9: Immediately restores the target's HP with 514 Power.
+		Level 10: Immediately restores the target's HP with 544 Power.
+		Level 11: Immediately restores the target's HP with 559 Power.
+		Level 12: Immediately restores the target's HP with 573 Power.
+		Level 13: Immediately restores the target's HP with 603 Power.
+		Level 14: Immediately restores the target's HP with 618 Power.
+		Level 15: Immediately restores the target's HP with 633 Power.
+		Level 16: Immediately restores the target's HP with 647 Power.
+		Level 17: Immediately restores the target's HP with 662 Power.
+		Level 18: Immediately restores the target's HP with 676 Power.
+		Level 19: Immediately restores the target's HP with 690 Power.
+		Level 20: Immediately restores the target's HP with 704 Power.
+		Level 21: Immediately restores the target's HP with 718 Power.
+		Level 22: Immediately restores the target's HP with 731 Power.
+		Level 23: Immediately restores the target's HP with 745 Power.
+		Level 24: Immediately restores the target's HP with 758 Power.
+		Level 25: Immediately restores the target's HP with 770 Power.
+		Level 26: Immediately restores the target's HP with 782 Power.
+		Level 27: Immediately restores the target's HP with 795 Power.
+		Level 28: Immediately restores the target's HP with 806 Power.
+		Level 29: Immediately restores the target's HP with 817 Power.
+		Level 30: Immediately restores the target's HP with 828 Power.
+		Level 31: Immediately restores the target's HP with 839 Power.
+		Level 32: Immediately restores the target's HP with 849 Power.
+		Level 33: Immediately restores the target's HP with 858 Power.
+	-->
+	<skill id="1218" levels="33" name="Greater Battle Heal">
+		<table name="#mpConsume"> 87 90 92 95 98 102 108 110 114 120 121 123 129 133 135 139 142 145 147 147 150 153 155 158 160 164 167 168 170 173 175 178 179 </table>
+		<table name="#power"> 371 384 398 426 441 455 484 499 514 544 559 573 603 618 633 647 662 676 690 704 718 731 745 758 770 782 795 806 817 828 839 849 858 </table>
+		<table name="#aggroPoints"> 270 280 290 310 321 331 352 363 374 396 406 417 439 450 460 471 481 492 502 512 522 532 542 551 560 569 578 586 595 603 610 617 624 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="#aggroPoints" />
+	</skill>
+	<!-- 
+		Level 1: Restores all party members' HP with 163 Power, and additionally restores 11 HP per second for 15 seconds.
+		Level 2: Restores all party members' HP with 169 Power, and additionally restores 12 HP per second for 15 seconds.
+		Level 3: Restores all party members' HP with 175 Power, and additionally restores 12 HP per second for 15 seconds.
+		Level 4: Restores all party members' HP with 188 Power, and additionally restores 13 HP per second for 15 seconds.
+		Level 5: Restores all party members' HP with 194 Power, and additionally restores 13 HP per second for 15 seconds.
+		Level 6: Restores all party members' HP with 201 Power, and additionally restores 14 HP per second for 15 seconds.
+		Level 7: Restores all party members' HP with 213 Power, and additionally restores 15 HP per second for 15 seconds.
+		Level 8: Restores all party members' HP with 220 Power, and additionally restores 15 HP per second for 15 seconds.
+		Level 9: Restores all party members' HP with 226 Power, and additionally restores 16 HP per second for 15 seconds.
+		Level 10: Restores all party members' HP with 239 Power, and additionally restores 16 HP per second for 15 seconds.
+		Level 11: Restores all party members' HP with 246 Power, and additionally restores 17 HP per second for 15 seconds.
+		Level 12: Restores all party members' HP with 253 Power, and additionally restores 17 HP per second for 15 seconds.
+		Level 13: Restores all party members' HP with 266 Power, and additionally restores 18 HP per second for 15 seconds.
+		Level 14: Restores all party members' HP with 272 Power, and additionally restores 19 HP per second for 15 seconds.
+		Level 15: Restores all party members' HP with 279 Power, and additionally restores 19 HP per second for 15 seconds.
+		Level 16: Restores all party members' HP with 285 Power, and additionally restores 19 HP per second for 15 seconds.
+		Level 17: Restores all party members' HP with 291 Power, and additionally restores 20 HP per second for 15 seconds.
+		Level 18: Restores all party members' HP with 298 Power, and additionally restores 20 HP per second for 15 seconds.
+		Level 19: Restores all party members' HP with 304 Power, and additionally restores 21 HP per second for 15 seconds.
+		Level 20: Restores all party members' HP with 310 Power, and additionally restores 21 HP per second for 15 seconds.
+		Level 21: Restores all party members' HP with 316 Power, and additionally restores 11 HP per second for 15 seconds.
+		Level 22: Restores all party members' HP with 322 Power, and additionally restores 22 HP per second for 15 seconds.
+		Level 23: Restores all party members' HP with 328 Power, and additionally restores 22 HP per second for 15 seconds.
+		Level 24: Restores all party members' HP with 334 Power, and additionally restores 23 HP per second for 15 seconds.
+		Level 25: Restores all party members' HP with 339 Power, and additionally restores 23 HP per second for 15 seconds.
+		Level 26: Restores all party members' HP with 345 Power, and additionally restores 23 HP per second for 15 seconds.
+		Level 27: Restores all party members' HP with 350 Power, and additionally restores 24 HP per second for 15 seconds.
+		Level 28: Restores all party members' HP with 355 Power, and additionally restores 24 HP per second for 15 seconds.
+		Level 29: Restores all party members' HP with 360 Power, and additionally restores 24 HP per second for 15 seconds.
+		Level 30: Restores all party members' HP with 365 Power, and additionally restores 25 HP per second for 15 seconds.
+		Level 31: Restores all party members' HP with 369 Power, and additionally restores 25 HP per second for 15 seconds.
+		Level 32: Restores all party members' HP with 374 Power, and additionally restores 25 HP per second for 15 seconds.
+		Level 33: Restores all party members' HP with 378 Power, and additionally restores 26 HP per second for 15 seconds.
+	-->
+	<skill id="1219" levels="33" name="Greater Group Heal">
+		<table name="#mpConsume"> 115 119 122 127 130 134 143 148 152 159 159 164 173 177 180 185 189 193 195 195 199 203 207 210 214 218 222 224 228 230 233 237 239 </table>
+		<table name="#power"> 163 169 175 188 194 201 213 220 226 239 246 253 266 272 279 285 291 298 304 310 316 322 328 334 339 345 350 355 360 365 369 374 378 </table>
+		<table name="#hotValue"> 11 12 12 13 13 14 15 15 16 16 17 17 18 19 19 19 20 20 21 21 21 22 22 23 23 23 24 24 24 25 25 25 26 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="7000" />
+		<set name="reuseDelay" val="6000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="#power" />
+		<for>
+			<abnormal count="15" duration="1" stackLvl="#abnormalLvl" stackType="life_force_others">
+				<effect type="HealOverTime" val="#hotValue" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Ignites flames on your body with 23 Power, inflicting Fire damage on the enemy.
+		Level 2: Ignites flames on your body with 26 Power, inflicting Fire damage on the enemy.
+		Level 3: Ignites flames on your body with 29 Power, inflicting Fire damage on the enemy.
+		Level 4: Ignites flames on your body with 32 Power, inflicting Fire damage on the enemy.
+		Level 5: Ignites flames on your body with 35 Power, inflicting Fire damage on the enemy.
+		Level 6: Ignites flames on your body with 38 Power, inflicting Fire damage on the enemy.
+		Level 7: Ignites flames on your body with 42 Power, inflicting Fire damage on the enemy.
+		Level 8: Ignites flames on your body with 44 Power, inflicting Fire damage on the enemy.
+	-->
+	<skill id="1220" levels="8" name="Blaze">
+		<table name="#mpConsume"> 18 20 22 23 25 27 29 30 </table>
+		<table name="#magicLvl"> 17 20 23 25 28 30 33 35 </table>
+		<table name="#power"> 23 26 29 32 35 38 42 44 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1200" />
+		<set name="castRange" val="750" />
+		<set name="effectRange" val="1250" />
+		<set name="element" val="0" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Decreases the enemy's Accuracy by 9 for 30 seconds.
+		Level 2: Decreases the enemy's Accuracy by 12 for 30 seconds.
+	-->
+	<skill id="1222" levels="15" name="Curse Chaos">
+		<table name="#mpConsume"> 15 35 39 44 48 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#accCombat"> 9 12 12 12 12 12 12 12 12 12 12 12 12 12 12 </table>
+		<table name="#abnormalLvl"> 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="hit_down">
+				<effect type="Debuff" val="0" />
+				<sub stat="accCombat" val="#accCombat" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- For 30 sec., decreases the enemy's Earth Resistance by 20 and increases Wind Resistance by 10. -->
+	<skill id="1223" levels="15" name="Surrender to Earth">
+		<table name="#mpConsume"> 15 35 39 44 48 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#castRange"> 750 900 900 900 900 900 900 900 900 900 900 900 900 900 900 </table>
+		<table name="#effectRange"> 1250 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 </table>
+		<table name="#abnormalLvl"> 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="#castRange" />
+		<set name="effectRange" val="#effectRange" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="3" />
+		<set name="elementPower" val="20" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="armor_earth">
+				<effect type="Debuff" val="0" />
+				<sub stat="earthRes" val="20" />
+				<add stat="windRes" val="10" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Decreases the enemy's Poison Resistance by 25 for 30 seconds.
+		Level 4: Decreases the enemy's Poison Resistance by 30 for 30 seconds.
+	-->
+	<skill id="1224" levels="17" name="Surrender to Poison">
+		<table name="#mpConsume"> 12 14 15 35 39 44 48 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 25 30 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#poisonVuln"> 25 25 25 30 30 30 30 30 30 30 30 30 30 30 30 30 30 </table>
+		<table name="#castRange"> 750 750 750 900 900 900 900 900 900 900 900 900 900 900 900 900 900 </table>
+		<table name="#abnormalLvl"> 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </table>
+		<table name="#effectRange"> 1250 1250 1250 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 1400 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="#castRange" />
+		<set name="effectRange" val="#effectRange" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="CON" />
+		<for>
+			<abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="resist_poison">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="poisonRes" val="#poisonVuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Summons Mew the Cat for assistance in combat. Requires 1 Spirit Ore. Consumes 90% of acquired XP. -->
+	<skill id="1225" levels="18" name="Summon Mew the Cat">
+		<table name="#mpConsume"> 39 44 53 60 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
+		<table name="#npcIds"> 14159 14160 14161 14162 14163 14164 14165 14166 14167 14168 14169 14170 14171 14172 14173 14174 14175 14176 </table>
+		<table name="#summonTotalLifeTime"> 1200000 1200000 1200000 1200000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 </table>
+		<table name="#hitTime"> 15000 15000 15000 15000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="reuseDelay" val="#reuseDelay" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="#summonTotalLifeTime" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeSteps" val="0" />
+		<set name="expPenalty" val="0.9" />
+	</skill>
+	<!-- 
+		Level 1: Summons Boxer the Unicorn. Requires 1 Spirit Ore.
+		Level 3: Summons Boxer the Unicorn. Requires 2 Spirit Ore.
+		Level 5: Summons Boxer the Unicorn. Requires 7 Spirit Ore.
+		Level 6: Summons Boxer the Unicorn. Requires 1 Spirit Ore.
+		Level 8: Summons Boxer the Unicorn. Requires 4 Spirit Ore.
+		Level 9: Summons Boxer the Unicorn. Requires 5 Spirit Ore.
+		Level 10: Summons Boxer the Unicorn. Requires 6 Spirit Ore.
+		Level 11: Summons Boxer the Unicorn. Requires 11 Spirit Ore.
+		Level 12: Summons Boxer the Unicorn. Requires 12 Spirit Ore.
+		Level 13: Summons Boxer the Unicorn. Requires 2 Spirit Ore.
+		Level 14: Summons Boxer the Unicorn. Requires 3 Spirit Ore.
+		Level 15: Summons Boxer the Unicorn. Requires 4 Spirit Ore.
+		Level 17: Summons Boxer the Unicorn. Requires 9 Spirit Ore.
+		Level 18: Summons Boxer the Unicorn. Requires 10 Spirit Ore.
+	-->
+	<skill id="1226" levels="18" name="Summon Boxer the Unicorn">
+		<table name="#mpConsume"> 39 44 53 60 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
+		<table name="#itemConsumeCount"> 1 1 2 2 7 1 1 4 5 6 11 12 2 3 4 4 9 10 </table>
+		<table name="#itemConsumeCountOT"> 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 </table>
+		<table name="#itemConsumeSteps"> 0 0 0 0 0 14 14 14 14 14 14 14 14 14 14 14 14 14 </table>
+		<table name="#npcIds"> 14295 14296 14297 14298 14299 14300 14301 14302 14303 14304 14305 14306 14307 14308 14309 14310 14311 14312 </table>
+		<table name="#summonTotalLifeTime"> 1200000 1200000 1200000 1200000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 </table>
+		<table name="#hitTime"> 15000 15000 15000 15000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="reuseDelay" val="#reuseDelay" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="#summonTotalLifeTime" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeIdOT" val="3031" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="#itemConsumeSteps" />
+	</skill>
+	<!-- Summons Mirage the Unicorn for assistance in combat. Requires 1 Spirit Ore. Consumes 90% of acquired XP. -->
+	<skill id="1227" levels="18" name="Summon Mirage the Unicorn">
+		<table name="#mpConsume"> 39 44 53 60 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
+		<table name="#npcIds"> 14343 14344 14345 14346 14347 14348 14349 14350 14351 14352 14353 14354 14355 14356 14357 14358 14359 14360 </table>
+		<table name="#summonTotalLifeTime"> 1200000 1200000 1200000 1200000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 </table>
+		<table name="#hitTime"> 15000 15000 15000 15000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="reuseDelay" val="#reuseDelay" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="#summonTotalLifeTime" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeSteps" val="0" />
+		<set name="expPenalty" val="0.9" />
+	</skill>
+	<!-- Summons a Silhouette for assistance in combat. Requires 1 Spirit Ore. Consumes 90% of acquired XP. -->
+	<skill id="1228" levels="18" name="Summon Silhouette">
+		<table name="#mpConsume"> 39 44 53 60 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#reuseDelay"> 5400000 5400000 5400000 5400000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 5000 </table>
+		<table name="#npcIds"> 14527 14528 14529 14530 14531 14532 14533 14534 14535 14536 14537 14538 14539 14540 14541 14542 14543 14544 </table>
+		<table name="#summonTotalLifeTime"> 1200000 1200000 1200000 1200000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 3600000 </table>
+		<table name="#hitTime"> 15000 15000 15000 15000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 6000 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="reuseDelay" val="#reuseDelay" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="#summonTotalLifeTime" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeSteps" val="0" />
+		<set name="expPenalty" val="0.9" />
+	</skill>
+	<!-- 
+		Level 1: Recovers 12 HP per second for all party members for 15 seconds.
+		Level 2: Recovers 15 HP per second for all party members for 15 seconds.
+		Level 3: Recovers 18 HP per second for all party members for 15 seconds.
+		Level 4: Recovers 23 HP per second for all party members for 15 seconds.
+		Level 5: Recovers 27 HP per second for all party members for 15 seconds.
+		Level 6: Recovers 31 HP per second for all party members for 15 seconds.
+		Level 7: Recovers 35 HP per second for all party members for 15 seconds.
+		Level 8: Recovers 39 HP per second for all party members for 15 seconds.
+		Level 9: Recovers 43 HP per second for all party members for 15 seconds.
+		Level 10: Recovers 45 HP per second for all party members for 15 seconds.
+		Level 11: Recovers 46 HP per second for all party members for 15 seconds.
+		Level 12: Recovers 48 HP per second for all party members for 15 seconds.
+		Level 13: Recovers 50 HP per second for all party members for 15 seconds.
+		Level 14: Recovers 52 HP per second for all party members for 15 seconds.
+		Level 15: Recovers 53 HP per second for all party members for 15 seconds.
+		Level 16: Recovers 55 HP per second for all party members for 15 seconds.
+		Level 17: Recovers 56 HP per second for all party members for 15 seconds.
+		Level 18: Recovers 58 HP per second for all party members for 15 seconds.
+	-->
+	<skill id="1229" levels="18" name="Chant of Life">
+		<table name="#hot"> 12 15 18 23 27 31 35 39 43 45 46 58 50 52 53 55 56 58 </table>
+		<table name="#mpConsume"> 59 72 88 103 122 134 152 164 180 189 195 199 207 214 222 228 233 239 </table>
+		<table name="#magicLvl"> 20 25 30 35 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#aggroPoints"> 204 243 285 331 379 418 457 495 532 549 566 582 597 611 624 635 646 655 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="7000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal count="15" duration="1" stackLvl="#abnormalLvl" stackType="life_force_orc">
+				<effect type="HealOverTime" val="#hot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Ignites flames to inflict Fire damage on the enemy with 49 Power added to M. Atk.
+		Level 2: Ignites flames to inflict Fire damage on the enemy with 52 Power added to M. Atk.
+		Level 3: Ignites flames to inflict Fire damage on the enemy with 55 Power added to M. Atk.
+		Level 4: Ignites flames to inflict Fire damage on the enemy with 58 Power added to M. Atk.
+		Level 5: Ignites flames to inflict Fire damage on the enemy with 61 Power added to M. Atk.
+		Level 6: Ignites flames to inflict Fire damage on the enemy with 65 Power added to M. Atk.
+		Level 7: Ignites flames to inflict Fire damage on the enemy with 68 Power added to M. Atk.
+		Level 8: Ignites flames to inflict Fire damage on the enemy with 72 Power added to M. Atk.
+		Level 9: Ignites flames to inflict Fire damage on the enemy with 75 Power added to M. Atk.
+		Level 10: Ignites flames to inflict Fire damage on the enemy with 78 Power added to M. Atk.
+		Level 11: Ignites flames to inflict Fire damage on the enemy with 80 Power added to M. Atk.
+		Level 12: Ignites flames to inflict Fire damage on the enemy with 82 Power added to M. Atk.
+		Level 13: Ignites flames to inflict Fire damage on the enemy with 84 Power added to M. Atk.
+		Level 14: Ignites flames to inflict Fire damage on the enemy with 85 Power added to M. Atk.
+		Level 15: Ignites flames to inflict Fire damage on the enemy with 87 Power added to M. Atk.
+		Level 16: Ignites flames to inflict Fire damage on the enemy with 89 Power added to M. Atk.
+		Level 17: Ignites flames to inflict Fire damage on the enemy with 90 Power added to M. Atk.
+		Level 18: Ignites flames to inflict Fire damage on the enemy with 92 Power added to M. Atk.
+		Level 19: Ignites flames to inflict Fire damage on the enemy with 94 Power added to M. Atk.
+		Level 20: Ignites flames to inflict Fire damage on the enemy with 96 Power added to M. Atk.
+		Level 21: Ignites flames to inflict Fire damage on the enemy with 97 Power added to M. Atk.
+		Level 22: Ignites flames to inflict Fire damage on the enemy with 99 Power added to M. Atk.
+		Level 23: Ignites flames to inflict Fire damage on the enemy with 100 Power added to M. Atk.
+		Level 24: Ignites flames to inflict Fire damage on the enemy with 102 Power added to M. Atk.
+		Level 25: Ignites flames to inflict Fire damage on the enemy with 104 Power added to M. Atk.
+		Level 26: Ignites flames to inflict Fire damage on the enemy with 105 Power added to M. Atk.
+		Level 27: Ignites flames to inflict Fire damage on the enemy with 107 Power added to M. Atk.
+		Level 28: Ignites flames to inflict Fire damage on the enemy with 108 Power added to M. Atk.
+	-->
+	<skill id="1230" levels="28" name="Prominence">
+		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1200" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="element" val="0" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Inflicts non-attribute damage on the enemy using 39 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 2: Inflicts non-attribute damage on the enemy using 42 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 3: Inflicts non-attribute damage on the enemy using 44 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 4: Inflicts non-attribute damage on the enemy using 47 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 5: Inflicts non-attribute damage on the enemy using 49 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 6: Inflicts non-attribute damage on the enemy using 52 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 7: Inflicts non-attribute damage on the enemy using 55 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 8: Inflicts non-attribute damage on the enemy using 57 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 9: Inflicts non-attribute damage on the enemy using 60 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 10: Inflicts non-attribute damage on the enemy using 63 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 11: Inflicts non-attribute damage on the enemy using 64 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 12: Inflicts non-attribute damage on the enemy using 66 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 13: Inflicts non-attribute damage on the enemy using 67 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 14: Inflicts non-attribute damage on the enemy using 68 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 15: Inflicts non-attribute damage on the enemy using 70 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 16: Inflicts non-attribute damage on the enemy using 71 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 17: Inflicts non-attribute damage on the enemy using 72 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 18: Inflicts non-attribute damage on the enemy using 74 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 19: Inflicts non-attribute damage on the enemy using 75 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 20: Inflicts non-attribute damage on the enemy using 77 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 21: Inflicts non-attribute damage on the enemy using 78 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 22: Inflicts non-attribute damage on the enemy using 79 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 23: Inflicts non-attribute damage on the enemy using 80 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 24: Inflicts non-attribute damage on the enemy using 82 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 25: Inflicts non-attribute damage on the enemy using 83 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 26: Inflicts non-attribute damage on the enemy using 84 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 27: Inflicts non-attribute damage on the enemy using 85 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+		Level 28: Inflicts non-attribute damage on the enemy using 87 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
+	-->
+	<skill id="1231" levels="28" name="Aura Flare">
+		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
+		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 64 66 67 68 70 71 72 74 75 77 78 79 80 82 83 84 85 87 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+		<for>
+			<abnormal duration="3" self="1" stackLvl="0" stackType="ma_down">
+				<effect type="Buff" val="0" />
+				<subPercent stat="pvpMagicalDmg" val="50" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 20 minutes, transfers 10% of the target's received damage back to the enemy. (Can only be used on party members.)
+		Level 2: For 20 minutes, transfers 15% of the target's received damage back to the enemy. (Can only be used on party members.)
+		Level 3: For 20 minutes, transfers 20% of the target's received damage back to the enemy. (Can only be used on party members.)
+	-->
+	<skill id="1232" levels="3" name="Blazing Skin">
+		<table name="#mpConsume"> 35 44 52 </table>
+		<table name="#reflectDam"> 10 15 20 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="dmg_shield">
+				<effect type="Buff" val="0" />
+				<add stat="reflectDam" val="#reflectDam" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Rots the enemy, causing loss of 102 HP per second for 15 seconds.
+		Level 2: Rots the enemy, causing loss of 125 HP per second for 15 seconds.
+		Level 3: Rots the enemy, causing loss of 144 HP per second for 15 seconds.
+		Level 4: Rots the enemy, causing loss of 157 HP per second for 15 seconds.
+	-->
+	<skill id="1233" levels="4" name="Decay">
+		<table name="#dot"> 102 125 144 157 </table>
+		<table name="#mpConsume"> 65 77 89 103 </table>
+		<table name="#magicLvl"> 48 56 64 74 </table>
+		<table name="#abnormalLvl"> 5 6 7 8 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="3" />
+		<set name="elementPower" val="20" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal count="15" landRate="70" stackLvl="#abnormalLvl" stackType="dot_attr">
+				<effect type="DamOverTime" val="#dot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Inflicts dark damage on the enemy with 49 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 2: Inflicts dark damage on the enemy with 52 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 3: Inflicts dark damage on the enemy with 55 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 4: Inflicts dark damage on the enemy with 58 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 5: Inflicts dark damage on the enemy with 61 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 6: Inflicts dark damage on the enemy with 65 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 7: Inflicts dark damage on the enemy with 68 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 8: Inflicts dark damage on the enemy with 72 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 9: Inflicts dark damage on the enemy with 75 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 10: Inflicts dark damage on the enemy with 78 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 11: Inflicts dark damage on the enemy with 80 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 12: Inflicts dark damage on the enemy with 82 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 13: Inflicts dark damage on the enemy with 84 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 14: Inflicts dark damage on the enemy with 85 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 15: Inflicts dark damage on the enemy with 87 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 16: Inflicts dark damage on the enemy with 89 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 17: Inflicts dark damage on the enemy with 90 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 18: Inflicts dark damage on the enemy with 92 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 19: Inflicts dark damage on the enemy with 94 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 20: Inflicts dark damage on the enemy with 96 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 21: Inflicts dark damage on the enemy with 97 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 22: Inflicts dark damage on the enemy with 99 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 23: Inflicts dark damage on the enemy with 100 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 24: Inflicts dark damage on the enemy with 102 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 25: Inflicts dark damage on the enemy with 104 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 26: Inflicts dark damage on the enemy with 105 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 27: Inflicts dark damage on the enemy with 107 Power added to M. Atk. Absorbs 40% of the damage as HP.
+		Level 28: Inflicts dark damage on the enemy with 108 Power added to M. Atk. Absorbs 40% of the damage as HP.
+	-->
+	<skill id="1234" levels="28" name="Vampiric Claw">
+		<table name="#mpConsume"> 60 63 67 70 74 78 82 85 89 93 94 97 98 100 102 104 105 107 109 110 112 114 115 117 119 120 122 123 </table>
+		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DRAIN" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="element" val="5" />
+		<set name="elementPower" val="20" />
+		<set name="absorbPart" val="0.4" />
+	</skill>
+	<!-- 
+		Level 1: Releases a high pressure current to inflict Water damage on the enemy with 49 Power added to M. Atk.
+		Level 2: Releases a high pressure current to inflict Water damage on the enemy with 52 Power added to M. Atk.
+		Level 3: Releases a high pressure current to inflict Water damage on the enemy with 55 Power added to M. Atk.
+		Level 4: Releases a high pressure current to inflict Water damage on the enemy with 58 Power added to M. Atk.
+		Level 5: Releases a high pressure current to inflict Water damage on the enemy with 61 Power added to M. Atk.
+		Level 6: Releases a high pressure current to inflict Water damage on the enemy with 65 Power added to M. Atk.
+		Level 7: Releases a high pressure current to inflict Water damage on the enemy with 68 Power added to M. Atk.
+		Level 8: Releases a high pressure current to inflict Water damage on the enemy with 72 Power added to M. Atk.
+		Level 9: Releases a high pressure current to inflict Water damage on the enemy with 75 Power added to M. Atk.
+		Level 10: Releases a high pressure current to inflict Water damage on the enemy with 78 Power added to M. Atk.
+		Level 11: Releases a high pressure current to inflict Water damage on the enemy with 80 Power added to M. Atk.
+		Level 12: Releases a high pressure current to inflict Water damage on the enemy with 82 Power added to M. Atk.
+		Level 13: Releases a high pressure current to inflict Water damage on the enemy with 84 Power added to M. Atk.
+		Level 14: Releases a high pressure current to inflict Water damage on the enemy with 85 Power added to M. Atk.
+		Level 15: Releases a high pressure current to inflict Water damage on the enemy with 87 Power added to M. Atk.
+		Level 16: Releases a high pressure current to inflict Water damage on the enemy with 89 Power added to M. Atk.
+		Level 17: Releases a high pressure current to inflict Water damage on the enemy with 90 Power added to M. Atk.
+		Level 18: Releases a high pressure current to inflict Water damage on the enemy with 92 Power added to M. Atk.
+		Level 19: Releases a high pressure current to inflict Water damage on the enemy with 94 Power added to M. Atk.
+		Level 20: Releases a high pressure current to inflict Water damage on the enemy with 96 Power added to M. Atk.
+		Level 21: Releases a high pressure current to inflict Water damage on the enemy with 97 Power added to M. Atk.
+		Level 22: Releases a high pressure current to inflict Water damage on the enemy with 99 Power added to M. Atk.
+		Level 23: Releases a high pressure current to inflict Water damage on the enemy with 100 Power added to M. Atk.
+		Level 24: Releases a high pressure current to inflict Water damage on the enemy with 102 Power added to M. Atk.
+		Level 25: Releases a high pressure current to inflict Water damage on the enemy with 104 Power added to M. Atk.
+		Level 26: Releases a high pressure current to inflict Water damage on the enemy with 105 Power added to M. Atk.
+		Level 27: Releases a high pressure current to inflict Water damage on the enemy with 107 Power added to M. Atk.
+		Level 28: Releases a high pressure current to inflict Water damage on the enemy with 108 Power added to M. Atk.
+	-->
+	<skill id="1235" levels="28" name="Hydro Blast">
+		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
+		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1200" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="element" val="1" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Momentarily freezes the surrounding air, inflicting Water damage with 30 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 2: Momentarily freezes the surrounding air, inflicting Water damage with 31 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 3: Momentarily freezes the surrounding air, inflicting Water damage with 33 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 4: Momentarily freezes the surrounding air, inflicting Water damage with 35 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 5: Momentarily freezes the surrounding air, inflicting Water damage with 37 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 6: Momentarily freezes the surrounding air, inflicting Water damage with 39 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 7: Momentarily freezes the surrounding air, inflicting Water damage with 41 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 8: Momentarily freezes the surrounding air, inflicting Water damage with 43 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 9: Momentarily freezes the surrounding air, inflicting Water damage with 45 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 10: Momentarily freezes the surrounding air, inflicting Water damage with 47 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 11: Momentarily freezes the surrounding air, inflicting Water damage with 49 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 12: Momentarily freezes the surrounding air, inflicting Water damage with 51 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 13: Momentarily freezes the surrounding air, inflicting Water damage with 53 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 14: Momentarily freezes the surrounding air, inflicting Water damage with 56 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 15: Momentarily freezes the surrounding air, inflicting Water damage with 58 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 16: Momentarily freezes the surrounding air, inflicting Water damage with 59 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 17: Momentarily freezes the surrounding air, inflicting Water damage with 61 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 18: Momentarily freezes the surrounding air, inflicting Water damage with 63 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+		Level 19: Momentarily freezes the surrounding air, inflicting Water damage with 65 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
+	-->
+	<skill id="1236" levels="19" name="Frost Bolt">
+		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 30 31 33 35 37 39 41 43 45 47 49 51 53 56 58 59 61 63 65 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="3100" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="1200" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="1" />
+		<set name="elementPower" val="20" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="60" effectType="DEBUFF" landRate="60" stackLvl="2" stackType="speed_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="runSpd" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Hurls a blade of ice with 28 Power added to M. Atk., inflicting water damage and causing loss of 44 HP per second for 15 seconds.
+		Level 2: Hurls a blade of ice with 29 Power added to M. Atk., inflicting water damage and causing loss of 44 HP per second for 15 seconds.
+		Level 3: Hurls a blade of ice with 31 Power added to M. Atk., inflicting water damage and causing loss of 44 HP per second for 15 seconds.
+		Level 4: Hurls a blade of ice with 33 Power added to M. Atk., inflicting water damage and causing loss of 44 HP per second for 15 seconds.
+		Level 5: Hurls a blade of ice with 34 Power added to M. Atk., inflicting water damage and causing loss of 54 HP per second for 15 seconds.
+		Level 6: Hurls a blade of ice with 36 Power added to M. Atk., inflicting water damage and causing loss of 54 HP per second for 15 seconds.
+		Level 7: Hurls a blade of ice with 38 Power added to M. Atk., inflicting water damage and causing loss of 54 HP per second for 15 seconds.
+		Level 8: Hurls a blade of ice with 39 Power added to M. Atk., inflicting water damage and causing loss of 54 HP per second for 15 seconds.
+		Level 9: Hurls a blade of ice with 41 Power added to M. Atk., inflicting water damage and causing loss of 54 HP per second for 15 seconds.
+		Level 10: Hurls a blade of ice with 43 Power added to M. Atk., inflicting water damage and causing loss of 62 HP per second for 15 seconds.
+		Level 11: Hurls a blade of ice with 45 Power added to M. Atk., inflicting water damage and causing loss of 62 HP per second for 15 seconds.
+		Level 12: Hurls a blade of ice with 46 Power added to M. Atk., inflicting water damage and causing loss of 62 HP per second for 15 seconds.
+		Level 13: Hurls a blade of ice with 48 Power added to M. Atk., inflicting water damage and causing loss of 62 HP per second for 15 seconds.
+		Level 14: Hurls a blade of ice with 50 Power added to M. Atk., inflicting water damage and causing loss of 62 HP per second for 15 seconds.
+		Level 15: Hurls a blade of ice with 51 Power added to M. Atk., inflicting water damage and causing loss of 67 HP per second for 15 seconds.
+		Level 16: Hurls a blade of ice with 53 Power added to M. Atk., inflicting water damage and causing loss of 67 HP per second for 15 seconds.
+		Level 17: Hurls a blade of ice with 54 Power added to M. Atk., inflicting water damage and causing loss of 67 HP per second for 15 seconds.
+	-->
+	<skill id="1237" levels="17" name="Ice Dagger">
+		<table name="#mpConsume"> 37 39 40 43 45 47 49 52 53 55 57 59 60 63 64 67 68 </table>
+		<table name="#magicLvl"> 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 28 29 31 33 34 36 38 39 41 43 45 46 48 50 51 53 54 </table>
+		<table name="#dot"> 132 132 132 132 162 162 162 162 162 186 186 186 186 186 201 201 201 </table>
+		<table name="#abnormalLvl"> 5 5 5 5 6 6 6 6 6 7 7 7 7 7 8 8 8 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="1200" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="1" />
+		<set name="elementPower" val="20" />
+		<set name="saveVs" val="CON" />
+		<for>
+			<abnormal count="5" duration="3" effectType="BLEED" landRate="50" stackLvl="#abnormalLvl" stackType="bleeding" visualEffect="bleed">
+				<effect type="DamOverTime" val="#dot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 20 minutes, returns 10% of damage received by the target back to the enemy. (Can only be used on party members.)
+		Level 2: For 20 minutes, returns 15% of damage received by the target back to the enemy. (Can only be used on party members.)
+		Level 3: For 20 minutes, returns 20% of damage received by the target back to the enemy. (Can only be used on party members.)
+	-->
+	<skill id="1238" levels="3" name="Freezing Skin">
+		<table name="#mpConsume"> 35 44 52 </table>
+		<table name="#reflectDam"> 10 15 20 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="dmg_shield">
+				<effect type="Buff" val="0" />
+				<add stat="reflectDam" val="#reflectDam" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Creates a whirlwind that uses 49 Power to inflict Wind damage to the enemy.
+		Level 2: Creates a whirlwind that uses 52 Power to inflict Wind damage to the enemy.
+		Level 3: Creates a whirlwind that uses 55 Power to inflict Wind damage to the enemy.
+		Level 4: Creates a whirlwind that uses 58 Power to inflict Wind damage to the enemy.
+		Level 5: Creates a whirlwind that uses 61 Power to inflict Wind damage to the enemy.
+		Level 6: Creates a whirlwind that uses 65 Power to inflict Wind damage to the enemy.
+		Level 7: Creates a whirlwind that uses 68 Power to inflict Wind damage to the enemy.
+		Level 8: Creates a whirlwind that uses 72 Power to inflict Wind damage to the enemy.
+		Level 9: Creates a whirlwind that uses 75 Power to inflict Wind damage to the enemy.
+		Level 10: Creates a whirlwind that uses 78 Power to inflict Wind damage to the enemy.
+		Level 11: Creates a whirlwind that uses 80 Power to inflict Wind damage to the enemy.
+		Level 12: Creates a whirlwind that uses 82 Power to inflict Wind damage to the enemy.
+		Level 13: Creates a whirlwind that uses 84 Power to inflict Wind damage to the enemy.
+		Level 14: Creates a whirlwind that uses 85 Power to inflict Wind damage to the enemy.
+		Level 15: Creates a whirlwind that uses 87 Power to inflict Wind damage to the enemy.
+		Level 16: Creates a whirlwind that uses 89 Power to inflict Wind damage to the enemy.
+		Level 17: Creates a whirlwind that uses 90 Power to inflict Wind damage to the enemy.
+		Level 18: Creates a whirlwind that uses 92 Power to inflict Wind damage to the enemy.
+		Level 19: Creates a whirlwind that uses 94 Power to inflict Wind damage to the enemy.
+		Level 20: Creates a whirlwind that uses 96 Power to inflict Wind damage to the enemy.
+		Level 21: Creates a whirlwind that uses 97 Power to inflict Wind damage to the enemy.
+		Level 22: Creates a whirlwind that uses 99 Power to inflict Wind damage to the enemy.
+		Level 23: Creates a whirlwind that uses 100 Power to inflict Wind damage to the enemy.
+		Level 24: Creates a whirlwind that uses 102 Power to inflict Wind damage to the enemy.
+		Level 25: Creates a whirlwind that uses 104 Power to inflict Wind damage to the enemy.
+		Level 26: Creates a whirlwind that uses 105 Power to inflict Wind damage to the enemy.
+		Level 27: Creates a whirlwind that uses 107 Power to inflict Wind damage to the enemy.
+		Level 28: Creates a whirlwind that uses 108 Power to inflict Wind damage to the enemy.
+	-->
+	<skill id="1239" levels="28" name="Hurricane">
+		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
+		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="1200" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="element" val="2" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Increases Accuracy by 2 for 20 minutes.
+		Level 2: Increases Accuracy by 3 for 20 minutes.
+		Level 3: Increases Accuracy by 4 for 20 minutes.
+	-->
+	<skill id="1240" levels="3" name="Guidance">
+		<table name="#mpConsume"> 35 44 52 </table>
+		<table name="#accCombat"> 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="hit_up">
+				<effect type="Buff" val="0" />
+				<add stat="accCombat" val="#accCombat" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Critical Damage by 25% for 20 minutes.
+		Level 2: Increases Critical Damage by 30% for 20 minutes.
+		Level 3: Increases Critical Damage by 35% for 20 minutes.
+	-->
+	<skill id="1242" levels="3" name="Death Whisper">
+		<table name="#cAtk"> 25 30 35 </table>
+		<table name="#mpConsume"> 35 44 52 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="critical_dmg_up">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="pCritDmg" val="#cAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Shield Defense by 5% for 20 minutes.
+		Level 2: Increases Shield Defense by 10% for 20 minutes.
+		Level 3: Increases Shield Defense by 15% for 20 minutes.
+		Level 4: Increases Shield Defense by 20% for 20 minutes.
+		Level 5: Increases Shield Defense by 25% for 20 minutes.
+		Level 6: Increases Shield Defense by 30% for 20 minutes.
+	-->
+	<skill id="1243" levels="6" name="Blessed Shield">
+		<table name="#rShld"> 5 10 15 20 25 30 </table>
+		<table name="#mpConsume"> 35 44 52 58 62 65 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#aggroPoints"> 379 457 532 582 611 635 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="shield_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="rShld" val="#rShld" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Strikes the target with a magical cold flame. For 10 seconds, causes - 112 HP per second on the enemy and - 132 during PVP.
+		Level 2: Strikes the target with a magical cold flame. For 10 seconds, causes - 137 HP per second on the enemy and - 162 during PVP.
+		Level 3: Strikes the target with a magical cold flame. For 10 seconds, causes - 158 HP per second on the enemy and - 187 during PVP.
+		Level 4: Strikes the target with a magical cold flame. For 10 seconds, causes - 172 HP per second on the enemy and - 204 during PVP.
+		Level 5: Strikes the target with a magical cold flame. For 10 seconds, causes - 198 HP per second on the enemy and - 234 during PVP.
+		Level 6: Strikes the target with a magical cold flame. For 10 seconds, causes - 330 HP per second on the enemy and - 390 during PVP.
+		Level 7: Strikes the target with a magical cold flame. For 10 seconds, causes - 358 HP per second on the enemy and - 423 during PVP.
+		Level 8: Strikes the target with a magical cold flame. For 10 seconds, causes - 377 HP per second on the enemy and - 445 during PVP.
+		Level 9: Strikes the target with a magical cold flame. For 10 seconds, causes - 394 HP per second on the enemy and - 466 during PVP.
+		Level 10: Strikes the target with a magical cold flame. For 10 seconds, causes - 412 HP per second on the enemy and - 487 during PVP.
+	-->
+	<skill id="1244" levels="10" name="Freezing Flame">
+		<table name="#dot"> 112 137 158 172 198 330 358 377 394 412 </table>
+		<table name="#mpConsume"> 55 58 61 64 67 70 73 79 86 91 </table>
+		<table name="#hitTime"> 3000 2800 2600 2400 2200 2000 1800 1600 1400 1200 </table>
+		<table name="#magicLvl"> 40 52 64 72 76 80 85 90 95 99 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="0" />
+		<set name="elementPower" val="20" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal count="10" duration="1" landRate="100" stackLvl="5" stackType="dot_attr">
+				<effect type="DamOverTime" val="#dot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Inflicts non-attribute damage on the enemy with 52 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 2: Inflicts non-attribute damage on the enemy with 58 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 3: Inflicts non-attribute damage on the enemy with 65 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 4: Inflicts non-attribute damage on the enemy with 72 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 5: Inflicts non-attribute damage on the enemy with 78 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 6: Inflicts non-attribute damage on the enemy with 82 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 7: Inflicts non-attribute damage on the enemy with 85 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 8: Inflicts non-attribute damage on the enemy with 89 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 9: Inflicts non-attribute damage on the enemy with 92 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 10: Inflicts non-attribute damage on the enemy with 96 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 11: Inflicts non-attribute damage on the enemy with 99 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 12: Inflicts non-attribute damage on the enemy with 102 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 13: Inflicts non-attribute damage on the enemy with 105 Power added to M. Atk. Absorbs 80% of the damage as HP.
+		Level 14: Inflicts non-attribute damage on the enemy with 108 Power added to M. Atk. Absorbs 80% of the damage as HP.
+	-->
+	<skill id="1245" levels="14" name="Steal Essence">
+		<table name="#mpConsume"> 92 100 112 122 133 138 144 149 154 159 164 169 173 177 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 52 58 65 72 78 82 85 89 92 96 99 102 105 108 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DRAIN" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="absorbPart" val="0.8" />
+	</skill>
+	<!-- Blocks nearby enemies' use of magic for 1 minute. -->
+	<skill id="1246" levels="12" name="Seal of Silence">
+		<table name="#mpConsume"> 65 70 77 80 83 87 89 93 95 98 100 103 </table>
+		<table name="#magicLvl"> 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="60" landRate="40" stackLvl="1" stackType="silence">
+				<effect type="Mute" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Blocks nearby enemies' natural HP recovery ability by 100% for 2 minutes. -->
+	<skill id="1247" levels="14" name="Seal of Scourge">
+		<table name="#mpConsume"> 53 59 65 70 77 80 83 87 89 93 95 98 100 103 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="120" landRate="80" stackLvl="1" stackType="hp_regen_down">
+				<effect type="Debuff" val="0" />
+				<override stat="regHp" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Decreases nearby enemies' physical/magic skill Cooldown by 200% for 2 minutes. -->
+	<skill id="1248" levels="12" name="Seal of Suspension">
+		<table name="#mpConsume"> 65 70 77 80 83 87 89 93 95 98 100 103 </table>
+		<table name="#magicLvl"> 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="120" landRate="60" stackLvl="1" stackType="reuse_delay_up">
+				<effect type="Debuff" val="0" />
+				<addPercent stat="mReuse" val="200" />
+				<addPercent stat="pReuse" val="200" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Accuracy of nearby clan members by 2 for 20 minutes.
+		Level 2: Increases Accuracy of nearby clan members by 3 for 20 minutes.
+		Level 3: Increases Accuracy of nearby clan members by 4 for 20 minutes.
+	-->
+	<skill id="1249" levels="3" name="Pa'agrio's Vision">
+		<table name="#mpConsume"> 154 188 204 </table>
+		<table name="#accCombat"> 2 3 4 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 418 495 532 </table>
+		<set name="target" val="TARGET_PARTY_CLAN" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="hit_up">
+				<effect type="Buff" val="0" />
+				<add stat="accCombat" val="#accCombat" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Shield Defense of nearby clan members by 30% for 20 minutes. Effect 1.
+		Level 2: Increases Shield Defense of nearby clan members by 40% for 20 minutes. Effect 1.
+		Level 3: Increases Shield Defense of nearby clan members by 50% for 20 minutes. Effect 1.
+	-->
+	<skill id="1250" levels="3" name="Pa'agrio's Protection">
+		<table name="#rShld"> 30 40 50 </table>
+		<table name="#mpConsume"> 139 172 204 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<set name="target" val="TARGET_PARTY_CLAN" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="shield_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="rShld" val="#rShld" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Atk. Spd. of all party members by 15% for 20 minutes.
+		Level 2: Increases Atk. Spd. of all party members by 33% for 20 minutes.
+	-->
+	<skill id="1251" levels="2" name="Chant of Fury">
+		<table name="#pAtkSpd"> 15 33 </table>
+		<table name="#mpConsume"> 172 204 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#aggroPoints"> 457 532 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="attack_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtkSpd" val="#pAtkSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Evasion of all party members by 2 for 20 minutes.
+		Level 2: Increases Evasion of all party members by 3 for 20 minutes.
+		Level 3: Increases Evasion of all party members by 4 for 20 minutes.
+	-->
+	<skill id="1252" levels="3" name="Chant of Evasion">
+		<table name="#rEvas"> 2 3 4 </table>
+		<table name="#mpConsume"> 139 172 204 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="avoid_up">
+				<effect type="Buff" val="0" />
+				<add stat="rEvas" val="#rEvas" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Critical Damage of all party members by 25% for 20 minutes.
+		Level 2: Increases Critical Damage of all party members by 30% for 20 minutes.
+		Level 3: Increases Critical Damage of all party members by 35% for 20 minutes.
+	-->
+	<skill id="1253" levels="3" name="Chant of Rage">
+		<table name="#cAtk"> 25 30 35 </table>
+		<table name="#mpConsume"> 154 188 204 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 418 495 532 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="critical_dmg_up">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="pCritDmg" val="#cAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Resurrect a dead clan member.
+		Level 2: Resurrect a dead clan member, also restores 20% of XP.
+		Level 3: Resurrect a dead clan member, also restores 30% of XP.
+		Level 4: Resurrect a dead clan member, also restores 40% of XP.
+		Level 5: Resurrect a dead clan member, also restores 50% of XP.
+		Level 6: Resurrect a dead clan member, also restores 55% of XP.
+	-->
+	<skill id="1254" levels="6" name="Mass Resurrection">
+		<table name="#aggroPoints"> 290 331 417 460 481 578 </table>
+		<table name="#mpConsume"> 243 268 327 360 377 442 </table>
+		<table name="#power"> 0 20 30 40 50 55 </table>
+		<set name="target" val="TARGET_CORPSE_CLAN" />
+		<set name="skillType" val="RESURRECT" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="3000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="600000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+	</skill>
+	<!-- Teleports party members to a village. This skill cannot be used in a specially designated place such as the GM Consultation Service. -->
+	<skill id="1255" levels="2" name="Party Return">
+		<table name="#mpConsume"> 257 305 </table>
+		<table name="#hitTime"> 20000 3500 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="RECALL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="reuseDelay" val="150000" />
+		<set name="skillRadius" val="1000" />
+	</skill>
+	<!-- 
+		Level 1: Restores a clan member's HP with 91 Power and recovers 31 HP per second for 15 seconds.
+		Level 2: Restores a clan member's HP with 103 Power and recovers 35 HP per second for 15 seconds.
+		Level 3: Restores a clan member's HP with 115 Power and recovers 39 HP per second for 15 seconds.
+		Level 4: Restores a clan member's HP with 127 Power and recovers 43 HP per second for 15 seconds.
+		Level 5: Restores a clan member's HP with 133 Power and recovers 45 HP per second for 15 seconds.
+		Level 6: Restores a clan member's HP with 138 Power and recovers 46 HP per second for 15 seconds.
+		Level 7: Restores a clan member's HP with 144 Power and recovers 48 HP per second for 15 seconds.
+		Level 8: Restores a clan member's HP with 149 Power and recovers 50 HP per second for 15 seconds.
+		Level 9: Restores a clan member's HP with 154 Power and recovers 52 HP per second for 15 seconds.
+		Level 10: Restores a clan member's HP with 159 Power and recovers 53 HP per second for 15 seconds.
+		Level 11: Restores a clan member's HP with 164 Power and recovers 55 HP per second for 15 seconds.
+		Level 12: Restores a clan member's HP with 168 Power and recovers 56 HP per second for 15 seconds.
+		Level 13: Restores a clan member's HP with 172 Power and recovers 58 HP per second for 15 seconds.
+	-->
+	<skill id="1256" levels="13" name="Pa'agrio's Heart">
+		<table name="#hot"> 31 35 39 43 45 46 48 50 52 53 55 56 58 </table>
+		<table name="#mpConsume"> 134 152 164 180 189 195 199 207 214 222 228 233 239 </table>
+		<table name="#power"> 91 103 115 127 133 138 144 149 154 159 164 168 172 </table>
+		<table name="#abnormalLvl"> 6 7 8 9 10 11 12 13 14 15 16 17 18 </table>
+		<table name="#aggroPoints"> 418 457 495 532 549 566 582 597 611 624 635 646 655 </table>
+		<set name="target" val="TARGET_PARTY_CLAN" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal count="15" duration="1" stackLvl="#abnormalLvl" stackType="life_force_orc">
+				<effect type="HealOverTime" val="#hot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases the weight penalty interval by 3000 for 20 minutes.
+		Level 2: Increases the weight penalty interval by 6000 for 20 minutes.
+		Level 3: Increases the weight penalty interval by 9000 for 20 minutes.
+	-->
+	<skill id="1257" levels="3" name="Decrease Weight">
+		<table name="#mpConsume"> 15 20 24 </table>
+		<table name="#Weight"> 3000 6000 9000 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 331 418 495 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="decrease_weight_penalty">
+				<effect type="Buff" val="0" />
+				<add stat="maxLoad" val="#Weight" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Recovers HP by 15 percent.
+		Level 2: Recovers HP by 20 percent.
+		Level 3: Recovers HP by 25 percent.
+		Level 4: Recovers HP by 30 percent.
+	-->
+	<skill id="1258" levels="4" name="Restore Life">
+		<table name="#mpConsume"> 80 107 133 159 </table>
+		<table name="#power"> 15 20 25 30 </table>
+		<table name="#aggroPoints"> 500 666 833 1000 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="HEAL_PERCENT" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="8000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<cond addName="1" msgId="113">
+			<not>
+				<target npcType="L2Attackable" />
+			</not>
+		</cond>
+	</skill>
+	<!-- 
+		Level 1: Increases Stun Resistance by 15% for 20 minutes.
+		Level 2: Increases Stun Resistance by 20% for 20 minutes.
+		Level 3: Increases Stun Resistance by 30% for 20 minutes.
+		Level 4: Increases Stun Resistance by 40% for 20 minutes.
+	-->
+	<skill id="1259" levels="4" name="Stun Resistance">
+		<table name="#mpConsume"> 35 48 58 65 </table>
+		<table name="#vuln"> 15 20 30 40 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#aggroPoints"> 379 495 597 646 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="resist_shock">
+				<effect type="Buff" val="0" />
+				<addPercent stat="stunRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases nearby clan members' Evasion by 2 for 20 minutes.
+		Level 2: Increases nearby clan members' Evasion by 3 for 20 minutes.
+		Level 3: Increases nearby clan members' Evasion by 4 for 20 minutes.
+	-->
+	<skill id="1260" levels="3" name="Pa'agrio's Tact">
+		<table name="#rEvas"> 2 3 4 </table>
+		<table name="#mpConsume"> 139 172 204 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 379 457 532 </table>
+		<set name="target" val="TARGET_PARTY_CLAN" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="avoid_up">
+				<effect type="Buff" val="0" />
+				<add stat="rEvas" val="#rEvas" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Decreases nearby clan members' P. Def. by 5%, M. Def. by 10%, and Evasion by 2, and increases P. Atk. by 5%, M. Atk. by 10%, Atk. Spd. by 5%, Casting Spd. by 5%, and Speed by 5 for 20 minutes.
+		Level 2: Decreases nearby clan members' P. Def. by 8%, M. Def. by 16%, and Evasion by 4, and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8 for 20 minutes.
+	-->
+	<skill id="1261" levels="2" name="Pa'agrio's Rage">
+		<table name="#mAtk"> 10 16 </table>
+		<table name="#pAtk"> 5 8 </table>
+		<table name="#rEvas"> 2 4 </table>
+		<table name="#mpConsume"> 154 188 </table>
+		<table name="#aggroPoints"> 418 495 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<set name="target" val="TARGET_PARTY_CLAN" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="berserker">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtk" val="#mAtk" />
+				<addPercent stat="pAtk" val="#pAtk" />
+				<subPercent stat="mDef" val="#mAtk" />
+				<subPercent stat="pDef" val="#pAtk" />
+				<addPercent stat="mAtkSpd" val="#pAtk" />
+				<addPercent stat="pAtkSpd" val="#pAtk" />
+				<add stat="runSpd" val="#pAtk" />
+				<sub stat="rEvas" val="#rEvas" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Transfers 10% of received damage to a servitor. Consumes MP proportionately to your level.
+		Level 2: Transfers 20% of received damage to a servitor. Consumes MP proportionately to your level.
+		Level 3: Transfers 30% of received damage to a servitor. Consumes MP proportionately to your level.
+		Level 4: Transfers 40% of received damage to a servitor. Consumes MP proportionately to your level.
+		Level 5: Transfers 50% of received damage to a servitor. Consumes MP proportionately to your level.
+	-->
+	<skill id="1262" levels="5" name="Transfer Pain">
+		<table name="#power"> 10 20 30 40 50 52 54 56 58 60 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3">
+				<effect type="MpConsumePerLevel" val="0.2" />
+				<add stat="transDam" val="#power" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Inflicts damage on the enemy with 47 Power added to M. Atk. Decreases the enemy's M. Def. - 15% and Attribute Resistance - 10 for 10 sec.
+		Level 2: Inflicts damage on the enemy with 52 Power added to M. Atk. Decreases the enemy's M. Def. - 15% and Attribute Resistance - 10 for 10 sec.
+		Level 3: Inflicts damage on the enemy with 57 Power added to M. Atk. Decreases the enemy's M. Def. - 15% and Attribute Resistance - 10 for 10 sec.
+		Level 4: Inflicts damage on the enemy with 63 Power added to M. Atk. Decreases the enemy's M. Def. - 15% and Attribute Resistance - 10 for 10 sec.
+		Level 5: Inflicts damage on the enemy with 66 Power added to M. Atk. Decreases the enemy's M. Def. - 15% and Attribute Resistance - 10 for 10 sec.
+		Level 6: Inflicts damage on the enemy with 68 Power added to M. Atk. Decreases the enemy's M. Def. - 20% and Attribute Resistance - 20 for 10 sec.
+		Level 7: Inflicts damage on the enemy with 71 Power added to M. Atk. Decreases the enemy's M. Def. - 20% and Attribute Resistance - 20 for 10 sec.
+		Level 8: Inflicts damage on the enemy with 74 Power added to M. Atk. Decreases the enemy's M. Def. - 20% and Attribute Resistance - 20 for 10 sec.
+		Level 9: Inflicts damage on the enemy with 77 Power added to M. Atk. Decreases the enemy's M. Def. - 20% and Attribute Resistance - 20 for 10 sec.
+		Level 10: Inflicts damage on the enemy with 79 Power added to M. Atk. Decreases the enemy's M. Def. - 30% and Attribute Resistance - 30 for 10 sec.
+		Level 11: Inflicts damage on the enemy with 82 Power added to M. Atk. Decreases the enemy's M. Def. - 30% and Attribute Resistance - 30 for 10 sec.
+		Level 12: Inflicts damage on the enemy with 84 Power added to M. Atk. Decreases the enemy's M. Def. - 30% and Attribute Resistance - 30 for 10 sec.
+		Level 13: Inflicts damage on the enemy with 87 Power added to M. Atk. Decreases the enemy's M. Def. - 30% and Attribute Resistance - 30 for 10 sec.
+	-->
+	<skill id="1263" levels="13" name="Curse Gloom">
+		<table name="#mpConsume"> 39 44 48 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#power"> 47 52 57 63 66 68 71 74 77 79 82 84 87 93 96 99 102 105 108 112 115 </table>
+		<table name="#mDef"> 15 15 15 15 15 20 20 20 20 30 30 30 30 40 40 40 40 50 50 50 50 </table>
+		<table name="#elemWeakness"> 10 10 10 10 10 20 20 20 20 30 30 30 30 40 40 40 40 50 50 50 50 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="10" landRate="90" stackLvl="3" stackType="md_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="mDef" val="#mDef" />
+				<sub stat="fireRes" val="#elemWeakness" />
+				<sub stat="windRes" val="#elemWeakness" />
+				<sub stat="waterRes" val="#elemWeakness" />
+				<sub stat="earthRes" val="#elemWeakness" />
+				<sub stat="holyRes" val="#elemWeakness" />
+				<sub stat="darkRes" val="#elemWeakness" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Inflicts holy damage on the enemy with 39 Power added to M. Atk. Over-hit is possible.
+		Level 2: Inflicts holy damage on the enemy with 47 Power added to M. Atk. Over-hit is possible.
+		Level 3: Inflicts holy damage on the enemy with 55 Power added to M. Atk. Over-hit is possible.
+	-->
+	<skill id="1264" levels="3" name="Solar Spark">
+		<table name="#mpConsume"> 28 33 38 </table>
+		<table name="#magicLvl"> 25 30 35 </table>
+		<table name="#power"> 39 47 55 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="750" />
+		<set name="effectRange" val="1250" />
+		<set name="overHit" val="true" />
+		<set name="element" val="4" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Inflicts holy damage on the enemy with 65 Power added to M. Atk. Over-hit is possible.
+		Level 2: Inflicts holy damage on the enemy with 73 Power added to M. Atk. Over-hit is possible.
+		Level 3: Inflicts holy damage on the enemy with 81 Power added to M. Atk. Over-hit is possible.
+		Level 4: Inflicts holy damage on the enemy with 89 Power added to M. Atk. Over-hit is possible.
+		Level 5: Inflicts holy damage on the enemy with 98 Power added to M. Atk. Over-hit is possible.
+		Level 6: Inflicts holy damage on the enemy with 102 Power added to M. Atk. Over-hit is possible.
+		Level 7: Inflicts holy damage on the enemy with 107 Power added to M. Atk. Over-hit is possible.
+		Level 8: Inflicts holy damage on the enemy with 111 Power added to M. Atk. Over-hit is possible.
+		Level 9: Inflicts holy damage on the enemy with 115 Power added to M. Atk. Over-hit is possible.
+		Level 10: Inflicts holy damage on the enemy with 119 Power added to M. Atk. Over-hit is possible.
+		Level 11: Inflicts holy damage on the enemy with 123 Power added to M. Atk. Over-hit is possible.
+		Level 12: Inflicts holy damage on the enemy with 127 Power added to M. Atk. Over-hit is possible.
+		Level 13: Inflicts holy damage on the enemy with 131 Power added to M. Atk. Over-hit is possible.
+		Level 14: Inflicts holy damage on the enemy with 135 Power added to M. Atk. Over-hit is possible.
+	-->
+	<skill id="1265" levels="14" name="Solar Flare">
+		<table name="#mpConsume"> 44 49 54 59 64 67 69 73 74 77 79 82 84 85 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="overHit" val="true" />
+		<set name="element" val="4" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Inflicts dark damage on the enemy with 39 Power added to M. Atk. Over-hit is possible.
+		Level 2: Inflicts dark damage on the enemy with 47 Power added to M. Atk. Over-hit is possible.
+		Level 3: Inflicts dark damage on the enemy with 55 Power added to M. Atk. Over-hit is possible.
+	-->
+	<skill id="1266" levels="3" name="Shadow Spark">
+		<table name="#mpConsume"> 28 33 38 </table>
+		<table name="#magicLvl"> 25 30 35 </table>
+		<table name="#power"> 39 47 55 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="750" />
+		<set name="effectRange" val="1250" />
+		<set name="overHit" val="true" />
+		<set name="element" val="5" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Inflicts dark damage on the enemy with 65 Power added to M. Atk. Over-hit is possible.
+		Level 2: Inflicts dark damage on the enemy with 73 Power added to M. Atk. Over-hit is possible.
+		Level 3: Inflicts dark damage on the enemy with 81 Power added to M. Atk. Over-hit is possible.
+		Level 4: Inflicts dark damage on the enemy with 89 Power added to M. Atk. Over-hit is possible.
+		Level 5: Inflicts dark damage on the enemy with 98 Power added to M. Atk. Over-hit is possible.
+		Level 6: Inflicts dark damage on the enemy with 102 Power added to M. Atk. Over-hit is possible.
+		Level 7: Inflicts dark damage on the enemy with 107 Power added to M. Atk. Over-hit is possible.
+		Level 8: Inflicts dark damage on the enemy with 111 Power added to M. Atk. Over-hit is possible.
+		Level 9: Inflicts dark damage on the enemy with 115 Power added to M. Atk. Over-hit is possible.
+		Level 10: Inflicts dark damage on the enemy with 119 Power added to M. Atk. Over-hit is possible.
+		Level 11: Inflicts dark damage on the enemy with 123 Power added to M. Atk. Over-hit is possible.
+		Level 12: Inflicts dark damage on the enemy with 127 Power added to M. Atk. Over-hit is possible.
+		Level 13: Inflicts dark damage on the enemy with 131 Power added to M. Atk. Over-hit is possible.
+		Level 14: Inflicts dark damage on the enemy with 135 Power added to M. Atk. Over-hit is possible.
+	-->
+	<skill id="1267" levels="14" name="Shadow Flare">
+		<table name="#mpConsume"> 44 49 54 59 64 67 69 73 74 77 79 82 84 85 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="8000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="overHit" val="true" />
+		<set name="element" val="5" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: For 20 minutes, has a chance of recovering 6% of the damage inflicted on the enemy as HP.
+		Level 2: For 20 minutes, has a chance of recovering 7% of the damage inflicted on the enemy as HP.
+		Level 3: For 20 minutes, has a chance of recovering 8% of the damage inflicted on the enemy as HP.
+		Level 4: For 20 minutes, has a chance of recovering 9% of the damage inflicted on the enemy as HP.
+	-->
+	<skill id="1268" levels="4" name="Vampiric Rage">
+		<table name="#mpConsume"> 27 39 54 67 </table>
+		<table name="#absorbDam"> 6 7 8 9 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#aggroPoints"> 285 418 549 646 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="vampiric_attack">
+				<effect type="Buff" val="0" />
+				<add stat="absorbDam" val="#absorbDam" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Decreases the power of HP recovery magic received by the enemy by 50% for 2 minutes. -->
+	<skill id="1269" levels="9" name="Curse Disease">
+		<table name="#mpConsume"> 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="120" landRate="80" stackLvl="1" stackType="heal_effect_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="gainHp" val="50" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Fully restores party members' HP. Can be used when MP is under 25%. -->
+	<skill id="1271" levels="1" name="Benediction">
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="HEAL_PERCENT" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="214" />
+		<set name="power" val="100" />
+		<set name="hitTime" val="7000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="560" />
+		<cond addName="1" msgId="113">
+			<player mp="25" />
+		</cond>
+	</skill>
+	<!-- Frightens nearby enemies into fleeing for 10 seconds. -->
+	<skill id="1272" levels="13" name="Word of Fear">
+		<table name="#mpConsume"> 117 129 140 153 159 165 172 178 184 189 194 199 204 </table>
+		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="150000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal count="5" duration="2" landRate="30" stackLvl="1" stackType="turn_flee">
+				<effect type="Fear" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Soothes surrounding enemies, eliminating their desire to attack. -->
+	<skill id="1273" levels="13" name="Eva's Serenade">
+		<table name="#mpConsume"> 117 129 140 153 159 165 172 178 184 189 194 199 204 </table>
+		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="AGGREMOVE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="40" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="skillRadius" val="200" />
+	</skill>
+	<!-- 
+		Level 1: Inflicts non-attribute damage on the enemy using 13 Power added to M. Atk.
+		Level 2: Inflicts non-attribute damage on the enemy using 16 Power added to M. Atk.
+		Level 3: Inflicts non-attribute damage on the enemy using 19 Power added to M. Atk.
+		Level 4: Inflicts non-attribute damage on the enemy using 22 Power added to M. Atk.
+	-->
+	<skill id="1274" levels="4" name="Energy Bolt">
+		<table name="#mpConsume"> 10 12 14 15 </table>
+		<table name="#magicLvl"> 20 25 30 35 </table>
+		<table name="#power"> 13 16 19 22 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- 
+		Level 1: Inflicts non-attribute damage on the enemy using 26 Power added to M. Atk.
+		Level 2: Inflicts non-attribute damage on the enemy using 29 Power added to M. Atk.
+		Level 3: Inflicts non-attribute damage on the enemy using 33 Power added to M. Atk.
+		Level 4: Inflicts non-attribute damage on the enemy using 36 Power added to M. Atk.
+		Level 5: Inflicts non-attribute damage on the enemy using 39 Power added to M. Atk.
+		Level 6: Inflicts non-attribute damage on the enemy using 41 Power added to M. Atk.
+		Level 7: Inflicts non-attribute damage on the enemy using 43 Power added to M. Atk.
+		Level 8: Inflicts non-attribute damage on the enemy using 45 Power added to M. Atk.
+		Level 9: Inflicts non-attribute damage on the enemy using 46 Power added to M. Atk.
+		Level 10: Inflicts non-attribute damage on the enemy using 48 Power added to M. Atk.
+		Level 11: Inflicts non-attribute damage on the enemy using 50 Power added to M. Atk.
+		Level 12: Inflicts non-attribute damage on the enemy using 51 Power added to M. Atk.
+		Level 13: Inflicts non-attribute damage on the enemy using 53 Power added to M. Atk.
+		Level 14: Inflicts non-attribute damage on the enemy using 54 Power added to M. Atk.
+	-->
+	<skill id="1275" levels="14" name="Aura Bolt">
+		<table name="#mpConsume"> 18 20 23 24 27 28 28 29 30 32 33 33 34 35 </table>
+		<table name="#power"> 26 29 33 36 39 41 43 45 46 48 50 51 53 54 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="1000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- 
+		Level 1: Summons Kai the Cat. Requires 1 Spirit Ore.
+		Level 4: Summons Kai the Cat. Requires 2 Spirit Ore.
+		Level 7: Summons Kai the Cat. Requires 1 Spirit Ore.
+		Level 9: Summons Kai the Cat. Requires 2 Spirit Ore.
+		Level 11: Summons Kai the Cat. Requires 1 Spirit Ore.
+		Level 13: Summons Kai the Cat. Requires 2 Spirit Ore.
+	-->
+	<skill id="1276" levels="14" name="Summon Kai the Cat">
+		<table name="#mpConsume"> 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#itemConsumeCount"> 1 1 1 2 2 2 1 1 2 2 1 1 2 2 </table>
+		<table name="#itemConsumeCountOT"> 2 2 2 2 2 2 4 4 4 4 6 6 6 6 </table>
+		<table name="#npcIds"> 14207 14208 14209 14210 14211 14212 14213 14214 14215 14216 14217 14218 14219 14220 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="3600000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeIdOT" val="3031" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="14" />
+	</skill>
+	<!-- 
+		Level 1: Summons Merrow the Unicorn. Requires 1 Spirit Ore.
+		Level 4: Summons Merrow the Unicorn. Requires 2 Spirit Ore.
+		Level 7: Summons Merrow the Unicorn. Requires 1 Spirit Ore.
+		Level 9: Summons Merrow the Unicorn. Requires 2 Spirit Ore.
+		Level 11: Summons Merrow the Unicorn. Requires 1 Spirit Ore.
+		Level 13: Summons Merrow the Unicorn. Requires 2 Spirit Ore.
+	-->
+	<skill id="1277" levels="14" name="Summon Merrow the Unicorn">
+		<table name="#mpConsume"> 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#itemConsumeCount"> 1 1 1 2 2 2 1 1 2 2 1 1 2 2 </table>
+		<table name="#itemConsumeCountOT"> 2 2 2 2 2 2 4 4 4 4 6 6 6 6 </table>
+		<table name="#npcIds"> 14391 14392 14393 14394 14395 14396 14397 14398 14399 14400 14401 14402 14403 14404 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="3600000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeIdOT" val="3031" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="14" />
+	</skill>
+	<!-- 
+		Level 1: Summons a Soulless. Requires 1 Spirit Ore.
+		Level 4: Summons a Soulless. Requires 2 Spirit Ore.
+		Level 7: Summons a Soulless. Requires 1 Spirit Ore.
+		Level 9: Summons a Soulless. Requires 2 Spirit Ore.
+		Level 11: Summons a Soulless. Requires 1 Spirit Ore.
+		Level 13: Summons a Soulless. Requires 2 Spirit Ore.
+	-->
+	<skill id="1278" levels="14" name="Summon Soulless">
+		<table name="#mpConsume"> 70 78 87 94 103 107 110 115 119 123 127 130 133 137 </table>
+		<table name="#itemConsumeCount"> 1 1 1 2 2 2 1 1 2 2 1 1 2 2 </table>
+		<table name="#itemConsumeCountOT"> 2 2 2 2 2 2 4 4 4 4 6 6 6 6 </table>
+		<table name="#npcIds"> 14575 14576 14577 14578 14579 14580 14581 14582 14583 14584 14585 14586 14587 14588 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="npcId" val="#npcIds" />
+		<set name="summonTotalLifeTime" val="3600000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeIdOT" val="3031" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="14" />
+	</skill>
+	<!-- 
+		Level 1: Summons Binding Cubic. Binding Cubic uses magic that paralyzes a targeted enemy. Requires 4 Spirit Ore.
+		Level 2: Summons Binding Cubic. Binding Cubic uses magic that paralyzes a targeted enemy. Requires 5 Spirit Ore.
+		Level 3: Summons Binding Cubic. Binding Cubic uses magic that paralyzes a targeted enemy. Requires 6 Spirit Ore.
+		Level 4: Summons Binding Cubic. Binding Cubic uses magic that paralyzes a targeted enemy. Requires 7 Spirit Ore.
+		Level 7: Summons Binding Cubic. Binding Cubic uses magic that paralyzes a targeted enemy. Requires 9 Spirit Ore.
+		Level 8: Summons Binding Cubic. Binding Cubic uses magic that paralyzes a targeted enemy. Requires 10 Spirit Ore.
+		Level 9: Summons a Binding Cubic. Binding Cubic uses magic that paralyzes the enemy. Consumes 11 Spirit Ore when Summonsing.
+	-->
+	<skill id="1279" levels="9" name="Summon Binding Cubic">
+		<table name="#itemConsumeCount"> 4 5 6 7 7 7 9 10 11 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 </table>
+		<table name="#mpConsume"> 35 39 44 48 52 55 60 64 67 </table>
+		<table name="#power"> 282 377 497 644 820 1026 1264 1530 1822 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="isCubic" val="true" />
+		<set name="maxcount" val="10" />
+		<set name="activationchance" val="12" />
+		<set name="activationtime" val="30" />
+		<set name="npcId" val="6" />
+		<set name="summonTotalLifeTime" val="900000" />
+	</skill>
+	<!-- 
+		Level 1: Summons Aqua Cubic. Aqua Cubic uses attack magic that inflicts continuous damage to the enemy. Requires 2 Spirit Ore.
+		Level 4: Summons Aqua Cubic. Aqua Cubic uses attack magic that inflicts continuous damage to the enemy. Requires 3 Spirit Ore.
+		Level 6: Summons Aqua Cubic. Aqua Cubic uses attack magic that inflicts continuous damage to the enemy. Requires 4 Spirit Ore.
+		Level 7: Summons Aqua Cubic. Aqua Cubic uses attack magic that inflicts continuous damage to the enemy. Requires 5 Spirit Ore.
+		Level 9: Summons Aqua Cubic. Aqua Cubic uses attack magic that inflicts continuous damage to the enemy. Requires 6 Spirit Ore.
+	-->
+	<skill id="1280" levels="9" name="Summon Aqua Cubic">
+		<table name="#itemConsumeCount"> 2 2 2 3 3 4 5 5 6 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 </table>
+		<table name="#mpConsume"> 35 39 44 48 52 58 62 65 69 </table>
+		<table name="#power"> 282 377 497 644 820 1141 1394 1673 1975 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="isCubic" val="true" />
+		<set name="maxcount" val="10" />
+		<set name="activationchance" val="30" />
+		<set name="activationtime" val="30" />
+		<set name="npcId" val="7" />
+		<set name="summonTotalLifeTime" val="900000" />
+	</skill>
+	<!-- 
+		Level 1: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 4 Spirit Ore.
+		Level 2: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 5 Spirit Ore.
+		Level 3: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 6 Spirit Ore.
+		Level 4: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 7 Spirit Ore.
+		Level 7: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 9 Spirit Ore.
+		Level 8: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 10 Spirit Ore.
+		Level 9: Summons Spark Cubic. Spark Cubic uses magic that stuns a targeted enemy. Requires 11 Spirit Ore.
+	-->
+	<skill id="1281" levels="9" name="Summon Spark Cubic">
+		<table name="#itemConsumeCount"> 4 5 6 7 7 7 9 10 11 </table>
+		<table name="#magicLvl"> 40 44 48 52 56 60 64 68 72 </table>
+		<table name="#mpConsume"> 35 39 44 48 52 55 60 64 67 </table>
+		<table name="#power"> 282 377 497 644 820 1026 1264 1530 1822 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="isCubic" val="true" />
+		<set name="maxcount" val="10" />
+		<set name="activationchance" val="12" />
+		<set name="activationtime" val="30" />
+		<set name="npcId" val="8" />
+		<set name="summonTotalLifeTime" val="900000" />
+	</skill>
+	<!-- 
+		Level 1: Increases Speed of nearby clan members by 20 for 20 minutes.
+		Level 2: Increases Speed of nearby clan members by 33 for 20 minutes.
+	-->
+	<skill id="1282" levels="2" name="Pa'agrio's Haste">
+		<table name="#mpConsume"> 213 237 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#runSpd"> 20 33 </table>
+		<table name="#aggroPoints"> 549 597 </table>
+		<set name="target" val="TARGET_PARTY_CLAN" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="speed_up">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="#runSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases P. Def. by 293.3. Continuously consumes MP.
+		Level 2: Increases P. Def. by 333.2. Continuously consumes MP.
+		Level 3: Increases P. Def. by 375.9. Continuously consumes MP.
+		Level 4: Increases P. Def. by 421.4. Continuously consumes MP.
+		Level 5: Increases P. Def. by 445.2. Continuously consumes MP.
+		Level 6: Increases P. Def. by 469.7. Continuously consumes MP.
+		Level 7: Increases P. Def. by 494.9. Continuously consumes MP.
+		Level 8: Increases P. Def. by 520.1. Continuously consumes MP.
+		Level 9: Increases P. Def. by 546. Continuously consumes MP.
+		Level 10: Increases P. Def. by 571.9. Continuously consumes MP.
+		Level 11: Increases P. Def. by 598.5. Continuously consumes MP.
+		Level 12: Increases P. Def. by 625.8. Continuously consumes MP.
+		Level 13: Increases P. Def. by 653.1. Continuously consumes MP.
+	-->
+	<skill id="1283" levels="13" name="Soul Guard">
+		<table name="#def"> 293.3 333.2 375.9 421.4 445.2 469.7 494.9 520.1 546 571.9 598.5 625.8 653.1 </table>
+		<table name="#mdot"> 15 18 18 21 24 24 24 24 27 27 27 30 30 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3" stackType="soul_guard">
+				<effect type="ManaDamOverTime" val="#mdot" />
+				<add stat="pDef" val="#def" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 20 minutes, gives a party member the ability to transfer 10% of received damage back to the enemy.
+		Level 2: For 20 minutes, gives a party member the ability to transfer 15% of received damage back to the enemy.
+		Level 3: For 20 minutes, gives a party member the ability to transfer 20% of received damage back to the enemy.
+	-->
+	<skill id="1284" levels="3" name="Chant of Revenge">
+		<table name="#mpConsume"> 229 252 272 </table>
+		<table name="#power"> 10 15 20 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#aggroPoints"> 582 624 655 </table>
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="skillRadius" val="1000" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="dmg_shield">
+				<effect type="Buff" val="0" />
+				<add stat="reflectDam" val="#power" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Uses energy of fire to increase Fire attack level by 20. -->
+	<skill id="1285" levels="1" name="Seed of Fire">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="250" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="element" val="0" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="600" stackLvl="1" stackType="holy_attack">
+				<effect type="Buff" val="0" />
+				<add stat="firePower" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Uses energy of Water to increase Water attack level by 20. -->
+	<skill id="1286" levels="1" name="Seed of Water">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="250" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="element" val="1" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="600" stackLvl="1" stackType="holy_attack">
+				<effect type="Buff" val="0" />
+				<add stat="waterPower" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Uses energy of wind to increase Wind attack level by 20. -->
+	<skill id="1287" levels="1" name="Seed of Wind">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="250" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="element" val="2" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="600" stackLvl="1" stackType="holy_attack">
+				<effect type="Buff" val="0" />
+				<add stat="windPower" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Inflicts non-attribute damage on the enemy with 150 Power added to M. Atk. -->
+	<skill id="1288" levels="1" name="Aura Symphony">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="68" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="150" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Inflicts fire damage on the enemy with 150 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. -->
+	<skill id="1289" levels="1" name="Inferno">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="70" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="150" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="0" />
+		<set name="elementPower" val="20" />
+		<for>
+			<abnormal count="15" landRate="80" stackLvl="10" stackType="dot_attr">
+				<effect type="DamOverTime" val="60" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Inflicts water damage on the enemy with 150 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. -->
+	<skill id="1290" levels="1" name="Blizzard">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="70" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="150" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="1" />
+		<set name="elementPower" val="20" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" effectType="DEBUFF" landRate="40" stackLvl="3" stackType="speed_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="runSpd" val="50" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Inflicts wind damage on the enemy with 150 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. -->
+	<skill id="1291" levels="1" name="Demon Wind">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="70" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="150" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="2" />
+		<set name="elementPower" val="20" />
+		<for>
+			<abnormal duration="120" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="heal_effect_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="gainHp" val="50" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Inflicts non-attribute damage on the enemy with 200 Power added to M. Atk. Over-hit is possible. -->
+	<skill id="1292" levels="1" name="Elemental Assault">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="72" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="200" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="overHit" val="true" />
+	</skill>
+	<!-- Inflicts non-attribute damage on the enemy with 200 Power added to M. Atk. Over-hit is possible. -->
+	<skill id="1293" levels="1" name="Elemental Symphony">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="72" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="200" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="overHit" val="true" />
+	</skill>
+	<!-- Inflicts non-attribute damage on the enemy with 200 Power added to M. Atk. -->
+	<skill id="1294" levels="1" name="Elemental Storm">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="72" />
+		<set name="mpConsume" val="250" />
+		<set name="power" val="200" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- 
+		Level 1: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 41 Power added to M. Atk.
+		Level 2: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 43 Power added to M. Atk.
+		Level 3: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 45 Power added to M. Atk.
+		Level 4: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 46 Power added to M. Atk.
+		Level 5: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 48 Power added to M. Atk.
+		Level 6: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 50 Power added to M. Atk.
+		Level 7: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 51 Power added to M. Atk.
+		Level 8: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 53 Power added to M. Atk.
+		Level 9: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 54 Power added to M. Atk.
+	-->
+	<skill id="1295" levels="9" name="Aqua Splash">
+		<table name="#mpConsume"> 80 83 87 89 93 95 98 100 103 </table>
+		<table name="#magicLvl"> 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 41 43 45 46 48 50 51 53 54 </table>
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+		<set name="skillRadius" val="200" />
+		<set name="element" val="1" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 41 Power added to M. Atk.
+		Level 2: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 43 Power added to M. Atk.
+		Level 3: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 45 Power added to M. Atk.
+		Level 4: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 46 Power added to M. Atk.
+		Level 5: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 48 Power added to M. Atk.
+		Level 6: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 50 Power added to M. Atk.
+		Level 7: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 51 Power added to M. Atk.
+		Level 8: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 53 Power added to M. Atk.
+		Level 9: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 54 Power added to M. Atk.
+	-->
+	<skill id="1296" levels="9" name="Rain of Fire">
+		<table name="#mpConsume"> 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#magicLvl"> 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 41 43 45 46 48 50 51 53 54 </table>
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+		<set name="skillRadius" val="100" />
+		<set name="element" val="0" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- 
+		Level 1: Increases MP Recovery Bonus by 2.6 while standing and by 3.2 when walking.
+		Level 2: Increases MP Recovery Bonus by 3.2 while standing and by 4 when walking.
+		Level 3: Increases MP Recovery Bonus by 3.5 while standing and by 4.3 when walking.
+		Level 4: Increases MP Recovery Bonus by 4.1 while standing and by 5.1 when walking.
+		Level 5: Increases MP Recovery Bonus by 4.7 while standing and by 5.8 when walking.
+		Level 6: Increases MP Recovery Bonus by 4.9 while standing and by 6.2 when walking.
+	-->
+	<skill id="1297" levels="6" name="Clear Mind">
+		<table name="#magicLvl"> 40 48 56 62 68 74 </table>
+		<table name="#Stand"> 2.6 3.2 3.5 4.1 4.7 4.9 </table>
+		<table name="#Walk"> 3.2 4 4.3 5.1 5.8 6.2 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<for>
+			<add stat="regMp" val="#Walk">
+				<player moving="true" />
+			</add>
+			<add stat="regMp" val="#Stand">
+				<player standing="true" />
+			</add>
+		</for>
+	</skill>
+	<!-- Decreases Speed near the enemy by 30% for 1 minute. -->
+	<skill id="1298" levels="14" name="Mass Slow">
+		<table name="#magicLvl"> 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#hpConsume"> 505 514 522 531 540 548 557 565 573 581 589 596 603 610 </table>
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="hpConsume" val="#hpConsume" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+		<set name="skillRadius" val="200" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="60" landRate="40" stackLvl="3" stackType="speed_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="runSpd" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 30 sec., increases the servitor's P. Def. by 1800, M. Def. by 1350, and Buff-canceling Attack Resistance by 80%. It is unable to move while the skill is in effect.
+		Level 2: For 30 sec., increases the servitor's P. Def. by 3600, M. Def. by 2700, and Buff-canceling Attack Resistance by 80%. It is unable to move while the skill is in effect.
+	-->
+	<skill id="1299" levels="2" name="Servitor Empowerment">
+		<table name="#pDef"> 1800 3600 </table>
+		<table name="#mDef"> 1350 2700 </table>
+		<table name="#mpConsume"> 48 65 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#aggroPoints"> 495 635 </table>
+		<set name="target" val="TARGET_SUMMON" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<for>
+			<abnormal duration="30" stackLvl="#abnormalLvl" stackType="pd_up_special">
+				<effect type="ImmobilePetBuff" val="0" />
+				<add stat="pDef" val="#pDef" />
+				<add stat="mDef" val="#mDef" />
+				<addPercent stat="cancelRes" val="80" />
+			</abnormal>
+		</for>
+	</skill>
+</list>

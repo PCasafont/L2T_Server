@@ -1,0 +1,1471 @@
+<list maintainEnchantment="true">
+	<item>
+		<ingredient id="17382" count="1" /> <!-- Specter Shaper -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="17383" count="1" /> <!-- Specter Cutter -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="17384" count="1" /> <!-- Specter Slasher -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="17385" count="1" /> <!-- Specter Avenger -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="17386" count="1" /> <!-- Specter Fighter -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="17387" count="1" /> <!-- Specter Stormer -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="17388" count="1" /> <!-- Specter Thrower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="17389" count="1" /> <!-- Specter Shooter -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="17390" count="1" /> <!-- Specter Buster -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="17391" count="1" /> <!-- Specter Caster -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="17392" count="1" /> <!-- Specter Retributer -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="17393" count="1" /> <!-- Specter Dual Sword -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="17394" count="1" /> <!-- Specter Dual Dagger -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="17402" count="1" /> <!-- Seraph Leather Helmet - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18055" count="1" /> <!-- Blessed Seraph Leather Helmet - Light -->
+	</item>
+	<item>
+		<ingredient id="17403" count="1" /> <!-- Seraph Leather Armor - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18056" count="1" /> <!-- Blessed Seraph Leather Armor - Light -->
+	</item>
+	<item>
+		<ingredient id="17405" count="1" /> <!-- Seraph Leather Gloves - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18058" count="1" /> <!-- Blessed Seraph Leather Gloves - Light -->
+	</item>
+	<item>
+		<ingredient id="17406" count="1" /> <!-- Seraph Leather Boots - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18059" count="1" /> <!-- Blessed Seraph Leather Boots - Light -->
+	</item>
+	<item>
+		<ingredient id="17407" count="1" /> <!-- Seraph Circlet - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18060" count="1" /> <!-- Blessed Seraph Circlet - Robe -->
+	</item>
+	<!-- Seraph heavy -->
+	<item>
+		<ingredient id="17398" count="1" /> <!-- Seraph Gaiters - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18051" count="1" /> <!-- Blessed Seraph Gaiters - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17399" count="1" /> <!-- Seraph Gauntlets - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18052" count="1" /> <!-- Blessed Seraph Gauntlets - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17400" count="1" /> <!-- Seraph Boots - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18053" count="1" /> <!-- Blessed Seraph Boots - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17396" count="1" /> <!-- Seraph Helmet - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18049" count="1" /> <!-- Blessed Seraph Helmet - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17397" count="1" /> <!-- Seraph Breastplate - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18050" count="1" /> <!-- Blessed Seraph Breastplate - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17401" count="1" /> <!-- Seraph Shield - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18054" count="1" /> <!-- Blessed Seraph Shield - Heavy -->
+	</item>
+	<!-- End Seraph heavy -->
+	<!-- Seraph heavy Attack Type -->
+	<item>
+		<ingredient id="19554" count="1" /> <!-- Seraph Helmet - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19682" count="1" /> <!-- Blessed Seraph Helmet - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19555" count="1" /> <!-- Seraph Breastplate - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19683" count="1" /> <!-- Blessed Seraph Breastplate - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19556" count="1" /> <!-- Seraph Gaiters - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19684" count="1" /> <!-- Blessed Seraph Gaiters - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19557" count="1" /> <!-- Seraph Gauntlets - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19685" count="1" /> <!-- Blessed Seraph Gauntlets - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19558" count="1" /> <!-- Seraph Boots - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19686" count="1" /> <!-- Blessed Seraph Boots - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19559" count="1" /> <!-- Seraph Shield - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19687" count="1" /> <!-- Blessed Seraph Shield - Attack Type / Heavy -->
+	</item>
+	<!-- End Seraph heavy Attack Type-->
+	<item>
+		<ingredient id="17408" count="1" /> <!-- Seraph Tunic - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18061" count="1" /> <!-- Blessed Seraph Tunic - Robe -->
+	</item>
+	<item>
+		<ingredient id="17409" count="1" /> <!-- Seraph Stockings - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18062" count="1" /> <!-- Blessed Seraph Stockings - Robe -->
+	</item>
+	<item>
+		<ingredient id="17410" count="1" /> <!-- Seraph Gloves - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18063" count="1" /> <!-- Blessed Seraph Gloves - Robe -->
+	</item>
+	<item>
+		<ingredient id="17411" count="1" /> <!-- Seraph Shoes - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18064" count="1" /> <!-- Blessed Seraph Shoes - Robe -->
+	</item>
+	<item>
+		<ingredient id="17412" count="1" /> <!-- Seraph Sigil - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18065" count="1" /> <!-- Blessed Seraph Sigil - Robe -->
+	</item>
+	<item>
+		<ingredient id="17413" count="1" /> <!-- Seraph Necklace -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18066" count="1" /> <!-- Blessed Seraph Necklace -->
+	</item>
+	<item>
+		<ingredient id="17414" count="1" /> <!-- Seraph Earring -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18067" count="1" /> <!-- Blessed Seraph Earring -->
+	</item>
+	<item>
+		<ingredient id="17415" count="1" /> <!-- Seraph Ring -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18068" count="1" /> <!-- Blessed Seraph Ring -->
+	</item>
+	<item>
+		<ingredient id="17416" count="1" /> <!-- Amaranthine Shaper -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18069" count="1" /> <!-- Blessed Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="17417" count="1" /> <!-- Amaranthine Cutter -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="17418" count="1" /> <!-- Amaranthine Slasher -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="17419" count="1" /> <!-- Amaranthine Avenger -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="17420" count="1" /> <!-- Amaranthine Fighter -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="17421" count="1" /> <!-- Amaranthine Stormer -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="17422" count="1" /> <!-- Amaranthine Thrower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="17423" count="1" /> <!-- Amaranthine Shooter -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="17424" count="1" /> <!-- Amaranthine Buster -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="17425" count="1" /> <!-- Amaranthine Caster -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="17426" count="1" /> <!-- Amaranthine Retributer -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="17430" count="1" /> <!-- Eternal Helmet - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18083" count="1" /> <!-- Blessed Eternal Helmet - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17431" count="1" /> <!-- Eternal Breastplate - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18084" count="1" /> <!-- Blessed Eternal Breastplate - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17432" count="1" /> <!-- Eternal Gaiters - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18085" count="1" /> <!-- Blessed Eternal Gaiters - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17433" count="1" /> <!-- Eternal Gauntlet - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18086" count="1" /> <!-- Blessed Eternal Gauntlet - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17434" count="1" /> <!-- Eternal Boots - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18087" count="1" /> <!-- Blessed Eternal Boots - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17435" count="1" /> <!-- Eternal Shield - Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18088" count="1" /> <!-- Blessed Eternal Shield - Heavy -->
+	</item>
+	<item>
+		<ingredient id="17436" count="1" /> <!-- Eternal Leather Helmet - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18089" count="1" /> <!-- Blessed Eternal Leather Helmet - Light -->
+	</item>
+	<item>
+		<ingredient id="17437" count="1" /> <!-- Eternal Leather Armor - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18090" count="1" /> <!-- Blessed Eternal Leather Armor - Light -->
+	</item>
+	<item>
+		<ingredient id="17438" count="1" /> <!-- Eternal Leather Leggings - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18091" count="1" /> <!-- Blessed Eternal Leather Leggings - Light -->
+	</item>
+	<item>
+		<ingredient id="17439" count="1" /> <!-- Eternal Leather Gloves - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18092" count="1" /> <!-- Blessed Eternal Leather Gloves - Light -->
+	</item>
+	<item>
+		<ingredient id="17440" count="1" /> <!-- Eternal Leather Boots - Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18093" count="1" /> <!-- Blessed Eternal Leather Boots - Light -->
+	</item>
+	<item>
+		<ingredient id="17441" count="1" /> <!-- Eternal Circlet - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18094" count="1" /> <!-- Blessed Eternal Circlet - Robe -->
+	</item>
+	<item>
+		<ingredient id="17442" count="1" /> <!-- Eternal Tunic - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18095" count="1" /> <!-- Blessed Eternal Tunic - Robe -->
+	</item>
+	<item>
+		<ingredient id="17443" count="1" /> <!-- Eternal Stockings - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18096" count="1" /> <!-- Blessed Eternal Stockings - Robe -->
+	</item>
+	<item>
+		<ingredient id="17444" count="1" /> <!-- Eternal Gloves - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18097" count="1" /> <!-- Blessed Eternal Gloves - Robe -->
+	</item>
+	<item>
+		<ingredient id="17445" count="1" /> <!-- Eternal Shoes - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18098" count="1" /> <!-- Blessed Eternal Shoes - Robe -->
+	</item>
+	<item>
+		<ingredient id="17446" count="1" /> <!-- Eternal Sigil - Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18099" count="1" /> <!-- Blessed Eternal Sigil - Robe -->
+	</item>
+	<item>
+		<ingredient id="17447" count="1" /> <!-- Eternal Necklace -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18100" count="1" /> <!-- Blessed Eternal Necklace -->
+	</item>
+	<item>
+		<ingredient id="17448" count="1" /> <!-- Eternal Earring -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18101" count="1" /> <!-- Blessed Eternal Earring -->
+	</item>
+	<item>
+		<ingredient id="17449" count="1" /> <!-- Eternal Ring -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="18102" count="1" /> <!-- Blessed Eternal Ring -->
+	</item>
+	<item>
+		<ingredient id="18830" count="1" /> <!-- Specter Shaper - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18914" count="1" /> <!-- Blessed Specter Shaper - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18831" count="1" /> <!-- Specter Shaper - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18915" count="1" /> <!-- Blessed Specter Shaper - Haste -->
+	</item>
+	<item>
+		<ingredient id="18832" count="1" /> <!-- Specter Shaper - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18916" count="1" /> <!-- Blessed Specter Shaper - Focus -->
+	</item>
+	<item>
+		<ingredient id="18833" count="1" /> <!-- Specter Cutter - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18917" count="1" /> <!-- Blessed Specter Cutter - Haste -->
+	</item>
+	<item>
+		<ingredient id="18834" count="1" /> <!-- Specter Cutter - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18918" count="1" /> <!-- Blessed Specter Cutter - Focus -->
+	</item>
+	<item>
+		<ingredient id="18835" count="1" /> <!-- Specter Cutter - Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18919" count="1" /> <!-- Blessed Specter Cutter - Health -->
+	</item>
+	<item>
+		<ingredient id="18836" count="1" /> <!-- Specter Slasher - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18920" count="1" /> <!-- Blessed Specter Slasher - Focus -->
+	</item>
+	<item>
+		<ingredient id="18837" count="1" /> <!-- Specter Slasher - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18921" count="1" /> <!-- Blessed Specter Slasher - Damage -->
+	</item>
+	<item>
+		<ingredient id="18838" count="1" /> <!-- Specter Slasher - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18922" count="1" /> <!-- Blessed Specter Slasher - Haste -->
+	</item>
+	<item>
+		<ingredient id="18839" count="1" /> <!-- Specter Avenger - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18923" count="1" /> <!-- Blessed Specter Avenger - Haste -->
+	</item>
+	<item>
+		<ingredient id="18840" count="1" /> <!-- Specter Avenger - Critical Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18924" count="1" /> <!-- Blessed Specter Avenger - Critical Damage -->
+	</item>
+	<item>
+		<ingredient id="18841" count="1" /> <!-- Specter Avenger - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18925" count="1" /> <!-- Blessed Specter Avenger - Focus -->
+	</item>
+	<item>
+		<ingredient id="18842" count="1" /> <!-- Specter Fighter - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18926" count="1" /> <!-- Blessed Specter Fighter - Focus -->
+	</item>
+	<item>
+		<ingredient id="18843" count="1" /> <!-- Specter Fighter - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18927" count="1" /> <!-- Blessed Specter Fighter - Damage -->
+	</item>
+	<item>
+		<ingredient id="18844" count="1" /> <!-- Specter Fighter - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18928" count="1" /> <!-- Blessed Specter Fighter - Haste -->
+	</item>
+	<item>
+		<ingredient id="18845" count="1" /> <!-- Specter Stormer - HP Drain -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18929" count="1" /> <!-- Blessed Specter Stormer - HP Drain -->
+	</item>
+	<item>
+		<ingredient id="18846" count="1" /> <!-- Specter Stormer - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18930" count="1" /> <!-- Blessed Specter Stormer - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18847" count="1" /> <!-- Specter Stormer - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18931" count="1" /> <!-- Blessed Specter Stormer - Damage -->
+	</item>
+	<item>
+		<ingredient id="18848" count="1" /> <!-- Specter Thrower - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18932" count="1" /> <!-- Blessed Specter Thrower - Damage -->
+	</item>
+	<item>
+		<ingredient id="18849" count="1" /> <!-- Specter Thrower - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18933" count="1" /> <!-- Blessed Specter Thrower - Focus -->
+	</item>
+	<item>
+		<ingredient id="18850" count="1" /> <!-- Specter Thrower - Long Blow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18934" count="1" /> <!-- Blessed Specter Thrower - Long Blow -->
+	</item>
+	<item>
+		<ingredient id="18851" count="1" /> <!-- Specter Shooter - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18935" count="1" /> <!-- Blessed Specter Shooter - Focus -->
+	</item>
+	<item>
+		<ingredient id="18852" count="1" /> <!-- Specter Shooter - Critical Slow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18936" count="1" /> <!-- Blessed Specter Shooter - Critical Slow -->
+	</item>
+	<item>
+		<ingredient id="18853" count="1" /> <!-- Specter Shooter - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18937" count="1" /> <!-- Blessed Specter Shooter - Haste -->
+	</item>
+	<item>
+		<ingredient id="18854" count="1" /> <!-- Specter Buster - Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18938" count="1" /> <!-- Blessed Specter Buster - Acumen -->
+	</item>
+	<item>
+		<ingredient id="18855" count="1" /> <!-- Specter Buster - Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18939" count="1" /> <!-- Blessed Specter Buster - Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="18856" count="1" /> <!-- Specter Buster - Mana Up -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18940" count="1" /> <!-- Blessed Specter Buster - Mana Up -->
+	</item>
+	<item>
+		<ingredient id="18857" count="1" /> <!-- Specter Caster - Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18941" count="1" /> <!-- Blessed Specter Caster - Empower -->
+	</item>
+	<item>
+		<ingredient id="18858" count="1" /> <!-- Specter Caster - Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18942" count="1" /> <!-- Blessed Specter Caster - Acumen -->
+	</item>
+	<item>
+		<ingredient id="18859" count="1" /> <!-- Specter Caster - Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18943" count="1" /> <!-- Blessed Specter Caster - Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="18860" count="1" /> <!-- Specter Retributer - MP Regeneration -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18944" count="1" /> <!-- Blessed Specter Retributer - MP Regeneration -->
+	</item>
+	<item>
+		<ingredient id="18861" count="1" /> <!-- Specter Retributer - Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18945" count="1" /> <!-- Blessed Specter Retributer - Acumen -->
+	</item>
+	<item>
+		<ingredient id="18862" count="1" /> <!-- Specter Retributer - Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18946" count="1" /> <!-- Blessed Specter Retributer - Empower -->
+	</item>
+	<item>
+		<ingredient id="18863" count="1" /> <!-- Specter Dual Sword - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18947" count="1" /> <!-- Blessed Specter Dual Sword - Haste -->
+	</item>
+	<item>
+		<ingredient id="18864" count="1" /> <!-- Specter Dual Sword - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18948" count="1" /> <!-- Blessed Specter Dual Sword - Damage -->
+	</item>
+	<item>
+		<ingredient id="18865" count="1" /> <!-- Specter Dual Sword - Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18949" count="1" /> <!-- Blessed Specter Dual Sword - Health -->
+	</item>
+	<item>
+		<ingredient id="18866" count="1" /> <!-- Specter Dual Dagger - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18950" count="1" /> <!-- Blessed Specter Dual Dagger - Damage -->
+	</item>
+	<item>
+		<ingredient id="18867" count="1" /> <!-- Specter Dual Dagger - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18951" count="1" /> <!-- Blessed Specter Dual Dagger - Focus -->
+	</item>
+	<item>
+		<ingredient id="18868" count="1" /> <!-- Specter Dual Dagger - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18952" count="1" /> <!-- Blessed Specter Dual Dagger - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18869" count="1" /> <!-- Specter Dual Blunt Weapon - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18953" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Focus -->
+	</item>
+	<item>
+		<ingredient id="18870" count="1" /> <!-- Specter Dual Blunt Weapon - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18954" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18871" count="1" /> <!-- Specter Dual Blunt Weapon - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="18955" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Damage -->
+	</item>
+	<item>
+		<ingredient id="18956" count="1" /> <!-- Amaranthine Shaper - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19040" count="1" /> <!-- Blessed Amaranthine Shaper - Haste -->
+	</item>
+	<item>
+		<ingredient id="18957" count="1" /> <!-- Amaranthine Shaper - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19041" count="1" /> <!-- Blessed Amaranthine Shaper - Focus -->
+	</item>
+	<item>
+		<ingredient id="18958" count="1" /> <!-- Amaranthine Shaper - Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19042" count="1" /> <!-- Blessed Amaranthine Shaper - Health -->
+	</item>
+	<item>
+		<ingredient id="18959" count="1" /> <!-- Amaranthine Cutter - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19043" count="1" /> <!-- Blessed Amaranthine Cutter - Haste -->
+	</item>
+	<item>
+		<ingredient id="18960" count="1" /> <!-- Amaranthine Cutter - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19044" count="1" /> <!-- Blessed Amaranthine Cutter - Focus -->
+	</item>
+	<item>
+		<ingredient id="18961" count="1" /> <!-- Amaranthine Cutter - Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19045" count="1" /> <!-- Blessed Amaranthine Cutter - Health -->
+	</item>
+	<item>
+		<ingredient id="18962" count="1" /> <!-- Amaranthine Slasher - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19046" count="1" /> <!-- Blessed Amaranthine Slasher - Focus -->
+	</item>
+	<item>
+		<ingredient id="18963" count="1" /> <!-- Amaranthine Slasher - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19047" count="1" /> <!-- Blessed Amaranthine Slasher - Damage -->
+	</item>
+	<item>
+		<ingredient id="18964" count="1" /> <!-- Amaranthine Slasher - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19048" count="1" /> <!-- Blessed Amaranthine Slasher - Haste -->
+	</item>
+	<item>
+		<ingredient id="18965" count="1" /> <!-- Amaranthine Avenger - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19049" count="1" /> <!-- Blessed Amaranthine Avenger - Haste -->
+	</item>
+	<item>
+		<ingredient id="18966" count="1" /> <!-- Amaranthine Avenger - Critical Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19050" count="1" /> <!-- Blessed Amaranthine Avenger - Critical Damage -->
+	</item>
+	<item>
+		<ingredient id="18967" count="1" /> <!-- Amaranthine Avenger - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19051" count="1" /> <!-- Blessed Amaranthine Avenger - Focus -->
+	</item>
+	<item>
+		<ingredient id="18968" count="1" /> <!-- Amaranthine Fighter - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19052" count="1" /> <!-- Blessed Amaranthine Fighter - Focus -->
+	</item>
+	<item>
+		<ingredient id="18969" count="1" /> <!-- Amaranthine Fighter - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19053" count="1" /> <!-- Blessed Amaranthine Fighter - Damage -->
+	</item>
+	<item>
+		<ingredient id="18970" count="1" /> <!-- Amaranthine Fighter - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19054" count="1" /> <!-- Blessed Amaranthine Fighter - Haste -->
+	</item>
+	<item>
+		<ingredient id="18971" count="1" /> <!-- Amaranthine Stormer - HP Drain -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19055" count="1" /> <!-- Blessed Amaranthine Stormer - HP Drain -->
+	</item>
+	<item>
+		<ingredient id="18972" count="1" /> <!-- Amaranthine Stormer - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19056" count="1" /> <!-- Blessed Amaranthine Stormer - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18973" count="1" /> <!-- Amaranthine Stormer - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19057" count="1" /> <!-- Blessed Amaranthine Stormer - Damage -->
+	</item>
+	<item>
+		<ingredient id="18974" count="1" /> <!-- Amaranthine Thrower - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19058" count="1" /> <!-- Blessed Amaranthine Thrower - Damage -->
+	</item>
+	<item>
+		<ingredient id="18975" count="1" /> <!-- Amaranthine Thrower - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19059" count="1" /> <!-- Blessed Amaranthine Thrower - Focus -->
+	</item>
+	<item>
+		<ingredient id="18976" count="1" /> <!-- Amaranthine Thrower - Long Blow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19060" count="1" /> <!-- Blessed Amaranthine Thrower - Long Blow -->
+	</item>
+	<item>
+		<ingredient id="18977" count="1" /> <!-- Amaranthine Shooter - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19061" count="1" /> <!-- Blessed Amaranthine Shooter - Focus -->
+	</item>
+	<item>
+		<ingredient id="18978" count="1" /> <!-- Amaranthine Shooter - Critical Slow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19062" count="1" /> <!-- Blessed Amaranthine Shooter - Critical Slow -->
+	</item>
+	<item>
+		<ingredient id="18979" count="1" /> <!-- Amaranthine Shooter - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19063" count="1" /> <!-- Blessed Amaranthine Shooter - Haste -->
+	</item>
+	<item>
+		<ingredient id="18980" count="1" /> <!-- Amaranthine Buster - Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19064" count="1" /> <!-- Blessed Amaranthine Buster - Acumen -->
+	</item>
+	<item>
+		<ingredient id="18981" count="1" /> <!-- Amaranthine Buster - Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19065" count="1" /> <!-- Blessed Amaranthine Buster - Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="18982" count="1" /> <!-- Amaranthine Buster - Mana Up -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19066" count="1" /> <!-- Blessed Amaranthine Buster - Mana Up -->
+	</item>
+	<item>
+		<ingredient id="18983" count="1" /> <!-- Amaranthine Caster - Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19067" count="1" /> <!-- Blessed Amaranthine Caster - Empower -->
+	</item>
+	<item>
+		<ingredient id="18984" count="1" /> <!-- Amaranthine Caster - Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19068" count="1" /> <!-- Blessed Amaranthine Caster - Acumen -->
+	</item>
+	<item>
+		<ingredient id="18985" count="1" /> <!-- Amaranthine Caster - Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19069" count="1" /> <!-- Blessed Amaranthine Caster - Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="18986" count="1" /> <!-- Amaranthine Retributer - MP Regeneration -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19070" count="1" /> <!-- Blessed Amaranthine Retributer - MP Regeneration -->
+	</item>
+	<item>
+		<ingredient id="18987" count="1" /> <!-- Amaranthine Retributer - Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19071" count="1" /> <!-- Blessed Amaranthine Retributer - Acumen -->
+	</item>
+	<item>
+		<ingredient id="18988" count="1" /> <!-- Amaranthine Retributer - Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19072" count="1" /> <!-- Blessed Amaranthine Retributer - Empower -->
+	</item>
+	<item>
+		<ingredient id="18989" count="1" /> <!-- Amaranthine Dual Sword - Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19073" count="1" /> <!-- Blessed Amaranthine Dual Sword - Haste -->
+	</item>
+	<item>
+		<ingredient id="18990" count="1" /> <!-- Amaranthine Dual Sword - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19074" count="1" /> <!-- Blessed Amaranthine Dual Sword - Damage -->
+	</item>
+	<item>
+		<ingredient id="18991" count="1" /> <!-- Amaranthine Dual Sword - Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19075" count="1" /> <!-- Blessed Amaranthine Dual Sword - Health -->
+	</item>
+	<item>
+		<ingredient id="18992" count="1" /> <!-- Amaranthine Dual Dagger - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19076" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Damage -->
+	</item>
+	<item>
+		<ingredient id="18993" count="1" /> <!-- Amaranthine Dual Dagger - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19077" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Focus -->
+	</item>
+	<item>
+		<ingredient id="18994" count="1" /> <!-- Amaranthine Dual Dagger - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19078" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18995" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19079" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Focus -->
+	</item>
+	<item>
+		<ingredient id="18996" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19080" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Guidance -->
+	</item>
+	<item>
+		<ingredient id="18997" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="19081" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Damage -->
+	</item>
+	<item>
+		<ingredient id="19560" count="1" /> <!-- Seraph Leather Helmet - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19688" count="1" /> <!-- Blessed Seraph Leather Helmet - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19561" count="1" /> <!-- Seraph Leather Armor - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19689" count="1" /> <!-- Blessed Seraph Leather Armor - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19562" count="1" /> <!-- Seraph Leather Leggings - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19690" count="1" /> <!-- Blessed Seraph Leather Leggings - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19563" count="1" /> <!-- Seraph Leather Gloves - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19691" count="1" /> <!-- Blessed Seraph Leather Gloves - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19564" count="1" /> <!-- Seraph Leather Boots - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19692" count="1" /> <!-- Blessed Seraph Leather Boots - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19565" count="1" /> <!-- Seraph Circlet - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19693" count="1" /> <!-- Blessed Seraph Circlet - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19566" count="1" /> <!-- Seraph Tunic - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19694" count="1" /> <!-- Blessed Seraph Tunic - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19567" count="1" /> <!-- Seraph Stockings - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19695" count="1" /> <!-- Blessed Seraph Stockings - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19568" count="1" /> <!-- Seraph Gloves - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19696" count="1" /> <!-- Blessed Seraph Gloves - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19569" count="1" /> <!-- Seraph Shoes - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19697" count="1" /> <!-- Blessed Seraph Shoes - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19570" count="1" /> <!-- Eternal Helmet - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19698" count="1" /> <!-- Blessed Eternal Helmet - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19571" count="1" /> <!-- Eternal Breastplate - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19699" count="1" /> <!-- Blessed Eternal Breastplate - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19572" count="1" /> <!-- Eternal Gaiters - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19700" count="1" /> <!-- Blessed Eternal Gaiters - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19573" count="1" /> <!-- Eternal Gauntlet - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19701" count="1" /> <!-- Blessed Eternal Gauntlet - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19574" count="1" /> <!-- Eternal Boots - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19702" count="1" /> <!-- Blessed Eternal Boots - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19575" count="1" /> <!-- Eternal Shield - Attack Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19703" count="1" /> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19576" count="1" /> <!-- Eternal Leather Helmet - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19704" count="1" /> <!-- Blessed Eternal Leather Helmet - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19577" count="1" /> <!-- Eternal Leather Armor - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19705" count="1" /> <!-- Blessed Eternal Leather Armor - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19578" count="1" /> <!-- Eternal Leather Leggings - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19706" count="1" /> <!-- Blessed Eternal Leather Leggings - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19579" count="1" /> <!-- Eternal Leather Gloves - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19707" count="1" /> <!-- Blessed Eternal Leather Gloves - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19580" count="1" /> <!-- Eternal Leather Boots - Assassin Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19708" count="1" /> <!-- Blessed Eternal Leather Boots - Assassin Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19581" count="1" /> <!-- Eternal Circlet - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19709" count="1" /> <!-- Blessed Eternal Circlet - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19582" count="1" /> <!-- Eternal Tunic - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19710" count="1" /> <!-- Blessed Eternal Tunic - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19583" count="1" /> <!-- Eternal Stockings - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19711" count="1" /> <!-- Blessed Eternal Stockings - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19584" count="1" /> <!-- Eternal Gloves - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19712" count="1" /> <!-- Blessed Eternal Gloves - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19585" count="1" /> <!-- Eternal Shoes - Magic Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19713" count="1" /> <!-- Blessed Eternal Shoes - Magic Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19768" count="1" /> <!-- Seraph Leather Helmet - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19896" count="1" /> <!-- Blessed Seraph Leather Helmet - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19769" count="1" /> <!-- Seraph Leather Armor - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19897" count="1" /> <!-- Blessed Seraph Leather Armor - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19770" count="1" /> <!-- Seraph Leather Leggings - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19898" count="1" /> <!-- Blessed Seraph Leather Leggings - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19771" count="1" /> <!-- Seraph Leather Gloves - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19899" count="1" /> <!-- Blessed Seraph Leather Gloves - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19772" count="1" /> <!-- Seraph Leather Boots - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19900" count="1" /> <!-- Blessed Seraph Leather Boots - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19773" count="1" /> <!-- Seraph Circlet - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19901" count="1" /> <!-- Blessed Seraph Circlet - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19774" count="1" /> <!-- Seraph Tunic - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19902" count="1" /> <!-- Blessed Seraph Tunic - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19775" count="1" /> <!-- Seraph Stockings - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19903" count="1" /> <!-- Blessed Seraph Stockings - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19776" count="1" /> <!-- Seraph Gloves - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19904" count="1" /> <!-- Blessed Seraph Gloves - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19777" count="1" /> <!-- Seraph Shoes - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19905" count="1" /> <!-- Blessed Seraph Shoes - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19778" count="1" /> <!-- Eternal Helmet - Defense Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19906" count="1" /> <!-- Blessed Eternal Helmet - Defense Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19779" count="1" /> <!-- Eternal Breastplate - Defense Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19907" count="1" /> <!-- Blessed Eternal Breastplate - Defense Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19780" count="1" /> <!-- Eternal Gaiters - Defense Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19908" count="1" /> <!-- Blessed Eternal Gaiters - Defense Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19781" count="1" /> <!-- Eternal Gauntlet - Defense Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19909" count="1" /> <!-- Blessed Eternal Gauntlet - Defense Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19782" count="1" /> <!-- Eternal Boots - Defense Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19910" count="1" /> <!-- Blessed Eternal Boots - Defense Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19783" count="1" /> <!-- Eternal Shield - Defense Type / Heavy -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19911" count="1" /> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
+	</item>
+	<item>
+		<ingredient id="19784" count="1" /> <!-- Eternal Leather Helmet - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19912" count="1" /> <!-- Blessed Eternal Leather Helmet - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19785" count="1" /> <!-- Eternal Leather Armor - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19913" count="1" /> <!-- Blessed Eternal Leather Armor - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19786" count="1" /> <!-- Eternal Leather Leggings - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19914" count="1" /> <!-- Blessed Eternal Leather Leggings - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19787" count="1" /> <!-- Eternal Leather Gloves - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19915" count="1" /> <!-- Blessed Eternal Leather Gloves - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19788" count="1" /> <!-- Eternal Leather Boots - Enhance Type / Light -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19916" count="1" /> <!-- Blessed Eternal Leather Boots - Enhance Type / Light -->
+	</item>
+	<item>
+		<ingredient id="19789" count="1" /> <!-- Eternal Circlet - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19917" count="1" /> <!-- Blessed Eternal Circlet - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19790" count="1" /> <!-- Eternal Tunic - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19918" count="1" /> <!-- Blessed Eternal Tunic - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19791" count="1" /> <!-- Eternal Stockings - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19919" count="1" /> <!-- Blessed Eternal Stockings - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19792" count="1" /> <!-- Eternal Gloves - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19920" count="1" /> <!-- Blessed Eternal Gloves - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="19793" count="1" /> <!-- Eternal Shoes - Recovery Type / Robe -->
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="19921" count="1" /> <!-- Blessed Eternal Shoes - Recovery Type / Robe -->
+	</item>
+	<item>
+		<ingredient id="30106" count="1" /> <!-- Specter Shaper - Guidance + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30148" count="1" /> <!-- Blessed Specter Shaper - Guidance + Haste -->
+	</item>
+	<item>
+		<ingredient id="30107" count="1" /> <!-- Specter Shaper - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30149" count="1" /> <!-- Blessed Specter Shaper - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30108" count="1" /> <!-- Specter Shaper - Focus + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30150" count="1" /> <!-- Blessed Specter Shaper - Focus + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30109" count="1" /> <!-- Specter Cutter - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30151" count="1" /> <!-- Blessed Specter Cutter - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30110" count="1" /> <!-- Specter Cutter - Focus + Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30152" count="1" /> <!-- Blessed Specter Cutter - Focus + Health -->
+	</item>
+	<item>
+		<ingredient id="30111" count="1" /> <!-- Specter Cutter - Health + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30153" count="1" /> <!-- Blessed Specter Cutter - Health + Haste -->
+	</item>
+	<item>
+		<ingredient id="30112" count="1" /> <!-- Specter Slasher - Focus + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30154" count="1" /> <!-- Blessed Specter Slasher - Focus + Damage -->
+	</item>
+	<item>
+		<ingredient id="30113" count="1" /> <!-- Specter Slasher - Damage + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30155" count="1" /> <!-- Blessed Specter Slasher - Damage + Haste -->
+	</item>
+	<item>
+		<ingredient id="30114" count="1" /> <!-- Specter Slasher - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30156" count="1" /> <!-- Blessed Specter Slasher - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30115" count="1" /> <!-- Specter Avenger - Haste + Critical Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30157" count="1" /> <!-- Blessed Specter Avenger - Haste + Critical Damage -->
+	</item>
+	<item>
+		<ingredient id="30116" count="1" /> <!-- Specter Avenger - Critical Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30158" count="1" /> <!-- Blessed Specter Avenger - Critical Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30117" count="1" /> <!-- Specter Avenger - Focus + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30159" count="1" /> <!-- Blessed Specter Avenger - Focus + Haste -->
+	</item>
+	<item>
+		<ingredient id="30118" count="1" /> <!-- Specter Fighter - Focus + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30160" count="1" /> <!-- Blessed Specter Fighter - Focus + Damage -->
+	</item>
+	<item>
+		<ingredient id="30119" count="1" /> <!-- Specter Fighter - Damage + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30161" count="1" /> <!-- Blessed Specter Fighter - Damage + Haste -->
+	</item>
+	<item>
+		<ingredient id="30120" count="1" /> <!-- Specter Fighter - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30162" count="1" /> <!-- Blessed Specter Fighter - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30121" count="1" /> <!-- Specter Stormer - HP Drain + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30163" count="1" /> <!-- Blessed Specter Stormer - HP Drain + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30122" count="1" /> <!-- Specter Stormer - Guidance + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30164" count="1" /> <!-- Blessed Specter Stormer - Guidance + Damage -->
+	</item>
+	<item>
+		<ingredient id="30123" count="1" /> <!-- Specter Stormer - Damage + HP Drain -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30165" count="1" /> <!-- Blessed Specter Stormer - Damage + HP Drain -->
+	</item>
+	<item>
+		<ingredient id="30124" count="1" /> <!-- Specter Thrower - Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30166" count="1" /> <!-- Blessed Specter Thrower - Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30125" count="1" /> <!-- Specter Thrower - Focus + Long Blow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30167" count="1" /> <!-- Blessed Specter Thrower - Focus + Long Blow -->
+	</item>
+	<item>
+		<ingredient id="30126" count="1" /> <!-- Specter Thrower - Long Blow + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30168" count="1" /> <!-- Blessed Specter Thrower - Long Blow + Damage -->
+	</item>
+	<item>
+		<ingredient id="30127" count="1" /> <!-- Specter Shooter - Focus + Critical Slow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30169" count="1" /> <!-- Blessed Specter Shooter - Focus + Critical Slow -->
+	</item>
+	<item>
+		<ingredient id="30128" count="1" /> <!-- Specter Shooter - Critical Slow + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30170" count="1" /> <!-- Blessed Specter Shooter - Critical Slow + Haste -->
+	</item>
+	<item>
+		<ingredient id="30129" count="1" /> <!-- Specter Shooter - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30171" count="1" /> <!-- Blessed Specter Shooter - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30130" count="1" /> <!-- Specter Buster - Acumen + Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30172" count="1" /> <!-- Blessed Specter Buster - Acumen + Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="30131" count="1" /> <!-- Specter Buster - Magic Hold + Mana Up -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30173" count="1" /> <!-- Blessed Specter Buster - Magic Hold + Mana Up -->
+	</item>
+	<item>
+		<ingredient id="30132" count="1" /> <!-- Specter Buster - Mana Up + Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30174" count="1" /> <!-- Blessed Specter Buster - Mana Up + Acumen -->
+	</item>
+	<item>
+		<ingredient id="30133" count="1" /> <!-- Specter Caster - Empower + Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30175" count="1" /> <!-- Blessed Specter Caster - Empower + Acumen -->
+	</item>
+	<item>
+		<ingredient id="30134" count="1" /> <!-- Specter Caster - Acumen + Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30176" count="1" /> <!-- Blessed Specter Caster - Acumen + Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="30135" count="1" /> <!-- Specter Caster - Magic Hold + Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30177" count="1" /> <!-- Blessed Specter Caster - Magic Hold + Empower -->
+	</item>
+	<item>
+		<ingredient id="30136" count="1" /> <!-- Specter Retributer - MP Regeneration + Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30178" count="1" /> <!-- Blessed Specter Retributer - MP Regeneration + Acumen -->
+	</item>
+	<item>
+		<ingredient id="30137" count="1" /> <!-- Specter Retributer - Acumen + Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30179" count="1" /> <!-- Blessed Specter Retributer - Acumen + Empower -->
+	</item>
+	<item>
+		<ingredient id="30138" count="1" /> <!-- Specter Retributer - Empower + MP Regeneration -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30180" count="1" /> <!-- Blessed Specter Retributer - Empower + MP Regeneration -->
+	</item>
+	<item>
+		<ingredient id="30139" count="1" /> <!-- Specter Dual Sword - Haste + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30181" count="1" /> <!-- Blessed Specter Dual Sword - Haste + Damage -->
+	</item>
+	<item>
+		<ingredient id="30140" count="1" /> <!-- Specter Dual Sword - Damage + Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30182" count="1" /> <!-- Blessed Specter Dual Sword - Damage + Health -->
+	</item>
+	<item>
+		<ingredient id="30141" count="1" /> <!-- Specter Dual Sword - Health + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30183" count="1" /> <!-- Blessed Specter Dual Sword - Health + Haste -->
+	</item>
+	<item>
+		<ingredient id="30142" count="1" /> <!-- Specter Dual Dagger - Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30184" count="1" /> <!-- Blessed Specter Dual Dagger - Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30143" count="1" /> <!-- Specter Dual Dagger - Focus + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30185" count="1" /> <!-- Blessed Specter Dual Dagger - Focus + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30144" count="1" /> <!-- Specter Dual Dagger - Guidance + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30186" count="1" /> <!-- Blessed Specter Dual Dagger - Guidance + Damage -->
+	</item>
+	<item>
+		<ingredient id="30145" count="1" /> <!-- Specter Dual Blunt Weapon - Focus + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30187" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Focus + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30146" count="1" /> <!-- Specter Dual Blunt Weapon - Guidance + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30188" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Guidance + Damage -->
+	</item>
+	<item>
+		<ingredient id="30147" count="1" /> <!-- Specter Dual Blunt Weapon - Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30189" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30190" count="1" /> <!-- Amaranthine Shaper - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30232" count="1" /> <!-- Blessed Amaranthine Shaper - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30191" count="1" /> <!-- Amaranthine Shaper - Focus + Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30233" count="1" /> <!-- Blessed Amaranthine Shaper - Focus + Health -->
+	</item>
+	<item>
+		<ingredient id="30192" count="1" /> <!-- Amaranthine Shaper - Health + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30234" count="1" /> <!-- Blessed Amaranthine Shaper - Health + Haste -->
+	</item>
+	<item>
+		<ingredient id="30193" count="1" /> <!-- Amaranthine Cutter - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30235" count="1" /> <!-- Blessed Amaranthine Cutter - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30194" count="1" /> <!-- Amaranthine Cutter - Focus + Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30236" count="1" /> <!-- Blessed Amaranthine Cutter - Focus + Health -->
+	</item>
+	<item>
+		<ingredient id="30195" count="1" /> <!-- Amaranthine Cutter - Health + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30237" count="1" /> <!-- Blessed Amaranthine Cutter - Health + Haste -->
+	</item>
+	<item>
+		<ingredient id="30196" count="1" /> <!-- Amaranthine Slasher - Focus + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30238" count="1" /> <!-- Blessed Amaranthine Slasher - Focus + Damage -->
+	</item>
+	<item>
+		<ingredient id="30197" count="1" /> <!-- Amaranthine Slasher - Damage + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30239" count="1" /> <!-- Blessed Amaranthine Slasher - Damage + Haste -->
+	</item>
+	<item>
+		<ingredient id="30198" count="1" /> <!-- Amaranthine Slasher - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30240" count="1" /> <!-- Blessed Amaranthine Slasher - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30199" count="1" /> <!-- Amaranthine Avenger - Haste + Critical Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30241" count="1" /> <!-- Blessed Amaranthine Avenger - Haste + Critical Damage -->
+	</item>
+	<item>
+		<ingredient id="30200" count="1" /> <!-- Amaranthine Avenger - Critical Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30242" count="1" /> <!-- Blessed Amaranthine Avenger - Critical Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30201" count="1" /> <!-- Amaranthine Avenger - Focus + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30243" count="1" /> <!-- Blessed Amaranthine Avenger - Focus + Haste -->
+	</item>
+	<item>
+		<ingredient id="30202" count="1" /> <!-- Amaranthine Fighter - Focus + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30244" count="1" /> <!-- Blessed Amaranthine Fighter - Focus + Damage -->
+	</item>
+	<item>
+		<ingredient id="30203" count="1" /> <!-- Amaranthine Fighter - Damage + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30245" count="1" /> <!-- Blessed Amaranthine Fighter - Damage + Haste -->
+	</item>
+	<item>
+		<ingredient id="30204" count="1" /> <!-- Amaranthine Fighter - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30246" count="1" /> <!-- Blessed Amaranthine Fighter - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30205" count="1" /> <!-- Amaranthine Stormer - HP Drain + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30247" count="1" /> <!-- Blessed Amaranthine Stormer - HP Drain + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30206" count="1" /> <!-- Amaranthine Stormer - Guidance + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30248" count="1" /> <!-- Blessed Amaranthine Stormer - Guidance + Damage -->
+	</item>
+	<item>
+		<ingredient id="30207" count="1" /> <!-- Amaranthine Stormer - Damage + HP Drain -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30249" count="1" /> <!-- Blessed Amaranthine Stormer - Damage + HP Drain -->
+	</item>
+	<item>
+		<ingredient id="30208" count="1" /> <!-- Amaranthine Thrower - Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30250" count="1" /> <!-- Blessed Amaranthine Thrower - Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30209" count="1" /> <!-- Amaranthine Thrower - Focus + Long Blow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30251" count="1" /> <!-- Blessed Amaranthine Thrower - Focus + Long Blow -->
+	</item>
+	<item>
+		<ingredient id="30210" count="1" /> <!-- Amaranthine Thrower - Long Blow + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30252" count="1" /> <!-- Blessed Amaranthine Thrower - Long Blow + Damage -->
+	</item>
+	<item>
+		<ingredient id="30211" count="1" /> <!-- Amaranthine Shooter - Focus + Critical Slow -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30253" count="1" /> <!-- Blessed Amaranthine Shooter - Focus + Critical Slow -->
+	</item>
+	<item>
+		<ingredient id="30212" count="1" /> <!-- Amaranthine Shooter - Critical Slow + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30254" count="1" /> <!-- Blessed Amaranthine Shooter - Critical Slow + Haste -->
+	</item>
+	<item>
+		<ingredient id="30213" count="1" /> <!-- Amaranthine Shooter - Haste + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30255" count="1" /> <!-- Blessed Amaranthine Shooter - Haste + Focus -->
+	</item>
+	<item>
+		<ingredient id="30214" count="1" /> <!-- Amaranthine Buster - Acumen + Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30256" count="1" /> <!-- Blessed Amaranthine Buster - Acumen + Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="30215" count="1" /> <!-- Amaranthine Buster - Magic Hold + Mana Up -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30257" count="1" /> <!-- Blessed Amaranthine Buster - Magic Hold + Mana Up -->
+	</item>
+	<item>
+		<ingredient id="30216" count="1" /> <!-- Amaranthine Buster - Mana Up + Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30258" count="1" /> <!-- Blessed Amaranthine Buster - Mana Up + Acumen -->
+	</item>
+	<item>
+		<ingredient id="30217" count="1" /> <!-- Amaranthine Caster - Empower + Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30259" count="1" /> <!-- Blessed Amaranthine Caster - Empower + Acumen -->
+	</item>
+	<item>
+		<ingredient id="30218" count="1" /> <!-- Amaranthine Caster - Acumen + Magic Hold -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30260" count="1" /> <!-- Blessed Amaranthine Caster - Acumen + Magic Hold -->
+	</item>
+	<item>
+		<ingredient id="30219" count="1" /> <!-- Amaranthine Caster - Magic Hold + Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30261" count="1" /> <!-- Blessed Amaranthine Caster - Magic Hold + Empower -->
+	</item>
+	<item>
+		<ingredient id="30220" count="1" /> <!-- Amaranthine Retributer - MP Regeneration + Acumen -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30262" count="1" /> <!-- Blessed Amaranthine Retributer - MP Regeneration + Acumen -->
+	</item>
+	<item>
+		<ingredient id="30221" count="1" /> <!-- Amaranthine Retributer - Acumen + Empower -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30263" count="1" /> <!-- Blessed Amaranthine Retributer - Acumen + Empower -->
+	</item>
+	<item>
+		<ingredient id="30222" count="1" /> <!-- Amaranthine Retributer - Empower + MP Regeneration -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30264" count="1" /> <!-- Blessed Amaranthine Retributer - Empower + MP Regeneration -->
+	</item>
+	<item>
+		<ingredient id="30223" count="1" /> <!-- Amaranthine Dual Sword - Haste + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30265" count="1" /> <!-- Blessed Amaranthine Dual Sword - Haste + Damage -->
+	</item>
+	<item>
+		<ingredient id="30224" count="1" /> <!-- Amaranthine Dual Sword - Damage + Health -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30266" count="1" /> <!-- Blessed Amaranthine Dual Sword - Damage + Health -->
+	</item>
+	<item>
+		<ingredient id="30225" count="1" /> <!-- Amaranthine Dual Sword - Health + Haste -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30267" count="1" /> <!-- Blessed Amaranthine Dual Sword - Health + Haste -->
+	</item>
+	<item>
+		<ingredient id="30226" count="1" /> <!-- Amaranthine Dual Dagger - Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30268" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Damage + Focus -->
+	</item>
+	<item>
+		<ingredient id="30227" count="1" /> <!-- Amaranthine Dual Dagger - Focus + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30269" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Focus + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30228" count="1" /> <!-- Amaranthine Dual Dagger - Guidance + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30270" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Guidance + Damage -->
+	</item>
+	<item>
+		<ingredient id="30229" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30271" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+	</item>
+	<item>
+		<ingredient id="30230" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Guidance + Damage -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30272" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Guidance + Damage -->
+	</item>
+	<item>
+		<ingredient id="30231" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Damage + Focus -->
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="30273" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Damage + Focus -->
+	</item>
+</list>

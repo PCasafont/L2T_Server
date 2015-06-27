@@ -1,0 +1,4370 @@
+<list maintainEnchantment="true">
+	<item>
+		<ingredient id="18578" count="1" /> <!-- Requiem Shaper - Guidance -->
+		<production id="17290" count="1" /> <!-- Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18579" count="1" /> <!-- Requiem Shaper - Haste -->
+		<production id="17290" count="1" /> <!-- Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18580" count="1" /> <!-- Requiem Shaper - Focus -->
+		<production id="17290" count="1" /> <!-- Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="19938" count="1" /> <!-- Requiem Shaper - Guidance + Haste -->
+		<production id="17290" count="1" /> <!-- Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="19939" count="1" /> <!-- Requiem Shaper - Haste + Focus -->
+		<production id="17290" count="1" /> <!-- Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="19940" count="1" /> <!-- Requiem Shaper - Focus + Guidance -->
+		<production id="17290" count="1" /> <!-- Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18581" count="1" /> <!-- Requiem Cutter - Haste -->
+		<production id="17291" count="1" /> <!-- Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18582" count="1" /> <!-- Requiem Cutter - Focus -->
+		<production id="17291" count="1" /> <!-- Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18583" count="1" /> <!-- Requiem Cutter - Health -->
+		<production id="17291" count="1" /> <!-- Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="19941" count="1" /> <!-- Requiem Cutter - Haste + Focus -->
+		<production id="17291" count="1" /> <!-- Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="19942" count="1" /> <!-- Requiem Cutter - Focus + Health -->
+		<production id="17291" count="1" /> <!-- Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="19943" count="1" /> <!-- Requiem Cutter - Health + Haste -->
+		<production id="17291" count="1" /> <!-- Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18584" count="1" /> <!-- Requiem Slasher - Focus -->
+		<production id="17292" count="1" /> <!-- Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18585" count="1" /> <!-- Requiem Slasher - Damage -->
+		<production id="17292" count="1" /> <!-- Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18586" count="1" /> <!-- Requiem Slasher - Haste -->
+		<production id="17292" count="1" /> <!-- Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="19944" count="1" /> <!-- Requiem Slasher - Focus + Damage -->
+		<production id="17292" count="1" /> <!-- Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="19945" count="1" /> <!-- Requiem Slasher - Damage Up + Haste -->
+		<production id="17292" count="1" /> <!-- Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="19946" count="1" /> <!-- Requiem Slasher - Haste + Focus -->
+		<production id="17292" count="1" /> <!-- Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18587" count="1" /> <!-- Requiem Avenger - Haste -->
+		<production id="17293" count="1" /> <!-- Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18588" count="1" /> <!-- Requiem Avenger - Critical Damage -->
+		<production id="17293" count="1" /> <!-- Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18589" count="1" /> <!-- Requiem Avenger - Focus -->
+		<production id="17293" count="1" /> <!-- Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="19947" count="1" /> <!-- Requiem Avenger - Haste + Critical Damage -->
+		<production id="17293" count="1" /> <!-- Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="19948" count="1" /> <!-- Requiem Avenger - Critical Damage + Focus -->
+		<production id="17293" count="1" /> <!-- Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="19949" count="1" /> <!-- Requiem Avenger - Focus + Haste -->
+		<production id="17293" count="1" /> <!-- Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18590" count="1" /> <!-- Requiem Fighter - Focus -->
+		<production id="17294" count="1" /> <!-- Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18591" count="1" /> <!-- Requiem Fighter - Damage -->
+		<production id="17294" count="1" /> <!-- Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18592" count="1" /> <!-- Requiem Fighter - Haste -->
+		<production id="17294" count="1" /> <!-- Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="19950" count="1" /> <!-- Requiem Fighter - Focus + Damage Up -->
+		<production id="17294" count="1" /> <!-- Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="19951" count="1" /> <!-- Requiem Fighter - Damage + Haste -->
+		<production id="17294" count="1" /> <!-- Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="19952" count="1" /> <!-- Requiem Fighter - Haste + Focus -->
+		<production id="17294" count="1" /> <!-- Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18593" count="1" /> <!-- Requiem Stormer - HP Drain -->
+		<production id="17295" count="1" /> <!-- Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18594" count="1" /> <!-- Requiem Stormer - Guidance -->
+		<production id="17295" count="1" /> <!-- Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18595" count="1" /> <!-- Requiem Stormer - Damage -->
+		<production id="17295" count="1" /> <!-- Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="19953" count="1" /> <!-- Requiem Stormer - HP Drain + Guidance -->
+		<production id="17295" count="1" /> <!-- Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="19954" count="1" /> <!-- Requiem Stormer - Guidance + Damage -->
+		<production id="17295" count="1" /> <!-- Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="19955" count="1" /> <!-- Requiem Stormer - Damage + HP Drain -->
+		<production id="17295" count="1" /> <!-- Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18596" count="1" /> <!-- Requiem Thrower - Damage -->
+		<production id="17296" count="1" /> <!-- Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18597" count="1" /> <!-- Requiem Thrower - Focus -->
+		<production id="17296" count="1" /> <!-- Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18598" count="1" /> <!-- Requiem Thrower - Long Blow -->
+		<production id="17296" count="1" /> <!-- Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="19956" count="1" /> <!-- Requiem Thrower - Damage + Focus -->
+		<production id="17296" count="1" /> <!-- Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="19957" count="1" /> <!-- Requiem Thrower - Focus + Long Blow -->
+		<production id="17296" count="1" /> <!-- Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="19958" count="1" /> <!-- Requiem Thrower - Long Blow + Damage -->
+		<production id="17296" count="1" /> <!-- Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18599" count="1" /> <!-- Requiem Shooter - Focus -->
+		<production id="17297" count="1" /> <!-- Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18600" count="1" /> <!-- Requiem Shooter - Critical Slow -->
+		<production id="17297" count="1" /> <!-- Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18601" count="1" /> <!-- Requiem Shooter - Haste -->
+		<production id="17297" count="1" /> <!-- Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="19959" count="1" /> <!-- Requiem Shooter - Focus + Critical Slow -->
+		<production id="17297" count="1" /> <!-- Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="19960" count="1" /> <!-- Requiem Shooter - Critical Slow + Haste -->
+		<production id="17297" count="1" /> <!-- Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="19961" count="1" /> <!-- Requiem Shooter - Haste + Focus -->
+		<production id="17297" count="1" /> <!-- Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18602" count="1" /> <!-- Requiem Buster - Acumen -->
+		<production id="17298" count="1" /> <!-- Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18603" count="1" /> <!-- Requiem Buster - Magic Hold -->
+		<production id="17298" count="1" /> <!-- Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18604" count="1" /> <!-- Requiem Buster - Mana Up -->
+		<production id="17298" count="1" /> <!-- Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="19962" count="1" /> <!-- Requiem Buster - Acumen + Magic Hold -->
+		<production id="17298" count="1" /> <!-- Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="19963" count="1" /> <!-- Requiem Buster - Magic Hold + Mana Up -->
+		<production id="17298" count="1" /> <!-- Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="19964" count="1" /> <!-- Requiem Buster - Mana Up + Acumen -->
+		<production id="17298" count="1" /> <!-- Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18605" count="1" /> <!-- Requiem Caster - Empower -->
+		<production id="17299" count="1" /> <!-- Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18606" count="1" /> <!-- Requiem Caster - Acumen -->
+		<production id="17299" count="1" /> <!-- Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18607" count="1" /> <!-- Requiem Caster - Magic Hold -->
+		<production id="17299" count="1" /> <!-- Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="19965" count="1" /> <!-- Requiem Caster - Empower + Acumen -->
+		<production id="17299" count="1" /> <!-- Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="19966" count="1" /> <!-- Requiem Caster - Acumen + Magic Hold -->
+		<production id="17299" count="1" /> <!-- Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="19967" count="1" /> <!-- Requiem Caster - Magic Hold + Empower -->
+		<production id="17299" count="1" /> <!-- Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18608" count="1" /> <!-- Requiem Retributer - MP Regeneration -->
+		<production id="17300" count="1" /> <!-- Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18609" count="1" /> <!-- Requiem Retributer - Acumen -->
+		<production id="17300" count="1" /> <!-- Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18610" count="1" /> <!-- Requiem Retributer - Empower -->
+		<production id="17300" count="1" /> <!-- Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="19968" count="1" /> <!-- Requiem Retributer - MP Regeneration + Acumen -->
+		<production id="17300" count="1" /> <!-- Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="19969" count="1" /> <!-- Requiem Retributer - Acumen + Empower -->
+		<production id="17300" count="1" /> <!-- Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="19970" count="1" /> <!-- Requiem Retributer - Empower + MP Regeneration -->
+		<production id="17300" count="1" /> <!-- Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18611" count="1" /> <!-- Requiem Dual Sword - Haste -->
+		<production id="17301" count="1" /> <!-- Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18612" count="1" /> <!-- Requiem Dual Sword - Damage -->
+		<production id="17301" count="1" /> <!-- Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18613" count="1" /> <!-- Requiem Dual Sword - Health -->
+		<production id="17301" count="1" /> <!-- Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19971" count="1" /> <!-- Requiem Dual Sword - Haste + Damage Up -->
+		<production id="17301" count="1" /> <!-- Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19972" count="1" /> <!-- Requiem Dual Sword - Damage + Health -->
+		<production id="17301" count="1" /> <!-- Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19973" count="1" /> <!-- Requiem Dual Sword - Health + Haste -->
+		<production id="17301" count="1" /> <!-- Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18614" count="1" /> <!-- Requiem Dual Dagger - Damage -->
+		<production id="17302" count="1" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18615" count="1" /> <!-- Requiem Dual Dagger - Focus -->
+		<production id="17302" count="1" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18616" count="1" /> <!-- Requiem Dual Dagger - Guidance -->
+		<production id="17302" count="1" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19974" count="1" /> <!-- Requiem Dual Dagger - Damage + Focus -->
+		<production id="17302" count="1" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19975" count="1" /> <!-- Requiem Dual Dagger - Focus + Guidance -->
+		<production id="17302" count="1" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19976" count="1" /> <!-- Requiem Dual Dagger - Guidance + Damage -->
+		<production id="17302" count="1" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18617" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon - Focus -->
+		<production id="17303" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18618" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon - Guidance -->
+		<production id="17303" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18619" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon - Damage -->
+		<production id="17303" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="19977" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon - Focus + Guidance -->
+		<production id="17303" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="19978" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon - Guidance + Damage -->
+		<production id="17303" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="19979" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon - Damage + Focus -->
+		<production id="17303" count="1" /> <!-- Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18704" count="1" /> <!-- Apocalypse Shaper - Guidance -->
+		<production id="17324" count="1" /> <!-- Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18705" count="1" /> <!-- Apocalypse Shaper - Haste -->
+		<production id="17324" count="1" /> <!-- Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18706" count="1" /> <!-- Apocalypse Shaper - Focus -->
+		<production id="17324" count="1" /> <!-- Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="30022" count="1" /> <!-- Apocalypse Shaper - Guidance + Haste -->
+		<production id="17324" count="1" /> <!-- Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="30023" count="1" /> <!-- Apocalypse Shaper - Haste + Focus -->
+		<production id="17324" count="1" /> <!-- Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="30024" count="1" /> <!-- Apocalypse Shaper - Focus + Guidance -->
+		<production id="17324" count="1" /> <!-- Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18707" count="1" /> <!-- Apocalypse Cutter - Haste -->
+		<production id="17325" count="1" /> <!-- Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18708" count="1" /> <!-- Apocalypse Cutter - Focus -->
+		<production id="17325" count="1" /> <!-- Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18709" count="1" /> <!-- Apocalypse Cutter - Health -->
+		<production id="17325" count="1" /> <!-- Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="30025" count="1" /> <!-- Apocalypse Cutter - Haste + Focus -->
+		<production id="17325" count="1" /> <!-- Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="30026" count="1" /> <!-- Apocalypse Cutter - Focus + Health -->
+		<production id="17325" count="1" /> <!-- Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="30027" count="1" /> <!-- Apocalypse Cutter - Health + Haste -->
+		<production id="17325" count="1" /> <!-- Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18710" count="1" /> <!-- Apocalypse Slasher - Focus -->
+		<production id="17326" count="1" /> <!-- Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18711" count="1" /> <!-- Apocalypse Slasher - Damage -->
+		<production id="17326" count="1" /> <!-- Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18712" count="1" /> <!-- Apocalypse Slasher - Haste -->
+		<production id="17326" count="1" /> <!-- Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="30028" count="1" /> <!-- Apocalypse Slasher - Focus + Damage -->
+		<production id="17326" count="1" /> <!-- Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="30029" count="1" /> <!-- Apocalypse Slasher - Damage + Haste -->
+		<production id="17326" count="1" /> <!-- Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="30030" count="1" /> <!-- Apocalypse Slasher - Haste + Focus -->
+		<production id="17326" count="1" /> <!-- Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18713" count="1" /> <!-- Apocalypse Avenger - Haste -->
+		<production id="17327" count="1" /> <!-- Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18714" count="1" /> <!-- Apocalypse Avenger - Critical Damage -->
+		<production id="17327" count="1" /> <!-- Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18715" count="1" /> <!-- Apocalypse Avenger - Focus -->
+		<production id="17327" count="1" /> <!-- Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="30031" count="1" /> <!-- Apocalypse Avenger - Haste + Critical Damage -->
+		<production id="17327" count="1" /> <!-- Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="30032" count="1" /> <!-- Apocalypse Avenger - Critical Damage + Focus -->
+		<production id="17327" count="1" /> <!-- Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="30033" count="1" /> <!-- Apocalypse Avenger - Focus + Haste -->
+		<production id="17327" count="1" /> <!-- Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18716" count="1" /> <!-- Apocalypse Fighter - Focus -->
+		<production id="17328" count="1" /> <!-- Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18717" count="1" /> <!-- Apocalypse Fighter - Damage -->
+		<production id="17328" count="1" /> <!-- Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18718" count="1" /> <!-- Apocalypse Fighter - Haste -->
+		<production id="17328" count="1" /> <!-- Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="30034" count="1" /> <!-- Apocalypse Fighter - Focus + Damage -->
+		<production id="17328" count="1" /> <!-- Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="30035" count="1" /> <!-- Apocalypse Fighter - Damage + Haste -->
+		<production id="17328" count="1" /> <!-- Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="30036" count="1" /> <!-- Apocalypse Fighter - Haste + Focus -->
+		<production id="17328" count="1" /> <!-- Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18719" count="1" /> <!-- Apocalypse Stormer - HP Drain -->
+		<production id="17329" count="1" /> <!-- Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18720" count="1" /> <!-- Apocalypse Stormer - Guidance -->
+		<production id="17329" count="1" /> <!-- Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18721" count="1" /> <!-- Apocalypse Stormer - Damage -->
+		<production id="17329" count="1" /> <!-- Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="30037" count="1" /> <!-- Apocalypse Stormer - HP Drain + Guidance -->
+		<production id="17329" count="1" /> <!-- Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="30038" count="1" /> <!-- Apocalypse Stormer - Guidance + Damage -->
+		<production id="17329" count="1" /> <!-- Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="30039" count="1" /> <!-- Apocalypse Stormer - Damage + HP Drain -->
+		<production id="17329" count="1" /> <!-- Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18722" count="1" /> <!-- Apocalypse Thrower - Damage -->
+		<production id="17330" count="1" /> <!-- Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18723" count="1" /> <!-- Apocalypse Thrower - Focus -->
+		<production id="17330" count="1" /> <!-- Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18724" count="1" /> <!-- Apocalypse Thrower - Long Blow -->
+		<production id="17330" count="1" /> <!-- Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="30040" count="1" /> <!-- Apocalypse Thrower - Damage + Focus -->
+		<production id="17330" count="1" /> <!-- Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="30041" count="1" /> <!-- Apocalypse Thrower - Focus + Long Blow -->
+		<production id="17330" count="1" /> <!-- Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="30042" count="1" /> <!-- Apocalypse Thrower - Long Blow + Damage -->
+		<production id="17330" count="1" /> <!-- Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18725" count="1" /> <!-- Apocalypse Shooter - Focus -->
+		<production id="17331" count="1" /> <!-- Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18726" count="1" /> <!-- Apocalypse Shooter - Critical Slow -->
+		<production id="17331" count="1" /> <!-- Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18727" count="1" /> <!-- Apocalypse Shooter - Haste -->
+		<production id="17331" count="1" /> <!-- Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="30043" count="1" /> <!-- Apocalypse Shooter - Focus + Critical Slow -->
+		<production id="17331" count="1" /> <!-- Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="30044" count="1" /> <!-- Apocalypse Shooter - Critical Slow + Haste -->
+		<production id="17331" count="1" /> <!-- Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="30045" count="1" /> <!-- Apocalypse Shooter - Haste + Focus -->
+		<production id="17331" count="1" /> <!-- Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18728" count="1" /> <!-- Apocalypse Buster - Acumen -->
+		<production id="17332" count="1" /> <!-- Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18729" count="1" /> <!-- Apocalypse Buster - Magic Hold -->
+		<production id="17332" count="1" /> <!-- Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18730" count="1" /> <!-- Apocalypse Buster - Mana Up -->
+		<production id="17332" count="1" /> <!-- Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="30046" count="1" /> <!-- Apocalypse Buster - Acumen + Magic Hold -->
+		<production id="17332" count="1" /> <!-- Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="30047" count="1" /> <!-- Apocalypse Buster - Magic Hold + Mana Up -->
+		<production id="17332" count="1" /> <!-- Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="30048" count="1" /> <!-- Apocalypse Buster - Mana Up + Acumen -->
+		<production id="17332" count="1" /> <!-- Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18731" count="1" /> <!-- Apocalypse Caster - Empower -->
+		<production id="17333" count="1" /> <!-- Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18732" count="1" /> <!-- Apocalypse Caster - Acumen -->
+		<production id="17333" count="1" /> <!-- Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18733" count="1" /> <!-- Apocalypse Caster - Magic Hold -->
+		<production id="17333" count="1" /> <!-- Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="30049" count="1" /> <!-- Apocalypse Caster - Empower + Acumen -->
+		<production id="17333" count="1" /> <!-- Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="30050" count="1" /> <!-- Apocalypse Caster - Acumen + Magic Hold -->
+		<production id="17333" count="1" /> <!-- Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="30051" count="1" /> <!-- Apocalypse Caster - Magic Hold + Empower -->
+		<production id="17333" count="1" /> <!-- Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18734" count="1" /> <!-- Apocalypse Retributer - MP Regeneration -->
+		<production id="17334" count="1" /> <!-- Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18735" count="1" /> <!-- Apocalypse Retributer - Acumen -->
+		<production id="17334" count="1" /> <!-- Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18736" count="1" /> <!-- Apocalypse Retributer - Empower -->
+		<production id="17334" count="1" /> <!-- Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="30052" count="1" /> <!-- Apocalypse Retributer - MP Regeneration + Acumen -->
+		<production id="17334" count="1" /> <!-- Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="30053" count="1" /> <!-- Apocalypse Retributer - Acumen + Empower -->
+		<production id="17334" count="1" /> <!-- Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="30054" count="1" /> <!-- Apocalypse Retributer - Empower + MP Regeneration -->
+		<production id="17334" count="1" /> <!-- Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18737" count="1" /> <!-- Apocalypse Dual sword - Haste -->
+		<production id="17335" count="1" /> <!-- Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="18738" count="1" /> <!-- Apocalypse Dual sword - Damage -->
+		<production id="17335" count="1" /> <!-- Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="18739" count="1" /> <!-- Apocalypse Dual sword - Health -->
+		<production id="17335" count="1" /> <!-- Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="30055" count="1" /> <!-- Apocalypse Dual sword - Haste + Damage -->
+		<production id="17335" count="1" /> <!-- Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="30056" count="1" /> <!-- Apocalypse Dual sword - Damage + Health -->
+		<production id="17335" count="1" /> <!-- Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="30057" count="1" /> <!-- Apocalypse Dual sword - Health + Haste -->
+		<production id="17335" count="1" /> <!-- Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="18740" count="1" /> <!-- Apocalypse Dual Dagger - Damage -->
+		<production id="17336" count="1" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18741" count="1" /> <!-- Apocalypse Dual Dagger - Focus -->
+		<production id="17336" count="1" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18742" count="1" /> <!-- Apocalypse Dual Dagger - Guidance -->
+		<production id="17336" count="1" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30058" count="1" /> <!-- Apocalypse Dual Dagger - Damage + Focus -->
+		<production id="17336" count="1" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30059" count="1" /> <!-- Apocalypse Dual Dagger - Focus + Guidance -->
+		<production id="17336" count="1" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30060" count="1" /> <!-- Apocalypse Dual Dagger - Guidance + Damage -->
+		<production id="17336" count="1" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18743" count="1" /> <!-- Apocalypse Dual Blunt Weapon - Focus -->
+		<production id="17337" count="1" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18744" count="1" /> <!-- Apocalypse Dual Blunt Weapon - Guidance -->
+		<production id="17337" count="1" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18745" count="1" /> <!-- Apocalypse Dual Blunt Weapon - Damage -->
+		<production id="17337" count="1" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30061" count="1" /> <!-- Apocalypse Dual Blunt Weapon - Focus + Guidance -->
+		<production id="17337" count="1" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30062" count="1" /> <!-- Apocalypse Dual Blunt Weapon - Guidance + Damage -->
+		<production id="17337" count="1" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30063" count="1" /> <!-- Apocalypse Dual Blunt Weapon - Damage + Focus -->
+		<production id="17337" count="1" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18830" count="1" /> <!-- Specter Shaper - Guidance -->
+		<production id="17382" count="1" /> <!-- Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18831" count="1" /> <!-- Specter Shaper - Haste -->
+		<production id="17382" count="1" /> <!-- Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18832" count="1" /> <!-- Specter Shaper - Focus -->
+		<production id="17382" count="1" /> <!-- Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="30106" count="1" /> <!-- Specter Shaper - Guidance + Haste -->
+		<production id="17382" count="1" /> <!-- Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="30107" count="1" /> <!-- Specter Shaper - Haste + Focus -->
+		<production id="17382" count="1" /> <!-- Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="30108" count="1" /> <!-- Specter Shaper - Focus + Guidance -->
+		<production id="17382" count="1" /> <!-- Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18833" count="1" /> <!-- Specter Cutter - Haste -->
+		<production id="17383" count="1" /> <!-- Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18834" count="1" /> <!-- Specter Cutter - Focus -->
+		<production id="17383" count="1" /> <!-- Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18835" count="1" /> <!-- Specter Cutter - Health -->
+		<production id="17383" count="1" /> <!-- Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="30109" count="1" /> <!-- Specter Cutter - Haste + Focus -->
+		<production id="17383" count="1" /> <!-- Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="30110" count="1" /> <!-- Specter Cutter - Focus + Health -->
+		<production id="17383" count="1" /> <!-- Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="30111" count="1" /> <!-- Specter Cutter - Health + Haste -->
+		<production id="17383" count="1" /> <!-- Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18836" count="1" /> <!-- Specter Slasher - Focus -->
+		<production id="17384" count="1" /> <!-- Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18837" count="1" /> <!-- Specter Slasher - Damage -->
+		<production id="17384" count="1" /> <!-- Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18838" count="1" /> <!-- Specter Slasher - Haste -->
+		<production id="17384" count="1" /> <!-- Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="30112" count="1" /> <!-- Specter Slasher - Focus + Damage -->
+		<production id="17384" count="1" /> <!-- Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="30113" count="1" /> <!-- Specter Slasher - Damage + Haste -->
+		<production id="17384" count="1" /> <!-- Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="30114" count="1" /> <!-- Specter Slasher - Haste + Focus -->
+		<production id="17384" count="1" /> <!-- Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18839" count="1" /> <!-- Specter Avenger - Haste -->
+		<production id="17385" count="1" /> <!-- Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18840" count="1" /> <!-- Specter Avenger - Critical Damage -->
+		<production id="17385" count="1" /> <!-- Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18841" count="1" /> <!-- Specter Avenger - Focus -->
+		<production id="17385" count="1" /> <!-- Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="30115" count="1" /> <!-- Specter Avenger - Haste + Critical Damage -->
+		<production id="17385" count="1" /> <!-- Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="30116" count="1" /> <!-- Specter Avenger - Critical Damage + Focus -->
+		<production id="17385" count="1" /> <!-- Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="30117" count="1" /> <!-- Specter Avenger - Focus + Haste -->
+		<production id="17385" count="1" /> <!-- Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18842" count="1" /> <!-- Specter Fighter - Focus -->
+		<production id="17386" count="1" /> <!-- Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18843" count="1" /> <!-- Specter Fighter - Damage -->
+		<production id="17386" count="1" /> <!-- Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18844" count="1" /> <!-- Specter Fighter - Haste -->
+		<production id="17386" count="1" /> <!-- Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="30118" count="1" /> <!-- Specter Fighter - Focus + Damage -->
+		<production id="17386" count="1" /> <!-- Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="30119" count="1" /> <!-- Specter Fighter - Damage + Haste -->
+		<production id="17386" count="1" /> <!-- Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="30120" count="1" /> <!-- Specter Fighter - Haste + Focus -->
+		<production id="17386" count="1" /> <!-- Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18845" count="1" /> <!-- Specter Stormer - HP Drain -->
+		<production id="17387" count="1" /> <!-- Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18846" count="1" /> <!-- Specter Stormer - Guidance -->
+		<production id="17387" count="1" /> <!-- Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18847" count="1" /> <!-- Specter Stormer - Damage -->
+		<production id="17387" count="1" /> <!-- Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="30121" count="1" /> <!-- Specter Stormer - HP Drain + Guidance -->
+		<production id="17387" count="1" /> <!-- Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="30122" count="1" /> <!-- Specter Stormer - Guidance + Damage -->
+		<production id="17387" count="1" /> <!-- Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="30123" count="1" /> <!-- Specter Stormer - Damage + HP Drain -->
+		<production id="17387" count="1" /> <!-- Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18848" count="1" /> <!-- Specter Thrower - Damage -->
+		<production id="17388" count="1" /> <!-- Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18849" count="1" /> <!-- Specter Thrower - Focus -->
+		<production id="17388" count="1" /> <!-- Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18850" count="1" /> <!-- Specter Thrower - Long Blow -->
+		<production id="17388" count="1" /> <!-- Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="30124" count="1" /> <!-- Specter Thrower - Damage + Focus -->
+		<production id="17388" count="1" /> <!-- Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="30125" count="1" /> <!-- Specter Thrower - Focus + Long Blow -->
+		<production id="17388" count="1" /> <!-- Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="30126" count="1" /> <!-- Specter Thrower - Long Blow + Damage -->
+		<production id="17388" count="1" /> <!-- Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18851" count="1" /> <!-- Specter Shooter - Focus -->
+		<production id="17389" count="1" /> <!-- Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18852" count="1" /> <!-- Specter Shooter - Critical Slow -->
+		<production id="17389" count="1" /> <!-- Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18853" count="1" /> <!-- Specter Shooter - Haste -->
+		<production id="17389" count="1" /> <!-- Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="30127" count="1" /> <!-- Specter Shooter - Focus + Critical Slow -->
+		<production id="17389" count="1" /> <!-- Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="30128" count="1" /> <!-- Specter Shooter - Critical Slow + Haste -->
+		<production id="17389" count="1" /> <!-- Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="30129" count="1" /> <!-- Specter Shooter - Haste + Focus -->
+		<production id="17389" count="1" /> <!-- Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18854" count="1" /> <!-- Specter Buster - Acumen -->
+		<production id="17390" count="1" /> <!-- Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18855" count="1" /> <!-- Specter Buster - Magic Hold -->
+		<production id="17390" count="1" /> <!-- Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18856" count="1" /> <!-- Specter Buster - Mana Up -->
+		<production id="17390" count="1" /> <!-- Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="30130" count="1" /> <!-- Specter Buster - Acumen + Magic Hold -->
+		<production id="17390" count="1" /> <!-- Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="30131" count="1" /> <!-- Specter Buster - Magic Hold + Mana Up -->
+		<production id="17390" count="1" /> <!-- Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="30132" count="1" /> <!-- Specter Buster - Mana Up + Acumen -->
+		<production id="17390" count="1" /> <!-- Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18857" count="1" /> <!-- Specter Caster - Empower -->
+		<production id="17391" count="1" /> <!-- Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18858" count="1" /> <!-- Specter Caster - Acumen -->
+		<production id="17391" count="1" /> <!-- Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18859" count="1" /> <!-- Specter Caster - Magic Hold -->
+		<production id="17391" count="1" /> <!-- Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="30133" count="1" /> <!-- Specter Caster - Empower + Acumen -->
+		<production id="17391" count="1" /> <!-- Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="30134" count="1" /> <!-- Specter Caster - Acumen + Magic Hold -->
+		<production id="17391" count="1" /> <!-- Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="30135" count="1" /> <!-- Specter Caster - Magic Hold + Empower -->
+		<production id="17391" count="1" /> <!-- Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18860" count="1" /> <!-- Specter Retributer - MP Regeneration -->
+		<production id="17392" count="1" /> <!-- Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18861" count="1" /> <!-- Specter Retributer - Acumen -->
+		<production id="17392" count="1" /> <!-- Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18862" count="1" /> <!-- Specter Retributer - Empower -->
+		<production id="17392" count="1" /> <!-- Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="30136" count="1" /> <!-- Specter Retributer - MP Regeneration + Acumen -->
+		<production id="17392" count="1" /> <!-- Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="30137" count="1" /> <!-- Specter Retributer - Acumen + Empower -->
+		<production id="17392" count="1" /> <!-- Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="30138" count="1" /> <!-- Specter Retributer - Empower + MP Regeneration -->
+		<production id="17392" count="1" /> <!-- Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18863" count="1" /> <!-- Specter Dual Sword - Haste -->
+		<production id="17393" count="1" /> <!-- Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18864" count="1" /> <!-- Specter Dual Sword - Damage -->
+		<production id="17393" count="1" /> <!-- Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18865" count="1" /> <!-- Specter Dual Sword - Health -->
+		<production id="17393" count="1" /> <!-- Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30139" count="1" /> <!-- Specter Dual Sword - Haste + Damage -->
+		<production id="17393" count="1" /> <!-- Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30140" count="1" /> <!-- Specter Dual Sword - Damage + Health -->
+		<production id="17393" count="1" /> <!-- Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30141" count="1" /> <!-- Specter Dual Sword - Health + Haste -->
+		<production id="17393" count="1" /> <!-- Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18866" count="1" /> <!-- Specter Dual Dagger - Damage -->
+		<production id="17394" count="1" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18867" count="1" /> <!-- Specter Dual Dagger - Focus -->
+		<production id="17394" count="1" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18868" count="1" /> <!-- Specter Dual Dagger - Guidance -->
+		<production id="17394" count="1" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30142" count="1" /> <!-- Specter Dual Dagger - Damage + Focus -->
+		<production id="17394" count="1" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30143" count="1" /> <!-- Specter Dual Dagger - Focus + Guidance -->
+		<production id="17394" count="1" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30144" count="1" /> <!-- Specter Dual Dagger - Guidance + Damage -->
+		<production id="17394" count="1" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18869" count="1" /> <!-- Specter Dual Blunt Weapon - Focus -->
+		<production id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18870" count="1" /> <!-- Specter Dual Blunt Weapon - Guidance -->
+		<production id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18871" count="1" /> <!-- Specter Dual Blunt Weapon - Damage -->
+		<production id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30145" count="1" /> <!-- Specter Dual Blunt Weapon - Focus + Guidance -->
+		<production id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30146" count="1" /> <!-- Specter Dual Blunt Weapon - Guidance + Damage -->
+		<production id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30147" count="1" /> <!-- Specter Dual Blunt Weapon - Damage + Focus -->
+		<production id="17395" count="1" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18956" count="1" /> <!-- Amaranthine Shaper - Guidance -->
+		<production id="17416" count="1" /> <!-- Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="18957" count="1" /> <!-- Amaranthine Shaper - Haste -->
+		<production id="17416" count="1" /> <!-- Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="18958" count="1" /> <!-- Amaranthine Shaper - Focus -->
+		<production id="17416" count="1" /> <!-- Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="30190" count="1" /> <!-- Amaranthine Shaper - Guidance + Haste -->
+		<production id="17416" count="1" /> <!-- Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="30191" count="1" /> <!-- Amaranthine Shaper - Haste + Focus -->
+		<production id="17416" count="1" /> <!-- Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="30192" count="1" /> <!-- Amaranthine Shaper - Focus + Guidance -->
+		<production id="17416" count="1" /> <!-- Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="18959" count="1" /> <!-- Amaranthine Cutter - Haste -->
+		<production id="17417" count="1" /> <!-- Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="18960" count="1" /> <!-- Amaranthine Cutter - Focus -->
+		<production id="17417" count="1" /> <!-- Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="18961" count="1" /> <!-- Amaranthine Cutter - Health -->
+		<production id="17417" count="1" /> <!-- Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="30193" count="1" /> <!-- Amaranthine Cutter - Haste + Focus -->
+		<production id="17417" count="1" /> <!-- Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="30194" count="1" /> <!-- Amaranthine Cutter - Focus + Health -->
+		<production id="17417" count="1" /> <!-- Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="30195" count="1" /> <!-- Amaranthine Cutter - Health + Haste -->
+		<production id="17417" count="1" /> <!-- Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="18962" count="1" /> <!-- Amaranthine Slasher - Focus -->
+		<production id="17418" count="1" /> <!-- Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="18963" count="1" /> <!-- Amaranthine Slasher - Damage -->
+		<production id="17418" count="1" /> <!-- Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="18964" count="1" /> <!-- Amaranthine Slasher - Haste -->
+		<production id="17418" count="1" /> <!-- Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="30196" count="1" /> <!-- Amaranthine Slasher - Focus + Damage -->
+		<production id="17418" count="1" /> <!-- Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="30197" count="1" /> <!-- Amaranthine Slasher - Damage + Haste -->
+		<production id="17418" count="1" /> <!-- Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="30198" count="1" /> <!-- Amaranthine Slasher - Haste + Focus -->
+		<production id="17418" count="1" /> <!-- Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="18965" count="1" /> <!-- Amaranthine Avenger - Haste -->
+		<production id="17419" count="1" /> <!-- Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="18966" count="1" /> <!-- Amaranthine Avenger - Critical Damage -->
+		<production id="17419" count="1" /> <!-- Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="18967" count="1" /> <!-- Amaranthine Avenger - Focus -->
+		<production id="17419" count="1" /> <!-- Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="30199" count="1" /> <!-- Amaranthine Avenger - Haste + Critical Damage -->
+		<production id="17419" count="1" /> <!-- Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="30200" count="1" /> <!-- Amaranthine Avenger - Critical Damage + Focus -->
+		<production id="17419" count="1" /> <!-- Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="30201" count="1" /> <!-- Amaranthine Avenger - Focus + Haste -->
+		<production id="17419" count="1" /> <!-- Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="18968" count="1" /> <!-- Amaranthine Fighter - Focus -->
+		<production id="17420" count="1" /> <!-- Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="18969" count="1" /> <!-- Amaranthine Fighter - Damage -->
+		<production id="17420" count="1" /> <!-- Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="18970" count="1" /> <!-- Amaranthine Fighter - Haste -->
+		<production id="17420" count="1" /> <!-- Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="30202" count="1" /> <!-- Amaranthine Fighter - Focus + Damage -->
+		<production id="17420" count="1" /> <!-- Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="30203" count="1" /> <!-- Amaranthine Fighter - Damage + Haste -->
+		<production id="17420" count="1" /> <!-- Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="30204" count="1" /> <!-- Amaranthine Fighter - Haste + Focus -->
+		<production id="17420" count="1" /> <!-- Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="18971" count="1" /> <!-- Amaranthine Stormer - HP Drain -->
+		<production id="17421" count="1" /> <!-- Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="18972" count="1" /> <!-- Amaranthine Stormer - Guidance -->
+		<production id="17421" count="1" /> <!-- Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="18973" count="1" /> <!-- Amaranthine Stormer - Damage -->
+		<production id="17421" count="1" /> <!-- Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="30205" count="1" /> <!-- Amaranthine Stormer - HP Drain + Guidance -->
+		<production id="17421" count="1" /> <!-- Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="30206" count="1" /> <!-- Amaranthine Stormer - Guidance + Damage -->
+		<production id="17421" count="1" /> <!-- Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="30207" count="1" /> <!-- Amaranthine Stormer - Damage + HP Drain -->
+		<production id="17421" count="1" /> <!-- Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="18974" count="1" /> <!-- Amaranthine Thrower - Damage -->
+		<production id="17422" count="1" /> <!-- Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="18975" count="1" /> <!-- Amaranthine Thrower - Focus -->
+		<production id="17422" count="1" /> <!-- Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="18976" count="1" /> <!-- Amaranthine Thrower - Long Blow -->
+		<production id="17422" count="1" /> <!-- Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="30208" count="1" /> <!-- Amaranthine Thrower - Damage + Focus -->
+		<production id="17422" count="1" /> <!-- Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="30209" count="1" /> <!-- Amaranthine Thrower - Focus + Long Blow -->
+		<production id="17422" count="1" /> <!-- Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="30210" count="1" /> <!-- Amaranthine Thrower - Long Blow + Damage -->
+		<production id="17422" count="1" /> <!-- Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="18977" count="1" /> <!-- Amaranthine Shooter - Focus -->
+		<production id="17423" count="1" /> <!-- Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="18978" count="1" /> <!-- Amaranthine Shooter - Critical Slow -->
+		<production id="17423" count="1" /> <!-- Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="18979" count="1" /> <!-- Amaranthine Shooter - Haste -->
+		<production id="17423" count="1" /> <!-- Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="30211" count="1" /> <!-- Amaranthine Shooter - Focus + Critical Slow -->
+		<production id="17423" count="1" /> <!-- Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="30212" count="1" /> <!-- Amaranthine Shooter - Critical Slow + Haste -->
+		<production id="17423" count="1" /> <!-- Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="30213" count="1" /> <!-- Amaranthine Shooter - Haste + Focus -->
+		<production id="17423" count="1" /> <!-- Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="18980" count="1" /> <!-- Amaranthine Buster - Acumen -->
+		<production id="17424" count="1" /> <!-- Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="18981" count="1" /> <!-- Amaranthine Buster - Magic Hold -->
+		<production id="17424" count="1" /> <!-- Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="18982" count="1" /> <!-- Amaranthine Buster - Mana Up -->
+		<production id="17424" count="1" /> <!-- Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="30214" count="1" /> <!-- Amaranthine Buster - Acumen + Magic Hold -->
+		<production id="17424" count="1" /> <!-- Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="30215" count="1" /> <!-- Amaranthine Buster - Magic Hold + Mana Up -->
+		<production id="17424" count="1" /> <!-- Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="30216" count="1" /> <!-- Amaranthine Buster - Mana Up + Acumen -->
+		<production id="17424" count="1" /> <!-- Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="18983" count="1" /> <!-- Amaranthine Caster - Empower -->
+		<production id="17425" count="1" /> <!-- Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="18984" count="1" /> <!-- Amaranthine Caster - Acumen -->
+		<production id="17425" count="1" /> <!-- Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="18985" count="1" /> <!-- Amaranthine Caster - Magic Hold -->
+		<production id="17425" count="1" /> <!-- Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="30217" count="1" /> <!-- Amaranthine Caster - Empower + Acumen -->
+		<production id="17425" count="1" /> <!-- Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="30218" count="1" /> <!-- Amaranthine Caster - Acumen + Magic Hold -->
+		<production id="17425" count="1" /> <!-- Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="30219" count="1" /> <!-- Amaranthine Caster - Magic Hold + Empower -->
+		<production id="17425" count="1" /> <!-- Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="18986" count="1" /> <!-- Amaranthine Retributer - MP Regeneration -->
+		<production id="17426" count="1" /> <!-- Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="18987" count="1" /> <!-- Amaranthine Retributer - Acumen -->
+		<production id="17426" count="1" /> <!-- Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="18988" count="1" /> <!-- Amaranthine Retributer - Empower -->
+		<production id="17426" count="1" /> <!-- Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="30220" count="1" /> <!-- Amaranthine Retributer - MP Regeneration + Acumen -->
+		<production id="17426" count="1" /> <!-- Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="30221" count="1" /> <!-- Amaranthine Retributer - Acumen + Empower -->
+		<production id="17426" count="1" /> <!-- Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="30222" count="1" /> <!-- Amaranthine Retributer - Empower + MP Regeneration -->
+		<production id="17426" count="1" /> <!-- Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="18989" count="1" /> <!-- Amaranthine Dual Sword - Haste -->
+		<production id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18990" count="1" /> <!-- Amaranthine Dual Sword - Damage -->
+		<production id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18991" count="1" /> <!-- Amaranthine Dual Sword - Health -->
+		<production id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30223" count="1" /> <!-- Amaranthine Dual Sword - Haste + Damage -->
+		<production id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30224" count="1" /> <!-- Amaranthine Dual Sword - Damage + Health -->
+		<production id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30225" count="1" /> <!-- Amaranthine Dual Sword - Health + Haste -->
+		<production id="17427" count="1" /> <!-- Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18992" count="1" /> <!-- Amaranthine Dual Dagger - Damage -->
+		<production id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18993" count="1" /> <!-- Amaranthine Dual Dagger - Focus -->
+		<production id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18994" count="1" /> <!-- Amaranthine Dual Dagger - Guidance -->
+		<production id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30226" count="1" /> <!-- Amaranthine Dual Dagger - Damage + Focus -->
+		<production id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30227" count="1" /> <!-- Amaranthine Dual Dagger - Focus + Guidance -->
+		<production id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30228" count="1" /> <!-- Amaranthine Dual Dagger - Guidance + Damage -->
+		<production id="17428" count="1" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18995" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Focus -->
+		<production id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18996" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Guidance -->
+		<production id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18997" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Damage -->
+		<production id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30229" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<production id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30230" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Guidance + Damage -->
+		<production id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30231" count="1" /> <!-- Amaranthine Dual Blunt Weapon - Damage + Focus -->
+		<production id="17429" count="1" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19082" count="1" /> <!-- Blessed Celestial Shaper - Guidance -->
+		<production id="17450" count="1" /> <!-- Blessed Celestial Shaper -->
+	</item>
+	<item>
+		<ingredient id="19083" count="1" /> <!-- Blessed Celestial Shaper - Haste -->
+		<production id="17450" count="1" /> <!-- Blessed Celestial Shaper -->
+	</item>
+	<item>
+		<ingredient id="19084" count="1" /> <!-- Blessed Celestial Shaper - Focus -->
+		<production id="17450" count="1" /> <!-- Blessed Celestial Shaper -->
+	</item>
+	<item>
+		<ingredient id="19124" count="1" /> <!-- Blessed Celestial Shaper - Guidance + Haste -->
+		<production id="17450" count="1" /> <!-- Blessed Celestial Shaper -->
+	</item>
+	<item>
+		<ingredient id="19125" count="1" /> <!-- Blessed Celestial Shaper - Haste + Focus -->
+		<production id="17450" count="1" /> <!-- Blessed Celestial Shaper -->
+	</item>
+	<item>
+		<ingredient id="19126" count="1" /> <!-- Blessed Celestial Shaper - Focus + Guidance -->
+		<production id="17450" count="1" /> <!-- Blessed Celestial Shaper -->
+	</item>
+	<item>
+		<ingredient id="19085" count="1" /> <!-- Blessed Celestial Cutter - Haste -->
+		<production id="17451" count="1" /> <!-- Blessed Celestial Cutter -->
+	</item>
+	<item>
+		<ingredient id="19086" count="1" /> <!-- Blessed Celestial Cutter - Focus -->
+		<production id="17451" count="1" /> <!-- Blessed Celestial Cutter -->
+	</item>
+	<item>
+		<ingredient id="19087" count="1" /> <!-- Blessed Celestial Cutter - Health -->
+		<production id="17451" count="1" /> <!-- Blessed Celestial Cutter -->
+	</item>
+	<item>
+		<ingredient id="19127" count="1" /> <!-- Blessed Celestial Cutter - Haste + Focus -->
+		<production id="17451" count="1" /> <!-- Blessed Celestial Cutter -->
+	</item>
+	<item>
+		<ingredient id="19128" count="1" /> <!-- Blessed Celestial Cutter - Focus + Health -->
+		<production id="17451" count="1" /> <!-- Blessed Celestial Cutter -->
+	</item>
+	<item>
+		<ingredient id="19129" count="1" /> <!-- Blessed Celestial Cutter - Health + Haste -->
+		<production id="17451" count="1" /> <!-- Blessed Celestial Cutter -->
+	</item>
+	<item>
+		<ingredient id="19088" count="1" /> <!-- Blessed Celestial Slasher - Focus -->
+		<production id="17452" count="1" /> <!-- Blessed Celestial Slasher -->
+	</item>
+	<item>
+		<ingredient id="19089" count="1" /> <!-- Blessed Celestial Slasher - Damage -->
+		<production id="17452" count="1" /> <!-- Blessed Celestial Slasher -->
+	</item>
+	<item>
+		<ingredient id="19090" count="1" /> <!-- Blessed Celestial Slasher - Haste -->
+		<production id="17452" count="1" /> <!-- Blessed Celestial Slasher -->
+	</item>
+	<item>
+		<ingredient id="19130" count="1" /> <!-- Blessed Celestial Slasher - Focus + Damage Up -->
+		<production id="17452" count="1" /> <!-- Blessed Celestial Slasher -->
+	</item>
+	<item>
+		<ingredient id="19131" count="1" /> <!-- Blessed Celestial Slasher - Damage + Haste -->
+		<production id="17452" count="1" /> <!-- Blessed Celestial Slasher -->
+	</item>
+	<item>
+		<ingredient id="19132" count="1" /> <!-- Blessed Celestial Slasher - Haste + Focus -->
+		<production id="17452" count="1" /> <!-- Blessed Celestial Slasher -->
+	</item>
+	<item>
+		<ingredient id="19091" count="1" /> <!-- Blessed Celestial Avenger - Haste -->
+		<production id="17453" count="1" /> <!-- Blessed Celestial Avenger -->
+	</item>
+	<item>
+		<ingredient id="19092" count="1" /> <!-- Blessed Celestial Avenger - Critical Damage -->
+		<production id="17453" count="1" /> <!-- Blessed Celestial Avenger -->
+	</item>
+	<item>
+		<ingredient id="19093" count="1" /> <!-- Blessed Celestial Avenger - Focus -->
+		<production id="17453" count="1" /> <!-- Blessed Celestial Avenger -->
+	</item>
+	<item>
+		<ingredient id="19133" count="1" /> <!-- Blessed Celestial Avenger - Haste + Critical Damage -->
+		<production id="17453" count="1" /> <!-- Blessed Celestial Avenger -->
+	</item>
+	<item>
+		<ingredient id="19134" count="1" /> <!-- Blessed Celestial Avenger - Critical Damage + Focus -->
+		<production id="17453" count="1" /> <!-- Blessed Celestial Avenger -->
+	</item>
+	<item>
+		<ingredient id="19135" count="1" /> <!-- Blessed Celestial Avenger - Focus + Haste -->
+		<production id="17453" count="1" /> <!-- Blessed Celestial Avenger -->
+	</item>
+	<item>
+		<ingredient id="19094" count="1" /> <!-- Blessed Celestial Fighter - Focus -->
+		<production id="17454" count="1" /> <!-- Blessed Celestial Fighter -->
+	</item>
+	<item>
+		<ingredient id="19095" count="1" /> <!-- Blessed Celestial Fighter - Damage -->
+		<production id="17454" count="1" /> <!-- Blessed Celestial Fighter -->
+	</item>
+	<item>
+		<ingredient id="19096" count="1" /> <!-- Blessed Celestial Fighter - Haste -->
+		<production id="17454" count="1" /> <!-- Blessed Celestial Fighter -->
+	</item>
+	<item>
+		<ingredient id="19136" count="1" /> <!-- Blessed Celestial Fighter - Focus + Damage Up -->
+		<production id="17454" count="1" /> <!-- Blessed Celestial Fighter -->
+	</item>
+	<item>
+		<ingredient id="19137" count="1" /> <!-- Blessed Celestial Fighter - Damage + Haste -->
+		<production id="17454" count="1" /> <!-- Blessed Celestial Fighter -->
+	</item>
+	<item>
+		<ingredient id="19138" count="1" /> <!-- Blessed Celestial Fighter - Haste + Focus -->
+		<production id="17454" count="1" /> <!-- Blessed Celestial Fighter -->
+	</item>
+	<item>
+		<ingredient id="19097" count="1" /> <!-- Blessed Celestial Stormer - HP Drain -->
+		<production id="17455" count="1" /> <!-- Blessed Celestial Stormer -->
+	</item>
+	<item>
+		<ingredient id="19098" count="1" /> <!-- Blessed Celestial Stormer - Guidance -->
+		<production id="17455" count="1" /> <!-- Blessed Celestial Stormer -->
+	</item>
+	<item>
+		<ingredient id="19099" count="1" /> <!-- Blessed Celestial Stormer - Damage -->
+		<production id="17455" count="1" /> <!-- Blessed Celestial Stormer -->
+	</item>
+	<item>
+		<ingredient id="19139" count="1" /> <!-- Blessed Celestial Stormer - HP Drain + Guidance -->
+		<production id="17455" count="1" /> <!-- Blessed Celestial Stormer -->
+	</item>
+	<item>
+		<ingredient id="19140" count="1" /> <!-- Blessed Celestial Stormer - Guidance + Damage -->
+		<production id="17455" count="1" /> <!-- Blessed Celestial Stormer -->
+	</item>
+	<item>
+		<ingredient id="19141" count="1" /> <!-- Blessed Celestial Stormer - Damage + HP Drain -->
+		<production id="17455" count="1" /> <!-- Blessed Celestial Stormer -->
+	</item>
+	<item>
+		<ingredient id="19100" count="1" /> <!-- Blessed Celestial Thrower - Damage -->
+		<production id="17456" count="1" /> <!-- Blessed Celestial Thrower -->
+	</item>
+	<item>
+		<ingredient id="19101" count="1" /> <!-- Blessed Celestial Thrower - Focus -->
+		<production id="17456" count="1" /> <!-- Blessed Celestial Thrower -->
+	</item>
+	<item>
+		<ingredient id="19102" count="1" /> <!-- Blessed Celestial Thrower - Long Blow -->
+		<production id="17456" count="1" /> <!-- Blessed Celestial Thrower -->
+	</item>
+	<item>
+		<ingredient id="19142" count="1" /> <!-- Blessed Celestial Thrower - Damage + Focus -->
+		<production id="17456" count="1" /> <!-- Blessed Celestial Thrower -->
+	</item>
+	<item>
+		<ingredient id="19143" count="1" /> <!-- Blessed Celestial Thrower - Focus + Long Blow -->
+		<production id="17456" count="1" /> <!-- Blessed Celestial Thrower -->
+	</item>
+	<item>
+		<ingredient id="19144" count="1" /> <!-- Blessed Celestial Thrower - Long Blow + Damage -->
+		<production id="17456" count="1" /> <!-- Blessed Celestial Thrower -->
+	</item>
+	<item>
+		<ingredient id="19103" count="1" /> <!-- Blessed Celestial Shooter - Focus -->
+		<production id="17457" count="1" /> <!-- Blessed Celestial Shooter -->
+	</item>
+	<item>
+		<ingredient id="19104" count="1" /> <!-- Blessed Celestial Shooter - Critical Slow -->
+		<production id="17457" count="1" /> <!-- Blessed Celestial Shooter -->
+	</item>
+	<item>
+		<ingredient id="19105" count="1" /> <!-- Blessed Celestial Shooter - Haste -->
+		<production id="17457" count="1" /> <!-- Blessed Celestial Shooter -->
+	</item>
+	<item>
+		<ingredient id="19145" count="1" /> <!-- Blessed Celestial Shooter - Focus + Critical Slow -->
+		<production id="17457" count="1" /> <!-- Blessed Celestial Shooter -->
+	</item>
+	<item>
+		<ingredient id="19146" count="1" /> <!-- Blessed Celestial Shooter - Critical Slow + Haste -->
+		<production id="17457" count="1" /> <!-- Blessed Celestial Shooter -->
+	</item>
+	<item>
+		<ingredient id="19147" count="1" /> <!-- Blessed Celestial Shooter - Haste + Focus -->
+		<production id="17457" count="1" /> <!-- Blessed Celestial Shooter -->
+	</item>
+	<item>
+		<ingredient id="19106" count="1" /> <!-- Blessed Celestial Buster - Acumen -->
+		<production id="17458" count="1" /> <!-- Blessed Celestial Buster -->
+	</item>
+	<item>
+		<ingredient id="19107" count="1" /> <!-- Blessed Celestial Buster - Magic Hold -->
+		<production id="17458" count="1" /> <!-- Blessed Celestial Buster -->
+	</item>
+	<item>
+		<ingredient id="19108" count="1" /> <!-- Blessed Celestial Buster - Mana Up -->
+		<production id="17458" count="1" /> <!-- Blessed Celestial Buster -->
+	</item>
+	<item>
+		<ingredient id="19148" count="1" /> <!-- Blessed Celestial Buster - Acumen + Magic Hold -->
+		<production id="17458" count="1" /> <!-- Blessed Celestial Buster -->
+	</item>
+	<item>
+		<ingredient id="19149" count="1" /> <!-- Blessed Celestial Buster - Magic Hold + Mana Up -->
+		<production id="17458" count="1" /> <!-- Blessed Celestial Buster -->
+	</item>
+	<item>
+		<ingredient id="19150" count="1" /> <!-- Blessed Celestial Buster - Mana Up + Acumen -->
+		<production id="17458" count="1" /> <!-- Blessed Celestial Buster -->
+	</item>
+	<item>
+		<ingredient id="19109" count="1" /> <!-- Blessed Celestial Caster - Empower -->
+		<production id="17459" count="1" /> <!-- Blessed Celestial Caster -->
+	</item>
+	<item>
+		<ingredient id="19110" count="1" /> <!-- Blessed Celestial Caster - Acumen -->
+		<production id="17459" count="1" /> <!-- Blessed Celestial Caster -->
+	</item>
+	<item>
+		<ingredient id="19111" count="1" /> <!-- Blessed Celestial Caster - Magic Hold -->
+		<production id="17459" count="1" /> <!-- Blessed Celestial Caster -->
+	</item>
+	<item>
+		<ingredient id="19151" count="1" /> <!-- Blessed Celestial Caster - Empower + Acumen -->
+		<production id="17459" count="1" /> <!-- Blessed Celestial Caster -->
+	</item>
+	<item>
+		<ingredient id="19152" count="1" /> <!-- Blessed Celestial Caster - Acumen + Magic Hold -->
+		<production id="17459" count="1" /> <!-- Blessed Celestial Caster -->
+	</item>
+	<item>
+		<ingredient id="19153" count="1" /> <!-- Blessed Celestial Caster - Magic Hold + Empower -->
+		<production id="17459" count="1" /> <!-- Blessed Celestial Caster -->
+	</item>
+	<item>
+		<ingredient id="19112" count="1" /> <!-- Blessed Celestial Retributer - MP Regeneration -->
+		<production id="17460" count="1" /> <!-- Blessed Celestial Retributer -->
+	</item>
+	<item>
+		<ingredient id="19113" count="1" /> <!-- Blessed Celestial Retributer - Acumen -->
+		<production id="17460" count="1" /> <!-- Blessed Celestial Retributer -->
+	</item>
+	<item>
+		<ingredient id="19114" count="1" /> <!-- Blessed Celestial Retributer - Empower -->
+		<production id="17460" count="1" /> <!-- Blessed Celestial Retributer -->
+	</item>
+	<item>
+		<ingredient id="19154" count="1" /> <!-- Blessed Celestial Retributer - MP Regeneration + Acumen -->
+		<production id="17460" count="1" /> <!-- Blessed Celestial Retributer -->
+	</item>
+	<item>
+		<ingredient id="19155" count="1" /> <!-- Blessed Celestial Retributer - Acumen + Empower -->
+		<production id="17460" count="1" /> <!-- Blessed Celestial Retributer -->
+	</item>
+	<item>
+		<ingredient id="19156" count="1" /> <!-- Blessed Celestial Retributer - Empower + MP Regeneration -->
+		<production id="17460" count="1" /> <!-- Blessed Celestial Retributer -->
+	</item>
+	<item>
+		<ingredient id="19115" count="1" /> <!-- Blessed Celestial Dual Sword - Haste -->
+		<production id="17461" count="1" /> <!-- Blessed Celestial Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19116" count="1" /> <!-- Blessed Celestial Dual Sword - Damage -->
+		<production id="17461" count="1" /> <!-- Blessed Celestial Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19117" count="1" /> <!-- Blessed Celestial Dual Sword - Health -->
+		<production id="17461" count="1" /> <!-- Blessed Celestial Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19157" count="1" /> <!-- Blessed Celestial Dual Sword - Haste + Damage -->
+		<production id="17461" count="1" /> <!-- Blessed Celestial Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19158" count="1" /> <!-- Blessed Celestial Dual Sword - Damage + Health -->
+		<production id="17461" count="1" /> <!-- Blessed Celestial Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19159" count="1" /> <!-- Blessed Celestial Dual Sword - Health + Haste -->
+		<production id="17461" count="1" /> <!-- Blessed Celestial Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19118" count="1" /> <!-- Blessed Celestial Dual Dagger - Damage -->
+		<production id="17462" count="1" /> <!-- Blessed Celestial Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19119" count="1" /> <!-- Blessed Celestial Dual Dagger - Focus -->
+		<production id="17462" count="1" /> <!-- Blessed Celestial Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19120" count="1" /> <!-- Blessed Celestial Dual Dagger - Guidance -->
+		<production id="17462" count="1" /> <!-- Blessed Celestial Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19160" count="1" /> <!-- Blessed Celestial Dual Dagger - Damage + Focus -->
+		<production id="17462" count="1" /> <!-- Blessed Celestial Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19161" count="1" /> <!-- Blessed Celestial Dual Dagger - Focus + Guidance -->
+		<production id="17462" count="1" /> <!-- Blessed Celestial Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19162" count="1" /> <!-- Blessed Celestial Dual Dagger - Guidance + Damage -->
+		<production id="17462" count="1" /> <!-- Blessed Celestial Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19121" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon - Focus -->
+		<production id="17463" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19122" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon - Guidance -->
+		<production id="17463" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19123" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon - Damage -->
+		<production id="17463" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19163" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon - Focus + Guidance -->
+		<production id="17463" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19164" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon - Guidance + Damage -->
+		<production id="17463" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19165" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon - Damage + Focus -->
+		<production id="17463" count="1" /> <!-- Blessed Celestial Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18620" count="1" /> <!-- Bound Requiem Shaper - Guidance -->
+		<production id="17831" count="1" /> <!-- Bound Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18621" count="1" /> <!-- Bound Requiem Shaper - Haste -->
+		<production id="17831" count="1" /> <!-- Bound Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18622" count="1" /> <!-- Bound Requiem Shaper - Focus -->
+		<production id="17831" count="1" /> <!-- Bound Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18623" count="1" /> <!-- Bound Requiem Cutter - Haste -->
+		<production id="17832" count="1" /> <!-- Bound Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18624" count="1" /> <!-- Bound Requiem Cutter - Focus -->
+		<production id="17832" count="1" /> <!-- Bound Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18625" count="1" /> <!-- Bound Requiem Cutter - Health -->
+		<production id="17832" count="1" /> <!-- Bound Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18626" count="1" /> <!-- Bound Requiem Slasher - Focus -->
+		<production id="17833" count="1" /> <!-- Bound Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18627" count="1" /> <!-- Bound Requiem Slasher - Damage -->
+		<production id="17833" count="1" /> <!-- Bound Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18628" count="1" /> <!-- Bound Requiem Slasher - Haste -->
+		<production id="17833" count="1" /> <!-- Bound Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18629" count="1" /> <!-- Bound Requiem Avenger - Haste -->
+		<production id="17834" count="1" /> <!-- Bound Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18630" count="1" /> <!-- Bound Requiem Avenger - Critical Damage -->
+		<production id="17834" count="1" /> <!-- Bound Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18631" count="1" /> <!-- Bound Requiem Avenger - Focus -->
+		<production id="17834" count="1" /> <!-- Bound Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18632" count="1" /> <!-- Bound Requiem Fighter - Focus -->
+		<production id="17835" count="1" /> <!-- Bound Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18633" count="1" /> <!-- Bound Requiem Fighter - Damage -->
+		<production id="17835" count="1" /> <!-- Bound Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18634" count="1" /> <!-- Bound Requiem Fighter - Haste -->
+		<production id="17835" count="1" /> <!-- Bound Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18635" count="1" /> <!-- Bound Requiem Stormer - HP Drain -->
+		<production id="17836" count="1" /> <!-- Bound Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18636" count="1" /> <!-- Bound Requiem Stormer - Guidance -->
+		<production id="17836" count="1" /> <!-- Bound Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18637" count="1" /> <!-- Bound Requiem Stormer - Damage -->
+		<production id="17836" count="1" /> <!-- Bound Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18638" count="1" /> <!-- Bound Requiem Thrower - Damage -->
+		<production id="17837" count="1" /> <!-- Bound Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18639" count="1" /> <!-- Bound Requiem Thrower - Focus -->
+		<production id="17837" count="1" /> <!-- Bound Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18640" count="1" /> <!-- Bound Requiem Thrower - Long Blow -->
+		<production id="17837" count="1" /> <!-- Bound Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18641" count="1" /> <!-- Bound Requiem Shooter - Focus -->
+		<production id="17838" count="1" /> <!-- Bound Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18642" count="1" /> <!-- Bound Requiem Shooter - Critical Slow -->
+		<production id="17838" count="1" /> <!-- Bound Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18643" count="1" /> <!-- Bound Requiem Shooter - Haste -->
+		<production id="17838" count="1" /> <!-- Bound Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18644" count="1" /> <!-- Bound Requiem Buster - Acumen -->
+		<production id="17839" count="1" /> <!-- Bound Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18645" count="1" /> <!-- Bound Requiem Buster - Magic Hold -->
+		<production id="17839" count="1" /> <!-- Bound Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18646" count="1" /> <!-- Bound Requiem Buster - Mana Up -->
+		<production id="17839" count="1" /> <!-- Bound Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18647" count="1" /> <!-- Bound Requiem Caster - Empower -->
+		<production id="17840" count="1" /> <!-- Bound Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18648" count="1" /> <!-- Bound Requiem Caster - Acumen -->
+		<production id="17840" count="1" /> <!-- Bound Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18649" count="1" /> <!-- Bound Requiem Caster - Magic Hold -->
+		<production id="17840" count="1" /> <!-- Bound Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18650" count="1" /> <!-- Bound Requiem Retributer - MP Regeneration -->
+		<production id="17841" count="1" /> <!-- Bound Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18651" count="1" /> <!-- Bound Requiem Retributer - Acumen -->
+		<production id="17841" count="1" /> <!-- Bound Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18652" count="1" /> <!-- Bound Requiem Retributer - Empower -->
+		<production id="17841" count="1" /> <!-- Bound Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18653" count="1" /> <!-- Bound Requiem Dual Sword - Haste -->
+		<production id="17842" count="1" /> <!-- Bound Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18654" count="1" /> <!-- Bound Requiem Dual Sword - Damage -->
+		<production id="17842" count="1" /> <!-- Bound Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18655" count="1" /> <!-- Bound Requiem Dual Sword - Health -->
+		<production id="17842" count="1" /> <!-- Bound Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18656" count="1" /> <!-- Bound Requiem Dual Dagger - Damage -->
+		<production id="17843" count="1" /> <!-- Bound Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18657" count="1" /> <!-- Bound Requiem Dual Dagger - Focus -->
+		<production id="17843" count="1" /> <!-- Bound Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18658" count="1" /> <!-- Bound Requiem Dual Dagger - Guidance -->
+		<production id="17843" count="1" /> <!-- Bound Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18659" count="1" /> <!-- Bound Requiem Dual Blunt Weapon Weapon - Focus -->
+		<production id="17844" count="1" /> <!-- Bound Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18660" count="1" /> <!-- Bound Requiem Dual Blunt Weapon Weapon - Guidance -->
+		<production id="17844" count="1" /> <!-- Bound Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18661" count="1" /> <!-- Bound Requiem Dual Blunt Weapon Weapon - Damage -->
+		<production id="17844" count="1" /> <!-- Bound Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18746" count="1" /> <!-- Bound Apocalypse Shaper - Guidance -->
+		<production id="17865" count="1" /> <!-- Bound Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18747" count="1" /> <!-- Bound Apocalypse Shaper - Haste -->
+		<production id="17865" count="1" /> <!-- Bound Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18748" count="1" /> <!-- Bound Apocalypse Shaper - Focus -->
+		<production id="17865" count="1" /> <!-- Bound Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18749" count="1" /> <!-- Bound Apocalypse Cutter - Haste -->
+		<production id="17866" count="1" /> <!-- Bound Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18750" count="1" /> <!-- Bound Apocalypse Cutter - Focus -->
+		<production id="17866" count="1" /> <!-- Bound Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18751" count="1" /> <!-- Bound Apocalypse Cutter - Health -->
+		<production id="17866" count="1" /> <!-- Bound Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18752" count="1" /> <!-- Bound Apocalypse Slasher - Focus -->
+		<production id="17867" count="1" /> <!-- Bound Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18753" count="1" /> <!-- Bound Apocalypse Slasher - Damage -->
+		<production id="17867" count="1" /> <!-- Bound Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18754" count="1" /> <!-- Bound Apocalypse Slasher - Haste -->
+		<production id="17867" count="1" /> <!-- Bound Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18755" count="1" /> <!-- Bound Apocalypse Avenger - Haste -->
+		<production id="17868" count="1" /> <!-- Bound Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18756" count="1" /> <!-- Bound Apocalypse Avenger - Critical Damage -->
+		<production id="17868" count="1" /> <!-- Bound Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18757" count="1" /> <!-- Bound Apocalypse Avenger - Focus -->
+		<production id="17868" count="1" /> <!-- Bound Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18758" count="1" /> <!-- Bound Apocalypse Fighter - Focus -->
+		<production id="17869" count="1" /> <!-- Bound Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18759" count="1" /> <!-- Bound Apocalypse Fighter - Damage -->
+		<production id="17869" count="1" /> <!-- Bound Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18760" count="1" /> <!-- Bound Apocalypse Fighter - Haste -->
+		<production id="17869" count="1" /> <!-- Bound Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18761" count="1" /> <!-- Bound Apocalypse Stormer - HP Drain -->
+		<production id="17870" count="1" /> <!-- Bound Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18762" count="1" /> <!-- Bound Apocalypse Stormer - Guidance -->
+		<production id="17870" count="1" /> <!-- Bound Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18763" count="1" /> <!-- Bound Apocalypse Stormer - Damage -->
+		<production id="17870" count="1" /> <!-- Bound Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18764" count="1" /> <!-- Bound Apocalypse Thrower - Damage -->
+		<production id="17871" count="1" /> <!-- Bound Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18765" count="1" /> <!-- Bound Apocalypse Thrower - Focus -->
+		<production id="17871" count="1" /> <!-- Bound Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18766" count="1" /> <!-- Bound Apocalypse Thrower - Long Blow -->
+		<production id="17871" count="1" /> <!-- Bound Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18767" count="1" /> <!-- Bound Apocalypse Shooter - Focus -->
+		<production id="17872" count="1" /> <!-- Bound Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18768" count="1" /> <!-- Bound Apocalypse Shooter - Critical Slow -->
+		<production id="17872" count="1" /> <!-- Bound Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18769" count="1" /> <!-- Bound Apocalypse Shooter - Haste -->
+		<production id="17872" count="1" /> <!-- Bound Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18770" count="1" /> <!-- Bound Apocalypse Buster - Acumen -->
+		<production id="17873" count="1" /> <!-- Bound Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18771" count="1" /> <!-- Bound Apocalypse Buster - Magic Hold -->
+		<production id="17873" count="1" /> <!-- Bound Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18772" count="1" /> <!-- Bound Apocalypse Buster - Mana Up -->
+		<production id="17873" count="1" /> <!-- Bound Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18773" count="1" /> <!-- Bound Apocalypse Caster - Empower -->
+		<production id="17874" count="1" /> <!-- Bound Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18774" count="1" /> <!-- Bound Apocalypse Caster - Acumen -->
+		<production id="17874" count="1" /> <!-- Bound Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18775" count="1" /> <!-- Bound Apocalypse Caster - Magic Hold -->
+		<production id="17874" count="1" /> <!-- Bound Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18776" count="1" /> <!-- Bound Apocalypse Retributer - MP Regeneration -->
+		<production id="17875" count="1" /> <!-- Bound Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18777" count="1" /> <!-- Bound Apocalypse Retributer - Acumen -->
+		<production id="17875" count="1" /> <!-- Bound Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18778" count="1" /> <!-- Bound Apocalypse Retributer - Empower -->
+		<production id="17875" count="1" /> <!-- Bound Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18779" count="1" /> <!-- Bound Apocalypse Dual sword - Haste -->
+		<production id="17876" count="1" /> <!-- Bound Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="18780" count="1" /> <!-- Bound Apocalypse Dual sword - Damage -->
+		<production id="17876" count="1" /> <!-- Bound Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="18781" count="1" /> <!-- Bound Apocalypse Dual sword - Health -->
+		<production id="17876" count="1" /> <!-- Bound Apocalypse Dual sword -->
+	</item>
+	<item>
+		<ingredient id="18782" count="1" /> <!-- Bound Apocalypse Dual Dagger - Damage -->
+		<production id="17877" count="1" /> <!-- Bound Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18783" count="1" /> <!-- Bound Apocalypse Dual Dagger - Focus -->
+		<production id="17877" count="1" /> <!-- Bound Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18784" count="1" /> <!-- Bound Apocalypse Dual Dagger - Guidance -->
+		<production id="17877" count="1" /> <!-- Bound Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18785" count="1" /> <!-- Bound Apocalypse Dual Blunt Weapon - Focus -->
+		<production id="17878" count="1" /> <!-- Bound Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18786" count="1" /> <!-- Bound Apocalypse Dual Blunt Weapon - Guidance -->
+		<production id="17878" count="1" /> <!-- Bound Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18787" count="1" /> <!-- Bound Apocalypse Dual Blunt Weapon - Damage -->
+		<production id="17878" count="1" /> <!-- Bound Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18872" count="1" /> <!-- Bound Specter Shaper - Guidance -->
+		<production id="17899" count="1" /> <!-- Bound Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18873" count="1" /> <!-- Bound Specter Shaper - Haste -->
+		<production id="17899" count="1" /> <!-- Bound Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18874" count="1" /> <!-- Bound Specter Shaper - Focus -->
+		<production id="17899" count="1" /> <!-- Bound Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18875" count="1" /> <!-- Bound Specter Cutter - Haste -->
+		<production id="17900" count="1" /> <!-- Bound Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18876" count="1" /> <!-- Bound Specter Cutter - Focus -->
+		<production id="17900" count="1" /> <!-- Bound Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18877" count="1" /> <!-- Bound Specter Cutter - Health -->
+		<production id="17900" count="1" /> <!-- Bound Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18878" count="1" /> <!-- Bound Specter Slasher - Focus -->
+		<production id="17901" count="1" /> <!-- Bound Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18879" count="1" /> <!-- Bound Specter Slasher - Damage -->
+		<production id="17901" count="1" /> <!-- Bound Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18880" count="1" /> <!-- Bound Specter Slasher - Haste -->
+		<production id="17901" count="1" /> <!-- Bound Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18881" count="1" /> <!-- Bound Specter Avenger - Haste -->
+		<production id="17902" count="1" /> <!-- Bound Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18882" count="1" /> <!-- Bound Specter Avenger - Critical Damage -->
+		<production id="17902" count="1" /> <!-- Bound Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18883" count="1" /> <!-- Bound Specter Avenger - Focus -->
+		<production id="17902" count="1" /> <!-- Bound Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18884" count="1" /> <!-- Bound Specter Fighter - Focus -->
+		<production id="17903" count="1" /> <!-- Bound Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18885" count="1" /> <!-- Bound Specter Fighter - Damage -->
+		<production id="17903" count="1" /> <!-- Bound Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18886" count="1" /> <!-- Bound Specter Fighter - Haste -->
+		<production id="17903" count="1" /> <!-- Bound Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18887" count="1" /> <!-- Bound Specter Stormer - HP Drain -->
+		<production id="17904" count="1" /> <!-- Bound Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18888" count="1" /> <!-- Bound Specter Stormer - Guidance -->
+		<production id="17904" count="1" /> <!-- Bound Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18889" count="1" /> <!-- Bound Specter Stormer - Damage -->
+		<production id="17904" count="1" /> <!-- Bound Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18890" count="1" /> <!-- Bound Specter Thrower - Damage -->
+		<production id="17905" count="1" /> <!-- Bound Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18891" count="1" /> <!-- Bound Specter Thrower - Focus -->
+		<production id="17905" count="1" /> <!-- Bound Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18892" count="1" /> <!-- Bound Specter Thrower - Long Blow -->
+		<production id="17905" count="1" /> <!-- Bound Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18893" count="1" /> <!-- Bound Specter Shooter - Focus -->
+		<production id="17906" count="1" /> <!-- Bound Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18894" count="1" /> <!-- Bound Specter Shooter - Critical Slow -->
+		<production id="17906" count="1" /> <!-- Bound Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18895" count="1" /> <!-- Bound Specter Shooter - Haste -->
+		<production id="17906" count="1" /> <!-- Bound Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18896" count="1" /> <!-- Bound Specter Buster - Acumen -->
+		<production id="17907" count="1" /> <!-- Bound Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18897" count="1" /> <!-- Bound Specter Buster - Magic Hold -->
+		<production id="17907" count="1" /> <!-- Bound Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18898" count="1" /> <!-- Bound Specter Buster - Mana Up -->
+		<production id="17907" count="1" /> <!-- Bound Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18899" count="1" /> <!-- Bound Specter Caster - Empower -->
+		<production id="17908" count="1" /> <!-- Bound Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18900" count="1" /> <!-- Bound Specter Caster - Acumen -->
+		<production id="17908" count="1" /> <!-- Bound Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18901" count="1" /> <!-- Bound Specter Caster - Magic Hold -->
+		<production id="17908" count="1" /> <!-- Bound Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18902" count="1" /> <!-- Bound Specter Retributer - MP Regeneration -->
+		<production id="17909" count="1" /> <!-- Bound Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18903" count="1" /> <!-- Bound Specter Retributer - Acumen -->
+		<production id="17909" count="1" /> <!-- Bound Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18904" count="1" /> <!-- Bound Specter Retributer - Empower -->
+		<production id="17909" count="1" /> <!-- Bound Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18905" count="1" /> <!-- Bound Specter Dual Sword - Haste -->
+		<production id="17910" count="1" /> <!-- Bound Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18906" count="1" /> <!-- Bound Specter Dual Sword - Damage -->
+		<production id="17910" count="1" /> <!-- Bound Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18907" count="1" /> <!-- Bound Specter Dual Sword - Health -->
+		<production id="17910" count="1" /> <!-- Bound Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18908" count="1" /> <!-- Bound Specter Dual Dagger - Damage -->
+		<production id="17911" count="1" /> <!-- Bound Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18909" count="1" /> <!-- Bound Specter Dual Dagger - Focus -->
+		<production id="17911" count="1" /> <!-- Bound Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18910" count="1" /> <!-- Bound Specter Dual Dagger - Guidance -->
+		<production id="17911" count="1" /> <!-- Bound Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18911" count="1" /> <!-- Bound Specter Dual Blunt Weapon - Focus -->
+		<production id="17912" count="1" /> <!-- Bound Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18912" count="1" /> <!-- Bound Specter Dual Blunt Weapon - Guidance -->
+		<production id="17912" count="1" /> <!-- Bound Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18913" count="1" /> <!-- Bound Specter Dual Blunt Weapon - Damage -->
+		<production id="17912" count="1" /> <!-- Bound Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18998" count="1" /> <!-- Bound Amaranthine Shaper - Guidance -->
+		<production id="17933" count="1" /> <!-- Bound Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="18999" count="1" /> <!-- Bound Amaranthine Shaper - Haste -->
+		<production id="17933" count="1" /> <!-- Bound Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="19000" count="1" /> <!-- Bound Amaranthine Shaper - Focus -->
+		<production id="17933" count="1" /> <!-- Bound Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient id="19001" count="1" /> <!-- Bound Amaranthine Cutter - Haste -->
+		<production id="17934" count="1" /> <!-- Bound Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="19002" count="1" /> <!-- Bound Amaranthine Cutter - Focus -->
+		<production id="17934" count="1" /> <!-- Bound Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="19003" count="1" /> <!-- Bound Amaranthine Cutter - Health -->
+		<production id="17934" count="1" /> <!-- Bound Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="19004" count="1" /> <!-- Bound Amaranthine Slasher - Focus -->
+		<production id="17935" count="1" /> <!-- Bound Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="19005" count="1" /> <!-- Bound Amaranthine Slasher - Damage -->
+		<production id="17935" count="1" /> <!-- Bound Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="19006" count="1" /> <!-- Bound Amaranthine Slasher - Haste -->
+		<production id="17935" count="1" /> <!-- Bound Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="19007" count="1" /> <!-- Bound Amaranthine Avenger - Haste -->
+		<production id="17936" count="1" /> <!-- Bound Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="19008" count="1" /> <!-- Bound Amaranthine Avenger - Critical Damage -->
+		<production id="17936" count="1" /> <!-- Bound Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="19009" count="1" /> <!-- Bound Amaranthine Avenger - Focus -->
+		<production id="17936" count="1" /> <!-- Bound Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="19010" count="1" /> <!-- Bound Amaranthine Fighter - Focus -->
+		<production id="17937" count="1" /> <!-- Bound Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="19011" count="1" /> <!-- Bound Amaranthine Fighter - Damage -->
+		<production id="17937" count="1" /> <!-- Bound Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="19012" count="1" /> <!-- Bound Amaranthine Fighter - Haste -->
+		<production id="17937" count="1" /> <!-- Bound Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="19013" count="1" /> <!-- Bound Amaranthine Stormer - HP Drain -->
+		<production id="17938" count="1" /> <!-- Bound Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="19014" count="1" /> <!-- Bound Amaranthine Stormer - Guidance -->
+		<production id="17938" count="1" /> <!-- Bound Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="19015" count="1" /> <!-- Bound Amaranthine Stormer - Damage -->
+		<production id="17938" count="1" /> <!-- Bound Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="19016" count="1" /> <!-- Bound Amaranthine Thrower - Damage -->
+		<production id="17939" count="1" /> <!-- Bound Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="19017" count="1" /> <!-- Bound Amaranthine Thrower - Focus -->
+		<production id="17939" count="1" /> <!-- Bound Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="19018" count="1" /> <!-- Bound Amaranthine Thrower - Long Blow -->
+		<production id="17939" count="1" /> <!-- Bound Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="19019" count="1" /> <!-- Bound Amaranthine Shooter - Focus -->
+		<production id="17940" count="1" /> <!-- Bound Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="19020" count="1" /> <!-- Bound Amaranthine Shooter - Critical Slow -->
+		<production id="17940" count="1" /> <!-- Bound Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="19021" count="1" /> <!-- Bound Amaranthine Shooter - Haste -->
+		<production id="17940" count="1" /> <!-- Bound Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="19022" count="1" /> <!-- Bound Amaranthine Buster - Acumen -->
+		<production id="17941" count="1" /> <!-- Bound Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="19023" count="1" /> <!-- Bound Amaranthine Buster - Magic Hold -->
+		<production id="17941" count="1" /> <!-- Bound Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="19024" count="1" /> <!-- Bound Amaranthine Buster - Mana Up -->
+		<production id="17941" count="1" /> <!-- Bound Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="19025" count="1" /> <!-- Bound Amaranthine Caster - Empower -->
+		<production id="17942" count="1" /> <!-- Bound Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="19026" count="1" /> <!-- Bound Amaranthine Caster - Acumen -->
+		<production id="17942" count="1" /> <!-- Bound Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="19027" count="1" /> <!-- Bound Amaranthine Caster - Magic Hold -->
+		<production id="17942" count="1" /> <!-- Bound Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="19028" count="1" /> <!-- Bound Amaranthine Retributer - MP Regeneration -->
+		<production id="17943" count="1" /> <!-- Bound Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="19029" count="1" /> <!-- Bound Amaranthine Retributer - Acumen -->
+		<production id="17943" count="1" /> <!-- Bound Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="19030" count="1" /> <!-- Bound Amaranthine Retributer - Empower -->
+		<production id="17943" count="1" /> <!-- Bound Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="19031" count="1" /> <!-- Bound Amaranthine Dual Sword - Haste -->
+		<production id="17944" count="1" /> <!-- Bound Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19032" count="1" /> <!-- Bound Amaranthine Dual Sword - Damage -->
+		<production id="17944" count="1" /> <!-- Bound Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19033" count="1" /> <!-- Bound Amaranthine Dual Sword - Health -->
+		<production id="17944" count="1" /> <!-- Bound Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19034" count="1" /> <!-- Bound Amaranthine Dual Dagger - Damage -->
+		<production id="17945" count="1" /> <!-- Bound Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19035" count="1" /> <!-- Bound Amaranthine Dual Dagger - Focus -->
+		<production id="17945" count="1" /> <!-- Bound Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19036" count="1" /> <!-- Bound Amaranthine Dual Dagger - Guidance -->
+		<production id="17945" count="1" /> <!-- Bound Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19037" count="1" /> <!-- Bound Amaranthine Dual Blunt Weapon - Focus -->
+		<production id="17946" count="1" /> <!-- Bound Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19038" count="1" /> <!-- Bound Amaranthine Dual Blunt Weapon - Guidance -->
+		<production id="17946" count="1" /> <!-- Bound Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19039" count="1" /> <!-- Bound Amaranthine Dual Blunt Weapon - Damage -->
+		<production id="17946" count="1" /> <!-- Bound Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18662" count="1" /> <!-- Blessed Requiem Shaper - Guidance -->
+		<production id="17967" count="1" /> <!-- Blessed Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18663" count="1" /> <!-- Blessed Requiem Shaper - Haste -->
+		<production id="17967" count="1" /> <!-- Blessed Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18664" count="1" /> <!-- Blessed Requiem Shaper - Focus -->
+		<production id="17967" count="1" /> <!-- Blessed Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="19980" count="1" /> <!-- Blessed Requiem Shaper - Guidance + Haste -->
+		<production id="17967" count="1" /> <!-- Blessed Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="19981" count="1" /> <!-- Blessed Requiem Shaper - Haste + Focus -->
+		<production id="17967" count="1" /> <!-- Blessed Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="19982" count="1" /> <!-- Blessed Requiem Shaper - Focus + Guidance -->
+		<production id="17967" count="1" /> <!-- Blessed Requiem Shaper -->
+	</item>
+	<item>
+		<ingredient id="18665" count="1" /> <!-- Blessed Requiem Cutter - Haste -->
+		<production id="17968" count="1" /> <!-- Blessed Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18666" count="1" /> <!-- Blessed Requiem Cutter - Focus -->
+		<production id="17968" count="1" /> <!-- Blessed Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18667" count="1" /> <!-- Blessed Requiem Cutter - Health -->
+		<production id="17968" count="1" /> <!-- Blessed Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="19983" count="1" /> <!-- Blessed Requiem Cutter - Haste + Focus -->
+		<production id="17968" count="1" /> <!-- Blessed Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="19984" count="1" /> <!-- Blessed Requiem Cutter - Focus + Health -->
+		<production id="17968" count="1" /> <!-- Blessed Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="19985" count="1" /> <!-- Blessed Requiem Cutter - Health + Haste -->
+		<production id="17968" count="1" /> <!-- Blessed Requiem Cutter -->
+	</item>
+	<item>
+		<ingredient id="18668" count="1" /> <!-- Blessed Requiem Slasher - Focus -->
+		<production id="17969" count="1" /> <!-- Blessed Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18669" count="1" /> <!-- Blessed Requiem Slasher - Damage -->
+		<production id="17969" count="1" /> <!-- Blessed Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18670" count="1" /> <!-- Blessed Requiem Slasher - Haste -->
+		<production id="17969" count="1" /> <!-- Blessed Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="19986" count="1" /> <!-- Blessed Requiem Slasher - Focus + Damage -->
+		<production id="17969" count="1" /> <!-- Blessed Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="19987" count="1" /> <!-- Blessed Requiem Slasher - Damage + Haste -->
+		<production id="17969" count="1" /> <!-- Blessed Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="19988" count="1" /> <!-- Blessed Requiem Slasher - Haste + Focus -->
+		<production id="17969" count="1" /> <!-- Blessed Requiem Slasher -->
+	</item>
+	<item>
+		<ingredient id="18671" count="1" /> <!-- Blessed Requiem Avenger - Haste -->
+		<production id="17970" count="1" /> <!-- Blessed Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18672" count="1" /> <!-- Blessed Requiem Avenger - Critical Damage -->
+		<production id="17970" count="1" /> <!-- Blessed Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18673" count="1" /> <!-- Blessed Requiem Avenger - Focus -->
+		<production id="17970" count="1" /> <!-- Blessed Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="19989" count="1" /> <!-- Blessed Requiem Avenger - Haste + Critical Damage -->
+		<production id="17970" count="1" /> <!-- Blessed Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="19990" count="1" /> <!-- Blessed Requiem Avenger - Critical Damage + Focus -->
+		<production id="17970" count="1" /> <!-- Blessed Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="19991" count="1" /> <!-- Blessed Requiem Avenger - Focus + Haste -->
+		<production id="17970" count="1" /> <!-- Blessed Requiem Avenger -->
+	</item>
+	<item>
+		<ingredient id="18674" count="1" /> <!-- Blessed Requiem Fighter - Focus -->
+		<production id="17971" count="1" /> <!-- Blessed Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18675" count="1" /> <!-- Blessed Requiem Fighter - Damage -->
+		<production id="17971" count="1" /> <!-- Blessed Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18676" count="1" /> <!-- Blessed Requiem Fighter - Haste -->
+		<production id="17971" count="1" /> <!-- Blessed Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="19992" count="1" /> <!-- Blessed Requiem Fighter - Focus + Damage Up -->
+		<production id="17971" count="1" /> <!-- Blessed Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="19993" count="1" /> <!-- Blessed Requiem Fighter - Damage + Haste -->
+		<production id="17971" count="1" /> <!-- Blessed Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="19994" count="1" /> <!-- Blessed Requiem Fighter - Haste + Focus -->
+		<production id="17971" count="1" /> <!-- Blessed Requiem Fighter -->
+	</item>
+	<item>
+		<ingredient id="18677" count="1" /> <!-- Blessed Requiem Stormer - HP Drain -->
+		<production id="17972" count="1" /> <!-- Blessed Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18678" count="1" /> <!-- Blessed Requiem Stormer - Guidance -->
+		<production id="17972" count="1" /> <!-- Blessed Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18679" count="1" /> <!-- Blessed Requiem Stormer - Damage -->
+		<production id="17972" count="1" /> <!-- Blessed Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="19995" count="1" /> <!-- Blessed Requiem Stormer - HP Drain + Guidance -->
+		<production id="17972" count="1" /> <!-- Blessed Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="19996" count="1" /> <!-- Blessed Requiem Stormer - Guidance + Damage Up -->
+		<production id="17972" count="1" /> <!-- Blessed Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="19997" count="1" /> <!-- Blessed Requiem Stormer - Damage + HP Drain -->
+		<production id="17972" count="1" /> <!-- Blessed Requiem Stormer -->
+	</item>
+	<item>
+		<ingredient id="18680" count="1" /> <!-- Blessed Requiem Thrower - Damage -->
+		<production id="17973" count="1" /> <!-- Blessed Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18681" count="1" /> <!-- Blessed Requiem Thrower - Focus -->
+		<production id="17973" count="1" /> <!-- Blessed Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18682" count="1" /> <!-- Blessed Requiem Thrower - Long Blow -->
+		<production id="17973" count="1" /> <!-- Blessed Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="19998" count="1" /> <!-- Blessed Requiem Thrower - Damage + Focus -->
+		<production id="17973" count="1" /> <!-- Blessed Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="19999" count="1" /> <!-- Blessed Requiem Thrower - Focus + Long Blow -->
+		<production id="17973" count="1" /> <!-- Blessed Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="30000" count="1" /> <!-- Blessed Requiem Thrower - Long Blow + Damage Up -->
+		<production id="17973" count="1" /> <!-- Blessed Requiem Thrower -->
+	</item>
+	<item>
+		<ingredient id="18683" count="1" /> <!-- Blessed Requiem Shooter - Focus -->
+		<production id="17974" count="1" /> <!-- Blessed Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18684" count="1" /> <!-- Blessed Requiem Shooter - Critical Slow -->
+		<production id="17974" count="1" /> <!-- Blessed Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18685" count="1" /> <!-- Blessed Requiem Shooter - Haste -->
+		<production id="17974" count="1" /> <!-- Blessed Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="30001" count="1" /> <!-- Blessed Requiem Shooter - Focus + Critical Slow -->
+		<production id="17974" count="1" /> <!-- Blessed Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="30002" count="1" /> <!-- Blessed Requiem Shooter - Critical Slow + Haste -->
+		<production id="17974" count="1" /> <!-- Blessed Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="30003" count="1" /> <!-- Blessed Requiem Shooter - Haste + Focus -->
+		<production id="17974" count="1" /> <!-- Blessed Requiem Shooter -->
+	</item>
+	<item>
+		<ingredient id="18686" count="1" /> <!-- Blessed Requiem Buster - Acumen -->
+		<production id="17975" count="1" /> <!-- Blessed Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18687" count="1" /> <!-- Blessed Requiem Buster - Magic Hold -->
+		<production id="17975" count="1" /> <!-- Blessed Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18688" count="1" /> <!-- Blessed Requiem Buster - Mana Up -->
+		<production id="17975" count="1" /> <!-- Blessed Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="30004" count="1" /> <!-- Blessed Requiem Buster - Acumen + Magic Hold -->
+		<production id="17975" count="1" /> <!-- Blessed Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="30005" count="1" /> <!-- Blessed Requiem Buster - Magic Hold + Mana Up -->
+		<production id="17975" count="1" /> <!-- Blessed Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="30006" count="1" /> <!-- Blessed Requiem Buster - Mana Up + Acumen -->
+		<production id="17975" count="1" /> <!-- Blessed Requiem Buster -->
+	</item>
+	<item>
+		<ingredient id="18689" count="1" /> <!-- Blessed Requiem Caster - Empower -->
+		<production id="17976" count="1" /> <!-- Blessed Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18690" count="1" /> <!-- Blessed Requiem Caster - Acumen -->
+		<production id="17976" count="1" /> <!-- Blessed Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18691" count="1" /> <!-- Blessed Requiem Caster - Magic Hold -->
+		<production id="17976" count="1" /> <!-- Blessed Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="30007" count="1" /> <!-- Blessed Requiem Caster - Empower + Acumen -->
+		<production id="17976" count="1" /> <!-- Blessed Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="30008" count="1" /> <!-- Blessed Requiem Caster - Acumen + Magic Hold -->
+		<production id="17976" count="1" /> <!-- Blessed Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="30009" count="1" /> <!-- Blessed Requiem Caster - Magic Hold + Empower -->
+		<production id="17976" count="1" /> <!-- Blessed Requiem Caster -->
+	</item>
+	<item>
+		<ingredient id="18692" count="1" /> <!-- Blessed Requiem Retributer - MP Regeneration -->
+		<production id="17977" count="1" /> <!-- Blessed Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18693" count="1" /> <!-- Blessed Requiem Retributer - Acumen -->
+		<production id="17977" count="1" /> <!-- Blessed Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18694" count="1" /> <!-- Blessed Requiem Retributer - Empower -->
+		<production id="17977" count="1" /> <!-- Blessed Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="30010" count="1" /> <!-- Blessed Requiem Retributer - MP Regeneration + Acumen -->
+		<production id="17977" count="1" /> <!-- Blessed Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="30011" count="1" /> <!-- Blessed Requiem Retributer - Acumen + Empower -->
+		<production id="17977" count="1" /> <!-- Blessed Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="30012" count="1" /> <!-- Blessed Requiem Retributer - Empower + MP Regeneration -->
+		<production id="17977" count="1" /> <!-- Blessed Requiem Retributer -->
+	</item>
+	<item>
+		<ingredient id="18695" count="1" /> <!-- Blessed Requiem Dual Sword - Haste -->
+		<production id="17978" count="1" /> <!-- Blessed Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18696" count="1" /> <!-- Blessed Requiem Dual Sword - Damage -->
+		<production id="17978" count="1" /> <!-- Blessed Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18697" count="1" /> <!-- Blessed Requiem Dual Sword - Health -->
+		<production id="17978" count="1" /> <!-- Blessed Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30013" count="1" /> <!-- Blessed Requiem Dual Sword - Haste + Damage -->
+		<production id="17978" count="1" /> <!-- Blessed Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30014" count="1" /> <!-- Blessed Requiem Dual Sword - Damage + Health -->
+		<production id="17978" count="1" /> <!-- Blessed Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30015" count="1" /> <!-- Blessed Requiem Dual Sword - Health + Haste -->
+		<production id="17978" count="1" /> <!-- Blessed Requiem Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18698" count="1" /> <!-- Blessed Requiem Dual Dagger - Damage -->
+		<production id="17979" count="1" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18699" count="1" /> <!-- Blessed Requiem Dual Dagger - Focus -->
+		<production id="17979" count="1" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18700" count="1" /> <!-- Blessed Requiem Dual Dagger - Guidance -->
+		<production id="17979" count="1" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30016" count="1" /> <!-- Blessed Requiem Dual Dagger - Damage + Focus -->
+		<production id="17979" count="1" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30017" count="1" /> <!-- Blessed Requiem Dual Dagger - Focus + Guidance -->
+		<production id="17979" count="1" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30018" count="1" /> <!-- Blessed Requiem Dual Dagger - Guidance + Damage -->
+		<production id="17979" count="1" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18701" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon - Focus -->
+		<production id="17980" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18702" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon - Guidance -->
+		<production id="17980" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18703" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon - Damage -->
+		<production id="17980" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="30019" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon - Focus + Guidance -->
+		<production id="17980" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="30020" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon - Guidance + Damage -->
+		<production id="17980" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="30021" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon - Damage + Focus -->
+		<production id="17980" count="1" /> <!-- Blessed Requiem Dual Blunt Weapon Weapon -->
+	</item>
+	<item>
+		<ingredient id="18788" count="1" /> <!-- Blessed Apocalypse Shaper - Guidance -->
+		<production id="18001" count="1" /> <!-- Blessed Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18789" count="1" /> <!-- Blessed Apocalypse Shaper - Haste -->
+		<production id="18001" count="1" /> <!-- Blessed Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18790" count="1" /> <!-- Blessed Apocalypse Shaper - Focus -->
+		<production id="18001" count="1" /> <!-- Blessed Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="30064" count="1" /> <!-- Blessed Apocalypse Shaper - Guidance + Haste -->
+		<production id="18001" count="1" /> <!-- Blessed Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="30065" count="1" /> <!-- Blessed Apocalypse Shaper - Haste + Focus -->
+		<production id="18001" count="1" /> <!-- Blessed Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="30066" count="1" /> <!-- Blessed Apocalypse Shaper - Focus + Guidance -->
+		<production id="18001" count="1" /> <!-- Blessed Apocalypse Shaper -->
+	</item>
+	<item>
+		<ingredient id="18791" count="1" /> <!-- Blessed Apocalypse Cutter - Haste -->
+		<production id="18002" count="1" /> <!-- Blessed Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18792" count="1" /> <!-- Blessed Apocalypse Cutter - Focus -->
+		<production id="18002" count="1" /> <!-- Blessed Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18793" count="1" /> <!-- Blessed Apocalypse Cutter - Health -->
+		<production id="18002" count="1" /> <!-- Blessed Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="30067" count="1" /> <!-- Blessed Apocalypse Cutter - Haste + Focus -->
+		<production id="18002" count="1" /> <!-- Blessed Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="30068" count="1" /> <!-- Blessed Apocalypse Cutter - Focus + Health -->
+		<production id="18002" count="1" /> <!-- Blessed Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="30069" count="1" /> <!-- Blessed Apocalypse Cutter - Health + Haste -->
+		<production id="18002" count="1" /> <!-- Blessed Apocalypse Cutter -->
+	</item>
+	<item>
+		<ingredient id="18794" count="1" /> <!-- Blessed Apocalypse Slasher - Focus -->
+		<production id="18003" count="1" /> <!-- Blessed Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18795" count="1" /> <!-- Blessed Apocalypse Slasher - Damage -->
+		<production id="18003" count="1" /> <!-- Blessed Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18796" count="1" /> <!-- Blessed Apocalypse Slasher - Haste -->
+		<production id="18003" count="1" /> <!-- Blessed Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="30070" count="1" /> <!-- Blessed Apocalypse Slasher - Focus + Damage -->
+		<production id="18003" count="1" /> <!-- Blessed Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="30071" count="1" /> <!-- Blessed Apocalypse Slasher - Damage + Haste -->
+		<production id="18003" count="1" /> <!-- Blessed Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="30072" count="1" /> <!-- Blessed Apocalypse Slasher - Haste + Focus -->
+		<production id="18003" count="1" /> <!-- Blessed Apocalypse Slasher -->
+	</item>
+	<item>
+		<ingredient id="18797" count="1" /> <!-- Blessed Apocalypse Avenger - Haste -->
+		<production id="18004" count="1" /> <!-- Blessed Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18798" count="1" /> <!-- Blessed Apocalypse Avenger - Critical Damage -->
+		<production id="18004" count="1" /> <!-- Blessed Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18799" count="1" /> <!-- Blessed Apocalypse Avenger - Focus -->
+		<production id="18004" count="1" /> <!-- Blessed Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="30073" count="1" /> <!-- Blessed Apocalypse Avenger - Haste + Critical Damage -->
+		<production id="18004" count="1" /> <!-- Blessed Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="30074" count="1" /> <!-- Blessed Apocalypse Avenger - Critical Damage + Focus -->
+		<production id="18004" count="1" /> <!-- Blessed Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="30075" count="1" /> <!-- Blessed Apocalypse Avenger - Focus + Haste -->
+		<production id="18004" count="1" /> <!-- Blessed Apocalypse Avenger -->
+	</item>
+	<item>
+		<ingredient id="18800" count="1" /> <!-- Blessed Apocalypse Fighter - Focus -->
+		<production id="18005" count="1" /> <!-- Blessed Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18801" count="1" /> <!-- Blessed Apocalypse Fighter - Damage -->
+		<production id="18005" count="1" /> <!-- Blessed Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18802" count="1" /> <!-- Blessed Apocalypse Fighter - Haste -->
+		<production id="18005" count="1" /> <!-- Blessed Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="30076" count="1" /> <!-- Blessed Apocalypse Fighter - Focus + Damage -->
+		<production id="18005" count="1" /> <!-- Blessed Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="30077" count="1" /> <!-- Blessed Apocalypse Fighter - Damage + Haste -->
+		<production id="18005" count="1" /> <!-- Blessed Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="30078" count="1" /> <!-- Blessed Apocalypse Fighter - Haste + Focus -->
+		<production id="18005" count="1" /> <!-- Blessed Apocalypse Fighter -->
+	</item>
+	<item>
+		<ingredient id="18803" count="1" /> <!-- Blessed Apocalypse Stormer - HP Drain -->
+		<production id="18006" count="1" /> <!-- Blessed Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18804" count="1" /> <!-- Blessed Apocalypse Stormer - Guidance -->
+		<production id="18006" count="1" /> <!-- Blessed Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18805" count="1" /> <!-- Blessed Apocalypse Stormer - Damage -->
+		<production id="18006" count="1" /> <!-- Blessed Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="30079" count="1" /> <!-- Blessed Apocalypse Stormer - HP Drain + Guidance -->
+		<production id="18006" count="1" /> <!-- Blessed Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="30080" count="1" /> <!-- Blessed Apocalypse Stormer - Guidance + Damage -->
+		<production id="18006" count="1" /> <!-- Blessed Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="30081" count="1" /> <!-- Blessed Apocalypse Stormer - Damage + HP Drain -->
+		<production id="18006" count="1" /> <!-- Blessed Apocalypse Stormer -->
+	</item>
+	<item>
+		<ingredient id="18806" count="1" /> <!-- Blessed Apocalypse Thrower - Damage -->
+		<production id="18007" count="1" /> <!-- Blessed Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18807" count="1" /> <!-- Blessed Apocalypse Thrower - Focus -->
+		<production id="18007" count="1" /> <!-- Blessed Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18808" count="1" /> <!-- Blessed Apocalypse Thrower - Long Blow -->
+		<production id="18007" count="1" /> <!-- Blessed Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="30082" count="1" /> <!-- Blessed Apocalypse Thrower - Damage + Focus -->
+		<production id="18007" count="1" /> <!-- Blessed Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="30083" count="1" /> <!-- Blessed Apocalypse Thrower - Focus + Long Blow -->
+		<production id="18007" count="1" /> <!-- Blessed Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="30084" count="1" /> <!-- Blessed Apocalypse Thrower - Long Blow + Damage -->
+		<production id="18007" count="1" /> <!-- Blessed Apocalypse Thrower -->
+	</item>
+	<item>
+		<ingredient id="18809" count="1" /> <!-- Blessed Apocalypse Shooter - Focus -->
+		<production id="18008" count="1" /> <!-- Blessed Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18810" count="1" /> <!-- Blessed Apocalypse Shooter - Critical Slow -->
+		<production id="18008" count="1" /> <!-- Blessed Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18811" count="1" /> <!-- Blessed Apocalypse Shooter - Haste -->
+		<production id="18008" count="1" /> <!-- Blessed Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="30085" count="1" /> <!-- Blessed Apocalypse Shooter - Focus + Critical Slow -->
+		<production id="18008" count="1" /> <!-- Blessed Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="30086" count="1" /> <!-- Blessed Apocalypse Shooter - Critical Slow + Haste -->
+		<production id="18008" count="1" /> <!-- Blessed Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="30087" count="1" /> <!-- Blessed Apocalypse Shooter - Haste + Focus -->
+		<production id="18008" count="1" /> <!-- Blessed Apocalypse Shooter -->
+	</item>
+	<item>
+		<ingredient id="18812" count="1" /> <!-- Blessed Apocalypse Buster - Acumen -->
+		<production id="18009" count="1" /> <!-- Blessed Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18813" count="1" /> <!-- Blessed Apocalypse Buster - Magic Hold -->
+		<production id="18009" count="1" /> <!-- Blessed Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18814" count="1" /> <!-- Blessed Apocalypse Buster - Mana Up -->
+		<production id="18009" count="1" /> <!-- Blessed Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="30088" count="1" /> <!-- Blessed Apocalypse Buster - Acumen + Magic Hold -->
+		<production id="18009" count="1" /> <!-- Blessed Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="30089" count="1" /> <!-- Blessed Apocalypse Buster - Magic Hold + Mana Up -->
+		<production id="18009" count="1" /> <!-- Blessed Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="30090" count="1" /> <!-- Blessed Apocalypse Buster - Mana Up + Acumen -->
+		<production id="18009" count="1" /> <!-- Blessed Apocalypse Buster -->
+	</item>
+	<item>
+		<ingredient id="18815" count="1" /> <!-- Blessed Apocalypse Caster - Empower -->
+		<production id="18010" count="1" /> <!-- Blessed Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18816" count="1" /> <!-- Blessed Apocalypse Caster - Acumen -->
+		<production id="18010" count="1" /> <!-- Blessed Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18817" count="1" /> <!-- Blessed Apocalypse Caster - Magic Hold -->
+		<production id="18010" count="1" /> <!-- Blessed Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="30091" count="1" /> <!-- Blessed Apocalypse Caster - Empower + Acumen -->
+		<production id="18010" count="1" /> <!-- Blessed Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="30092" count="1" /> <!-- Blessed Apocalypse Caster - Acumen + Magic Hold -->
+		<production id="18010" count="1" /> <!-- Blessed Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="30093" count="1" /> <!-- Blessed Apocalypse Caster - Magic Hold + Empower -->
+		<production id="18010" count="1" /> <!-- Blessed Apocalypse Caster -->
+	</item>
+	<item>
+		<ingredient id="18818" count="1" /> <!-- Blessed Apocalypse Retributer - MP Regeneration -->
+		<production id="18011" count="1" /> <!-- Blessed Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18819" count="1" /> <!-- Blessed Apocalypse Retributer - Acumen -->
+		<production id="18011" count="1" /> <!-- Blessed Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18820" count="1" /> <!-- Blessed Apocalypse Retributer - Empower -->
+		<production id="18011" count="1" /> <!-- Blessed Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="30094" count="1" /> <!-- Blessed Apocalypse Retributer - MP Regeneration + Acumen -->
+		<production id="18011" count="1" /> <!-- Blessed Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="30095" count="1" /> <!-- Blessed Apocalypse Retributer - Acumen + Empower -->
+		<production id="18011" count="1" /> <!-- Blessed Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="30096" count="1" /> <!-- Blessed Apocalypse Retributer - Empower + MP Regeneration -->
+		<production id="18011" count="1" /> <!-- Blessed Apocalypse Retributer -->
+	</item>
+	<item>
+		<ingredient id="18821" count="1" /> <!-- Blessed Apocalypse Dual Sword - Haste -->
+		<production id="18012" count="1" /> <!-- Blessed Apocalypse Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18822" count="1" /> <!-- Blessed Apocalypse Dual Sword - Damage -->
+		<production id="18012" count="1" /> <!-- Blessed Apocalypse Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18823" count="1" /> <!-- Blessed Apocalypse Dual Sword - Health -->
+		<production id="18012" count="1" /> <!-- Blessed Apocalypse Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30097" count="1" /> <!-- Blessed Apocalypse Dual Sword - Haste + Damage -->
+		<production id="18012" count="1" /> <!-- Blessed Apocalypse Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30098" count="1" /> <!-- Blessed Apocalypse Dual Sword - Damage + Health -->
+		<production id="18012" count="1" /> <!-- Blessed Apocalypse Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30099" count="1" /> <!-- Blessed Apocalypse Dual Sword - Health + Haste -->
+		<production id="18012" count="1" /> <!-- Blessed Apocalypse Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18824" count="1" /> <!-- Blessed Apocalypse Dual Dagger - Damage -->
+		<production id="18013" count="1" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18825" count="1" /> <!-- Blessed Apocalypse Dual Dagger - Focus -->
+		<production id="18013" count="1" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18826" count="1" /> <!-- Blessed Apocalypse Dual Dagger - Guidance -->
+		<production id="18013" count="1" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30100" count="1" /> <!-- Blessed Apocalypse Dual Dagger - Damage + Focus -->
+		<production id="18013" count="1" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30101" count="1" /> <!-- Blessed Apocalypse Dual Dagger - Focus + Guidance -->
+		<production id="18013" count="1" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30102" count="1" /> <!-- Blessed Apocalypse Dual Dagger - Guidance + Damage -->
+		<production id="18013" count="1" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18827" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon - Focus -->
+		<production id="18014" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18828" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon - Guidance -->
+		<production id="18014" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18829" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon - Damage -->
+		<production id="18014" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30103" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon - Focus + Guidance -->
+		<production id="18014" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30104" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon - Guidance + Damage -->
+		<production id="18014" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30105" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon - Damage + Focus -->
+		<production id="18014" count="1" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18914" count="1" /> <!-- Blessed Specter Shaper - Guidance -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18915" count="1" /> <!-- Blessed Specter Shaper - Haste -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18916" count="1" /> <!-- Blessed Specter Shaper - Focus -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="30148" count="1" /> <!-- Blessed Specter Shaper - Guidance + Haste -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="30149" count="1" /> <!-- Blessed Specter Shaper - Haste + Focus -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="30150" count="1" /> <!-- Blessed Specter Shaper - Focus + Guidance -->
+		<production id="18035" count="1" /> <!-- Blessed Specter Shaper -->
+	</item>
+	<item>
+		<ingredient id="18917" count="1" /> <!-- Blessed Specter Cutter - Haste -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18918" count="1" /> <!-- Blessed Specter Cutter - Focus -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18919" count="1" /> <!-- Blessed Specter Cutter - Health -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="30151" count="1" /> <!-- Blessed Specter Cutter - Haste + Focus -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="30152" count="1" /> <!-- Blessed Specter Cutter - Focus + Health -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="30153" count="1" /> <!-- Blessed Specter Cutter - Health + Haste -->
+		<production id="18036" count="1" /> <!-- Blessed Specter Cutter -->
+	</item>
+	<item>
+		<ingredient id="18920" count="1" /> <!-- Blessed Specter Slasher - Focus -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18921" count="1" /> <!-- Blessed Specter Slasher - Damage -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18922" count="1" /> <!-- Blessed Specter Slasher - Haste -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="30154" count="1" /> <!-- Blessed Specter Slasher - Focus + Damage -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="30155" count="1" /> <!-- Blessed Specter Slasher - Damage + Haste -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="30156" count="1" /> <!-- Blessed Specter Slasher - Haste + Focus -->
+		<production id="18037" count="1" /> <!-- Blessed Specter Slasher -->
+	</item>
+	<item>
+		<ingredient id="18923" count="1" /> <!-- Blessed Specter Avenger - Haste -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18924" count="1" /> <!-- Blessed Specter Avenger - Critical Damage -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18925" count="1" /> <!-- Blessed Specter Avenger - Focus -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="30157" count="1" /> <!-- Blessed Specter Avenger - Haste + Critical Damage -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="30158" count="1" /> <!-- Blessed Specter Avenger - Critical Damage + Focus -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="30159" count="1" /> <!-- Blessed Specter Avenger - Focus + Haste -->
+		<production id="18038" count="1" /> <!-- Blessed Specter Avenger -->
+	</item>
+	<item>
+		<ingredient id="18926" count="1" /> <!-- Blessed Specter Fighter - Focus -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18927" count="1" /> <!-- Blessed Specter Fighter - Damage -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18928" count="1" /> <!-- Blessed Specter Fighter - Haste -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="30160" count="1" /> <!-- Blessed Specter Fighter - Focus + Damage -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="30161" count="1" /> <!-- Blessed Specter Fighter - Damage + Haste -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="30162" count="1" /> <!-- Blessed Specter Fighter - Haste + Focus -->
+		<production id="18039" count="1" /> <!-- Blessed Specter Fighter -->
+	</item>
+	<item>
+		<ingredient id="18929" count="1" /> <!-- Blessed Specter Stormer - HP Drain -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18930" count="1" /> <!-- Blessed Specter Stormer - Guidance -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18931" count="1" /> <!-- Blessed Specter Stormer - Damage -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="30163" count="1" /> <!-- Blessed Specter Stormer - HP Drain + Guidance -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="30164" count="1" /> <!-- Blessed Specter Stormer - Guidance + Damage -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="30165" count="1" /> <!-- Blessed Specter Stormer - Damage + HP Drain -->
+		<production id="18040" count="1" /> <!-- Blessed Specter Stormer -->
+	</item>
+	<item>
+		<ingredient id="18932" count="1" /> <!-- Blessed Specter Thrower - Damage -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18933" count="1" /> <!-- Blessed Specter Thrower - Focus -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18934" count="1" /> <!-- Blessed Specter Thrower - Long Blow -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="30166" count="1" /> <!-- Blessed Specter Thrower - Damage + Focus -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="30167" count="1" /> <!-- Blessed Specter Thrower - Focus + Long Blow -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="30168" count="1" /> <!-- Blessed Specter Thrower - Long Blow + Damage -->
+		<production id="18041" count="1" /> <!-- Blessed Specter Thrower -->
+	</item>
+	<item>
+		<ingredient id="18935" count="1" /> <!-- Blessed Specter Shooter - Focus -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18936" count="1" /> <!-- Blessed Specter Shooter - Critical Slow -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18937" count="1" /> <!-- Blessed Specter Shooter - Haste -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="30169" count="1" /> <!-- Blessed Specter Shooter - Focus + Critical Slow -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="30170" count="1" /> <!-- Blessed Specter Shooter - Critical Slow + Haste -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="30171" count="1" /> <!-- Blessed Specter Shooter - Haste + Focus -->
+		<production id="18042" count="1" /> <!-- Blessed Specter Shooter -->
+	</item>
+	<item>
+		<ingredient id="18938" count="1" /> <!-- Blessed Specter Buster - Acumen -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18939" count="1" /> <!-- Blessed Specter Buster - Magic Hold -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18940" count="1" /> <!-- Blessed Specter Buster - Mana Up -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="30172" count="1" /> <!-- Blessed Specter Buster - Acumen + Magic Hold -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="30173" count="1" /> <!-- Blessed Specter Buster - Magic Hold + Mana Up -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="30174" count="1" /> <!-- Blessed Specter Buster - Mana Up + Acumen -->
+		<production id="18043" count="1" /> <!-- Blessed Specter Buster -->
+	</item>
+	<item>
+		<ingredient id="18941" count="1" /> <!-- Blessed Specter Caster - Empower -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18942" count="1" /> <!-- Blessed Specter Caster - Acumen -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18943" count="1" /> <!-- Blessed Specter Caster - Magic Hold -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="30175" count="1" /> <!-- Blessed Specter Caster - Empower + Acumen -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="30176" count="1" /> <!-- Blessed Specter Caster - Acumen + Magic Hold -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="30177" count="1" /> <!-- Blessed Specter Caster - Magic Hold + Empower -->
+		<production id="18044" count="1" /> <!-- Blessed Specter Caster -->
+	</item>
+	<item>
+		<ingredient id="18944" count="1" /> <!-- Blessed Specter Retributer - MP Regeneration -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18945" count="1" /> <!-- Blessed Specter Retributer - Acumen -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18946" count="1" /> <!-- Blessed Specter Retributer - Empower -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="30178" count="1" /> <!-- Blessed Specter Retributer - MP Regeneration + Acumen -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="30179" count="1" /> <!-- Blessed Specter Retributer - Acumen + Empower -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="30180" count="1" /> <!-- Blessed Specter Retributer - Empower + MP Regeneration -->
+		<production id="18045" count="1" /> <!-- Blessed Specter Retributer -->
+	</item>
+	<item>
+		<ingredient id="18947" count="1" /> <!-- Blessed Specter Dual Sword - Haste -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18948" count="1" /> <!-- Blessed Specter Dual Sword - Damage -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18949" count="1" /> <!-- Blessed Specter Dual Sword - Health -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30181" count="1" /> <!-- Blessed Specter Dual Sword - Haste + Damage -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30182" count="1" /> <!-- Blessed Specter Dual Sword - Damage + Health -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30183" count="1" /> <!-- Blessed Specter Dual Sword - Health + Haste -->
+		<production id="18046" count="1" /> <!-- Blessed Specter Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="18950" count="1" /> <!-- Blessed Specter Dual Dagger - Damage -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18951" count="1" /> <!-- Blessed Specter Dual Dagger - Focus -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18952" count="1" /> <!-- Blessed Specter Dual Dagger - Guidance -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30184" count="1" /> <!-- Blessed Specter Dual Dagger - Damage + Focus -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30185" count="1" /> <!-- Blessed Specter Dual Dagger - Focus + Guidance -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30186" count="1" /> <!-- Blessed Specter Dual Dagger - Guidance + Damage -->
+		<production id="18047" count="1" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="18953" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Focus -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18954" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Guidance -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="18955" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Damage -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30187" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Focus + Guidance -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30188" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Guidance + Damage -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30189" count="1" /> <!-- Blessed Specter Dual Blunt Weapon - Damage + Focus -->
+		<production id="18048" count="1" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19040" count="1" /> <!-- Blessed Seraph Shaper - Guidance -->
+		<production id="18069" count="1" /> <!-- Blessed Seraph Shaper -->
+	</item>
+	<item>
+		<ingredient id="19041" count="1" /> <!-- Blessed Seraph Shaper - Haste -->
+		<production id="18069" count="1" /> <!-- Blessed Seraph Shaper -->
+	</item>
+	<item>
+		<ingredient id="19042" count="1" /> <!-- Blessed Seraph Shaper - Focus -->
+		<production id="18069" count="1" /> <!-- Blessed Seraph Shaper -->
+	</item>
+	<item>
+		<ingredient id="30232" count="1" /> <!-- Blessed Seraph Shaper - Guidance + Haste -->
+		<production id="18069" count="1" /> <!-- Blessed Seraph Shaper -->
+	</item>
+	<item>
+		<ingredient id="30233" count="1" /> <!-- Blessed Seraph Shaper - Haste + Focus -->
+		<production id="18069" count="1" /> <!-- Blessed Seraph Shaper -->
+	</item>
+	<item>
+		<ingredient id="30234" count="1" /> <!-- Blessed Seraph Shaper - Focus + Guidance -->
+		<production id="18069" count="1" /> <!-- Blessed Seraph Shaper -->
+	</item>
+	<item>
+		<ingredient id="19043" count="1" /> <!-- Blessed Amaranthine Cutter - Haste -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="19044" count="1" /> <!-- Blessed Amaranthine Cutter - Focus -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="19045" count="1" /> <!-- Blessed Amaranthine Cutter - Health -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="30235" count="1" /> <!-- Blessed Amaranthine Cutter - Haste + Focus -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="30236" count="1" /> <!-- Blessed Amaranthine Cutter - Focus + Health -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="30237" count="1" /> <!-- Blessed Amaranthine Cutter - Health + Haste -->
+		<production id="18070" count="1" /> <!-- Blessed Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient id="19046" count="1" /> <!-- Blessed Amaranthine Slasher - Focus -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="19047" count="1" /> <!-- Blessed Amaranthine Slasher - Damage -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="19048" count="1" /> <!-- Blessed Amaranthine Slasher - Haste -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="30238" count="1" /> <!-- Blessed Amaranthine Slasher - Focus + Damage -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="30239" count="1" /> <!-- Blessed Amaranthine Slasher - Damage + Haste -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="30240" count="1" /> <!-- Blessed Amaranthine Slasher - Haste + Focus -->
+		<production id="18071" count="1" /> <!-- Blessed Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient id="19049" count="1" /> <!-- Blessed Amaranthine Avenger - Haste -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="19050" count="1" /> <!-- Blessed Amaranthine Avenger - Critical Damage -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="19051" count="1" /> <!-- Blessed Amaranthine Avenger - Focus -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="30241" count="1" /> <!-- Blessed Amaranthine Avenger - Haste + Critical Damage -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="30242" count="1" /> <!-- Blessed Amaranthine Avenger - Critical Damage + Focus -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="30243" count="1" /> <!-- Blessed Amaranthine Avenger - Focus + Haste -->
+		<production id="18072" count="1" /> <!-- Blessed Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient id="19052" count="1" /> <!-- Blessed Amaranthine Fighter - Focus -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="19053" count="1" /> <!-- Blessed Amaranthine Fighter - Damage -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="19054" count="1" /> <!-- Blessed Amaranthine Fighter - Haste -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="30244" count="1" /> <!-- Blessed Amaranthine Fighter - Focus + Damage -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="30245" count="1" /> <!-- Blessed Amaranthine Fighter - Damage + Haste -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="30246" count="1" /> <!-- Blessed Amaranthine Fighter - Haste + Focus -->
+		<production id="18073" count="1" /> <!-- Blessed Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient id="19055" count="1" /> <!-- Blessed Amaranthine Stormer - HP Drain -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="19056" count="1" /> <!-- Blessed Amaranthine Stormer - Guidance -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="19057" count="1" /> <!-- Blessed Amaranthine Stormer - Damage -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="30247" count="1" /> <!-- Blessed Amaranthine Stormer - HP Drain + Guidance -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="30248" count="1" /> <!-- Blessed Amaranthine Stormer - Guidance + Damage -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="30249" count="1" /> <!-- Blessed Amaranthine Stormer - Damage + HP Drain -->
+		<production id="18074" count="1" /> <!-- Blessed Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient id="19058" count="1" /> <!-- Blessed Amaranthine Thrower - Damage -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="19059" count="1" /> <!-- Blessed Amaranthine Thrower - Focus -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="19060" count="1" /> <!-- Blessed Amaranthine Thrower - Long Blow -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="30250" count="1" /> <!-- Blessed Amaranthine Thrower - Damage + Focus -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="30251" count="1" /> <!-- Blessed Amaranthine Thrower - Focus + Long Blow -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="30252" count="1" /> <!-- Blessed Amaranthine Thrower - Long Blow + Damage -->
+		<production id="18075" count="1" /> <!-- Blessed Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient id="19061" count="1" /> <!-- Blessed Amaranthine Shooter - Focus -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="19062" count="1" /> <!-- Blessed Amaranthine Shooter - Critical Slow -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="19063" count="1" /> <!-- Blessed Amaranthine Shooter - Haste -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="30253" count="1" /> <!-- Blessed Amaranthine Shooter - Focus + Critical Slow -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="30254" count="1" /> <!-- Blessed Amaranthine Shooter - Critical Slow + Haste -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="30255" count="1" /> <!-- Blessed Amaranthine Shooter - Haste + Focus -->
+		<production id="18076" count="1" /> <!-- Blessed Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient id="19064" count="1" /> <!-- Blessed Amaranthine Buster - Acumen -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="19065" count="1" /> <!-- Blessed Amaranthine Buster - Magic Hold -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="19066" count="1" /> <!-- Blessed Amaranthine Buster - Mana Up -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="30256" count="1" /> <!-- Blessed Amaranthine Buster - Acumen + Magic Hold -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="30257" count="1" /> <!-- Blessed Amaranthine Buster - Magic Hold + Mana Up -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="30258" count="1" /> <!-- Blessed Amaranthine Buster - Mana Up + Acumen -->
+		<production id="18077" count="1" /> <!-- Blessed Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient id="19067" count="1" /> <!-- Blessed Amaranthine Caster - Empower -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="19068" count="1" /> <!-- Blessed Amaranthine Caster - Acumen -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="19069" count="1" /> <!-- Blessed Amaranthine Caster - Magic Hold -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="30259" count="1" /> <!-- Blessed Amaranthine Caster - Empower + Acumen -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="30260" count="1" /> <!-- Blessed Amaranthine Caster - Acumen + Magic Hold -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="30261" count="1" /> <!-- Blessed Amaranthine Caster - Magic Hold + Empower -->
+		<production id="18078" count="1" /> <!-- Blessed Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient id="19070" count="1" /> <!-- Blessed Amaranthine Retributer - MP Regeneration -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="19071" count="1" /> <!-- Blessed Amaranthine Retributer - Acumen -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="19072" count="1" /> <!-- Blessed Amaranthine Retributer - Empower -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="30262" count="1" /> <!-- Blessed Amaranthine Retributer - MP Regeneration + Acumen -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="30263" count="1" /> <!-- Blessed Amaranthine Retributer - Acumen + Empower -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="30264" count="1" /> <!-- Blessed Amaranthine Retributer - Empower + MP Regeneration -->
+		<production id="18079" count="1" /> <!-- Blessed Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient id="19073" count="1" /> <!-- Blessed Amaranthine Dual Sword - Haste -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19074" count="1" /> <!-- Blessed Amaranthine Dual Sword - Damage -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19075" count="1" /> <!-- Blessed Amaranthine Dual Sword - Health -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30265" count="1" /> <!-- Blessed Amaranthine Dual Sword - Haste + Damage -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30266" count="1" /> <!-- Blessed Amaranthine Dual Sword - Damage + Health -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="30267" count="1" /> <!-- Blessed Amaranthine Dual Sword - Health + Haste -->
+		<production id="18080" count="1" /> <!-- Blessed Amaranthine Dual Sword -->
+	</item>
+	<item>
+		<ingredient id="19076" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Damage -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19077" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Focus -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19078" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Guidance -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30268" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Damage + Focus -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30269" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Focus + Guidance -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="30270" count="1" /> <!-- Blessed Amaranthine Dual Dagger - Guidance + Damage -->
+		<production id="18081" count="1" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="19079" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Focus -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19080" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Guidance -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="19081" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Damage -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30271" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30272" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Guidance + Damage -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="30273" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon - Damage + Focus -->
+		<production id="18082" count="1" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35109" />	<!-- Dark Amaranthine Shaper - Guidance -->
+		<production count="1" id="35095" />	<!-- Dark Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35110" />	<!-- Dark Amaranthine Shaper - Haste -->
+		<production count="1" id="35095" />	<!-- Dark Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35111" />	<!-- Dark Amaranthine Shaper - Focus -->
+		<production count="1" id="35095" />	<!-- Dark Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35112" />	<!-- Dark Amaranthine Cutter - Haste -->
+		<production count="1" id="35096" />	<!-- Dark Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35113" />	<!-- Dark Amaranthine Cutter - Focus -->
+		<production count="1" id="35096" />	<!-- Dark Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35114" />	<!-- Dark Amaranthine Cutter - Health -->
+		<production count="1" id="35096" />	<!-- Dark Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35115" />	<!-- Dark Amaranthine Slasher - Focus -->
+		<production count="1" id="35097" />	<!-- Dark Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35116" />	<!-- Dark Amaranthine Slasher - Damage Up -->
+		<production count="1" id="35097" />	<!-- Dark Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35117" />	<!-- Dark Amaranthine Slasher - Haste -->
+		<production count="1" id="35097" />	<!-- Dark Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35118" />	<!-- Dark Amaranthine Avenger - Haste -->
+		<production count="1" id="35098" />	<!-- Dark Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35119" />	<!-- Dark Amaranthine Avenger - Critical Damage -->
+		<production count="1" id="35098" />	<!-- Dark Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35120" />	<!-- Dark Amaranthine Avenger - Focus -->
+		<production count="1" id="35098" />	<!-- Dark Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35121" />	<!-- Dark Amaranthine Fighter - Focus -->
+		<production count="1" id="35099" />	<!-- Dark Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35122" />	<!-- Dark Amaranthine Fighter - Damage Up -->
+		<production count="1" id="35099" />	<!-- Dark Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35123" />	<!-- Dark Amaranthine Fighter - Haste -->
+		<production count="1" id="35099" />	<!-- Dark Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35124" />	<!-- Dark Amaranthine Stormer - HP Drain -->
+		<production count="1" id="35100" />	<!-- Dark Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35125" />	<!-- Dark Amaranthine Stormer - Guidance -->
+		<production count="1" id="35100" />	<!-- Dark Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35126" />	<!-- Dark Amaranthine Stormer - Damage Up -->
+		<production count="1" id="35100" />	<!-- Dark Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35127" />	<!-- Dark Amaranthine Thrower - Damage Up -->
+		<production count="1" id="35101" />	<!-- Dark Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35128" />	<!-- Dark Amaranthine Thrower - Focus -->
+		<production count="1" id="35101" />	<!-- Dark Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35129" />	<!-- Dark Amaranthine Thrower - Long Blow -->
+		<production count="1" id="35101" />	<!-- Dark Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35130" />	<!-- Dark Amaranthine Shooter - Focus -->
+		<production count="1" id="35102" />	<!-- Dark Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35131" />	<!-- Dark Amaranthine Shooter - Critical Slow -->
+		<production count="1" id="35102" />	<!-- Dark Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35132" />	<!-- Dark Amaranthine Shooter - Haste -->
+		<production count="1" id="35102" />	<!-- Dark Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35133" />	<!-- Dark Amaranthine Buster - Acumen -->
+		<production count="1" id="35103" />	<!-- Dark Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35134" />	<!-- Dark Amaranthine Buster - Magic Hold -->
+		<production count="1" id="35103" />	<!-- Dark Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35135" />	<!-- Dark Amaranthine Buster - Mana Up -->
+		<production count="1" id="35103" />	<!-- Dark Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35136" />	<!-- Dark Amaranthine Caster - Empower -->
+		<production count="1" id="35104" />	<!-- Dark Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35137" />	<!-- Dark Amaranthine Caster - Acumen -->
+		<production count="1" id="35104" />	<!-- Dark Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35138" />	<!-- Dark Amaranthine Caster - Magic Hold -->
+		<production count="1" id="35104" />	<!-- Dark Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35139" />	<!-- Dark Amaranthine Retributer - MP Regeneration -->
+		<production count="1" id="35105" />	<!-- Dark Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35140" />	<!-- Dark Amaranthine Retributer - Acumen -->
+		<production count="1" id="35105" />	<!-- Dark Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35141" />	<!-- Dark Amaranthine Retributer - Empower -->
+		<production count="1" id="35105" />	<!-- Dark Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35142" />	<!-- Dark Amaranthine Dualsword - Haste -->
+		<production count="1" id="35106" />	<!-- Dark Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35143" />	<!-- Dark Amaranthine Dualsword - Damage Up -->
+		<production count="1" id="35106" />	<!-- Dark Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35144" />	<!-- Dark Amaranthine Dualsword - Health -->
+		<production count="1" id="35106" />	<!-- Dark Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35145" />	<!-- Dark Amaranthine Dual Dagger - Damage Up -->
+		<production count="1" id="35107" />	<!-- Dark Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35146" />	<!-- Dark Amaranthine Dual Dagger - Focus -->
+		<production count="1" id="35107" />	<!-- Dark Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35147" />	<!-- Dark Amaranthine Dual Dagger - Guidance -->
+		<production count="1" id="35107" />	<!-- Dark Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35148" />	<!-- Dark Amaranthine Dual Blunt Weapon - Focus -->
+		<production count="1" id="35108" />	<!-- Dark Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35149" />	<!-- Dark Amaranthine Dual Blunt Weapon - Guidance -->
+		<production count="1" id="35108" />	<!-- Dark Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35150" />	<!-- Dark Amaranthine Dual Blunt Weapon - Damage Up -->
+		<production count="1" id="35108" />	<!-- Dark Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35151" />	<!-- Dark Amaranthine Shaper - Guidance + Haste -->
+		<production count="1" id="35095" />	<!-- Dark Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35152" />	<!-- Dark Amaranthine Shaper - Haste + Focus -->
+		<production count="1" id="35095" />	<!-- Dark Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35153" />	<!-- Dark Amaranthine Shaper - Focus + Guidance -->
+		<production count="1" id="35095" />	<!-- Dark Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35154" />	<!-- Dark Amaranthine Cutter - Haste + Focus -->
+		<production count="1" id="35096" />	<!-- Dark Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35155" />	<!-- Dark Amaranthine Cutter - Focus + Health -->
+		<production count="1" id="35096" />	<!-- Dark Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35156" />	<!-- Dark Amaranthine Cutter - Health + Haste -->
+		<production count="1" id="35096" />	<!-- Dark Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35157" />	<!-- Dark Amaranthine Slasher - Focus + Damage -->
+		<production count="1" id="35097" />	<!-- Dark Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35158" />	<!-- Dark Amaranthine Slasher - Damage Up + Haste -->
+		<production count="1" id="35097" />	<!-- Dark Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35159" />	<!-- Dark Amaranthine Slasher - Haste + Focus -->
+		<production count="1" id="35097" />	<!-- Dark Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35160" />	<!-- Dark Amaranthine Avenger - Haste + Critical Damage -->
+		<production count="1" id="35098" />	<!-- Dark Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35161" />	<!-- Dark Amaranthine Avenger - Critical Damage + Focus -->
+		<production count="1" id="35098" />	<!-- Dark Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35162" />	<!-- Dark Amaranthine Avenger - Focus + Haste -->
+		<production count="1" id="35098" />	<!-- Dark Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35163" />	<!-- Dark Amaranthine Fighter - Focus + Damage -->
+		<production count="1" id="35099" />	<!-- Dark Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35164" />	<!-- Dark Amaranthine Fighter - Damage Up + Haste -->
+		<production count="1" id="35099" />	<!-- Dark Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35165" />	<!-- Dark Amaranthine Fighter - Haste + Focus -->
+		<production count="1" id="35099" />	<!-- Dark Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35166" />	<!-- Dark Amaranthine Stormer - HP Drain + Guidance -->
+		<production count="1" id="35100" />	<!-- Dark Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35167" />	<!-- Dark Amaranthine Stormer - Guidance + Damage Up -->
+		<production count="1" id="35100" />	<!-- Dark Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35168" />	<!-- Dark Amaranthine Stormer - Damage Up + HP Drain -->
+		<production count="1" id="35100" />	<!-- Dark Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35169" />	<!-- Dark Amaranthine Thrower - Damage Up + Focus -->
+		<production count="1" id="35101" />	<!-- Dark Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35170" />	<!-- Dark Amaranthine Thrower - Focus + Long Blow -->
+		<production count="1" id="35101" />	<!-- Dark Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35171" />	<!-- Dark Amaranthine Thrower - Long Blow + Damage Up -->
+		<production count="1" id="35101" />	<!-- Dark Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35172" />	<!-- Dark Amaranthine Shooter - Focus + Critical Slow -->
+		<production count="1" id="35102" />	<!-- Dark Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35173" />	<!-- Dark Amaranthine Shooter - Critical Slow + Haste -->
+		<production count="1" id="35102" />	<!-- Dark Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35174" />	<!-- Dark Amaranthine Shooter - Haste + Focus -->
+		<production count="1" id="35102" />	<!-- Dark Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35175" />	<!-- Dark Amaranthine Buster - Acumen + Magic Hold -->
+		<production count="1" id="35103" />	<!-- Dark Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35176" />	<!-- Dark Amaranthine Buster - Magic Hold + Mana Up -->
+		<production count="1" id="35103" />	<!-- Dark Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35177" />	<!-- Dark Amaranthine Buster - Mana Up + Acumen -->
+		<production count="1" id="35103" />	<!-- Dark Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35178" />	<!-- Dark Amaranthine Caster - Empower + Acumen -->
+		<production count="1" id="35104" />	<!-- Dark Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35179" />	<!-- Dark Amaranthine Caster - Acumen + Magic Hold -->
+		<production count="1" id="35104" />	<!-- Dark Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35180" />	<!-- Dark Amaranthine Caster - Magic Hold + Empower -->
+		<production count="1" id="35104" />	<!-- Dark Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35181" />	<!-- Dark Amaranthine Retributer - MP Regeneration + Acumen -->
+		<production count="1" id="35105" />	<!-- Dark Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35182" />	<!-- Dark Amaranthine Retributer - Acumen + Empower -->
+		<production count="1" id="35105" />	<!-- Dark Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35183" />	<!-- Dark Amaranthine Retributer - Empower + MP Regeneration -->
+		<production count="1" id="35105" />	<!-- Dark Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35184" />	<!-- Dark Amaranthine Dualsword - Haste + Damage Up -->
+		<production count="1" id="35106" />	<!-- Dark Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35185" />	<!-- Dark Amaranthine Dualsword - Damage Up + Health -->
+		<production count="1" id="35106" />	<!-- Dark Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35186" />	<!-- Dark Amaranthine Dualsword - Health + Haste -->
+		<production count="1" id="35106" />	<!-- Dark Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35187" />	<!-- Dark Amaranthine Dual Dagger - Damage Up + Focus -->
+		<production count="1" id="35107" />	<!-- Dark Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35188" />	<!-- Dark Amaranthine Dual Dagger - Focus + Guidance -->
+		<production count="1" id="35107" />	<!-- Dark Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35189" />	<!-- Dark Amaranthine Dual Dagger - Guidance + Damage Up -->
+		<production count="1" id="35107" />	<!-- Dark Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35190" />	<!-- Dark Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<production count="1" id="35108" />	<!-- Dark Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35191" />	<!-- Dark Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
+		<production count="1" id="35108" />	<!-- Dark Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35192" />	<!-- Dark Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
+		<production count="1" id="35108" />	<!-- Dark Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35207" />	<!-- Bloody Amaranthine Shaper - Guidance -->
+		<production count="1" id="35193" />	<!-- Bloody Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35208" />	<!-- Bloody Amaranthine Shaper - Haste -->
+		<production count="1" id="35193" />	<!-- Bloody Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35209" />	<!-- Bloody Amaranthine Shaper - Focus -->
+		<production count="1" id="35193" />	<!-- Bloody Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35210" />	<!-- Bloody Amaranthine Cutter - Haste -->
+		<production count="1" id="35194" />	<!-- Bloody Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35211" />	<!-- Bloody Amaranthine Cutter - Focus -->
+		<production count="1" id="35194" />	<!-- Bloody Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35212" />	<!-- Bloody Amaranthine Cutter - Health -->
+		<production count="1" id="35194" />	<!-- Bloody Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35213" />	<!-- Bloody Amaranthine Slasher - Focus -->
+		<production count="1" id="35195" />	<!-- Bloody Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35214" />	<!-- Bloody Amaranthine Slasher - Damage Up -->
+		<production count="1" id="35195" />	<!-- Bloody Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35215" />	<!-- Bloody Amaranthine Slasher - Haste -->
+		<production count="1" id="35195" />	<!-- Bloody Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35216" />	<!-- Bloody Amaranthine Avenger - Haste -->
+		<production count="1" id="35196" />	<!-- Bloody Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35217" />	<!-- Bloody Amaranthine Avenger - Critical Damage -->
+		<production count="1" id="35196" />	<!-- Bloody Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35218" />	<!-- Bloody Amaranthine Avenger - Focus -->
+		<production count="1" id="35196" />	<!-- Bloody Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35219" />	<!-- Bloody Amaranthine Fighter - Focus -->
+		<production count="1" id="35197" />	<!-- Bloody Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35220" />	<!-- Bloody Amaranthine Fighter - Damage Up -->
+		<production count="1" id="35197" />	<!-- Bloody Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35221" />	<!-- Bloody Amaranthine Fighter - Haste -->
+		<production count="1" id="35197" />	<!-- Bloody Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35222" />	<!-- Bloody Amaranthine Stormer - HP Drain -->
+		<production count="1" id="35198" />	<!-- Bloody Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35223" />	<!-- Bloody Amaranthine Stormer - Guidance -->
+		<production count="1" id="35198" />	<!-- Bloody Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35224" />	<!-- Bloody Amaranthine Stormer - Damage Up -->
+		<production count="1" id="35198" />	<!-- Bloody Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35225" />	<!-- Bloody Amaranthine Thrower - Damage Up -->
+		<production count="1" id="35199" />	<!-- Bloody Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35226" />	<!-- Bloody Amaranthine Thrower - Focus -->
+		<production count="1" id="35199" />	<!-- Bloody Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35227" />	<!-- Bloody Amaranthine Thrower - Long Blow -->
+		<production count="1" id="35199" />	<!-- Bloody Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35228" />	<!-- Bloody Amaranthine Shooter - Focus -->
+		<production count="1" id="35200" />	<!-- Bloody Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35229" />	<!-- Bloody Amaranthine Shooter - Critical Slow -->
+		<production count="1" id="35200" />	<!-- Bloody Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35230" />	<!-- Bloody Amaranthine Shooter - Haste -->
+		<production count="1" id="35200" />	<!-- Bloody Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35231" />	<!-- Bloody Amaranthine Buster - Acumen -->
+		<production count="1" id="35201" />	<!-- Bloody Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35232" />	<!-- Bloody Amaranthine Buster - Magic Hold -->
+		<production count="1" id="35201" />	<!-- Bloody Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35233" />	<!-- Bloody Amaranthine Buster - Mana Up -->
+		<production count="1" id="35201" />	<!-- Bloody Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35234" />	<!-- Bloody Amaranthine Caster - Empower -->
+		<production count="1" id="35202" />	<!-- Bloody Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35235" />	<!-- Bloody Amaranthine Caster - Acumen -->
+		<production count="1" id="35202" />	<!-- Bloody Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35236" />	<!-- Bloody Amaranthine Caster - Magic Hold -->
+		<production count="1" id="35202" />	<!-- Bloody Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35237" />	<!-- Bloody Amaranthine Retributer - MP Regeneration -->
+		<production count="1" id="35203" />	<!-- Bloody Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35238" />	<!-- Bloody Amaranthine Retributer - Acumen -->
+		<production count="1" id="35203" />	<!-- Bloody Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35239" />	<!-- Bloody Amaranthine Retributer - Empower -->
+		<production count="1" id="35203" />	<!-- Bloody Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35240" />	<!-- Bloody Amaranthine Dualsword - Haste -->
+		<production count="1" id="35204" />	<!-- Bloody Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35241" />	<!-- Bloody Amaranthine Dualsword - Damage Up -->
+		<production count="1" id="35204" />	<!-- Bloody Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35242" />	<!-- Bloody Amaranthine Dualsword - Health -->
+		<production count="1" id="35204" />	<!-- Bloody Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35243" />	<!-- Bloody Amaranthine Dual Dagger - Damage Up -->
+		<production count="1" id="35205" />	<!-- Bloody Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35244" />	<!-- Bloody Amaranthine Dual Dagger - Focus -->
+		<production count="1" id="35205" />	<!-- Bloody Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35245" />	<!-- Bloody Amaranthine Dual Dagger - Guidance -->
+		<production count="1" id="35205" />	<!-- Bloody Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35246" />	<!-- Bloody Amaranthine Dual Blunt Weapon - Focus -->
+		<production count="1" id="35206" />	<!-- Bloody Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35247" />	<!-- Bloody Amaranthine Dual Blunt Weapon - Guidance -->
+		<production count="1" id="35206" />	<!-- Bloody Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35248" />	<!-- Bloody Amaranthine Dual Blunt Weapon - Damage Up -->
+		<production count="1" id="35206" />	<!-- Bloody Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35249" />	<!-- Bloody Amaranthine Shaper - Guidance + Haste -->
+		<production count="1" id="35193" />	<!-- Bloody Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35250" />	<!-- Bloody Amaranthine Shaper - Haste + Focus -->
+		<production count="1" id="35193" />	<!-- Bloody Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35251" />	<!-- Bloody Amaranthine Shaper - Focus + Guidance -->
+		<production count="1" id="35193" />	<!-- Bloody Amaranthine Shaper -->
+	</item>
+	<item>
+		<ingredient count="1" id="35252" />	<!-- Bloody Amaranthine Cutter - Haste + Focus -->
+		<production count="1" id="35194" />	<!-- Bloody Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35253" />	<!-- Bloody Amaranthine Cutter - Focus + Health -->
+		<production count="1" id="35194" />	<!-- Bloody Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35254" />	<!-- Bloody Amaranthine Cutter - Health + Haste -->
+		<production count="1" id="35194" />	<!-- Bloody Amaranthine Cutter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35255" />	<!-- Bloody Amaranthine Slasher - Focus + Damage -->
+		<production count="1" id="35195" />	<!-- Bloody Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35256" />	<!-- Bloody Amaranthine Slasher - Damage Up + Haste -->
+		<production count="1" id="35195" />	<!-- Bloody Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35257" />	<!-- Bloody Amaranthine Slasher - Haste + Focus -->
+		<production count="1" id="35195" />	<!-- Bloody Amaranthine Slasher -->
+	</item>
+	<item>
+		<ingredient count="1" id="35258" />	<!-- Bloody Amaranthine Avenger - Haste + Critical Damage -->
+		<production count="1" id="35196" />	<!-- Bloody Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35259" />	<!-- Bloody Amaranthine Avenger - Critical Damage + Focus -->
+		<production count="1" id="35196" />	<!-- Bloody Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35260" />	<!-- Bloody Amaranthine Avenger - Focus + Haste -->
+		<production count="1" id="35196" />	<!-- Bloody Amaranthine Avenger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35261" />	<!-- Bloody Amaranthine Fighter - Focus + Damage -->
+		<production count="1" id="35197" />	<!-- Bloody Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35262" />	<!-- Bloody Amaranthine Fighter - Damage Up + Haste -->
+		<production count="1" id="35197" />	<!-- Bloody Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35263" />	<!-- Bloody Amaranthine Fighter - Haste + Focus -->
+		<production count="1" id="35197" />	<!-- Bloody Amaranthine Fighter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35264" />	<!-- Bloody Amaranthine Stormer - HP Drain + Guidance -->
+		<production count="1" id="35198" />	<!-- Bloody Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35265" />	<!-- Bloody Amaranthine Stormer - Guidance + Damage Up -->
+		<production count="1" id="35198" />	<!-- Bloody Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35266" />	<!-- Bloody Amaranthine Stormer - Damage Up + HP Drain -->
+		<production count="1" id="35198" />	<!-- Bloody Amaranthine Stormer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35267" />	<!-- Bloody Amaranthine Thrower - Damage Up + Focus -->
+		<production count="1" id="35199" />	<!-- Bloody Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35268" />	<!-- Bloody Amaranthine Thrower - Focus + Long Blow -->
+		<production count="1" id="35199" />	<!-- Bloody Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35269" />	<!-- Bloody Amaranthine Thrower - Long Blow + Damage Up -->
+		<production count="1" id="35199" />	<!-- Bloody Amaranthine Thrower -->
+	</item>
+	<item>
+		<ingredient count="1" id="35270" />	<!-- Bloody Amaranthine Shooter - Focus + Critical Slow -->
+		<production count="1" id="35200" />	<!-- Bloody Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35271" />	<!-- Bloody Amaranthine Shooter - Critical Slow + Haste -->
+		<production count="1" id="35200" />	<!-- Bloody Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35272" />	<!-- Bloody Amaranthine Shooter - Haste + Focus -->
+		<production count="1" id="35200" />	<!-- Bloody Amaranthine Shooter -->
+	</item>
+	<item>
+		<ingredient count="1" id="35273" />	<!-- Bloody Amaranthine Buster - Acumen + Magic Hold -->
+		<production count="1" id="35201" />	<!-- Bloody Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35274" />	<!-- Bloody Amaranthine Buster - Magic Hold + Mana Up -->
+		<production count="1" id="35201" />	<!-- Bloody Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35275" />	<!-- Bloody Amaranthine Buster - Mana Up + Acumen -->
+		<production count="1" id="35201" />	<!-- Bloody Amaranthine Buster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35276" />	<!-- Bloody Amaranthine Caster - Empower + Acumen -->
+		<production count="1" id="35202" />	<!-- Bloody Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35277" />	<!-- Bloody Amaranthine Caster - Acumen + Magic Hold -->
+		<production count="1" id="35202" />	<!-- Bloody Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35278" />	<!-- Bloody Amaranthine Caster - Magic Hold + Empower -->
+		<production count="1" id="35202" />	<!-- Bloody Amaranthine Caster -->
+	</item>
+	<item>
+		<ingredient count="1" id="35279" />	<!-- Bloody Amaranthine Retributer - MP Regeneration + Acumen -->
+		<production count="1" id="35203" />	<!-- Bloody Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35280" />	<!-- Bloody Amaranthine Retributer - Acumen + Empower -->
+		<production count="1" id="35203" />	<!-- Bloody Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35281" />	<!-- Bloody Amaranthine Retributer - Empower + MP Regeneration -->
+		<production count="1" id="35203" />	<!-- Bloody Amaranthine Retributer -->
+	</item>
+	<item>
+		<ingredient count="1" id="35282" />	<!-- Bloody Amaranthine Dualsword - Haste + Damage Up -->
+		<production count="1" id="35204" />	<!-- Bloody Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35283" />	<!-- Bloody Amaranthine Dualsword - Damage Up + Health -->
+		<production count="1" id="35204" />	<!-- Bloody Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35284" />	<!-- Bloody Amaranthine Dualsword - Health + Haste -->
+		<production count="1" id="35204" />	<!-- Bloody Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="35285" />	<!-- Bloody Amaranthine Dual Dagger - Damage Up + Focus -->
+		<production count="1" id="35205" />	<!-- Bloody Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35286" />	<!-- Bloody Amaranthine Dual Dagger - Focus + Guidance -->
+		<production count="1" id="35205" />	<!-- Bloody Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35287" />	<!-- Bloody Amaranthine Dual Dagger - Guidance + Damage Up -->
+		<production count="1" id="35205" />	<!-- Bloody Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="35288" />	<!-- Bloody Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+		<production count="1" id="35206" />	<!-- Bloody Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35289" />	<!-- Bloody Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
+		<production count="1" id="35206" />	<!-- Bloody Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="35290" />	<!-- Bloody Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
+		<production count="1" id="35206" />	<!-- Bloody Amaranthine Dual Blunt Weapon -->
+	</item>
+</list>

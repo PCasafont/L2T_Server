@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Seraph Shoes in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / robe) -->
+	<item id="18200" type="EtcItem" name="Unidentified Seraph Shoes - Robe">
+		<set name="icon" val="icon.armor_t403_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12109-1" />
+		<set name="standardItem" val="17411" />
+		<set name="boundItem" val="17928" />
+		<set name="blessedItem" val="18064" />
+	</item>
+	<!-- A Seraph Sigil in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Shield / robe) -->
+	<item id="18201" type="EtcItem" name="Unidentified Seraph Sigil - Robe">
+		<set name="icon" val="icon.airtoil_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12110-1" />
+		<set name="standardItem" val="17412" />
+		<set name="boundItem" val="17929" />
+		<set name="blessedItem" val="18065" />
+	</item>
+	<!-- A Seraph Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Necklace) -->
+	<item id="18202" type="EtcItem" name="Unidentified Seraph Necklace">
+		<set name="icon" val="icon.r95_necklace_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12111-1" />
+		<set name="standardItem" val="17413" />
+		<set name="boundItem" val="17930" />
+		<set name="blessedItem" val="18066" />
+	</item>
+	<!-- A Seraph Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Earring) -->
+	<item id="18203" type="EtcItem" name="Unidentified Seraph Earring">
+		<set name="icon" val="icon.r95_earring_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12112-1" />
+		<set name="standardItem" val="17414" />
+		<set name="boundItem" val="17931" />
+		<set name="blessedItem" val="18067" />
+	</item>
+	<!-- A Seraph Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Ring) -->
+	<item id="18204" type="EtcItem" name="Unidentified Seraph Ring">
+		<set name="icon" val="icon.r95_ring_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12113-1" />
+		<set name="standardItem" val="17415" />
+		<set name="boundItem" val="17932" />
+		<set name="blessedItem" val="18068" />
+	</item>
+	<!-- An Amaranthine Shaper in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / dagger) -->
+	<item id="18205" type="EtcItem" name="Unidentified Amaranthine Shaper">
+		<set name="icon" val="icon.weapon_stanpid_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12114-1" />
+		<set name="standardItem" val="17416" />
+		<set name="boundItem" val="17933" />
+	</item>
+	<!-- An Amaranthine Cutter in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / sword) -->
+	<item id="18206" type="EtcItem" name="Unidentified Amaranthine Cutter">
+		<set name="icon" val="icon.weapon_plenitas_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12115-1" />
+		<set name="standardItem" val="17417" />
+		<set name="boundItem" val="17934" />
+		<set name="blessedItem" val="18070" />
+	</item>
+	<!-- An Amaranthine Slasher in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / sword) -->
+	<item id="18207" type="EtcItem" name="Unidentified Amaranthine Slasher">
+		<set name="icon" val="icon.weapon_bauen_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12116-1" />
+		<set name="standardItem" val="17418" />
+		<set name="boundItem" val="17935" />
+		<set name="blessedItem" val="18071" />
+	</item>
+	<!-- An Amaranthine Avenger in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / blunt) -->
+	<item id="18208" type="EtcItem" name="Unidentified Amaranthine Avenger">
+		<set name="icon" val="icon.weapon_qutram_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12117-1" />
+		<set name="standardItem" val="17419" />
+		<set name="boundItem" val="17936" />
+		<set name="blessedItem" val="18072" />
+	</item>
+	<!-- An Amaranthine Fighter in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / combat) -->
+	<item id="18209" type="EtcItem" name="Unidentified Amaranthine Fighter">
+		<set name="icon" val="icon.weapon_durga_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12118-1" />
+		<set name="standardItem" val="17420" />
+		<set name="boundItem" val="17937" />
+		<set name="blessedItem" val="18073" />
+	</item>
+	<!-- An Amaranthine Stormer in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / spear) -->
+	<item id="18210" type="EtcItem" name="Unidentified Amaranthine Stormer">
+		<set name="icon" val="icon.weapon_crabel_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12119-1" />
+		<set name="standardItem" val="17421" />
+		<set name="boundItem" val="17938" />
+		<set name="blessedItem" val="18074" />
+	</item>
+	<!-- An Amaranthine Thrower in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / bow) -->
+	<item id="18211" type="EtcItem" name="Unidentified Amaranthine Thrower">
+		<set name="icon" val="icon.weapon_castron_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12120-1" />
+		<set name="standardItem" val="17422" />
+		<set name="boundItem" val="17939" />
+		<set name="blessedItem" val="18075" />
+	</item>
+	<!-- An Amaranthine Shooter in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / crossbow / bow) -->
+	<item id="18212" type="EtcItem" name="Unidentified Amaranthine Shooter">
+		<set name="icon" val="icon.weapon_stilla_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12121-1" />
+		<set name="standardItem" val="17423" />
+		<set name="boundItem" val="17940" />
+		<set name="blessedItem" val="18076" />
+	</item>
+	<!-- An Amaranthine Buster in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / sword) -->
+	<item id="18213" type="EtcItem" name="Unidentified Amaranthine Buster">
+		<set name="icon" val="icon.weaon_serapear_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12122-1" />
+		<set name="standardItem" val="17424" />
+		<set name="boundItem" val="17941" />
+		<set name="blessedItem" val="18077" />
+	</item>
+	<!-- An Amaranthine Caster in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / blunt) -->
+	<item id="18214" type="EtcItem" name="Unidentified Amaranthine Caster">
+		<set name="icon" val="icon.weapon_pilia_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12123-1" />
+		<set name="standardItem" val="17425" />
+		<set name="boundItem" val="17942" />
+		<set name="blessedItem" val="18078" />
+	</item>
+	<!-- An Amaranthine Retributer in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / blunt) -->
+	<item id="18215" type="EtcItem" name="Unidentified Amaranthine Retributer">
+		<set name="icon" val="icon.weapon_shaelon_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12124-1" />
+		<set name="standardItem" val="17426" />
+		<set name="boundItem" val="17943" />
+		<set name="blessedItem" val="18079" />
+	</item>
+	<!-- Amaranthine Dualsword in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / dualsword) -->
+	<item id="18216" type="EtcItem" name="Unidentified Amaranthine Dualsword">
+		<set name="icon" val="icon.weapon_r_dualsword_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12125-1" />
+		<set name="standardItem" val="17427" />
+		<set name="boundItem" val="17944" />
+		<set name="blessedItem" val="18080" />
+	</item>
+	<!-- An Amaranthine Dual Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / dualsword / dagger) -->
+	<item id="18217" type="EtcItem" name="Unidentified Amaranthine Dual Dagger">
+		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12126-1" />
+		<set name="standardItem" val="17428" />
+		<set name="boundItem" val="17945" />
+		<set name="blessedItem" val="18081" />
+	</item>
+	<!-- An Amaranthine Dual Blunt Weapon in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / dualsword / blunt) -->
+	<item id="18218" type="EtcItem" name="Unidentified Amaranthine Dual Blunt Weapon">
+		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12127-1" />
+		<set name="standardItem" val="17429" />
+		<set name="boundItem" val="17946" />
+		<set name="blessedItem" val="18082" />
+	</item>
+	<!-- An Eternal Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Helmet / heavy armor) -->
+	<item id="18219" type="EtcItem" name="Unidentified Eternal Helmet - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12128-1" />
+		<set name="standardItem" val="17430" />
+		<set name="boundItem" val="17947" />
+		<set name="blessedItem" val="18083" />
+	</item>
+	<!-- An Eternal Breastplate in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: upper / heavy armor) -->
+	<item id="18220" type="EtcItem" name="Unidentified Eternal Breastplate - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_u_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12129-1" />
+		<set name="standardItem" val="17431" />
+		<set name="boundItem" val="17948" />
+		<set name="blessedItem" val="18084" />
+	</item>
+	<!-- Eternal Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: lower / heavy armor) -->
+	<item id="18221" type="EtcItem" name="Unidentified Eternal Gaiters - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_l_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12130-1" />
+		<set name="standardItem" val="17432" />
+		<set name="boundItem" val="17949" />
+		<set name="blessedItem" val="18085" />
+	</item>
+	<!-- An Eternal Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Gloves / heavy armor) -->
+	<item id="18222" type="EtcItem" name="Unidentified Eternal Gauntlets - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_g_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12131-1" />
+		<set name="standardItem" val="17433" />
+		<set name="boundItem" val="17950" />
+		<set name="blessedItem" val="18086" />
+	</item>
+	<!-- Eternal Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / heavy armor) -->
+	<item id="18223" type="EtcItem" name="Unidentified Eternal Boots - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12132-1" />
+		<set name="standardItem" val="17434" />
+		<set name="boundItem" val="17951" />
+		<set name="blessedItem" val="18087" />
+	</item>
+	<!-- An Eternal Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Shield / heavy armor) -->
+	<item id="18224" type="EtcItem" name="Unidentified Eternal Shield - Heavy Armor">
+		<set name="icon" val="icon.weapon_akra_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12133-1" />
+		<set name="standardItem" val="17435" />
+		<set name="boundItem" val="17952" />
+		<set name="blessedItem" val="18088" />
+	</item>
+	<!-- An Eternal Leather Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Helmet / light armor) -->
+	<item id="18225" type="EtcItem" name="Unidentified Eternal Leather Helmet - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12134-1" />
+		<set name="standardItem" val="17436" />
+		<set name="boundItem" val="17953" />
+		<set name="blessedItem" val="18089" />
+	</item>
+	<!-- An Eternal Leather Armor in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: upper / light armor) -->
+	<item id="18226" type="EtcItem" name="Unidentified Eternal Leather Armor - Light Armor">
+		<set name="icon" val="icon.armor_t702_u_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12135-1" />
+		<set name="standardItem" val="17437" />
+		<set name="boundItem" val="17954" />
+		<set name="blessedItem" val="18090" />
+	</item>
+	<!-- Eternal Leather Leggings in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: lower / light armor) -->
+	<item id="18227" type="EtcItem" name="Unidentified Eternal Leather Leggings - Light Armor">
+		<set name="icon" val="icon.armor_t702_l_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12136-1" />
+		<set name="boundItem" val="17955" />
+		<set name="blessedItem" val="18091" />
+	</item>
+	<!-- Eternal Leather Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Gloves / light armor) -->
+	<item id="18228" type="EtcItem" name="Unidentified Eternal Leather Gloves - Light Armor">
+		<set name="icon" val="icon.armor_t702_g_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12137-1" />
+		<set name="standardItem" val="17438" />
+		<set name="boundItem" val="17956" />
+		<set name="blessedItem" val="18092" />
+	</item>
+	<!-- Eternal Leather Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / light armor) -->
+	<item id="18229" type="EtcItem" name="Unidentified Eternal Leather Boots - Light Armor">
+		<set name="icon" val="icon.armor_t702_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12138-1" />
+		<set name="standardItem" val="17440" />
+		<set name="boundItem" val="17957" />
+		<set name="blessedItem" val="18093" />
+	</item>
+	<!-- An Eternal Circlet in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Helmet / robe) -->
+	<item id="18230" type="EtcItem" name="Unidentified Eternal Circlet - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12139-1" />
+		<set name="standardItem" val="17441" />
+		<set name="boundItem" val="17958" />
+		<set name="blessedItem" val="18094" />
+	</item>
+	<!-- An Eternal Tunic in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: upper / robe) -->
+	<item id="18231" type="EtcItem" name="Unidentified Eternal Tunic - Robe">
+		<set name="icon" val="icon.armor_t703_u_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12140-1" />
+		<set name="standardItem" val="17442" />
+		<set name="boundItem" val="17959" />
+		<set name="blessedItem" val="18095" />
+	</item>
+	<!-- Eternal Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: lower / robe) -->
+	<item id="18232" type="EtcItem" name="Unidentified Eternal Stockings - Robe">
+		<set name="icon" val="icon.armor_t703_l_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12141-1" />
+		<set name="standardItem" val="17443" />
+		<set name="boundItem" val="17960" />
+		<set name="blessedItem" val="18096" />
+	</item>
+	<!-- Eternal Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Gloves / robe) -->
+	<item id="18233" type="EtcItem" name="Unidentified Eternal Gloves - Robe">
+		<set name="icon" val="icon.armor_t703_g_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12142-1" />
+		<set name="standardItem" val="17444" />
+		<set name="boundItem" val="17961" />
+		<set name="blessedItem" val="18097" />
+	</item>
+	<!-- Eternal Shoes in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / robe) -->
+	<item id="18234" type="EtcItem" name="Unidentified Eternal Shoes - Robe">
+		<set name="icon" val="icon.armor_t703_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12143-1" />
+		<set name="standardItem" val="17445" />
+		<set name="boundItem" val="17962" />
+		<set name="blessedItem" val="18098" />
+	</item>
+	<!-- An Eternal Sigil in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Shield / robe) -->
+	<item id="18235" type="EtcItem" name="Unidentified Eternal Sigil - Robe">
+		<set name="icon" val="icon.elos_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12144-1" />
+		<set name="standardItem" val="17446" />
+		<set name="boundItem" val="17963" />
+		<set name="blessedItem" val="18099" />
+	</item>
+	<!-- An Eternal Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Necklace) -->
+	<item id="18236" type="EtcItem" name="Unidentified Eternal Necklace">
+		<set name="icon" val="icon.r991_necklace_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12145-1" />
+		<set name="standardItem" val="17447" />
+		<set name="boundItem" val="17964" />
+		<set name="blessedItem" val="18100" />
+	</item>
+	<!-- An Eternal Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Earring) -->
+	<item id="18237" type="EtcItem" name="Unidentified Eternal Earring">
+		<set name="icon" val="icon.r991_earring_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12146-1" />
+		<set name="standardItem" val="17448" />
+		<set name="boundItem" val="17965" />
+		<set name="blessedItem" val="18101" />
+	</item>
+	<!-- An Eternal Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Ring) -->
+	<item id="18238" type="EtcItem" name="Unidentified Eternal Ring">
+		<set name="icon" val="icon.r991_ring_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12147-1" />
+		<set name="standardItem" val="17449" />
+		<set name="boundItem" val="17966" />
+		<set name="blessedItem" val="18102" />
+	</item>
+	<!-- A Kaliel Shaper in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / dagger) -->
+	<item id="18239" type="EtcItem" name="Unidentified Kaliel Shaper">
+		<set name="icon" val="icon.weapon_vesper_shaper_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12148-1" />
+		<set name="blessedItem" val="17450" />
+	</item>
+	<!-- A Kaliel Cutter in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / sword) -->
+	<item id="18240" type="EtcItem" name="Unidentified Kaliel Cutter">
+		<set name="icon" val="icon.weapon_vesper_cutter_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12149-1" />
+		<set name="blessedItem" val="17451" />
+	</item>
+	<!-- A Kaliel Slasher in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / sword) -->
+	<item id="18241" type="EtcItem" name="Unidentified Kaliel Slasher">
+		<set name="icon" val="icon.weapon_vesper_slasher_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12150-1" />
+		<set name="blessedItem" val="17452" />
+	</item>
+	<!-- A Kaliel Avenger in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / blunt) -->
+	<item id="18242" type="EtcItem" name="Unidentified Kaliel Avenger">
+		<set name="icon" val="icon.weapon_vesper_avenger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12151-1" />
+		<set name="blessedItem" val="17453" />
+	</item>
+	<!-- A Kaliel Fighter in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / combat) -->
+	<item id="18243" type="EtcItem" name="Unidentified Kaliel Fighter">
+		<set name="icon" val="icon.weapon_octoclaw_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12152-1" />
+		<set name="blessedItem" val="17454" />
+	</item>
+	<!-- A Kaliel Stormer in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / spear) -->
+	<item id="18244" type="EtcItem" name="Unidentified Kaliel Stormer">
+		<set name="icon" val="icon.weapon_vesper_stormer_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12153-1" />
+		<set name="blessedItem" val="17455" />
+	</item>
+	<!-- A Kaliel Thrower in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / bow) -->
+	<item id="18245" type="EtcItem" name="Unidentified Kaliel Thrower">
+		<set name="icon" val="icon.weapon_vesper_thrower_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12154-1" />
+		<set name="blessedItem" val="17456" />
+	</item>
+	<!-- A Kaliel Shooter in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / crossbow / bow) -->
+	<item id="18246" type="EtcItem" name="Unidentified Kaliel Shooter">
+		<set name="icon" val="icon.weapon_vesper_schutze_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12155-1" />
+		<set name="blessedItem" val="17457" />
+	</item>
+	<!-- A Kaliel Buster in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / sword) -->
+	<item id="18247" type="EtcItem" name="Unidentified Kaliel Buster">
+		<set name="icon" val="icon.weapon_vesper_burster_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12156-1" />
+		<set name="blessedItem" val="17458" />
+	</item>
+	<!-- A Kaliel Caster in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: one-handed weapon / blunt) -->
+	<item id="18248" type="EtcItem" name="Unidentified Kaliel Caster">
+		<set name="icon" val="icon.weapon_vesper_caster_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12157-1" />
+		<set name="blessedItem" val="17459" />
+	</item>
+	<!-- A Kaliel Retributer in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / blunt) -->
+	<item id="18249" type="EtcItem" name="Unidentified Kaliel Retributer">
+		<set name="icon" val="icon.weapon_vesper_singer_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12158-1" />
+		<set name="blessedItem" val="17460" />
+	</item>
+	<!-- A Kaliel Dualsword in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / dualsword) -->
+	<item id="18250" type="EtcItem" name="Unidentified Kaliel Dualsword">
+		<set name="icon" val="icon.weapon_r_dualsword_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12159-1" />
+		<set name="blessedItem" val="17461" />
+	</item>
+	<!-- A Kaliel Dual Dagger in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / dualsword / dagger) -->
+	<item id="18251" type="EtcItem" name="Unidentified Kaliel Dual Dagger">
+		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12160-1" />
+		<set name="blessedItem" val="17462" />
+	</item>
+	<!-- A Kaliel Dual Blunt Weapon in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: two-handed weapon / dualsword / blunt) -->
+	<item id="18252" type="EtcItem" name="Unidentified Kaliel Dual Blunt Weapon">
+		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12161-1" />
+		<set name="blessedItem" val="17463" />
+	</item>
+	<!-- A Durandia Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Helmet / heavy armor) -->
+	<item id="18253" type="EtcItem" name="Unidentified Durandia Helmet - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12162-1" />
+		<set name="blessedItem" val="17464" />
+	</item>
+	<!-- A Durandia Breastplate in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: upper / heavy armor) -->
+	<item id="18254" type="EtcItem" name="Unidentified Durandia Breastplate - Heavy Armor">
+		<set name="icon" val="icon.armor_t97_u_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12163-1" />
+		<set name="blessedItem" val="17465" />
+	</item>
+	<!-- Durandia Gaiters in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: lower / heavy armor) -->
+	<item id="18255" type="EtcItem" name="Unidentified Durandia Gaiters - Heavy Armor">
+		<set name="icon" val="icon.armor_t97_l_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12164-1" />
+		<set name="blessedItem" val="17466" />
+	</item>
+	<!-- A Durandia Gauntlets in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Gloves / heavy armor) -->
+	<item id="18256" type="EtcItem" name="Unidentified Durandia Gauntlets - Heavy Armor">
+		<set name="icon" val="icon.armor_t97_g_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12165-1" />
+		<set name="blessedItem" val="17467" />
+	</item>
+	<!-- Durandia Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / heavy armor) -->
+	<item id="18257" type="EtcItem" name="Unidentified Durandia Boots - Heavy Armor">
+		<set name="icon" val="icon.armor_t97_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12166-1" />
+		<set name="blessedItem" val="17468" />
+	</item>
+	<!-- A Durandia Shield in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Shield / heavy armor) -->
+	<item id="18258" type="EtcItem" name="Unidentified Durandia Shield - Heavy Armor">
+		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12167-1" />
+		<set name="blessedItem" val="17469" />
+	</item>
+	<!-- A Durandia leather Helmet in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Helmet / light armor) -->
+	<item id="18259" type="EtcItem" name="Unidentified Durandia Leather Helmet - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12168-1" />
+		<set name="blessedItem" val="17470" />
+	</item>
+	<!-- A Durandia leather armor in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: upper / light armor) -->
+	<item id="18260" type="EtcItem" name="Unidentified Durandia Leather Armor - Light Armor">
+		<set name="icon" val="icon.armor_t98_u_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12169-1" />
+		<set name="blessedItem" val="17471" />
+	</item>
+	<!-- Durandia leather Leggings in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: lower / light armor) -->
+	<item id="18261" type="EtcItem" name="Unidentified Durandia Leather Leggings - Light Armor">
+		<set name="icon" val="icon.armor_t98_l_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Immortal Leather Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Gloves / light armor) -->
+	<item id="18262" type="EtcItem" name="Unidentified Durandia Leather Gloves - Light Armor">
+		<set name="icon" val="icon.armor_t98_g_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12170-1" />
+		<set name="blessedItem" val="17473" />
+	</item>
+	<!-- Durandia leather Boots in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / light armor) -->
+	<item id="18263" type="EtcItem" name="Unidentified Durandia Leather Boots - Light Armor">
+		<set name="icon" val="icon.armor_t98_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12171-1" />
+		<set name="blessedItem" val="17474" />
+	</item>
+	<!-- A Durandia Circlet in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Helmet / robe) -->
+	<item id="18264" type="EtcItem" name="Unidentified Durandia Circlet - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12172-1" />
+		<set name="blessedItem" val="17475" />
+	</item>
+	<!-- A Durandia Tunic in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: upper / robe) -->
+	<item id="18265" type="EtcItem" name="Unidentified Durandia Tunic - Robe">
+		<set name="icon" val="icon.armor_t99_u_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12173-1" />
+		<set name="blessedItem" val="17476" />
+	</item>
+	<!-- Durandia Stockings in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: lower / robe) -->
+	<item id="18266" type="EtcItem" name="Unidentified Durandia Stockings - Robe">
+		<set name="icon" val="icon.armor_t99_l_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12174-1" />
+		<set name="blessedItem" val="17477" />
+	</item>
+	<!-- Durandia Gloves in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Gloves / robe) -->
+	<item id="18267" type="EtcItem" name="Unidentified Durandia Gloves - Robe">
+		<set name="icon" val="icon.armor_t99_g_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12175-1" />
+		<set name="blessedItem" val="17478" />
+	</item>
+	<!-- Durandia Shoes in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Boots / robe) -->
+	<item id="18268" type="EtcItem" name="Unidentified Durandia Shoes - Robe">
+		<set name="icon" val="icon.armor_t99_b_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12176-1" />
+		<set name="blessedItem" val="17479" />
+	</item>
+	<!-- Durandia Sigil in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Shield / robe) -->
+	<item id="18269" type="EtcItem" name="Unidentified Durandia Sigil - Robe">
+		<set name="icon" val="icon.verper_sigil_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12177-1" />
+		<set name="blessedItem" val="17480" />
+	</item>
+	<!-- A Durandia Necklace in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Necklace) -->
+	<item id="18270" type="EtcItem" name="Unidentified Durandia Necklace">
+		<set name="icon" val="icon.vesper_necklace_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12178-1" />
+		<set name="blessedItem" val="17481" />
+	</item>
+	<!-- A Durandia Earring in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Earring) -->
+	<item id="18271" type="EtcItem" name="Unidentified Durandia Earring">
+		<set name="icon" val="icon.vesper_earring_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12179-1" />
+		<set name="blessedItem" val="17482" />
+	</item>
+	<!-- A Durandia Ring in an Unidentified state. Double-click the item to identify it. The acquired item can be Blessed, Standard, or Bound. (Type: Ring) -->
+	<item id="18272" type="EtcItem" name="Unidentified Durandia Ring">
+		<set name="icon" val="icon.vesper_ring_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="12180-1" />
+		<set name="blessedItem" val="17483" />
+	</item>
+	<!-- P. Atk. + 37 when equipped. Shadow item. -->
+	<item id="18273" type="Armor" name="Talisman (R85-grade) - P. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pa_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8608-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 43 when equipped. Shadow item. -->
+	<item id="18274" type="Armor" name="Talisman (R90-grade) - P. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pa_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8609-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 52 when equipped. Shadow item. -->
+	<item id="18275" type="Armor" name="Talisman (R95-grade) - P. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pa_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8610-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 60 when equipped. Shadow item. -->
+	<item id="18276" type="Armor" name="Talisman (R99-grade) - P. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pa_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8611-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 38 when equipped. Shadow item. -->
+	<item id="18277" type="Armor" name="Talisman (R85-grade) - P. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8612-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 43 when equipped. Shadow item. -->
+	<item id="18278" type="Armor" name="Talisman (R90-grade) - P. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8613-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 49 when equipped. Shadow item. -->
+	<item id="18279" type="Armor" name="Talisman (R95-grade) - P. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8614-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 54 when equipped. Shadow item. -->
+	<item id="18280" type="Armor" name="Talisman (R99-grade) - P. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_pd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8615-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 37 when equipped. Shadow item. -->
+	<item id="18281" type="Armor" name="Talisman (R85-grade) - M. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_ma_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8616-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 46 when equipped. Shadow item. -->
+	<item id="18282" type="Armor" name="Talisman (R90-grade) - M. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_ma_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8617-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 56 when equipped. Shadow item. -->
+	<item id="18283" type="Armor" name="Talisman (R95-grade) - M. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_ma_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8618-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 66 when equipped. Shadow item. -->
+	<item id="18284" type="Armor" name="Talisman (R99-grade) - M. Atk. (Passive)">
+		<set name="icon" val="icon.r85_talisman_ma_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8619-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 21 when equipped. Shadow item. -->
+	<item id="18285" type="Armor" name="Talisman (R85-grade) - M. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_md_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8620-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 24 when equipped. Shadow item. -->
+	<item id="18286" type="Armor" name="Talisman (R90-grade) - M. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_md_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8621-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 28 when equipped. Shadow item. -->
+	<item id="18287" type="Armor" name="Talisman (R95-grade) - M. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_md_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8622-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 32 when equipped. Shadow item. -->
+	<item id="18288" type="Armor" name="Talisman (R99-grade) - M. Def. (Passive)">
+		<set name="icon" val="icon.r85_talisman_md_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8623-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 219 when equipped. Shadow item. -->
+	<item id="18289" type="Armor" name="Talisman (R85-grade) - HP (Passive)">
+		<set name="icon" val="icon.r85_talisman_hp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 246 when equipped. Shadow item. -->
+	<item id="18290" type="Armor" name="Talisman (R90-grade) - HP (Passive)">
+		<set name="icon" val="icon.r85_talisman_hp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 277 when equipped. Shadow item. -->
+	<item id="18291" type="Armor" name="Talisman (R95-grade) - HP (Passive)">
+		<set name="icon" val="icon.r85_talisman_hp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 305 when equipped. Shadow item. -->
+	<item id="18292" type="Armor" name="Talisman (R99-grade) - HP (Passive)">
+		<set name="icon" val="icon.r85_talisman_hp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 109 when equipped. Shadow item. -->
+	<item id="18293" type="Armor" name="Talisman (R85-grade) - MP (Passive)">
+		<set name="icon" val="icon.r85_talisman_mp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 119 when equipped. Shadow item. -->
+	<item id="18294" type="Armor" name="Talisman (R90-grade) - MP (Passive)">
+		<set name="icon" val="icon.r85_talisman_mp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 130 when equipped. Shadow item. -->
+	<item id="18295" type="Armor" name="Talisman (R95-grade) - MP (Passive)">
+		<set name="icon" val="icon.r85_talisman_mp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 139 when equipped. Shadow item. -->
+	<item id="18296" type="Armor" name="Talisman (R99-grade) - MP (Passive)">
+		<set name="icon" val="icon.r85_talisman_mp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 99 when equipped. Shadow item. -->
+	<item id="18297" type="Armor" name="Talisman (R85-grade) - CP (Passive)">
+		<set name="icon" val="icon.r85_talisman_cp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 108 when equipped. Shadow item. -->
+	<item id="18298" type="Armor" name="Talisman (R90-grade) - CP (Passive)">
+		<set name="icon" val="icon.r85_talisman_cp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 116 when equipped. Shadow item. -->
+	<item id="18299" type="Armor" name="Talisman (R95-grade) - CP (Passive)">
+		<set name="icon" val="icon.r85_talisman_cp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+</list>

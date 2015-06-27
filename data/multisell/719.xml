@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd" isChance="true">
+	<item>
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="17825" /> <!-- STR Dye -->
+		<production count="1" id="17625" chance="35" /> <!-- Lv. 1 STR Symbol - Giant Dye - STR + 3 / DEX - 2 -->
+		<production count="1" id="17631" chance="25" /> <!-- Lv. 1 STR Symbol - Ancient Dye - STR + 3 / DEX - 2 / Fire Resistance + 5 -->
+		<production count="1" id="17637" chance="15" /> <!-- Lv. 1 STR Symbol - Legendary Dye - STR + 3 / DEX - 1 / Fire Resistance + 5 -->
+		<production count="1" id="17643" chance="9" /> <!-- Lv. 2 STR Symbol - Giant Dye - STR + 4 / DEX - 3 -->
+		<production count="1" id="17649" chance="7" /> <!-- Lv. 2 STR Symbol - Ancient Dye - STR + 4 / DEX - 3 / Fire Resistance + 10 -->
+		<production count="1" id="17655" chance="4" /> <!-- Lv. 2 STR Symbol - Legendary Dye - STR + 4 / DEX - 2 / Fire Resistance + 10 -->
+		<production count="1" id="17661" chance="2" /> <!-- Lv. 3 STR Symbol - Giant Dye - STR + 5 / DEX - 4 -->
+		<production count="1" id="17667" chance="1" /> <!-- Lv. 3 STR Symbol - Ancient Dye - STR + 5 / DEX - 4 / Fire Resistance + 15 -->
+		<production count="1" id="17673" chance="0.4" /> <!-- Lv. 3 STR Symbol - Legendary Dye - STR + 5 / DEX - 3 / Fire Resistance + 15 -->
+		<production count="1" id="17697" chance="0.3" /> <!-- Lv. 5 STR Symbol - Giant Dye - STR + 5 -->
+		<production count="1" id="17703" chance="0.2" /> <!-- Lv. 5 STR Symbol - Ancient Dye - STR + 5 / Fire Resistance + 25 -->
+		<production count="1" id="17709" chance="0.1" /> <!-- Lv. 5 STR Symbol - Legendary Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="17826" /> <!-- DEX Dye -->
+		<production count="1" id="17626" chance="35" /> <!-- Lv. 1 DEX Symbol - Giant Dye - DEX + 3 / CON - 2 -->
+		<production count="1" id="17632" chance="25" /> <!-- Lv. 1 DEX Symbol - Ancient Dye - DEX + 3 / CON - 2 / Earth Resistance + 5 -->
+		<production count="1" id="17638" chance="15" /> <!-- Lv. 1 DEX Symbol - Legendary Dye - DEX + 3 / CON - 1 / Earth Resistance + 5 -->
+		<production count="1" id="17644" chance="9" /> <!-- Lv. 2 DEX Symbol - Giant Dye - DEX + 4 / CON - 3 -->
+		<production count="1" id="17650" chance="7" /> <!-- Lv. 2 DEX Symbol - Ancient Dye - DEX + 4 / CON - 3 / Earth Resistance + 10 -->
+		<production count="1" id="17656" chance="4" /> <!-- Lv. 2 DEX Symbol - Legendary Dye - DEX + 4 / CON - 2 / Earth Resistance + 10 -->
+		<production count="1" id="17662" chance="3" /> <!-- Lv. 3 DEX Symbol - Giant Dye - DEX + 5 / CON - 4 -->
+		<production count="1" id="17668" chance="1" /> <!-- Lv. 3 DEX Symbol - Ancient Dye - DEX + 5 / CON - 4 / Earth Resistance + 15 -->
+		<production count="1" id="17674" chance="0.4" /> <!-- Lv. 3 DEX Symbol - Legendary Dye - DEX + 5 / CON - 3 / Earth Resistance + 15 -->
+		<production count="1" id="17698" chance="0.3" /> <!-- Lv. 5 DEX Symbol - Giant Dye - DEX + 5 -->
+		<production count="1" id="17704" chance="0.2" /> <!-- Lv. 5 DEX Symbol - Ancient Dye - DEX + 5 / Earth Resistance + 25 -->
+		<production count="1" id="17710" chance="0.1" /> <!-- Lv. 5 DEX Symbol - Legendary Dye - DEX + 5 / CON + 1 / Earth Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="17827" /> <!-- CON Dye -->
+		<production count="1" id="17627" chance="35" /> <!-- Lv. 1 CON Symbol - Giant Dye - CON + 3 / STR - 2 -->
+		<production count="1" id="17633" chance="25" /> <!-- Lv. 1 CON Symbol - Ancient Dye - CON + 3 / STR - 2 / Dark Attack Resistance + 5 -->
+		<production count="1" id="17639" chance="15" /> <!-- Lv. 1 CON Symbol - Legendary Dye - CON + 3 / STR - 1 / Dark Attack Resistance + 5 -->
+		<production count="1" id="17645" chance="9" /> <!-- Lv. 2 CON Symbol - Giant Dye - CON + 4 / STR - 3 -->
+		<production count="1" id="17651" chance="7" /> <!-- Lv. 2 CON Symbol - Ancient Dye - CON + 4 / STR - 3 / Dark Attack Resistance + 10 -->
+		<production count="1" id="17657" chance="4" /> <!-- Lv. 2 CON Symbol - Legendary Dye - CON + 4 / STR - 2 / Dark Attack Resistance + 10 -->
+		<production count="1" id="17663" chance="3" /> <!-- Lv. 3 CON Symbol - Giant Dye - CON + 5 / STR - 4 -->
+		<production count="1" id="17669" chance="1" /> <!-- Lv. 3 CON Symbol - Ancient Dye - CON + 5 / STR - 4 / Dark Attack Resistance + 15 -->
+		<production count="1" id="17675" chance="0.4" /> <!-- Lv. 3 CON Symbol - Legendary Dye - CON + 5 / STR - 3 / Dark Attack Resistance + 15 -->
+		<production count="1" id="17699" chance="0.3" /> <!-- Lv. 5 CON Symbol - Giant Dye - CON + 5 -->
+		<production count="1" id="17705" chance="0.2" /> <!-- Lv. 5 CON Symbol - Ancient Dye - CON + 5 / Dark Attack Resistance + 25 -->
+		<production count="1" id="17711" chance="0.1" /> <!-- Lv. 5 CON Symbol - Legendary Dye - CON + 5 / STR + 1 / Dark Attack Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="17828" /> <!-- Dye of INT -->
+		<production count="1" id="17628" chance="35" /> <!-- Lv. 1 INT Symbol - Giant Dye - INT + 3 / WIT - 2 -->
+		<production count="1" id="17634" chance="25" /> <!-- Lv. 1 INT Symbol - Ancient Dye - INT + 3 / WIT - 2 / Water Resistance + 5 -->
+		<production count="1" id="17640" chance="15" /> <!-- Lv. 1 INT Symbol - Legendary Dye - INT + 3 / WIT - 1 / Water Resistance + 5 -->
+		<production count="1" id="17646" chance="9" /> <!-- Lv. 2 INT Symbol - Giant Dye - INT + 4 / WIT - 3 -->
+		<production count="1" id="17652" chance="7" /> <!-- Lv. 2 INT Symbol - Ancient Dye - INT + 4 / WIT - 3 / Water Resistance + 10 -->
+		<production count="1" id="17658" chance="4" /> <!-- Lv. 2 INT Symbol - Legendary Dye - INT + 4 / WIT - 2 / Water Resistance + 10 -->
+		<production count="1" id="17664" chance="3" /> <!-- Lv. 3 INT Symbol - Giant Dye - INT + 5 / WIT - 4 -->
+		<production count="1" id="17670" chance="1" /> <!-- Lv. 3 INT Symbol - Ancient Dye - INT + 5 / WIT - 4 / Water Resistance + 15 -->
+		<production count="1" id="17676" chance="0.4" /> <!-- Lv. 3 INT Symbol - Legendary Dye - INT + 5 / WIT - 3 / Water Resistance + 15 -->
+		<production count="1" id="17700" chance="0.3" /> <!-- Lv. 5 INT Symbol - Giant Dye - INT + 5 -->
+		<production count="1" id="17706" chance="0.2" /> <!-- Lv. 5 INT Symbol - Ancient Dye - INT + 5 / Water Resistance + 25 -->
+		<production count="1" id="17712" chance="0.1" /> <!-- Lv. 5 INT Symbol - Legendary Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="17829" /> <!-- WIT Dye -->
+		<production count="1" id="17629" chance="35" /> <!-- Lv. 1 WIT Symbol - Giant Dye - WIT + 3 / MEN - 2 -->
+		<production count="1" id="17635" chance="25" /> <!-- Lv. 1 WIT Symbol - Ancient Dye - WIT + 3 / MEN - 2 / Wind Resistance + 5 -->
+		<production count="1" id="17641" chance="15" /> <!-- Lv. 1 WIT Symbol - Legendary Dye - WIT + 3 / MEN - 1 / Wind Resistance + 5 -->
+		<production count="1" id="17647" chance="9" /> <!-- Lv. 2 WIT Symbol - Giant Dye - WIT + 4 / MEN - 3 -->
+		<production count="1" id="17653" chance="7" /> <!-- Lv. 2 WIT Symbol - Ancient Dye - WIT + 4 / MEN - 3 / Wind Resistance + 10 -->
+		<production count="1" id="17659" chance="4" /> <!-- Lv. 2 WIT Symbol - Legendary Dye - WIT + 4 / MEN - 2 / Wind Resistance + 10 -->
+		<production count="1" id="17665" chance="3" /> <!-- Lv. 3 WIT Symbol - Giant Dye - WIT + 5 / MEN - 4 -->
+		<production count="1" id="17671" chance="1" /> <!-- Lv. 3 WIT Symbol - Ancient Dye - WIT + 5 / MEN - 4 / Wind Resistance + 15 -->
+		<production count="1" id="17677" chance="0.4" /> <!-- Lv. 3 WIT Symbol - Legendary Dye - WIT + 5 / MEN - 3 / Wind Resistance + 15 -->
+		<production count="1" id="17701" chance="0.3" /> <!-- Lv. 5 WIT Symbol - Giant Dye - Wit + 5 -->
+		<production count="1" id="17707" chance="0.2" /> <!-- Lv. 5 WIT Symbol - Ancient Dye - WIT + 5 / Wind Resistance + 25 -->
+		<production count="1" id="17713" chance="0.1" /> <!-- Lv. 5 WIT Symbol - Legendary Dye - WIT + 5 / MEN + 1 / Wind Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="17830" /> <!-- MEN Dye -->
+		<production count="1" id="17630" chance="35" /> <!-- Lv. 1 MEN Symbol - Giant Dye - MEN + 3 / INT - 2 -->
+		<production count="1" id="17636" chance="25" /> <!-- Lv. 1 MEN Symbol - Ancient Dye - MEN + 3 / INT - 2 / Holy Attack Resistance + 5 -->
+		<production count="1" id="17642" chance="15" /> <!-- Lv. 1 MEN Symbol - Legendary Dye - MEN + 3 / INT - 1 / Holy Attack Resistance + 5 -->
+		<production count="1" id="17648" chance="9" /> <!-- Lv. 2 MEN Symbol - Giant Dye - MEN + 4 / INT - 3 -->
+		<production count="1" id="17654" chance="7" /> <!-- Lv. 2 MEN Symbol - Ancient Dye - MEN + 4 / INT - 3 / Holy Attack Resistance + 10 -->
+		<production count="1" id="17660" chance="4" /> <!-- Lv. 2 MEN Symbol - Legendary Dye - MEN + 4 / INT - 2 / Holy Attack Resistance + 10 -->
+		<production count="1" id="17666" chance="3" /> <!-- Lv. 3 MEN Symbol - Giant Dye - MEN + 5 / INT - 4 -->
+		<production count="1" id="17672" chance="1" /> <!-- Lv. 3 MEN Symbol - Ancient Dye - MEN + 5 / INT - 4 / Holy Attack Resistance + 15 -->
+		<production count="1" id="17678" chance="0.4" /> <!-- Lv. 3 MEN Symbol - Legendary Dye - MEN + 5 / INT - 3 / Holy Attack Resistance + 15 -->
+		<production count="1" id="17702" chance="0.3" /> <!-- Lv. 5 MEN Symbol - Giant Dye - Men + 5 -->
+		<production count="1" id="17708" chance="0.2" /> <!-- Lv. 5 MEN Symbol - Ancient Dye - MEN + 5 / Holy Attack Resistance + 25 -->
+		<production count="1" id="17714" chance="0.1" /> <!-- Lv. 5 MEN Symbol - Legendary Dye - MEN + 5 / INT + 1 / Holy Attack Resistance + 25 -->
+	</item>
+</list>

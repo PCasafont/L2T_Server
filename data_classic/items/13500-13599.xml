@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Refined Black Feather Mask. Uses 2 hair accessory slots. -->
+	<item id="13500" type="Armor" name="Refined Black Feather Mask">
+		<set name="icon" val="icon.accessory_black_feather_mask2_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Romantic Chapeau. Uses 2 hair accessory slots. -->
+	<item id="13501" type="Armor" name="Refined Romantic Chapeau">
+		<set name="icon" val="icon.accessory_archer_hat2_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Carnival Circlet. Uses 2 hair accessory slots. -->
+	<item id="13502" type="Armor" name="Refined Carnival Circlet">
+		<set name="icon" val="icon.accessory_carnival_circlet2_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Medieval Party Mask. Uses 2 hair accessory slots. -->
+	<item id="13503" type="Armor" name="Refined Medieval Party Mask">
+		<set name="icon" val="icon.accessory_middle_age_party_mask2_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Refined Dapper Cap. Uses 2 hair accessory slots. -->
+	<item id="13504" type="Armor" name="Refined Dapper Cap">
+		<set name="icon" val="icon.accessory_dandy_cap2_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Clownfish Hat. Uses 2 hair accessory slots. -->
+	<item id="13505" type="Armor" name="Clownfish Hat">
+		<set name="icon" val="icon.accessory_fish_cap2_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="6000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Crown for the Castle Lords. Uses 2 hair accessory slots. -->
+	<item id="13506" type="Armor" name="Enhanced Lord's Crown">
+		<set name="icon" val="icon.accessory_pig_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Circlet that has the power of Flame. Uses 2 hair accessory slots. -->
+	<item id="13507" type="Armor" name="Circlet of Flames">
+		<set name="icon" val="icon.accessory_flame_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Circlet that has the power of Freeze. Uses 2 hair accessory slots. -->
+	<item id="13508" type="Armor" name="Circlet of Ice">
+		<set name="icon" val="icon.accessory_ice_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Circlet that has the power of Storm. Uses 2 hair accessory slots. -->
+	<item id="13509" type="Armor" name="Circlet of Storm">
+		<set name="icon" val="icon.accessory_storm_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Circlet that has the power of Severe Earthquake. Uses 2 hair accessory slots. -->
+	<item id="13510" type="Armor" name="Circlet of Earthquake">
+		<set name="icon" val="icon.accessory_earthquake_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Circlet that has the power of Darkness. Uses 2 hair accessory slots. -->
+	<item id="13511" type="Armor" name="Circlet of Darkness">
+		<set name="icon" val="icon.accessory_darkness_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Circlet that has the power of Splendor. Uses 2 hair accessory slots. -->
+	<item id="13512" type="Armor" name="Circlet of Splendor">
+		<set name="icon" val="icon.accessory_shining_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat used during mining. Uses 2 hair accessory slots. -->
+	<item id="13513" type="Armor" name="Mining Hat">
+		<set name="icon" val="icon.accessory_mining_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat used during mining. Uses 2 hair accessory slots. -->
+	<item id="13514" type="Armor" name="Enhanced Mining Hat">
+		<set name="icon" val="icon.accessory_advence_mining_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat used when searching for minerals. Uses 2 hair accessory slots. -->
+	<item id="13515" type="Armor" name="Search Hat">
+		<set name="icon" val="icon.accessory_mine_search_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat used when searching for minerals. Uses 2 hair accessory slots. -->
+	<item id="13516" type="Armor" name="Enhanced Search Hat">
+		<set name="icon" val="icon.accessory_advence_mine_search_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Furry hat captures a raccoon's playful spirit. Uses 2 hair accessory slots. -->
+	<item id="13517" type="Armor" name="Event - Raccoon Hat">
+		<set name="icon" val="icon.accessory_raccoon_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Top Hat reserved for fashionable society. Uses 2 hair accessory slots. -->
+	<item id="13518" type="Armor" name="Event - Top Hat">
+		<set name="icon" val="icon.accessory_magicial_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Traditional mask to hide one's true identity. Uses 2 hair accessory slots. -->
+	<item id="13519" type="Armor" name="Event - Black Mask">
+		<set name="icon" val="icon.accessory_jjoro_masj_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat of a Jindo Dog. Uses 2 hair accessory slots. -->
+	<item id="13520" type="Armor" name="Event - Jindo Dog Hat">
+		<set name="icon" val="icon.accessory_jindo_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat of a Shaggy Dog. Uses 2 hair accessory slots. -->
+	<item id="13521" type="Armor" name="Event - Shaggy Dog Hat">
+		<set name="icon" val="icon.accessory_sapsal_cap_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Goggles used to protect your eyes while riding on a mount. Uses 2 hair accessory slots. -->
+	<item id="13522" type="Armor" name="Event - Rider Goggles">
+		<set name="icon" val="icon.accessory_dragonfly_goggle_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Lineage Souvenir Circlet. Uses 2 hair accessory slots. -->
+	<item id="13523" type="Armor" name="Event - Lineage Souvenir Circlet">
+		<set name="icon" val="icon.accessary_darkelf_high_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="price" val="2000000" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- A Gracian Soldier's One-handed Sword. Uses 2 hair accessory slots. -->
+	<item id="13524" type="Weapon" name="Gracian Soldier One-handed Sword">
+		<set name="icon" val="icon.weapon_mon_gracia_soldier_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1500" />
+		<set name="price" val="105000" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="24" />
+			<set stat="mAtk" val="17" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- A Gracian Soldier's standard shield. Uses 2 hair accessory slots. -->
+	<item id="13525" type="Armor" name="Gracian Soldier Shield">
+		<set name="icon" val="icon.shield_mon_gracia_soldier_shield_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1300" />
+		<set name="price" val="16900" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="101" />
+		</for>
+	</item>
+	<item id="13526" type="Armor" name="Test Belt">
+		<set name="icon" val="icon.etc_shirts_a_i04" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="4830" />
+		<set name="price" val="113" />
+		<for>
+			<baseAdd stat="pDef" val="36" />
+		</for>
+	</item>
+	<item id="13527" type="Armor" name="Test Cloak">
+		<set name="icon" val="icon.armor_back01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="260" />
+		<set name="price" val="37" />
+		<for>
+			<baseAdd stat="pDef" val="2" />
+		</for>
+	</item>
+	<item id="13528" type="Weapon" name="Test Dual Daggers">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;44;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="500" />
+		<set name="price" val="3340000" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="is_tradable" val="false" />
+		<set name="is_sellable" val="false" />
+		<cond msgId="1518">
+			<or>
+				<player class_id_restriction="141, 158, 159, 160, 161" />
+				<and>
+					<player class_id_restriction="93, 101, 108, 117" />
+					<player subclass="false" />
+				</and>
+			</or>
+		</cond>
+		<for>
+			<set stat="pAtk" val="200" />
+			<set stat="mAtk" val="6" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<item id="13529" type="Armor" name="Test Sigil">
+		<set name="icon" val="icon.shield_arcana_sigil_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="sigil" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1430" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="47" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Gludio. -->
+	<item id="13530" type="Weapon" name="Flag of Gludio">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Dion. -->
+	<item id="13531" type="Weapon" name="Flag of Dion">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Giran. -->
+	<item id="13532" type="Weapon" name="Flag of Giran">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Oren. -->
+	<item id="13533" type="Weapon" name="Flag of Oren">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Aden. -->
+	<item id="13534" type="Weapon" name="Flag of Aden">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Innadril. -->
+	<item id="13535" type="Weapon" name="Flag of Innadril">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Goddard. -->
+	<item id="13536" type="Weapon" name="Goddard Flag">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Rune. -->
+	<item id="13537" type="Weapon" name="Flag of Rune">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- This official territorial flag can only be obtained on a battleground in Schuttgart. -->
+	<item id="13538" type="Weapon" name="Flag of Schuttgart">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="flag" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Enchant this staff using Master Yogi's weapon enchant scrolls, equip it, and speak with Master Yogi to claim a reward based on enchantment level. -->
+	<item id="13539" type="Weapon" name="Master Yogi's Staff">
+		<set name="icon" val="icon.yogi_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<for>
+			<set stat="pAtk" val="11" />
+			<set stat="mAtk" val="12" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Weapon enchant scroll only usable on Master Yogi's Staff, which you can receive from Master Yogi in town. Lucky Enchant Stones cannot be used with this item. -->
+	<item id="13540" type="EtcItem" name="Master Yogi's Scroll: Enchant Weapon">
+		<set name="icon" val="icon.yogi_scroll_of_enchant_weapon_grade_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scrl_enchant_wp" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="item_skill" val="2637-1" />
+	</item>
+	<!--
+		Treasure chest crafted by Master Yogi.
+		Inside is his enchant scroll.
+	-->
+	<item id="13541" type="EtcItem" name="Yogi's Enchanted Treasure Chest">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="price" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Offered by Master Yogi, what it grants you depends on how lucky you are. -->
+	<item id="13542" type="EtcItem" name="Yogi's Enchanted Reward Cube">
+		<set name="icon" val="icon.cube_event_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="price" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- This Collection-Use Golem was created by the Dwarves using Agathion as the model. It is able extract a compression stone from seed effect. -->
+	<item id="13543" type="Armor" name="Agathion - Collection">
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="7000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="5414-1;3269-1;3267-1" />
+	</item>
+	<!-- Can summon an Agathion - Teddy Boy when equipped. -->
+	<item id="13544" type="Armor" name="Agathion - Teddy Boy">
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="7000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="8259-1;3267-1;5958-1" />
+	</item>
+	<!-- Can summon an Agathion - Teddy Girl when equipped. -->
+	<item id="13545" type="Armor" name="Agathion - Teddy Girl">
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="price" val="7000000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="8260-1;3267-1;5959-1" />
+	</item>
+	<!-- Can mount a Steam Sledge when equipped. -->
+	<item id="13546" type="Armor" name="Mount - Steam Sledge">
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="76" />
+		<set name="weight" val="150" />
+		<set name="price" val="1144000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="item_skill" val="8261-1" />
+	</item>
+	<!-- Can mount a Tawny Maned Lion when equipped. -->
+	<item id="13547" type="Armor" name="Mount - Tawny-maned Lion">
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="76" />
+		<set name="weight" val="150" />
+		<set name="price" val="1144000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="item_skill" val="8262-1" />
+	</item>
+	<!-- Allows you to summon a Minion who temporarily casts Wizard-type battle buff. -->
+	<item id="13548" type="EtcItem" name="Toy Knight Minion Necklace">
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}" />
+	</item>
+	<!-- Allows you to summon a Minion who temporarily casts Wizard-type battle buff. -->
+	<item id="13549" type="EtcItem" name="Soul Monk Minion Necklace">
+		<set name="icon" val="icon.pet_controler_i00" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}" />
+	</item>
+	<!-- Allows you to summon a Minion who temporarily casts Wizard-type battle buff. -->
+	<item id="13550" type="EtcItem" name="Owl Monk Minion Necklace">
+		<set name="icon" val="icon.pet_controler_i01" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}" />
+	</item>
+	<!-- Allows you to summon a Minion who temporarily casts Wizard-type battle buff. -->
+	<item id="13551" type="EtcItem" name="Turtle Ascetic Minion Necklace">
+		<set name="icon" val="icon.pet_controler_i01" />
+		<set name="default_action" val="skill_maintain" />
+		<set name="etcitem_type" val="pet_collar" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="SummonItems" />
+		<set name="item_skill" val="2046-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}" />
+	</item>
+	<!-- Holds the method for changing into a Final Form Aerial Transformed Object. -->
+	<item id="13552" type="EtcItem" name="Spellbook: Flying Final Form">
+		<set name="icon" val="icon.etc_spell_books_assistance_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2789-1" />
+		<cond addName="1" msgId="113">
+			<player level="75" />
+		</cond>
+	</item>
+	<!-- Holds the method for changing into an Assault-Type Aerial Transformed Object. -->
+	<item id="13553" type="EtcItem" name="Spellbook: Aura Bird Falcon">
+		<set name="icon" val="icon.etc_codex_of_giant_i03" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2790-1" />
+		<cond addName="1" msgId="113">
+			<player level="75" />
+		</cond>
+	</item>
+	<!-- Holds the method for changing into a Shooting-Type Aerial Transformed Object. -->
+	<item id="13554" type="EtcItem" name="Spellbook: Aura Bird Owl">
+		<set name="icon" val="icon.etc_codex_of_giant_i03" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2791-1" />
+		<cond addName="1" msgId="113">
+			<player level="75" />
+		</cond>
+	</item>
+	<!-- Holds the method for combining with a Servitor. -->
+	<item id="13555" type="EtcItem" name="Combined Transformation Scroll">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="item_skill" val="2669-1" />
+	</item>
+	<!-- Used to control a Airship. -->
+	<item id="13556" type="Weapon" name="Airship Helm">
+		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_dropable" val="false" />
+		<for>
+			<set stat="pAtk" val="1" />
+			<set stat="mAtk" val="1" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Used to control a Airship's cannon. -->
+	<item id="13557" type="Weapon" name="Airship Cannon">
+		<set name="icon" val="icon.etc_gateleeper_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_dropable" val="false" />
+		<for>
+			<set stat="pAtk" val="1" />
+			<set stat="mAtk" val="1" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Projectile fired by a Flying Boat's cannon. -->
+	<item id="13558" type="Weapon" name="Airship Cannon Briquet">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_dropable" val="false" />
+		<for>
+			<set stat="pAtk" val="1" />
+			<set stat="mAtk" val="1" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- License showing that your clan can summon the Airship -->
+	<item id="13559" type="EtcItem" name="Airship Summon License">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Ward bearing the unique pattern of Gludio. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13560" type="Weapon" name="Gludio Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Dion. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13561" type="Weapon" name="Dion Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Giran. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13562" type="Weapon" name="Giran Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Oren. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13563" type="Weapon" name="Oren Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Aden. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13564" type="Weapon" name="Aden Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Innadril. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13565" type="Weapon" name="Innadril Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Goddard. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13566" type="Weapon" name="Goddard Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Rune. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13567" type="Weapon" name="Rune Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Ward bearing the unique pattern of Schuttgart. Can obtain great strength when capturing the friendly forces' outpost. It is automatically equipped when acquired, and attack and attack skills cannot be used. The ward capturing skill can be used instead. -->
+	<item id="13568" type="Weapon" name="Schuttgart Ward">
+		<set name="icon" val="icon.weapon_fort_flag_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ownthing" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="oriharukon" />
+		<set name="weight" val="500" />
+		<set name="price" val="1" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_destroyable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="item_skill" val="847-1;846-1" />
+		<set name="item_equip_option" val="{no_attack;only_use_weapon_skill;force_equip}" />
+		<for>
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Allows you to transform into a Human mercenary. Can only be used by an ordinary mercenary in Gludio Territory. -->
+	<item id="13569" type="EtcItem" name="Transformation Scroll: Gludio Human Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2672-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Elven mercenary. Can only be used by an ordinary mercenary in Gludio Territory. -->
+	<item id="13570" type="EtcItem" name="Transformation Scroll: Gludio Elf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2673-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Dark Elven mercenary. Can only be used by an ordinary mercenary in Gludio Territory. -->
+	<item id="13571" type="EtcItem" name="Transformation Scroll: Gludio Dark Elf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2674-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Orc mercenary. Can only be used by an ordinary mercenary in Gludio Territory. -->
+	<item id="13572" type="EtcItem" name="Transformation Scroll: Gludio Orc Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2675-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Dwarven mercenary. Can only be used by an ordinary mercenary in Gludio Territory. -->
+	<item id="13573" type="EtcItem" name="Transformation Scroll: Gludio Dwarf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2676-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Kamael mercenary. Can only be used by an ordinary mercenary in Gludio Territory. -->
+	<item id="13574" type="EtcItem" name="Transformation Scroll: Gludio Kamael Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2677-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Knight mercenary. Can only be used by an elite mercenary in Gludio Territory. -->
+	<item id="13575" type="EtcItem" name="Transformation Scroll: Gludio Knight Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2678-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Archer mercenary. Can only be used by an elite mercenary in Gludio Territory. -->
+	<item id="13576" type="EtcItem" name="Transformation Scroll: Gludio Archer Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2679-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Wizard mercenary. Can only be used by an elite mercenary in Gludio Territory. -->
+	<item id="13577" type="EtcItem" name="Transformation Scroll: Gludio Wizard Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2680-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Centurion Mercenary. Can only be used by an elite mercenary in Gludio Territory. -->
+	<item id="13578" type="EtcItem" name="Transformation Scroll: Gludio Centurion Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2681-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Knight Captain mercenary. Can only be used by an Exalted Mercenary in Gludio Territory. -->
+	<item id="13579" type="EtcItem" name="Transformation Scroll: Gludio Knight Captain Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2682-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Commander mercenary. Can only be used by an Exalted Mercenary in Gludio Territory. -->
+	<item id="13580" type="EtcItem" name="Transformation Scroll: Gludio Commander Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2683-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Human mercenary. Can only be used by an ordinary mercenary in Dion Territory. -->
+	<item id="13581" type="EtcItem" name="Transformation Scroll: Dion Human Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2684-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Elven mercenary. Can only be used by an ordinary mercenary in Dion Territory. -->
+	<item id="13582" type="EtcItem" name="Transformation Scroll: Dion Elf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2685-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Dark Elven mercenary. Can only be used by an ordinary mercenary in Dion Territory. -->
+	<item id="13583" type="EtcItem" name="Transformation Scroll: Dion Dark Elf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2686-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Orc mercenary. Can only be used by an ordinary mercenary in Dion Territory. -->
+	<item id="13584" type="EtcItem" name="Transformation Scroll: Dion Orc Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2687-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Dwarven mercenary. Can only be used by an ordinary mercenary in Dion Territory. -->
+	<item id="13585" type="EtcItem" name="Transformation Scroll: Dion Dwarf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2688-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Kamael mercenary. Can only be used by an ordinary mercenary in Dion Territory. -->
+	<item id="13586" type="EtcItem" name="Transformation Scroll: Dion Kamael Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2689-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Knight mercenary. Can only be used by an elite mercenary in Dion Territory. -->
+	<item id="13587" type="EtcItem" name="Transformation Scroll: Dion Knight Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2690-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Archer mercenary. Can only be used by an elite mercenary in Dion Territory. -->
+	<item id="13588" type="EtcItem" name="Transformation Scroll: Dion Archer Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2691-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Wizard mercenary. Can only be used by an elite mercenary in Dion Territory. -->
+	<item id="13589" type="EtcItem" name="Transformation Scroll: Dion Wizard Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2692-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Centurion Mercenary. Can only be used by an elite mercenary in Dion Territory. -->
+	<item id="13590" type="EtcItem" name="Transformation Scroll: Dion Centurion Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2693-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Knight Captain mercenary. Can only be used by an Exalted Mercenary in Dion Territory. -->
+	<item id="13591" type="EtcItem" name="Transformation Scroll: Dion Knight Captain Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2694-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Commander mercenary. Can only be used by an Exalted Mercenary in Dion Territory. -->
+	<item id="13592" type="EtcItem" name="Transformation Scroll: Dion Commander Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2695-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Human mercenary. Can only be used by an ordinary mercenary in Giran Territory. -->
+	<item id="13593" type="EtcItem" name="Transformation Scroll: Giran Human Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2696-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Elven mercenary. Can only be used by an ordinary mercenary in Giran Territory. -->
+	<item id="13594" type="EtcItem" name="Transformation Scroll: Giran Elf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2697-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Dark Elven mercenary. Can only be used by an ordinary mercenary in Giran Territory. -->
+	<item id="13595" type="EtcItem" name="Transformation Scroll: Giran Dark Elf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2698-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into an Orc mercenary. Can only be used by an ordinary mercenary in Giran Territory. -->
+	<item id="13596" type="EtcItem" name="Transformation Scroll: Giran Orc Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2699-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Dwarven mercenary. Can only be used by an ordinary mercenary in Giran Territory. -->
+	<item id="13597" type="EtcItem" name="Transformation Scroll: Giran Dwarf Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2700-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Kamael mercenary. Can only be used by an ordinary mercenary in Giran Territory. -->
+	<item id="13598" type="EtcItem" name="Transformation Scroll: Giran Kamael Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2701-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Allows you to transform into a Knight mercenary. Can only be used by an elite mercenary in Giran Territory. -->
+	<item id="13599" type="EtcItem" name="Transformation Scroll: Giran Knight Mercenary">
+		<set name="icon" val="icon.scroll_of_verification_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2702-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+</list>

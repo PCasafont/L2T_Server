@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Dimensional Door -->
+	<npc id="80200">
+		<spawn x="83681" y="148856" z="-3408" heading="32478" respawn="60" />
+	</npc>
+	<!-- Andromeda -->
+	<npc id="50007">
+		<spawn x="84629" y="148797" z="-3403" heading="64171" respawn="10000" />
+	</npc>
+	<!-- Global Teleporter -->
+	<npc id="40001">
+		<spawn x="83479" y="147912" z="-3409" heading="16383" respawn="10000" />
+	</npc>
+	<!-- Buffing Services -->
+	<npc id="40002">
+		<spawn x="83265" y="148844" z="-3400"  heading="0" respawn="10000" />
+	</npc>
+	<!-- General Merchant -->
+	<npc id="40003">
+		<spawn x="83667" y="148382" z="-3409" heading="32712" respawn="10000" />
+	</npc>
+	<!-- Server Information -->
+	<!-- <npc id="40004">
+		<spawn x="83391" y="148623" z="-3409" heading="32712" respawn="10000" />
+	</npc> -->
+	<!-- Services NPC -->
+	<npc id="40005">
+		<spawn x="83265" y="148399" z="-3409" heading="0" respawn="10000" />
+	</npc>
+	<!-- Altar of Souls -->
+	<npc id="33920">
+		<spawn x="6788" y="-19187" z="-3724" heading="11175" respawn="0" />
+	</npc>
+</list>

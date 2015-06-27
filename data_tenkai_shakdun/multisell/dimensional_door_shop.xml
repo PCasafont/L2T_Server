@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<!-- Silver Shilen -->
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="20000" id="4357" /> <!-- Silver Shilen -->
+	</item>
+	<!-- Strawberry Cakes -->
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37008" /> <!-- Strawberry Cake (HP) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37009" /> <!-- Strawberry Cake (MP) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37010" /> <!-- Strawberry Cake (CP) -->
+	</item>
+	<!-- Jewell -->
+	<item>
+		<ingredient count="40" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36257" /> <!-- Lilith' Soul Necklace -->
+	</item>	
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36238" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36239" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36240" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36235" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36236" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36237" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="23637" />
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="23639" />
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="37735" />
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="37734" />
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20204" />
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20207" />
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="22304" />
+	</item>
+	
+	<!-- Hats -->
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20718" />
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20719" />
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20720" />
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20721" />
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="20722" />
+	</item>
+	<!-- Agathions -->
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="23989" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24001" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24013" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24025" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24037" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24049" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24061" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24073" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24085" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24097" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24109" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24121" />
+	</item>
+	<!-- Shirts -->
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36187" />
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36188" />
+	</item>
+	<!-- Siege CH Belts -->
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36167" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36168" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36169" />
+	</item>
+	<!-- More belts -->
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32680" />	<!-- Low-grade Magic Rune Clip Eternal Belt - HP Recovery -->
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32681" />	<!-- Standard Magic Rune Clip Eternal Belt - HP Recovery -->
+	</item>
+	<item>
+		<ingredient count="6" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32682" />	<!-- High-grade Magic Rune Clip Eternal Belt - HP Recovery -->
+	</item>
+	<item>
+		<ingredient count="8" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32683" />	<!-- Top-grade Magic Rune Clip Eternal Belt - HP Recovery -->
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32684" />	<!-- Low-grade Magic Rune Clip Eternal Belt - MP Recovery -->
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32685" />	<!-- Standard Magic Rune Clip Eternal Belt - MP Recovery -->
+	</item>
+	<item>
+		<ingredient count="6" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32686" />	<!-- High-grade Magic Rune Clip Eternal Belt - MP Recovery -->
+	</item>
+	<item>
+		<ingredient count="8" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32687" />	<!-- Top-grade Magic Rune Clip Eternal Belt - MP Recovery -->
+	</item>
+	
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32688" />	<!-- Low-grade Magic Ornament Eternal Belt - PvP Physical Attack -->
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32689" />	<!-- Standard Magic Ornament Eternal Belt - PvP Physical Attack -->
+	</item>
+	<item>
+		<ingredient count="6" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32690" />	<!-- High-grade Magic Ornament Eternal Belt - PvP Physical Attack -->
+	</item>
+	<item>
+		<ingredient count="8" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32691" />	<!-- Top-grade Magic Ornament Eternal Belt - PvP Physical Attack -->
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32692" />	<!-- Low-grade Magic Ornament Eternal Belt - PvP Skill Attack -->
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32693" />	<!-- Standard Magic Ornament Eternal Belt - PvP Skill Attack -->
+	</item>
+	<item>
+		<ingredient count="6" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32694" />	<!-- High-grade Magic Ornament Eternal Belt - PvP Skill Attack -->
+	</item>
+	<item>
+		<ingredient count="8" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32695" />	<!-- Top-grade Magic Ornament Eternal Belt - PvP Skill Attack -->
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32696" />	<!-- Low-grade Magic Ornament Eternal Belt - PvP Defense -->
+	</item>
+	<item>
+		<ingredient count="4" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32697" />	<!-- Standard Magic Ornament Eternal Belt - PvP Defense -->
+	</item>
+	<item>
+		<ingredient count="6" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32698" />	<!-- High-grade Magic Ornament Eternal Belt - PvP Defense -->
+	</item>
+	<item>
+		<ingredient count="8" id="37559" /> <!-- Shiny Coin -->
+		<ingredient count="1" id="19479" />	<!-- Eternal Belt -->
+		<production count="1" id="32699" />	<!-- Top-grade Magic Ornament Eternal Belt - PvP Defense -->
+	</item>
+	<!-- Potions -->
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37792" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37793" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37794" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37795" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37796" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37797" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37798" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37799" />
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37800" />
+	</item>
+	<!-- Dimensional Bracelet Base  -->
+	<item>
+		<ingredient count="1" id="37559" />
+		<production count="1" id="39747" />
+	</item>
+</list>

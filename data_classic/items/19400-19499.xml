@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- For Dwarves only. Recipe for making a Seraph Circlet. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19400" type="EtcItem" name="Recipe: Unidentified Seraph Circlet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1085" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Tunic. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19401" type="EtcItem" name="Recipe: Unidentified Seraph Tunic (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1086" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Stockings. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19402" type="EtcItem" name="Recipe: Unidentified Seraph Stockings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1087" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Gloves. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19403" type="EtcItem" name="Recipe: Unidentified Seraph Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1088" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Shoes. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19404" type="EtcItem" name="Recipe: Unidentified Seraph Shoes (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1089" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Sigil. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19405" type="EtcItem" name="Recipe: Unidentified Seraph Sigil (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1090" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Necklace. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19406" type="EtcItem" name="Recipe: Unidentified Seraph Necklace (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1091" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Earring. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19407" type="EtcItem" name="Recipe: Unidentified Seraph Earring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1092" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Seraph Ring. Requires level 13 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19408" type="EtcItem" name="Recipe: Unidentified Seraph Ring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1093" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Shaper. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19409" type="EtcItem" name="Recipe: Unidentified Amaranthine Shaper (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1094" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Cutter. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19410" type="EtcItem" name="Recipe: Unidentified Amaranthine Cutter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1095" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Slasher. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19411" type="EtcItem" name="Recipe: Unidentified Amaranthine Slasher (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1096" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Avenger. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19412" type="EtcItem" name="Recipe: Unidentified Amaranthine Avenger (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1097" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Fighter. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19413" type="EtcItem" name="Recipe: Unidentified Amaranthine Fighter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1098" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Stormer. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19414" type="EtcItem" name="Recipe: Unidentified Amaranthine Stormer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1099" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Thrower. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19415" type="EtcItem" name="Recipe: Unidentified Amaranthine Thrower (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1100" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Shooter. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19416" type="EtcItem" name="Recipe: Unidentified Amaranthine Shooter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1101" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Buster. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19417" type="EtcItem" name="Recipe: Unidentified Amaranthine Buster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1102" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Caster. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19418" type="EtcItem" name="Recipe: Unidentified Amaranthine Caster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1103" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Amaranthine Retributer. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19419" type="EtcItem" name="Recipe: Unidentified Amaranthine Retributer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1104" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Helmet. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19420" type="EtcItem" name="Recipe: Unidentified Eternal Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1105" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Breastplate. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19421" type="EtcItem" name="Recipe: Unidentified Eternal Breastplate (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1106" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Gaiters. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19422" type="EtcItem" name="Recipe: Unidentified Eternal Gaiters (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1107" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Gauntlets. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19423" type="EtcItem" name="Recipe: Unidentified Eternal Gauntlets (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1108" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Boots. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19424" type="EtcItem" name="Recipe: Unidentified Eternal Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1109" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Shield. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19425" type="EtcItem" name="Recipe: Unidentified Eternal Shield (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1110" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Leather Helmet. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19426" type="EtcItem" name="Recipe: Unidentified Eternal Leather Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1111" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Leather Armor. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19427" type="EtcItem" name="Recipe: Unidentified Eternal Leather Armor (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1112" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Leather Leggings. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19428" type="EtcItem" name="Recipe: Unidentified Eternal Leather Leggings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1113" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Leather Gloves. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19429" type="EtcItem" name="Recipe: Unidentified Eternal Leather Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1114" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Leather Boots. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19430" type="EtcItem" name="Recipe: Unidentified Eternal Leather Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1115" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Circlet. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19431" type="EtcItem" name="Recipe: Unidentified Eternal Circlet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1116" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Tunic. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19432" type="EtcItem" name="Recipe: Unidentified Eternal Tunic (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1117" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Stockings. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19433" type="EtcItem" name="Recipe: Unidentified Eternal Stockings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1118" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Gloves. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19434" type="EtcItem" name="Recipe: Unidentified Eternal Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1119" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Shoes. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19435" type="EtcItem" name="Recipe: Unidentified Eternal Shoes (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1120" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Sigil. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19436" type="EtcItem" name="Recipe: Unidentified Eternal Sigil (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1121" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Necklace. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19437" type="EtcItem" name="Recipe: Unidentified Eternal Necklace (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1122" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Earring. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19438" type="EtcItem" name="Recipe: Unidentified Eternal Earring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1123" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Eternal Ring. Requires level 14 of the create item skill. Success rate is 60%. In case of the success, the obtained item can be bound, normal, or blessed. -->
+	<item id="19439" type="EtcItem" name="Recipe: Unidentified Eternal Ring(60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1124" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<item id="19440" type="EtcItem" name="Gemstone (R-grade)">
+		<set name="icon" val="icon.etc_bead_gold_i00" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an R-grade weapon. -->
+	<item id="19441" type="EtcItem" name="Spiritshot (R-grade)">
+		<set name="icon" val="icon.spiritshot_r_i00" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SpiritShot" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an R-grade weapon. -->
+	<item id="19442" type="EtcItem" name="Blessed Spiritshot (R-grade)">
+		<set name="icon" val="icon.blessed_spiritshot_r_i00" />
+		<set name="default_action" val="spiritshot" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+	</item>
+	<!-- Bolt made of Orichalcum. Used as bolts for R-grade Crossbows. -->
+	<item id="19443" type="EtcItem" name="Orichalcum Bolt">
+		<set name="icon" val="icon.etc_oricalcum_bolt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="etcitem_type" val="bolt" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="0" />
+		<set name="price" val="16" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Transforms an R-grade bound item into a standard item through the Blacksmith of Mammon. Also has a low chance of becoming Blessed. -->
+	<item id="19444" type="EtcItem" name="Unbind Scroll (R-grade)">
+		<set name="icon" val="icon.cursed_free_r" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="UnbindScrolls" />
+	</item>
+	<!-- Transforms an R95-grade bound item into a standard item through the Blacksmith of Mammon. Also has a low chance of becoming Blessed. -->
+	<item id="19445" type="EtcItem" name="Unbind Scroll (R95-grade)">
+		<set name="icon" val="icon.cursed_free_r95" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="UnbindScrolls" />
+	</item>
+	<!-- Transforms an R99-grade bound item into a standard item through the Blacksmith of Mammon. Also has a low chance of becoming Blessed. -->
+	<item id="19446" type="EtcItem" name="Unbind Scroll (R99-grade)">
+		<set name="icon" val="icon.cursed_free_r99" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="2" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="UnbindScrolls" />
+	</item>
+	<!-- P. Atk. + 6 for R-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 7 for two-handed sword, two-handed blunt, dualsword, two-handed fist weapon, and crossbow. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases starting at + 4. All amounts are increased for Blessed weapons. If enchanting fails, the item will not be crystallized, but the enchant value will be reset to 0. -->
+	<item id="19447" type="EtcItem" name="Blessed Scroll: Enchant Weapon (R-grade)">
+		<set name="icon" val="icon.blessed_scroll_of_enchant_weapon_i06" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="bless_scrl_enchant_wp" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="item_skill" val="9187-1" />
+	</item>
+	<!-- When enchanted, P. Def. + 2 for R-grade armor and accessories, especially starting at + 4. Can be enchanted safely to + 3. When enchanted + 4 or more, HP also increases according to the enchant value. If enchanting fails, the item will not be crystallized, but the enchant value will be reset to 0. -->
+	<item id="19448" type="EtcItem" name="Blessed Scroll: Enchant Armor (R-grade)">
+		<set name="icon" val="icon.blessed_scroll_of_enchant_armor_i06" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="bless_scrl_enchant_am" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="EnchantScrolls" />
+		<set name="item_skill" val="9196-1" />
+	</item>
+	<!-- Activates 5 Talisman slots when equipped. -->
+	<item id="19449" type="Armor" name="Giant's Bracelet">
+		<set name="icon" val="icon.r2_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Proof given to those who successfully complete a mission. Can be exchanged for equipment. -->
+	<item id="19450" type="EtcItem" name="Proof of Fidelity">
+		<set name="icon" val="icon.item_normal52" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- MP + 37, Accuracy + 3, Critical + 54.4, Water Resistance + 20. Only one effect is applied when two of the same Ring are equipped. -->
+	<item id="19451" type="Armor" name="Istina's Ring">
+		<set name="icon" val="icon.istina_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13320-1" />
+		<for>
+			<baseAdd stat="mDef" val="103" />
+			<add stat="maxMp" val="37" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 56, Stun Resistance + 30%, Shock attack + 30%, Vampiric Rage, Wind Resistance. Only one effect is applied when two of the same Earring are equipped. -->
+	<item id="19452" type="Armor" name="Istina's Earring">
+		<set name="icon" val="icon.istina_earring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13321-1" />
+		<for>
+			<baseAdd stat="mDef" val="154" />
+			<add stat="maxMp" val="56" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 74, Holy Resistance + 35, skill cooldown decrease, Damage Shield effect. -->
+	<item id="19453" type="Armor" name="Istina's Necklace">
+		<set name="icon" val="icon.istina_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13322-1" />
+		<for>
+			<baseAdd stat="mDef" val="205" />
+			<add stat="maxMp" val="74" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- HP Recovery increases, item slot + 6. -->
+	<item id="19454" type="Armor" name="Istina's Belt">
+		<set name="icon" val="icon.istina_belt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="440" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13323-1" />
+		<for>
+			<baseAdd stat="pDef" val="32" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 216. Activates 5 talisman slots when equipped. -->
+	<item id="19455" type="Armor" name="Istina's Bracelet">
+		<set name="icon" val="icon.istina_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8779-1" />
+		<for>
+			<add stat="maxMp" val="216" />
+		</for>
+	</item>
+	<!-- When equipped with Istina's Shirt, STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2 , Speed + 7 and Water Resistance + 30. -->
+	<item id="19456" type="Armor" name="Istina's Shirt">
+		<set name="icon" val="icon.istina_shirt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="130" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13324-1" />
+		<for>
+			<baseAdd stat="pDef" val="48" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 37, increases P. Critical Damage, Fire Resistance + 20. Only one effect is applied when two of the same Ring are equipped. -->
+	<item id="19457" type="Armor" name="Octavis' Ring">
+		<set name="icon" val="icon.octavis_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13325-1" />
+		<for>
+			<baseAdd stat="mDef" val="103" />
+			<add stat="maxMp" val="37" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 56, Hold/Sleep Resistance + 40%, hold/Sleep attack + 40%, Earth Resistance 30. Only one effect is applied when two of the same Earring are equipped. -->
+	<item id="19458" type="Armor" name="Octavis' Earring">
+		<set name="icon" val="icon.octavis_earring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13326-1" />
+		<for>
+			<baseAdd stat="mDef" val="154" />
+			<add stat="maxMp" val="56" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 74, Dark Resistance + 35, P. Skill Power increase. -->
+	<item id="19459" type="Armor" name="Octavis' Necklace">
+		<set name="icon" val="icon.octavis_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13327-1" />
+		<for>
+			<baseAdd stat="mDef" val="205" />
+			<add stat="maxMp" val="74" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MP Recovery increase, increased weight by 13000. -->
+	<item id="19460" type="Armor" name="Octavis' Belt">
+		<set name="icon" val="icon.octavis_belt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="440" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13328-1" />
+		<for>
+			<baseAdd stat="pDef" val="32" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 216. Activates 5 talisman slots when equipped. -->
+	<item id="19461" type="Armor" name="Octavis' Bracelet">
+		<set name="icon" val="icon.octavis_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8780-1" />
+		<for>
+			<add stat="maxMp" val="216" />
+		</for>
+	</item>
+	<!-- When equipped with Octavis' Shirt, STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2 , Speed + 7 and Dark Resistance + 30. -->
+	<item id="19462" type="Armor" name="Octavis' Shirt">
+		<set name="icon" val="icon.octavis_shirt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="130" />
+		<set name="item_skill" val="13541-1" />
+		<for>
+			<baseAdd stat="pDef" val="48" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 59, Bleed Resistance + 50%, Bleed Atk. Rate + 50%. Increases Heal Amount, Vampiric Rage Effect, Stun/Mental Attack Resistance + 40%, Stun/Mental Atk. Rate + 40%. Decreases physical/magic skill MP consumption. Increases Earth/Holy defense. CON + 3, MEN + 3. Increases P. Def. and M. Def. Can use Stun canceling skills. Momentarily increases Stun Resistance + 100%. Only one effect is applied when two of the same earrings are equipped. -->
+	<item id="19463" type="Armor" name="Blessed Antharas' Earring">
+		<set name="icon" val="icon.accessory_earring_of_antaras_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13313-1;13314-1" />
+		<for>
+			<baseAdd stat="mDef" val="170" />
+			<add stat="maxMp" val="59" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Rate + 50%, decreased P./M. Skill cooldown, Wild Magic Effect, Damage Shield effect, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Power + 5%, P. Atk. + 10%, M. Atk. + 20%, can use hold canceling skills, and momentarily increases Hold Resistance by 100%. -->
+	<item id="19464" type="Armor" name="Blessed Valakas' Necklace">
+		<set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13315-1;13316-1" />
+		<for>
+			<baseAdd stat="mDef" val="226" />
+			<add stat="maxMp" val="79" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Bring 10 of this to Rafforty to bestow Antharas' Earring with Antharas' Soul. -->
+	<item id="19465" type="EtcItem" name="Bottle of Antharas' Soul">
+		<set name="icon" val="icon.bottle_of_antalas_soul_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Bring 10 of this to Rafforty to bestow Valakas' Necklace with Valakas' Soul. -->
+	<item id="19466" type="EtcItem" name="Bottle of Valakas' Soul">
+		<set name="icon" val="icon.bottle_of_valakas_soul_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Legendary yellow crystal fragment containing the light of absorbed souls. R99-grade . Collect 10 to make a complete crystal. -->
+	<item id="19467" type="EtcItem" name="Yellow Soul Crystal Fragment (R99-grade)">
+		<set name="icon" val="icon.r99_soul_stone_piece_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Legendary Teal crystal fragment containing the light of absorbed souls. R99-grade . Collect 10 to make a complete crystal. -->
+	<item id="19468" type="EtcItem" name="Teal Soul Crystal Fragment (R99-grade)">
+		<set name="icon" val="icon.r99_soul_stone_piece_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Legendary purple crystal fragment containing the light of absorbed souls. R99-grade . Collect 10 to make a complete crystal. -->
+	<item id="19469" type="EtcItem" name="Purple Soul Crystal Fragment (R99-grade)">
+		<set name="icon" val="icon.r99_soul_stone_piece_i05" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- R-grade Rune Clip. Can use a magic ornament to add functions. -->
+	<item id="19470" type="Armor" name="Immortal Belt">
+		<set name="icon" val="icon.r1_belt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="440" />
+		<for>
+			<baseAdd stat="pDef" val="19" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 187. Activates 5 Talisman slots when equipped. -->
+	<item id="19471" type="Armor" name="Immortal Bracelet">
+		<set name="icon" val="icon.r1_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8775-1" />
+		<for>
+			<add stat="maxMp" val="187" />
+		</for>
+	</item>
+	<item id="19472" type="Armor" name="Immortal Shirt">
+		<set name="icon" val="icon.r1_shirt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="130" />
+		<for>
+			<baseAdd stat="pDef" val="38" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- R-grade Rune Clip. Can use a magic ornament to add functions. -->
+	<item id="19473" type="Armor" name="Twilight Belt">
+		<set name="icon" val="icon.r2_belt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="440" />
+		<for>
+			<baseAdd stat="pDef" val="21" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 204. Activates 5 Talisman slots when equipped. -->
+	<item id="19474" type="Armor" name="Twilight Bracelet">
+		<set name="icon" val="icon.r2_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8776-1" />
+		<for>
+			<add stat="maxMp" val="204" />
+		</for>
+	</item>
+	<item id="19475" type="Armor" name="Twilight Shirt">
+		<set name="icon" val="icon.r2_shirt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="130" />
+		<for>
+			<baseAdd stat="pDef" val="42" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- R95-grade Rune Clip. Can use a magic ornament to add functions. -->
+	<item id="19476" type="Armor" name="Seraph Belt">
+		<set name="icon" val="icon.r95_belt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="440" />
+		<for>
+			<baseAdd stat="pDef" val="23" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 216. Activates 5 Talisman slots when equipped. -->
+	<item id="19477" type="Armor" name="Seraph Bracelet">
+		<set name="icon" val="icon.r95_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8777-1" />
+		<for>
+			<add stat="maxMp" val="216" />
+		</for>
+	</item>
+	<item id="19478" type="Armor" name="Seraph Shirt">
+		<set name="icon" val="icon.r95_shirt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r95" />
+		<set name="weight" val="130" />
+		<for>
+			<baseAdd stat="pDef" val="46" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- R99-grade Rune Clip. Can use a magic ornament to add functions. -->
+	<item id="19479" type="Armor" name="Eternal Belt">
+		<set name="icon" val="icon.r991_belt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="440" />
+		<for>
+			<baseAdd stat="pDef" val="24" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- MP + 225. Activates 5 Talisman slots when equipped. -->
+	<item id="19480" type="Armor" name="Eternal Bracelet">
+		<set name="icon" val="icon.r991_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8778-1" />
+		<for>
+			<add stat="maxMp" val="225" />
+		</for>
+	</item>
+	<item id="19481" type="Armor" name="Eternal Shirt">
+		<set name="icon" val="icon.r991_shirt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r99" />
+		<set name="weight" val="130" />
+		<for>
+			<baseAdd stat="pDef" val="48" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Item to be delivered to the Magister Joan on the 3rd Floor of the Ivory Tower. To teleport to the Ivory Tower, visit the Gatekeeper in Gludio. Teleport to the Tower of Oren. Speak with the Gatekeeper in Oren and teleport to the Ivory Tower. At the Ivory Tower speak to the Gatekeeper and request to teleport to the 3rd floor. -->
+	<item id="19482" type="EtcItem" name="Ivory Tower Delivery">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Items to be collected for the Ivory Tower mission. Collect them and bring them to the 3rd floor to magister Joan in the elven Mystic Guild. -->
+	<item id="19483" type="EtcItem" name="Research Ingredient">
+		<set name="icon" val="icon.etc_oil_pot_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Insignia collected from the creatures in the Outlaw Forest. Collect enough and return to Captain Mouen in the Town of Oren. -->
+	<item id="19484" type="EtcItem" name="Outlaw's Mark">
+		<set name="icon" val="icon.etc_jewel_green_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Emblem collected from the creatures in the Outlaw Forest. Collect enough and return to Captain Mouen in the Town of Oren. -->
+	<item id="19485" type="EtcItem" name="Shaman's Mark">
+		<set name="icon" val="icon.etc_jewel_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Element of Evil collected from the creatures in the Outlaw Forest. Collect enough and return to Captain Mouen in the Town of Oren. -->
+	<item id="19486" type="EtcItem" name="Element of Evil">
+		<set name="icon" val="icon.etc_debris_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Strange rock collected off a creature in the Forsaken Plains. Needed as proof that you have completed task assigned to you from Captain Kurtiz in the Town of Aden. -->
+	<item id="19487" type="EtcItem" name="Legacy Core">
+		<set name="icon" val="icon.etc_black_freezing_core_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Item obtained from creatures in the Forsaken Plains. Collect enough and bring them to Magister Desmond in the Mystic Guide in the Town of Aden. -->
+	<item id="19488" type="EtcItem" name="Pure Legacy Core">
+		<set name="icon" val="icon.etc_freezing_core_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- The ash left from the defeated creatures in the Valley of Saints. Collect enough of them and bring them to High Priest Agripel in the Town of Rune Einhasad Temple. -->
+	<item id="19489" type="EtcItem" name="Remnant Ash">
+		<set name="icon" val="icon.etc_powder_gray_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Buffalo Meat collected for the work request from Captain Vishotsky to replenish the food shortage in Schuttgart. -->
+	<item id="19490" type="EtcItem" name="Buffalo Meat">
+		<set name="icon" val="icon.etc_meat_of_monstereye_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Ursus Meat collected for the work request from Captain Vishotsky to replenish the food shortage in Schuttgart. -->
+	<item id="19491" type="EtcItem" name="Ursus Meat">
+		<set name="icon" val="icon.etc_meat_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Yeti Meat collected for the work request from Captain Vishotsky to replenish the food shortage in Schuttgart. -->
+	<item id="19492" type="EtcItem" name="Yeti Meat">
+		<set name="icon" val="icon.etc_bodypart_liver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Letter Armor Merchant Alisha in the Town of Rune needs you to deliver to Grand Magister Tifaren in the Mystic Guild of the Town of Rune. You have been warned not to read its contents. -->
+	<item id="19493" type="EtcItem" name="Mysterious Letter">
+		<set name="icon" val="icon.item_normal20" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Letter that Grand Magister Tifaren was intending to send to the Mysterious Wizard. She needs you to deliver it to the Mysterious Wizard in the Forest of the Dead. -->
+	<item id="19494" type="EtcItem" name="Mysterious Letter">
+		<set name="icon" val="icon.item_normal20" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Item obtained from the creatures inhabiting the Blazing Swamp. Collect an enough and bring them to Priest Ross in Einhasad's Temple in the Town of Aden. -->
+	<item id="19495" type="EtcItem" name="Blazing Swamp Ash">
+		<set name="icon" val="icon.etc_powder_gray_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Blood Sample collected from the creatures defeated at the Wall of Argos. Collect enough and bring them to Magister Justin at the Mystic Guild in Goddard. -->
+	<item id="19496" type="EtcItem" name="Argos Blood Sample">
+		<set name="icon" val="icon.etc_dragons_blood_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Item needed to help Walderal start his new business. Collect enough and return to Warehouse Keeper Walderal in the Town of Aden. -->
+	<item id="19497" type="EtcItem" name="Hot Springs Water Sample">
+		<set name="icon" val="icon.etc_hot_spring_mineral_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Item obtained hunting Stakatos in the Swamp of Screams. After collecting enough return to Mercenary Supplier Abercrombie near the Swamp of Screams. -->
+	<item id="19498" type="EtcItem" name="Stakato Shell">
+		<set name="icon" val="icon.etc_parasite_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Item obtained from the evil spirits of the Cemetery. Collect an adequate amount and bring them to Pamela Aprodia in the Goddard town warehouse. -->
+	<item id="19499" type="EtcItem" name="Clue Item">
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+</list>

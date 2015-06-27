@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Max CP + 124 when equipped. Shadow item. -->
+	<item id="18300" type="Armor" name="Talisman (R99-grade) - CP (Passive)">
+		<set name="icon" val="icon.r85_talisman_cp_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 135 when equipped. Shadow item. -->
+	<item id="18301" type="Armor" name="Talisman (R85-grade) - Critical Damage (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8636-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 142 when equipped. Shadow item. -->
+	<item id="18302" type="Armor" name="Talisman (R90-grade) - Critical Damage (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8637-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 149 when equipped. Shadow item. -->
+	<item id="18303" type="Armor" name="Talisman (R95-grade) - Critical Damage (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8638-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 155 when equipped. Shadow item. -->
+	<item id="18304" type="Armor" name="Talisman (R99-grade) - Critical Damage (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8639-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, damage from Critical Attacks received is -135. Shadow item. -->
+	<item id="18305" type="Armor" name="Talisman (R85-grade) - Decrease Critical (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_down_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, damage from Critical Attacks received is -142. Shadow item. -->
+	<item id="18306" type="Armor" name="Talisman (R90-grade) - Decrease Critical (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_down_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, damage from Critical Attacks received is -149. Shadow item. -->
+	<item id="18307" type="Armor" name="Talisman (R95-grade) - Decrease Critical (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_down_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, damage from Critical Attacks received is -155. Shadow item. -->
+	<item id="18308" type="Armor" name="Talisman (R99-grade) - Decrease Critical (Passive)">
+		<set name="icon" val="icon.r85_talisman_ca_down_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Critical Rate + 2% when equipped. Shadow item. -->
+	<item id="18309" type="Armor" name="Talisman (R-grade) - M. Critical (Passive)">
+		<set name="icon" val="icon.r_talisman_mc_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Accuracy + 2 when equipped. Shadow item. -->
+	<item id="18310" type="Armor" name="Talisman (R-grade) - P. Accuracy (Passive)">
+		<set name="icon" val="icon.r_talisman_ph_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8645-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Accuracy + 2 when equipped. Shadow item. -->
+	<item id="18311" type="Armor" name="Talisman (R-grade) - M. Accuracy (Passive)">
+		<set name="icon" val="icon.r_talisman_mh_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8646-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Evasion + 2 when equipped. Shadow item. -->
+	<item id="18312" type="Armor" name="Talisman (R-grade) - Evasion (Passive)">
+		<set name="icon" val="icon.r_talisman_pm_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Evasion + 2 when equipped. Shadow item. -->
+	<item id="18313" type="Armor" name="Talisman (R-grade) - M. Evasion (Passive)">
+		<set name="icon" val="icon.r_talisman_mm_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8648-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Critical Rate + 2 when equipped. Shadow item. -->
+	<item id="18314" type="Armor" name="Talisman (R-grade) - P. Critical Rate (Passive)">
+		<set name="icon" val="icon.r_talisman_cr_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8649-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, the rate of receiving a physical Critical Attacks - 2%. Shadow item. -->
+	<item id="18315" type="Armor" name="Talisman (R-grade) - Critical Evasion (Passive)">
+		<set name="icon" val="icon.r_talisman_cm_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 111 when used. Shadow item. -->
+	<item id="18316" type="Armor" name="Talisman (R85-grade) - P. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_pa_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8651-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 129 when used. Shadow item. -->
+	<item id="18317" type="Armor" name="Talisman (R90-grade) - P. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_pa_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8652-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 156 when used. Shadow item. -->
+	<item id="18318" type="Armor" name="Talisman (R95-grade) - P. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_pa_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8653-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Atk. + 180 when used. Shadow item. -->
+	<item id="18319" type="Armor" name="Talisman (R99-grade) - P. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_pa_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8654-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 114 when used. Shadow item. -->
+	<item id="18320" type="Armor" name="Talisman (R85-grade) - P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_pd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8655-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 129 when used. Shadow item. -->
+	<item id="18321" type="Armor" name="Talisman (R90-grade) - P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_pd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8656-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 147 when used. Shadow item. -->
+	<item id="18322" type="Armor" name="Talisman (R95-grade) - P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_pd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8657-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Def. + 162 when used. Shadow item. -->
+	<item id="18323" type="Armor" name="Talisman (R99-grade) - P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_pd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8658-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 111 when used. Shadow item. -->
+	<item id="18324" type="Armor" name="Talisman (R85-grade) - M. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_ma_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8659-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 138 when used. Shadow item. -->
+	<item id="18325" type="Armor" name="Talisman (R90-grade) - M. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_ma_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8660-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 168 when used. Shadow item. -->
+	<item id="18326" type="Armor" name="Talisman (R95-grade) - M. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_ma_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8661-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Atk. + 198 when used. Shadow item. -->
+	<item id="18327" type="Armor" name="Talisman (R99-grade) - M. Atk. (Active)">
+		<set name="icon" val="icon.r85_talisman_ma_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8662-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 63 when used. Shadow item. -->
+	<item id="18328" type="Armor" name="Talisman (R85-grade) - M. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_md_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13353-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 72 when used. Shadow item. -->
+	<item id="18329" type="Armor" name="Talisman (R90-grade) - M. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_md_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8664-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 84 when used. Shadow item. -->
+	<item id="18330" type="Armor" name="Talisman (R95-grade) - M. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_md_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8665-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Def. + 96 when used. Shadow item. -->
+	<item id="18331" type="Armor" name="Talisman (R99-grade) - M. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_md_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8666-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 657 when used. Shadow item. -->
+	<item id="18332" type="Armor" name="Talisman (R85-grade) - HP (Active)">
+		<set name="icon" val="icon.r85_talisman_hp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 738 when used. Shadow item. -->
+	<item id="18333" type="Armor" name="Talisman (R90-grade) - HP (Active)">
+		<set name="icon" val="icon.r85_talisman_hp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 831 when used. Shadow item. -->
+	<item id="18334" type="Armor" name="Talisman (R95-grade) - HP (Active)">
+		<set name="icon" val="icon.r85_talisman_hp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max HP + 915 when used. Shadow item. -->
+	<item id="18335" type="Armor" name="Talisman (R99-grade) - HP (Active)">
+		<set name="icon" val="icon.r85_talisman_hp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 327 when used. Shadow item. -->
+	<item id="18336" type="Armor" name="Talisman (R85-grade) - MP (Active)">
+		<set name="icon" val="icon.r85_talisman_mp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 357 when used. Shadow item. -->
+	<item id="18337" type="Armor" name="Talisman (R90-grade) - MP (Active)">
+		<set name="icon" val="icon.r85_talisman_mp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 390 when used. Shadow item. -->
+	<item id="18338" type="Armor" name="Talisman (R95-grade) - MP (Active)">
+		<set name="icon" val="icon.r85_talisman_mp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max MP + 417 when used. Shadow item. -->
+	<item id="18339" type="Armor" name="Talisman (R99-grade) - MP (Active)">
+		<set name="icon" val="icon.r85_talisman_mp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 297 when used. Shadow item. -->
+	<item id="18340" type="Armor" name="Talisman (R85-grade) - CP (Active)">
+		<set name="icon" val="icon.r85_talisman_cp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 324 when used. Shadow item. -->
+	<item id="18341" type="Armor" name="Talisman (R90-grade) - CP (Active)">
+		<set name="icon" val="icon.r85_talisman_cp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 390 when used. Shadow item. -->
+	<item id="18342" type="Armor" name="Talisman (R95-grade) - CP (Active)">
+		<set name="icon" val="icon.r85_talisman_cp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Max CP + 417 when used. Shadow item. -->
+	<item id="18343" type="Armor" name="Talisman (R99-grade) - CP (Active)">
+		<set name="icon" val="icon.r85_talisman_cp_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 405 when used. Shadow item. -->
+	<item id="18344" type="Armor" name="Talisman (R85-grade) - Critical Damage (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8679-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 426 when used. Shadow item. -->
+	<item id="18345" type="Armor" name="Talisman (R90-grade) - Critical Damage (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8680-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 447 when used. Shadow item. -->
+	<item id="18346" type="Armor" name="Talisman (R95-grade) - Critical Damage (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8681-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Critical + 465 when used. Shadow item. -->
+	<item id="18347" type="Armor" name="Talisman (R99-grade) - Critical Damage (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8682-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When receiving Critical Attacks, - 405 of the received damage amount when used. Shadow item. -->
+	<item id="18348" type="Armor" name="Talisman (R85-grade) - Critical P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_down_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8683-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When receiving Critical Attacks, - 426 of the received damage amount when used. Shadow item. -->
+	<item id="18349" type="Armor" name="Talisman (R90-grade) - Critical P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_down_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8684-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When receiving Critical Attacks, - 447 of the received damage amount when used. Shadow item. -->
+	<item id="18350" type="Armor" name="Talisman (R95-grade) - Critical P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_down_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8685-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When receiving Critical Attacks, - 465 of the received damage amount when used. Shadow item. -->
+	<item id="18351" type="Armor" name="Talisman (R99-grade) - Critical P. Def. (Active)">
+		<set name="icon" val="icon.r85_talisman_ca_down_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8686-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Critical Rate + 4% when used. Shadow item. -->
+	<item id="18352" type="Armor" name="Talisman (R-grade) - M. Critical (Active)">
+		<set name="icon" val="icon.r_talisman_mc_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Accuracy + 4 when used. Shadow item. -->
+	<item id="18353" type="Armor" name="Talisman (R-grade) - P. Accuracy (Active)">
+		<set name="icon" val="icon.r_talisman_ph_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8688-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Accuracy + 4 when used. Shadow item. -->
+	<item id="18354" type="Armor" name="Talisman (R-grade) - M. Accuracy (Active)">
+		<set name="icon" val="icon.r_talisman_mh_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8689-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Evasion + 4 when used. Shadow item. -->
+	<item id="18355" type="Armor" name="Talisman (R-grade) - Evasion (Active)">
+		<set name="icon" val="icon.r_talisman_pm_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- M. Evasion + 4 when used. Shadow item. -->
+	<item id="18356" type="Armor" name="Talisman (R-grade) - M. Evasion (Active)">
+		<set name="icon" val="icon.r_talisman_mm_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8691-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- P. Critical Rate + 4% when used. Shadow item. -->
+	<item id="18357" type="Armor" name="Talisman (R-grade) - P. Critical Rate (Active)">
+		<set name="icon" val="icon.r_talisman_cr_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="8692-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- The rate of receiving a physical Critical Attacks - 4% when used. Shadow item. -->
+	<item id="18358" type="Armor" name="Talisman (R-grade) - Critical Evasion (Active)">
+		<set name="icon" val="icon.r_talisman_cm_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, Shield Defense + 207. -->
+	<item id="18359" type="Armor" name="Special Talisman (R85-grade) - Shield Defense (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8694-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, Shield Defense + 229. -->
+	<item id="18360" type="Armor" name="Special Talisman (R90-grade) - Shield Defense (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8695-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, Shield Defense + 253. -->
+	<item id="18361" type="Armor" name="Special Talisman (R95-grade) - Shield Defense (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8696-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When equipped, Shield Defense + 273. -->
+	<item id="18362" type="Armor" name="Special Talisman (R99-grade) - Shield Defense (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8697-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Shield Defense + 414. -->
+	<item id="18363" type="Armor" name="Special Talisman (R85-grade) - Shield Defense (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8698-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Shield Defense + 457. -->
+	<item id="18364" type="Armor" name="Special Talisman (R90-grade) - Shield Defense (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8699-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Shield Defense + 505. -->
+	<item id="18365" type="Armor" name="Special Talisman (R95-grade) - Shield Defense (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8700-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Shield Defense + 546. -->
+	<item id="18366" type="Armor" name="Special Talisman (R99-grade) - Shield Defense (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sd_up_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8701-1" />
+		<set name="duration" val="60" />
+	</item>
+	<item id="18367" type="Armor" name="Special Talisman (R85-grade) - Momentum (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8702-1" />
+		<set name="duration" val="60" />
+	</item>
+	<item id="18368" type="Armor" name="Special Talisman (R90-grade) - Momentum (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8703-1" />
+		<set name="duration" val="60" />
+	</item>
+	<item id="18369" type="Armor" name="Special Talisman (R95-grade) - Momentum (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8704-1" />
+		<set name="duration" val="60" />
+	</item>
+	<item id="18370" type="Armor" name="Special Talisman (R99-grade) - Momentum (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8705-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Momentum + 5. -->
+	<item id="18371" type="Armor" name="Special Talisman (R85-grade) - Momentum (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8706-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Momentum + 5. -->
+	<item id="18372" type="Armor" name="Special Talisman (R90-grade) - Momentum (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8707-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Momentum + 5. -->
+	<item id="18373" type="Armor" name="Special Talisman (R95-grade) - Momentum (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8708-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- When used, Momentum + 5. -->
+	<item id="18374" type="Armor" name="Special Talisman (R99-grade) - Momentum (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_eg_rf_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8709-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Can absorb the attack target MP upon use. -->
+	<item id="18375" type="Armor" name="Special Talisman (R85-grade) - Mana Drain (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_mp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8710-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Can absorb the attack target MP upon use. -->
+	<item id="18376" type="Armor" name="Special Talisman (R90-grade) - Mana Drain (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_mp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8711-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Can absorb the attack target MP upon use. -->
+	<item id="18377" type="Armor" name="Special Talisman (R95-grade) - Mana Drain (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_mp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8712-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Can absorb the attack target MP upon use. -->
+	<item id="18378" type="Armor" name="Special Talisman (R99-grade) - Mana Drain (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_mp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8713-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Chance of absorbing the attack target's HP upon use. -->
+	<item id="18379" type="Armor" name="Special Talisman (R85-grade) - Blood Siphon (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_hp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8718-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Chance of absorbing the attack target's HP upon use. -->
+	<item id="18380" type="Armor" name="Special Talisman (R90-grade) - Blood Siphon (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_hp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8719-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Chance of absorbing the attack target's HP upon use. -->
+	<item id="18381" type="Armor" name="Special Talisman (R95-grade) - Blood Siphon (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_hp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8720-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Chance of absorbing the attack target's HP upon use. -->
+	<item id="18382" type="Armor" name="Special Talisman (R99-grade) - Blood Siphon (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_dr_hp_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8721-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when equipped. -->
+	<item id="18383" type="Armor" name="Special Talisman (R85-grade) - Increase Range(Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when equipped. -->
+	<item id="18384" type="Armor" name="Special Talisman (R90-grade) - Increase Range(Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when equipped. -->
+	<item id="18385" type="Armor" name="Special Talisman (R95-grade) - Increase Range(Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when equipped. -->
+	<item id="18386" type="Armor" name="Special Talisman (R99-grade) - Increase Range(Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when used. -->
+	<item id="18387" type="Armor" name="Special Talisman (R85-grade) - Increase Range (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8726-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when used. -->
+	<item id="18388" type="Armor" name="Special Talisman (R90-grade) - Increase Range (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8727-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when used. -->
+	<item id="18389" type="Armor" name="Special Talisman (R95-grade) - Increase Range (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8728-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- User's bow/crossbow range increases when used. -->
+	<item id="18390" type="Armor" name="Special Talisman (R99-grade) - Increase Range (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_ad_ex_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="equip_reuse_delay" val="30" />
+		<set name="item_skill" val="8729-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Increases the servitor's max HP and MP when used. -->
+	<item id="18391" type="Armor" name="Special Talisman (R85-grade) - Enhance Servitor (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sm_st_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Increases the servitor's max HP and MP when used. -->
+	<item id="18392" type="Armor" name="Special Talisman (R90-grade) - Enhance Servitor (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sm_st_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Increases the servitor's max HP and MP when used. -->
+	<item id="18393" type="Armor" name="Special Talisman (R95-grade) - Enhance Servitor (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sm_st_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Increases the servitor's max HP and MP when used. -->
+	<item id="18394" type="Armor" name="Special Talisman (R99-grade) - Enhance Servitor (Active)">
+		<set name="icon" val="icon.r85_sp_talisman_sm_st_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Completely recovers the servitor's HP and MP when used. -->
+	<item id="18395" type="Armor" name="Special Talisman (R-grade) - Servitor Recovery (Active)">
+		<set name="icon" val="icon.r_sp_talisman_sm_rt_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Magic cancel rate - 10% when used. -->
+	<item id="18396" type="Armor" name="Special Talisman (R-grade) - Magic Cancel (Passive)">
+		<set name="icon" val="icon.r_sp_talisman_mg_rs_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- Magic is not canceled when used. -->
+	<item id="18397" type="Armor" name="Special Talisman (R-grade) - Magic Cancel (Active)">
+		<set name="icon" val="icon.r_sp_talisman_mg_cc_active" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- MP Recovery amount + 0.66 when equipped. -->
+	<item id="18398" type="Armor" name="Special Talisman (R85-grade) - MP Recovery (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_mp_rg_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8737-1" />
+		<set name="duration" val="60" />
+	</item>
+	<!-- MP Recovery amount + 0.68 when equipped. -->
+	<item id="18399" type="Armor" name="Special Talisman (R90-grade) - MP Recovery (Passive)">
+		<set name="icon" val="icon.r85_sp_talisman_mp_rg_passive" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="deco1" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="item_skill" val="8738-1" />
+		<set name="duration" val="60" />
+	</item>
+</list>

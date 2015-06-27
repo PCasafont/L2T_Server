@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Stuns the target for 3 seconds. -->
+	<skill id="7100" levels="1" name="Clan-exclusive Pet Stun">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="5" />
+		<set name="hitTime" val="1000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- Lifts and holds the target in the air for 3 seconds. -->
+	<skill id="7101" levels="1" name="Clan-exclusive Pet Aerial Thrust">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="5" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="7102" levels="1" name="Summon Clan Pet">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="COREDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="5000" />
+		<set name="staticHitTime" val="true" />
+	</skill>
+	<skill id="7103" levels="1" name="Helping Tree CP Recovery Range">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="300" />
+	</skill>
+	<!-- Raise the temperature of the Draco Egg through Pa'agrio's Hand. It raises the temperature by 1 - 10 degrees on a Small Draco Egg and 0.1 - 1.0 degrees on a Large Draco Egg. The Fire Spirit Agathion must be summoned for it to be used. -->
+	<skill id="7104" levels="1" name="Pa'agrio's Hand">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Incubation Possible -->
+	<skill id="7105" levels="1" name="Incubation Possible">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Optimal Temperature Incubation Success -->
+	<skill id="7106" levels="1" name="Optimal Temperature Incubation Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Incubation Success -->
+	<skill id="7107" levels="1" name="Incubation Success">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Incubation Failure -->
+	<skill id="7108" levels="1" name="Incubation Failure">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="2000" />
+	</skill>
+	<!-- Invincibility Effect -->
+	<skill id="7113" levels="1" name="Pet Invincibility Effect">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="78" />
+		<set name="hitTime" val="500" />
+	</skill>
+	<!-- Character's hair and cloak have been changed due to participation in the Ceremony of Chaos. -->
+	<skill id="7115" levels="1" name="Energy of Chaos">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+	</skill>
+</list>

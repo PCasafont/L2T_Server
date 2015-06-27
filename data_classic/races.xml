@@ -1,0 +1,65 @@
+<list>
+	<race id="0" name="Human">
+		<template type="fighter" startingClassId="0" STR="40" CON="43" DEX="30" INT="21" WIT="11" MEN="25" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="33" baseCritical="44" baseEvasion="33" baseMoveSpd="130" mColRadius="9.0" mColHeight="23.0" fColRadius="8.0" fColHeight="23.5" startX="-71338" startY="258271" startZ="-3104" startRandom="150">
+			<creationItem id="10" count="1" equipped="false" /> <!-- Dagger -->
+			<creationItem id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+			<creationItem id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+			<creationItem id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		</template>
+		<template type="mage" startingClassId="10" STR="22" CON="27" DEX="21" INT="41" WIT="20" MEN="39" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="28" baseCritical="40" baseEvasion="28" baseMoveSpd="135" mColRadius="7.5" mColHeight="22.8" fColRadius="6.5" fColHeight="22.5" startX="-90890" startY="248027" startZ="-3570" startRandom="150">
+			<creationItem id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
+			<creationItem id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+			<creationItem id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		</template>
+	</race>
+	<race id="1" name="Elf">
+		<template type="fighter" startingClassId="18" STR="36" CON="36" DEX="35" INT="23" WIT="14" MEN="26" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="36" baseCritical="46" baseEvasion="36" baseMoveSpd="143" mColRadius="7.5" mColHeight="24.0" fColRadius="7.5" fColHeight="23.0" startX="46182" startY="41198" startZ="-3440" startRandom="150">
+			<creationItem id="10" count="1" equipped="false" /> <!-- Dagger -->
+			<creationItem id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+			<creationItem id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+			<creationItem id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		</template>
+		<template type="mage" startingClassId="25" STR="21" CON="25" DEX="24" INT="37" WIT="23" MEN="40" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="30" baseCritical="41" baseEvasion="30" baseMoveSpd="140" mColRadius="7.5" mColHeight="24.0" fColRadius="7.5" fColHeight="23.0" startX="46182" startY="41198" startZ="-3440" startRandom="150">
+			<creationItem id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
+			<creationItem id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+			<creationItem id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		</template>
+	</race>
+	<race id="2" name="Dark Elf">
+		<template type="fighter" startingClassId="31" STR="41" CON="32" DEX="34" INT="25" WIT="12" MEN="26" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="35" baseCritical="45" baseEvasion="35" baseMoveSpd="140" mColRadius="7.5" mColHeight="24.0" fColRadius="7.0" fColHeight="23.5" startX="28377" startY="10916" startZ="-4224" startRandom="150">
+			<creationItem id="10" count="1" equipped="false" /> <!-- Dagger -->
+			<creationItem id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+			<creationItem id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+			<creationItem id="2369" count="1" equipped="true" /> <!-- Squire's Sword -->
+		</template>
+		<template type="mage" startingClassId="38" STR="23" CON="24" DEX="23" INT="44" WIT="19" MEN="37" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="29" baseCritical="41" baseEvasion="29" baseMoveSpd="140" mColRadius="7.5" mColHeight="24.0" fColRadius="7.0" fColHeight="23.5" startX="28377" startY="10916" startZ="-4224" startRandom="150">
+			<creationItem id="6" count="1" equipped="true" /> <!-- Apprentice's Wand -->
+			<creationItem id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+			<creationItem id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+		</template>
+	</race>
+	<race id="3" name="Orc">
+		<template type="fighter" startingClassId="44" STR="40" CON="47" DEX="26" INT="18" WIT="12" MEN="27" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="31" baseCritical="42" baseEvasion="31" baseMoveSpd="130" mColRadius="11.0" mColHeight="28.0" fColRadius="7.0" fColHeight="27.0" startX="-56682" startY="-113730" startZ="-690" startRandom="150">
+			<creationItem id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+			<creationItem id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+			<creationItem id="2368" count="1" equipped="true" /> <!-- Training Gloves -->
+			<creationItem id="2369" count="1" equipped="false" /> <!-- Squire's Sword -->
+		</template>
+		<template type="mage" startingClassId="49" STR="27" CON="31" DEX="24" INT="31" WIT="15" MEN="42" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="30" baseCritical="41" baseEvasion="30" baseMoveSpd="128" mColRadius="7.0" mColHeight="27.5" fColRadius="8.0" fColHeight="25.5" startX="-56682" startY="-113730" startZ="-690" startRandom="150">
+			<creationItem id="425" count="1" equipped="true" /> <!-- Apprentice's Tunic -->
+			<creationItem id="461" count="1" equipped="true" /> <!-- Apprentice's Stockings -->
+			<creationItem id="2368" count="1" equipped="true" /> <!-- Training Gloves -->
+		</template>
+	</race>
+	<race id="4" name="Dwarf">
+		<template type="fighter" startingClassId="53" STR="39" CON="45" DEX="29" INT="20" WIT="10" MEN="27" LUC="0" CHA="0" basePAtk="4" baseMAtk="6" basePDef="80" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="33" baseCritical="43" baseEvasion="33" baseMoveSpd="130" mColRadius="9.0" mColHeight="18.0" fColRadius="5.0" fColHeight="19.0" startX="108512" startY="-174026" startZ="-400" startRandom="50">
+			<creationItem id="10" count="1" equipped="false" /> <!-- Dagger -->
+			<creationItem id="1146" count="1" equipped="true" /> <!-- Squire's Shirt -->
+			<creationItem id="1147" count="1" equipped="true" /> <!-- Squire's Pants -->
+			<creationItem id="2370" count="1" equipped="true" /> <!-- Guild Member's Club -->
+		</template>
+		<template type="mage" startingClassId="53" STR="39" CON="45" DEX="29" INT="20" WIT="10" MEN="27" LUC="0" CHA="0" basePAtk="3" baseMAtk="6" basePDef="54" baseMDef="41" basePAtkSpd="300" baseMAtkSpd="333" baseAccuracy="30" baseCritical="41" baseEvasion="30" baseMoveSpd="130" mColRadius="9.0" mColHeight="18.0" fColRadius="5.0" fColHeight="19.0" startX="108512" startY="-174026" startZ="-400" startRandom="50" />
+	</race>
+	<!-- Common creation items -->
+	<creationItem id="5588" count="1" equipped="false" /> <!-- Tutorial Guide -->
+</list>

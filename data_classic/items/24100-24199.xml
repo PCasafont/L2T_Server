@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1800 sec.)
+		2. Balanced Power: CON/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 10.
+	-->
+	<item id="24100" type="Armor" name="Agathion - Pisces - Stage 4">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1650 sec.)
+		2. Balanced Power: CON/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 15.
+	-->
+	<item id="24101" type="Armor" name="Agathion - Pisces - Stage 5">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1500 sec.)
+		2. Balanced Power: CON/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 15.
+	-->
+	<item id="24102" type="Armor" name="Agathion - Pisces - Stage 6">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1350 sec.)
+		2. Balanced Power: CON/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 20.
+	-->
+	<item id="24103" type="Armor" name="Agathion - Pisces - Stage 7">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1200 sec.)
+		2. Balanced Power: CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 20.
+	-->
+	<item id="24104" type="Armor" name="Agathion - Pisces - Stage 8">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 1050 sec.)
+		2. Balanced Power: CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 25.
+	-->
+	<item id="24105" type="Armor" name="Agathion - Pisces - Stage 9">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 900 sec.)
+		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 25.
+	-->
+	<item id="24106" type="Armor" name="Agathion - Pisces - Stage 10">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 750 sec.)
+		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 30.
+	-->
+	<item id="24107" type="Armor" name="Agathion - Pisces - Stage 11">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Pisces when equipped.
+		
+		<Active Skill>
+		1. Slippery Scale: For 60 sec., defends against debuffs 5 times. (Cooldown is 600 sec.)
+		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 30.
+	-->
+	<item id="24108" type="Armor" name="Agathion - Pisces - Stage 12">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 6750 sec.)
+		2. Attribute Enchant: Attribute Atk./Resistance + 5.
+	-->
+	<item id="24109" type="Armor" name="Agathion - Sagittarius - Stage 1">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 6300 sec.)
+		2. Balanced Power: MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 5.
+	-->
+	<item id="24110" type="Armor" name="Agathion - Sagittarius - Stage 2">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 5850 sec.)
+		2. Balanced Power: MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 10.
+	-->
+	<item id="24111" type="Armor" name="Agathion - Sagittarius - Stage 3">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 5400 sec.)
+		2. Balanced Power: CON/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 10.
+	-->
+	<item id="24112" type="Armor" name="Agathion - Sagittarius - Stage 4">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 4950 sec.)
+		2. Balanced Power: CON/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 15.
+	-->
+	<item id="24113" type="Armor" name="Agathion - Sagittarius - Stage 5">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 4500 sec.)
+		2. Balanced Power: CON/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 15.
+	-->
+	<item id="24114" type="Armor" name="Agathion - Sagittarius - Stage 6">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 4050 sec.)
+		2. Balanced Power: CON/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 20.
+	-->
+	<item id="24115" type="Armor" name="Agathion - Sagittarius - Stage 7">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 3600 sec.)
+		2. Balanced Power: CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 20.
+	-->
+	<item id="24116" type="Armor" name="Agathion - Sagittarius - Stage 8">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 3150 sec.)
+		2. Balanced Power: CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 25.
+	-->
+	<item id="24117" type="Armor" name="Agathion - Sagittarius - Stage 9">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 2700 sec.)
+		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Atk./Resistance + 25.
+	-->
+	<item id="24118" type="Armor" name="Agathion - Sagittarius - Stage 10">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 2250 sec.)
+		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 30.
+	-->
+	<item id="24119" type="Armor" name="Agathion - Sagittarius - Stage 11">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Sagittarius when equipped.
+		
+		<Active Skill>
+		1. Archer's Call: Summons all party members to you. (Cooldown is 1800 sec.)
+		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 30.
+	-->
+	<item id="24120" type="Armor" name="Agathion - Sagittarius - Stage 12">
+		<set name="icon" val="icon.agathion_magmeld_teleport" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4500 sec.)
+		2. Attribute Enchant: Attribute Resistance + 5.
+	-->
+	<item id="24121" type="Armor" name="Agathion - Cancer - Stage 1">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 4200 sec.)
+		2. Balanced Power: MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 5.
+	-->
+	<item id="24122" type="Armor" name="Agathion - Cancer - Stage 2">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3900 sec.)
+		2. Balanced Power: MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 10.
+	-->
+	<item id="24123" type="Armor" name="Agathion - Cancer - Stage 3">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3600 sec.)
+		2. Balanced Power: CON/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 10.
+	-->
+	<item id="24124" type="Armor" name="Agathion - Cancer - Stage 4">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3300 sec.)
+		2. Balanced Power: CON/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 15.
+	-->
+	<item id="24125" type="Armor" name="Agathion - Cancer - Stage 5">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 3000 sec.)
+		2. Balanced Power: CON/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 15.
+	-->
+	<item id="24126" type="Armor" name="Agathion - Cancer - Stage 6">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2700 sec.)
+		2. Balanced Power: CON/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 20.
+	-->
+	<item id="24127" type="Armor" name="Agathion - Cancer - Stage 7">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2400 sec.)
+		2. Balanced Power: CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 20.
+	-->
+	<item id="24128" type="Armor" name="Agathion - Cancer - Stage 8">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 2100 sec.)
+		2. Balanced Power: CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 25.
+	-->
+	<item id="24129" type="Armor" name="Agathion - Cancer - Stage 9">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1800 sec.)
+		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 25.
+	-->
+	<item id="24130" type="Armor" name="Agathion - Cancer - Stage 10">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1500 sec.)
+		2. Balanced Power: INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 30.
+	-->
+	<item id="24131" type="Armor" name="Agathion - Cancer - Stage 11">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!--
+		Can summon Cancer when equipped.
+		
+		<Active Skill>
+		1. Exoskeletal Shield: For 20 min., reflects 20% of received damage. (Cooldown is 1200 sec.)
+		2. Balanced Power: STR/INT/CON/DEX/WIT/MEN + 1.
+		2. Attribute Enchant: Attribute Resistance + 30.
+	-->
+	<item id="24132" type="Armor" name="Agathion - Cancer - Stage 12">
+		<set name="icon" val="icon.accessary_lbracelet_sign_agathion_june_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+	</item>
+	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
+	<item id="24133" type="Armor" name="Dark Assassin Suit">
+		<set name="icon" val="icon.dark_assassin" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
+	<item id="24134" type="EtcItem" name="Appearance Stone: Dark Assassin Suit">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
+	<item id="24135" type="EtcItem" name="Dark Assassin Top">
+		<set name="icon" val="icon.etc_dark_suit_upbody_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
+	<item id="24136" type="EtcItem" name="Dark Assassin Pants">
+		<set name="icon" val="icon.etc_dark_suit_downbody_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
+	<item id="24137" type="EtcItem" name="Dark Assassin Gloves">
+		<set name="icon" val="icon.etc_dark_suit_gloves_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Take 4 parts to the Assassin Suit (top, pants, gloves, boots) to the Dimensional Merchant to trade in for an Appearance Stone: Dark Assassin Suit. -->
+	<item id="24138" type="EtcItem" name="Dark Assassin Boots">
+		<set name="icon" val="icon.etc_dark_suit_shoes_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Stars twinkle inside a star-shaped jar. Ingredient to crafting a Zodiac Agathion bracelet with a 100% success rate. -->
+	<item id="24139" type="EtcItem" name="Starlight Jar">
+		<set name="icon" val="icon.etc_sign_agathion_feed_yellow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Summons a cute Three-headed Dragon. Cannot be exchanged, dropped, or sold. -->
+	<item id="24140" type="Armor" name="Agathion - Three-headed Dragon">
+		<set name="icon" val="BranchSys2.icon.br_aga_threehead_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+</list>

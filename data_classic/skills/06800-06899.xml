@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<skill id="6800" levels="1" name="Presentation - Yellow Portal Ray">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="6801" levels="1" name="Presentation - Yellow-Green Portal Ray">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="6802" levels="1" name="Presentation - SSQ2 General Purpose 6">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Increases Atk. Spd. by 33% for 5 minutes. -->
+	<skill id="6803" levels="1" name="Arena Haste">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases Speed by 33 for 5 minutes. -->
+	<skill id="6804" levels="1" name="Arena Wind Walk">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases M. Atk. by 75% for 5 minutes. -->
+	<skill id="6805" levels="1" name="Arena Empower">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases Casting Spd. by 30% for 5 minutes. -->
+	<skill id="6806" levels="1" name="Arena Acumen">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Decreases magic cancel damage by 53 for 5 minutes. -->
+	<skill id="6807" levels="1" name="Arena Concentration">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases P. Atk. by 15% for 5 minutes. -->
+	<skill id="6808" levels="1" name="Arena Might">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases Accuracy by 4 for 5 minutes. -->
+	<skill id="6809" levels="1" name="Arena Guidance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases critical attack rate by 30% for 5 minutes. -->
+	<skill id="6810" levels="1" name="Arena Focus">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Increases critical attack effect by 35% for 5 minutes. -->
+	<skill id="6811" levels="1" name="Arena Death Whisper">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- P. Def. decreases momentarily. by 8%, M. Def. by 16%, and evasion by 4, and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8 for 5 minutes. -->
+	<skill id="6812" levels="1" name="Arena Berserker Spirit">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<skill id="6813" levels="8" name="Sonic Focus">
+		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#magicLvl"> 40 43 49 55 60 66 70 79 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="reuseDelay" val="10000" />
+		<set name="staticReuse" val="true" />
+		<set name="numCharges" val="1" />
+		<set name="maxCharges" val="#maxCharges" />
+		<for>
+			<abnormal count="#maxCharges" noicon="1">
+				<effect type="IncreaseCharges" val="1" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="6814" levels="8" name="Focus Force">
+		<table name="#maxCharges"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#magicLvl"> 24 32 40 52 60 66 72 79 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="reuseDelay" val="10000" />
+		<set name="staticReuse" val="true" />
+		<set name="numCharges" val="1" />
+		<set name="maxCharges" val="#maxCharges" />
+		<for>
+			<abnormal count="#maxCharges" noicon="1">
+				<effect type="IncreaseCharges" val="1" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Poison seeps deeper and for 10 seconds, 330 HP is decreased every second. If not treated, the poison will worsen.
+		Level 2: Poison seeps deeper and for 10 seconds, 370 HP is decreased every second. If not treated, the poison will worsen.
+		Level 3: Poison seeps deeper and for 10 seconds, 400 HP is decreased every second. If not treated, the poison will worsen.
+		Level 4: Poison seeps deeper and for 10 seconds, 440 HP is decreased every second. If not treated, the poison will worsen.
+		Level 5: Poison seeps deeper and for 10 seconds, 480 HP is decreased every second. If not treated, the poison will worsen.
+		Level 6: Poison seeps deeper and for 10 seconds, 520 HP is decreased every second. If not treated, the poison will worsen.
+		Level 7: Poison seeps deeper and for 10 seconds, 560 HP is decreased every second. If not treated, the poison will worsen.
+		Level 8: Poison seeps deeper and for 10 seconds, 600 HP is decreased every second. If not treated, the poison will worsen.
+		Level 9: Poison seeps deeper and for 10 seconds, 640 HP is decreased every second. If not treated, the poison will worsen.
+		Level 10: Poison seeps deeper and for 10 seconds, 680 HP is decreased every second. If not treated, the poison will worsen.
+		Level 11: Poison seeps deeper and for 10 seconds, 720 HP is decreased every second. If not treated, the poison will worsen.
+		Level 12: Poison seeps deeper and for 10 seconds, 760 HP is decreased every second. If not treated, the poison will worsen.
+		Level 14: Poison seeps deeper and for 10 seconds, 780 HP is decreased every second. If not treated, the poison will worsen.
+		Level 16: Poison seeps deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the poison will worsen.
+	-->
+	<skill id="6815" levels="16" name="Deadly Poison">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- 
+		Level 1: Bleed becomes deeper and for 10 seconds, 330 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 2: Bleed becomes deeper and for 10 seconds, 370 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 3: Bleed becomes deeper and for 10 seconds, 400 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 4: Bleed becomes deeper and for 10 seconds, 440 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 5: Bleed becomes deeper and for 10 seconds, 480 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 6: Bleed becomes deeper and for 10 seconds, 520 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 7: Bleed becomes deeper and for 10 seconds, 560 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 8: Bleed becomes deeper and for 10 seconds, 600 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 9: Bleed becomes deeper and for 10 seconds, 640 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 10: Bleed becomes deeper and for 10 seconds, 680 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 11: Bleed becomes deeper and for 10 seconds, 720 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 12: Bleed becomes deeper and for 10 seconds, 760 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 13: Bleed becomes deeper and for 10 seconds, 780 HP is decreased every second. If not treated, the bleed will worsen.
+		Level 15: Bleed becomes deeper and for 10 seconds, 800 HP is decreased every second. If not treated, the bleed will worsen.
+	-->
+	<skill id="6816" levels="16" name="Deadly Bleed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="6817" levels="1" name="Arena HP Recovery">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<skill id="6818" levels="1" name="Powerful Rage">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="75" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="60000" />
+	</skill>
+	<!-- For 15 seconds, Atk. Spd. is decreased by 20%. -->
+	<skill id="6819" levels="1" name="Banshee's Curse">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="75" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="15000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="6820" levels="1" name="P. Def. Enhance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="30" />
+		<set name="hitTime" val="1800" />
+		<set name="reuseDelay" val="60000" />
+	</skill>
+	<!-- For 4 seconds, P. Def. decreases by 23%. -->
+	<skill id="6821" levels="1" name="Decrease P. Def.">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="140" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- For 4 seconds, P. Def. decreases by 40%. -->
+	<skill id="6822" levels="1" name="Decrease P. Def.">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="140" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6823" levels="1" name="Reflect Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="4000" />
+	</skill>
+	<skill id="6824" levels="1" name="Piercing Storm">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- 
+		Level 1: For 8 seconds, inflicts bleed and decreases 100 HP every second.
+		Level 2: For 8 seconds, inflicts bleed and decreases 120 HP every second.
+	-->
+	<skill id="6825" levels="2" name="Bleed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<skill id="6826" levels="1" name="Critical Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Petrified and unable to move for 30 seconds. -->
+	<skill id="6827" levels="1" name="Petrify">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- For 30 seconds, Atk. Spd. is decreased by 50% and Casting Spd. is decreased by 50%. -->
+	<skill id="6828" levels="1" name="Dust Storm">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="6829" levels="1" name="Vampiric Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="1500" />
+		<set name="castRange" val="800" />
+		<set name="effectRange" val="1300" />
+	</skill>
+	<!-- For 5 seconds, inflicts bleed and decreases 100 HP every second. Decreases the effect of recovery magic by 600. -->
+	<skill id="6830" levels="1" name="Bleed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="800" />
+		<set name="effectRange" val="1300" />
+	</skill>
+	<skill id="6831" levels="1" name="Blood Burst">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="2000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<skill id="6832" levels="1" name="Summon Parasitic Leech">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+	</skill>
+	<skill id="6833" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6834" levels="1" name="Range Magic Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="6835" levels="1" name="Summon Skeleton">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+	</skill>
+	<!-- Magic skills are blocked. -->
+	<skill id="6836" levels="1" name="Silence">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1500" />
+	</skill>
+	<skill id="6837" levels="1" name="Range Magic Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="6838" levels="1" name="Self-destruction">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<skill id="6839" levels="2" name="Power Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Paralyzed and unable to move momentarily. -->
+	<skill id="6840" levels="1" name="Paralysis">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+	</skill>
+	<skill id="6841" levels="1" name="Summon Subordinate">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+	</skill>
+	<!-- 
+		Level 1: Increases P. Atk. by 12% and Atk. Spd. by 15%.
+		Level 2: Atk. Spd. is increased by 40%.
+	-->
+	<skill id="6842" levels="2" name="Enhance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+	</skill>
+	<!-- Atk. Spd. is increased by 33%. -->
+	<skill id="6843" levels="1" name="Enhance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+	</skill>
+	<skill id="6844" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<skill id="6845" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6846" levels="1" name="Vampiric Claw">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="123" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="800" />
+		<set name="effectRange" val="1300" />
+	</skill>
+	<skill id="6847" levels="1" name="Self Heal">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="6848" levels="1" name="Summoner Appearance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="6849" levels="1" name="Summoner Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="100" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6850" levels="1" name="Self-destruction">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<skill id="6851" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6852" levels="1" name="Magic Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Inflicts sleep for 6 seconds. -->
+	<skill id="6853" levels="1" name="Sleep">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Afflicted with Hold and unable to move temporarily. -->
+	<skill id="6854" levels="1" name="Hold">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="73" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<skill id="6855" levels="1" name="Magic Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="4000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<skill id="6856" levels="1" name="Heal">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="30000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<skill id="6857" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6858" levels="1" name="Summon">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<skill id="6859" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6860" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Increases P. Atk. by 20% and Atk. Spd. by 30%. -->
+	<skill id="6861" levels="1" name="Enhance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="75" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- For 6 seconds, inflicts poison and decreases 100 HP every second. -->
+	<skill id="6862" levels="1" name="Poison">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- For 10 seconds, inflicts poison and decreases 120 HP every second. -->
+	<skill id="6863" levels="1" name="Poison">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+	</skill>
+	<skill id="6864" levels="1" name="Summon">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<!-- For 8 seconds, inflicts bleed and decreases 100 HP every second. -->
+	<skill id="6865" levels="1" name="Poison">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6866" levels="1" name="Vampiric Claw">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="800" />
+		<set name="effectRange" val="1300" />
+	</skill>
+	<skill id="6867" levels="1" name="Magic Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="6868" levels="1" name="Summon">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<skill id="6869" levels="1" name="Detonate">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<skill id="6870" levels="1" name="Vampiric Claw">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="123" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="800" />
+		<set name="effectRange" val="1300" />
+	</skill>
+	<skill id="6871" levels="1" name="Range Magic Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="122" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+	</skill>
+	<skill id="6872" levels="1" name="Self-destruction">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="5000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- 
+		Level 1: P. Def. is decreased by 23%.
+		Level 2: P. Def. is decreased by 33%.
+	-->
+	<skill id="6873" levels="2" name="Hex">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1500" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+	</skill>
+	<skill id="6874" levels="1" name="Range Magic Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- 
+		Level 1: For 8 seconds, inflicts bleed and decreases 120 HP every second.
+		Level 2: For 8 seconds, inflicts bleed and decreases 140 HP every second.
+	-->
+	<skill id="6875" levels="2" name="Poison">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<skill id="6876" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6877" levels="1" name="Power Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Paralyzed and unable to move momentarily. -->
+	<skill id="6878" levels="1" name="Paralysis">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="78" />
+		<set name="hitTime" val="6000" />
+		<set name="castRange" val="80" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6879" levels="1" name="Vampiric Claw">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<!-- Magic skills are blocked. -->
+	<skill id="6880" levels="1" name="Silence">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<skill id="6881" levels="1" name="Critical Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="89" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Petrified and unable to move momentarily. -->
+	<skill id="6882" levels="1" name="Petrify">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6884" levels="1" name="Morale Boost">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="1600" />
+		<set name="effectRange" val="2100" />
+	</skill>
+	<!-- 
+		Level 1: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 50, Critical Rate + 10%, and Critical Damage + 10%.
+		Level 2: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 80, Critical Rate + 30%, Critical Damage + 15%, P. Atk. + 15%, and M. Atk. + 15%.
+		Level 3: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 90, Critical Rate + 50%, Critical Damage + 20%, P. Atk. + 15%, M. Atk. + 15%, Atk. Spd. + 15%, Casting Spd. + 15%, and XP bonus + 20%.
+	-->
+	<skill id="6885" levels="3" name="Morale Boost">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="1600" />
+		<set name="effectRange" val="2100" />
+	</skill>
+	<skill id="6886" levels="1" name="Full Recovery">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="6887" levels="1" name="Fatal Strike">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="100" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<skill id="6888" levels="1" name="Fatal Shot">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="2000" />
+		<set name="effectRange" val="2500" />
+	</skill>
+	<skill id="6889" levels="1" name="Range Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- For 10 seconds, inflicts bleed and decreases 100 HP every second. -->
+	<skill id="6890" levels="1" name="Bleed">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="123" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="300" />
+		<set name="effectRange" val="800" />
+	</skill>
+	<skill id="6891" levels="1" name="Power Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="200" />
+		<set name="effectRange" val="700" />
+	</skill>
+	<skill id="6892" levels="1" name="Power Shot">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="2000" />
+		<set name="effectRange" val="2500" />
+	</skill>
+	<skill id="6893" levels="1" name="Power Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="200" />
+		<set name="effectRange" val="700" />
+	</skill>
+	<skill id="6894" levels="1" name="Power Shot">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="2000" />
+		<set name="effectRange" val="2500" />
+	</skill>
+	<skill id="6895" levels="1" name="Power Attack">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="200" />
+		<set name="effectRange" val="700" />
+	</skill>
+	<skill id="6896" levels="1" name="Power Shot">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="80" />
+		<set name="hitTime" val="3000" />
+		<set name="castRange" val="2000" />
+		<set name="effectRange" val="2500" />
+	</skill>
+	<!-- Stunned and unable to move momentarily. -->
+	<skill id="6897" levels="12" name="Stun">
+		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+	</skill>
+	<!-- It was one of the dragons that was born out of the blood that was thrown up by Antharas. After swallowing the Ancient Drake and absorbing its power, it quickly arose as a Commander that rules over the monsters nearby. It has good hearing but its vision is very poor, so it waits in a quiet, dark place, listening to the enemy's heartbeat, before swooping in for an attack. -->
+	<skill id="6898" levels="1" name="Raid Boss (Lv. 84)">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- It was one of the dragons that was born out of the blood that was thrown up by Antharas. It swallowed up its brethren and gained a greater power. Antharas, whose heart was filled with innate cruelty and madness of a Dust Rider, appointed him as the Valley's Eradicator and commanded him to build the Tower of Corpses. -->
+	<skill id="6899" levels="1" name="Raid Boss (Lv. 84)">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+</list>

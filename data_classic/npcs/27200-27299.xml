@@ -1,0 +1,15 @@
+<list>
+	<npc id="27200" name="Krudel Lizardman" title="Quest Monster" level="36" type="L2Monster" baseAtkRange="80" baseHpMax="809.52637" baseHpReg="4.5" baseMpMax="417.6" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="137.86467" baseMAtk="94.1437" basePDef="140.57278" baseMDef="102.86506" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="130.0" randomWalk="true" aggroRange="300" rHand="291" collisionRadius="10.0" collisionHeight="23.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clan="elemental1_clan" clanRange="300">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="11" /> <!-- Spear -->
+	</npc>
+</list>

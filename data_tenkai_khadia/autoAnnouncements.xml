@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<announce text="Are you looking for the server information? Check the Community Board (ALT + B)!" initial="10" reuse="60" />
+	<announce text="Never share your account information!" initial="15" reuse="60" />
+	<announce text="Please use our forum (www.l2tenkai.com/board) to report any issue!" initial="20" reuse="60" />
+	<announce text="You have images of all the Appearances at our forum!" initial="30" reuse="60" />
+	<announce text="Check the server updates at our forums!" initial="40" reuse="60" />
+	<announce text="Are you looking for the gmshop or npcbuffer? Check your Magic Gem (look at your inventory)!" initial="50" reuse="60" />
+</list>

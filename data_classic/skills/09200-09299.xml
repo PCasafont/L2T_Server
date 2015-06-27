@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Obtained XP/SP + 30%. Not for pets/servitors. PC Cafes only. -->
+	<skill id="9279" levels="1" name="PC Progression Support">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+</list>

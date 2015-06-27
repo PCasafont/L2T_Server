@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Bracelet that can summon a level 7 Valakas Agathion. -->
+	<item id="22400" type="Armor" name="Agathion - Valakas - Lv. 7">
+		<set name="icon" val="BranchSys2.icon.br_aga_valakas_01_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- The Root of Evolution is a necessary ingredient for evolving a Valakas Agathion. Double-click to summon the evolution deliverer. -->
+	<item id="22401" type="EtcItem" name="Root of Evolution">
+		<set name="icon" val="BranchSys3.icon.g_aga_valakas_lifespring" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22402" type="EtcItem" name="Weapon Appearance Stone (R-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_r" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22403" type="EtcItem" name="Weapon Appearance Stone (S-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_s" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="s" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22404" type="EtcItem" name="Weapon Appearance Stone (A-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_a" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="a" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22405" type="EtcItem" name="Weapon Appearance Stone (B-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_b" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22406" type="EtcItem" name="Weapon Appearance Stone (C-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_c" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which is destroyed after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22407" type="EtcItem" name="Weapon Appearance Stone (D-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_processing_stone_d" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of an R-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22408" type="EtcItem" name="Blessed Weapon Appearance Stone (R-grade)">
+		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_r" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of an S-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22409" type="EtcItem" name="Blessed Weapon Appearance Stone (S-grade)">
+		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_s" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="s" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of an A-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22410" type="EtcItem" name="Blessed Weapon Appearance Stone (A-grade)">
+		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_a" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="a" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of a B-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22411" type="EtcItem" name="Blessed Weapon Appearance Stone (B-grade)">
+		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_b" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of a C-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22412" type="EtcItem" name="Blessed Weapon Appearance Stone (C-grade)">
+		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_c" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the appearance of a D-grade weapon to that of a different weapon of the same grade or a lower grade. You need an appearance item, which remains intact after its appearance is extracted. An appearance-modified item has no change in abilities. Double-click to use. -->
+	<item id="22413" type="EtcItem" name="Blessed Weapon Appearance Stone (D-grade)">
+		<set name="icon" val="BranchSys3.icon.g_bless_wp_processing_stone_d" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- It can restore a modified R-grade weapon back to its original appearance. Double-click to use. -->
+	<item id="22414" type="EtcItem" name="Weapon Restoration Stone (R-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_restore_stone_r" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- It can restore a modified S-grade weapon back to its original appearance. Double-click to use. -->
+	<item id="22415" type="EtcItem" name="Weapon Restoration Stone (S-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_restore_stone_s" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="s" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- It can restore a modified A-grade weapon back to its original appearance. Double-click to use. -->
+	<item id="22416" type="EtcItem" name="Weapon Restoration Stone (A-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_restore_stone_a" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="a" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- It can restore a modified B-grade weapon back to its original appearance. Double-click to use. -->
+	<item id="22417" type="EtcItem" name="Weapon Restoration Stone (B-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_restore_stone_b" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- It can restore a modified C-grade weapon back to its original appearance. Double-click to use. -->
+	<item id="22418" type="EtcItem" name="Weapon Restoration Stone (C-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_restore_stone_c" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- It can restore a modified D-grade weapon back to its original appearance. Double-click to use. -->
+	<item id="22419" type="EtcItem" name="Weapon Restoration Stone (D-grade)">
+		<set name="icon" val="BranchSys3.icon.g_wp_restore_stone_d" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+	</item>
+	<!-- Changes the weapon's appearance to look like an Emerald Sword. Test item. -->
+	<item id="22420" type="EtcItem" name="(Test) Emerald Sword Appearance Stone">
+		<set name="icon" val="BranchSys3.icon.g_particular_wp_processing_stone_prim" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the Holiday Trees. -->
+	<item id="22421" type="EtcItem" name="Holiday Tree - Star Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_star" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the Holiday Trees. -->
+	<item id="22422" type="EtcItem" name="Holiday Tree - Globe Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_bead" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the Holiday Trees. -->
+	<item id="22423" type="EtcItem" name="Holiday Tree - Garland Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_band" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Essential ornament for a Holiday Tree. Bring it to Santa Girl to help her decorate the Holiday Trees. -->
+	<item id="22424" type="EtcItem" name="Holiday Tree - Bow Ornament - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_tree_ribbon" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Enchant success rate is raised by 10%. 
+		P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons.
+	-->
+	<item id="22425" type="EtcItem" name="Scroll: Enchant Weapon (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_scrl_of_ench_wp_s_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Dimensional Item
+		Enchant success rate is raised by 10%.
+		Prior enchant value remains after enchanting failure. 
+		P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. Cannot be used on weapons above + 15. Cannot be exchanged, dropped, or sold in a private store. Can be stored in a private warehouse. Can be shared within an account through the Dimensional Merchant.
+	-->
+	<item id="22426" type="EtcItem" name="Ancient Scroll: Enchant Weapon (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_wp_s_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Enchant success rate is 100%. 
+		P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. Normal weapons can be enchanted to + 12 and magic weapons can be enchanted to + 7.
+	-->
+	<item id="22427" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_wp_s_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Enchant success rate is raised by 10%. 
+		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value.
+	-->
+	<item id="22428" type="EtcItem" name="Scroll: Enchant Armor (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_scrl_of_ench_am_s_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Enchant success rate is raised by 10%. 
+		Prior enchant value remains after enchanting failure. 
+		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value.
+	-->
+	<item id="22429" type="EtcItem" name="Ancient Scroll: Enchant Armor (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_ancient_cry_of_ench_am_s_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Enchant success rate is 100%. 
+		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value.
+	-->
+	<item id="22430" type="EtcItem" name="Heavenly Scroll: Enchant Armor (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_holy_cry_of_ench_am_s_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Chance of acquiring a Divine Scroll: Enchant Weapon and a high -grade Ancient Scroll: Enchant Weapon. -->
+	<item id="22431" type="EtcItem" name="Radiant Fortuna Box">
+		<set name="icon" val="BranchSys3.icon.g_cash_fortuna_box_r" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Chance of acquiring a Divine Scroll: Enchant Armor and a high -grade Ancient Scroll: Enchant Armor. -->
+	<item id="22432" type="EtcItem" name="Radiant Fortuna Cube">
+		<set name="icon" val="BranchSys3.icon.g_cash_fortuna_cube_r" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an R-grade weapon. -->
+	<item id="22433" type="EtcItem" name="Soulshot (R-grade)">
+		<set name="icon" val="icon.soulshot_r_i00" />
+		<set name="default_action" val="soulshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="SoulShots" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an R-grade weapon. -->
+	<item id="22434" type="EtcItem" name="Blessed Spiritshot (R-grade)">
+		<set name="icon" val="icon.blessed_spiritshot_r_i00" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+	</item>
+	<!-- Magic scroll that moves you to the nearest village. Weight is 0. -->
+	<item id="22435" type="EtcItem" name="Scroll of Escape">
+		<set name="icon" val="icon.etc_scroll_of_return_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic scroll that moves you to your castle. If you do not have a castle, it moves you to the nearest village. Weight is 0. -->
+	<item id="22436" type="EtcItem" name="Scroll of Escape: Castle">
+		<set name="icon" val="icon.etc_scroll_of_return_castle_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic scroll that teleports you to your clan hall. Weight is 0. -->
+	<item id="22437" type="EtcItem" name="Scroll of Escape: Clan Hall">
+		<set name="icon" val="icon.etc_scroll_of_return_agit_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic scroll that teleports you to the nearest village. Weight is 0. -->
+	<item id="22438" type="EtcItem" name="Blessed Scroll of Escape">
+		<set name="icon" val="icon.etc_scroll_of_return_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic scroll that teleports you to your castle. If you do not have a castle, it teleports you to the nearest village. Weight is 0. -->
+	<item id="22439" type="EtcItem" name="Blessed Scroll of Escape: Castle">
+		<set name="icon" val="icon.etc_scroll_of_return_castle_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic scroll that teleports you to your clan hall. If you do not have a clan hall, it teleports you to the nearest village. Weight is 0. -->
+	<item id="22440" type="EtcItem" name="Blessed Scroll of Escape: Clan Hall">
+		<set name="icon" val="icon.etc_scroll_of_return_agit_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic scroll that resurrects a dead pet and restores its XP completely. Weight is 0. -->
+	<item id="22441" type="EtcItem" name="Blessed Scroll of Resurrection (Pet)">
+		<set name="icon" val="icon.etc_scroll_of_resurrection_pet_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Activates 2 talisman slots when equipped. -->
+	<item id="22442" type="Armor" name="Improved Bronze Bracelet">
+		<set name="icon" val="icon.etc_rbracelet_b_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 3 talisman slots when equipped. -->
+	<item id="22443" type="Armor" name="Improved Steel Bracelet">
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 4 talisman slots when equipped. -->
+	<item id="22444" type="Armor" name="Improved Mithril Bracelet">
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing 5 Vitality Replenishing Potions. -->
+	<item id="22445" type="EtcItem" name="Vitality Replenishing Potion 5-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Vitality maintaining potions. -->
+	<item id="22446" type="EtcItem" name="Vitality Maintaining Potion 5-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Vitality Recovering Potion. -->
+	<item id="22447" type="EtcItem" name="Vitality Recovering Potion 5-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5000 Soulshots (R-grade). -->
+	<item id="22448" type="EtcItem" name="Soulshot Medium Pack (5000 R-grade)">
+		<set name="icon" val="icon.br_cash_pack_of_soulshot_r_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 10000 Soulshots (R-grade). -->
+	<item id="22449" type="EtcItem" name="Soulshot Large Pack (10000 R-grade)">
+		<set name="icon" val="icon.br_cash_pack_of_soulshot_r_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5000 Blessed Spiritshots (R-grade). -->
+	<item id="22450" type="EtcItem" name="Blessed Spiritshot Medium Pack (R-grade) (5000)">
+		<set name="icon" val="icon.br_cash_pack_of_blessed_spiritshot_r_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 10000 Blessed Spiritshots (R-grade). -->
+	<item id="22451" type="EtcItem" name="Blessed Spiritshot Large Pack (R-grade) (10000)">
+		<set name="icon" val="icon.br_cash_pack_of_blessed_spiritshot_r_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 10 Scrolls of Escape. Also contains 1 bonus Blessed Scroll of Escape. -->
+	<item id="22452" type="EtcItem" name="Scroll of Escape 10-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 10 Scrolls of Escape: Castle. Also contains 1 bonus Blessed Scroll of Escape: Castle. -->
+	<item id="22453" type="EtcItem" name="Scroll of Escape: Castle 10-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 10 Scrolls of Escape: Clan Hall. Also contains 1 bonus Blessed Scroll of Escape: Clan Hall. -->
+	<item id="22454" type="EtcItem" name="Scroll of Escape: Clan Hall 10-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Improved Bronze Bracelet. -->
+	<item id="22455" type="EtcItem" name="Improved Bronze Bracelet Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Improved Steel Bracelet. -->
+	<item id="22456" type="EtcItem" name="Improved Steel Bracelet Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Blessed Scrolls of Resurrection: Pet. -->
+	<item id="22457" type="EtcItem" name="Blessed Scroll of Resurrection (Pet) Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Weapon Appearance Stone (R-grade) and 1 Weapon Restoration Stone (R-grade). -->
+	<item id="22458" type="EtcItem" name="Weapon Appearance/Restoration Stone Pack (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Weapon Appearance Stone (S-grade) and 1 Weapon Restoration Stone (S-grade). -->
+	<item id="22459" type="EtcItem" name="Weapon Appearance/Restoration Stone Pack (S-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Weapon Appearance Stone (A-grade) and 1 Weapon Restoration Stone (A-grade). -->
+	<item id="22460" type="EtcItem" name="Weapon Appearance/Restoration Stone Pack (A-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Weapon Appearance Stone (B-grade) and 1 Weapon Restoration Stone (B-grade). -->
+	<item id="22461" type="EtcItem" name="Weapon Appearance/Restoration Stone Pack (B-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Weapon Appearance Stone (C-grade) and 1 Weapon Restoration Stone (C-grade). -->
+	<item id="22462" type="EtcItem" name="Weapon Appearance/Restoration Stone Pack (C-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Weapon Appearance Stone (D-grade) and 1 Weapon Restoration Stone (D-grade). -->
+	<item id="22463" type="EtcItem" name="Weapon Appearance/Restoration Stone Pack (D-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Blessed Weapon Appearance Stone (R-grade) and 1 Weapon Restoration Stone (R-grade). -->
+	<item id="22464" type="EtcItem" name="Blessed Weapon Appearance/Restoration Stone Pack (R-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Blessed Weapon Appearance Stone (S-grade) and 1 Weapon Restoration Stone (S-grade). -->
+	<item id="22465" type="EtcItem" name="Blessed Weapon Appearance/Restoration Stone Pack (S-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Blessed Weapon Appearance Stone (A-grade) and 1 Weapon Restoration Stone (A-grade). -->
+	<item id="22466" type="EtcItem" name="Blessed Weapon Appearance/Restoration Stone Pack (A-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Blessed Weapon Appearance Stone (B-grade) and 1 Weapon Restoration Stone (B-grade). -->
+	<item id="22467" type="EtcItem" name="Blessed Weapon Appearance/Restoration Stone Pack (B-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Blessed Weapon Appearance Stone (C-grade) and 1 Weapon Restoration Stone (C-grade). -->
+	<item id="22468" type="EtcItem" name="Blessed Weapon Appearance/Restoration Stone Pack (C-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Blessed Weapon Appearance Stone (D-grade) and 1 Weapon Restoration Stone (D-grade). -->
+	<item id="22469" type="EtcItem" name="Blessed Weapon Appearance/Restoration Stone Pack (D-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Superior Healing Potions. -->
+	<item id="22470" type="EtcItem" name="Superior Healing Potion 5-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Superior Quick Healing Potions. -->
+	<item id="22471" type="EtcItem" name="Superior Quick Healing Potion 5-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Adventurer's Song - Energy of Recovery. -->
+	<item id="22472" type="EtcItem" name="Adventurer's Song - Energy of Recovery 3-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Pack that allows you to acquire 1 red, black, orange, blue, yellow, grey, or silver Talisman (R-grade). -->
+	<item id="22473" type="EtcItem" name="Talisman Box">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 heavenly cocktails. -->
+	<item id="22474" type="EtcItem" name="Heavenly Cocktail 3-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Santa Girl gave you this gift box in exchange for 100 red stockings. Contains a random reward, and a chance at getting a temporary or permanent Santa Girl's Cloak. -->
+	<item id="22475" type="EtcItem" name="Santa Girl's Gift Box - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Collect 100 to bring back to Santa Girl in exchange for Santa Girl's Wrapped Pack. -->
+	<item id="22476" type="EtcItem" name="Santa Girl's Red Stockings - Event">
+		<set name="icon" val="icon.xmas_present_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Warm and festive winter cloak to celebrate the holidays. Decreases weight. Increases inventory slots. Expires after 1 day. -->
+	<item id="22477" type="Armor" name="Santa Girl's Cloak - 1-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_christmas_cloak" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="20" />
+		</for>
+	</item>
+	<!-- Warm and festive winter cloak to celebrate the holidays. Decreases weight. Increases inventory slots. Expires after 7 days. -->
+	<item id="22478" type="Armor" name="Santa Girl's Cloak - 7-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_christmas_cloak" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="20" />
+		</for>
+	</item>
+	<!-- Warm and festive winter cloak to celebrate the holidays. Decreases weight. Increases inventory slots. Expires after 30 days. -->
+	<item id="22479" type="Armor" name="Santa Girl's Cloak - 30-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_christmas_cloak" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="21275-5;21276-5" />
+		<for>
+			<baseAdd stat="pDef" val="20" />
+		</for>
+	</item>
+	<!-- Warm and festive winter cloak to celebrate the holidays. You can keep it forever! -->
+	<item id="22480" type="Armor" name="Santa Girl's Cloak - Event">
+		<set name="icon" val="BranchSys3.icon.g_christmas_cloak" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="back" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="21275-5;21276-5" />
+		<for>
+			<baseAdd stat="pDef" val="20" />
+		</for>
+	</item>
+	<!-- Activates 2 talisman slots when equipped. 1 day. -->
+	<item id="22481" type="Armor" name="Improved Bronze Bracelet - 1-day">
+		<set name="icon" val="icon.etc_rbracelet_b_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 2 talisman slots when equipped. 15 days. -->
+	<item id="22482" type="Armor" name="Improved Bronze Bracelet - 15-day">
+		<set name="icon" val="icon.etc_rbracelet_b_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 2 talisman slots when equipped. 30-day. -->
+	<item id="22483" type="Armor" name="Improved Bronze Bracelet - 30-day">
+		<set name="icon" val="icon.etc_rbracelet_b_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 2 talisman slots when equipped. 90 days. -->
+	<item id="22484" type="Armor" name="Improved Bronze Bracelet - 90-day">
+		<set name="icon" val="icon.etc_rbracelet_b_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 3 talisman slots when equipped. 1 day. -->
+	<item id="22485" type="Armor" name="Improved Steel Bracelet - 1-day">
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 3 talisman slots when equipped. 15 days. -->
+	<item id="22486" type="Armor" name="Improved Steel Bracelet - 15-day">
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 3 talisman slots when equipped. 30-day. -->
+	<item id="22487" type="Armor" name="Improved Steel Bracelet - 30-day">
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 3 talisman slots when equipped. 90 days. -->
+	<item id="22488" type="Armor" name="Improved Steel Bracelet - 90-day">
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 4 talisman slots when equipped. 1 day. -->
+	<item id="22489" type="Armor" name="Improved Mithril Bracelet - 1-day">
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 4 talisman slots when equipped. 15 days. -->
+	<item id="22490" type="Armor" name="Improved Mithril Bracelet - 15-day">
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 4 talisman slots when equipped. 30-day. -->
+	<item id="22491" type="Armor" name="Improved Mithril Bracelet - 30-day">
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Activates 4 talisman slots when equipped. 90 days. -->
+	<item id="22492" type="Armor" name="Improved Mithril Bracelet - 90-day">
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 100% (3-hour). -->
+	<item id="22493" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (3-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 100% (5-hour). -->
+	<item id="22494" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (5-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 100% (7-day). -->
+	<item id="22495" type="EtcItem" name="XP Rune I (Lv. 1-85) 100% Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 200% (3-hour). -->
+	<item id="22496" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (3-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 200% (5-hour). -->
+	<item id="22497" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (5-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Double-click on the box to acquire 1 XP Rune I (Lv. 1-85) 200% (7-day). -->
+	<item id="22498" type="EtcItem" name="XP Rune I (Lv. 1-85) 200% Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing My Teleport Scroll. -->
+	<item id="22499" type="EtcItem" name="My Teleport Book Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

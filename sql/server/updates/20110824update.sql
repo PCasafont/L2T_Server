@@ -1,0 +1,1 @@
+alter table `characters` change `karma` `reputation` int(10) not null;

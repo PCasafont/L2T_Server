@@ -1,0 +1,92 @@
+<list>
+	<!-- Scrolls -->
+	<enchantScroll id="22013" targetType="ARMOR" grade="a" extraChance="10" /> <!-- Scroll: Enchant Armor (A-grade) -->
+	<enchantScroll id="953" targetType="WEAPON" grade="c" isCrystal="true" /> <!-- Crystal Scroll: Enchant Weapon (C-grade) -->
+	<enchantScroll id="6577" targetType="WEAPON" grade="s" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
+	<enchantScroll id="22007" targetType="WEAPON" grade="c" extraChance="10" /> <!-- Scroll: Enchant Weapon (C-grade) -->
+	<enchantScroll id="22019" targetType="WEAPON" grade="a" extraChance="100" /> <!-- Heavenly Scroll: Enchant Weapon (A-grade) -->
+	<enchantScroll id="959" targetType="WEAPON" grade="s" /> <!-- Scroll: Enchant Weapon (S-grade) -->
+	<enchantScroll id="17526" targetType="WEAPON" grade="r" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+	<enchantScroll id="20519" targetType="WEAPON" grade="s" isSafe="true" maxLevel="16" extraChance="10" /> <!-- Ancient Scroll: Enchant Weapon (S-grade) -->
+	<enchantScroll id="36978" targetType="HAIR_ACCESSORY" /> <!-- Scroll: Enchant Hair Accessory -->
+	<enchantScroll id="22222" targetType="ARMOR" grade="s" isSafe="true" maxLevel="6" /> <!-- Destruction Scroll: Enchant Armor (S-grade) - Event -->
+	<enchantScroll id="6570" targetType="ARMOR" grade="a" isBlessed="true" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+	<enchantScroll id="730" targetType="ARMOR" grade="a" /> <!-- Scroll: Enchant Armor (A-grade) -->
+	<enchantScroll id="952" targetType="ARMOR" grade="c" /> <!-- Scroll: Enchant Armor (C-grade) -->
+	<enchantScroll id="6576" targetType="ARMOR" grade="d" isBlessed="true" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
+	<enchantScroll id="22228" targetType="ARMOR" grade="b" isSafe="true" maxLevel="6" /> <!-- Destruction Scroll: Enchant Armor (C-grade) - Event -->
+	<enchantScroll id="22018" targetType="WEAPON" grade="b" extraChance="100" /> <!-- Heavenly Scroll: Enchant Weapon (B-grade) -->
+	<enchantScroll id="958" targetType="ARMOR" grade="d" isCrystal="true" /> <!-- Crystal Scroll: Enchant Armor (D-grade) -->
+	<enchantScroll id="20518" targetType="ARMOR" grade="s" extraChance="10" /> <!-- Scroll: Enchant Armor (S-grade) -->
+	<enchantScroll id="729" targetType="WEAPON" grade="a" /> <!-- Scroll: Enchant Weapon (A-grade) -->
+	<enchantScroll id="22221" targetType="WEAPON" grade="s" isSafe="true" maxLevel="15" /> <!-- Destruction Scroll: Enchant Weapon (S-grade) - Event -->
+	<enchantScroll id="6569" targetType="WEAPON" grade="a" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
+	<enchantScroll id="22011" targetType="ARMOR" grade="c" extraChance="10" /> <!-- Scroll: Enchant Armor (C-grade) -->
+	<enchantScroll id="951" targetType="WEAPON" grade="c" /> <!-- Scroll: Enchant Weapon (C-grade) -->
+	<enchantScroll id="6575" targetType="WEAPON" grade="d" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
+	<enchantScroll id="22009" targetType="WEAPON" grade="a" extraChance="10" /> <!-- Scroll: Enchant Weapon (A-grade) -->
+	<enchantScroll id="19447" targetType="WEAPON" grade="r" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+	<enchantScroll id="22017" targetType="ARMOR" grade="a" isSafe="true" maxLevel="16" extraChance="10" /> <!-- Ancient Scroll: Enchant Armor (A-grade) -->
+	<enchantScroll id="957" targetType="WEAPON" grade="d" isCrystal="true" /> <!-- Crystal Scroll: Enchant Weapon (D-grade) -->
+	<enchantScroll id="20517" targetType="WEAPON" grade="s" extraChance="10" /> <!-- Scroll: Enchant Weapon (S-grade) -->
+	<enchantScroll id="22010" targetType="ARMOR" grade="d" extraChance="10" /> <!-- Scroll: Enchant Armor (D-grade) -->
+	<enchantScroll id="950" targetType="ARMOR" grade="b" isCrystal="true" /> <!-- Crystal Scroll: Enchant Armor (B-grade) -->
+	<enchantScroll id="6574" targetType="ARMOR" grade="c" isBlessed="true" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+	<enchantScroll id="22008" targetType="WEAPON" grade="b" extraChance="10" /> <!-- Scroll: Enchant Weapon (B-grade) -->
+	<enchantScroll id="22012" targetType="ARMOR" grade="b" extraChance="10" /> <!-- Scroll: Enchant Armor (B-grade) -->
+	<enchantScroll id="22229" targetType="WEAPON" grade="a" isSafe="true" maxLevel="15" /> <!-- Destruction Scroll: Enchant Weapon (D-grade) - Event -->
+	<enchantScroll id="22016" targetType="ARMOR" grade="b" isSafe="true" maxLevel="16" extraChance="10" /> <!-- Ancient Scroll: Enchant Armor (B-grade) -->
+	<enchantScroll id="956" targetType="ARMOR" grade="d" /> <!-- Scroll: Enchant Armor (D-grade) -->
+	<enchantScroll id="22226" targetType="ARMOR" grade="c" isSafe="true" maxLevel="6" /> <!-- Destruction Scroll: Enchant Armor (B-grade) - Event -->
+	<enchantScroll id="962" targetType="ARMOR" grade="s" isCrystal="true" /> <!-- Crystal Scroll: Enchant Armor (S-grade) -->
+	<enchantScroll id="20522" targetType="ARMOR" grade="s" extraChance="100" /> <!-- Heavenly Scroll: Enchant Armor (S-grade) -->
+	<enchantScroll id="19448" targetType="ARMOR" grade="r" isBlessed="true" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+	<enchantScroll id="949" targetType="WEAPON" grade="b" isCrystal="true" /> <!-- Crystal Scroll: Enchant Weapon (B-grade) -->
+	<enchantScroll id="6573" targetType="WEAPON" grade="c" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+	<enchantScroll id="22015" targetType="WEAPON" grade="a" isSafe="true" maxLevel="16" extraChance="10" /> <!-- Ancient Scroll: Enchant Weapon (A-grade) -->
+	<enchantScroll id="955" targetType="WEAPON" grade="d" /> <!-- Scroll: Enchant Weapon (D-grade) -->
+	<enchantScroll id="22021" targetType="ARMOR" grade="a" extraChance="100" /> <!-- Heavenly Scroll: Enchant Armor (A-grade) -->
+	<enchantScroll id="961" targetType="WEAPON" grade="s" isCrystal="true" /> <!-- Crystal Scroll: Enchant Weapon (S-grade) -->
+	<enchantScroll id="20521" targetType="WEAPON" grade="s" extraChance="100" /> <!-- Heavenly Scroll: Enchant Weapon (S-grade) -->
+	<enchantScroll id="732" targetType="ARMOR" grade="a" isCrystal="true" /> <!-- Crystal Scroll: Enchant Armor (A-grade) -->
+	<enchantScroll id="948" targetType="ARMOR" grade="b" /> <!-- Scroll: Enchant Armor (B-grade) -->
+	<enchantScroll id="6572" targetType="ARMOR" grade="b" isBlessed="true" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
+	<enchantScroll id="13540" targetType="WEAPON" onlyOnItem="13539" /> <!-- Master Yogi's Scroll: Enchant Weapon -->
+	<enchantScroll id="22223" targetType="WEAPON" grade="d" isSafe="true" maxLevel="15" /> <!-- Destruction Scroll: Enchant Weapon (A-grade) - Event -->
+	<enchantScroll id="22014" targetType="WEAPON" grade="b" isSafe="true" maxLevel="16" extraChance="10" /> <!-- Ancient Scroll: Enchant Weapon (B-grade) -->
+	<enchantScroll id="22225" targetType="WEAPON" grade="c" isSafe="true" maxLevel="15" /> <!-- Destruction Scroll: Enchant Weapon (B-grade) - Event -->
+	<enchantScroll id="954" targetType="ARMOR" grade="c" isCrystal="true" /> <!-- Crystal Scroll: Enchant Armor (C-grade) -->
+	<enchantScroll id="6578" targetType="ARMOR" grade="s" isBlessed="true" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+	<enchantScroll id="22230" targetType="ARMOR" grade="a" isSafe="true" maxLevel="6" /> <!-- Destruction Scroll: Enchant Armor (D-grade) - Event -->
+	<enchantScroll id="22006" targetType="WEAPON" grade="d" extraChance="10" /> <!-- Scroll: Enchant Weapon (D-grade) -->
+	<enchantScroll id="22227" targetType="WEAPON" grade="b" isSafe="true" maxLevel="15" /> <!-- Destruction Scroll: Enchant Weapon (C-grade) - Event -->
+	<enchantScroll id="22020" targetType="ARMOR" grade="b" extraChance="100" /> <!-- Heavenly Scroll: Enchant Armor (B-grade) -->
+	<enchantScroll id="960" targetType="ARMOR" grade="s" /> <!-- Scroll: Enchant Armor (S-grade) -->
+	<enchantScroll id="17527" targetType="ARMOR" grade="r" /> <!-- Scroll: Enchant Armor (R-grade) -->
+	<enchantScroll id="20520" targetType="ARMOR" grade="s" isSafe="true" maxLevel="16" extraChance="10" /> <!-- Ancient Scroll: Enchant Armor (S-grade) -->
+	<enchantScroll id="731" targetType="WEAPON" grade="a" isCrystal="true" /> <!-- Crystal Scroll: Enchant Weapon (A-grade) -->
+	<enchantScroll id="22224" targetType="ARMOR" grade="d" isSafe="true" maxLevel="6" /> <!-- Destruction Scroll: Enchant Armor (A-grade) - Event -->
+	<enchantScroll id="947" targetType="WEAPON" grade="b" /> <!-- Scroll: Enchant Weapon (B-grade) -->
+	<enchantScroll id="6571" targetType="WEAPON" grade="b" isBlessed="true" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
+	<!-- Support Items -->
+	<enchantSupportItem id="12364" targetType="WEAPON" grade="b" maxLevel="9" extraChance="15" /> <!-- Lucky Enchant Stone: Weapon (B-grade) -->
+	<enchantSupportItem id="12367" targetType="ARMOR" grade="d" maxLevel="9" extraChance="35" /> <!-- Lucky Enchant Stone: Armor (D-grade) -->
+	<enchantSupportItem id="12370" targetType="ARMOR" grade="a" maxLevel="9" extraChance="18" /> <!-- Lucky Enchant Stone: Armor (A-grade) -->
+	<enchantSupportItem id="14703" targetType="WEAPON" grade="c" maxLevel="9" extraChance="18" /> <!-- Lucky Enchant Stone: Weapon (C-grade) -->
+	<enchantSupportItem id="14706" targetType="WEAPON" grade="s" maxLevel="9" extraChance="10" /> <!-- Lucky Enchant Stone: Weapon (S-grade) -->
+	<enchantSupportItem id="14709" targetType="ARMOR" grade="b" maxLevel="9" extraChance="23" /> <!-- Lucky Enchant Stone: Armor (B-grade) -->
+	<enchantSupportItem id="12362" targetType="WEAPON" grade="d" maxLevel="9" extraChance="20" /> <!-- Lucky Enchant Stone: Weapon (D-grade) -->
+	<enchantSupportItem id="12365" targetType="WEAPON" grade="a" maxLevel="9" extraChance="12" /> <!-- Lucky Enchant Stone: Weapon (A-grade) -->
+	<enchantSupportItem id="12368" targetType="ARMOR" grade="c" maxLevel="9" extraChance="27" /> <!-- Lucky Enchant Stone: Armor (C-grade) -->
+	<enchantSupportItem id="12371" targetType="ARMOR" grade="s" maxLevel="9" extraChance="15" /> <!-- Lucky Enchant Stone: Armor (S-grade) -->
+	<enchantSupportItem id="14704" targetType="WEAPON" grade="b" maxLevel="9" extraChance="15" /> <!-- Lucky Enchant Stone: Weapon (B-grade) -->
+	<enchantSupportItem id="14707" targetType="ARMOR" grade="d" maxLevel="9" extraChance="35" /> <!-- Lucky Enchant Stone: Armor (D-grade) -->
+	<enchantSupportItem id="14710" targetType="ARMOR" grade="a" maxLevel="9" extraChance="18" /> <!-- Lucky Enchant Stone: Armor (A-grade) -->
+	<enchantSupportItem id="12363" targetType="WEAPON" grade="c" maxLevel="9" extraChance="18" /> <!-- Lucky Enchant Stone: Weapon (C-grade) -->
+	<enchantSupportItem id="12366" targetType="WEAPON" grade="s" maxLevel="9" extraChance="10" /> <!-- Lucky Enchant Stone: Weapon (S-grade) -->
+	<enchantSupportItem id="12369" targetType="ARMOR" grade="b" maxLevel="9" extraChance="23" /> <!-- Lucky Enchant Stone: Armor (B-grade) -->
+	<enchantSupportItem id="14702" targetType="WEAPON" grade="d" maxLevel="9" extraChance="20" /> <!-- Lucky Enchant Stone: Weapon (D-grade) -->
+	<enchantSupportItem id="14705" targetType="WEAPON" grade="a" maxLevel="9" extraChance="12" /> <!-- Lucky Enchant Stone: Weapon (A-grade) -->
+	<enchantSupportItem id="14708" targetType="ARMOR" grade="c" maxLevel="9" extraChance="27" /> <!-- Lucky Enchant Stone: Armor (C-grade) -->
+	<enchantSupportItem id="14711" targetType="ARMOR" grade="s" maxLevel="9" extraChance="15" /> <!-- Lucky Enchant Stone: Armor (S-grade) -->
+</list>

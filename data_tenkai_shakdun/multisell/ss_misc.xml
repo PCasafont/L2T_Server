@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tenkai Event Manager -->
+<list>
+	<!-- Adena -->
+	<item>
+		<ingredient id="4357" count="1" /> <!-- Silver Shilen -->
+		<production id="57" count="1000000" />
+	</item>
+	<!-- Chaos Essence -->
+	<item>
+		<ingredient id="4357" count="250000" />
+		<production id="36949" count="1" />
+	</item>
+	<!-- La Vie En Rose's Brooch -->
+	<item>
+		<ingredient id="4357" count="1" />
+		<production id="38766" count="1" />
+	</item>
+	<!-- La Vie En Rose's Noble Brooch -->
+	<item>
+		<ingredient id="4357" count="3000000" />
+		<production id="38767" count="1" />
+	</item>
+	<!-- La Vie En Rose's Brilliant Brooch -->
+	<item>
+		<ingredient id="4357" count="7500000" />
+		<production id="38768" count="1" />
+	</item>
+	<!-- La Vie En Rose's Jewelry Box -->
+	<item>
+		<ingredient id="4357" count="125000" />
+		<production id="38941" count="1" />
+	</item>
+	<!-- Formal Wear -->
+	<item>
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="6408" count="1" />
+	</item>
+	<!-- Beauty Shop Ticket -->
+	<item>
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="36308" count="1" />
+	</item>
+	<!-- Coke -->
+	<item>
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="3434" count="1" />
+	</item>
+	<!-- Squeaking Shoes -->
+	<item>
+		<ingredient id="4357" count="5000" /> <!-- Silver Shilen -->
+		<production id="5590" count="1" />
+	</item>
+	<!-- Magmeld's Instrument -->
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production id="37660" count="1" />
+	</item>
+	<!-- Fireworks Pack -->
+	<item>
+		<ingredient id="4357" count="1000" /> <!-- Silver Shilen -->
+		<production id="6407" count="1" />
+		<production id="6406" count="2" />
+		<production id="6403" count="5" />
+	</item>
+	<!-- Chrono Cithara -->
+	<item>
+		<ingredient id="4357" count="20000" /> <!-- Silver Shilen -->
+		<production id="4202" count="1" />
+	</item>
+	<!-- Chrono Unitus -->
+	<item>
+		<ingredient id="4357" count="20000" /> <!-- Silver Shilen -->
+		<production id="5133" count="1" />
+	</item>
+	<!-- Chrono Campana -->
+	<item>
+		<ingredient id="4357" count="20000" /> <!-- Silver Shilen -->
+		<production id="5817" count="1" />
+	</item>
+	<!-- Chrono Darbuka -->
+	<item>
+		<ingredient id="4357" count="20000" /> <!-- Silver Shilen -->
+		<production id="7058" count="1" />
+	</item>
+	<!-- Chrono Maracas -->
+	<item>
+		<ingredient id="4357" count="20000" /> <!-- Silver Shilen -->
+		<production id="8350" count="1" />
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="21110" />	<!-- Warm Bear Paws -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="22366" />	<!-- Black Bear Claw -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="22388" />	<!-- Halloween Scythe - Event -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="13980" />	<!-- Exclusive to Monsters (Dragon Steed Troop Battle Infantry Shield) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="13979" />	<!-- Exclusive to Monsters (Dragon Steed Troop Battle Infantry Sword) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="13978" />	<!-- Exclusive to Monsters (Mounted Troops High Level Leader) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="8211" />	<!-- Monster Only (Monk Warrior Sword) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="8210" />	<!-- Monster Only (Monk Warrior Shield) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="8209" />	<!-- Monster Only (Lidia Von Helmann Sword) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="6918" />	<!-- Monster Only (Shield of Silenos) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="6721" />	<!-- Monster Only(Shield of Imperial Warlord Zombie) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="40000" /> <!-- Silver Shilen -->
+		<production count="1" id="5799" />	<!-- Nephilim Lord -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production count="1" id="45374" />	<!-- Laser Gun -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production count="1" id="40057" />	<!-- Magic Broom -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production count="1" id="39718" />	<!-- Boxing Glove -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production count="1" id="38444" />	<!-- Centaur Shield -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production count="1" id="38436" />	<!-- Tiger Sigil -->
+	</item>
+	<item>
+		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production count="1" id="38435" />	<!-- Tiger Shield -->
+	</item>
+	<item>
+		<ingredient id="4357" count="1000000" /> <!-- Silver Shilen -->
+		<production count="1" id="23474" />	<!-- Scroll: PK (Low-grade) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="3000000" /> <!-- Silver Shilen -->
+		<production count="1" id="23475" />	<!-- Scroll: PK (Mid-grade) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="5000000" /> <!-- Silver Shilen -->
+		<production count="1" id="23476" />	<!-- Scroll: PK (High-grade) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="10000000" /> <!-- Silver Shilen -->
+		<production count="1" id="23477" />	<!-- Scroll: PK (Top-grade) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="22480" />	<!-- Santa Girl's Cloak - Event -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="22390" />	<!-- Halloween Cloak - Event -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="38951" />	<!-- Festival's Cloack - Pitch Black -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="38952" />	<!-- Festival's Cloack - Pearl Black -->
+	</item>
+	<item>
+		<ingredient id="4357" count="30000" /> <!-- Silver Shilen -->
+		<production count="1" id="38953" />	<!-- Festival's Cloack - Blood Black -->
+	</item>
+	<item>
+		<ingredient id="4357" count="60000" /> <!-- Silver Shilen -->
+		<production count="1" id="37763" />	<!-- Golden Noblesse Cloak -->
+	</item>
+	<item>
+		<ingredient id="4357" count="60000" /> <!-- Silver Shilen -->
+		<production count="1" id="23636" />	<!-- Cloak (Poland) -->
+	</item>
+	<item>
+		<ingredient id="4357" count="60000" /> <!-- Silver Shilen -->
+		<production count="1" id="23444" />	<!-- Russian Commemorative Cloak -->
+	</item>
+</list>

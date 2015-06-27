@@ -1,0 +1,290 @@
+<list>
+	<!-- [aden_t23_20_001] -->
+	<group minZ="-2972" maxZ="-2172">
+		<vertex x="104364" y="65900" />
+		<vertex x="108576" y="65856" />
+		<vertex x="111312" y="67528" />
+		<vertex x="109164" y="72004" />
+		<vertex x="105456" y="70136" />
+		<spawn npcId="20603" respawn="95" amount="6" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="6" /> <!-- Lakin -->
+		<spawn npcId="20605" respawn="95" amount="6" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_002] -->
+	<group minZ="-3236" maxZ="-2436">
+		<vertex x="110004" y="66860" />
+		<vertex x="112832" y="65652" />
+		<vertex x="114692" y="67140" />
+		<vertex x="111152" y="67560" />
+		<spawn npcId="20603" respawn="95" amount="3" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="3" /> <!-- Lakin -->
+		<spawn npcId="20605" respawn="95" amount="3" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_003] -->
+	<group minZ="-4080" maxZ="-3780">
+		<vertex x="113744" y="65656" />
+		<vertex x="119024" y="65644" />
+		<vertex x="117972" y="66336" />
+		<vertex x="114844" y="66120" />
+		<spawn npcId="20601" respawn="95" amount="1" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+	</group>
+	<!-- [aden_t23_20_004] -->
+	<group minZ="-3904" maxZ="-3104">
+		<vertex x="121468" y="65680" />
+		<vertex x="127216" y="65656" />
+		<vertex x="125144" y="66668" />
+		<vertex x="121536" y="66600" />
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="3" /> <!-- Tamlin Orc Archer -->
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+	</group>
+	<!-- [aden_t23_20_005] -->
+	<group minZ="-2748" maxZ="-2148">
+		<vertex x="105272" y="79440" />
+		<vertex x="106072" y="79688" />
+		<vertex x="105180" y="82120" />
+		<vertex x="103592" y="82080" />
+		<vertex x="103664" y="80724" />
+		<spawn npcId="20600" respawn="95" amount="2" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="3" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_006] -->
+	<group minZ="-3284" maxZ="-2184">
+		<vertex x="103528" y="82200" />
+		<vertex x="106404" y="81860" />
+		<vertex x="109000" y="82548" />
+		<vertex x="109324" y="84768" />
+		<vertex x="104604" y="85136" />
+		<spawn npcId="20600" respawn="95" amount="5" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="5" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="5" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_007] -->
+	<group minZ="-2852" maxZ="-2552">
+		<vertex x="107936" y="79612" />
+		<vertex x="108904" y="79876" />
+		<vertex x="108948" y="82532" />
+		<vertex x="107584" y="82128" />
+		<spawn npcId="20600" respawn="95" amount="3" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_008] -->
+	<group minZ="-3204" maxZ="-2604">
+		<vertex x="105832" y="84928" />
+		<vertex x="107764" y="85728" />
+		<vertex x="108428" y="88084" />
+		<vertex x="105840" y="88480" />
+		<spawn npcId="20600" respawn="95" amount="2" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="3" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_009] -->
+	<group minZ="-3184" maxZ="-1884">
+		<vertex x="105772" y="88692" />
+		<vertex x="108368" y="88440" />
+		<vertex x="109656" y="88836" />
+		<vertex x="108780" y="92144" />
+		<vertex x="106332" y="93504" />
+		<spawn npcId="20601" respawn="95" amount="3" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="4" /> <!-- Tamlin Orc Archer -->
+		<spawn npcId="20603" respawn="95" amount="4" /> <!-- Kronbe Spider -->
+	</group>
+	<!-- [aden_t23_20_010] -->
+	<group minZ="-3236" maxZ="-1936">
+		<vertex x="111344" y="86352" />
+		<vertex x="114532" y="86832" />
+		<vertex x="115520" y="90968" />
+		<vertex x="112312" y="93284" />
+		<vertex x="108648" y="92500" />
+		<spawn npcId="20603" respawn="95" amount="7" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="7" /> <!-- Lakin -->
+		<spawn npcId="20605" respawn="95" amount="7" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_011] -->
+	<group minZ="-3912" maxZ="-2912">
+		<vertex x="116544" y="89184" />
+		<vertex x="117868" y="87400" />
+		<vertex x="119328" y="87824" />
+		<vertex x="120768" y="89796" />
+		<vertex x="119940" y="92480" />
+		<vertex x="118592" y="92184" />
+		<spawn npcId="20603" respawn="95" amount="4" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="3" /> <!-- Lakin -->
+		<spawn npcId="20605" respawn="95" amount="4" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_012] -->
+	<group minZ="-3076" maxZ="-2576">
+		<vertex x="117728" y="86028" />
+		<vertex x="122580" y="83444" />
+		<vertex x="122592" y="85196" />
+		<vertex x="120772" y="87964" />
+		<spawn npcId="20600" respawn="95" amount="3" /> <!-- Karul Bugbear -->
+		<spawn npcId="20603" respawn="95" amount="4" /> <!-- Kronbe Spider -->
+		<spawn npcId="20605" respawn="95" amount="4" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_013] -->
+	<group minZ="-3292" maxZ="-2992">
+		<vertex x="120824" y="88228" />
+		<vertex x="124096" y="88588" />
+		<vertex x="124376" y="89076" />
+		<vertex x="123868" y="89680" />
+		<vertex x="120856" y="89780" />
+		<spawn npcId="20600" respawn="95" amount="2" /> <!-- Karul Bugbear -->
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+		<spawn npcId="20605" respawn="95" amount="3" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_014] -->
+	<group minZ="-2868" maxZ="-1868">
+		<vertex x="121700" y="92768" />
+		<vertex x="122608" y="95076" />
+		<vertex x="119576" y="95264" />
+		<vertex x="117708" y="94316" />
+		<spawn npcId="20603" respawn="95" amount="3" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="3" /> <!-- Lakin -->
+		<spawn npcId="20605" respawn="95" amount="2" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_015] -->
+	<group minZ="-2476" maxZ="-1876">
+		<vertex x="122900" y="91080" />
+		<vertex x="125344" y="90892" />
+		<vertex x="127092" y="92020" />
+		<vertex x="126276" y="94100" />
+		<vertex x="122700" y="94952" />
+		<vertex x="122152" y="93816" />
+		<spawn npcId="20601" respawn="95" amount="4" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="6" /> <!-- Tamlin Orc Archer -->
+		<spawn npcId="20605" respawn="95" amount="5" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_016] -->
+	<group minZ="-2532" maxZ="-1532">
+		<vertex x="126120" y="88012" />
+		<vertex x="128504" y="90112" />
+		<vertex x="128888" y="91616" />
+		<vertex x="127140" y="91824" />
+		<vertex x="125568" y="90820" />
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="3" /> <!-- Lakin -->
+		<spawn npcId="20605" respawn="95" amount="2" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_017] -->
+	<group minZ="-2912" maxZ="-1012">
+		<vertex x="123932" y="82624" />
+		<vertex x="129196" y="81564" />
+		<vertex x="128632" y="86248" />
+		<vertex x="125536" y="88072" />
+		<vertex x="123836" y="87164" />
+		<spawn npcId="20601" respawn="95" amount="5" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="6" /> <!-- Tamlin Orc Archer -->
+		<spawn npcId="20603" respawn="95" amount="6" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="5" /> <!-- Lakin -->
+	</group>
+	<!-- [aden_t23_20_018] -->
+	<group minZ="-2948" maxZ="-1348">
+		<vertex x="125552" y="78748" />
+		<vertex x="127676" y="79460" />
+		<vertex x="127160" y="82024" />
+		<vertex x="123924" y="82524" />
+		<spawn npcId="20601" respawn="95" amount="3" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="4" /> <!-- Tamlin Orc Archer -->
+		<spawn npcId="20603" respawn="95" amount="3" /> <!-- Kronbe Spider -->
+	</group>
+	<!-- [aden_t23_20_019] -->
+	<group minZ="-2468" maxZ="-1668">
+		<vertex x="126320" y="76732" />
+		<vertex x="128544" y="76924" />
+		<vertex x="126272" y="78936" />
+		<vertex x="125376" y="78656" />
+		<spawn npcId="20600" respawn="95" amount="2" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_020] -->
+	<group minZ="-2912" maxZ="-1912">
+		<vertex x="126596" y="72384" />
+		<vertex x="127344" y="72844" />
+		<vertex x="128000" y="74388" />
+		<vertex x="126324" y="76260" />
+		<vertex x="125756" y="72916" />
+		<spawn npcId="20600" respawn="95" amount="2" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_021] -->
+	<group minZ="-3096" maxZ="-2496">
+		<vertex x="124328" y="72284" />
+		<vertex x="127000" y="70384" />
+		<vertex x="127776" y="70824" />
+		<vertex x="125604" y="73048" />
+		<spawn npcId="20600" respawn="95" amount="2" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_022] -->
+	<group minZ="-3248" maxZ="-2448">
+		<vertex x="122772" y="70020" />
+		<vertex x="124376" y="70044" />
+		<vertex x="125528" y="71384" />
+		<vertex x="124228" y="72284" />
+		<spawn npcId="20600" respawn="95" amount="1" /> <!-- Karul Bugbear -->
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+	<!-- [aden_t23_20_023] -->
+	<group minZ="-2896" maxZ="-2296">
+		<vertex x="123348" y="74692" />
+		<vertex x="124632" y="74844" />
+		<vertex x="124728" y="76272" />
+		<vertex x="123936" y="76668" />
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="2" /> <!-- Lakin -->
+	</group>
+	<!-- [aden_t23_20_024] -->
+	<group minZ="-2804" maxZ="-2004">
+		<vertex x="122720" y="79396" />
+		<vertex x="123688" y="79348" />
+		<vertex x="123644" y="80176" />
+		<vertex x="122236" y="81412" />
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="2" /> <!-- Lakin -->
+	</group>
+	<!-- [aden_t23_20_025] -->
+	<group minZ="-2832" maxZ="-2132">
+		<vertex x="112388" y="84356" />
+		<vertex x="113748" y="83632" />
+		<vertex x="114452" y="84564" />
+		<vertex x="113516" y="84772" />
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="2" /> <!-- Lakin -->
+	</group>
+	<!-- [aden_t23_20_026] -->
+	<group minZ="-3040" maxZ="-2440">
+		<vertex x="110904" y="81812" />
+		<vertex x="111868" y="82396" />
+		<vertex x="112184" y="84364" />
+		<vertex x="110844" y="82896" />
+		<spawn npcId="20603" respawn="95" amount="2" /> <!-- Kronbe Spider -->
+		<spawn npcId="20604" respawn="95" amount="2" /> <!-- Lakin -->
+	</group>
+	<!-- [aden_t23_20_027] -->
+	<group minZ="-2956" maxZ="-2356">
+		<vertex x="105740" y="67280" />
+		<vertex x="107660" y="66656" />
+		<vertex x="109708" y="68532" />
+		<vertex x="107964" y="70228" />
+		<spawn npcId="20605" respawn="95" amount="4" /> <!-- Weird Drake -->
+	</group>
+	<!-- [aden_t23_20_028] -->
+	<group minZ="-3056" maxZ="-2456">
+		<vertex x="111900" y="87452" />
+		<vertex x="113420" y="87908" />
+		<vertex x="113960" y="89884" />
+		<vertex x="111900" y="92028" />
+		<vertex x="110596" y="89784" />
+		<spawn npcId="20601" respawn="95" amount="2" /> <!-- Tamlin Orc -->
+		<spawn npcId="20602" respawn="95" amount="2" /> <!-- Tamlin Orc Archer -->
+	</group>
+</list>

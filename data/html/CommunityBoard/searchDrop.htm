@@ -1,0 +1,40 @@
+<html>
+<body>
+%menu%
+<center>
+<br>
+<table><tr><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_r_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_c_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_h_i00 width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_r_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_o_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_p_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td></tr></table>
+<br>
+<br>
+<br>
+<center><font color=LEVEL>BETA!</font></center><br><br>
+<table width=400>
+	<tr>
+		<td>
+			Drop Type:
+		</td>
+		<td>
+			Input the item name are you looking for:
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<combobox width=100 height=17 var="dropType" list="normal;spoil">
+		</td>
+		<td>
+			<edit var="itemToSearch" width=200 type=char length=30>
+		</td>
+	</tr>
+</table>
+
+<br><br>
+<button action="bypass _bbscustom;action;searchDrop; $itemToSearch ; $dropType" value="Search!" width=105 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df>
+<br><br>
+
+%result%
+
+
+<br><br>
+</center>
+</body>
+</html>

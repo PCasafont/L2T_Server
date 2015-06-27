@@ -1,0 +1,2894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Mithril Dagger (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34100" type="Weapon" name="Player Commendation - Mithril Dagger (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_mithril_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34101" type="Weapon" name="Player Commendation - Bastard Sword*Crimson Sword (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34102" type="Weapon" name="Player Commendation - Bastard Sword*Crimson Sword (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34103" type="Weapon" name="Player Commendation - Bastard Sword*Crimson Sword (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34104" type="Weapon" name="Player Commendation - Bastard Sword*Crimson Sword (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34105" type="Weapon" name="Player Commendation - Bastard Sword*Crimson Sword (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bastard Sword*Crimson Sword (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34106" type="Weapon" name="Player Commendation - Bastard Sword*Crimson Sword (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34107" type="Weapon" name="Player Commendation - Bonebreaker (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34108" type="Weapon" name="Player Commendation - Bonebreaker (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34109" type="Weapon" name="Player Commendation - Bonebreaker (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34110" type="Weapon" name="Player Commendation - Bonebreaker (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34111" type="Weapon" name="Player Commendation - Bonebreaker (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Bonebreaker (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34112" type="Weapon" name="Player Commendation - Bonebreaker (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_bonebreaker_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="172" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34113" type="Weapon" name="Player Commendation - Light Crossbow (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34114" type="Weapon" name="Player Commendation - Light Crossbow (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34115" type="Weapon" name="Player Commendation - Light Crossbow (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34116" type="Weapon" name="Player Commendation - Light Crossbow (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34117" type="Weapon" name="Player Commendation - Light Crossbow (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Light Crossbow (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34118" type="Weapon" name="Player Commendation - Light Crossbow (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_cyclone_bow_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="10" />
+		<set name="spiritshots" val="3" />
+		<set name="mp_consume" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34119" type="Weapon" name="Player Commendation - Staff of Life (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34120" type="Weapon" name="Player Commendation - Staff of Life (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34121" type="Weapon" name="Player Commendation - Staff of Life (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34122" type="Weapon" name="Player Commendation - Staff of Life (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34123" type="Weapon" name="Player Commendation - Staff of Life (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Staff of Life (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34124" type="Weapon" name="Player Commendation - Staff of Life (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_life_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="118" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="74" />
+			<set stat="mAtk" val="72" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34125" type="Weapon" name="Player Commendation - Scallop Jamadhr (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34126" type="Weapon" name="Player Commendation - Scallop Jamadhr (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34127" type="Weapon" name="Player Commendation - Scallop Jamadhr (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34128" type="Weapon" name="Player Commendation - Scallop Jamadhr (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34129" type="Weapon" name="Player Commendation - Scallop Jamadhr (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Scallop Jamadhr (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34130" type="Weapon" name="Player Commendation - Scallop Jamadhr (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_scallop_jamadhr_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34131" type="Weapon" name="Player Commendation - Atuba Hammer (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34132" type="Weapon" name="Player Commendation - Atuba Hammer (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34133" type="Weapon" name="Player Commendation - Atuba Hammer (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34134" type="Weapon" name="Player Commendation - Atuba Hammer (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34135" type="Weapon" name="Player Commendation - Atuba Hammer (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Atuba Hammer (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34136" type="Weapon" name="Player Commendation - Atuba Hammer (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_atuba_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="90" />
+			<set stat="mAtk" val="79" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34137" type="Weapon" name="Player Commendation - Elven Long Sword (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34138" type="Weapon" name="Player Commendation - Elven Long Sword (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34139" type="Weapon" name="Player Commendation - Elven Long Sword (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34140" type="Weapon" name="Player Commendation - Elven Long Sword (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34141" type="Weapon" name="Player Commendation - Elven Long Sword (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Elven Long Sword (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34142" type="Weapon" name="Player Commendation - Elven Long Sword (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_elven_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34143" type="Weapon" name="Player Commendation - General's Katzbalger (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34144" type="Weapon" name="Player Commendation - General's Katzbalger (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34145" type="Weapon" name="Player Commendation - General's Katzbalger (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34146" type="Weapon" name="Player Commendation - General's Katzbalger (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34147" type="Weapon" name="Player Commendation - General's Katzbalger (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- General's Katzbalger (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34148" type="Weapon" name="Player Commendation - General's Katzbalger (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_tulwar_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="201" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="100" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34149" type="Weapon" name="Player Commendation - Cranequin (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34150" type="Weapon" name="Player Commendation - Cranequin (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34151" type="Weapon" name="Player Commendation - Cranequin (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34152" type="Weapon" name="Player Commendation - Cranequin (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34153" type="Weapon" name="Player Commendation - Cranequin (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Cranequin (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34154" type="Weapon" name="Player Commendation - Cranequin (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_hunting_gun_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34155" type="Weapon" name="Player Commendation - Claymore (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34156" type="Weapon" name="Player Commendation - Claymore (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34157" type="Weapon" name="Player Commendation - Claymore (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34158" type="Weapon" name="Player Commendation - Claymore (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34159" type="Weapon" name="Player Commendation - Claymore (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Claymore (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34160" type="Weapon" name="Player Commendation - Claymore (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_claymore_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Great Pata (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34161" type="Weapon" name="Player Commendation - Great Pata (Earth) - Rsk. Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="146" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Great Pata (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34162" type="Weapon" name="Player Commendation - Great Pata (Water) - Rsk. Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="146" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Great Pata (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34163" type="Weapon" name="Player Commendation - Great Pata (Wind) - Rsk. Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="146" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Great Pata (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34164" type="Weapon" name="Player Commendation - Great Pata (Fire) - Rsk. Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="146" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Great Pata (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34165" type="Weapon" name="Player Commendation - Great Pata (Holy) - Rsk. Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="146" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Great Pata (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Atk. Spd. by 11% when HP drops to 60% or below. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34166" type="Weapon" name="Player Commendation - Great Pata (Dark) - Rsk. Haste (PC-exclusive)">
+		<set name="icon" val="icon.weapon_great_pata_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="146" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Deadman's Staff (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		It Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34167" type="Weapon" name="Player Commendation - Deadman's Staff (Earth) - Magic Regeneration (PC-exclusive)">
+		<set name="icon" val="icon.weapon_deadmans_staff_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Deadman's Staff (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		It Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34168" type="Weapon" name="Player Commendation - Deadman's Staff (Water) - Magic Regeneration (PC-exclusive)">
+		<set name="icon" val="icon.weapon_deadmans_staff_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Deadman's Staff (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		It Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34169" type="Weapon" name="Player Commendation - Deadman's Staff (Wind) - Magic Regeneration (PC-exclusive)">
+		<set name="icon" val="icon.weapon_deadmans_staff_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Deadman's Staff (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		It Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34170" type="Weapon" name="Player Commendation - Deadman's Staff (Fire) - Magic Regeneration (PC-exclusive)">
+		<set name="icon" val="icon.weapon_deadmans_staff_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Deadman's Staff (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		It Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34171" type="Weapon" name="Player Commendation - Deadman's Staff (Holy) - Magic Regeneration (PC-exclusive)">
+		<set name="icon" val="icon.weapon_deadmans_staff_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Deadman's Staff (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		It Has a 30% chance of casting Regeneration on the target during magic use. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34172" type="Weapon" name="Player Commendation - Deadman's Staff (Dark) - Magic Regeneration (PC-exclusive)">
+		<set name="icon" val="icon.weapon_deadmans_staff_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34173" type="Weapon" name="Player Commendation - Berserker Blade (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34174" type="Weapon" name="Player Commendation - Berserker Blade (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34175" type="Weapon" name="Player Commendation - Berserker Blade (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34176" type="Weapon" name="Player Commendation - Berserker Blade (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34177" type="Weapon" name="Player Commendation - Berserker Blade (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Berserker Blade (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34178" type="Weapon" name="Player Commendation - Berserker Blade (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_berserker_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Sharpshooter (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Accuracy by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34179" type="Weapon" name="Player Commendation - Sharpshooter (Earth) - Guidance (PC-exclusive)">
+		<set name="icon" val="icon.weapon_taslam_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="198" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Sharpshooter (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Accuracy by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34180" type="Weapon" name="Player Commendation - Sharpshooter (Water) - Guidance (PC-exclusive)">
+		<set name="icon" val="icon.weapon_taslam_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="198" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Sharpshooter (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Accuracy by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34181" type="Weapon" name="Player Commendation - Sharpshooter (Wind) - Guidance (PC-exclusive)">
+		<set name="icon" val="icon.weapon_taslam_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="198" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Sharpshooter (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Accuracy by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34182" type="Weapon" name="Player Commendation - Sharpshooter (Fire) - Guidance (PC-exclusive)">
+		<set name="icon" val="icon.weapon_taslam_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="198" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Sharpshooter (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Accuracy by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34183" type="Weapon" name="Player Commendation - Sharpshooter (Holy) - Guidance (PC-exclusive)">
+		<set name="icon" val="icon.weapon_taslam_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="198" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Sharpshooter (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Increases Accuracy by 4. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34184" type="Weapon" name="Player Commendation - Sharpshooter (Dark) - Guidance (PC-exclusive)">
+		<set name="icon" val="icon.weapon_taslam_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="174" />
+		<set name="soulshots" val="6" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="198" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Shamshir*Shamshir (Earth) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Accuracy by 2. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34185" type="Weapon" name="Player Commendation - Shamshir*Shamshir (Earth) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="233" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Shamshir*Shamshir (Water) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Accuracy by 2. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34186" type="Weapon" name="Player Commendation - Shamshir*Shamshir (Water) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="233" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Shamshir*Shamshir (Wind) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Accuracy by 2. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34187" type="Weapon" name="Player Commendation - Shamshir*Shamshir (Wind) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="233" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Shamshir*Shamshir (Fire) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Accuracy by 2. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34188" type="Weapon" name="Player Commendation - Shamshir*Shamshir (Fire) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="233" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Shamshir*Shamshir (Holy) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Accuracy by 2. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34189" type="Weapon" name="Player Commendation - Shamshir*Shamshir (Holy) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="233" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Shamshir*Shamshir (Dark) with limited ability enhancement. P. Atk. of dualswords increases more when enchanted with a two-handed sword, two-handed blunt, or fist weapon rather than with a regular one-handed sword. When enchanted to 4 or more, increases Accuracy by 2. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="34190" type="Weapon" name="Player Commendation - Shamshir*Shamshir (Dark) - PC-exclusive">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="233" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="190" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34191" type="Weapon" name="Player Commendation - Saber Tooth (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34192" type="Weapon" name="Player Commendation - Saber Tooth (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34193" type="Weapon" name="Player Commendation - Saber Tooth (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34194" type="Weapon" name="Player Commendation - Saber Tooth (Fire) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34195" type="Weapon" name="Player Commendation - Saber Tooth (Holy) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Saber Tooth (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34196" type="Weapon" name="Player Commendation - Saber Tooth (Dark) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_invincible_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="195" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="169" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Samurai Long Sword (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34197" type="Weapon" name="Player Commendation - Samurai Long Sword (Earth) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="156" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Samurai Long Sword (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34198" type="Weapon" name="Player Commendation - Samurai Long Sword (Water) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="156" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Samurai Long Sword (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Critical increases by 73. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
+	-->
+	<item id="34199" type="Weapon" name="Player Commendation - Samurai Long Sword (Wind) - Focus (PC-exclusive)">
+		<set name="icon" val="icon.weapon_samurai_longsword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="138" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="3" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="duration" val="180" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="156" />
+			<set stat="mAtk" val="83" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

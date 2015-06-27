@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Retains target's buffs/debuffs upon death, except for Noblesse Grace and Lucky Charm. Consumes 1000 Spirit Ore. -->
+	<skill id="19119" levels="1" name="Noblesse Grace">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="mpConsume" val="500" />
+		<set name="hitTime" val="4000" />
+	</skill>
+</list>

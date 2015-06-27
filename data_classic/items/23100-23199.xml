@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Max HP + 25%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="23100" type="Weapon" name="Vesper Retributer of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_retributer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Casting Spd. + 15%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="23101" type="Weapon" name="Vesper Caster of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_caster_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="317" />
+			<set stat="mAtk" val="234" />
+			<set stat="rCrit" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Critical + 151. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="23102" type="Weapon" name="Vesper Singer of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_singer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="386" />
+			<set stat="mAtk" val="257" />
+			<set stat="rCrit" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Critical + 133. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="23103" type="Weapon" name="Vesper Thrower of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_thrower_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="724" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!--
+		Kamael-only weapon. 
+		Critical + 131. Has a chance of increasing all party members' P. Atk., M. Atk., and Heal Amount, and decreasing MP consumption during skill use during a Critical Attack. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="23104" type="Weapon" name="Vesper Pincer of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_pincer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1280" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="40" />
+		<for>
+			<set stat="pAtk" val="359" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+		</for>
+	</item>
+	<!--
+		Kamael-only weapon. 
+		Critical + 133. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="23105" type="Weapon" name="Vesper Shooter of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_schutze_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="444" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+		</for>
+	</item>
+	<!--
+		Kamael-only weapon. 
+		Critical + 131. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="23106" type="Weapon" name="Vesper Nagan of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_vesper_nagen_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1800" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="15" />
+		<for>
+			<set stat="pAtk" val="429" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<set stat="pAtkSpd" val="350" />
+		</for>
+	</item>
+	<item id="23107" type="Armor" name="Vorpal Helmet of Fortune - 90-day">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="530" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="107" />
+		</for>
+	</item>
+	<item id="23108" type="Armor" name="Vorpal Leather Helmet of Fortune - 90-day">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="530" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="107" />
+		</for>
+	</item>
+	<item id="23109" type="Armor" name="Vorpal Circlet of Fortune - 90-day">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="530" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="107" />
+		</for>
+	</item>
+	<item id="23110" type="Armor" name="Vorpal Breastplate of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t94_u_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="7520" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="263" />
+		</for>
+	</item>
+	<item id="23111" type="Armor" name="Vorpal Leather Breastplate of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t95_u_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="4140" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="197" />
+		</for>
+	</item>
+	<item id="23112" type="Armor" name="Vorpal Tunic of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t96_u_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1750" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="132" />
+		</for>
+	</item>
+	<item id="23113" type="Armor" name="Vorpal Gaiters of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t94_l_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="3170" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="164" />
+		</for>
+	</item>
+	<item id="23114" type="Armor" name="Vorpal Leather Leggings of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t95_l_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1320" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="123" />
+		</for>
+	</item>
+	<item id="23115" type="Armor" name="Vorpal Stockings of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t96_l_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="850" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="82" />
+		</for>
+	</item>
+	<item id="23116" type="Armor" name="Vorpal Gauntlets of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t94_g_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="510" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+		</for>
+	</item>
+	<item id="23117" type="Armor" name="Vorpal Leather Gloves of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t95_g_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="510" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+		</for>
+	</item>
+	<item id="23118" type="Armor" name="Vorpal Gloves of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t96_g_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="510" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+		</for>
+	</item>
+	<item id="23119" type="Armor" name="Vorpal Boots of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t94_b_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1070" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+		</for>
+	</item>
+	<item id="23120" type="Armor" name="Vorpal Leather Boots of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t95_b_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1070" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+		</for>
+	</item>
+	<item id="23121" type="Armor" name="Vorpal Shoes of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t96_b_i03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="1070" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+		</for>
+	</item>
+	<item id="23122" type="Armor" name="Vorpal Shield of Fortune - 90-day">
+		<set name="icon" val="icon.Evilgate_Shield_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="shield" />
+		<set name="bodypart" val="lhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1190" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="399" />
+		</for>
+	</item>
+	<item id="23123" type="Armor" name="Vorpal Sigil of Fortune - 90-day">
+		<set name="icon" val="icon.belleface_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="920" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="19" />
+			<baseSub stat="rEvas" val="8" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing Vorpal Heavy Armor Set of Fortune. Disappears after 90 days. -->
+	<item id="23124" type="EtcItem" name="Vorpal Heavy Armor of Fortune Set Pack (S80-grade) - 90-day">
+		<set name="icon" val="icon.etc_equip_item_box_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Wrapped Pack containing Vorpal Light Armor Set of Fortune. Disappears after 90 days. -->
+	<item id="23125" type="EtcItem" name="Vorpal Light Armor of Fortune Set Pack (S80-grade) - 90-day">
+		<set name="icon" val="icon.etc_equip_item_box_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Wrapped Pack containing Vorpal Robe Set of Fortune. Disappears after 90 days. -->
+	<item id="23126" type="EtcItem" name="Vorpal Robe of Fortune Set Pack (S80-grade) - 90-day">
+		<set name="icon" val="icon.etc_equip_item_box_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Wrapped Pack containing Armor of Fortune (S80-grade) (90-day). -->
+	<item id="23127" type="EtcItem" name="Armor Pack (S80-grade) (90-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Weapons of Fortune (S80-grade) (90-day). -->
+	<item id="23128" type="EtcItem" name="Weapon Pack (S80-grade) (90-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Wrapped Pack containing Accessories of Fortune (S80-grade) (90-day). -->
+	<item id="23129" type="EtcItem" name="Accessory Pack (S80-grade) (90-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- MP+ 26. -->
+	<item id="23130" type="Armor" name="Vorpal Ring of Fortune - 90-day">
+		<set name="icon" val="icon.accessary_ponshrnoen_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="65" />
+		</for>
+	</item>
+	<!-- MP+ 38. -->
+	<item id="23131" type="Armor" name="Vorpal Earring of Fortune - 90-day">
+		<set name="icon" val="icon.accessary_ponshrnoen_earring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="98" />
+		</for>
+	</item>
+	<!-- MP + 51. -->
+	<item id="23132" type="Armor" name="Vorpal Necklace of Fortune - 90-day">
+		<set name="icon" val="icon.accessary_ponshrnoen_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="131" />
+		</for>
+	</item>
+	<!-- Put this item on the character that will receive the service, and send a support ticket on support.lineage2.com. -->
+	<item id="23133" type="EtcItem" name="Gender Change Ticket">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Put this item on the character that will receive the service, and send a support ticket on support.lineage2.com. -->
+	<item id="23134" type="EtcItem" name="Name Change Ticket">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Put this item on the character that will receive the service, and send a support ticket on support.lineage2.com -->
+	<item id="23135" type="EtcItem" name="Awakening Class Change Ticket">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Ring acquired when you mourn for Pirate Captain Uthanka's spirit. Use it to turn into Pirate Captain Uthanka. -->
+	<item id="23136" type="Armor" name="Uthanka's Ring">
+		<set name="icon" val="BranchSys3.lcon.g_ring_of_uthanka_jp" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<for>
+			<baseAdd stat="mDef" val="7" />
+		</for>
+	</item>
+	<!-- Given to adventurers from the Kartia Research Center. Resets Cooldown for Ancient Kartia's Labyrinth. -->
+	<item id="23137" type="EtcItem" name="Extra Pass: Ancient Kartia's Labyrinth">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Dualswords, as with Two-handed Swords, Two-handed Blunts and Fist Weapons, increase in P. Atk. when enchanted compared to standard One-handed Swords. When enchanted to + 4 or above, Critical + 109 and Max HP + 10%. Increases damage inflicted during PvP. -->
+	<item id="23138" type="Weapon" name="Vesper Dualsword of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="482" />
+			<set stat="mAtk" val="176" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Dual Daggers increase in P. Atk. when enchanted compared to standard One-handed Swords. When enchanted to + 4 or above, Critical + 109. Increases damage inflicted during PvP. Lv. 81 or above and Dagger Masters only. -->
+	<item id="23139" type="Weapon" name="Vesper Dual Dagger of Fortune - 90-day">
+		<set name="icon" val="icon.dual_dagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="360" />
+			<set stat="mAtk" val="181" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- Underwear with a military look. -->
+	<item id="23140" type="Armor" name="Military Underwear">
+		<set name="icon" val="BranchSys3.icon1.g_co_military_undwrwear" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="42" />
+		</for>
+	</item>
+	<!-- Underwear for premium users. -->
+	<item id="23141" type="Armor" name="Premium Underwear">
+		<set name="icon" val="BranchSys3.icon1.g_co_premium_underwear" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="42" />
+		</for>
+	</item>
+	<!-- Sexy underwear. -->
+	<item id="23142" type="Armor" name="Temptation Underwear">
+		<set name="icon" val="BranchSys3.icon1.g_co_sexy_underwear" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="42" />
+		</for>
+	</item>
+	<!-- Underwear with a cyberpunk look. -->
+	<item id="23143" type="Armor" name="Cyber Underwear">
+		<set name="icon" val="BranchSys3.icon1.g_co_sf_underwear_01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="42" />
+		</for>
+	</item>
+	<!-- Cute underwear. Female only. -->
+	<item id="23144" type="Armor" name="Maid Underwear">
+		<set name="icon" val="BranchSys3.icon1.g_co_maid_underwear_f01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="42" />
+		</for>
+	</item>
+	<!-- Consecrated by the Einhasad Priests, this relic provides skills imbued with the Power of Einhasad. Use it to defeat zombies spreading Shilen's plague. 30-min. -->
+	<item id="23145" type="Armor" name="Consecrated Demon Eliminator - Event">
+		<set name="icon" val="icon.etc_imperial_scepter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+	</item>
+	<!-- Consecrated by the Einhasad Priests, the holy water in this flask provides the healing skill of the Crystal of Protection and Nevit's skills that heal infected people before they turn into zombies. 30-min. -->
+	<item id="23146" type="Armor" name="Nevit's Holy Water Flask - Event">
+		<set name="icon" val="icon.etc_water_potion_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+	</item>
+	<!--
+		Ghost Potion
+		 P. Atk. + 20%, M. Atk. + 85%, and Speed + 20. Cooldown is 60 min.
+	-->
+	<item id="23147" type="EtcItem" name="Ghost Potion - Event">
+		<set name="icon" val="icon.etc_water_potion_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+	</item>
+	<!--
+		Mark given to those who fought as zombies or against zombies in the zombie invasion of the village.
+		Can be exchanged for various items through Exorcist Seira or Zombie Shaman Alestina.
+	-->
+	<item id="23148" type="EtcItem" name="Exorcist's Mark - Event">
+		<set name="icon" val="icon.etc_badge_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Use this to receive a useful item out of many. -->
+	<item id="23149" type="EtcItem" name="Exorcist's Gift - Event">
+		<set name="icon" val="icon.etc_grave_goods_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Use this to receive an item more valuable than the gift itself. -->
+	<item id="23150" type="EtcItem" name="Einhasad's Gift - Event">
+		<set name="icon" val="icon.event_july_seven_park_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Use this to receive an item more valuable than the gift itself. -->
+	<item id="23151" type="EtcItem" name="Shilen's Gift - Event">
+		<set name="icon" val="icon.event_big_july_seven_park_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!--
+		Bracelet that summons the image of Lancet as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for M. Def. Cannot use the Olympiad.
+	-->
+	<item id="23152" type="Armor" name="Soul Avatar - Lancet">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Liposa as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for M. Def. Cannot use the Olympiad.
+	-->
+	<item id="23153" type="Armor" name="Soul Avatar - Liposa">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_a_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Velarin as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Excellent for improving the caster's skills. Cannot use the Olympiad.
+	-->
+	<item id="23154" type="Armor" name="Soul Avatar - Velarin">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_f_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Dulcinel as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Excellent for improving the caster's skills. Cannot use the Olympiad.
+	-->
+	<item id="23155" type="Armor" name="Soul Avatar - Dulcinel">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_e_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Chimeros as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for M. Atk. Cannot use the Olympiad.
+	-->
+	<item id="23156" type="Armor" name="Soul Avatar - Chimeros">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_d_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Niveri as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for M. Atk. Cannot use the Olympiad.
+	-->
+	<item id="23157" type="Armor" name="Soul Avatar - Niveri">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_c_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Hamell as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for P. Def. Cannot use the Olympiad.
+	-->
+	<item id="23158" type="Armor" name="Soul Avatar - Hamell">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_h_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Joriya as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for P. Def. Cannot use the Olympiad.
+	-->
+	<item id="23159" type="Armor" name="Soul Avatar - Joriya">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Ralmak as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for P. Atk. Cannot use the Olympiad.
+	-->
+	<item id="23160" type="Armor" name="Soul Avatar - Ralmak">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_i_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Goras as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Effective for P. Atk. Cannot use the Olympiad.
+	-->
+	<item id="23161" type="Armor" name="Soul Avatar - Goras">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_j_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Vensar as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Excellent for improving the caster's skills. Cannot use the Olympiad.
+	-->
+	<item id="23162" type="Armor" name="Soul Avatar - Vensar">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Bracelet that summons the image of Kiela as a Soul Avatar through the red Dimensional Door.
+		Increases 6 defense attributes by 10. Excellent for improving the caster's skills. Cannot use the Olympiad.
+	-->
+	<item id="23163" type="Armor" name="Soul Avatar - Kiela">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_k_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Restores 100000 Soul Avatar energy when used. Can be replenished only when the Soul Avatar is equipped and 100000 or more energy has been consumed. -->
+	<item id="23164" type="EtcItem" name="Soul Avatar's Large Placid">
+		<set name="icon" val="BranchSys.icon.br_shield_bread_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Chocolate for Summer Slushie sought by Herina. Tastes sweet. You need 10 each of chocolate/cream/ice/biscuits to make 1 Sweet Summer Slushie. -->
+	<item id="23165" type="EtcItem" name="Chocolate for Summer Slushie - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_icewater_cho" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Cream for Summer Slushie sought by Herina. Tastes smooth. You need 10 each of chocolate/cream/ice/biscuits to make 1 Sweet Summer Slushie. -->
+	<item id="23166" type="EtcItem" name="Cream for Summer Slushie - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_icewater_cream" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Ice for Summer Slushie sought by Herina. Seems finely shaven. You need 10 each of chocolate/cream/ice/biscuits to make 1 Sweet Summer Slushie. -->
+	<item id="23167" type="EtcItem" name="Ice for Summer Slushie - Event">
+		<set name="icon" val="icon.etc_broken_crystal_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Basket containing biscuits for Summer Slushie sought by Herina. Includes assorted biscuits, fruits, candy, and the like. You need 10 each of chocolate/cream/ice/biscuits to make 1 Sweet Summer Slushie. -->
+	<item id="23168" type="EtcItem" name="Biscuits for Summer Slushie - Event">
+		<set name="icon" val="icon.etc_candy_basket_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Summer Slushie made by Herina. Use it to change into a Beach Swimsuit. For 1 hr., Atk. Spd. + 5%, Casting Spd. + 5%, Speed + 5, and Max HP/MP + 5%. Cooldown is 1 hr. -->
+	<item id="23169" type="EtcItem" name="Sweet Summer Slushie - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_sweet_icewater" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Summer Slushie made by Herina. Use this top-quality slushie to change into an Alluring Swimsuit. For 1 hr., Atk. Spd. + 10%, Casting Spd. + 10%, Speed. + 10, and Max HP/MP + 10%. Cooldown is 1 hr. -->
+	<item id="23170" type="EtcItem" name="Fantastic Summer Slushie - Event">
+		<set name="icon" val="BranchSys3.icon1.g_ev_sweet_icewater" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Swimsuit for the beach. -->
+	<item id="23171" type="Armor" name="Beach Swimsuit - Event">
+		<set name="icon" val="BranchSys3.icon1.g_co_swimsuit_event_01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+	</item>
+	<!-- Changes the appearance of upper armor into that of a Beach Swimsuit. One pieces are also possible. It modifies everything, making the appearance of all armor into that of swimwear. When changed, the cloak is not visible. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="23172" type="EtcItem" name="Beach Swimsuit Appearance Stone - Event">
+		<set name="icon" val="BranchSys3.lcon.g_scrl_change_co_swimsuit_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23171" />
+	</item>
+	<!-- Alluring swimsuit with exquisite prints. -->
+	<item id="23173" type="Armor" name="Alluring Swimsuit">
+		<set name="icon" val="BranchSys3.icon1.g_co_swimsuit_event_02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+	</item>
+	<!-- Double-click to obtain either a Fantastic Summer Slushie, Beach Swimsuit Appearance Stone, Alluring Swimsuit, Beach Sun Cap Pack (30-day), or Stylish Straw Hat Pack (30-day) at random. -->
+	<item id="23174" type="EtcItem" name="Herina's Gift Box - Event">
+		<set name="icon" val="icon.event_big_july_seven_park_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Fancy cap that completely blocks the sun. Uses 2 hair accessory slots. 30-day. -->
+	<item id="23175" type="Armor" name="Brilliant Beach Sun Cap - 30-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_beach_cap" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hat made of straw fibers. Uses 2 hair accessory slots. 30-day. -->
+	<item id="23176" type="Armor" name="Stylish Straw Hat - 30-day (Event)">
+		<set name="icon" val="BranchSys3.icon.g_straw_hat" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing Brilliant Beach Sun Cap (30-day). -->
+	<item id="23177" type="EtcItem" name="Brilliant Beach Sun Cap Pack (30-day) - Event">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Stylish Straw Hat (30-day). -->
+	<item id="23178" type="EtcItem" name="Stylish Straw Hat Pack (30-day) - Event">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ninja Top. Part of a costume. -->
+	<item id="23179" type="Armor" name="Ninja Top">
+		<set name="icon" val="BranchSys3.icon1.g_co_ninja_u" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Ninja Pants. Part of a costume. -->
+	<item id="23180" type="Armor" name="Ninja Pants">
+		<set name="icon" val="BranchSys3.icon1.g_co_ninja_l" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Ninja Gloves. Part of a costume. -->
+	<item id="23181" type="Armor" name="Ninja Gloves">
+		<set name="icon" val="BranchSys3.icon1.g_co_ninja_g" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Ninja Shoes. Part of a costume. -->
+	<item id="23182" type="Armor" name="Ninja Shoes">
+		<set name="icon" val="BranchSys3.icon1.g_co_ninja_b" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Ninja Hair Accessory. Mask form. Part of a costume. -->
+	<item id="23183" type="Armor" name="Ninja Hair Accessory">
+		<set name="icon" val="BranchSys3.icon1.g_co_ninja_hair" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Traditional Taiwanese Top. Part of a costume. -->
+	<item id="23184" type="Armor" name="Traditional Taiwanese Top">
+		<set name="icon" val="BranchSys3.icon1.g_co_paiwan_u" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Traditional Taiwanese Pants. Part of a costume. -->
+	<item id="23185" type="Armor" name="Traditional Taiwanese Pants">
+		<set name="icon" val="BranchSys3.icon1.g_co_paiwan_l" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Traditional Taiwanese Gloves. Part of a costume. -->
+	<item id="23186" type="Armor" name="Traditional Taiwanese Gloves">
+		<set name="icon" val="BranchSys3.icon1.g_co_paiwan_g" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Traditional Taiwanese Shoes. Part of a costume. -->
+	<item id="23187" type="Armor" name="Traditional Taiwanese Shoes">
+		<set name="icon" val="BranchSys3.icon1.g_co_paiwan_b" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="19" />
+	</item>
+	<!-- Traditional Taiwanese Hair Accessory. Hat form. Part of a costume. -->
+	<item id="23188" type="Armor" name="Traditional Taiwanese Hair Accessory">
+		<set name="icon" val="BranchSys3.icon1.g_co_paiwan_hair" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Changes the appearance of a top to that of a Ninja outfit. Abilities do not change after modification. Can be used regardless of material. -->
+	<item id="23189" type="EtcItem" name="Ninja Top Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23179" />
+	</item>
+	<!-- Changes the appearance of a bottom to that of a Ninja outfit. Abilities do not change after modification. Can be used regardless of material. -->
+	<item id="23190" type="EtcItem" name="Ninja Pants Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23180" />
+	</item>
+	<!-- Changes the appearance of gloves to that of a Ninja outfit. Abilities do not change after modification. -->
+	<item id="23191" type="EtcItem" name="Ninja Gloves Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23181" />
+	</item>
+	<!-- Changes the appearance of shoes to that of a Ninja outfit. Abilities do not change after modification. -->
+	<item id="23192" type="EtcItem" name="Ninja Shoes Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23182" />
+	</item>
+	<!--
+		Changes the appearance of a hair accessory to that of a Ninja outfit. Can only be used on hair accessories that use 2 slots.
+		
+		Warning: The appearance resets if you bestow a pendant on the appearance-modified hair accessory.
+	-->
+	<item id="23193" type="EtcItem" name="Ninja Hair Accessory Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23183" />
+	</item>
+	<!-- Changes the appearance of a top to that of a Traditional Taiwanese outfit. Abilities do not change after modification. Can be used regardless of material. -->
+	<item id="23194" type="EtcItem" name="Traditional Taiwanese Top Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23184" />
+	</item>
+	<!-- Changes the appearance of a bottom to that of a Traditional Taiwanese outfit. Abilities do not change after modification. Can be used regardless of material. -->
+	<item id="23195" type="EtcItem" name="Traditional Taiwanese Pants Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23185" />
+	</item>
+	<!-- Changes the appearance of gloves to that of a Traditional Taiwanese outfit. Abilities do not change after modification. -->
+	<item id="23196" type="EtcItem" name="Traditional Taiwanese Gloves Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23186" />
+	</item>
+	<!-- Changes the appearance of shoes to that of a Traditional Taiwanese outfit. Abilities do not change after modification. -->
+	<item id="23197" type="EtcItem" name="Traditional Taiwanese Shoes Appearance Stone">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23187" />
+	</item>
+	<!-- Changes the appearance of a hair accessory to that of a Traditional Taiwanese outfit. Can only be used on hair accessories that use 2 slots. -->
+	<item id="23198" type="EtcItem" name="Traditional Taiwanese Hair Accessory Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23188" />
+	</item>
+	<!-- Wrapped Pack containing Ninja Top/Pants/Gloves/Shoes/Hair Accessory Appearance Stone. -->
+	<item id="23199" type="EtcItem" name="Ninja Outfit Appearance Stone Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="23189,1,1,100;23190,1,1,100;23191,1,1,100;23192,1,1,100;23193,1,1,100;" />
+	</item>
+</list>

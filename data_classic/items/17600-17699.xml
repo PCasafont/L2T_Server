@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Tome containing the soul of an Ancient Giant hero. Can be used before the Ancient Giat statues in the Reliquary of the Giants found in the Ruins of Ye Sagira. -->
+	<item id="17600" type="EtcItem" name="Scroll of Afterlife">
+		<set name="icon" val="icon.q10338_book_of_hades" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Cut heart of a dying Earth Wyrm's heart. It still moves and appears to contain tremendous life force. -->
+	<item id="17601" type="EtcItem" name="Earth Wyrm Heart Fragment">
+		<set name="icon" val="icon.earthworm_heart" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Crystal with concentrated tissue energy that can be obtained in the Seed of Annihilation. Bring it to Kirklan. -->
+	<item id="17602" type="EtcItem" name="Tissue Energy Crystal">
+		<set name="icon" val="icon.high_star_stone_piece_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Can be crafted by all races. Quest-type recipe. Recipe for making a tonic needed by the tree that is by Timiniel's side. Requires level 1 of the create command item skill. Success rate is 100%. -->
+	<item id="17603" type="EtcItem" name="Recipe: Timiniel's Tonic">
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+	</item>
+	<!-- Can gather nearby wisps when used. -->
+	<item id="17604" type="EtcItem" name="Glimmer Crystal">
+		<set name="icon" val="icon.glimmer_crystal" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- 10,000,000 Adena. Coins received after kissing a toad... -->
+	<item id="17605" type="EtcItem" name="10,000,000 Adena">
+		<set name="icon" val="icon.fairy_adena_joke" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Stronghold fragment piece for controlling the stronghold. -->
+	<item id="17606" type="EtcItem" name="Stronghold Fragment">
+		<set name="icon" val="icon.gd_square_fragment" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Can open all the doors in the Coral Garden Hall. -->
+	<item id="17607" type="EtcItem" name="Key to the Hall of Jewels">
+		<set name="icon" val="icon.etc_key_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- You can control the amount of energy with this device. -->
+	<item id="17608" type="EtcItem" name="Energy Control Device">
+		<set name="icon" val="icon.etc_medicine_of_growth_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="14224-1" />
+	</item>
+	<!-- (Not in Use) Istina's Necklace. (needs effect calculation) -->
+	<item id="17609" type="Armor" name="(Not in Use) Istina's Necklace">
+		<set name="icon" val="icon.accessary_queen_of_ice_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="s84" />
+		<set name="weight" val="150" />
+		<for>
+			<baseAdd stat="mDef" val="125" />
+			<add stat="maxMp" val="50" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Tissue energy's residue. Bring it to Soldier Ty. -->
+	<item id="17610" type="EtcItem" name="Tissue Energy Residue">
+		<set name="icon" val="icon.etc_bark_green_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Can fire the cannon inside the Prison of Darkness. -->
+	<item id="17611" type="EtcItem" name="Giant Cannonball">
+		<set name="icon" val="icon.mde_big_bullet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Can experience the memories of Spezion, who is sealed inside the Prison of Darkness. -->
+	<item id="17612" type="EtcItem" name="Memory Fragment">
+		<set name="icon" val="icon.mde_memory_fragment" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Can experience the memories of Spezion, who is sealed inside the Prison of Darkness. -->
+	<item id="17613" type="EtcItem" name="Frightening Memory Fragment">
+		<set name="icon" val="icon.mde_memory_fragment02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Can view the records of the heroes. -->
+	<item id="17614" type="EtcItem" name="Pantheon's Book">
+		<set name="icon" val="icon.si_phanteon_book" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Can use the Labyrinth of Belis. -->
+	<item id="17615" type="EtcItem" name="Belis' Mark">
+		<set name="icon" val="icon.bel_mark_clear" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Collect the soul candles. -->
+	<item id="17616" type="EtcItem" name="Soul Candle">
+		<set name="icon" val="icon.darkelf_campaign_candle" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Used during the Searching for the Jewels campaign. Collect a lot. -->
+	<item id="17617" type="EtcItem" name="Jewel Box">
+		<set name="icon" val="icon.darkelf_campaign_box" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Old map. Bring it to Izael, who knows a lot about Ancient Arcan, and ask about it. -->
+	<item id="17618" type="EtcItem" name="Fortuna Map">
+		<set name="icon" val="icon.fortuna_enter" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Summon a relic-finding detector inside Cruma Tower. -->
+	<item id="17619" type="EtcItem" name="Relic Detector">
+		<set name="icon" val="icon.summon_object_finder" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- It is effective when used on the eggs of the correct type insect. -->
+	<item id="17620" type="EtcItem" name="Insecticide">
+		<set name="icon" val="icon.bug_spray_a" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- It is effective when used on the eggs of the correct type insect. -->
+	<item id="17621" type="EtcItem" name="Insecticide">
+		<set name="icon" val="icon.bug_spray_b" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- It is effective when used on the eggs of the correct type insect. -->
+	<item id="17622" type="EtcItem" name="Insecticide">
+		<set name="icon" val="icon.bug_spray_c" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- MP + 38, increases Physical Attack Resistance, Mental Attack Resistance, MP Recovery Rate, P. Critical Damage, and Accuracy. Poison Resistance + 50%, Poison Atk. Rate + 50%, Knock Back, Knock Down, Pulling Resistance + 20, Atk. Spd., Casting Spd., and Wind/Water Resistance. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied when two of the same ring are equipped. -->
+	<item id="17623" type="Armor" name="Earth Wyrm Heart Ring">
+		<set name="icon" val="icon.ring_earthworm_heart" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13317-1;13318-1;13319-1" />
+		<for>
+			<baseAdd stat="mDef" val="108" />
+			<add stat="maxMp" val="38" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Token that can be exchanged for a Tower of Insolence item. -->
+	<item id="17624" type="EtcItem" name="Token of Insolence Tower">
+		<set name="icon" val="icon.token_of_oman" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Lv. 1 Giant STR Dye (Str + 3 Dex - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17625" type="EtcItem" name="Lv. 1 Giant STR Dye - STR + 3 / DEX - 2">
+		<set name="icon" val="icon.lv1_1_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant DEX Dye (Dex + 3 Con - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17626" type="EtcItem" name="Lv. 1 Giant DEX Dye - DEX + 3 / CON - 2">
+		<set name="icon" val="icon.lv1_1_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant CON Dye (Con + 3 Str - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17627" type="EtcItem" name="Lv. 1 Giant CON Dye - CON + 3 / STR - 2">
+		<set name="icon" val="icon.lv1_1_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant INT Dye (Int + 3 Wit - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17628" type="EtcItem" name="Lv. 1 Giant INT Dye - INT + 3 / WIT - 2">
+		<set name="icon" val="icon.lv1_1_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant WIT Dye (Wit + 3 Men - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17629" type="EtcItem" name="Lv. 1 Giant WIT Dye - WIT + 3 / MEN - 2">
+		<set name="icon" val="icon.lv1_1_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant MEN Dye (Men + 3 Int - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17630" type="EtcItem" name="Lv. 1 Giant MEN Dye - MEN + 3 / INT - 2">
+		<set name="icon" val="icon.lv1_1_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant STR Dye (Str + 3 Dex - 2 Fire Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17631" type="EtcItem" name="Lv. 1 Ancient STR Dye - STR + 3 / DEX - 2 / Fire Resistance + 5">
+		<set name="icon" val="icon.lv1_2_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant DEX Dye (Dex + 3 Con - 2 Earth Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17632" type="EtcItem" name="Lv. 1 Ancient DEX Dye - DEX + 3 / CON - 2 / Earth Resistance + 5">
+		<set name="icon" val="icon.lv1_2_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant CON Dye (Con + 3 Str - 2 Dark Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17633" type="EtcItem" name="Lv. 1 Ancient CON Dye - CON + 3 / STR - 2 / Dark Resistance + 5">
+		<set name="icon" val="icon.lv1_2_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant INT Dye (Int + 3 Wit - 2 Water Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17634" type="EtcItem" name="Lv. 1 Ancient INT Dye - INT + 3 / WIT - 2 / Water Resistance + 5">
+		<set name="icon" val="icon.lv1_2_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant WIT Dye (Wit + 3 Men - 2 Wind Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17635" type="EtcItem" name="Lv. 1 Ancient WIT Dye - WIT + 3 / MEN - 2 / Wind Resistance + 5">
+		<set name="icon" val="icon.lv1_2_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Giant MEN Dye (Men + 3 Int - 2 Holy Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17636" type="EtcItem" name="Lv. 1 Ancient MEN Dye - MEN + 3 / INT - 2 / Holy Resistance + 5">
+		<set name="icon" val="icon.lv1_2_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Legendary STR Dye (Str + 3 Dex -1 Fire Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17637" type="EtcItem" name="Lv. 1 Legendary STR Dye - STR + 3 / DEX - 1 / Fire Resistance + 5">
+		<set name="icon" val="icon.lv1_3_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Legendary DEX Dye (Dex + 3 Con -1 Earth Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17638" type="EtcItem" name="Lv. 1 Legendary DEX Dye - DEX + 3 / CON - 1 / Earth Resistance + 5">
+		<set name="icon" val="icon.lv1_3_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Legendary CON Dye (Con + 3 Str -1 Dark Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17639" type="EtcItem" name="Lv. 1 Legendary CON Dye - CON + 3 / STR - 1 / Dark Resistance + 5">
+		<set name="icon" val="icon.lv1_3_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Legendary INT Dye (Int + 3 Wit -1 Water Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17640" type="EtcItem" name="Lv. 1 Legendary INT Dye - INT + 3 / WIT - 1 / Water Resistance + 5">
+		<set name="icon" val="icon.lv1_3_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Legendary WIT Dye (Wit + 3 Men -1 Wind Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Equipping 2 will only give the effect of 1 for Attribute Resistance. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17641" type="EtcItem" name="Lv. 1 Legendary WIT Dye - WIT + 3 / MEN - 1 / Wind Resistance + 5">
+		<set name="icon" val="icon.lv1_3_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 1 Legendary MEN Dye (Men + 3 Int -1 Holy Resistance + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17642" type="EtcItem" name="Lv. 1 Legendary MEN Dye - MEN + 3 / INT - 1 / Holy Resistance + 5">
+		<set name="icon" val="icon.lv1_3_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Giant STR Dye (Str + 4 Dex - 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17643" type="EtcItem" name="Lv. 2 Giant STR Dye - STR + 4 / DEX - 3">
+		<set name="icon" val="icon.lv2_1_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Giant DEX Dye (Dex + 4 Con - 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17644" type="EtcItem" name="Lv. 2 Giant DEX Dye - DEX + 4 / CON - 3">
+		<set name="icon" val="icon.lv2_1_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Giant CON Dye (Con + 4 Str - 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17645" type="EtcItem" name="Lv. 2 Giant CON Dye - CON + 4 / STR - 3">
+		<set name="icon" val="icon.lv2_1_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Giant INT Dye (Int + 4 Wit - 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17646" type="EtcItem" name="Lv. 2 Giant INT Dye - INT + 4 / WIT - 3">
+		<set name="icon" val="icon.lv2_1_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Giant WIT Dye (Wit + 4 Men - 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17647" type="EtcItem" name="Lv. 2 Giant WIT Dye - WIT + 4 / MEN - 3">
+		<set name="icon" val="icon.lv2_1_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Giant MEN Dye (Men + 4 Int - 3). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17648" type="EtcItem" name="Lv. 2 Giant MEN Dye - MEN + 4 / INT - 3">
+		<set name="icon" val="icon.lv2_1_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Ancient STR Dye (Str + 4 Dex - 3 Fire Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17649" type="EtcItem" name="Lv. 2 Ancient STR Dye - STR + 4 / DEX - 3 / Fire Resistance + 10">
+		<set name="icon" val="icon.lv2_2_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Ancient DEX Dye (Dex + 4 Con - 3 Earth Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17650" type="EtcItem" name="Lv. 2 Ancient DEX Dye - DEX + 4 / CON - 3 / Earth Resistance + 10">
+		<set name="icon" val="icon.lv2_2_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Ancient CON Dye (Con + 4 Str - 3 Dark Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17651" type="EtcItem" name="Lv. 2 Ancient CON Dye - CON + 4 / STR - 3 / Dark Resistance + 10">
+		<set name="icon" val="icon.lv2_2_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Ancient INT Dye (Int + 4 Wit - 3 Water Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17652" type="EtcItem" name="Lv. 2 Ancient INT Dye - INT + 4 / WIT - 3 / Water Resistance + 10">
+		<set name="icon" val="icon.lv2_2_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Ancient WIT Dye (Wit + 4 Men - 3 Wind Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17653" type="EtcItem" name="Lv. 2 Ancient WIT Dye - WIT + 4 / MEN - 3 / Wind Resistance + 10">
+		<set name="icon" val="icon.lv2_2_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Ancient MEN Dye (Men + 4 Int - 3 Holy Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17654" type="EtcItem" name="Lv. 2 Ancient MEN Dye - MEN + 4 / INT - 3 / Holy Resistance + 10">
+		<set name="icon" val="icon.lv2_2_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Legendary STR Dye (Str + 4 Dex - 2 Fire Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17655" type="EtcItem" name="Lv. 2 Legendary STR Dye - STR + 4 / DEX - 2 / Fire Resistance + 10">
+		<set name="icon" val="icon.lv2_3_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Legendary DEX Dye (Dex + 4 Con - 2 Earth Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17656" type="EtcItem" name="Lv. 2 Legendary DEX Dye - DEX + 4 / CON - 2 / Earth Resistance + 10">
+		<set name="icon" val="icon.lv2_3_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Legendary CON Dye (Con + 4 Str - 2 Dark Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17657" type="EtcItem" name="Lv. 2 Legendary CON Dye - CON + 4 / STR - 2 / Dark Resistance + 10">
+		<set name="icon" val="icon.lv2_3_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Legendary INT Dye (Int + 4 Wit - 2 Water Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17658" type="EtcItem" name="Lv. 2 Legendary INT Dye - INT + 4 / WIT - 2 / Water Resistance + 10">
+		<set name="icon" val="icon.lv2_3_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Legendary WIT Dye (Wit + 4 Men - 2 Wind Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17659" type="EtcItem" name="Lv. 2 Legendary WIT Dye - WIT + 4 / MEN - 2 / Wind Resistance + 10">
+		<set name="icon" val="icon.lv2_3_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 2 Legendary MEN Dye (Men + 4 Int - 2 Holy Resistance + 10). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17660" type="EtcItem" name="Lv. 2 Legendary MEN Dye - MEN + 4 / INT - 2 / Holy Resistance + 10">
+		<set name="icon" val="icon.lv2_3_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Giant STR Dye (Str + 5 Dex - 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17661" type="EtcItem" name="Lv. 3 Giant STR Dye - STR + 5 / DEX - 4">
+		<set name="icon" val="icon.lv3_1_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Giant DEX Dye (Dex + 5 Con - 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17662" type="EtcItem" name="Lv. 3 Giant DEX Dye - DEX + 5 / CON - 4">
+		<set name="icon" val="icon.lv3_1_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Giant CON Dye (Con + 5 Str - 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17663" type="EtcItem" name="Lv. 3 Giant CON Dye - CON + 5 / STR - 4">
+		<set name="icon" val="icon.lv3_1_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Giant INT Dye (Int + 5 Wit - 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17664" type="EtcItem" name="Lv. 3 Giant INT Dye - INT + 5 / WIT - 4">
+		<set name="icon" val="icon.lv3_1_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Giant WIT Dye (Wit + 5 Men - 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17665" type="EtcItem" name="Lv. 3 Giant WIT Dye - WIT + 5 / MEN - 4">
+		<set name="icon" val="icon.lv3_1_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Giant MEN Dye (Men + 5 Int - 4). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17666" type="EtcItem" name="Lv. 3 Giant MEN Dye - MEN + 5 / INT - 4">
+		<set name="icon" val="icon.lv3_1_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Ancient STR Dye (Str + 5 Dex - 4 Fire Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17667" type="EtcItem" name="Lv. 3 Ancient STR Dye - STR + 5 / DEX - 4 / Fire Resistance + 15">
+		<set name="icon" val="icon.lv3_2_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Ancient DEX Dye (Dex + 5 Con - 4 Earth Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17668" type="EtcItem" name="Lv. 3 Ancient DEX Dye - DEX + 5 / CON - 4 / Earth Resistance + 15">
+		<set name="icon" val="icon.lv3_2_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Ancient CON Dye (Con + 5 Str - 4 Dark Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17669" type="EtcItem" name="Lv. 3 Ancient CON Dye - CON + 5 / STR - 4 / Dark Resistance + 15">
+		<set name="icon" val="icon.lv3_2_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Ancient INT Dye (Int + 5 Wit - 4 Water Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17670" type="EtcItem" name="Lv. 3 Ancient INT Dye - INT + 5 / WIT - 4 / Water Resistance + 15">
+		<set name="icon" val="icon.lv3_2_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Ancient WIT Dye (Wit + 5 Men - 4 Wind Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17671" type="EtcItem" name="Lv. 3 Ancient WIT Dye - WIT + 5 / MEN - 4 / Wind Resistance + 15">
+		<set name="icon" val="icon.lv3_2_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Ancient MEN Dye (Men + 5 Int - 4 Holy Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17672" type="EtcItem" name="Lv. 3 Ancient MEN Dye - MEN + 5 / INT - 4 / Holy Resistance + 15">
+		<set name="icon" val="icon.lv3_2_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Legendary STR Dye (Str + 5 Dex - 3 Fire Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17673" type="EtcItem" name="Lv. 3 Legendary STR Dye - STR + 5 / DEX - 3 / Fire Resistance + 15">
+		<set name="icon" val="icon.lv3_3_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Legendary DEX Dye (Dex + 5 Con - 3 Earth Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17674" type="EtcItem" name="Lv. 3 Legendary DEX Dye - DEX + 5 / CON - 3 / Earth Resistance + 15">
+		<set name="icon" val="icon.lv3_3_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Legendary CON Dye (Con + 5 Str - 3 Dark Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17675" type="EtcItem" name="Lv. 3 Legendary CON Dye - CON + 5 / STR - 3 / Dark Resistance + 15">
+		<set name="icon" val="icon.lv3_3_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Legendary INT Dye (Int + 5 Wit - 3 Water Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17676" type="EtcItem" name="Lv. 3 Legendary INT Dye - INT + 5 / WIT - 3 / Water Resistance + 15">
+		<set name="icon" val="icon.lv3_3_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Legendary WIT Dye (Wit + 5 Men - 3 Wind Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17677" type="EtcItem" name="Lv. 3 Legendary WIT Dye - WIT + 5 / MEN - 3 / Wind Resistance + 15">
+		<set name="icon" val="icon.lv3_3_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 3 Legendary MEN Dye (Men + 5 Int - 3 Holy Resistance + 15). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17678" type="EtcItem" name="Lv. 3 Legendary MEN Dye - MEN + 5 / INT - 3 / Holy Resistance + 15">
+		<set name="icon" val="icon.lv3_3_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Giant STR Dye (Str + 5 Dex - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17679" type="EtcItem" name="Lv. 4 Giant STR Dye - STR + 5 / DEX - 2">
+		<set name="icon" val="icon.lv4_1_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Giant DEX Dye (Dex + 5 Con - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17680" type="EtcItem" name="Lv. 4 Giant DEX Dye - DEX + 5 / CON - 2">
+		<set name="icon" val="icon.lv4_1_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Giant CON Dye (Con + 5 Str - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17681" type="EtcItem" name="Lv. 4 Giant CON Dye - CON + 5 / STR - 2">
+		<set name="icon" val="icon.lv4_1_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Giant INT Dye (Int + 5 Wit - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17682" type="EtcItem" name="Lv. 4 Giant INT Dye - INT + 5 / WIT - 2">
+		<set name="icon" val="icon.lv4_1_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Giant WIT Dye (Wit + 5 Men - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17683" type="EtcItem" name="Lv. 4 Giant WIT Dye - WIT + 5 / MEN - 2">
+		<set name="icon" val="icon.lv4_1_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Giant MEN Dye (Men + 5 Int - 2). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17684" type="EtcItem" name="Lv. 4 Giant MEN Dye - MEN + 5 / INT - 2">
+		<set name="icon" val="icon.lv4_1_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Ancient STR Dye (Str + 5 Dex - 2 Fire Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17685" type="EtcItem" name="Lv. 4 Ancient STR Dye - STR + 5 / DEX - 2 / Fire Resistance + 20">
+		<set name="icon" val="icon.lv4_2_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Ancient DEX Dye (Dex + 5 Con - 2 Earth Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17686" type="EtcItem" name="Lv. 4 Ancient DEX Dye - DEX + 5 / CON - 2 / Earth Resistance + 20">
+		<set name="icon" val="icon.lv4_2_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Ancient CON Dye (Con + 5 Str - 2 Dark Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17687" type="EtcItem" name="Lv. 4 Ancient CON Dye - CON + 5 / STR - 2 / Dark Resistance + 20">
+		<set name="icon" val="icon.lv4_2_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Ancient INT Dye (Int + 5 Wit - 2 Water Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17688" type="EtcItem" name="Lv. 4 Ancient INT Dye - INT + 5 / WIT - 2 / Water Resistance + 20">
+		<set name="icon" val="icon.lv4_2_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Ancient WIT Dye (Wit + 5 Men - 2 Wind Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17689" type="EtcItem" name="Lv. 4 Ancient WIT Dye - WIT + 5 / MEN - 2 / Wind Resistance + 20">
+		<set name="icon" val="icon.lv4_2_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Ancient MEN Dye (Men + 5 Int - 2 Holy Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17690" type="EtcItem" name="Lv. 4 Ancient MEN Dye - MEN + 5 / INT - 2 / Holy Resistance + 20">
+		<set name="icon" val="icon.lv4_2_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Legendary STR Dye (Str + 5 Dex -1 Fire Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17691" type="EtcItem" name="Lv. 4 Legendary STR Dye - STR + 5 / DEX - 1 / Fire Resistance + 20">
+		<set name="icon" val="icon.lv4_3_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Legendary DEX Dye (Dex + 5 Con -1 Earth Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17692" type="EtcItem" name="Lv. 4 Legendary DEX Dye - DEX + 5 / CON - 1 / Earth Resistance + 20">
+		<set name="icon" val="icon.lv4_3_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Legendary CON Dye (Con + 5 Str -1 Dark Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17693" type="EtcItem" name="Lv. 4 Legendary CON Dye - CON + 5 / STR - 1 / Dark Resistance + 20">
+		<set name="icon" val="icon.lv4_3_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Legendary INT Dye (Int + 5 Wit -1 Water Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17694" type="EtcItem" name="Lv. 4 Legendary INT Dye - INT + 5 / WIT - 1 / Water Resistance + 20">
+		<set name="icon" val="icon.lv4_3_dye_int" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Legendary WIT Dye (Wit + 5 Men -1 Wind Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17695" type="EtcItem" name="Lv. 4 Legendary WIT Dye - WIT + 5 / MEN - 1 / Wind Resistance + 20">
+		<set name="icon" val="icon.lv4_3_dye_wit" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 4 Legendary MEN Dye (Men + 5 Int -1 Holy Resistance + 20). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17696" type="EtcItem" name="Lv. 4 Legendary MEN Dye - MEN + 5 / INT - 1 / Holy Resistance + 20">
+		<set name="icon" val="icon.lv4_3_dye_men" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 5 Giant STR Dye (Str + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17697" type="EtcItem" name="Lv. 5 Giant STR Dye - STR + 5">
+		<set name="icon" val="icon.lv5_1_dye_str" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 5 Giant DEX Dye (Dex + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17698" type="EtcItem" name="Lv. 5 Giant DEX Dye - DEX + 5">
+		<set name="icon" val="icon.lv5_1_dye_dex" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Lv. 5 Giant CON Dye (Con + 5). Collect and take 10 unit s of this magical dye to the symbol maker in town and you will receive a symbol that boosts your abilities. Can be used after Awakening, or 3rd Liberation. All classes. -->
+	<item id="17699" type="EtcItem" name="Lv. 5 Giant CON Dye - CON + 5">
+		<set name="icon" val="icon.lv5_1_dye_con" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

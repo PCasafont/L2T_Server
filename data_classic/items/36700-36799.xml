@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Doll used in shamanism to control the evil creatures by the Ragna Orcs. Collect and bring it to Beacon Town Manager Chairen at the Den of Evil. -->
+	<item id="36700" type="EtcItem" name="Ragna Orc's Amulet">
+		<set name="icon" val="icon.etc_totem_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Doll used in shamanism to control evil creatures by the Ragna Orcs. It has a spell more powerful than a regular amulet. Collect and bring it to Beacon Town Manager Chairen at the Den of Evil. -->
+	<item id="36701" type="EtcItem" name="Ragna Orc's Greater Amulet">
+		<set name="icon" val="icon.etc_totem_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Proof of defeating a Mucrokian. Collect and bring it to Katensa at the Field of Silence Research Center. -->
+	<item id="36702" type="EtcItem" name="Mucrokian Hide">
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Proof of defeating a Mucrokian, which is very valuable as leather. Collect and bring it to Katensa at the Field of Silence Research Center. -->
+	<item id="36703" type="EtcItem" name="Quality Mucrokian Hide">
+		<set name="icon" val="icon.etc_leather_brown_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Proof of defeating a Mucrokian. Collect and bring it to Apprentice Atra at the Purified Ceremony Hall. -->
+	<item id="36704" type="EtcItem" name="Mucrokian Hide">
+		<set name="icon" val="icon.etc_leather_gray_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Proof of defeating a Mucrokian, which is very valuable as leather. Collect and bring it to Apprentice Atra at the Purified Ceremony Hall. -->
+	<item id="36705" type="EtcItem" name="Quality Mucrokian Hide">
+		<set name="icon" val="icon.etc_leather_brown_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Letter from Hierarch Kekropus of Kamaels. -->
+	<item id="36706" type="EtcItem" name="Kekropus' Letter">
+		<set name="icon" val="icon.scroll_of_verification_i08" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Forged Identification Card from Baron's Personal Escort Eli on Alligator Island for a secret mission. Take it to Workman Chen on Alligator Island to get a mission. -->
+	<item id="36707" type="EtcItem" name="Forged Identification Card">
+		<set name="icon" val="icon.etc_lottery_card_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing unknown experiment material from Workman Chen on Alligator Island. Take it to the "Superior" he mentioned. -->
+	<item id="36708" type="EtcItem" name="Experiment Material">
+		<set name="icon" val="icon.etc_pouch_yellow_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Fragment obtained after killing monsters on Alligator Island. Take it to Iason Heine on Alligator Island. -->
+	<item id="36709" type="EtcItem" name="Suspicious Fragment">
+		<set name="icon" val="icon.etc_crystal_cave_crystal_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Alligator Leather obtained after hunting an alligator on Alligator Island. Can be sold to Enron. -->
+	<item id="36710" type="EtcItem" name="Alligator Leather">
+		<set name="icon" val="icon.etc_scale_of_medusa_green_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Blue Alligator Leather obtained after hunting an alligator on Alligator Island. Can be sold to Enron at a high price. -->
+	<item id="36711" type="EtcItem" name="Blue Alligator Leather">
+		<set name="icon" val="icon.etc_scale_of_medusa_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Bejeweled Alligator's leather obtained after hunting an alligator on Alligator Island. Can be sold to Enron at a very high price. -->
+	<item id="36712" type="EtcItem" name="Bejeweled Alligator Leather">
+		<set name="icon" val="icon.etc_scale_of_medusa_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Guardian Giant's Nucleus Fragment obtained after killing monsters in the valley area of the Forsaken Plains. Keep collecting it and a Guardian Giant might appear. -->
+	<item id="36713" type="EtcItem" name="Guardian Giant's Nucleus Fragment">
+		<set name="icon" val="icon.etc_broken_crystal_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Kartia's Mutated Seed obtained after killing monsters in the Fields of Massacre. Collect and bring it to Shuvann in the Fields of Massacre. -->
+	<item id="36714" type="EtcItem" name="Kartia's Mutated Seed">
+		<set name="icon" val="icon.etc_seed_of_evil_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Soul Core of a monster with an evil soul. In the form of a small jewel with dark purple evil force. Used to summon Dark Shaman Varangka. -->
+	<item id="36715" type="EtcItem" name="Evil Freed Soul">
+		<set name="icon" val="icon.etc_evil_soul_core_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Amulet with protection from the evil spirits of the altar. Embedded in a pendant, it shines with red light with the evil soul of the Soul Core purified. -->
+	<item id="36716" type="EtcItem" name="Guardian Soul's Pendant">
+		<set name="icon" val="icon.ect_charm_of_protection_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Temporary practice weapon for learning about augmentation. Very inefficient as a weapon. -->
+	<item id="36717" type="Weapon" name="Augmentation Practice Weapon">
+		<set name="icon" val="icon.weapon_long_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1420" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Temporary Life Stone for learning about augmentation. -->
+	<item id="36718" type="EtcItem" name="Augmentation Practice Life Stone (46)">
+		<set name="icon" val="icon.etc_mineral_general_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Temporary practice gemstone for learning about augmentation. -->
+	<item id="36719" type="EtcItem" name="Augmentation Practice Gemstone (D-grade)">
+		<set name="icon" val="icon.etc_crystal_ball_silver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Temporary practice weapon for learning about soul crystal enhancement. Very inefficient as a weapon. -->
+	<item id="36720" type="Weapon" name="Practice StormBringer">
+		<set name="icon" val="icon.weapon_stormbringer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1420" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Green crystal for practice containing the light of absorbed souls. Stage 5. Once saturated, it bestows special abilities on a weapon. -->
+	<item id="36721" type="EtcItem" name="Practice Green Soul Crystal - Stage 5">
+		<set name="icon" val="icon.etc_soul_stone_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Temporary practice gemstone for learning about soul crystal enhancement. -->
+	<item id="36722" type="EtcItem" name="Enhancement Practice Gemstone (C-grade)">
+		<set name="icon" val="icon.etc_crystal_ball_green_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 86.
+	-->
+	<item id="36723" type="Weapon" name="Practice StormBringer - Focus">
+		<set name="icon" val="icon.weapon_stormbringer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="1430" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="68" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- One can attach a function using Practice Magic Pin (C-grade). -->
+	<item id="36724" type="Armor" name="Practice Leather Belt">
+		<set name="icon" val="icon.armor_belt_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="500" />
+		<for>
+			<baseAdd stat="pDef" val="10" />
+		</for>
+	</item>
+	<!-- Magic Pin from Weaver Wolf Kanolre. You can have it attached to a belt through Weaver Wolf Kanolre. -->
+	<item id="36725" type="EtcItem" name="Practice Magic Pin (C-grade)">
+		<set name="icon" val="icon.pin_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<item id="36726" type="Armor" name="Flutter's Magic Pin Leather Belt (Low-grade)">
+		<set name="icon" val="icon.armor_belt_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="500" />
+		<for>
+			<baseAdd stat="pDef" val="10" />
+		</for>
+	</item>
+	<!-- Additional quest item (to be changed according to settings) -->
+	<item id="36727" type="EtcItem" name="Theor's Orders">
+		<set name="icon" val="icon.etc_piece_of_paper_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Mark obtained after killing monsters at Raider's Crossroads and in the Land of Chaos. -->
+	<item id="36728" type="EtcItem" name="Hero's Signet">
+		<set name="icon" val="icon.etc_i.yogi_scroll_of_enchant_weapon_grade_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Scroll for dimensional teleport. Item required for dimensional teleport through Mermoden's Minion. 14-day. -->
+	<item id="36729" type="EtcItem" name="Dimensional Teleport Orb">
+		<set name="icon" val="icon.etc_warding_orb_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Mark received upon dimensional teleport. It disappears after 4 hours. -->
+	<item id="36730" type="EtcItem" name="Used Dimensional Teleport Orb">
+		<set name="icon" val="icon.etc_warding_orb_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Mineral with mysterious power. Can be augmented to high-grade and used by characters of level 85 or higher. -->
+	<item id="36731" type="EtcItem" name="Life Stone Instilled with Giants' Power">
+		<set name="icon" val="icon.etc_small_bubble_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Shaper. Requires Create Item (Lv. 11). Success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
+	<item id="36732" type="EtcItem" name="Recipe: Requiem Shaper (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Cutter. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36733" type="EtcItem" name="Recipe: Requiem Cutter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4001" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Slasher. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36734" type="EtcItem" name="Recipe: Requiem Slasher (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4002" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Avenger. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36735" type="EtcItem" name="Recipe: Requiem Avenger (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4003" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Fighter. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36736" type="EtcItem" name="Recipe: Requiem Fighter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4004" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Stormer. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36737" type="EtcItem" name="Recipe: Requiem Stormer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4005" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Thrower. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36738" type="EtcItem" name="Recipe: Requiem Thrower (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4006" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Shooter. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36739" type="EtcItem" name="Recipe: Requiem Shooter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4007" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Buster. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36740" type="EtcItem" name="Recipe: Requiem Buster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4008" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Caster. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36741" type="EtcItem" name="Recipe: Requiem Caster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4009" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Requiem Retributer. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36742" type="EtcItem" name="Recipe: Requiem Retributer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4010" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Helmet. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36743" type="EtcItem" name="Recipe: Immortal Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4011" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Breastplate. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36744" type="EtcItem" name="Recipe: Immortal Breastplate (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4012" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Gaiters. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36745" type="EtcItem" name="Recipe: Immortal Gaiters (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4013" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Gauntlets. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36746" type="EtcItem" name="Recipe: Immortal Gauntlets (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4014" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Boots. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36747" type="EtcItem" name="Recipe: Immortal Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4015" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Shield. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36748" type="EtcItem" name="Recipe: Immortal Shield (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4016" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Leather Helmet. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36749" type="EtcItem" name="Recipe: Immortal Leather Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4017" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Leather Armor. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36750" type="EtcItem" name="Recipe: Immortal Leather Armor (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4018" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Leather Leggings. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36751" type="EtcItem" name="Recipe: Immortal Leather Leggings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4019" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Leather Gloves. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36752" type="EtcItem" name="Recipe: Immortal Leather Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4020" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Leather Boots. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36753" type="EtcItem" name="Recipe: Immortal Leather Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4021" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Circlet. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36754" type="EtcItem" name="Recipe: Immortal Circlet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4022" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Tunic. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36755" type="EtcItem" name="Recipe: Immortal Tunic (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4023" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Stockings. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36756" type="EtcItem" name="Recipe: Immortal Stockings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4024" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Gloves. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36757" type="EtcItem" name="Recipe: Immortal Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4025" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Immortal Shoes. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36758" type="EtcItem" name="Recipe: Immortal Shoes (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4026" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Sigil. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36759" type="EtcItem" name="Recipe: Immortal Sigil (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4027" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Necklace. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36760" type="EtcItem" name="Recipe: Immortal Necklace (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4028" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Earring. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36761" type="EtcItem" name="Recipe: Immortal Earring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4029" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Immortal Ring. Requires Create Item (Lv. 11). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36762" type="EtcItem" name="Recipe: Immortal Ring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4030" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Shaper. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36763" type="EtcItem" name="Recipe: Apocalypse Shaper (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4031" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Cutter. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36764" type="EtcItem" name="Recipe: Apocalypse Cutter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4032" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Slasher. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36765" type="EtcItem" name="Recipe: Apocalypse Slasher (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4033" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Avenger. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36766" type="EtcItem" name="Recipe: Apocalypse Avenger (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4034" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Fighter. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36767" type="EtcItem" name="Recipe: Apocalypse Fighter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4035" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Stormer. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36768" type="EtcItem" name="Recipe: Apocalypse Stormer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4036" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Thrower. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36769" type="EtcItem" name="Recipe: Apocalypse Thrower (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4037" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Shooter. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36770" type="EtcItem" name="Recipe: Apocalypse Shooter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4038" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Buster. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36771" type="EtcItem" name="Recipe: Apocalypse Buster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4039" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Caster. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36772" type="EtcItem" name="Recipe: Apocalypse Caster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4040" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making an Apocalypse Retributer. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36773" type="EtcItem" name="Recipe: Apocalypse Retributer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4041" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Helmet. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36774" type="EtcItem" name="Recipe: Twilight Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4042" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Breastplate. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36775" type="EtcItem" name="Recipe: Twilight Breastplate (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4043" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Gaiters. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36776" type="EtcItem" name="Recipe: Twilight Gaiters (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4044" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Gauntlets. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36777" type="EtcItem" name="Recipe: Twilight Gauntlets (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4045" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Boots. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36778" type="EtcItem" name="Recipe: Twilight Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4046" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Shield. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36779" type="EtcItem" name="Recipe: Twilight Shield (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4047" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Leather Helmet. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36780" type="EtcItem" name="Recipe: Twilight Leather Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4048" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Leather Armor. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36781" type="EtcItem" name="Recipe: Twilight Leather Armor (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4049" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Leather Leggings. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36782" type="EtcItem" name="Recipe: Twilight Leather Leggings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4050" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Leather Gloves. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36783" type="EtcItem" name="Recipe: Twilight Leather Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4051" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Leather Boots. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36784" type="EtcItem" name="Recipe: Twilight Leather Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4052" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Circlet. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36785" type="EtcItem" name="Recipe: Twilight Circlet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4053" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Tunic. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36786" type="EtcItem" name="Recipe: Twilight Tunic (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4054" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Stockings. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36787" type="EtcItem" name="Recipe: Twilight Stockings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4055" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Gloves. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36788" type="EtcItem" name="Recipe: Twilight Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4056" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making Twilight Shoes. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36789" type="EtcItem" name="Recipe: Twilight Shoes (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4057" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Sigil. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36790" type="EtcItem" name="Recipe: Twilight Sigil (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4058" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Necklace. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36791" type="EtcItem" name="Recipe: Twilight Necklace (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4059" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Earring. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36792" type="EtcItem" name="Recipe: Twilight Earring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4060" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for making a Twilight Ring. Requires Create Item (Lv. 12). Success rate is 60%. A blessed item might come out at a very low probability. -->
+	<item id="36793" type="EtcItem" name="Recipe: Twilight Ring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="4061" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- Main ingredient for making a Requiem Shaper. -->
+	<item id="36794" type="EtcItem" name="Requiem Shaper Fragment">
+		<set name="icon" val="icon.weapon_aspeda_i00_piece" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Main ingredient for making a Requiem Cutter. -->
+	<item id="36795" type="EtcItem" name="Requiem Cutter Fragment">
+		<set name="icon" val="icon.weapon_estia_i00_piece" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Main ingredient for making a Requiem Slasher. -->
+	<item id="36796" type="EtcItem" name="Requiem Slasher Fragment">
+		<set name="icon" val="icon.weapon_polion_i00_piece" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Main ingredient for making a Requiem Avenger. -->
+	<item id="36797" type="EtcItem" name="Requiem Avenger Fragment">
+		<set name="icon" val="icon.weapon_batista_i00_piece" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Main ingredient for making a Requiem Fighter. -->
+	<item id="36798" type="EtcItem" name="Requiem Fighter Fragment">
+		<set name="icon" val="icon.weapon_fantasma_i00_piece" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Main ingredient for making a Requiem Stormer. -->
+	<item id="36799" type="EtcItem" name="Requiem Stormer Fragment">
+		<set name="icon" val="icon.weapon_soryu_i00_piece" />
+		<set name="etcitem_type" val="material" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="60" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

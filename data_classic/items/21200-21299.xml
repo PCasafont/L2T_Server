@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- For 60 minutes, increases Max MP by 20%, HP Recovery Bonus by 20%, M. Critical Rate by 20, P. Critical Damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, debuff resistance by 10%, and P. Def. during a Critical Attack. Decreases Speed by 15%. Additionally when equipped with a melee weapon, bow or crossbow, P. Critical Damage increases during a standard attack when damage above a certain amount is received. -->
+	<item id="21200" type="EtcItem" name="Mysterious Scroll: Drum Melody">
+		<set name="icon" val="BranchSys.icon.br_xmas_scroll_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing pair of magic glasses (30-day). -->
+	<item id="21201" type="EtcItem" name="Magic Glasses Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- A pair of magic glasses that increase MP by 10 and M. Def. by 70. 30-day. Cannot be exchanged, or dropped. -->
+	<item id="21202" type="Armor" name="Magic Glasses - 30-day">
+		<set name="icon" val="BranchSys.icon.br_Eye_Glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hair" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="none" />
+		<set name="weight" val="10" />
+		<for>
+			<add stat="maxMp" val="10" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing Queen Ant's Ring (30-day). -->
+	<item id="21203" type="EtcItem" name="Queen Ant's Ring Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Baium's Ring (30-day). -->
+	<item id="21204" type="EtcItem" name="Baium's Ring Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Zaken's Earring (30-day). Cannot be used in Olympiad. -->
+	<item id="21205" type="EtcItem" name="Zaken's Earring Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- MP + 21, Poison Resistance + 30%, Poison Atk. Rate + 30%, Accuracy increase, P. Critical Damage increase, hold tolerance 20% increase, and hold Atk. Rate 20% increase. Only one effect is applied even when two identical rings are worn. 30-day. -->
+	<item id="21206" type="Armor" name="Queen Ant's Ring - 30-day">
+		<set name="icon" val="icon.bm_ring_of_queen_ant" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="48" />
+			<add stat="maxMp" val="21" />
+		</for>
+	</item>
+	<!-- MP + 21, Poison Resistance + 40%, Poison Atk. Rate + 40%, Accuracy increase, P. Critical Damage increase, hold tolerance + 30%, hold Atk. Rate + 30%, attack increase, and Casting Spd. Increase. Only one effect is applied even when two identical rings are worn. 30-day. -->
+	<item id="21207" type="Armor" name="Baium's Ring - 30-day">
+		<set name="icon" val="icon.bm_ring_of_baium" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="48" />
+			<add stat="maxMp" val="21" />
+		</for>
+	</item>
+	<!-- MP + 31, Bleed Resistance + 30%, Bleed Atk. Rate + 30%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Attack Resistance + 20%, and Stun/Mental Atk. Rate + 20%. When equipped with two identical earrings, the effect of only one earring will be applied. 30-day. Cannot be used in Olympiad. -->
+	<item id="21208" type="Armor" name="Zaken's Earring - 30-day">
+		<set name="icon" val="icon.bm_earring_of_zaken" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="71" />
+			<add stat="maxMp" val="31" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing 3 MP Recovery (+ 50%) potions. -->
+	<item id="21209" type="EtcItem" name="MP Recovery Potion Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Instantly restores MP by 50%. -->
+	<item id="21210" type="EtcItem" name="MP Recovery Potion">
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 10 Vitality Recovering Potion (30-minute). -->
+	<item id="21211" type="EtcItem" name="Vitality Recovering Potion 10-unit Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- For 30 minutes, Vitality is recovered when XP is acquired through hunting. -->
+	<item id="21212" type="EtcItem" name="Vitality Recovering Potion">
+		<set name="icon" val="icon.etc_hot_spring_mineral_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="80" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Queen Ant's Ring (180-day). -->
+	<item id="21213" type="EtcItem" name="Queen Ant's Ring Pack (180-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Baium's Ring (180-day). -->
+	<item id="21214" type="EtcItem" name="Baium's Ring Pack (180-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Zaken's Earring (180-day). -->
+	<item id="21215" type="EtcItem" name="Zaken's Earring Pack (180-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Valakas' Necklace (180-day). -->
+	<item id="21216" type="EtcItem" name="Valakas' Necklace Pack (180-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Antharas' Earring (180-day). -->
+	<item id="21217" type="EtcItem" name="Antharas' Earring Pack (180-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- MP + 21, Poison Resistance + 30%, Poison Atk. Rate + 30%, Accuracy increase, P. Critical Damage increase, hold tolerance 20% increase, and hold Atk. Rate 20% increase. Only one effect is applied even when two identical rings are worn. 180 days. -->
+	<item id="21218" type="Armor" name="Queen Ant's Ring - 180-day">
+		<set name="icon" val="icon.accessory_ring_of_queen_ant_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="48" />
+			<add stat="maxMp" val="21" />
+		</for>
+	</item>
+	<!-- MP + 21, Poison Resistance + 40%, Poison Atk. Rate + 40%, Accuracy increase, P. Critical Damage increase, hold tolerance + 30%, hold Atk. Rate + 30%, attack increase, and Casting Spd. Increase. Only one effect is applied even when two identical rings are worn. 180 days. -->
+	<item id="21219" type="Armor" name="Baium's Ring - 180-day">
+		<set name="icon" val="icon.accessory_ring_of_baium_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="48" />
+			<add stat="maxMp" val="21" />
+		</for>
+	</item>
+	<!-- MP + 31, Bleed Resistance + 30%, Bleed Atk. Rate + 30%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Attack Resistance 20% increase, and Stun/Mental Atk. Rate 20% increase. When equipped with two identical earrings, the effect of only one earring will be applied. 180 days. -->
+	<item id="21220" type="Armor" name="Zaken's Earring - 180-day">
+		<set name="icon" val="icon.accessory_earring_of_zaken_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="71" />
+			<add stat="maxMp" val="31" />
+		</for>
+	</item>
+	<!-- MP + 50, Sleep Resistance + 40%, Sleep Attack Rate + 40%, HP + 445, cooldown decrease, P. Atk. and M. Atk. Increase, Wild Magic Effect, damage shield effect, and Fire Resistance increases. 180 days. -->
+	<item id="21221" type="Armor" name="Valakas' Necklace - 180-day">
+		<set name="icon" val="icon.accessory_necklace_of_valakas_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="95" />
+			<add stat="maxMp" val="50" />
+		</for>
+	</item>
+	<!-- MP + 37, Bleed Resistance + 40%, Bleed Atk. Rate + 40%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Attack Resistance 30%, Stun/Mental Atk. Rate + 30%, MP consumption decrease, and Earth Resistance increases. Only one effect is applied even when the two identical earrings are worn. 180 days. -->
+	<item id="21222" type="Armor" name="Antharas' Earring - 180-day">
+		<set name="icon" val="icon.accessory_earring_of_antaras_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="71" />
+			<add stat="maxMp" val="37" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing 5 Anakim Transformation Scrolls. -->
+	<item id="21223" type="EtcItem" name="Transformation Scroll: Anakim Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Transforms you into Anakim for 30 min. No effect if used while transformed. -->
+	<item id="21224" type="EtcItem" name="Transformation Scroll: Anakim">
+		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Sweet Concentrated Fruit Cocktails. -->
+	<item id="21225" type="EtcItem" name="Sweet Concentrated Fruit Cocktail Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Sweet Concentrated Fruit Cocktails. -->
+	<item id="21226" type="EtcItem" name="Sweet Concentrated Fruit Cocktail Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Cocktail drink that's flavored with many rare types of fruit. When consumed, one can feel Might, Shield, Wind Walk, Focus, Death Whisper, Guidance, Blessed Shield, Blessed Body, Haste, Vampiric Rage, and Berserker Spirit effects for 60 min. -->
+	<item id="21227" type="EtcItem" name="Sweet Concentrated Fruit Cocktail">
+		<set name="icon" val="icon.etc_fruit_cocktail_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Cocktail drink that's flavored with many rare types of fruit. When consumed, one can feel Might, Shield, Wind Walk, Focus, Death Whisper, Guidance, Blessed Shield, Blessed Body, Haste, Vampiric Rage, and Berserker Spirit effects for 60 min. -->
+	<item id="21228" type="EtcItem" name="Sweet Concentrated Fruit Cocktail - Event">
+		<set name="icon" val="icon.etc_fruit_cocktail_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Fresh Concentrated Fruit Cocktails. -->
+	<item id="21229" type="EtcItem" name="Fresh Concentrated Fruit Cocktail Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Fresh Concentrated Fruit Cocktails. -->
+	<item id="21230" type="EtcItem" name="Fresh Concentrated Fruit Cocktail Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Cocktail drink that's flavored with many rare types of fruit. When consumed, one can feel Berserker Spirit, Blessed Body, Magic Barrier, Shield, Wind Walk, Blessed Soul, Empower, Acumen, and Clarity effects for 60 min. -->
+	<item id="21231" type="EtcItem" name="Fresh Concentrated Fruit Cocktail">
+		<set name="icon" val="icon.etc_fruit_cocktail_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Cocktail drink that's flavored with many rare types of fruit. When consumed, one can feel Berserker Spirit, Blessed Body, Magic Barrier, Shield, Wind Walk, Blessed Soul, Empower, Acumen, and Clarity effects for 60 min. -->
+	<item id="21232" type="EtcItem" name="Fresh Concentrated Fruit Cocktail - Event">
+		<set name="icon" val="icon.etc_fruit_cocktail_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 fresh milks. -->
+	<item id="21233" type="EtcItem" name="Fresh Milk Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 fresh milks. -->
+	<item id="21234" type="EtcItem" name="Fresh Milk Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Freshly collected milk. When used, you can feel the effects of Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration (1-hour). The effect disappears if a higher level version of the buff is acquired. -->
+	<item id="21235" type="EtcItem" name="Fresh Milk">
+		<set name="icon" val="icon.etc_fresh_milk_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Freshly collected milk. When used, you can feel the effects of Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. The effect disappears if a higher skill is acquired. -->
+	<item id="21236" type="EtcItem" name="Fresh Milk - Event">
+		<set name="icon" val="icon.etc_fresh_milk_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Super Healthy Juices (HP). -->
+	<item id="21237" type="EtcItem" name="Super Healthy Juice Pack (HP)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 super healthy juices (HP). -->
+	<item id="21238" type="EtcItem" name="Super Healthy Juice Pack (HP) - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic juice that instantly fully recovers HP. -->
+	<item id="21239" type="EtcItem" name="Super Healthy Juice (HP)">
+		<set name="icon" val="BranchSys2.icon.etc_health_juice_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="180" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic juice that temporarily recovers stamina in full. -->
+	<item id="21240" type="EtcItem" name="Super Healthy Juice (HP) - Event">
+		<set name="icon" val="BranchSys2.icon.etc_health_juice_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Super Healthy Juices (CP). -->
+	<item id="21241" type="EtcItem" name="Super Healthy Juice Pack (CP)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 super healthy juices (CP). -->
+	<item id="21242" type="EtcItem" name="Super Healthy Juice Pack (CP) - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic juice that instantly fully recovers CP. -->
+	<item id="21243" type="EtcItem" name="Super Healthy Juice (CP)">
+		<set name="icon" val="BranchSys2.icon.etc_health_juice_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="180" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Magic juice that temporarily recovers CP in full. -->
+	<item id="21244" type="EtcItem" name="Super Healthy Juice (CP) - Event">
+		<set name="icon" val="BranchSys2.icon.etc_health_juice_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Vitality Replenishing Potion. -->
+	<item id="21245" type="EtcItem" name="Vitality Replenishing Potion Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Vitality Replenishing Potion. -->
+	<item id="21246" type="EtcItem" name="Vitality Replenishing Potion Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Partially replenishes your Vitality upon use. Cooldown is 60 min. Can be used more than 5 times a week. Will not be deleted upon death. -->
+	<item id="21247" type="EtcItem" name="Vitality Replenishing Potion">
+		<set name="icon" val="icon.etc_potion_of_energy_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_vitality" val="true" />
+	</item>
+	<!-- Replenishes some Vitality upon use. Cooldown is 60 min. Can be used more than 5 times a week. Will not be deleted upon death. -->
+	<item id="21248" type="EtcItem" name="Vitality Replenishing Potion - Event">
+		<set name="icon" val="icon.etc_potion_of_energy_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_vitality" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Vitality Maintaining Potion (30-minute). -->
+	<item id="21249" type="EtcItem" name="Vitality Maintaining Potion (30-minute) Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Vitality Maintaining Potion. -->
+	<item id="21250" type="EtcItem" name="Vitality Maintaining Potion (30-minute) Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Maintains Vitality for 30 min. Can be used more than 5 times a week. Will not be deleted upon death. -->
+	<item id="21251" type="EtcItem" name="Vitality Maintaining Potion (30-minute)">
+		<set name="icon" val="BranchSys2.br_essence_rose_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Maintains Vitality for 30 min. Can be used more than 5 times a week. Will not be deleted upon death. -->
+	<item id="21252" type="EtcItem" name="Vitality Maintaining Potion (30-minute) - Event">
+		<set name="icon" val="BranchSys2.br_essence_rose_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Gludio Homemade Cookies. -->
+	<item id="21253" type="EtcItem" name="Gludio Homemade Cookie Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Gludio Homemade Cookies. -->
+	<item id="21254" type="EtcItem" name="Gludio Homemade Cookie Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- P. Atk. + 10% for 60 min. The effect disappears if a higher skill is acquired. Will not be deleted upon death. -->
+	<item id="21255" type="EtcItem" name="Gludio Homemade Cookie">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Increases P. Atk. + 10% for 60 min. The effect disappears if a higher skill is acquired. Will not be deleted upon death. -->
+	<item id="21256" type="EtcItem" name="Gludio Homemade Cookie - Event">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Dion Homemade Cookies. -->
+	<item id="21257" type="EtcItem" name="Dion Homemade Cookie Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 5 Dion Homemade Cookies. -->
+	<item id="21258" type="EtcItem" name="Dion Homemade Cookie Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- P. Def. + 15% for 60 min. The effect disappears if a higher skill is acquired. Will not be deleted upon death. -->
+	<item id="21259" type="EtcItem" name="Dion Homemade Cookie">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Increases P. Def. + 15% for 60 min. The effect disappears if a higher skill is acquired. Will not be deleted upon death. -->
+	<item id="21260" type="EtcItem" name="Dion Homemade Cookie - Event">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Aden Homemade Cookies. -->
+	<item id="21261" type="EtcItem" name="Aden Homemade Cookie Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Aden Homemade Cookies. -->
+	<item id="21262" type="EtcItem" name="Aden Homemade Cookie Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- For 60 minutes, a powerful spirit acts to increases Max MP by 20%, HP Recovery Bonus by 20%, M. Critical Rate by 2, Critical power during a standard attack by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, Debuff Resistance by 10%, and P. Def. upon evading a Critical Attack. Decreases Speed by 15%, and for party members equipped with melee and long-range weapons who receive more than ordinary damage attacks, Critical power increases during an ordinary attack. Will not be deleted upon death. -->
+	<item id="21263" type="EtcItem" name="Aden Homemade Cookie">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- For 60 minutes, a powerful spirit acts to increases Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%. Increases P. Def. upon evading a Critical Attack. Decreases Speed by 15%. Party members equipped with melee and ranged weapons have increased Critical Damage after receiving an amount of damage. Will not be deleted upon death. -->
+	<item id="21264" type="EtcItem" name="Aden Homemade Cookie - Event">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Giran Homemade Cookies. -->
+	<item id="21265" type="EtcItem" name="Giran Homemade Cookie Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Giran Homemade Cookies. -->
+	<item id="21266" type="EtcItem" name="Giran Homemade Cookie Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%. Increases P. Def. upon evading a Critical Attack. Decreases Speed by 15%. Party members equipped with melee and ranged weapons have increased Critical Damage after receiving an amount of damage. Will not be deleted upon death. -->
+	<item id="21267" type="EtcItem" name="Giran Homemade Cookie">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- For 60 minutes, Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 2, P. Critical Damage during a standard attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%. Increases P. Def. upon evading a Critical Attack. Decreases Speed by 15%. Party members equipped with melee and ranged weapons have increased Critical Damage after receiving an amount of damage. Will not be deleted upon death. -->
+	<item id="21268" type="EtcItem" name="Giran Homemade Cookie - Event">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Rune Homemade Cookies. -->
+	<item id="21269" type="EtcItem" name="Rune Homemade Cookie Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Rune Homemade Cookies. -->
+	<item id="21270" type="EtcItem" name="Rune Homemade Cookie Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greatly increases MP recharge power received for 60 min. The amount of recovered MP may vary according to the level. Will not be deleted upon death. -->
+	<item id="21271" type="EtcItem" name="Rune Homemade Cookie">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Greatly increases received cooldown power for 60 min. The amount of recovered MP may vary according to the level. Will not be deleted upon death. -->
+	<item id="21272" type="EtcItem" name="Rune Homemade Cookie - Event">
+		<set name="icon" val="BranchSys.icon.br_valentine_cookie_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Minion coupons. -->
+	<item id="21273" type="EtcItem" name="Minion Coupon Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 Minion coupons. -->
+	<item id="21274" type="EtcItem" name="Minion Coupon Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- A coupon that can be exchanged for a necklace that allows you to summon a Minion (5-hour). -->
+	<item id="21275" type="EtcItem" name="Minion Coupon">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- A coupon that can be exchanged for a necklace that allows you to summon a Minion (5-hour). -->
+	<item id="21276" type="EtcItem" name="Minion Coupon - Event">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 2 Superior Minion coupons. -->
+	<item id="21277" type="EtcItem" name="Superior Minion Coupon Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 2 Superior Minion coupons. -->
+	<item id="21278" type="EtcItem" name="Superior Minion Coupon Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Coupon that can be exchanged for a whistle at the Dimensional Merchant that allows you to summon a Superior Minion for 5 hours. -->
+	<item id="21279" type="EtcItem" name="Superior Minion Coupon">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- A coupon that can be exchanged for a necklace that allows you to summon a Superior Minion (5-hour). -->
+	<item id="21280" type="EtcItem" name="Superior Minion Coupon - Event">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing a Feather of Blessing. -->
+	<item id="21281" type="EtcItem" name="Feather of Blessing Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing a Feather of Blessing. -->
+	<item id="21282" type="EtcItem" name="Feather of Blessing Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing a My Teleport Scroll. -->
+	<item id="21283" type="EtcItem" name="My Teleport Book Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing a My Teleport Scroll. -->
+	<item id="21284" type="EtcItem" name="My Teleport Book Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 30 My Teleport Scrolls. -->
+	<item id="21285" type="EtcItem" name="My Teleport Scroll Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 30 My Teleport Scrolls. -->
+	<item id="21286" type="EtcItem" name="My Teleport Scroll Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Entrance Passes: Near Kamaloka. -->
+	<item id="21287" type="EtcItem" name="Extra Pass: Near Kamaloka Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Entrance Passes: Near Kamaloka. -->
+	<item id="21288" type="EtcItem" name="Extra Pass: Near Kamaloka Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Entrance Passes: Kamaloka (Hall of the Abyss). -->
+	<item id="21289" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss) Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Entrance Passes: Kamaloka (Hall of the Abyss). -->
+	<item id="21290" type="EtcItem" name="Extra Pass: Kamaloka (Hall of the Abyss) Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Entrance Passes: Kamaloka (Labyrinth of the Abyss). -->
+	<item id="21291" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Entrance Passes: Kamaloka (Labyrinth of the Abyss). -->
+	<item id="21292" type="EtcItem" name="Extra Pass: Kamaloka (Labyrinth of the Abyss) Pack - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Weapon (A-grade). -->
+	<item id="21293" type="EtcItem" name="Lucky Enchant Stone: Weapon Pack (A-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Weapon (A-grade). -->
+	<item id="21294" type="EtcItem" name="Lucky Enchant Stone: Weapon Pack (A-grade) - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Weapon (S-grade). -->
+	<item id="21295" type="EtcItem" name="Lucky Enchant Stone: Weapon Pack (S-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Weapon (S-grade). -->
+	<item id="21296" type="EtcItem" name="Lucky Enchant Stone: Weapon Pack (S-grade) - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Armor (A-grade). -->
+	<item id="21297" type="EtcItem" name="Lucky Enchant Stone: Armor Pack (A-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Armor (A-grade). -->
+	<item id="21298" type="EtcItem" name="Lucky Enchant Stone: Armor Pack (A-grade) - Event">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Lucky Enchant Stone: Armor (S-grade). -->
+	<item id="21299" type="EtcItem" name="Lucky Enchant Stone: Armor Pack (S-grade)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

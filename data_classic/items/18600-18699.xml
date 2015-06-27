@@ -1,0 +1,3279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18600" type="Weapon" name="Requiem Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="boundItem" val="18642" />
+		<set name="blessedItem" val="18684" />
+		<for>
+			<set stat="pAtk" val="771" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18601" type="Weapon" name="Requiem Shooter - Haste">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18643" />
+		<set name="blessedItem" val="18685" />
+		<for>
+			<set stat="pAtk" val="771" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18602" type="Weapon" name="Requiem Buster - Acumen">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="boundItem" val="18644" />
+		<set name="blessedItem" val="18686" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18603" type="Weapon" name="Requiem Buster - Magic Hold">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="boundItem" val="18645" />
+		<set name="blessedItem" val="18687" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18604" type="Weapon" name="Requiem Buster - Mana Up">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="boundItem" val="18646" />
+		<set name="blessedItem" val="18688" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18605" type="Weapon" name="Requiem Caster - Empower">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13296-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="boundItem" val="18647" />
+		<set name="blessedItem" val="18689" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18606" type="Weapon" name="Requiem Caster - Acumen">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13296-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="boundItem" val="18648" />
+		<set name="blessedItem" val="18690" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18607" type="Weapon" name="Requiem Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13296-3" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="boundItem" val="18649" />
+		<set name="blessedItem" val="18691" />
+		<for>
+			<set stat="pAtk" val="348" />
+			<set stat="mAtk" val="252" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18608" type="Weapon" name="Requiem Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13301-3" />
+		<set name="item_skill" val="3576-4" />
+		<set name="boundItem" val="18650" />
+		<set name="blessedItem" val="18692" />
+		<for>
+			<set stat="pAtk" val="423" />
+			<set stat="mAtk" val="278" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18609" type="Weapon" name="Requiem Retributer - Acumen">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13301-3" />
+		<set name="item_skill" val="3047-3" />
+		<set name="boundItem" val="18651" />
+		<set name="blessedItem" val="18693" />
+		<for>
+			<set stat="pAtk" val="423" />
+			<set stat="mAtk" val="278" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18610" type="Weapon" name="Requiem Retributer - Empower">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13301-3" />
+		<set name="item_skill" val="3575-4" />
+		<set name="boundItem" val="18652" />
+		<set name="blessedItem" val="18694" />
+		<for>
+			<set stat="pAtk" val="423" />
+			<set stat="mAtk" val="278" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18611" type="Weapon" name="Requiem Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13274-3" />
+		<set name="item_skill" val="3564-3" />
+		<set name="boundItem" val="18653" />
+		<set name="blessedItem" val="18695" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18612" type="Weapon" name="Requiem Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13274-3" />
+		<set name="item_skill" val="13062-1" />
+		<set name="boundItem" val="18654" />
+		<set name="blessedItem" val="18696" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18613" type="Weapon" name="Requiem Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13274-3" />
+		<set name="item_skill" val="3013-4" />
+		<set name="boundItem" val="18655" />
+		<set name="blessedItem" val="18697" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18614" type="Weapon" name="Requiem Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="item_skill" val="13062-1" />
+		<set name="boundItem" val="18656" />
+		<set name="blessedItem" val="18698" />
+		<for>
+			<set stat="pAtk" val="435" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18615" type="Weapon" name="Requiem Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18657" />
+		<set name="blessedItem" val="18699" />
+		<for>
+			<set stat="pAtk" val="435" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18616" type="Weapon" name="Requiem Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="item_skill" val="3602-10" />
+		<set name="boundItem" val="18658" />
+		<set name="blessedItem" val="18700" />
+		<for>
+			<set stat="pAtk" val="435" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18617" type="Weapon" name="Requiem Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13269-3" />
+		<set name="item_skill" val="3566-5" />
+		<set name="boundItem" val="18659" />
+		<set name="blessedItem" val="18701" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18618" type="Weapon" name="Requiem Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13269-3" />
+		<set name="item_skill" val="3602-10" />
+		<set name="boundItem" val="18660" />
+		<set name="blessedItem" val="18702" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18619" type="Weapon" name="Requiem Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant4_skill" val="13269-3" />
+		<set name="item_skill" val="13062-1" />
+		<set name="boundItem" val="18661" />
+		<set name="blessedItem" val="18703" />
+		<for>
+			<set stat="pAtk" val="529" />
+			<set stat="mAtk" val="189" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18620" type="Weapon" name="Bound Requiem Shaper - Guidance">
+		<set name="icon" val="icon.weapon_aspeda_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18578" />
+		<set name="blessedItem" val="18662" />
+		<set name="enchant4_skill" val="13279-3" />
+		<for>
+			<set stat="pAtk" val="369" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18621" type="Weapon" name="Bound Requiem Shaper - Haste">
+		<set name="icon" val="icon.weapon_aspeda_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18579" />
+		<set name="blessedItem" val="18663" />
+		<set name="enchant4_skill" val="13279-3" />
+		<for>
+			<set stat="pAtk" val="369" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 82.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18622" type="Weapon" name="Bound Requiem Shaper - Focus">
+		<set name="icon" val="icon.weapon_aspeda_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18580" />
+		<set name="blessedItem" val="18664" />
+		<set name="enchant4_skill" val="13279-3" />
+		<for>
+			<set stat="pAtk" val="369" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18623" type="Weapon" name="Bound Requiem Cutter - Haste">
+		<set name="icon" val="icon.weapon_estia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18581" />
+		<set name="blessedItem" val="18665" />
+		<set name="enchant4_skill" val="13252-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18624" type="Weapon" name="Bound Requiem Cutter - Focus">
+		<set name="icon" val="icon.weapon_estia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18582" />
+		<set name="blessedItem" val="18666" />
+		<set name="enchant4_skill" val="13252-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18625" type="Weapon" name="Bound Requiem Cutter - Health">
+		<set name="icon" val="icon.weapon_estia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3013-4" />
+		<set name="standardItem" val="18583" />
+		<set name="blessedItem" val="18667" />
+		<set name="enchant4_skill" val="13252-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18626" type="Weapon" name="Bound Requiem Slasher - Focus">
+		<set name="icon" val="icon.weapon_polion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18584" />
+		<set name="blessedItem" val="18668" />
+		<set name="enchant4_skill" val="13258-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18627" type="Weapon" name="Bound Requiem Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_polion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18585" />
+		<set name="blessedItem" val="18669" />
+		<set name="enchant4_skill" val="13258-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18628" type="Weapon" name="Bound Requiem Slasher - Haste">
+		<set name="icon" val="icon.weapon_polion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18586" />
+		<set name="blessedItem" val="18670" />
+		<set name="enchant4_skill" val="13258-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18629" type="Weapon" name="Bound Requiem Avenger - Haste">
+		<set name="icon" val="icon.weapon_batista_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18587" />
+		<set name="blessedItem" val="18671" />
+		<set name="enchant4_skill" val="13253-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1108 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18630" type="Weapon" name="Bound Requiem Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_batista_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3572-5" />
+		<set name="standardItem" val="18588" />
+		<set name="blessedItem" val="18672" />
+		<set name="enchant4_skill" val="13253-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18631" type="Weapon" name="Bound Requiem Avenger - Focus">
+		<set name="icon" val="icon.weapon_batista_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18589" />
+		<set name="blessedItem" val="18673" />
+		<set name="enchant4_skill" val="13253-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 76.3. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18632" type="Weapon" name="Bound Requiem Fighter - Focus">
+		<set name="icon" val="icon.weapon_fantasma_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18590" />
+		<set name="blessedItem" val="18674" />
+		<set name="enchant4_skill" val="13264-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18633" type="Weapon" name="Bound Requiem Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_fantasma_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18591" />
+		<set name="blessedItem" val="18675" />
+		<set name="enchant4_skill" val="13264-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18634" type="Weapon" name="Bound Requiem Fighter - Haste">
+		<set name="icon" val="icon.weapon_fantasma_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18592" />
+		<set name="blessedItem" val="18676" />
+		<set name="enchant4_skill" val="13264-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item. Cannot be exchanged or dropped. Can be stored in a private warehouse.
+	-->
+	<item id="18635" type="Weapon" name="Bound Requiem Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_soryu_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3568-2" />
+		<set name="standardItem" val="18593" />
+		<set name="blessedItem" val="18677" />
+		<set name="enchant4_skill" val="13263-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18636" type="Weapon" name="Bound Requiem Stormer - Guidance">
+		<set name="icon" val="icon.weapon_soryu_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18594" />
+		<set name="blessedItem" val="18678" />
+		<set name="enchant4_skill" val="13263-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18637" type="Weapon" name="Bound Requiem Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_soryu_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18595" />
+		<set name="blessedItem" val="18679" />
+		<set name="enchant4_skill" val="13263-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18638" type="Weapon" name="Bound Requiem Thrower - Damage Up">
+		<set name="icon" val="icon.weapon_grabathus_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18596" />
+		<set name="blessedItem" val="18680" />
+		<set name="enchant4_skill" val="13289-3" />
+		<for>
+			<set stat="pAtk" val="831" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18639" type="Weapon" name="Bound Requiem Thrower - Focus">
+		<set name="icon" val="icon.weapon_grabathus_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18597" />
+		<set name="blessedItem" val="18681" />
+		<set name="enchant4_skill" val="13289-3" />
+		<for>
+			<set stat="pAtk" val="831" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18640" type="Weapon" name="Bound Requiem Thrower - Long Blow">
+		<set name="icon" val="icon.weapon_grabathus_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="standardItem" val="18598" />
+		<set name="blessedItem" val="18682" />
+		<set name="enchant4_skill" val="13289-3" />
+		<for>
+			<set stat="pAtk" val="831" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18641" type="Weapon" name="Bound Requiem Shooter - Focus">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18599" />
+		<set name="blessedItem" val="18683" />
+		<set name="enchant4_skill" val="13294-3" />
+		<for>
+			<set stat="pAtk" val="748" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18642" type="Weapon" name="Bound Requiem Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18600" />
+		<set name="blessedItem" val="18684" />
+		<set name="enchant4_skill" val="13294-3" />
+		<for>
+			<set stat="pAtk" val="748" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18643" type="Weapon" name="Bound Requiem Shooter - Haste">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18601" />
+		<set name="blessedItem" val="18685" />
+		<set name="enchant4_skill" val="13294-3" />
+		<for>
+			<set stat="pAtk" val="748" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18644" type="Weapon" name="Bound Requiem Buster - Acumen">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18602" />
+		<set name="blessedItem" val="18686" />
+		<set name="enchant4_skill" val="13295-3" />
+		<for>
+			<set stat="pAtk" val="338" />
+			<set stat="mAtk" val="245" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18645" type="Weapon" name="Bound Requiem Buster - Magic Hold">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18603" />
+		<set name="blessedItem" val="18687" />
+		<set name="enchant4_skill" val="13295-3" />
+		<for>
+			<set stat="pAtk" val="338" />
+			<set stat="mAtk" val="245" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18646" type="Weapon" name="Bound Requiem Buster - Mana Up">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="standardItem" val="18604" />
+		<set name="blessedItem" val="18688" />
+		<set name="enchant4_skill" val="13295-3" />
+		<for>
+			<set stat="pAtk" val="338" />
+			<set stat="mAtk" val="245" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18647" type="Weapon" name="Bound Requiem Caster - Empower">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="standardItem" val="18605" />
+		<set name="blessedItem" val="18689" />
+		<set name="enchant4_skill" val="13296-3" />
+		<for>
+			<set stat="pAtk" val="338" />
+			<set stat="mAtk" val="245" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18648" type="Weapon" name="Bound Requiem Caster - Acumen">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18606" />
+		<set name="blessedItem" val="18690" />
+		<set name="enchant4_skill" val="13296-3" />
+		<for>
+			<set stat="pAtk" val="338" />
+			<set stat="mAtk" val="245" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18649" type="Weapon" name="Bound Requiem Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="standardItem" val="18607" />
+		<set name="blessedItem" val="18691" />
+		<set name="enchant4_skill" val="13296-3" />
+		<for>
+			<set stat="pAtk" val="338" />
+			<set stat="mAtk" val="245" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18650" type="Weapon" name="Bound Requiem Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3576-4" />
+		<set name="standardItem" val="18608" />
+		<set name="blessedItem" val="18692" />
+		<set name="enchant4_skill" val="13301-3" />
+		<for>
+			<set stat="pAtk" val="411" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18651" type="Weapon" name="Bound Requiem Retributer - Acumen">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3047-3" />
+		<set name="standardItem" val="18609" />
+		<set name="blessedItem" val="18693" />
+		<set name="enchant4_skill" val="13301-3" />
+		<for>
+			<set stat="pAtk" val="411" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18652" type="Weapon" name="Bound Requiem Retributer - Empower">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3575-4" />
+		<set name="standardItem" val="18610" />
+		<set name="blessedItem" val="18694" />
+		<set name="enchant4_skill" val="13301-3" />
+		<for>
+			<set stat="pAtk" val="411" />
+			<set stat="mAtk" val="270" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18653" type="Weapon" name="Bound Requiem Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3564-3" />
+		<set name="standardItem" val="18611" />
+		<set name="blessedItem" val="18695" />
+		<set name="enchant4_skill" val="13274-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18654" type="Weapon" name="Bound Requiem Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18612" />
+		<set name="blessedItem" val="18696" />
+		<set name="enchant4_skill" val="13274-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18655" type="Weapon" name="Bound Requiem Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3013-4" />
+		<set name="standardItem" val="18613" />
+		<set name="blessedItem" val="18697" />
+		<set name="enchant4_skill" val="13274-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18656" type="Weapon" name="Bound Requiem Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18614" />
+		<set name="blessedItem" val="18698" />
+		<set name="enchant4_skill" val="13279-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18657" type="Weapon" name="Bound Requiem Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18615" />
+		<set name="blessedItem" val="18699" />
+		<set name="enchant4_skill" val="13279-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18658" type="Weapon" name="Bound Requiem Dual Dagger - Guidance">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18616" />
+		<set name="blessedItem" val="18700" />
+		<set name="enchant4_skill" val="13279-3" />
+		<for>
+			<set stat="pAtk" val="422" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18659" type="Weapon" name="Bound Requiem Dual Blunt Weapon - Focus">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3566-5" />
+		<set name="standardItem" val="18617" />
+		<set name="blessedItem" val="18701" />
+		<set name="enchant4_skill" val="13269-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18660" type="Weapon" name="Bound Requiem Dual Blunt Weapon - Guidance">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="3602-10" />
+		<set name="standardItem" val="18618" />
+		<set name="blessedItem" val="18702" />
+		<set name="enchant4_skill" val="13269-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power and P. Atk. when enchanted to + 4. Can use an Unbind Scroll to change this item into a Standard item.
+	-->
+	<item id="18661" type="Weapon" name="Bound Requiem Dual Blunt Weapon - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualblunt_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="13062-1" />
+		<set name="standardItem" val="18619" />
+		<set name="blessedItem" val="18703" />
+		<set name="enchant4_skill" val="13269-3" />
+		<for>
+			<set stat="pAtk" val="514" />
+			<set stat="mAtk" val="186" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18662" type="Weapon" name="Blessed Requiem Shaper - Guidance">
+		<set name="icon" val="icon.weapon_aspeda_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18663" type="Weapon" name="Blessed Requiem Shaper - Haste">
+		<set name="icon" val="icon.weapon_aspeda_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 82.7. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18664" type="Weapon" name="Blessed Requiem Shaper - Focus">
+		<set name="icon" val="icon.weapon_aspeda_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="392" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18665" type="Weapon" name="Blessed Requiem Cutter - Haste">
+		<set name="icon" val="icon.weapon_estia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13252-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18666" type="Weapon" name="Blessed Requiem Cutter - Focus">
+		<set name="icon" val="icon.weapon_estia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13252-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases Accuracy and P. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18667" type="Weapon" name="Blessed Requiem Cutter - Health">
+		<set name="icon" val="icon.weapon_estia_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3013-4" />
+		<set name="enchant4_skill" val="13252-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18668" type="Weapon" name="Blessed Requiem Slasher - Focus">
+		<set name="icon" val="icon.weapon_polion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13258-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18669" type="Weapon" name="Blessed Requiem Slasher - Damage Up">
+		<set name="icon" val="icon.weapon_polion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13258-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Atk. when enchanted to + 4.
+	-->
+	<item id="18670" type="Weapon" name="Blessed Requiem Slasher - Haste">
+		<set name="icon" val="icon.weapon_polion_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigsword" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13258-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18671" type="Weapon" name="Blessed Requiem Avenger - Haste">
+		<set name="icon" val="icon.weapon_batista_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13253-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 1108 during a Critical Attack. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18672" type="Weapon" name="Blessed Requiem Avenger - Critical Damage">
+		<set name="icon" val="icon.weapon_batista_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3572-5" />
+		<set name="enchant4_skill" val="13253-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18673" type="Weapon" name="Blessed Requiem Avenger - Focus">
+		<set name="icon" val="icon.weapon_batista_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13253-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 76.3. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18674" type="Weapon" name="Blessed Requiem Fighter - Focus">
+		<set name="icon" val="icon.weapon_fantasma_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13264-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18675" type="Weapon" name="Blessed Requiem Fighter - Damage Up">
+		<set name="icon" val="icon.weapon_fantasma_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13264-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18676" type="Weapon" name="Blessed Requiem Fighter - Haste">
+		<set name="icon" val="icon.weapon_fantasma_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13264-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Absorbs 4% of standard melee damage inflicted upon the enemy as HP. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="18677" type="Weapon" name="Blessed Requiem Stormer - HP Drain">
+		<set name="icon" val="icon.weapon_soryu_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3568-2" />
+		<set name="enchant4_skill" val="13263-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Accuracy by 7.6. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="18678" type="Weapon" name="Blessed Requiem Stormer - Guidance">
+		<set name="icon" val="icon.weapon_soryu_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3602-10" />
+		<set name="enchant4_skill" val="13263-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases Multi Attack when enchanted to + 4.
+	-->
+	<item id="18679" type="Weapon" name="Blessed Requiem Stormer - Damage Up">
+		<set name="icon" val="icon.weapon_soryu_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13263-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18680" type="Weapon" name="Blessed Requiem Thrower - Damage Up">
+		<set name="icon" val="icon.weapon_grabathus_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13289-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="882" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18681" type="Weapon" name="Blessed Requiem Thrower - Focus">
+		<set name="icon" val="icon.weapon_grabathus_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13289-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="882" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases the attack range. Increases damage inflicted during PvP. Increases P. Skill Power when enchanted to + 4.
+	-->
+	<item id="18682" type="Weapon" name="Blessed Requiem Thrower - Long Blow">
+		<set name="icon" val="icon.weapon_grabathus_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="1500" />
+		<set name="enchant4_skill" val="13289-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="882" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18683" type="Weapon" name="Blessed Requiem Shooter - Focus">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="794" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a chance of casting Slow on the target during a Critical Attack. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18684" type="Weapon" name="Blessed Requiem Shooter - Critical Slow">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="oncrit_chance" val="33" />
+		<set name="oncrit_skill" val="3574-3" />
+		<set name="item_skill" val="3552-1" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="794" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases Atk. Spd. when enchanted to + 4.
+	-->
+	<item id="18685" type="Weapon" name="Blessed Requiem Shooter - Haste">
+		<set name="icon" val="icon.weapon_shyayaka_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13294-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="794" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18686" type="Weapon" name="Blessed Requiem Buster - Acumen">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="358" />
+			<set stat="mAtk" val="260" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18687" type="Weapon" name="Blessed Requiem Buster - Magic Hold">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="358" />
+			<set stat="mAtk" val="260" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max MP by 30%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Rate when enchanted to + 4.
+	-->
+	<item id="18688" type="Weapon" name="Blessed Requiem Buster - Mana Up">
+		<set name="icon" val="icon.weapon_kaynon_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3014-3" />
+		<set name="enchant4_skill" val="13295-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="358" />
+			<set stat="mAtk" val="260" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18689" type="Weapon" name="Blessed Requiem Caster - Empower">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3575-4" />
+		<set name="enchant4_skill" val="13296-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="358" />
+			<set stat="mAtk" val="260" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18690" type="Weapon" name="Blessed Requiem Caster - Acumen">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="item_skill" val="3047-3" />
+		<set name="enchant4_skill" val="13296-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="358" />
+			<set stat="mAtk" val="260" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Has a 20% chance of casting Dryad Root on the target during magic use. Increases damage inflicted during PvP. Increases M. Accuracy and M. Critical Damage when enchanted to + 4.
+	-->
+	<item id="18691" type="Weapon" name="Blessed Requiem Caster - Magic Hold">
+		<set name="icon" val="icon.weapon_anatrian_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="oncast_chance" val="20" />
+		<set name="oncast_skill" val="3577-2" />
+		<set name="item_skill" val="3552-1" />
+		<set name="enchant4_skill" val="13296-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="358" />
+			<set stat="mAtk" val="260" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases MP Recovery Rate. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18692" type="Weapon" name="Blessed Requiem Retributer - MP Regeneration">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3576-4" />
+		<set name="enchant4_skill" val="13301-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="436" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Casting Spd. by 15%. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18693" type="Weapon" name="Blessed Requiem Retributer - Acumen">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3047-3" />
+		<set name="enchant4_skill" val="13301-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="436" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		M. Atk. + 296. Increases damage inflicted during PvP. Increases M. Atk., M. Critical Damage, and Casting Spd. when enchanted to + 4.
+	-->
+	<item id="18694" type="Weapon" name="Blessed Requiem Retributer - Empower">
+		<set name="icon" val="icon.weapon_grangkaz_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bigblunt" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3575-4" />
+		<set name="enchant4_skill" val="13301-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="436" />
+			<set stat="mAtk" val="286" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Atk. Spd. by about 15%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18695" type="Weapon" name="Blessed Requiem Dualsword - Haste">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3564-3" />
+		<set name="enchant4_skill" val="13274-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18696" type="Weapon" name="Blessed Requiem Dualsword - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13274-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Max HP by 25%. Increases damage inflicted during PvP. Increases P. Critical Rate and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18697" type="Weapon" name="Blessed Requiem Dualsword - Health">
+		<set name="icon" val="icon.weapon_r_dualsword_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3013-4" />
+		<set name="enchant4_skill" val="13274-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="545" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		P. Atk. + 288. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18698" type="Weapon" name="Blessed Requiem Dual Dagger - Damage Up">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="13062-1" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		<Soul Crystal Enhancement>
+		Increases Critical by 79.5. Increases damage inflicted during PvP. Increases P. Critical Damage and P. Atk. when enchanted to + 4.
+	-->
+	<item id="18699" type="Weapon" name="Blessed Requiem Dual Dagger - Focus">
+		<set name="icon" val="icon.weapon_r_dualdagger_i21" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualdagger" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="item_skill" val="3566-5" />
+		<set name="enchant4_skill" val="13279-3" />
+		<set name="isBlessed" val="true" />
+		<for>
+			<set stat="pAtk" val="448" />
+			<set stat="mAtk" val="195" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+</list>

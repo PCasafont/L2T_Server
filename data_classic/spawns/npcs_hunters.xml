@@ -1,0 +1,69 @@
+<list>
+	<!-- [t23_19_NPC_040108] -->
+	<spawn npcId="30747" x="110395" y="41625" z="-4619" heading="0" respawn="60" /> <!-- Mimyu -->
+	<!-- [23_20_NPC_031201_01] -->
+	<spawn npcId="30764" x="117380" y="75616" z="-2664" heading="26000" respawn="60" /> <!-- Balthazar -->
+	<!-- [23_20_NPC_031201_02] -->
+	<spawn npcId="30831" x="117432" y="76044" z="-2716" heading="15000" respawn="60" /> <!-- Nelson -->
+	<!-- [23_20_NPC_031201_03] -->
+	<spawn npcId="30745" x="115952" y="76000" z="-2721" heading="0" respawn="60" /> <!-- Tor -->
+	<!-- [23_20_NPC_031201_04] -->
+	<spawn npcId="30744" x="117980" y="76704" z="-2597" heading="32768" respawn="60" /> <!-- Grey -->
+	<!-- [23_20_NPC_031201_05] -->
+	<spawn npcId="30746" x="116085" y="74728" z="-2582" heading="10000" respawn="60" /> <!-- Cybellin -->
+	<!-- [NPC_t23_20_030917_01] -->
+	<spawn npcId="30655" x="115791" y="75867" z="-2714" heading="3000" respawn="60" /> <!-- Isael Silvershadow -->
+	<!-- [NPC_t23_20_030917_02] -->
+	<spawn npcId="30610" x="117866" y="76483" z="-2692" heading="35768" respawn="60" /> <!-- Cronos -->
+	<!-- [NPC_t23_20_030917_03] -->
+	<spawn npcId="30230" x="115116" y="75923" z="-2580" heading="59000" respawn="60" /> <!-- Edroc -->
+	<spawn npcId="30684" x="115310" y="75447" z="-2581" heading="12288" respawn="60" /> <!-- Viktor -->
+	<!-- [NPC_t23_20_030917_04] -->
+	<spawn npcId="30231" x="116109" y="75022" z="-2583" heading="57344" respawn="60" /> <!-- Garette -->
+	<spawn npcId="30301" x="116646" y="74820" z="-2581" heading="28672" respawn="60" /> <!-- Hally -->
+	<!-- [NPC_t23_20_030917_05] -->
+	<spawn npcId="30685" x="115647" y="77114" z="-2649" heading="40960" respawn="60" /> <!-- Baxt -->
+	<spawn npcId="30232" x="115271" y="76705" z="-2650" heading="0" respawn="60" /> <!-- Sorint -->
+	<spawn npcId="30686" x="115435" y="76541" z="-2649" heading="12000" respawn="60" /> <!-- Silva -->
+	<!-- [NPC_t23_20_030917_06] -->
+	<spawn npcId="30687" x="117649" y="75415" z="-2646" heading="32768" respawn="60" /> <!-- Vergara -->
+	<spawn npcId="30688" x="117613" y="75310" z="-2648" heading="24576" respawn="60" /> <!-- Duning -->
+	<!-- [NPC_t23_20_030917_07] -->
+	<spawn npcId="30233" x="117129" y="76917" z="-2689" heading="43000" respawn="60" /> <!-- Esmeralda -->
+	<!-- [NPC_t23_20_030917_08] -->
+	<spawn npcId="30689" x="119673" y="77618" z="-2243" heading="39864" respawn="60" /> <!-- Siria -->
+	<spawn npcId="30690" x="119472" y="77835" z="-2243" heading="49152" respawn="60" /> <!-- Luther -->
+	<spawn npcId="30691" x="119249" y="77663" z="-2243" heading="0" respawn="60" /> <!-- Aren Athebaldt -->
+	<spawn npcId="30692" x="119892" y="77284" z="-2243" heading="28672" respawn="60" /> <!-- Stedmiel -->
+	<spawn npcId="30693" x="119727" y="77137" z="-2243" heading="16384" respawn="60" /> <!-- Queenien -->
+	<!-- [NPC_t23_20_030917_09] -->
+	<spawn npcId="30694" x="119043" y="78586" z="-2158" heading="39000" respawn="60" /> <!-- Scraide -->
+	<spawn npcId="30695" x="119156" y="78356" z="-2158" heading="28672" respawn="60" /> <!-- Moses -->
+	<spawn npcId="30696" x="118890" y="78104" z="-2158" heading="16384" respawn="60" /> <!-- Page -->
+	<spawn npcId="30697" x="118887" y="78752" z="-2158" heading="49152" respawn="60" /> <!-- Videlrien -->
+	<spawn npcId="30698" x="118571" y="78513" z="-2158" heading="0" respawn="60" /> <!-- Evelyn -->
+	<!-- [NPC_t23_20_030917_10] -->
+	<spawn npcId="30699" x="120249" y="76031" z="-2259" heading="31768" respawn="60" /> <!-- Medown -->
+	<spawn npcId="30700" x="120251" y="76247" z="-2260" heading="40960" respawn="60" /> <!-- Prestan -->
+	<spawn npcId="30701" x="120180" y="75807" z="-2260" heading="18384" respawn="60" /> <!-- Errickin -->
+	<!-- [NPC_t23_20_030917_11] -->
+	<spawn npcId="30702" x="117598" y="77264" z="-2585" heading="53248" respawn="60" /> <!-- Bernard -->
+	<spawn npcId="30703" x="117717" y="77273" z="-2585" heading="45056" respawn="60" /> <!-- Colin -->
+	<!-- [NPC_t23_20_030917_12] -->
+	<spawn npcId="30704" x="120207" y="75004" z="-2370" heading="32768" respawn="60" /> <!-- Garvarentz -->
+	<spawn npcId="30705" x="120171" y="75066" z="-2370" heading="32768" respawn="60" /> <!-- Chakiris -->
+	<spawn npcId="30706" x="120156" y="74956" z="-2370" heading="32768" respawn="60" /> <!-- Lazenby -->
+	<!-- [NPC_t23_20_030917_13] -->
+	<spawn npcId="30707" x="116468" y="77871" z="-2684" heading="40000" respawn="60" /> <!-- Raigen -->
+	<!-- [NPC_t23_20_030917_14] -->
+	<spawn npcId="30708" x="118210" y="76078" z="-2690" heading="32768" respawn="60" /> <!-- Nasign -->
+	<!-- [NPC_t23_20_030917_15] -->
+	<spawn npcId="30709" x="114564" y="78107" z="-2595" heading="28672" respawn="60" /> <!-- Norton -->
+	<spawn npcId="30710" x="114512" y="77966" z="-2593" heading="28672" respawn="60" /> <!-- Weston -->
+	<!-- [NPC_t23_20_030917_16] -->
+	<spawn npcId="30711" x="115032" y="74395" z="-2589" heading="45056" respawn="60" /> <!-- Byron -->
+	<spawn npcId="30712" x="115207" y="74239" z="-2593" heading="40000" respawn="60" /> <!-- Makhis -->
+	<!-- [NPC_t23_20_030917_17] -->
+	<spawn npcId="30713" x="118437" y="74051" z="-2381" heading="50000" respawn="60" /> <!-- Gardner -->
+	<spawn npcId="30714" x="118306" y="74040" z="-2371" heading="50000" respawn="60" /> <!-- Paros -->
+</list>

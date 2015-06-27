@@ -1,0 +1,35 @@
+<list>
+	<enchantRange startLevel="0" maxLevel="10" normalBook="30297" safeBook="30298" changeBook="30299" untrainBook="30300" immortalBook="37044" />
+	<enchantRange startLevel="10" maxLevel="20" normalBook="46150" safeBook="46151" changeBook="46152" untrainBook="30300" immortalBook="46153" />
+	<enchantRange startLevel="20" maxLevel="30" normalBook="46154" safeBook="46155" changeBook="46156" untrainBook="30300" immortalBook="46157" />
+	<enchant level="1" adena="81000000" />
+	<enchant level="2" adena="86000000" />
+	<enchant level="3" adena="91000000" />
+	<enchant level="4" adena="96000000" />
+	<enchant level="5" adena="101000000" />
+	<enchant level="6" adena="106000000" />
+	<enchant level="7" adena="111000000" />
+	<enchant level="8" adena="116000000" />
+	<enchant level="9" adena="121000000" />
+	<enchant level="10" adena="126000000" />
+	<enchant level="11" adena="131000000" />
+	<enchant level="12" adena="136000000" />
+	<enchant level="13" adena="141000000" />
+	<enchant level="14" adena="146000000" />
+	<enchant level="15" adena="151000000" />
+	<enchant level="16" adena="156000000" />
+	<enchant level="17" adena="161000000" />
+	<enchant level="18" adena="166000000" />
+	<enchant level="19" adena="171000000" />
+	<enchant level="20" adena="176000000" />
+	<enchant level="21" adena="181000000" />
+	<enchant level="22" adena="186000000" />
+	<enchant level="23" adena="191000000" />
+	<enchant level="24" adena="196000000" />
+	<enchant level="25" adena="201000000" />
+	<enchant level="26" adena="206000000" />
+	<enchant level="27" adena="211000000" />
+	<enchant level="28" adena="216000000" />
+	<enchant level="29" adena="221000000" />
+	<enchant level="30" adena="226000000" />
+</list>

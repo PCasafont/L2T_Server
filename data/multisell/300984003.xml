@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Jewels for luxury of Giran (guess ID) -->
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+<item>
+	<!-- Adena -->
+	<ingredient count="621200" id="57"/>
+	<!-- Adamantite Necklace -->
+	<production count="1" id="918"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="465900" id="57"/>
+	<!-- Adamantite Earring -->
+	<production count="1" id="856"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="310600" id="57"/>
+	<!-- Adamantite Ring -->
+	<production count="1" id="887"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="621200" id="57"/>
+	<!-- Necklace of Blessing -->
+	<production count="1" id="936"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="465900" id="57"/>
+	<!-- Earring of Blessing -->
+	<production count="1" id="874"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="310600" id="57"/>
+	<!-- Ring of Blessing -->
+	<production count="1" id="905"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="948000" id="57"/>
+	<!-- Necklace of Black Ore -->
+	<production count="1" id="926"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="711000" id="57"/>
+	<!-- Earring of Black Ore -->
+	<production count="1" id="864"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="474000" id="57"/>
+	<!-- Ring of Black Ore -->
+	<production count="1" id="895"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="1340000" id="57"/>
+	<!-- Sealed Phoenix Necklace -->
+	<production count="1" id="6323"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="1005000" id="57"/>
+	<!-- Sealed Phoenix Earring -->
+	<production count="1" id="6324"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="670000" id="57"/>
+	<!-- Sealed Phoenix Ring -->
+	<production count="1" id="6325"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="1998000" id="57"/>
+	<!-- Sealed Majestic Necklace -->
+	<production count="1" id="6326"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="1498000" id="57"/>
+	<!-- Sealed Majestic Earring -->
+	<production count="1" id="6327"/>
+</item>
+<item>
+	<!-- Adena -->
+	<ingredient count="999000" id="57"/>
+	<!-- Sealed Majestic Ring -->
+	<production count="1" id="6328"/>
+</item>
+</list>

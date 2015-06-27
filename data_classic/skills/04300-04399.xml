@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Giant -->
+	<skill id="4300" levels="1" name="Race">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Bug -->
+	<skill id="4301" levels="1" name="Race">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Fairy -->
+	<skill id="4302" levels="1" name="Race">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 2 times higher than normal. -->
+	<skill id="4303" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 3 times higher than normal. -->
+	<skill id="4304" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 4 times higher than normal. -->
+	<skill id="4305" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 5 times higher than normal. -->
+	<skill id="4306" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 6 times higher than normal. -->
+	<skill id="4307" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 7 times higher than normal. -->
+	<skill id="4308" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 8 times higher than normal. -->
+	<skill id="4309" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster whose HP is 9 times higher than normal. -->
+	<skill id="4310" levels="1" name="Enchant Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster with 1/2 the normal HP. -->
+	<skill id="4311" levels="1" name="Week Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster equipped with heavy armor. -->
+	<skill id="4312" levels="1" name="Defense Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Monster equipped with light armor. -->
+	<skill id="4313" levels="1" name="Defense Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="4314" levels="12" name="Holy Light Burst">
+		<table name="#power"> 21 31 43 58 75 92 108 115 121 125 129 132 </table>
+		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
+		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="MDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2000" />
+		<set name="castRange" val="700" />
+		<set name="effectRange" val="1200" />
+		<set name="skillRadius" val="200" />
+		<set name="element" val="4" />
+		<set name="elementPower" val="20" />
+	</skill>
+	<!-- Afflicted with Hold and unable to move momentarily. -->
+	<skill id="4315" levels="12" name="Hold">
+		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
+		<table name="#mpConsume"> 17 29 39 53 67 83 97 103 108 112 115 116 </table>
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="700" />
+		<set name="effectRange" val="1200" />
+		<set name="skillRadius" val="300" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="70" stackLvl="1" stackType="root_magically" visualEffect="root">
+				<effect type="Root" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="4316" levels="12" name="Drain Energy">
+		<table name="#power"> 11 16 22 29 38 46 54 58 61 63 65 66 </table>
+		<table name="#magicLvl"> 14 24 34 44 54 64 74 79 84 89 94 99 </table>
+		<table name="#mpConsume"> 31 51 71 94 121 149 175 186 195 202 206 209 </table>
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="DRAIN" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2500" />
+		<set name="castRange" val="750" />
+		<set name="effectRange" val="1250" />
+		<set name="skillRadius" val="150" />
+		<set name="element" val="5" />
+		<set name="elementPower" val="20" />
+		<set name="absorbPart" val="0.4" />
+	</skill>
+	<skill id="4317" levels="5" name="Increase Rage Might">
+		<table name="#pAtk"> 15 20 25 30 35 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="60" />
+		<set name="mpConsume" val="50" />
+		<set name="hitTime" val="1800" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="300" stackLvl="#abnormalLvl" stackType="rage_might">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtk" val="#pAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Atk. and P. Def. are increased.
+		Level 2: Attack and Defense abilities are increased.
+	-->
+	<skill id="4318" levels="2" name="Ultimate Buff">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="60" />
+		<set name="mpConsume" val="50" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="15" stackLvl="1" stackType="ultimate_buff">
+				<effect type="Grow" val="0" />
+				<addPercent stat="pAtk" val="83" />
+				<add stat="accCombat" val="4" />
+				<add stat="rEvas" val="4" />
+				<addPercent stat="pDef" val="83" />
+				<addPercent stat="pAtkSpd" val="33" />
+				<addPercentBase stat="rCrit" val="30" />
+				<addPercent stat="mDef" val="400" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Paralyzed and unable to move momentarily. -->
+	<skill id="4319" levels="1" name="Paralysis">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="mpConsume" val="50" />
+		<set name="power" val="30" />
+		<set name="castRange" val="1500" />
+		<set name="effectRange" val="2000" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<abnormal duration="30" stackLvl="1" stackType="paralyze">
+				<effect type="Paralyze" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: HP decreases from poison momentarily. Effect 2.
+		Level 2: HP decreases from poison momentarily. Effect 3.
+		Level 3: HP decreases from poison momentarily. Effect 4.
+		Level 4: HP decreases from poison momentarily. Effect 5.
+		Level 5: HP decreases from poison momentarily. Effect 6.
+		Level 6: HP decreases from poison momentarily. Effect 7.
+		Level 7: HP decreases from poison momentarily. Effect 8.
+		Level 9: HP decreases from poison momentarily. Effect 9.
+		Level 11: HP decreases from poison momentarily. Effect 10.
+	-->
+	<skill id="4320" levels="12" name="Poison">
+		<table name="#dot"> 48 72 96 123 150 174 189 189 198 198 204 204 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
+		<table name="#abnormalLvl"> 2 3 4 5 6 7 8 8 9 9 10 10 </table>
+		<table name="#mpConsume"> 13 20 27 35 45 55 65 69 73 83 77 78 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="1500" />
+		<set name="effectRange" val="2000" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<abnormal count="10" duration="3" stackLvl="#abnormalLvl" stackType="Poison" visualEffect="poison">
+				<effect type="DamOverTime" val="#dot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- P. Def. greatly decreases temporarily. -->
+	<skill id="4321" levels="1" name="Decrease P. Def.">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="mpConsume" val="50" />
+		<set name="castRange" val="1500" />
+		<set name="effectRange" val="2000" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<abnormal duration="120" landRate="100" stackLvl="4" stackType="pd_down">
+				<effect type="Buff" val="0" />
+				<subPercent stat="pDef" val="66" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases movement speed by 33 for 60 minutes. -->
+	<skill id="4322" levels="1" name="Adventurer's Wind Walk">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="3" stackType="speed_up">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="33" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases P. Def. by 15% for 60 minutes. -->
+	<skill id="4323" levels="1" name="Adventurer's Shield">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="4" stackType="pd_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pDef" val="15" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases Max HP by 35% for 60 minutes. -->
+	<skill id="4324" levels="1" name="Adventurer's Blessed Body">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="7" stackType="max_hp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxHp" val="35" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- For 60 minutes, 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
+	<skill id="4325" levels="1" name="Adventurer's Vampiric Rage">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="5" stackType="vampiric_attack">
+				<effect type="Buff" val="0" />
+				<add stat="absorbDam" val="9" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases HP regeneration bonus by 20% for 60 minutes. -->
+	<skill id="4326" levels="1" name="Adventurer's Regeneration">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="4" stackType="hp_regen_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="regHp" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases Atk. Spd. by 15% for 60 minutes. -->
+	<skill id="4327" levels="1" name="Adventurer's Haste">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="2" stackType="attack_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtkSpd" val="15" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases Max MP by 35% for 60 minutes. -->
+	<skill id="4328" levels="1" name="Adventurer's Blessed Soul">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="7" stackType="max_mp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxMp" val="35" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases Casting Spd. by 30% for 60 minutes. -->
+	<skill id="4329" levels="1" name="Adventurer's Acumen">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="4" stackType="casting_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtkSpd" val="30" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Decreases magic cancel damage by 18 for 60 minutes. -->
+	<skill id="4330" levels="1" name="Adventurer's Concentration">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="2" stackType="cancel_prob_down">
+				<effect type="Buff" val="0" />
+				<sub stat="cancel" val="18" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases M. Atk. by 55% for 60 minutes. -->
+	<skill id="4331" levels="1" name="Adventurer's Empower">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="60" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="2" stackType="ma_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtk" val="55" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Provides powerful Hold/Sleep/Fear/Silence Resistance. -->
+	<skill id="4332" levels="1" name="Mental Aegis">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="holdRes" val="100" />
+			<addPercent stat="sleepRes" val="100" />
+			<addPercent stat="derangementRes" val="100" />
+		</for>
+	</skill>
+	<!-- Resistant to Dark attacks. -->
+	<skill id="4333" levels="5" name="Dark Attack Resistance">
+		<table name="#darkRes"> 10 20 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="darkRes" val="#darkRes" />
+		</for>
+	</skill>
+	<skill id="4334" levels="1" name="SSQ Cancel">
+		<set name="target" val="TARGET_AREA" />
+		<set name="skillType" val="CANCEL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="99" />
+		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1500" />
+		<set name="skillRadius" val="2000" />
+		<set name="negateStats" val="BUFF DEBUFF" />
+	</skill>
+	<!-- Unleashes a holy attack. -->
+	<skill id="4335" levels="1" name="Holy Attack">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="holyPower" val="20" />
+		</for>
+	</skill>
+	<!-- Vulnerable to Dark attacks. -->
+	<skill id="4336" levels="5" name="Dark Attack Vulnerability">
+		<table name="#darkRes"> 11 25 43 67 100 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<sub stat="darkRes" val="#darkRes" />
+		</for>
+	</skill>
+	<!-- Resistant to Holy attacks. -->
+	<skill id="4337" levels="5" name="Holy Attack Resistance">
+		<table name="#darkRes"> 10 20 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="holyRes" val="#darkRes" />
+		</for>
+	</skill>
+	<skill id="4338" levels="1" name="Adventurer's Life Cubic">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="18" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="isCubic" val="true" />
+		<set name="maxcount" val="20" />
+		<set name="activationchance" val="0" />
+		<set name="activationtime" val="13" />
+		<set name="npcId" val="3" />
+		<set name="summonTotalLifeTime" val="3600000" />
+	</skill>
+	<skill id="4339" levels="1" name="Mimir's Elixir">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<skill id="4340" levels="1" name="Ultimate Buff">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="60" />
+		<set name="mpConsume" val="50" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="30" stackLvl="1" stackType="ultimate_buff">
+				<effect type="Grow" val="0" />
+				<addPercent stat="pAtk" val="400" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="4341" levels="1" name="Ultimate Buff">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="60" />
+		<set name="mpConsume" val="50" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="30" stackLvl="1" stackType="ultimate_buff">
+				<effect type="Grow" val="0" />
+				<addPercent stat="pDef" val="400" />
+				<addPercent stat="mDef" val="400" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases movement speed. Effect 1.
+		Level 2: Momentarily increases movement speed. Effect 2.
+	-->
+	<skill id="4342" levels="2" name="Wind Walk">
+		<table name="#runSpd"> 20 33 </table>
+		<table name="#sMagicLevel"> 20 30 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#mpConsume"> 50 100 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="speed_up">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="#runSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Reduces current weight. Effect 1.
+		Level 2: Reduces current weight. Effect 2.
+		Level 3: Reduces current weight. Effect 3.
+	-->
+	<skill id="4343" levels="3" name="Decrease Weight">
+		<table name="#Weight"> 3000 6000 9000 </table>
+		<table name="#sMagicLevel"> 35 44 52 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 50 0 100 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="decrease_weight_penalty">
+				<effect type="Buff" val="0" />
+				<add stat="maxLoad" val="#Weight" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Def. increases temporarily. Effect 1.
+		Level 2: P. Def. increases temporarily. Effect 2.
+		Level 3: P. Def. increases temporarily. Effect 3.
+	-->
+	<skill id="4344" levels="3" name="Shield">
+		<table name="#rate"> 8 12 15 </table>
+		<table name="#sMagicLevel"> 7 25 44 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 50 0 100 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="pd_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pDef" val="#rate" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Atk. increases temporarily. Effect 1.
+		Level 2: P. Atk. increases temporarily. Effect 2.
+		Level 3: P. Atk. increases temporarily. Effect 3.
+	-->
+	<skill id="4345" levels="3" name="Might">
+		<table name="#rate"> 8 12 15 </table>
+		<table name="#sMagicLevel"> 7 20 40 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 50 0 100 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="pa_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtk" val="#rate" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases Hold/Sleep/Fear/Mental Attack Resistance. Effect 1.
+		Level 2: Momentarily increases Hold/Sleep/Fear/Mental Attack Resistance. Effect 2.
+		Level 3: Momentarily increases Hold/Sleep/Fear/Mental Attack Resistance. Effect 3.
+		Level 4: Momentarily increases Hold/Sleep/Fear/Mental Attack Resistance. Effect 4.
+	-->
+	<skill id="4346" levels="4" name="Mental Shield">
+		<table name="#vuln"> 20 30 40 50 </table>
+		<table name="#sMagicLevel"> 25 40 48 56 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#mpConsume"> 50 0 0 100 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="resist_derangement">
+				<effect type="Buff" val="0" />
+				<addPercent stat="holdRes" val="#vuln" />
+				<addPercent stat="sleepRes" val="#vuln" />
+				<addPercent stat="derangementRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases maximum HP. Effect 1.
+		Level 2: Momentarily increases maximum HP. Effect 2.
+		Level 3: Momentarily increases maximum HP. Effect 3.
+		Level 4: Momentarily increases maximum HP. Effect 4.
+		Level 5: Momentarily increases maximum HP. Effect 5.
+		Level 6: Momentarily increases maximum HP. Effect 6.
+	-->
+	<skill id="4347" levels="6" name="Blessed Body">
+		<table name="#maxHp"> 10 15 20 25 30 35 </table>
+		<table name="#sMagicLevel"> 44 48 52 56 64 72 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#mpConsume"> 0 150 0 0 0 300 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="max_hp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxHp" val="#maxHp" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases maximum MP. Effect 1.
+		Level 2: Momentarily increases maximum MP. Effect 2.
+		Level 3: Momentarily increases maximum MP. Effect 3.
+		Level 4: Momentarily increases maximum MP. Effect 4.
+		Level 5: Momentarily increases maximum MP. Effect 5.
+		Level 6: Momentarily increases maximum MP. Effect 6.
+	-->
+	<skill id="4348" levels="6" name="Blessed Soul">
+		<table name="#maxMp"> 10 15 20 25 30 35 </table>
+		<table name="#sMagicLevel"> 44 48 52 56 62 70 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#mpConsume"> 0 150 0 0 0 300 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="max_mp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxMp" val="#maxMp" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases M. Def. Effect 2.
+		Level 2: Momentarily increases M. Def. Effect 3.
+	-->
+	<skill id="4349" levels="2" name="Magic Barrier">
+		<table name="#mDef"> 23 30 </table>
+		<table name="#sMagicLevel"> 44 52 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
+		<table name="#mpConsume"> 150 300 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="md_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mDef" val="#mDef" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily provides powerful resistance against Stun Attack. Effect 1.
+		Level 2: Momentarily provides powerful resistance against Stun Attack. Effect 2.
+		Level 3: Momentarily provides powerful resistance against Stun Attack. Effect 3.
+		Level 4: Momentarily provides powerful resistance against Stun Attack. Effect 4.
+	-->
+	<skill id="4350" levels="4" name="Stun Resistance">
+		<table name="#vuln"> 15 20 30 40 </table>
+		<table name="#sMagicLevel"> 40 52 64 72 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#mpConsume"> 150 0 0 300 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="resist_shock">
+				<effect type="Buff" val="0" />
+				<addPercent stat="stunRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 1.
+		Level 2: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 2.
+		Level 3: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 3.
+		Level 4: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 4.
+		Level 5: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 5.
+		Level 6: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 6.
+	-->
+	<skill id="4351" levels="6" name="Concentration">
+		<table name="#cancel"> 18 25 36 42 48 53 </table>
+		<table name="#sMagicLevel"> 20 30 44 52 60 68 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#mpConsume"> 0 200 0 0 0 400 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="cancel_prob_down">
+				<effect type="Buff" val="0" />
+				<sub stat="cancel" val="#cancel" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Def. decreases momentarily., M. Def. and Evasion, and increases P. Atk., M. Atk., Atk. Spd., Casting Spd. and Speed. Effect 1.
+		Level 2: P. Def. decreases momentarily., M. Def. and Evasion, and increases P. Atk., M. Atk., Atk. Spd., Casting Spd. and Speed. Effect 2.
+	-->
+	<skill id="4352" levels="2" name="Berserker Spirit">
+		<table name="#mAtk"> 10 16 </table>
+		<table name="#pAtk"> 5 8 </table>
+		<table name="#rEvas"> 2 4 </table>
+		<table name="#sMagicLevel"> 35 52 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#mpConsume"> 200 400 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="berserker">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtk" val="#mAtk" />
+				<addPercent stat="pAtk" val="#pAtk" />
+				<subPercent stat="mDef" val="#mAtk" />
+				<subPercent stat="pDef" val="#pAtk" />
+				<addPercent stat="mAtkSpd" val="#pAtk" />
+				<addPercent stat="pAtkSpd" val="#pAtk" />
+				<add stat="runSpd" val="#pAtk" />
+				<sub stat="rEvas" val="#rEvas" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases shield defense rate. Effect 1.
+		Level 2: Momentarily increases shield defense rate. Effect 2.
+		Level 3: Momentarily increases shield defense rate. Effect 3.
+		Level 4: Momentarily increases shield defense rate. Effect 4.
+		Level 5: Momentarily increases shield defense rate. Effect 5.
+		Level 6: Momentarily increases shield defense rate. Effect 6.
+	-->
+	<skill id="4353" levels="6" name="Blessed Shield">
+		<table name="#rShld"> 5 10 15 20 25 30 </table>
+		<table name="#sMagicLevel"> 40 48 56 62 66 70 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#mpConsume"> 0 200 0 0 0 400 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="shield_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="rShld" val="#rShld" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Partially restores HP using damage inflicted upon the enemy with a certain probability. Effect 1.
+		Level 2: Partially restores HP using damage inflicted upon the enemy with a certain probability. Effect 2.
+		Level 3: Partially restores HP using damage inflicted upon the enemy with a certain probability. Effect 3.
+		Level 4: Partially restores HP using damage inflicted upon the enemy with a certain probability. Effect 4.
+	-->
+	<skill id="4354" levels="4" name="Vampiric Rage">
+		<table name="#absorbDam"> 6 7 8 9 </table>
+		<table name="#sMagicLevel"> 30 44 58 72 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#mpConsume"> 200 0 0 400 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="vampiric_attack">
+				<effect type="Buff" val="0" />
+				<add stat="absorbDam" val="#absorbDam" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases Casting Spd. Effect 1.
+		Level 2: Momentarily increases Casting Spd. Effect 2.
+		Level 3: Momentarily increases Casting Spd. Effect 3.
+	-->
+	<skill id="4355" levels="3" name="Acumen">
+		<table name="#mAtkSpd"> 15 23 30 </table>
+		<table name="#sMagicLevel"> 20 35 48 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 300 0 600 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="casting_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtkSpd" val="#mAtkSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: M. Atk. increases temporarily. Effect 1.
+		Level 2: M. Atk. increases temporarily. Effect 2.
+		Level 3: M. Atk. increases temporarily. Effect 3.
+	-->
+	<skill id="4356" levels="3" name="Empower">
+		<table name="#mAtk"> 55 65 75 </table>
+		<table name="#sMagicLevel"> 25 44 52 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 300 0 600 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ma_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mAtk" val="#mAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Atk. Spd. increases temporarily. Effect 1.
+		Level 2: Atk. Spd. increases temporarily. Effect 2.
+	-->
+	<skill id="4357" levels="2" name="Haste">
+		<table name="#pAtkSpd"> 15 33 </table>
+		<table name="#sMagicLevel"> 44 52 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#mpConsume"> 300 600 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="attack_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtkSpd" val="#pAtkSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases Accuracy. Effect 1.
+		Level 2: Momentarily increases Accuracy. Effect 2.
+		Level 3: Momentarily increases Accuracy. Effect 3.
+	-->
+	<skill id="4358" levels="3" name="Guidance">
+		<table name="#accCombat"> 2 3 4 </table>
+		<table name="#sMagicLevel"> 40 48 56 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 200 0 400 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="hit_up">
+				<effect type="Buff" val="0" />
+				<add stat="accCombat" val="#accCombat" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases critical attack rate. Effect 1.
+		Level 2: Momentarily increases critical attack rate. Effect 2.
+		Level 3: Momentarily increases critical attack rate. Effect 3.
+	-->
+	<skill id="4359" levels="3" name="Focus">
+		<table name="#rCrit"> 20 25 30 </table>
+		<table name="#sMagicLevel"> 25 44 52 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 300 0 600 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="critical_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="rCrit" val="#rCrit" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases critical P. Atk. Effect 1.
+		Level 2: Momentarily increases critical P. Atk. Effect 2.
+		Level 3: Momentarily increases critical P. Atk. Effect 3.
+	-->
+	<skill id="4360" levels="3" name="Death Whisper">
+		<table name="#cAtk"> 25 30 35 </table>
+		<table name="#sMagicLevel"> 40 48 56 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#mpConsume"> 300 0 600 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#sMagicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="critical_dmg_up">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="pCritDmg" val="#cAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Curse of the Preacher of Doom. Momentarily decreases Accuracy. Effect 1.
+		Level 2: Curse of the Preacher of Doom. Momentarily decreases Accuracy and Sleep/Hold/Stun Resistance. Effect 2.
+	-->
+	<skill id="4361" levels="2" name="Curse of Destruction">
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#vuln"> 0 50 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="100" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="canBeDispeled" val="false" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_curse">
+				<effect type="Debuff" val="0" />
+				<sub stat="accCombat" val="12" />
+				<subPercent stat="sleepRes" val="#vuln" />
+				<subPercent stat="holdRes" val="#vuln" />
+				<subPercent stat="stunRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Curse of the Preacher of Doom. Momentarily decreases Casting Spd. Effect 1.
+		Level 2: Curse of the Preacher of Doom. Momentarily decreases Casting Spd. and Sleep/Hold/Stun Resistance. Effect 2.
+	-->
+	<skill id="4362" levels="2" name="Curse of Destruction">
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#vuln"> 0 50 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="100" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="canBeDispeled" val="false" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_curse">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="mAtkSpd" val="30" />
+				<subPercent stat="sleepRes" val="#vuln" />
+				<subPercent stat="holdRes" val="#vuln" />
+				<subPercent stat="stunRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Curse of the Preacher of Doom. Momentarily decreases Accuracy. Effect 1. -->
+	<skill id="4363" levels="1" name="Curse of Destruction">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="100" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<abnormal duration="1200" stackLvl="1" stackType="hit_down">
+				<effect type="Debuff" val="0" />
+				<sub stat="accCombat" val="12" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Blessing of the Orator of Revelations. Momentarily decreases body weight and increases Poison/Bleed Resistance. Effect 1.
+		Level 2: Blessing of the Orator of Revelations. Momentarily decreases body weight and increases Poison/Bleed/Hold/Stun/Paralysis Resistance. Effect 2.
+	-->
+	<skill id="4364" levels="2" name="Blessing of Revelations">
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#additionalVulns"> 0 25 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="canBeDispeled" val="false" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_blessing">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxLoad" val="25" />
+				<addPercent stat="poisonRes" val="25" />
+				<addPercent stat="bleedRes" val="25" />
+				<addPercent stat="holdRes" val="#additionalVulns" />
+				<addPercent stat="stunRes" val="#additionalVulns" />
+				<addPercent stat="paralysisRes" val="#additionalVulns" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Blessing of the Orator of Revelations. Momentarily increases your Hold/Mental Attack Resistance and lessens the probability of magic cancellation due to damage. Effect 1.
+		Level 2: Blessing of the Orator of Revelations. Momentarily increases your Hold/Mental Attack Resistance and lessens the probability of magic cancellation due to damage. Effect 2.
+	-->
+	<skill id="4365" levels="2" name="Blessing of Revelations">
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#additionalVulns"> 0 25 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="canBeDispeled" val="false" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="ssq_town_blessing">
+				<effect type="Buff" val="0" />
+				<sub stat="cancel" val="25" />
+				<addPercent stat="holdRes" val="25" />
+				<addPercent stat="derangementRes" val="25" />
+				<addPercent stat="stunRes" val="#additionalVulns" />
+				<addPercent stat="paralysisRes" val="#additionalVulns" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Blessing of the Orator of Revelations. Momentarily decreases body weight and increases Poison/Bleed Resistance. Effect 1. -->
+	<skill id="4366" levels="1" name="Blessing of Revelations">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="canBeDispeled" val="false" />
+		<for>
+			<abnormal duration="1200" stackLvl="1" stackType="decrease_weight_penalty ">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxLoad" val="25" />
+				<addPercent stat="poisonRes" val="25" />
+				<addPercent stat="bleedRes" val="25" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4367" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="27.78">
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4368" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="55.56">
+				<add stat="maxMp" val="5000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4369" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="83.34">
+				<add stat="maxMp" val="10000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4370" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="183.33">
+				<add stat="maxMp" val="28000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4371" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="350.1">
+				<add stat="maxMp" val="58000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4372" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot">
+				<effect type="ManaHealOverTime" val="600" />
+				<add stat="maxMp" val="103000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4373" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="616.8">
+				<add stat="maxMp" val="106000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4374" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="866.7">
+				<add stat="maxMp" val="151000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Receiving the fortress blessing. -->
+	<skill id="4375" levels="1" name="Clan Hall Blessing">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<abnormal count="1200" duration="3" stackLvl="1" stackType="public_slot" type="ManaHealOverTime" val="1116.6">
+				<add stat="maxMp" val="196000" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Provides very strong resistance against P. Atk. -->
+	<skill id="4376" levels="1" name="Greater Physical Attack Resistance">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="1" />
+		<for>
+			<addPercent stat="pDef" val="200" />
+		</for>
+	</skill>
+	<skill id="4377" levels="12" name="Wield Temper">
+		<table name="#power"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
+		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- Temporarily returns some of the received damage back to the enemy. -->
+	<skill id="4378" levels="12" name="Damage Shield">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
+		<table name="#mpConsume"> 12 19 26 35 45 55 65 69 72 75 77 78 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1800" />
+		<set name="reuseDelay" val="8000" />
+		<for>
+			<abnormal duration="300" stackLvl="2" stackType="dmg_shield">
+				<effect type="Buff" val="0" />
+				<add stat="reflectDam" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Resistant to spear/pole arm attacks. -->
+	<skill id="4379" levels="5" name="Spear Resistance">
+		<table name="#poleVuln"> 10 20 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<subPercent stat="poleWpnVuln" val="#poleVuln" />
+		</for>
+	</skill>
+	<skill id="4380" levels="1" name="Arena CP Recovery">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="COMBATPOINTHEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="5000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+	</skill>
+	<!-- Monster with 1/4 the normal HP. -->
+	<skill id="4381" levels="1" name="Week Type">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="1" />
+	</skill>
+	<!-- The Lake Ghost hexes you, temporarily increasing the size of your head. -->
+	<skill id="4382" levels="12" name="Curse of Lake Ghost">
+		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
+		<table name="#power"> 46 105 219 417 722 1136 1626 1876 2112 2320 2487 2617 </table>
+		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="800" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="isDebuff" val="true" />
+		<for>
+			<abnormal duration="300" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="big_head" visualEffect="bighead">
+				<effect type="BigHead" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="4383" levels="1" name="Aggression Stone">
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="AGGDEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="80" />
+		<set name="power" val="100" />
+		<set name="skillRadius" val="200" />
+		<set name="element" val="3" />
+		<set name="elementPower" val="20" />
+		<for>
+			<abnormal duration="10" stackLvl="2" stackType="turn_stone">
+				<effect type="Petrification" val="0" />
+			</abnormal>
+			<abnormal>
+				<effect type="TargetMe" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Scapegoat's Grace. Temporarily protects against any debuff that lowers P. Def. -->
+	<skill id="4384" levels="1" name="Scapegoat's Grace">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="80" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="120" stackLvl="4" stackType="pd_down">
+				<effect type="Buff" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Scapegoat's Grace. Temporarily protects against any debuff that lowers P. Atk. -->
+	<skill id="4385" levels="1" name="Scapegoat's Grace">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="80" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="120" stackLvl="4" stackType="attack_time_up">
+				<effect type="Buff" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Scapegoat's Grace. Temporarily protects against poison. -->
+	<skill id="4386" levels="1" name="Scapegoat's Grace">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="80" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="120" stackLvl="10" stackType="poison">
+				<effect type="Buff" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Scapegoat's Grace. Temporarily protects against any de-buff that diminishes the effect of HP recovery magic. -->
+	<skill id="4387" levels="1" name="Scapegoat's Grace">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="80" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="aggroPoints" val="100" />
+		<for>
+			<abnormal duration="120" stackLvl="2" stackType="heal_effect_down">
+				<effect type="Buff" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Resistant to paralyzing attacks. -->
+	<skill id="4388" levels="5" name="Paralysis Resistance">
+		<table name="#power"> 10 20 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="paralysisRes" val="#power" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Provides resistance against mental attack.
+		Level 2: Resistant to Mental Derangement
+	-->
+	<skill id="4389" levels="5" name="Mental Attack Resistance">
+		<table name="#power"> 10 20 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="derangementRes" val="#power" />
+		</for>
+	</skill>
+	<skill id="4390" levels="2" name="Mystic Immunity">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="1" />
+		<for>
+			<set stat="buffImmunity" val="1" />
+			<set stat="debuffImmunity" val="1" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases movement speed. Effect 1.
+		Level 2: Momentarily increases movement speed. Effect 2.
+	-->
+	<skill id="4391" levels="2" name="Wind Walk">
+		<table name="#runSpd"> 20 33 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="speed_up">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="#runSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Def. increases temporarily. Effect 1.
+		Level 2: P. Def. increases temporarily. Effect 2.
+		Level 3: P. Def. increases temporarily. Effect 3.
+	-->
+	<skill id="4392" levels="3" name="Shield">
+		<table name="#rate"> 8 12 15 </table>
+		<table name="#abnormalLvl"> 2 3 4 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="pd_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pDef" val="#rate" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Atk. increases temporarily. Effect 1.
+		Level 2: P. Atk. increases temporarily. Effect 2.
+		Level 3: P. Atk. increases temporarily. Effect 3.
+	-->
+	<skill id="4393" levels="3" name="Might">
+		<table name="#pAtk"> 8 12 15 </table>
+		<table name="#abnormalLvl"> 2 3 4 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="pa_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtk" val="#pAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases maximum HP. Effect 1.
+		Level 2: Momentarily increases maximum HP. Effect 2.
+		Level 3: Momentarily increases maximum HP. Effect 3.
+		Level 4: Momentarily increases maximum HP. Effect 4.
+		Level 5: Momentarily increases maximum HP. Effect 5.
+		Level 6: Momentarily increases maximum HP. Effect 6.
+	-->
+	<skill id="4394" levels="6" name="Blessed Body">
+		<table name="#maxHp"> 10 15 20 25 30 35 </table>
+		<table name="#abnormalLvl"> 2 3 4 5 6 7 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="max_hp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxHp" val="#maxHp" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases maximum MP. Effect 1.
+		Level 2: Momentarily increases maximum MP. Effect 2.
+		Level 3: Momentarily increases maximum MP. Effect 3.
+		Level 4: Momentarily increases maximum MP. Effect 4.
+		Level 5: Momentarily increases maximum MP. Effect 5.
+		Level 6: Momentarily increases maximum MP. Effect 6.
+	-->
+	<skill id="4395" levels="6" name="Blessed Soul">
+		<table name="#maxMp"> 10 15 20 25 30 35 </table>
+		<table name="#abnormalLvl"> 2 3 4 5 6 7 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="max_mp_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="maxMp" val="#maxMp" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases M. Def. Effect 2.
+		Level 2: Momentarily increases M. Def. Effect 3.
+	-->
+	<skill id="4396" levels="2" name="Magic Barrier">
+		<table name="#abnormalLvl"> 3 4 </table>
+		<table name="#mDef"> 23 30 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="md_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="mDef" val="#mDef" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: P. Def. decreases momentarily., M. Def. and Evasion, and increases P. Atk., M. Atk., Atk. Spd., Casting Spd. and Speed. Effect 1.
+		Level 2: P. Def. decreases momentarily., M. Def. and Evasion, and increases P. Atk., M. Atk., Atk. Spd., Casting Spd. and Speed. Effect 2.
+	-->
+	<skill id="4397" levels="2" name="Berserker Spirit">
+		<table name="#pAtk"> 5 8 </table>
+		<table name="#mAtk"> 10 16 </table>
+		<table name="#rEvas"> 2 4 </table>
+		<table name="#abnormalLvl"> 2 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="berserker">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtk" val="#pAtk" />
+				<addPercent stat="pAtkSpd" val="#pAtk" />
+				<addPercent stat="mAtk" val="#mAtk" />
+				<addPercent stat="mAtkSpd" val="#pAtk" />
+				<add stat="runSpd" val="#pAtk" />
+				<sub stat="rEvas" val="#rEvas" />
+				<subPercent stat="mDef" val="#mAtk" />
+				<subPercent stat="pDef" val="#pAtk" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily increases the probability of shield defense. Effect 1.
+		Level 2: Momentarily increases the probability of shield defense. Effect 2.
+		Level 3: Momentarily increases the probability of shield defense. Effect 3.
+		Level 4: Momentarily increases the probability of shield defense. Effect 4.
+		Level 5: Momentarily increases the probability of shield defense. Effect 5.
+		Level 6: Momentarily increases the probability of shield defense. Effect 6.
+	-->
+	<skill id="4398" levels="6" name="Blessed Shield">
+		<table name="#rShld"> 5 10 15 20 25 30 </table>
+		<table name="#abnormalLvl"> 2 3 4 5 6 7 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="shield_prob_up">
+				<effect type="Buff" val="0" />
+				<addPercent stat="rShld" val="#rShld" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Momentarily restores HP using damage inflicted upon the enemy with a certain probability.  Effect 1.
+		Level 2: Momentarily restores HP using damage inflicted upon the enemy with a certain probability.  Effect 2.
+		Level 3: Momentarily restores HP using damage inflicted upon the enemy with a certain probability.  Effect 3.
+		Level 4: Momentarily restores HP using damage inflicted upon the enemy with a certain probability.  Effect 4.
+	-->
+	<skill id="4399" levels="4" name="Vampiric Rage">
+		<table name="#absorbDam"> 6 7 8 9 </table>
+		<table name="#abnormalLvl"> 2 3 4 5 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<abnormal duration="3600" stackLvl="#abnormalLvl" stackType="vampiric_attack">
+				<effect type="Buff" val="0" />
+				<add stat="absorbDam" val="#absorbDam" />
+			</abnormal>
+		</for>
+	</skill>
+</list>

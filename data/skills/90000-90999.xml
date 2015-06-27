@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<skill id="90000" levels="1" name="Custom Mana Drug">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="1" />
+		<set name="itemConsumeId" val="726" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="buffDuration" val="15000" />
+		<set name="isPotion" val="true" />
+		<for>
+			<cond addName="1" msgId="113">
+				<player flyMounted="False" />
+			</cond>
+			<abnormal count="3" duration="5" stackLvl="1" stackType="mp_recover" type="ManaHealOverTime" val="1.5">
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="90001" levels="1" name="Custom Mana Potion">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="MANAHEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="1" />
+		<set name="itemConsumeId" val="728" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="100" />
+		<set name="isPotion" val="true" />
+		<for>
+			<cond addName="1" msgId="113">
+				<player flyMounted="False" />
+			</cond>
+		</for>
+	</skill>
+	<skill id="90002" levels="1" name="Custom Trap skill">
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="isMagic" val="true" />
+	</skill>
+	<skill id="90003" levels="20" name="Custom Halloween Skill">
+		<table name="#maxHpMp"> 5 10 15 20 25 30 35 40 45 50 60 65 70 75 80 85 90 95 100 105 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="isMagic" val="true" />
+		<for>
+			<addPercent stat="maxHp" val="#maxHpMp" />
+			<addPercent stat="maxMp" val="#maxHpMp" />
+			<addPercent stat="pAtk" val="#maxHpMp" />
+			<addPercent stat="mAtk" val="#maxHpMp" />
+			<addPercent stat="pDef" val="#maxHpMp" />
+			<addPercent stat="mDef" val="#maxHpMp" />
+		</for>
+	</skill>
+</list>

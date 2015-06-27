@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Wrapped Pack containing Agathion - Red Opera (7-day). -->
+	<item id="20800" type="EtcItem" name="Agathion - Red Opera Pack (7-day) - Spear of Flames">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20778,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Opera. -->
+	<item id="20801" type="EtcItem" name="Agathion - Opera Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20779,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Opera. -->
+	<item id="20802" type="EtcItem" name="Agathion - Opera Pack (30-day) - Sword of Life">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20780,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Miss Chipao (7-day). -->
+	<item id="20803" type="EtcItem" name="Agathion - Miss Chipao Pack (7-day) - Decrease Weight">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20781,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Nepal Snow. -->
+	<item id="20804" type="EtcItem" name="Agathion - Nepal Snow Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20782,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Round Ball Snow. -->
+	<item id="20805" type="EtcItem" name="Agathion - Round Ball Snow Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20783,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Ladder Snow. -->
+	<item id="20806" type="EtcItem" name="Agathion - Ladder Snow Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20784,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Nepal Snow (7-day). -->
+	<item id="20807" type="EtcItem" name="Agathion - Nepal Snow Pack (7-day) - Snow's Haste">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20785,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Round Ball Snow (7-day). -->
+	<item id="20808" type="EtcItem" name="Agathion - Round Ball Snow Pack (7-day) - Snow's Acumen">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20786,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Ladder Snow (7-day). -->
+	<item id="20809" type="EtcItem" name="Agathion - Ladder Snow Pack (7-day) - Snow's Wind Walk">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20787,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Flame Box. -->
+	<item id="20810" type="EtcItem" name="Flame Box Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20788,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Rocket Gun Hat. -->
+	<item id="20811" type="EtcItem" name="Rocket Gun Hat Pack - Chain Fireworks">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="20789,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Yellow Paper Hat (7-day). -->
+	<item id="20812" type="EtcItem" name="Yellow Paper Hat Pack (7-day) - Blessed Body">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20790,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Pink Paper Mask Set (7-day). -->
+	<item id="20813" type="EtcItem" name="Pink Paper Mask Set Pack (7-day) - Blessed Soul">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20791,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Flavorful Cheese Hat. -->
+	<item id="20814" type="EtcItem" name="Flavorful Cheese Hat Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20792,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Sweet Cheese Hat. -->
+	<item id="20815" type="EtcItem" name="Sweet Cheese Hat Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20793,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Flavorful Cheese Hat (7-day). -->
+	<item id="20816" type="EtcItem" name="Flavorful Cheese Hat Pack (7-day) - Scent of Flavorful Cheese">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20794,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Sweet Cheese Hat (7-day). -->
+	<item id="20817" type="EtcItem" name="Sweet Cheese Hat Pack (7-day) - Scent of Sweet Cheese">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20795,1,1,100" />
+	</item>
+	<!-- Bracelet that summons the image of Iken as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20818" type="Armor" name="Soul Avatar - Iken">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21157-1;23141-1;21172-1;21176-1;21182-1;21188-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Iken as an Agathion through the red Dimensional Door. -->
+	<item id="20819" type="Armor" name="Agathion - Iken - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21157-1;23141-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Lanya as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20820" type="Armor" name="Soul Avatar - Lanya">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_a_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21158-1;23142-1;21173-1;21176-1;21182-1;21189-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Lanya as an Agathion through the red Dimensional Door. -->
+	<item id="20821" type="Armor" name="Agathion - Lanya - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_a_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21158-1;23142-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Gnosian as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20822" type="Armor" name="Soul Avatar - Gnosian">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_f_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21159-1;23143-1;21175-1;21177-1;21183-1;21188-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Gnosian as an Agathion through the red Dimensional Door. -->
+	<item id="20823" type="Armor" name="Agathion - Gnosian - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_f_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21159-1;23143-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Orodriel as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20824" type="Armor" name="Soul Avatar - Orodriel">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_e_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21160-1;23144-1;21174-1;21177-1;21183-1;21189-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Orodriel as an Agathion through the red Dimensional Door. -->
+	<item id="20825" type="Armor" name="Agathion - Cheerleader Orodriel - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_e_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21160-1;23144-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Lakinos as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20826" type="Armor" name="Soul Avatar - Lakinos">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_d_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21161-1;23145-1;21172-1;21181-1;21184-1;21188-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Lakinos as an Agathion through the red Dimensional Door. -->
+	<item id="20827" type="Armor" name="Agathion - Lakinos - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_d_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21161-1;23145-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Mortia as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20828" type="Armor" name="Soul Avatar - Mortia">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_c_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21162-1;23146-1;21173-1;21181-1;21184-1;21189-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Mortia as an Agathion through the red Dimensional Door. -->
+	<item id="20829" type="Armor" name="Agathion - Mortia - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_c_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21162-1;23146-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Heintz as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20830" type="Armor" name="Soul Avatar - Heintz">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_h_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21163-1;23147-1;21175-1;21180-1;21185-1;21188-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Heintz as an Agathion through the red Dimensional Door. -->
+	<item id="20831" type="Armor" name="Agathion - Heintz - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_h_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21163-1;23147-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Meruril as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20832" type="Armor" name="Soul Avatar - Meruril">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21164-1;23148-1;21174-1;21180-1;21185-1;21189-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Meruril as an Agathion through the red Dimensional Door. -->
+	<item id="20833" type="Armor" name="Agathion - Meruril - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21164-1;23148-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Taman Zu Rapatui as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20834" type="Armor" name="Soul Avatar - Taman Zu Rapatui">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_i_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21165-1;23149-1;21172-1;21178-1;21186-1;21188-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Taman Zu Rapatui as an Agathion through the red Dimensional Door. -->
+	<item id="20835" type="Armor" name="Agathion - Taman Zu Rapatui - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_i_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21165-1;23149-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Kaurin as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20836" type="Armor" name="Soul Avatar - Kaurin">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_j_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21166-1;23150-1;21173-1;21178-1;21186-1;21189-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Kaurin as an Agathion through the red Dimensional Door. -->
+	<item id="20837" type="Armor" name="Agathion - Kaurin - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_j_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21166-1;23150-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Ahertbein as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20838" type="Armor" name="Soul Avatar - Ahertbein">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21167-1;23151-1;21175-1;21179-1;21187-1;21188-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Ahertbein as an Agathion through the red Dimensional Door. -->
+	<item id="20839" type="Armor" name="Agathion - Ahertbein - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21167-1;23151-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Bracelet that summons the image of Naonin as an Soul Avatar through the red Dimensional Door. -->
+	<item id="20840" type="Armor" name="Soul Avatar - Naonin">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_k_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21168-1;23152-1;21174-1;21179-1;21187-1;21189-1;21190-1" />
+	</item>
+	<!-- Bracelet that summons the image of Naonin as an Agathion through the red Dimensional Door. -->
+	<item id="20841" type="Armor" name="Agathion - Naonin - Prominent Outsider Adventurer's Ability (7-day)">
+		<set name="icon" val="BranchSys.icon.br_aga_local2009_k_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="unequip_skill" val="3267-1" />
+		<set name="item_skill" val="3267-1;21168-1;23152-1;23153-1" />
+		<set name="time" val="10080" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Iken. -->
+	<item id="20842" type="EtcItem" name="Soul Avatar - Iken Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20818,1,1,100;20884,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Iken (7-day). -->
+	<item id="20843" type="EtcItem" name="Agathion - Iken Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20819,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Lanya. -->
+	<item id="20844" type="EtcItem" name="Soul Avatar - Lanya Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20820,1,1,100;20885,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Lanya (7-day). -->
+	<item id="20845" type="EtcItem" name="Agathion - Lanya Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20821,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Gnosian. -->
+	<item id="20846" type="EtcItem" name="Soul Avatar - Gnosian Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20822,1,1,100;20886,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Gnosian (7-day). -->
+	<item id="20847" type="EtcItem" name="Agathion - Gnosian Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20823,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Orodriel. -->
+	<item id="20848" type="EtcItem" name="Soul Avatar - Orodriel Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20824,1,1,100;20887,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Cheerleader Orodriel (7-day). -->
+	<item id="20849" type="EtcItem" name="Agathion - Cheerleader Orodriel Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20825,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Lakinos. -->
+	<item id="20850" type="EtcItem" name="Soul Avatar - Lakinos Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20826,1,1,100;20888,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Lakinos (7-day). -->
+	<item id="20851" type="EtcItem" name="Agathion - Lakinos Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20827,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Mortia. -->
+	<item id="20852" type="EtcItem" name="Soul Avatar - Mortia Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20828,1,1,100;20889,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Mortia (7-day). -->
+	<item id="20853" type="EtcItem" name="Agathion - Mortia Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20829,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Heintz. -->
+	<item id="20854" type="EtcItem" name="Soul Avatar - Heintz Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20830,1,1,100;20890,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Heintz (7-day). -->
+	<item id="20855" type="EtcItem" name="Agathion - Heintz Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20831,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Meruril. -->
+	<item id="20856" type="EtcItem" name="Soul Avatar - Meruril Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20832,1,1,100;20891,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Meruril (7-day). -->
+	<item id="20857" type="EtcItem" name="Agathion - Meruril Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20833,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Taman Zu Rapatui. -->
+	<item id="20858" type="EtcItem" name="Soul Avatar - Taman Zu Rapatui Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20834,1,1,100;20892,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Taman Zu Rapatui (7-day). -->
+	<item id="20859" type="EtcItem" name="Agathion - Taman Zu Rapatui Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20835,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Kaurin. -->
+	<item id="20860" type="EtcItem" name="Soul Avatar - Kaurin Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20836,1,1,100;20893,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Kaurin (7-day). -->
+	<item id="20861" type="EtcItem" name="Agathion - Kaurin Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20837,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Ahertbein. -->
+	<item id="20862" type="EtcItem" name="Soul Avatar - Ahertbein Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20838,1,1,100;20894,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Ahertbein (7-day). -->
+	<item id="20863" type="EtcItem" name="Agathion - Ahertbein Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20839,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Soul Avatar - Naonin. -->
+	<item id="20864" type="EtcItem" name="Soul Avatar - Naonin Pack">
+		<set name="icon" val="BranchSys.icon.br_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20840,1,1,100;20895,1,1,100" />
+	</item>
+	<!-- Wrapped Pack containing Agathion - Naonin (7-day). -->
+	<item id="20865" type="EtcItem" name="Agathion - Naonin Pack (7-day) - Prominent Outsider Adventurer's Ability">
+		<set name="icon" val="BranchSys.icon.br_silver_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20841,1,1,100;20896,1,1,100" />
+	</item>
+	<!-- Large Wrapped Pack containing 12 Soul Avatar packs. -->
+	<item id="20866" type="EtcItem" name="Soul Avatar Set">
+		<set name="icon" val="BranchSys.icon.br_bright_gold_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20844,1,1,100;20842,1,1,100;20852,1,1,100;20850,1,1,100;20848,1,1,100;20846,1,1,100;20856,1,1,100;20854,1,1,100;20858,1,1,100;20860,1,1,100;20864,1,1,100;20862,1,1,100" />
+	</item>
+	<!-- Kadomas Transformation Stick. 7-day. -->
+	<item id="20867" type="Weapon" name="Kadomas Transformation Stick - 7-day">
+		<set name="icon" val="BranchSys.icon.br_kadomatsu_wp_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="unequip_skill" val="619-1" />
+		<set name="item_skill" val="21169-1" />
+		<set name="time" val="10080" />
+		<for>
+			<set stat="pAtk" val="1" />
+			<set stat="mAtk" val="1" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Summons Kotatz, who increases HP Recovery Rate by 40% and MP Recovery Rate by 20%. The Recovery Bonus effect occurs only when summoned at a certain distance away from the village. -->
+	<item id="20868" type="EtcItem" name="Kotatz">
+		<set name="icon" val="BranchSys.icon.br_kotatsu_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="potion" />
+		<set name="reuse_delay" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22127-1" />
+	</item>
+	<!-- Contains a Kadomas Transformation Stick and 3 Kotatz. -->
+	<item id="20869" type="EtcItem" name="New Year's Money">
+		<set name="icon" val="BranchSys.icon.br_otoshidama_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20867,1,1,100;20868,3,3,100" />
+	</item>
+	<!-- Ignites a Red Firecracker. For 10 minutes, increases Water Resistance by 30 and STR by 1. Cooldown is 4 hours. -->
+	<item id="20870" type="EtcItem" name="Red Firecracker">
+		<set name="icon" val="BranchSys.icon.br_firecracker_red_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="100" />
+		<set name="reuse_delay" val="14400000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22131-1" />
+	</item>
+	<!-- Ignites a Gold Firecracker. For 10 minutes, increases Holy Resistance by 30 and CON by 1. Cooldown is 4 hours. -->
+	<item id="20871" type="EtcItem" name="Gold Firecracker">
+		<set name="icon" val="BranchSys.icon.br_firecracker_gold_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="100" />
+		<set name="reuse_delay" val="14400000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22132-1" />
+	</item>
+	<!-- Ignites a Blue Firecracker. For 10 minutes, increases Fire Resistance by 30 and DEX by 1. Cooldown is 4 hours. -->
+	<item id="20872" type="EtcItem" name="Blue Firecracker">
+		<set name="icon" val="BranchSys.icon.br_firecracker_blue_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="100" />
+		<set name="reuse_delay" val="14400000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22133-1" />
+	</item>
+	<!-- Ignites a Pink Firecracker. For 10 minutes, increases Earth Resistance by 30 and MEN by 1. Cooldown is 4 hours. -->
+	<item id="20873" type="EtcItem" name="Pink Firecracker">
+		<set name="icon" val="BranchSys.icon.br_firecracker_pink_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="100" />
+		<set name="reuse_delay" val="14400000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22134-1" />
+	</item>
+	<!-- Ignites a white firecracker. For 10 minutes, increases wind attribute defense by 30 and WIT by 1. Cooldown is 4 hours. -->
+	<item id="20874" type="EtcItem" name="White Firecracker">
+		<set name="icon" val="BranchSys.icon.br_firecracker_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="100" />
+		<set name="reuse_delay" val="14400000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22135-1" />
+	</item>
+	<!-- Ignites a Silver Firecracker. For 10 minutes, increases Dark Resistance by 30 and INT by 1. Cooldown is 4 hours. -->
+	<item id="20875" type="EtcItem" name="Silver Firecracker">
+		<set name="icon" val="BranchSys.icon.br_firecracker_silver_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="weight" val="100" />
+		<set name="reuse_delay" val="14400000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22136-1" />
+	</item>
+	<!-- For 1 hour, M. Atk. + 75% and the chance of magic damage by 2. -->
+	<item id="20876" type="EtcItem" name="Love for All Seasons - Empower, Wild Magic">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_a_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22145-1;22153-1" />
+	</item>
+	<!-- For 1 hour, increases Critical Damage by 35%, Critical Rate by 30, and Accuracy by 4. -->
+	<item id="20877" type="EtcItem" name="Happy New Year - Death Whisper, Focus, Guidance">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_b_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22143-1;22144-1;22154-1" />
+	</item>
+	<!-- For 1 hour, P. Def. + 15, M. Def. by 30%, and Shield Defense rate by 15. -->
+	<item id="20878" type="EtcItem" name="Female Aniruddha - Shield, Magic Barrier, Blessed Shield">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_c_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22155-1;22142-1;22150-1" />
+	</item>
+	<!-- Decreases P. Def. by 8%, M. Def. by 16%, and Evasion by 4. P. Atk. + 15%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8 for 1 hour. Has a chance of recovering 9% of the standard melee damage inflicted on the enemy as HP. -->
+	<item id="20879" type="EtcItem" name="Kung Hei Fat Choy - Might, Berserker Spirit, Vampiric Rage">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_d_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22149-1;22157-1;22147-1" />
+	</item>
+	<!-- For 1 hour, decreases physical skill MP consumption by 20%, magic skill's MP consumption by 10%, and song/dance skill's MP consumption by 20%. Increases Casting Spd. by 30% and Max MP by 35%. -->
+	<item id="20880" type="EtcItem" name="Chinese Feast - Clarity, Acumen, Blessed Soul">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_e_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22146-1;22151-1;22152-1" />
+	</item>
+	<!-- Increases Atk. Spd. by 33% and the weight penalty interval by 9000 for 1 hour. -->
+	<item id="20881" type="EtcItem" name="Hwa Gei Bu Gwi - Decrease Weight, Haste">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_f_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22140-1;22156-1" />
+	</item>
+	<!-- For 1 hour, increases Speed by 33, Evasion rate by 4, and Max HP by 35%. -->
+	<item id="20882" type="EtcItem" name="Fire Stamp - Wind Walk, Agility, Blessed Body">
+		<set name="icon" val="BranchSys.icon.br_taiwan_newyear_food_g_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="22148-1;22141-1;22139-1" />
+	</item>
+	<!-- Thank you letter. -->
+	<item id="20883" type="EtcItem" name="Letter of Thanks">
+		<set name="icon" val="BranchSys.icon.br_thanksletter_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Lancet's profile and story. -->
+	<item id="20884" type="EtcItem" name="Lancet Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Liposa's profile and story. -->
+	<item id="20885" type="EtcItem" name="Liposa Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Velarin's profile and story. -->
+	<item id="20886" type="EtcItem" name="Velarin Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Dulcinel's profile and story. -->
+	<item id="20887" type="EtcItem" name="Dulcinel Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Chimeros' profile and story. -->
+	<item id="20888" type="EtcItem" name="Chimeros Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Niveri's profile and story. -->
+	<item id="20889" type="EtcItem" name="Niveri Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Hamell's profile and story. -->
+	<item id="20890" type="EtcItem" name="Hamell Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Joriya's profile and story. -->
+	<item id="20891" type="EtcItem" name="Joriya Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Ralmak's profile and story. -->
+	<item id="20892" type="EtcItem" name="Ralmak Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Goras's profile and story. -->
+	<item id="20893" type="EtcItem" name="Goras Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Vensar's profile and story. -->
+	<item id="20894" type="EtcItem" name="Vensar Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Card containing Kiela's profile and story. -->
+	<item id="20895" type="EtcItem" name="Kiela Character Card">
+		<set name="icon" val="icon.etc_royal_membership_i00" />
+		<set name="default_action" val="show_html" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+	</item>
+	<!-- Stone that distorts space and time. When used after clearing the Pailaka quest, you can enter 1 more time. Cooldown is 5 hours. -->
+	<item id="20896" type="EtcItem" name="Red Dimensional Stone">
+		<set name="icon" val="BranchSys.icon.br_stone_of_time_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="shared_reuse_group" val="102" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="item_skill" val="22129-1" />
+	</item>
+	<!-- Brilliant mask made of purple paper. Cooldown is 1 hour. -->
+	<item id="20897" type="Armor" name="Purple Paper Mask - Blessed Soul (7-day)">
+		<set name="icon" val="BranchSys.icon.br_party_mask_purple_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_premium" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="item_skill" val="21170-4" />
+		<set name="time" val="10080" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing Purple Paper Mask (7-day). -->
+	<item id="20898" type="EtcItem" name="Purple Paper Mask Pack (7-day) - Blessed Soul">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="default_action" val="peel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="capsuled_items" val="20897,1,1,100" />
+	</item>
+	<!-- Fresh, sweet mango and flavorful sweet rice. Replenishes Vitality to a certain degree. Cooldown is 60 min. Vitality item with limited usage. -->
+	<item id="20899" type="EtcItem" name="Mango Dessert">
+		<set name="icon" val="BranchSys.icon.br_thai_desert_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="potion" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="reuse_delay" val="3000" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_premium" val="true" />
+		<set name="item_skill" val="22138-1" />
+	</item>
+</list>

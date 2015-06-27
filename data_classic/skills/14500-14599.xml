@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- HP is being absorbed. -->
+	<skill id="14559" levels="1" name="Soul Drain Status">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+	</skill>
+</list>

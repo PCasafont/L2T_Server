@@ -1,0 +1,1774 @@
+<list>
+	<!-- [oren_delf_t20_19_001] -->
+	<group minZ="-3808" maxZ="-3408">
+		<vertex x="188" y="32968" />
+		<vertex x="5528" y="32892" />
+		<vertex x="2876" y="35952" />
+		<vertex x="196" y="36040" />
+		<spawn npcId="20388" respawn="15" amount="2" /> <!-- Balor Orc Warrior Lieutenant -->
+		<spawn npcId="20387" respawn="15" amount="2" /> <!-- Balor Orc Warrior Captain -->
+		<spawn npcId="20400" respawn="15" amount="2" /> <!-- Blood Fungus -->
+		<spawn npcId="20433" respawn="15" amount="2" /> <!-- Festering Bat -->
+	</group>
+	<!-- [oren_delf_t20_19_002] -->
+	<group minZ="-3760" maxZ="-3260">
+		<vertex x="324" y="36324" />
+		<vertex x="2464" y="36224" />
+		<vertex x="4104" y="38916" />
+		<vertex x="1656" y="43668" />
+		<vertex x="276" y="43764" />
+		<spawn npcId="20387" respawn="15" amount="3" /> <!-- Balor Orc Warrior Captain -->
+		<spawn npcId="20400" respawn="15" amount="4" /> <!-- Blood Fungus -->
+		<spawn npcId="20433" respawn="15" amount="3" /> <!-- Festering Bat -->
+		<spawn npcId="20379" respawn="15" amount="4" /> <!-- Stone Giant Soldier -->
+	</group>
+	<!-- [oren_t21_19_001] -->
+	<group minZ="-3780" maxZ="-3380">
+		<vertex x="46324" y="42336" />
+		<vertex x="49700" y="40892" />
+		<vertex x="51644" y="43768" />
+		<vertex x="49324" y="46348" />
+		<vertex x="46076" y="44344" />
+		<spawn npcId="20530" respawn="15" amount="4" /> <!-- Young Red Keltir -->
+		<spawn npcId="20534" respawn="15" amount="4" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_002] -->
+	<group minZ="-3760" maxZ="-3360">
+		<vertex x="49788" y="39148" />
+		<vertex x="52068" y="37188" />
+		<vertex x="53692" y="41928" />
+		<vertex x="51644" y="43760" />
+		<vertex x="49768" y="40900" />
+		<spawn npcId="20530" respawn="15" amount="3" /> <!-- Young Red Keltir -->
+		<spawn npcId="20534" respawn="15" amount="3" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_003] -->
+	<group minZ="-3772" maxZ="-3372">
+		<vertex x="49680" y="35308" />
+		<vertex x="51808" y="37188" />
+		<vertex x="49780" y="39156" />
+		<vertex x="47820" y="38908" />
+		<vertex x="46252" y="38152" />
+		<vertex x="46412" y="36024" />
+		<spawn npcId="20530" respawn="15" amount="4" /> <!-- Young Red Keltir -->
+		<spawn npcId="20534" respawn="15" amount="3" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_004] -->
+	<group minZ="-3652" maxZ="-3452">
+		<vertex x="42012" y="36240" />
+		<vertex x="46260" y="36020" />
+		<vertex x="46124" y="38080" />
+		<vertex x="43972" y="39308" />
+		<vertex x="42544" y="39248" />
+		<spawn npcId="20530" respawn="15" amount="3" /> <!-- Young Red Keltir -->
+		<spawn npcId="20534" respawn="15" amount="3" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_005] -->
+	<group minZ="-3684" maxZ="-3284">
+		<vertex x="41988" y="36360" />
+		<vertex x="42460" y="39220" />
+		<vertex x="42356" y="41284" />
+		<vertex x="39876" y="41172" />
+		<vertex x="39304" y="37752" />
+		<spawn npcId="20530" respawn="15" amount="3" /> <!-- Young Red Keltir -->
+		<spawn npcId="20534" respawn="15" amount="3" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="3" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_006] -->
+	<group minZ="-3788" maxZ="-3388">
+		<vertex x="44384" y="41492" />
+		<vertex x="45748" y="42384" />
+		<vertex x="45588" y="44892" />
+		<vertex x="43724" y="45284" />
+		<vertex x="40576" y="43232" />
+		<vertex x="39864" y="41168" />
+		<spawn npcId="20530" respawn="15" amount="3" /> <!-- Young Red Keltir -->
+		<spawn npcId="20534" respawn="15" amount="4" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_007] -->
+	<group minZ="-3792" maxZ="-3392">
+		<vertex x="54712" y="37424" />
+		<vertex x="59236" y="40488" />
+		<vertex x="57676" y="43956" />
+		<vertex x="53724" y="41940" />
+		<vertex x="52128" y="37212" />
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="6" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="6" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_008] -->
+	<group minZ="-3768" maxZ="-3368">
+		<vertex x="53708" y="41984" />
+		<vertex x="57652" y="44116" />
+		<vertex x="56188" y="48700" />
+		<vertex x="50376" y="49176" />
+		<vertex x="49412" y="46324" />
+		<spawn npcId="20537" respawn="15" amount="5" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="7" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="6" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_009] -->
+	<group minZ="-3788" maxZ="-3388">
+		<vertex x="50296" y="49300" />
+		<vertex x="56156" y="48824" />
+		<vertex x="57708" y="49724" />
+		<vertex x="58396" y="52292" />
+		<vertex x="55712" y="54244" />
+		<vertex x="49944" y="52184" />
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="5" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="6" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_010] -->
+	<group minZ="-3704" maxZ="-3304">
+		<vertex x="50596" y="52560" />
+		<vertex x="55600" y="54320" />
+		<vertex x="55336" y="56828" />
+		<vertex x="54288" y="58536" />
+		<vertex x="51456" y="57324" />
+		<vertex x="50372" y="56272" />
+		<vertex x="50108" y="55472" />
+		<spawn npcId="20525" respawn="15" amount="4" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="5" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="4" /> <!-- Kaboo Orc -->
+	</group>
+	<!-- [oren_t21_19_011] -->
+	<group minZ="-3744" maxZ="-3344">
+		<vertex x="47524" y="54072" />
+		<vertex x="49392" y="54060" />
+		<vertex x="49920" y="56764" />
+		<vertex x="48508" y="57584" />
+		<spawn npcId="20537" respawn="15" amount="2" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_19_012] -->
+	<group minZ="-3776" maxZ="-3376">
+		<vertex x="53048" y="58884" />
+		<vertex x="53664" y="60240" />
+		<vertex x="52104" y="61684" />
+		<vertex x="48760" y="61636" />
+		<vertex x="48624" y="57632" />
+		<vertex x="50060" y="56840" />
+		<vertex x="52200" y="58036" />
+		<spawn npcId="20525" respawn="15" amount="4" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="4" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="4" /> <!-- Kaboo Orc -->
+	</group>
+	<!-- [oren_t21_19_013] -->
+	<group minZ="-3768" maxZ="-3368">
+		<vertex x="48536" y="63020" />
+		<vertex x="54244" y="62444" />
+		<vertex x="54444" y="63444" />
+		<vertex x="54152" y="65244" />
+		<vertex x="47068" y="65232" />
+		<vertex x="47012" y="64580" />
+		<spawn npcId="20468" respawn="15" amount="6" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="6" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_014] -->
+	<group minZ="-3612" maxZ="-3212">
+		<vertex x="56744" y="60912" />
+		<vertex x="58228" y="61448" />
+		<vertex x="59192" y="63660" />
+		<vertex x="59136" y="65248" />
+		<vertex x="54896" y="65280" />
+		<vertex x="55224" y="62700" />
+		<spawn npcId="20468" respawn="15" amount="6" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="6" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_015] -->
+	<group minZ="-3776" maxZ="-3376">
+		<vertex x="46912" y="32936" />
+		<vertex x="48572" y="33788" />
+		<vertex x="49528" y="35208" />
+		<vertex x="46292" y="35976" />
+		<vertex x="41996" y="36188" />
+		<vertex x="40620" y="32880" />
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="8" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="6" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_016] -->
+	<group minZ="-3820" maxZ="-3420">
+		<vertex x="36308" y="32916" />
+		<vertex x="40516" y="32924" />
+		<vertex x="41940" y="36340" />
+		<vertex x="36976" y="38972" />
+		<spawn npcId="20537" respawn="15" amount="6" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="5" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="6" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_017] -->
+	<group minZ="-3720" maxZ="-3320">
+		<vertex x="36628" y="39212" />
+		<vertex x="39228" y="37780" />
+		<vertex x="40504" y="43276" />
+		<vertex x="38556" y="42784" />
+		<vertex x="37068" y="41396" />
+		<vertex x="36352" y="40092" />
+		<spawn npcId="20534" respawn="15" amount="3" /> <!-- Red Keltir -->
+		<spawn npcId="20537" respawn="15" amount="4" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_18_018] -->
+	<group minZ="-3816" maxZ="-3416">
+		<vertex x="32872" y="33748" />
+		<vertex x="36296" y="33276" />
+		<vertex x="36588" y="35468" />
+		<vertex x="34428" y="36752" />
+		<vertex x="32884" y="36932" />
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="3" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_019] -->
+	<group minZ="-3776" maxZ="-3376">
+		<vertex x="32924" y="37016" />
+		<vertex x="34320" y="36872" />
+		<vertex x="35200" y="41216" />
+		<vertex x="32916" y="41236" />
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="3" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_020] -->
+	<group minZ="-3768" maxZ="-3368">
+		<vertex x="32996" y="41508" />
+		<vertex x="35128" y="41580" />
+		<vertex x="40944" y="45752" />
+		<vertex x="40056" y="50152" />
+		<vertex x="33020" y="50052" />
+		<spawn npcId="20325" respawn="15" amount="8" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="8" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="8" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_021] -->
+	<group minZ="-3764" maxZ="-3264">
+		<vertex x="33080" y="50156" />
+		<vertex x="40052" y="50216" />
+		<vertex x="40360" y="52688" />
+		<vertex x="37724" y="53816" />
+		<vertex x="33016" y="52080" />
+		<spawn npcId="20525" respawn="15" amount="2" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="3" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="3" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="3" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_1022] -->
+	<group minZ="-3764" maxZ="-3364">
+		<vertex x="43212" y="54120" />
+		<vertex x="45000" y="54396" />
+		<vertex x="46564" y="55816" />
+		<vertex x="47584" y="58572" />
+		<vertex x="40652" y="61728" />
+		<vertex x="37828" y="57444" />
+		<spawn npcId="20325" respawn="15" amount="7" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="7" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="7" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_023] -->
+	<group minZ="-3788" maxZ="-3388">
+		<vertex x="40648" y="61836" />
+		<vertex x="47524" y="58700" />
+		<vertex x="47548" y="60764" />
+		<vertex x="46444" y="63032" />
+		<vertex x="44412" y="65232" />
+		<vertex x="40688" y="65288" />
+		<spawn npcId="20325" respawn="15" amount="6" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="5" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="6" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_024] -->
+	<group minZ="-3752" maxZ="-3352">
+		<vertex x="33028" y="61096" />
+		<vertex x="37404" y="57800" />
+		<vertex x="40632" y="61828" />
+		<vertex x="40572" y="65232" />
+		<vertex x="32988" y="65176" />
+		<spawn npcId="20468" respawn="15" amount="7" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="8" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="7" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_19_025] -->
+	<group minZ="-3792" maxZ="-3392">
+		<vertex x="33024" y="53304" />
+		<vertex x="36736" y="54392" />
+		<vertex x="37316" y="57604" />
+		<vertex x="33044" y="60888" />
+		<spawn npcId="20468" respawn="15" amount="5" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="5" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="5" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_19_026] -->
+	<group minZ="-3736" maxZ="-3236">
+		<vertex x="36876" y="54816" />
+		<vertex x="40636" y="53256" />
+		<vertex x="42828" y="54292" />
+		<vertex x="39308" y="56388" />
+		<vertex x="37256" y="56824" />
+		<spawn npcId="20325" respawn="15" amount="3" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="4" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="3" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_030] -->
+	<group minZ="-3764" maxZ="-3364">
+		<vertex x="47176" y="36924" />
+		<vertex x="49208" y="36080" />
+		<vertex x="50956" y="37508" />
+		<vertex x="49012" y="38060" />
+		<spawn npcId="20537" respawn="15" amount="2" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_031] -->
+	<group minZ="-3604" maxZ="-3304">
+		<vertex x="42812" y="36804" />
+		<vertex x="44788" y="36428" />
+		<vertex x="45580" y="37320" />
+		<vertex x="43028" y="38128" />
+		<spawn npcId="20537" respawn="15" amount="2" /> <!-- Elder Red Keltir -->
+	</group>
+	<!-- [oren_t21_19_034] -->
+	<group minZ="-3704" maxZ="-3404">
+		<vertex x="53772" y="42936" />
+		<vertex x="55684" y="44044" />
+		<vertex x="54660" y="45244" />
+		<vertex x="52352" y="44756" />
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_19_035] -->
+	<group minZ="-3580" maxZ="-3280">
+		<vertex x="51036" y="45528" />
+		<vertex x="52744" y="45700" />
+		<vertex x="52892" y="48264" />
+		<vertex x="50768" y="47896" />
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_19_036] -->
+	<group minZ="-3744" maxZ="-3344">
+		<vertex x="53572" y="49772" />
+		<vertex x="55908" y="50608" />
+		<vertex x="55724" y="52616" />
+		<vertex x="53412" y="52436" />
+		<vertex x="52560" y="51232" />
+		<spawn npcId="20525" respawn="15" amount="2" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="2" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_037] -->
+	<group minZ="-3544" maxZ="-3144">
+		<vertex x="50916" y="53656" />
+		<vertex x="53448" y="54388" />
+		<vertex x="54680" y="56560" />
+		<vertex x="53004" y="57312" />
+		<vertex x="51376" y="55764" />
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_19_038] -->
+	<group minZ="-3568" maxZ="-3168">
+		<vertex x="49704" y="58496" />
+		<vertex x="51828" y="58500" />
+		<vertex x="52496" y="60172" />
+		<vertex x="50848" y="60648" />
+		<spawn npcId="20525" respawn="15" amount="2" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_19_039] -->
+	<group minZ="-3788" maxZ="-3388">
+		<vertex x="41032" y="56092" />
+		<vertex x="45076" y="55492" />
+		<vertex x="45732" y="58844" />
+		<spawn npcId="20325" respawn="15" amount="3" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_040] -->
+	<group minZ="-3712" maxZ="-3312">
+		<vertex x="38932" y="57892" />
+		<vertex x="41648" y="58092" />
+		<vertex x="42176" y="60252" />
+		<vertex x="38812" y="60924" />
+		<spawn npcId="20468" respawn="15" amount="3" /> <!-- Kaboo Orc -->
+	</group>
+	<!-- [oren_t21_19_041] -->
+	<group minZ="-3760" maxZ="-3360">
+		<vertex x="42104" y="61900" />
+		<vertex x="45788" y="60472" />
+		<vertex x="45140" y="63212" />
+		<vertex x="42120" y="63656" />
+		<spawn npcId="20470" respawn="15" amount="3" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t21_19_042] -->
+	<group minZ="-3776" maxZ="-3376">
+		<vertex x="34528" y="61768" />
+		<vertex x="37484" y="60576" />
+		<vertex x="38256" y="62488" />
+		<vertex x="37548" y="64008" />
+		<vertex x="35840" y="64156" />
+		<vertex x="34440" y="63312" />
+		<spawn npcId="20470" respawn="15" amount="2" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_19_043] -->
+	<group minZ="-3784" maxZ="-3484">
+		<vertex x="33712" y="58636" />
+		<vertex x="36352" y="56892" />
+		<vertex x="37576" y="59268" />
+		<vertex x="35636" y="60284" />
+		<spawn npcId="20470" respawn="15" amount="2" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="1" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_19_044] -->
+	<group minZ="-3696" maxZ="-3396">
+		<vertex x="36748" y="48264" />
+		<vertex x="39652" y="47620" />
+		<vertex x="39076" y="49720" />
+		<vertex x="36800" y="49700" />
+		<spawn npcId="20525" respawn="15" amount="2" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="2" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_045] -->
+	<group minZ="-3760" maxZ="-3460">
+		<vertex x="36964" y="44636" />
+		<vertex x="38960" y="45200" />
+		<vertex x="39592" y="46888" />
+		<vertex x="37384" y="47608" />
+		<spawn npcId="20525" respawn="15" amount="2" /> <!-- Gray Wolf -->
+		<spawn npcId="20325" respawn="15" amount="2" /> <!-- Goblin Raider -->
+	</group>
+	<!-- [oren_t21_19_046] -->
+	<group minZ="-3880" maxZ="-3480">
+		<vertex x="35304" y="46048" />
+		<vertex x="36148" y="46140" />
+		<vertex x="36360" y="46964" />
+		<vertex x="35180" y="48852" />
+		<vertex x="34280" y="48700" />
+		<vertex x="34224" y="46864" />
+		<spawn npcId="20325" respawn="15" amount="2" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="2" /> <!-- Kaboo Orc -->
+	</group>
+	<!-- [oren_t21_19_047] -->
+	<group minZ="-3764" maxZ="-3564">
+		<vertex x="34280" y="41900" />
+		<vertex x="35984" y="42684" />
+		<vertex x="36660" y="45204" />
+		<vertex x="34500" y="45396" />
+		<spawn npcId="20325" respawn="15" amount="2" /> <!-- Goblin Raider -->
+		<spawn npcId="20525" respawn="15" amount="2" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_19_048] -->
+	<group minZ="-3740" maxZ="-3440">
+		<vertex x="37036" y="39608" />
+		<vertex x="38748" y="38932" />
+		<vertex x="39648" y="42028" />
+		<vertex x="38156" y="41536" />
+		<spawn npcId="20537" respawn="15" amount="2" /> <!-- Elder Red Keltir -->
+		<spawn npcId="20468" respawn="15" amount="2" /> <!-- Kaboo Orc -->
+	</group>
+	<!-- [oren_t21_19_049] -->
+	<group minZ="-3776" maxZ="-3376">
+		<vertex x="39340" y="33344" />
+		<vertex x="40660" y="34048" />
+		<vertex x="40420" y="36360" />
+		<vertex x="38232" y="36872" />
+		<vertex x="37964" y="34864" />
+		<spawn npcId="20525" respawn="15" amount="3" /> <!-- Gray Wolf -->
+	</group>
+	<!-- [oren_t21_20_002] -->
+	<group minZ="-3784" maxZ="-3384">
+		<vertex x="47348" y="65716" />
+		<vertex x="53396" y="65652" />
+		<vertex x="52464" y="67284" />
+		<spawn npcId="20470" respawn="15" amount="2" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_20_003] -->
+	<group minZ="-3800" maxZ="-3400">
+		<vertex x="54552" y="65632" />
+		<vertex x="58764" y="65620" />
+		<vertex x="60580" y="70164" />
+		<vertex x="56516" y="69612" />
+		<vertex x="53668" y="67608" />
+		<spawn npcId="20468" respawn="15" amount="4" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="4" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_20_004] -->
+	<group minZ="-3780" maxZ="-3380">
+		<vertex x="58976" y="70676" />
+		<vertex x="60504" y="70176" />
+		<vertex x="61028" y="73880" />
+		<vertex x="59904" y="74344" />
+		<vertex x="58888" y="72948" />
+		<spawn npcId="20470" respawn="15" amount="3" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_20_005] -->
+	<group minZ="-3788" maxZ="-3238">
+		<vertex x="54284" y="69472" />
+		<vertex x="57332" y="71724" />
+		<vertex x="57852" y="74800" />
+		<vertex x="57120" y="75764" />
+		<vertex x="53724" y="75496" />
+		<vertex x="53108" y="70720" />
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20469" respawn="15" amount="3" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20336" respawn="15" amount="5" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="4" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_006] -->
+	<group minZ="-3700" maxZ="-3300">
+		<vertex x="57948" y="74832" />
+		<vertex x="61208" y="76588" />
+		<vertex x="60140" y="80780" />
+		<vertex x="56932" y="81004" />
+		<vertex x="54980" y="79120" />
+		<spawn npcId="20509" respawn="15" amount="6" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</group>
+	<!-- [oren_t21_20_007] -->
+	<group minZ="-3708" maxZ="-3308">
+		<vertex x="56972" y="81092" />
+		<vertex x="60016" y="80868" />
+		<vertex x="60536" y="81712" />
+		<vertex x="59768" y="83732" />
+		<vertex x="58068" y="84768" />
+		<vertex x="56444" y="84904" />
+		<vertex x="56200" y="83340" />
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="2" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_008] -->
+	<group minZ="-3828" maxZ="-3428">
+		<vertex x="54788" y="87612" />
+		<vertex x="59056" y="87960" />
+		<vertex x="61096" y="92960" />
+		<vertex x="56740" y="92912" />
+		<vertex x="51984" y="92012" />
+		<spawn npcId="20509" respawn="15" amount="9" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="7" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</group>
+	<!-- [oren_t21_20_009] -->
+	<group minZ="-3788" maxZ="-3388">
+		<vertex x="49860" y="89976" />
+		<vertex x="53416" y="89648" />
+		<vertex x="51744" y="92164" />
+		<vertex x="49012" y="93432" />
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="2" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_011] -->
+	<group minZ="-3812" maxZ="-3412">
+		<vertex x="46620" y="87800" />
+		<vertex x="49712" y="89932" />
+		<vertex x="48848" y="93488" />
+		<vertex x="44496" y="94904" />
+		<vertex x="42576" y="93980" />
+		<vertex x="41220" y="90484" />
+		<spawn npcId="20471" respawn="15" amount="6" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="8" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="10" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_012] -->
+	<group minZ="-3808" maxZ="-3158">
+		<vertex x="38392" y="88972" />
+		<vertex x="41016" y="90068" />
+		<vertex x="42280" y="93676" />
+		<vertex x="38468" y="93408" />
+		<vertex x="36460" y="91872" />
+		<spawn npcId="20471" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="4" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_013] -->
+	<group minZ="-3756" maxZ="-3156">
+		<vertex x="35804" y="87764" />
+		<vertex x="38132" y="88916" />
+		<vertex x="36284" y="91840" />
+		<vertex x="32972" y="90360" />
+		<vertex x="33052" y="87676" />
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="2" /> <!-- Dryad -->
+		<spawn npcId="20019" respawn="15" amount="3" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t21_20_014] -->
+	<group minZ="-3644" maxZ="-3244">
+		<vertex x="38040" y="87980" />
+		<vertex x="41148" y="87040" />
+		<vertex x="43256" y="88384" />
+		<vertex x="41816" y="89344" />
+		<vertex x="40072" y="89164" />
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="2" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_015] -->
+	<group minZ="-3648" maxZ="-3248">
+		<vertex x="32988" y="83192" />
+		<vertex x="41760" y="83160" />
+		<vertex x="42436" y="83924" />
+		<vertex x="41064" y="86984" />
+		<vertex x="37980" y="87956" />
+		<vertex x="33024" y="86460" />
+		<spawn npcId="20509" respawn="15" amount="7" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="6" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="6" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="7" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_016] -->
+	<group minZ="-3748" maxZ="-3298">
+		<vertex x="33004" y="78680" />
+		<vertex x="37372" y="79728" />
+		<vertex x="38244" y="83040" />
+		<vertex x="33060" y="83048" />
+		<spawn npcId="20509" respawn="15" amount="4" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="4" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_017] -->
+	<group minZ="-3796" maxZ="-3296">
+		<vertex x="33032" y="71956" />
+		<vertex x="37292" y="70972" />
+		<vertex x="40136" y="74304" />
+		<vertex x="38940" y="78236" />
+		<vertex x="37492" y="79736" />
+		<vertex x="33060" y="78536" />
+		<spawn npcId="20470" respawn="15" amount="7" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20469" respawn="15" amount="5" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20336" respawn="15" amount="9" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="9" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_018] -->
+	<group minZ="-3772" maxZ="-3372">
+		<vertex x="33016" y="67584" />
+		<vertex x="36580" y="67752" />
+		<vertex x="37420" y="68892" />
+		<vertex x="37176" y="70688" />
+		<vertex x="33088" y="71736" />
+		<spawn npcId="20336" respawn="15" amount="4" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="4" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_019] -->
+	<group minZ="-3736" maxZ="-3236">
+		<vertex x="42340" y="67164" />
+		<vertex x="46504" y="67172" />
+		<vertex x="46340" y="70956" />
+		<vertex x="44532" y="72920" />
+		<vertex x="40348" y="70948" />
+		<vertex x="38792" y="68384" />
+		<vertex x="39504" y="67828" />
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20469" respawn="15" amount="3" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20336" respawn="15" amount="7" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_20_020] -->
+	<group minZ="-3748" maxZ="-3298">
+		<vertex x="49688" y="68060" />
+		<vertex x="52236" y="69396" />
+		<vertex x="51988" y="71508" />
+		<vertex x="49036" y="73016" />
+		<vertex x="48028" y="72672" />
+		<vertex x="46708" y="70272" />
+		<vertex x="46712" y="67224" />
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20469" respawn="15" amount="2" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20336" respawn="15" amount="5" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_20_021] -->
+	<group minZ="-3740" maxZ="-3440">
+		<vertex x="55584" y="66728" />
+		<vertex x="58040" y="66764" />
+		<vertex x="58756" y="67928" />
+		<vertex x="57900" y="69080" />
+		<vertex x="55924" y="68404" />
+		<spawn npcId="20336" respawn="15" amount="3" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t21_20_022] -->
+	<group minZ="-3652" maxZ="-3252">
+		<vertex x="53424" y="71004" />
+		<vertex x="54500" y="70268" />
+		<vertex x="56228" y="71608" />
+		<vertex x="54508" y="71884" />
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_023] -->
+	<group minZ="-3656" maxZ="-3356">
+		<vertex x="56804" y="77312" />
+		<vertex x="58504" y="76840" />
+		<vertex x="58780" y="80240" />
+		<vertex x="56760" y="80072" />
+		<vertex x="56016" y="78784" />
+		<spawn npcId="20013" respawn="15" amount="3" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_024] -->
+	<group minZ="-3760" maxZ="-3360">
+		<vertex x="54360" y="89456" />
+		<vertex x="56616" y="88576" />
+		<vertex x="58152" y="90164" />
+		<vertex x="56556" y="91636" />
+		<vertex x="53564" y="91028" />
+		<spawn npcId="20013" respawn="15" amount="3" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t21_20_025] -->
+	<group minZ="-3772" maxZ="-3372">
+		<vertex x="46508" y="89244" />
+		<vertex x="48304" y="90876" />
+		<vertex x="47488" y="92304" />
+		<vertex x="45004" y="92160" />
+		<spawn npcId="20019" respawn="15" amount="3" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t21_20_026] -->
+	<group minZ="-3632" maxZ="-3332">
+		<vertex x="43036" y="89900" />
+		<vertex x="44376" y="90388" />
+		<vertex x="43632" y="92172" />
+		<vertex x="41904" y="91152" />
+		<spawn npcId="20019" respawn="15" amount="2" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t21_20_027] -->
+	<group minZ="-3596" maxZ="-3196">
+		<vertex x="38620" y="89932" />
+		<vertex x="40224" y="90448" />
+		<vertex x="40772" y="92268" />
+		<vertex x="37736" y="91832" />
+		<spawn npcId="20019" respawn="15" amount="3" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t21_20_028] -->
+	<group minZ="-3548" maxZ="-3248">
+		<vertex x="38876" y="84332" />
+		<vertex x="41132" y="83724" />
+		<vertex x="40832" y="86328" />
+		<vertex x="39368" y="86336" />
+		<spawn npcId="20019" respawn="15" amount="2" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t21_20_029] -->
+	<group minZ="-3744" maxZ="-3444">
+		<vertex x="34160" y="77080" />
+		<vertex x="36148" y="76712" />
+		<vertex x="37924" y="78016" />
+		<vertex x="36288" y="78996" />
+		<vertex x="34172" y="78328" />
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_030] -->
+	<group minZ="-3664" maxZ="-3264">
+		<vertex x="35280" y="73096" />
+		<vertex x="37540" y="72916" />
+		<vertex x="37868" y="75376" />
+		<vertex x="34936" y="76100" />
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_031] -->
+	<group minZ="-3788" maxZ="-3488">
+		<vertex x="34496" y="69360" />
+		<vertex x="36352" y="68236" />
+		<vertex x="36756" y="69380" />
+		<vertex x="36492" y="70424" />
+		<vertex x="34712" y="70912" />
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t21_20_032] -->
+	<group minZ="-3548" maxZ="-3148">
+		<vertex x="40444" y="68984" />
+		<vertex x="43596" y="68888" />
+		<vertex x="44672" y="69892" />
+		<vertex x="44072" y="71904" />
+		<vertex x="41112" y="70332" />
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+	</group>
+	<!-- [oren_t21_20_033] -->
+	<group minZ="-3616" maxZ="-3216">
+		<vertex x="48752" y="68412" />
+		<vertex x="50692" y="69100" />
+		<vertex x="51264" y="70916" />
+		<vertex x="48596" y="71560" />
+		<vertex x="47560" y="69940" />
+		<spawn npcId="20509" respawn="15" amount="3" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_19_001] -->
+	<group minZ="-3780" maxZ="-3480">
+		<vertex x="31384" y="33580" />
+		<vertex x="32520" y="33824" />
+		<vertex x="32496" y="36848" />
+		<vertex x="27992" y="37752" />
+		<vertex x="26292" y="35428" />
+		<vertex x="27704" y="34468" />
+		<spawn npcId="20468" respawn="15" amount="3" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="3" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t20_19_002] -->
+	<group minZ="-3744" maxZ="-2944">
+		<vertex x="31020" y="37328" />
+		<vertex x="32488" y="37064" />
+		<vertex x="32480" y="45876" />
+		<vertex x="31756" y="45268" />
+		<spawn npcId="20325" respawn="15" amount="2" /> <!-- Goblin Raider -->
+		<spawn npcId="20468" respawn="15" amount="2" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="2" /> <!-- Kaboo Orc Soldier -->
+	</group>
+	<!-- [oren_t20_19_003] -->
+	<group minZ="-3788" maxZ="-3138">
+		<vertex x="31032" y="46088" />
+		<vertex x="32408" y="46608" />
+		<vertex x="32404" y="51144" />
+		<vertex x="29484" y="51188" />
+		<vertex x="27420" y="49124" />
+		<spawn npcId="20468" respawn="15" amount="3" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="3" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t20_19_004] -->
+	<group minZ="-3732" maxZ="-3282">
+		<vertex x="24620" y="48304" />
+		<vertex x="27360" y="49132" />
+		<vertex x="29352" y="51128" />
+		<vertex x="27272" y="53028" />
+		<vertex x="25760" y="53600" />
+		<vertex x="22720" y="52016" />
+		<vertex x="22376" y="49480" />
+		<spawn npcId="20468" respawn="15" amount="4" /> <!-- Kaboo Orc -->
+		<spawn npcId="20470" respawn="15" amount="5" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="4" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t20_19_005] -->
+	<group minZ="-3756" maxZ="-3306">
+		<vertex x="19828" y="45920" />
+		<vertex x="25008" y="43944" />
+		<vertex x="24556" y="48204" />
+		<vertex x="22272" y="49504" />
+		<vertex x="20928" y="49456" />
+		<spawn npcId="20470" respawn="15" amount="4" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20336" respawn="15" amount="5" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="4" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_19_006] -->
+	<group minZ="-3760" maxZ="-3360">
+		<vertex x="20920" y="41452" />
+		<vertex x="27528" y="37580" />
+		<vertex x="28824" y="40800" />
+		<vertex x="25184" y="43884" />
+		<vertex x="23028" y="44644" />
+		<spawn npcId="20470" respawn="15" amount="5" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20469" respawn="15" amount="3" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20509" respawn="15" amount="8" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_19_007] -->
+	<group minZ="-3780" maxZ="-3480">
+		<vertex x="23692" y="35168" />
+		<vertex x="26168" y="35520" />
+		<vertex x="27652" y="37360" />
+		<vertex x="20796" y="41364" />
+		<vertex x="19360" y="39032" />
+		<spawn npcId="20470" respawn="15" amount="8" /> <!-- Kaboo Orc Soldier -->
+		<spawn npcId="20469" respawn="15" amount="3" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20509" respawn="15" amount="5" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_19_008] -->
+	<group minZ="-3880" maxZ="-3480">
+		<vertex x="16308" y="42092" />
+		<vertex x="19264" y="39228" />
+		<vertex x="22932" y="44672" />
+		<vertex x="19468" y="45708" />
+		<spawn npcId="20469" respawn="15" amount="2" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20336" respawn="15" amount="4" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="3" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior -->
+	</group>
+	<!-- [oren_t20_19_009] -->
+	<group minZ="-3896" maxZ="-3496">
+		<vertex x="14852" y="43152" />
+		<vertex x="17012" y="43196" />
+		<vertex x="19104" y="46332" />
+		<vertex x="20056" y="49512" />
+		<vertex x="16804" y="49856" />
+		<vertex x="14120" y="45048" />
+		<spawn npcId="20471" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20013" respawn="15" amount="4" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t20_19_010] -->
+	<group minZ="-3792" maxZ="-3392">
+		<vertex x="15372" y="50076" />
+		<vertex x="19548" y="49648" />
+		<vertex x="20296" y="54032" />
+		<vertex x="14732" y="55092" />
+		<vertex x="12328" y="52968" />
+		<vertex x="13268" y="51184" />
+		<spawn npcId="20473" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20472" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior Captain -->
+		<spawn npcId="20013" respawn="15" amount="6" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t20_19_011] -->
+	<group minZ="-3792" maxZ="-3242">
+		<vertex x="9148" y="54120" />
+		<vertex x="12188" y="53108" />
+		<vertex x="14540" y="55084" />
+		<vertex x="11324" y="59320" />
+		<vertex x="9072" y="57032" />
+		<spawn npcId="20019" respawn="15" amount="4" /> <!-- Dryad Elder -->
+		<spawn npcId="20460" respawn="15" amount="4" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+	</group>
+	<!-- [oren_t20_19_012] -->
+	<group minZ="-3708" maxZ="-3308">
+		<vertex x="6448" y="58268" />
+		<vertex x="8880" y="57192" />
+		<vertex x="11172" y="59400" />
+		<vertex x="6536" y="62916" />
+		<spawn npcId="20308" respawn="15" amount="3" /> <!-- Hook Spider -->
+		<spawn npcId="20466" respawn="15" amount="3" /> <!-- Pincer Spider -->
+		<spawn npcId="20036" respawn="15" amount="3" /> <!-- Lirein -->
+	</group>
+	<!-- [oren_t20_19_013] -->
+	<group minZ="-3752" maxZ="-3102">
+		<vertex x="968" y="57384" />
+		<vertex x="6284" y="57464" />
+		<vertex x="6300" y="62956" />
+		<vertex x="4612" y="65108" />
+		<vertex x="840" y="65084" />
+		<spawn npcId="20036" respawn="15" amount="9" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="9" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_19_014] -->
+	<group minZ="-3676" maxZ="-3276">
+		<vertex x="3880" y="52440" />
+		<vertex x="6108" y="54548" />
+		<vertex x="6052" y="57284" />
+		<vertex x="988" y="57268" />
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+		<spawn npcId="20036" respawn="15" amount="4" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="4" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_19_015] -->
+	<group minZ="-3824" maxZ="-3374">
+		<vertex x="8556" y="47740" />
+		<vertex x="11616" y="50580" />
+		<vertex x="11216" y="51764" />
+		<vertex x="5988" y="54460" />
+		<vertex x="4140" y="52600" />
+		<spawn npcId="20460" respawn="15" amount="4" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="5" /> <!-- Hook Spider -->
+		<spawn npcId="20466" respawn="15" amount="4" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_19_016] -->
+	<group minZ="-3796" maxZ="-3396">
+		<vertex x="8616" y="47116" />
+		<vertex x="12416" y="45400" />
+		<vertex x="14188" y="47848" />
+		<vertex x="13976" y="49604" />
+		<vertex x="9992" y="48648" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+		<spawn npcId="20466" respawn="15" amount="3" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_19_017] -->
+	<group minZ="-3672" maxZ="-3172">
+		<vertex x="29960" y="52768" />
+		<vertex x="32368" y="53392" />
+		<vertex x="32316" y="57764" />
+		<vertex x="28432" y="59844" />
+		<vertex x="24808" y="55412" />
+		<spawn npcId="20469" respawn="15" amount="3" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20509" respawn="15" amount="7" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</group>
+	<!-- [oren_t20_19_018] -->
+	<group minZ="-3792" maxZ="-3392">
+		<vertex x="28812" y="59908" />
+		<vertex x="32340" y="57944" />
+		<vertex x="32376" y="65068" />
+		<vertex x="30104" y="65128" />
+		<spawn npcId="20469" respawn="15" amount="2" /> <!-- Kaboo Orc Archer -->
+		<spawn npcId="20509" respawn="15" amount="4" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</group>
+	<!-- [oren_t20_19_019] -->
+	<group minZ="-3776" maxZ="-3226">
+		<vertex x="24500" y="61388" />
+		<vertex x="27340" y="59852" />
+		<vertex x="28968" y="62872" />
+		<vertex x="29152" y="65088" />
+		<vertex x="21928" y="65160" />
+		<spawn npcId="20509" respawn="15" amount="6" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20472" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior Captain -->
+	</group>
+	<!-- [oren_t20_19_020] -->
+	<group minZ="-3664" maxZ="-3014">
+		<vertex x="18808" y="55952" />
+		<vertex x="23172" y="54984" />
+		<vertex x="26876" y="59864" />
+		<vertex x="24464" y="61272" />
+		<vertex x="18652" y="58272" />
+		<spawn npcId="20473" respawn="15" amount="7" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20472" respawn="15" amount="5" /> <!-- Kaboo Orc Warrior Captain -->
+		<spawn npcId="20013" respawn="15" amount="8" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t20_19_021] -->
+	<group minZ="-3716" maxZ="-3266">
+		<vertex x="16580" y="55180" />
+		<vertex x="18704" y="55320" />
+		<vertex x="18548" y="58248" />
+		<vertex x="16668" y="58316" />
+		<vertex x="14228" y="56900" />
+		<spawn npcId="20013" respawn="15" amount="3" /> <!-- Dryad -->
+		<spawn npcId="20019" respawn="15" amount="3" /> <!-- Dryad Elder -->
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+	</group>
+	<!-- [oren_t20_19_022] -->
+	<group minZ="-3772" maxZ="-3372">
+		<vertex x="7884" y="62572" />
+		<vertex x="11052" y="60760" />
+		<vertex x="15564" y="65216" />
+		<vertex x="6144" y="65204" />
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+		<spawn npcId="20036" respawn="15" amount="4" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="4" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_19_023] -->
+	<group minZ="-3576" maxZ="-3276">
+		<vertex x="23320" y="50264" />
+		<vertex x="25588" y="50032" />
+		<vertex x="27484" y="51316" />
+		<vertex x="25148" y="52264" />
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_19_024] -->
+	<group minZ="-3720" maxZ="-3320">
+		<vertex x="21032" y="46392" />
+		<vertex x="23768" y="45460" />
+		<vertex x="23808" y="47452" />
+		<vertex x="22060" y="48524" />
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+	</group>
+	<!-- [oren_t20_19_025] -->
+	<group minZ="-3788" maxZ="-3388">
+		<vertex x="23652" y="36696" />
+		<vertex x="26168" y="36412" />
+		<vertex x="24524" y="38088" />
+		<vertex x="22408" y="38192" />
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+	</group>
+	<!-- [oren_t20_19_026] -->
+	<group minZ="-3752" maxZ="-3552">
+		<vertex x="17516" y="42364" />
+		<vertex x="20336" y="42128" />
+		<vertex x="21364" y="43660" />
+		<vertex x="19852" y="45088" />
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+	</group>
+	<!-- [oren_t20_19_027] -->
+	<group minZ="-3808" maxZ="-3408">
+		<vertex x="15372" y="45916" />
+		<vertex x="17324" y="45056" />
+		<vertex x="17988" y="47652" />
+		<vertex x="16916" y="48908" />
+		<spawn npcId="20472" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior Captain -->
+		<spawn npcId="20019" respawn="15" amount="2" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t20_19_028] -->
+	<group minZ="-3760" maxZ="-3360">
+		<vertex x="14680" y="51224" />
+		<vertex x="17828" y="50472" />
+		<vertex x="18392" y="52812" />
+		<vertex x="15752" y="53796" />
+		<spawn npcId="20019" respawn="15" amount="2" /> <!-- Dryad Elder -->
+		<spawn npcId="20460" respawn="15" amount="2" /> <!-- Crimson Spider -->
+	</group>
+	<!-- [oren_t20_19_029] -->
+	<group minZ="-3700" maxZ="-3300">
+		<vertex x="10864" y="53784" />
+		<vertex x="12028" y="54256" />
+		<vertex x="10708" y="56504" />
+		<vertex x="9584" y="55012" />
+		<spawn npcId="20466" respawn="15" amount="2" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_19_030] -->
+	<group minZ="-3604" maxZ="-3204">
+		<vertex x="2780" y="60260" />
+		<vertex x="4336" y="61196" />
+		<vertex x="3860" y="63148" />
+		<vertex x="2880" y="63516" />
+		<vertex x="1584" y="62172" />
+		<spawn npcId="20466" respawn="15" amount="2" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_19_031] -->
+	<group minZ="-3640" maxZ="-3240">
+		<vertex x="2696" y="58668" />
+		<vertex x="5780" y="58024" />
+		<vertex x="5376" y="60436" />
+		<vertex x="3640" y="60104" />
+		<spawn npcId="20308" respawn="15" amount="1" /> <!-- Hook Spider -->
+		<spawn npcId="20308" respawn="15" amount="1" /> <!-- Hook Spider -->
+	</group>
+	<!-- [oren_t20_19_032] -->
+	<group minZ="-3784" maxZ="-3384">
+		<vertex x="6040" y="51984" />
+		<vertex x="8968" y="49344" />
+		<vertex x="11188" y="51008" />
+		<vertex x="7300" y="53104" />
+		<spawn npcId="20036" respawn="15" amount="3" /> <!-- Lirein -->
+	</group>
+	<!-- [oren_t20_19_033] -->
+	<group minZ="-3784" maxZ="-3384">
+		<vertex x="10308" y="47164" />
+		<vertex x="12152" y="46240" />
+		<vertex x="13656" y="48320" />
+		<vertex x="11080" y="48224" />
+		<spawn npcId="20036" respawn="15" amount="2" /> <!-- Lirein -->
+	</group>
+	<!-- [oren_t20_19_034] -->
+	<group minZ="-3628" maxZ="-3078">
+		<vertex x="29628" y="53648" />
+		<vertex x="31984" y="54168" />
+		<vertex x="31788" y="57064" />
+		<vertex x="29628" y="57580" />
+		<vertex x="27628" y="55956" />
+		<spawn npcId="20336" respawn="15" amount="2" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="2" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_19_035] -->
+	<group minZ="-3524" maxZ="-3224">
+		<vertex x="21244" y="56736" />
+		<vertex x="22848" y="55824" />
+		<vertex x="24528" y="57672" />
+		<vertex x="21888" y="59156" />
+		<spawn npcId="20460" respawn="15" amount="2" /> <!-- Crimson Spider -->
+		<spawn npcId="20019" respawn="15" amount="2" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t20_20_001] -->
+	<group minZ="-3840" maxZ="-3440">
+		<vertex x="13636" y="65736" />
+		<vertex x="28592" y="65720" />
+		<vertex x="27424" y="67188" />
+		<vertex x="22572" y="68368" />
+		<vertex x="17384" y="68064" />
+		<spawn npcId="20509" respawn="15" amount="7" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20472" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior Captain -->
+	</group>
+	<!-- [oren_t20_20_002] -->
+	<group minZ="-3764" maxZ="-3464">
+		<vertex x="5816" y="65688" />
+		<vertex x="13484" y="65696" />
+		<vertex x="13424" y="66192" />
+		<vertex x="7980" y="67652" />
+		<vertex x="5712" y="67008" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+	</group>
+	<!-- [oren_t20_20_003] -->
+	<group minZ="-3788" maxZ="-3438">
+		<vertex x="228" y="65764" />
+		<vertex x="4992" y="65764" />
+		<vertex x="4908" y="66984" />
+		<vertex x="252" y="69300" />
+		<spawn npcId="20036" respawn="15" amount="4" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="3" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_20_004] -->
+	<group minZ="-3772" maxZ="-3372">
+		<vertex x="30936" y="68400" />
+		<vertex x="32380" y="67800" />
+		<vertex x="32432" y="71664" />
+		<vertex x="30404" y="70596" />
+		<spawn npcId="20336" respawn="15" amount="3" /> <!-- Green Dryad -->
+		<spawn npcId="20509" respawn="15" amount="3" /> <!-- Spore Fungus -->
+	</group>
+	<!-- [oren_t20_20_005] -->
+	<group minZ="-3684" maxZ="-3284">
+		<vertex x="29820" y="79456" />
+		<vertex x="32440" y="76268" />
+		<vertex x="32412" y="81272" />
+		<vertex x="29724" y="81400" />
+		<spawn npcId="20509" respawn="15" amount="3" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="2" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</group>
+	<!-- [oren_t20_20_006] -->
+	<group minZ="-3676" maxZ="-3276">
+		<vertex x="29428" y="81588" />
+		<vertex x="32428" y="81444" />
+		<vertex x="32364" y="86680" />
+		<vertex x="28432" y="88772" />
+		<vertex x="27508" y="87692" />
+		<spawn npcId="20509" respawn="15" amount="5" /> <!-- Spore Fungus -->
+		<spawn npcId="20471" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior -->
+		<spawn npcId="20473" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior Lieutenant -->
+	</group>
+	<!-- [oren_t20_20_007] -->
+	<group minZ="-3616" maxZ="-3016">
+		<vertex x="20668" y="70756" />
+		<vertex x="29480" y="68980" />
+		<vertex x="28100" y="70560" />
+		<vertex x="21388" y="71220" />
+		<spawn npcId="20473" respawn="15" amount="3" /> <!-- Kaboo Orc Warrior Lieutenant -->
+		<spawn npcId="20472" respawn="15" amount="4" /> <!-- Kaboo Orc Warrior Captain -->
+	</group>
+	<!-- [oren_t20_20_008] -->
+	<group minZ="-3744" maxZ="-3144">
+		<vertex x="13320" y="68172" />
+		<vertex x="17672" y="69400" />
+		<vertex x="20728" y="71060" />
+		<vertex x="16548" y="71396" />
+		<vertex x="12556" y="69508" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+	</group>
+	<!-- [oren_t20_20_009] -->
+	<group minZ="-3756" maxZ="-3156">
+		<vertex x="10292" y="68548" />
+		<vertex x="13092" y="68196" />
+		<vertex x="11008" y="71124" />
+		<vertex x="7848" y="71476" />
+		<vertex x="8144" y="69812" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+		<spawn npcId="20466" respawn="15" amount="3" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_20_011] -->
+	<group minZ="-3544" maxZ="-3144">
+		<vertex x="5284" y="69892" />
+		<vertex x="7920" y="69816" />
+		<vertex x="6924" y="72840" />
+		<vertex x="5580" y="72576" />
+		<spawn npcId="20308" respawn="15" amount="2" /> <!-- Hook Spider -->
+		<spawn npcId="20036" respawn="15" amount="2" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="2" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_20_012] -->
+	<group minZ="-3688" maxZ="-3288">
+		<vertex x="3324" y="79844" />
+		<vertex x="6012" y="79188" />
+		<vertex x="6968" y="84092" />
+		<vertex x="4468" y="85236" />
+		<spawn npcId="20460" respawn="15" amount="2" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="3" /> <!-- Hook Spider -->
+		<spawn npcId="20466" respawn="15" amount="2" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_20_013] -->
+	<group minZ="-3784" maxZ="-3234">
+		<vertex x="7052" y="84260" />
+		<vertex x="11008" y="86876" />
+		<vertex x="10440" y="89424" />
+		<vertex x="7652" y="89144" />
+		<vertex x="5320" y="87632" />
+		<vertex x="4480" y="85388" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+		<spawn npcId="20466" respawn="15" amount="3" /> <!-- Pincer Spider -->
+	</group>
+	<!-- [oren_t20_20_014] -->
+	<group minZ="-3860" maxZ="-3460">
+		<vertex x="11624" y="86488" />
+		<vertex x="16148" y="86108" />
+		<vertex x="15904" y="88268" />
+		<vertex x="13180" y="89524" />
+		<vertex x="11064" y="89116" />
+		<spawn npcId="20019" respawn="15" amount="3" /> <!-- Dryad Elder -->
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="3" /> <!-- Hook Spider -->
+	</group>
+	<!-- [oren_t20_20_015] -->
+	<group minZ="-3804" maxZ="-3254">
+		<vertex x="19512" y="83080" />
+		<vertex x="23548" y="82332" />
+		<vertex x="26768" y="85656" />
+		<vertex x="22376" y="88024" />
+		<vertex x="16176" y="88128" />
+		<vertex x="16360" y="85980" />
+		<spawn npcId="20013" respawn="15" amount="9" /> <!-- Dryad -->
+		<spawn npcId="20019" respawn="15" amount="9" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t20_20_016] -->
+	<group minZ="-3256" maxZ="-2956">
+		<vertex x="20896" y="78548" />
+		<vertex x="25376" y="78200" />
+		<vertex x="25136" y="79868" />
+		<vertex x="23476" y="82264" />
+		<vertex x="19632" y="82924" />
+		<vertex x="19316" y="80172" />
+		<spawn npcId="20013" respawn="15" amount="6" /> <!-- Dryad -->
+		<spawn npcId="20019" respawn="15" amount="6" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t20_20_017] -->
+	<group minZ="-3752" maxZ="-3452">
+		<vertex x="28044" y="89564" />
+		<vertex x="32436" y="87724" />
+		<vertex x="32380" y="90120" />
+		<vertex x="28664" y="92004" />
+		<vertex x="27468" y="91660" />
+		<spawn npcId="20013" respawn="15" amount="3" /> <!-- Dryad -->
+		<spawn npcId="20019" respawn="15" amount="3" /> <!-- Dryad Elder -->
+	</group>
+	<!-- [oren_t20_20_018] -->
+	<group minZ="-3844" maxZ="-3444">
+		<vertex x="19340" y="89072" />
+		<vertex x="25728" y="88332" />
+		<vertex x="27864" y="89612" />
+		<vertex x="26780" y="92668" />
+		<vertex x="19196" y="92048" />
+		<spawn npcId="20013" respawn="15" amount="5" /> <!-- Dryad -->
+		<spawn npcId="20019" respawn="15" amount="5" /> <!-- Dryad Elder -->
+		<spawn npcId="20460" respawn="15" amount="5" /> <!-- Crimson Spider -->
+	</group>
+	<!-- [oren_t20_20_019] -->
+	<group minZ="-3892" maxZ="-3492">
+		<vertex x="14424" y="89996" />
+		<vertex x="19188" y="89060" />
+		<vertex x="19080" y="92008" />
+		<vertex x="17700" y="93148" />
+		<vertex x="14284" y="92804" />
+		<vertex x="12488" y="91372" />
+		<spawn npcId="20019" respawn="15" amount="4" /> <!-- Dryad Elder -->
+		<spawn npcId="20460" respawn="15" amount="4" /> <!-- Crimson Spider -->
+		<spawn npcId="20308" respawn="15" amount="4" /> <!-- Hook Spider -->
+	</group>
+	<!-- [oren_t20_20_020] -->
+	<group minZ="-3812" maxZ="-3412">
+		<vertex x="3760" y="88832" />
+		<vertex x="10360" y="90604" />
+		<vertex x="9544" y="92648" />
+		<vertex x="7212" y="93512" />
+		<vertex x="3288" y="91792" />
+		<spawn npcId="20308" respawn="15" amount="3" /> <!-- Hook Spider -->
+		<spawn npcId="20036" respawn="15" amount="6" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="5" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_20_021] -->
+	<group minZ="-3880" maxZ="-3530">
+		<vertex x="108" y="75536" />
+		<vertex x="3240" y="74880" />
+		<vertex x="3496" y="75844" />
+		<vertex x="2704" y="79348" />
+		<vertex x="312" y="78192" />
+		<spawn npcId="20308" respawn="15" amount="2" /> <!-- Hook Spider -->
+		<spawn npcId="20036" respawn="15" amount="3" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="2" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_20_022] -->
+	<group minZ="-3796" maxZ="-3396">
+		<vertex x="3616" y="69804" />
+		<vertex x="4420" y="70008" />
+		<vertex x="2476" y="73328" />
+		<vertex x="1112" y="74544" />
+		<vertex x="236" y="74600" />
+		<vertex x="488" y="72560" />
+		<spawn npcId="20308" respawn="15" amount="2" /> <!-- Hook Spider -->
+		<spawn npcId="20036" respawn="15" amount="3" /> <!-- Lirein -->
+		<spawn npcId="20044" respawn="15" amount="2" /> <!-- Lirein Elder -->
+	</group>
+	<!-- [oren_t20_20_23] -->
+	<group minZ="-3640" maxZ="-3240">
+		<vertex x="28824" y="84432" />
+		<vertex x="30156" y="84048" />
+		<vertex x="30728" y="85700" />
+		<vertex x="29668" y="87104" />
+		<vertex x="28212" y="86856" />
+		<spawn npcId="20013" respawn="15" amount="3" /> <!-- Dryad -->
+	</group>
+	<!-- [oren_t20_20_024] -->
+	<group minZ="-3608" maxZ="-3308">
+		<vertex x="21780" y="84888" />
+		<vertex x="23336" y="83724" />
+		<vertex x="24360" y="86004" />
+		<vertex x="22560" y="87440" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+	</group>
+	<!-- [oren_t20_20_025] -->
+	<group minZ="-3720" maxZ="-3420">
+		<vertex x="17424" y="85964" />
+		<vertex x="19064" y="84936" />
+		<vertex x="20340" y="86032" />
+		<vertex x="18892" y="87940" />
+		<vertex x="16912" y="87336" />
+		<spawn npcId="20460" respawn="15" amount="3" /> <!-- Crimson Spider -->
+	</group>
+	<!-- [oren_t20_20_dg_001] -->
+	<spawn npcId="20372" x="25335" y="74961" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="25580" y="74764" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<spawn npcId="20372" x="25580" y="75164" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="24976" y="74972" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<spawn npcId="20372" x="24736" y="74768" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="24688" y="75168" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<!-- [oren_t20_20_dg_002] -->
+	<spawn npcId="20464" x="24014" y="76158" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="24321" y="76152" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20504" x="24176" y="76543" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20464" x="24030" y="76886" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="24337" y="76878" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20504" x="24190" y="77286" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20464" x="24007" y="77577" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="24314" y="77572" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<!-- [oren_t20_20_dg_003] -->
+	<spawn npcId="20372" x="25040" y="76131" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="25173" y="75883" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<spawn npcId="20372" x="25432" y="76147" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="25536" y="75890" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<!-- [oren_t20_20_dg_004] -->
+	<spawn npcId="20372" x="25034" y="78290" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="25167" y="78042" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<spawn npcId="20372" x="25430" y="78311" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="25534" y="78054" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<!-- [oren_t20_20_dg_005] -->
+	<spawn npcId="20372" x="22563" y="76146" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="22696" y="75898" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<spawn npcId="20372" x="22959" y="76167" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="23063" y="75910" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<!-- [oren_t20_20_dg_006] -->
+	<spawn npcId="20372" x="22789" y="77926" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="22922" y="77678" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<spawn npcId="20372" x="23185" y="77947" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20373" x="23289" y="77690" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior Captain -->
+	<!-- [oren_t20_20_dg_007] -->
+	<spawn npcId="20504" x="24016" y="78976" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="24272" y="78976" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="24016" y="79200" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="24272" y="79216" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<!-- [oren_t20_20_dg_008] -->
+	<spawn npcId="20464" x="23820" y="80712" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="24158" y="80567" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20504" x="24177" y="80820" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20464" x="24193" y="81124" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="24545" y="80717" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20504" x="24544" y="80990" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20464" x="23821" y="80971" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<!-- [oren_t20_20_dg_009] -->
+	<spawn npcId="20464" x="25360" y="81504" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="25712" y="81488" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20464" x="25496" y="81728" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="25840" y="81728" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<!-- [oren_t20_20_dg_010] -->
+	<spawn npcId="20372" x="22113" y="78932" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20464" x="22430" y="78793" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="22424" y="79120" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20372" x="22284" y="79448" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20464" x="22854" y="78935" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="22855" y="79247" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20372" x="21912" y="79187" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<!-- [oren_t20_20_dg_011] -->
+	<spawn npcId="20504" x="22208" y="80752" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="22448" y="80736" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="22192" y="80960" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="22448" y="80960" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<!-- [oren_t20_20_dg_012] -->
+	<spawn npcId="20372" x="21024" y="80272" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20464" x="21472" y="80256" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="20886" y="80704" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20372" x="21232" y="80672" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20464" x="21600" y="80672" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="20884" y="81005" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<spawn npcId="20372" x="21230" y="80973" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Baraq Orc Warrior -->
+	<spawn npcId="20464" x="21598" y="80973" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Soldier -->
+	<spawn npcId="20463" x="21232" y="81360" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dungeon Skeleton Archer -->
+	<!-- [oren_t20_20_dg_013] -->
+	<spawn npcId="20504" x="20817" y="79342" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="20457" y="79334" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="20700" y="79536" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20504" x="20336" y="79552" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<!-- [oren_t20_20_dg_014] -->
+	<spawn npcId="20371" x="21232" y="76976" z="-4295" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="21232" y="76688" z="-4295" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="21229" y="77222" z="-4292" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="21490" y="76810" z="-4295" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="21504" y="77072" z="-4295" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="20992" y="76848" z="-4295" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="20976" y="77104" z="-4295" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<!-- [oren_t20_20_dg_015] -->
+	<spawn npcId="20504" x="19136" y="76576" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20371" x="19135" y="76805" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20504" x="19135" y="77070" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20371" x="19143" y="77336" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20504" x="19715" y="76652" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20371" x="19717" y="77315" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20504" x="18630" y="77323" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20371" x="18623" y="76609" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20504" x="19696" y="76974" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20371" x="18624" y="76967" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<!-- [oren_t20_20_dg_016] -->
+	<spawn npcId="20033" x="20128" y="75664" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20033" x="20440" y="75826" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20033" x="20144" y="76015" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20033" x="20400" y="76160" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<!-- [oren_t20_20_dg_017] -->
+	<spawn npcId="20033" x="18407" y="75776" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20033" x="18794" y="75776" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20033" x="18523" y="75568" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20033" x="18912" y="75552" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<!-- [oren_t20_20_dg_018] -->
+	<spawn npcId="20504" x="19232" y="78624" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="19232" y="79072" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="19232" y="79455" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="19232" y="79840" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="19584" y="78816" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="19600" y="79280" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="19600" y="79744" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="18912" y="79648" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="18880" y="79184" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="18880" y="78608" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<!-- [oren_t20_20_dg_019] -->
+	<spawn npcId="20371" x="17344" y="81104" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20033" x="17638" y="81112" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="18048" y="81106" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20033" x="18464" y="81104" z="-4359" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="17853" y="80760" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20033" x="18403" y="80767" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="17430" y="81427" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20033" x="17887" y="81425" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="18349" y="81426" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20033" x="17417" y="80774" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<!-- [oren_t20_20_dg_020] -->
+	<spawn npcId="20345" x="18304" y="81840" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="18402" y="82112" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="18672" y="81840" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="18752" y="82064" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<!-- [oren_t20_20_dg_021] -->
+	<spawn npcId="20504" x="16454" y="76585" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="16459" y="76807" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="16452" y="77070" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="16450" y="77386" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="17047" y="76589" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="17054" y="77342" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="15923" y="76599" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="15906" y="77358" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20504" x="17022" y="76966" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dread Soldier -->
+	<spawn npcId="20345" x="15898" y="76965" z="-4391" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<!-- [oren_t20_20_dg_022] -->
+	<spawn npcId="20371" x="15984" y="76224" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="15600" y="76224" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="16000" y="75936" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20371" x="15584" y="75936" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<!-- [oren_t20_20_dg_023] -->
+	<spawn npcId="20371" x="16303" y="78563" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20345" x="16637" y="78565" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20033" x="16944" y="78560" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="16438" y="78826" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20345" x="16793" y="78814" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20033" x="16428" y="79436" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="16804" y="79423" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20345" x="16277" y="79671" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20033" x="16612" y="79673" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20371" x="16918" y="79667" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20345" x="16540" y="79123" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20033" x="16915" y="79110" z="-4423" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<!-- [oren_t20_20_dg_024] -->
+	<spawn npcId="20040" x="14858" y="80361" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="15248" y="80344" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="15024" y="80640" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="14800" y="80944" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="15216" y="80944" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="15024" y="81280" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="14784" y="81504" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="15232" y="81504" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<!-- [oren_t20_20_dg_025] -->
+	<spawn npcId="20040" x="13968" y="76160" z="-4135" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="13792" y="76336" z="-4135" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="13728" y="76672" z="-4135" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="13792" y="77024" z="-4135" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="13936" y="77232" z="-4135" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<!-- [oren_t20_20_dg_026] -->
+	<spawn npcId="20345" x="12821" y="76184" z="-4231" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="13083" y="76176" z="-4231" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="12840" y="77120" z="-4231" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="13082" y="77120" z="-4231" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="12656" y="76672" z="-4279" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="13040" y="76672" z="-4279" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<spawn npcId="20345" x="13360" y="76672" z="-4279" heading="0" respawn="60" randomRespawn="15" /> <!-- Dark Terror -->
+	<!-- [oren_t20_20_dg_027] -->
+	<spawn npcId="20351" x="11872" y="76432" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="12272" y="76418" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="11871" y="76697" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="12271" y="76683" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="11862" y="76976" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="12262" y="76962" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<!-- [oren_t20_20_dg_028] -->
+	<spawn npcId="20033" x="12455" y="75579" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20047" x="12928" y="75568" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20033" x="12624" y="75296" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Shade Horror -->
+	<spawn npcId="20047" x="13104" y="75280" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<!-- [oren_t20_20_dg_029] -->
+	<spawn npcId="20040" x="12432" y="77681" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20371" x="12784" y="77680" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<spawn npcId="20040" x="12528" y="77920" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20371" x="12928" y="77920" z="-4183" heading="0" respawn="60" randomRespawn="15" /> <!-- Mist Terror -->
+	<!-- [oren_t20_20_dg_030] -->
+	<spawn npcId="20040" x="12602" y="80211" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="12913" y="80216" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="13241" y="80212" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="13664" y="80202" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20040" x="14014" y="80209" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<!-- [oren_t20_20_dg_031] -->
+	<spawn npcId="20351" x="12144" y="80800" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="11762" y="80816" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="11744" y="81072" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20351" x="12112" y="81056" z="-4087" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<!-- [oren_t20_20_dg_32] -->
+	<spawn npcId="20040" x="13316" y="77696" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="13664" y="77689" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20351" x="13315" y="78017" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20040" x="13663" y="78010" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="13355" y="78389" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20351" x="13703" y="78382" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20040" x="13347" y="78736" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<spawn npcId="20047" x="13695" y="78729" z="-4103" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20351" x="13346" y="79072" z="-4103" heading="-88" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20040" x="13694" y="79062" z="-4103" heading="-88" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman -->
+	<!-- [oren_t20_20_dg_033] -->
+	<spawn npcId="20047" x="11056" y="79696" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20047" x="11056" y="79136" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20047" x="11056" y="78656" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20047" x="11040" y="78240" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20047" x="11056" y="77664" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<spawn npcId="20047" x="11056" y="77184" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Sukar Ratman Captain -->
+	<!-- [oren_t20_20_dg_034] -->
+	<spawn npcId="20351" x="10688" y="81776" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20353" x="10656" y="82256" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<spawn npcId="20351" x="10400" y="82032" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20353" x="10896" y="82016" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<!-- [oren_t20_20_dg_035] -->
+	<spawn npcId="20351" x="10688" y="74592" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20353" x="10688" y="75088" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<spawn npcId="20351" x="10944" y="74832" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Tracker -->
+	<spawn npcId="20353" x="10400" y="74848" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<!-- [oren_t20_20_dg_036] -->
+	<spawn npcId="20353" x="9648" y="76752" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<spawn npcId="20352" x="9648" y="77216" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Slayer -->
+	<spawn npcId="20353" x="9392" y="76992" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<spawn npcId="20352" x="9920" y="76992" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Slayer -->
+	<!-- [oren_t20_20_dg_037] -->
+	<spawn npcId="20353" x="9648" y="79632" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<spawn npcId="20352" x="9648" y="80112" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Slayer -->
+	<spawn npcId="20353" x="9904" y="79872" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Beholder -->
+	<spawn npcId="20352" x="9376" y="79888" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Dre Vanul Slayer -->
+	<!-- [oren_t20_20_dg_038] -->
+	<spawn npcId="20492" x="9632" y="78176" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="9648" y="78704" z="-3815" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="9942" y="78135" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="10176" y="78127" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="9939" y="78400" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="10173" y="78392" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="9938" y="78684" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<spawn npcId="20492" x="10172" y="78676" z="-3847" heading="0" respawn="60" randomRespawn="15" /> <!-- Kirunak's Escort -->
+	<!-- [oren_h_21_19_01] -->
+	<group minZ="-3780" maxZ="-3380">
+		<vertex x="65248" y="54556" />
+		<vertex x="65228" y="56828" />
+		<vertex x="63196" y="57320" />
+		<vertex x="62880" y="56272" />
+		<spawn npcId="20580" respawn="95" amount="3" /> <!-- Leto Lizardman Warrior -->
+		<spawn npcId="20581" respawn="95" amount="2" /> <!-- Leto Lizardman Shaman -->
+	</group>
+	<!-- [oren_h_21_19_02] -->
+	<group minZ="-3748" maxZ="-3348">
+		<vertex x="65340" y="53108" />
+		<vertex x="65268" y="54460" />
+		<vertex x="64116" y="55308" />
+		<vertex x="62816" y="55280" />
+		<vertex x="62836" y="53880" />
+		<spawn npcId="20580" respawn="95" amount="4" /> <!-- Leto Lizardman Warrior -->
+	</group>
+	<!-- [oren_h_21_19_03] -->
+	<group minZ="-3800" maxZ="-3400">
+		<vertex x="62920" y="49484" />
+		<vertex x="65444" y="48628" />
+		<vertex x="65336" y="53012" />
+		<vertex x="64488" y="53232" />
+		<spawn npcId="20580" respawn="95" amount="6" /> <!-- Leto Lizardman Warrior -->
+		<spawn npcId="20581" respawn="95" amount="3" /> <!-- Leto Lizardman Shaman -->
+	</group>
+	<!-- [oren_h_21_19_04] -->
+	<group minZ="-3828" maxZ="-3428">
+		<vertex x="64664" y="47088" />
+		<vertex x="65180" y="48668" />
+		<vertex x="62924" y="49432" />
+		<vertex x="61640" y="47416" />
+		<vertex x="61560" y="47052" />
+		<spawn npcId="20580" respawn="95" amount="3" /> <!-- Leto Lizardman Warrior -->
+		<spawn npcId="20581" respawn="95" amount="3" /> <!-- Leto Lizardman Shaman -->
+	</group>
+	<!-- [oren_h_21_19_05] -->
+	<group minZ="-3844" maxZ="-3444">
+		<vertex x="63180" y="44688" />
+		<vertex x="64688" y="44776" />
+		<vertex x="64596" y="46996" />
+		<vertex x="63452" y="46988" />
+		<spawn npcId="20582" respawn="95" amount="4" /> <!-- Leto Lizardman Overlord -->
+	</group>
+	<!-- [oren_h_21_19_06] -->
+	<group minZ="-3860" maxZ="-3360">
+		<vertex x="63644" y="40884" />
+		<vertex x="65260" y="41936" />
+		<vertex x="65304" y="44672" />
+		<vertex x="63460" y="44544" />
+		<spawn npcId="20581" respawn="95" amount="4" /> <!-- Leto Lizardman Shaman -->
+		<spawn npcId="20582" respawn="95" amount="4" /> <!-- Leto Lizardman Overlord -->
+	</group>
+	<!-- [oren_h_21_19_07] -->
+	<group minZ="-3820" maxZ="-3420">
+		<vertex x="63636" y="38300" />
+		<vertex x="65264" y="37892" />
+		<vertex x="64580" y="40156" />
+		<vertex x="62980" y="39564" />
+		<spawn npcId="20582" respawn="95" amount="3" /> <!-- Leto Lizardman Overlord -->
+	</group>
+	<!-- [oren_h_21_19_08] -->
+	<group minZ="-3824" maxZ="-3324">
+		<vertex x="63368" y="34668" />
+		<vertex x="65288" y="32828" />
+		<vertex x="65244" y="37788" />
+		<vertex x="63948" y="37364" />
+		<spawn npcId="20581" respawn="95" amount="4" /> <!-- Leto Lizardman Shaman -->
+		<spawn npcId="20582" respawn="95" amount="3" /> <!-- Leto Lizardman Overlord -->
+	</group>
+	<!-- [oren_h_21_19_09] -->
+	<group minZ="-3800" maxZ="-3400">
+		<vertex x="57704" y="32884" />
+		<vertex x="65176" y="32848" />
+		<vertex x="63248" y="34648" />
+		<vertex x="59416" y="33924" />
+		<spawn npcId="20581" respawn="95" amount="4" /> <!-- Leto Lizardman Shaman -->
+		<spawn npcId="20582" respawn="95" amount="3" /> <!-- Leto Lizardman Overlord -->
+	</group>
+	<!-- [oren_h_21_19_10] -->
+	<group minZ="-3804" maxZ="-3404">
+		<vertex x="63876" y="61420" />
+		<vertex x="65240" y="61800" />
+		<vertex x="65228" y="65296" />
+		<vertex x="64412" y="65320" />
+		<spawn npcId="20579" respawn="95" amount="4" /> <!-- Leto Lizardman Soldier -->
+		<spawn npcId="20580" respawn="95" amount="3" /> <!-- Leto Lizardman Warrior -->
+	</group>
+	<!-- [event_t20_19_001] -->
+	<spawn npcId="20522" respawn="10800" randomRespawn="3600"> <!-- White Fang -->
+		<randomCoord x="11222" y="47138" z="-3626" heading="0" chance="30" />
+		<randomCoord x="17781" y="49469" z="-3663" heading="0" chance="30" />
+		<randomCoord x="21864" y="45705" z="-3578" heading="0" chance="40" />
+	</spawn>
+	<!-- [event_t21_20_001] -->
+	<spawn npcId="20522" respawn="7200" randomRespawn="3600"> <!-- White Fang -->
+		<randomCoord x="35758" y="75255" z="-3549" heading="0" chance="25" />
+		<randomCoord x="35706" y="75595" z="-3566" heading="0" chance="25" />
+		<randomCoord x="36673" y="81461" z="-3643" heading="0" chance="25" />
+		<randomCoord x="36281" y="89039" z="-3283" heading="0" chance="25" />
+	</spawn>
+	<!-- [event_t20_20_001] -->
+	<spawn npcId="25373" respawn="10800" randomRespawn="3600"> <!-- Dagoniel's Herald Malex -->
+		<randomCoord x="13332" y="80200" z="-4092" heading="0" chance="30" />
+		<randomCoord x="13540" y="78342" z="-4108" heading="0" chance="40" />
+		<randomCoord x="12964" y="76685" z="-4282" heading="0" chance="30" />
+	</spawn>
+</list>

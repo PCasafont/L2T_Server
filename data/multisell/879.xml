@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="247" id="36278" /> <!-- Pagan Blood -->
+		<production count="1" id="17526" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="20" id="36278" /> <!-- Pagan Blood -->
+		<production count="1" id="17527" /> <!-- Scroll: Enchant Armor (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="2308" id="36278" /> <!-- Pagan Blood -->
+		<production count="1" id="19447" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="277" id="36278" /> <!-- Pagan Blood -->
+		<production count="1" id="19448" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="18462" id="36278" /> <!-- Pagan Blood -->
+		<production count="1" id="36163" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="4154" id="36278" /> <!-- Pagan Blood -->
+		<production count="1" id="36164" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
+	</item>
+</list>

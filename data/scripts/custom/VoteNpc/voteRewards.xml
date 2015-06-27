@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Runes -->
+	<reward itemId="21084" description="Increases acquired XP by 30%. 24hours time-limited item." />
+	<reward itemId="21086" description="It increases acquired SP by 30%. 24hours time-limited item." />
+	<reward itemId="22752" description="Item acquisition through hunting + 30%. 5hours time-limited item." />
+	<!-- Instance Reuses -->
+	<reward itemId="36270" description="Double-click to reset cooldown to Teredor's dungeon. 24hours reuse." />
+	<reward itemId="36271" description="Double-click to reset cooldown to Spezion's (normal) dungeon. 24hours reuse." />
+	<reward itemId="36272" description="Double-click to reset cooldown to Spezion's (Epic) dungeon. 24hours reuse." />
+	<reward itemId="36274" description="Double-click to reset cooldown to Nornil's Garden. 24hours reuse." />
+	<reward itemId="36275" description="Double-click to reset cooldown to Istina's (normal) dungeon. 24hours reuse." />
+	<reward itemId="36276" description="Double-click to reset cooldown to Octavis' (normal) dungeon. 24hours reuse." />
+	<reward itemId="36277" description="Double-click to reset cooldown to Baylor's dungeon. 24hours reuse." />
+	<reward itemId="37730" amount="10" description="For 60 minutes, decreases all received damage by 10%. 30minutes reuse." />
+	<!-- Items -->
+	<reward itemId="38941" amount="5" description="Double-click to acquire 1 of La Vie En Rose's jewels." />
+	<reward itemId="37559" amount="15" description="An extra pack of Shiny Coins." />
+	<reward itemId="4357" amount="20000" description="An extra pack of Silver Shilen." />
+	<reward itemId="57" amount="80000000" description="An extra pack of Adena." />
+	<!-- Farm Items -->
+	<reward itemId="35562" amount="200" description="An extra pack of Energy of Destruction." />
+	<reward itemId="17526" amount="100" description="An extra pack of Scroll: Enchant Armor (R-grade)." />
+	<reward itemId="17527" amount="40" description="An extra pack of Scroll: Enchant Weapon (R-grade)." />
+	<reward itemId="19448" amount="20" description="An extra pack of Blessed Scroll: Enchant Armor (R-grade)." />
+	<reward itemId="19447" amount="10" description="An extra pack of Blessed Scroll: Enchant Weapon (R-grade)." />
+	<reward itemId="30297" amount="100" description="An extra pack of Superior Giant's Codex." />
+	<reward itemId="30298" amount="10" description="An extra pack of Superior Giant's CoDEX - Mastery." />
+	<!-- Temp Epics -->
+	<reward itemId="36238" description="A temporary Epic Jewel." /> <!-- Octavis' Ring -->
+	<reward itemId="36239" description="A temporary Epic Jewel." /> <!-- Octavis' Necklace -->
+	<reward itemId="36240" description="A temporary Epic Jewel." /> <!-- Octavis' Earring -->
+	<reward itemId="36235" description="A temporary Epic Jewel." /> <!-- Istina's Necklace -->
+	<reward itemId="36236" description="A temporary Epic Jewel." /> <!-- Istina's Ring -->
+	<reward itemId="36237" description="A temporary Epic Jewel." /> <!-- Istina's Earring -->
+	<reward itemId="23637" description="A temporary Epic Jewel." /> <!-- Blessed Antharas' Earring  -->
+	<reward itemId="36242" description="A temporary Epic Jewel." /> <!-- Blessed Valakas' Necklace -->
+	<reward itemId="36244" description="A temporary Epic Jewel." /> <!-- Tauti's Ring -->
+	<reward itemId="20204" description="A temporary Epic Jewel." /> <!-- Queen Ant's Ring -->
+	<reward itemId="20207" description="A temporary Epic Jewel." /> <!-- Zaken's Earring -->
+	<reward itemId="22304" description="A temporary Epic Jewel." /> <!-- Baium's Ring -->
+	<!-- Appearance Stones -->
+	<reward itemId="23211" description="A beautiful Appearance for your Two Handed Blunt." />
+	<reward itemId="23212" description="A beautiful Appearance for your Magic Two Handed Blunt." />
+	<reward itemId="23213" description="A beautiful Appearance for your Fists." />
+	<reward itemId="23214" description="A beautiful Appearance for your Pole." />
+	<reward itemId="23215" description="A beautiful Appearance for your Dagger." />
+	<reward itemId="23216" description="A beautiful Appearance for your Dual Blunt." />
+	<reward itemId="23217" description="A beautiful Appearance for your One Handed Sword." />
+	<reward itemId="23218" description="A beautiful Appearance for your Dual Dagger." />
+	<reward itemId="23219" description="A beautiful Appearance for your One Handed Blunt." />
+	<reward itemId="23220" description="A beautiful Appearance for your Dual Sword." />
+	<reward itemId="23221" description="A beautiful Appearance for your Two Handed Sword." />
+	<reward itemId="23222" description="A beautiful Appearance for your One Handed Sword." />
+	<reward itemId="37067" description="A beautiful Appearance for your One Handed Sword." />
+	<reward itemId="37068" description="A beautiful Appearance for your One Handed Sword." />
+	<reward itemId="37069" description="A beautiful Appearance for your One Handed Sword." />
+	<reward itemId="37070" description="A beautiful Appearance for your Dual Sword." />
+	<reward itemId="37071" description="A beautiful Appearance for your Magic One Handed Sword." />
+	<reward itemId="37072" description="A beautiful Appearance for your One Blunt." />
+	<reward itemId="37073" description="A beautiful Appearance for your One Blunt." />
+	<reward itemId="37074" description="A beautiful Appearance for your Dual Blunt." />
+	<reward itemId="37075" description="A beautiful Appearance for your Dagger." />
+	<reward itemId="37076" description="A beautiful Appearance for your Dual Dagger." />
+	<reward itemId="37077" description="A beautiful Appearance for your Two Handed Sword." />
+	<reward itemId="37078" description="A beautiful Appearance for your Spear." />
+	<reward itemId="37079" description="A beautiful Appearance for your Two Handed Blunt." />
+	<reward itemId="37080" description="A beautiful Appearance for your Two Handed Blunt." />
+	<reward itemId="37081" description="A beautiful Appearance for your Fists." />
+	<reward itemId="37082" description="A beautiful Appearance for your Bow." />
+	<reward itemId="37083" description="A beautiful Appearance for your Bow." />
+	<reward itemId="37084" description="A beautiful Appearance for your Crossbow." />
+	<reward itemId="37085" description="A beautiful Appearance for your Shield." />
+	<reward itemId="37086" description="A beautiful Appearance for your Shield." />
+	<reward itemId="38956" description="A beautiful Appearance for your Armor." />
+	<reward itemId="23200" description="A beautiful Appearance for your Armor." />
+	<!-- Skills -->
+	<reward skillId="1372" description="Expand Inventory." />
+	<reward skillId="1371" description="Increases the number of items that can be stored in private warehouses and freight." />
+	<!-- Ifinity Odd Skills -->
+	<reward skillId="19222" description="Increases your STR/DEX/CON/INT/WIT/MEN/CHA stats!" />
+	<reward skillId="19229" description="Increases your LUC!" />
+	<reward skillId="19226" description="Increases your XP/SP gain for 1 hour!" />
+	<reward skillId="19224" description="Maintains target's buff/de-buff condition even following death and resurrection!" />
+	<reward skillId="19225" description="Summons 5 Battle Quick Healing Potions!" />
+</list>

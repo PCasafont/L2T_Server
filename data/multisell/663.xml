@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<!-- Adena -->
+		<ingredient count="10000" id="57" />
+		<!-- Oren Territory Badge -->
+		<ingredient count="7" id="13760" />
+		<!-- Red Talisman - Territory Guard -->
+		<production count="1" id="14605" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="13200" id="57" />
+		<!-- Oren Human Mercenary Transformation Scroll -->
+		<production count="1" id="13605" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="13200" id="57" />
+		<!-- Oren Elf Mercenary Transformation Scroll -->
+		<production count="1" id="13606" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="13200" id="57" />
+		<!-- Oren Dark Elf Mercenary Transformation Scroll -->
+		<production count="1" id="13607" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="13200" id="57" />
+		<!-- Oren Orc Mercenary Transformation Scroll -->
+		<production count="1" id="13608" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="13200" id="57" />
+		<!-- Oren Dwarf Mercenary Transformation Scroll -->
+		<production count="1" id="13609" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="13200" id="57" />
+		<!-- Oren Kamael Mercenary Transformation Scroll -->
+		<production count="1" id="13610" />
+	</item>
+	<item>
+		<!-- Adena -->
+		<ingredient count="70000" id="57" />
+		<!-- Oren Disguise Scroll -->
+		<production count="1" id="13680" />
+	</item>
+</list>

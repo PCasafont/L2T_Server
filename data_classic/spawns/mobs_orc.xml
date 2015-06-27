@@ -1,0 +1,1805 @@
+<list>
+	<!-- [rion_t18_14_002] -->
+	<group minZ="-844" maxZ="-144">
+		<vertex x="-48060" y="-108820" />
+		<vertex x="-45772" y="-109180" />
+		<vertex x="-45080" y="-107524" />
+		<vertex x="-46448" y="-106120" />
+		<vertex x="-49292" y="-108036" />
+		<spawn npcId="20538" respawn="15" amount="4" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="4" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_003] -->
+	<group minZ="-2264" maxZ="-1464">
+		<vertex x="-49100" y="-106012" />
+		<vertex x="-44748" y="-104048" />
+		<vertex x="-44984" y="-102752" />
+		<vertex x="-47524" y="-101604" />
+		<vertex x="-50636" y="-102012" />
+		<vertex x="-51388" y="-105812" />
+		<spawn npcId="20475" respawn="15" amount="6" /> <!-- Kasha Wolf -->
+		<spawn npcId="20311" respawn="15" amount="6" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20365" respawn="15" amount="6" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [rion_t18_14_004] -->
+	<group minZ="-2244" maxZ="-1244">
+		<vertex x="-52944" y="-108320" />
+		<vertex x="-51900" y="-107744" />
+		<vertex x="-50464" y="-105952" />
+		<vertex x="-51524" y="-105884" />
+		<vertex x="-52840" y="-107260" />
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t18_14_006] -->
+	<group minZ="-340" maxZ="-40">
+		<vertex x="-44912" y="-120980" />
+		<vertex x="-44152" y="-119864" />
+		<vertex x="-45008" y="-117840" />
+		<vertex x="-47560" y="-117400" />
+		<vertex x="-49224" y="-117336" />
+		<vertex x="-46804" y="-120552" />
+		<spawn npcId="20538" respawn="15" amount="5" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="6" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_007] -->
+	<group minZ="-788" maxZ="-38">
+		<vertex x="-44724" y="-120768" />
+		<vertex x="-41572" y="-123288" />
+		<vertex x="-38420" y="-124536" />
+		<vertex x="-38364" y="-124356" />
+		<vertex x="-44104" y="-119924" />
+		<spawn npcId="20538" respawn="15" amount="5" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="5" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_008] -->
+	<group minZ="-2000" maxZ="-1150">
+		<vertex x="-43820" y="-106404" />
+		<vertex x="-41380" y="-107636" />
+		<vertex x="-40524" y="-107472" />
+		<vertex x="-43376" y="-104892" />
+		<spawn npcId="20538" respawn="15" amount="2" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="3" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_009] -->
+	<group minZ="-2368" maxZ="-1618">
+		<vertex x="-40532" y="-107376" />
+		<vertex x="-38764" y="-107280" />
+		<vertex x="-37932" y="-106592" />
+		<vertex x="-39672" y="-106480" />
+		<vertex x="-40892" y="-107100" />
+		<spawn npcId="20538" respawn="15" amount="2" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="1" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [oren_t18_14_010] -->
+	<group minZ="-2932" maxZ="-2532">
+		<vertex x="-41128" y="-104868" />
+		<vertex x="-39720" y="-104368" />
+		<vertex x="-39756" y="-100792" />
+		<vertex x="-43728" y="-101936" />
+		<vertex x="-43296" y="-103496" />
+		<spawn npcId="20475" respawn="15" amount="2" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="2" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_011] -->
+	<group minZ="-2860" maxZ="-2460">
+		<vertex x="-40628" y="-105884" />
+		<vertex x="-37900" y="-105876" />
+		<vertex x="-38308" y="-105216" />
+		<vertex x="-39752" y="-104468" />
+		<vertex x="-41100" y="-104904" />
+		<spawn npcId="20311" respawn="15" amount="6" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20477" respawn="15" amount="6" /> <!-- Kasha Timber Wolf -->
+	</group>
+	<!-- [rion_t18_14_013] -->
+	<group minZ="-3724" maxZ="-2624">
+		<vertex x="-38992" y="-103980" />
+		<vertex x="-38064" y="-104896" />
+		<vertex x="-37232" y="-103972" />
+		<vertex x="-37692" y="-101816" />
+		<vertex x="-38704" y="-101676" />
+		<vertex x="-39144" y="-102924" />
+		<spawn npcId="20311" respawn="15" amount="3" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20477" respawn="15" amount="3" /> <!-- Kasha Timber Wolf -->
+	</group>
+	<!-- [rion_t18_14_014] -->
+	<group minZ="-3108" maxZ="-2508">
+		<vertex x="-37192" y="-103796" />
+		<vertex x="-35076" y="-102292" />
+		<vertex x="-35088" y="-101536" />
+		<vertex x="-35972" y="-101532" />
+		<vertex x="-36996" y="-101976" />
+		<spawn npcId="20477" respawn="15" amount="3" /> <!-- Kasha Timber Wolf -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [riom_t18_14_015] -->
+	<group minZ="-3020" maxZ="-2620">
+		<vertex x="-35048" y="-102236" />
+		<vertex x="-33020" y="-102276" />
+		<vertex x="-33044" y="-101620" />
+		<vertex x="-34916" y="-101436" />
+		<spawn npcId="20477" respawn="15" amount="1" /> <!-- Kasha Timber Wolf -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t18_14_016] -->
+	<group minZ="-1876" maxZ="-1426">
+		<vertex x="-38044" y="-122996" />
+		<vertex x="-35900" y="-123416" />
+		<vertex x="-36740" y="-119868" />
+		<vertex x="-38972" y="-119444" />
+		<vertex x="-40452" y="-120852" />
+		<vertex x="-39252" y="-122448" />
+		<spawn npcId="20475" respawn="15" amount="9" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="13" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_017] -->
+	<group minZ="-2024" maxZ="-1424">
+		<vertex x="-40516" y="-120840" />
+		<vertex x="-39020" y="-119344" />
+		<vertex x="-38852" y="-116552" />
+		<vertex x="-40828" y="-114648" />
+		<vertex x="-42840" y="-118556" />
+		<spawn npcId="20475" respawn="15" amount="8" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="9" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_018] -->
+	<group minZ="-1988" maxZ="-1588">
+		<vertex x="-38972" y="-119336" />
+		<vertex x="-36768" y="-119796" />
+		<vertex x="-35688" y="-118092" />
+		<vertex x="-36288" y="-116032" />
+		<vertex x="-37724" y="-115116" />
+		<vertex x="-38816" y="-116428" />
+		<spawn npcId="20475" respawn="15" amount="8" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="6" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_019] -->
+	<group minZ="-1884" maxZ="-1384">
+		<vertex x="-43340" y="-109932" />
+		<vertex x="-42080" y="-111408" />
+		<vertex x="-40940" y="-108212" />
+		<vertex x="-42904" y="-107148" />
+		<vertex x="-43696" y="-108380" />
+		<spawn npcId="20475" respawn="15" amount="4" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="6" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_020] -->
+	<group minZ="-2140" maxZ="-1540">
+		<vertex x="-41360" y="-112740" />
+		<vertex x="-36324" y="-109260" />
+		<vertex x="-36520" y="-108044" />
+		<vertex x="-39848" y="-107660" />
+		<vertex x="-40924" y="-108052" />
+		<vertex x="-42028" y="-111392" />
+		<spawn npcId="20475" respawn="15" amount="8" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="8" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_021] -->
+	<group minZ="-2208" maxZ="-1608">
+		<vertex x="-40296" y="-113976" />
+		<vertex x="-35624" y="-114336" />
+		<vertex x="-34580" y="-112472" />
+		<vertex x="-35296" y="-110504" />
+		<vertex x="-36268" y="-109328" />
+		<vertex x="-41388" y="-112776" />
+		<spawn npcId="20475" respawn="15" amount="8" /> <!-- Kasha Wolf -->
+		<spawn npcId="20319" respawn="15" amount="9" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_022] -->
+	<group minZ="-2236" maxZ="-1786">
+		<vertex x="-34116" y="-119540" />
+		<vertex x="-33032" y="-118132" />
+		<vertex x="-33072" y="-112792" />
+		<vertex x="-34004" y="-112772" />
+		<vertex x="-35000" y="-117272" />
+		<spawn npcId="20311" respawn="15" amount="3" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20477" respawn="15" amount="5" /> <!-- Kasha Timber Wolf -->
+	</group>
+	<!-- [oren_t18_14_023] -->
+	<group minZ="-2292" maxZ="-1892">
+		<vertex x="-34036" y="-112580" />
+		<vertex x="-33072" y="-112676" />
+		<vertex x="-33044" y="-107744" />
+		<vertex x="-35808" y="-107876" />
+		<spawn npcId="20311" respawn="15" amount="4" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20477" respawn="15" amount="5" /> <!-- Kasha Timber Wolf -->
+	</group>
+	<!-- [rion_t18_14_024] -->
+	<group minZ="-284" maxZ="-84">
+		<vertex x="-50396" y="-115956" />
+		<vertex x="-48316" y="-116952" />
+		<vertex x="-48076" y="-115460" />
+		<vertex x="-49636" y="-115048" />
+		<spawn npcId="20538" respawn="15" amount="3" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="2" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_025] -->
+	<group minZ="-360" maxZ="-160">
+		<vertex x="-50444" y="-112240" />
+		<vertex x="-48956" y="-112352" />
+		<vertex x="-48032" y="-111572" />
+		<vertex x="-48080" y="-110392" />
+		<vertex x="-48980" y="-109384" />
+		<vertex x="-50064" y="-109380" />
+		<vertex x="-50796" y="-109948" />
+		<vertex x="-50996" y="-111008" />
+		<spawn npcId="20538" respawn="15" amount="5" /> <!-- Elder Prairie Keltir -->
+		<spawn npcId="20475" respawn="15" amount="3" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_026] -->
+	<group minZ="-2184" maxZ="-1584">
+		<vertex x="-50404" y="-104320" />
+		<vertex x="-49124" y="-105272" />
+		<vertex x="-47556" y="-104088" />
+		<vertex x="-47836" y="-102384" />
+		<vertex x="-49832" y="-102496" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [oren_t18_14_027] -->
+	<group minZ="-2900" maxZ="-2600">
+		<vertex x="-42428" y="-102760" />
+		<vertex x="-41088" y="-103868" />
+		<vertex x="-40408" y="-102604" />
+		<vertex x="-40740" y="-101636" />
+		<vertex x="-42100" y="-101900" />
+		<spawn npcId="20312" respawn="15" amount="3" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t18_14_028] -->
+	<group minZ="-1852" maxZ="-1552">
+		<vertex x="-39400" y="-121576" />
+		<vertex x="-38464" y="-121320" />
+		<vertex x="-38208" y="-120188" />
+		<vertex x="-39444" y="-120004" />
+		<vertex x="-39936" y="-120524" />
+		<vertex x="-39988" y="-121360" />
+		<spawn npcId="20319" respawn="15" amount="3" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_029] -->
+	<group minZ="-1996" maxZ="-1696">
+		<vertex x="-41724" y="-117844" />
+		<vertex x="-40844" y="-119112" />
+		<vertex x="-39680" y="-118880" />
+		<vertex x="-39612" y="-116988" />
+		<vertex x="-40944" y="-116636" />
+		<spawn npcId="20475" respawn="15" amount="3" /> <!-- Kasha Wolf -->
+	</group>
+	<!-- [rion_t18_14_030] -->
+	<group minZ="-1896" maxZ="-1496">
+		<vertex x="-38344" y="-118740" />
+		<vertex x="-37044" y="-119312" />
+		<vertex x="-36420" y="-118028" />
+		<vertex x="-37412" y="-116632" />
+		<vertex x="-38244" y="-117544" />
+		<spawn npcId="20319" respawn="15" amount="1" /> <!-- Goblin Tomb Raider -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t18_14_031] -->
+	<group minZ="-1968" maxZ="-1668">
+		<vertex x="-40328" y="-110508" />
+		<vertex x="-38920" y="-109932" />
+		<vertex x="-38592" y="-109020" />
+		<vertex x="-39324" y="-108320" />
+		<vertex x="-40388" y="-108492" />
+		<vertex x="-40908" y="-109056" />
+		<vertex x="-40964" y="-109680" />
+		<spawn npcId="20319" respawn="15" amount="3" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t18_14_032] -->
+	<group minZ="-2080" maxZ="-1680">
+		<vertex x="-38328" y="-113608" />
+		<vertex x="-36908" y="-113368" />
+		<vertex x="-36168" y="-112104" />
+		<vertex x="-37644" y="-111340" />
+		<vertex x="-39344" y="-111476" />
+		<vertex x="-40084" y="-112332" />
+		<vertex x="-39684" y="-113380" />
+		<spawn npcId="20319" respawn="15" amount="6" /> <!-- Goblin Tomb Raider -->
+	</group>
+	<!-- [rion_t19_13_001] -->
+	<group minZ="-1024" maxZ="-524">
+		<vertex x="-23344" y="-133108" />
+		<vertex x="-21836" y="-133164" />
+		<vertex x="-21484" y="-132108" />
+		<vertex x="-21560" y="-131320" />
+		<vertex x="-24184" y="-131308" />
+		<vertex x="-23920" y="-132484" />
+		<spawn npcId="20312" respawn="15" amount="3" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="4" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [rion_t19_13_002] -->
+	<group minZ="-2244" maxZ="-1744">
+		<vertex x="-17660" y="-134340" />
+		<vertex x="-17092" y="-133428" />
+		<vertex x="-18256" y="-131368" />
+		<vertex x="-19996" y="-131356" />
+		<vertex x="-19048" y="-134712" />
+		<vertex x="-18252" y="-134752" />
+		<spawn npcId="20365" respawn="15" amount="4" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="4" /> <!-- Rakeclaw Imp Leader -->
+	</group>
+	<!-- [rion_t19_13_003] -->
+	<group minZ="-2064" maxZ="-1164">
+		<vertex x="-16624" y="-133320" />
+		<vertex x="-15320" y="-133048" />
+		<vertex x="-15348" y="-131392" />
+		<vertex x="-17700" y="-131348" />
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="2" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="3" /> <!-- Rakeclaw Imp Leader -->
+	</group>
+	<!-- [rion_t19_13_004] -->
+	<group minZ="-1708" maxZ="-608">
+		<vertex x="-20476" y="-137852" />
+		<vertex x="-18760" y="-138800" />
+		<vertex x="-17552" y="-137224" />
+		<vertex x="-17912" y="-136152" />
+		<vertex x="-20508" y="-136264" />
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="4" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="4" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_13_005] -->
+	<group minZ="-1572" maxZ="-672">
+		<vertex x="-17724" y="-136636" />
+		<vertex x="-14992" y="-137828" />
+		<vertex x="-14564" y="-136640" />
+		<vertex x="-14844" y="-135484" />
+		<vertex x="-15728" y="-134864" />
+		<vertex x="-17512" y="-136084" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="6" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_006] -->
+	<group minZ="-3024" maxZ="-2424">
+		<vertex x="-13352" y="-133508" />
+		<vertex x="-10300" y="-133132" />
+		<vertex x="-10384" y="-131392" />
+		<vertex x="-14244" y="-131340" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="6" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_13_007] -->
+	<group minZ="-2772" maxZ="-1272">
+		<vertex x="-10968" y="-140160" />
+		<vertex x="-8972" y="-140308" />
+		<vertex x="-8524" y="-139016" />
+		<vertex x="-8856" y="-137040" />
+		<vertex x="-10740" y="-135176" />
+		<vertex x="-12800" y="-136768" />
+		<vertex x="-12524" y="-139136" />
+		<spawn npcId="20313" respawn="15" amount="9" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="9" /> <!-- Blackwing Bat -->
+		<spawn npcId="20320" respawn="15" amount="9" /> <!-- Goblin Tomb Raider Leader -->
+	</group>
+	<!-- [rion_t19_13_008] -->
+	<group minZ="-3180" maxZ="-2380">
+		<vertex x="-4888" y="-136476" />
+		<vertex x="-396" y="-135180" />
+		<vertex x="-412" y="-131400" />
+		<vertex x="-8060" y="-131408" />
+		<vertex x="-7820" y="-133976" />
+		<vertex x="-6696" y="-135660" />
+		<vertex x="-5876" y="-136380" />
+		<spawn npcId="20316" respawn="15" amount="12" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="9" /> <!-- Bear -->
+		<spawn npcId="20320" respawn="15" amount="10" /> <!-- Goblin Tomb Raider Leader -->
+	</group>
+	<!-- [rion_t19_13_009] -->
+	<group minZ="-2944" maxZ="-2544">
+		<vertex x="-5636" y="-135572" />
+		<vertex x="-4964" y="-133836" />
+		<vertex x="-5448" y="-132536" />
+		<vertex x="-6936" y="-133612" />
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_13_010] -->
+	<group minZ="-2960" maxZ="-2460">
+		<vertex x="-4340" y="-135280" />
+		<vertex x="-1916" y="-135016" />
+		<vertex x="-2080" y="-133748" />
+		<vertex x="-3684" y="-133512" />
+		<spawn npcId="20333" respawn="15" amount="6" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_14_001] -->
+	<group minZ="-1392" maxZ="-992">
+		<vertex x="-31428" y="-127472" />
+		<vertex x="-29104" y="-128572" />
+		<vertex x="-27104" y="-128344" />
+		<vertex x="-31364" y="-125524" />
+		<spawn npcId="20311" respawn="15" amount="2" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t19_14_002] -->
+	<group minZ="-1180" maxZ="-480">
+		<vertex x="-26512" y="-130916" />
+		<vertex x="-21344" y="-130920" />
+		<vertex x="-21520" y="-130424" />
+		<vertex x="-24656" y="-128684" />
+		<vertex x="-27008" y="-128400" />
+		<vertex x="-27796" y="-128556" />
+		<spawn npcId="20311" respawn="15" amount="2" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t19_14_003] -->
+	<group minZ="-2592" maxZ="-1842">
+		<vertex x="-29420" y="-125668" />
+		<vertex x="-27504" y="-126336" />
+		<vertex x="-25932" y="-123680" />
+		<vertex x="-29356" y="-122896" />
+		<vertex x="-31624" y="-124464" />
+		<spawn npcId="20311" respawn="15" amount="2" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20312" respawn="15" amount="1" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="2" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [rion_t19_14_004] -->
+	<group minZ="-2248" maxZ="-1448">
+		<vertex x="-29212" y="-122716" />
+		<vertex x="-25836" y="-123004" />
+		<vertex x="-23084" y="-120028" />
+		<vertex x="-23232" y="-119048" />
+		<vertex x="-24896" y="-117084" />
+		<vertex x="-28208" y="-116392" />
+		<vertex x="-29352" y="-119996" />
+		<spawn npcId="20311" respawn="15" amount="5" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20312" respawn="15" amount="4" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="5" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [rion_t19_14_005] -->
+	<group minZ="-2532" maxZ="-1682">
+		<vertex x="-28152" y="-116252" />
+		<vertex x="-24752" y="-116856" />
+		<vertex x="-24384" y="-112600" />
+		<vertex x="-26772" y="-110272" />
+		<spawn npcId="20311" respawn="15" amount="4" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20312" respawn="15" amount="4" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="4" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [oren_t19_14_006] -->
+	<group minZ="-2232" maxZ="-1282">
+		<vertex x="-25500" y="-111024" />
+		<vertex x="-24464" y="-111120" />
+		<vertex x="-24492" y="-108280" />
+		<vertex x="-25940" y="-107624" />
+		<vertex x="-26220" y="-109900" />
+		<spawn npcId="20311" respawn="15" amount="2" /> <!-- Rakeclaw Imp -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="2" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [rion_t19_14_007] -->
+	<group minZ="-3216" maxZ="-2966">
+		<vertex x="-29712" y="-103956" />
+		<vertex x="-28700" y="-104024" />
+		<vertex x="-27196" y="-101524" />
+		<vertex x="-27948" y="-100984" />
+		<vertex x="-28900" y="-101036" />
+		<vertex x="-29928" y="-102116" />
+		<vertex x="-30180" y="-102992" />
+		<spawn npcId="20477" respawn="15" amount="3" /> <!-- Kasha Timber Wolf -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="2" /> <!-- Mountain Fungus -->
+	</group>
+	<!-- [oren_t18_14_008] -->
+	<group minZ="-3048" maxZ="-2348">
+		<vertex x="-32664" y="-102604" />
+		<vertex x="-31104" y="-103592" />
+		<vertex x="-30176" y="-101164" />
+		<vertex x="-31392" y="-100808" />
+		<vertex x="-32636" y="-101460" />
+		<spawn npcId="20477" respawn="15" amount="3" /> <!-- Kasha Timber Wolf -->
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t19_14_009] -->
+	<group minZ="-2796" maxZ="-2196">
+		<vertex x="-27724" y="-100308" />
+		<vertex x="-26264" y="-101608" />
+		<vertex x="-23440" y="-98604" />
+		<vertex x="-27644" y="-98624" />
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="2" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [riont_19_14_010] -->
+	<group minZ="-2900" maxZ="-2500">
+		<vertex x="-29760" y="-100572" />
+		<vertex x="-27776" y="-100316" />
+		<vertex x="-27756" y="-98632" />
+		<vertex x="-29204" y="-98616" />
+		<spawn npcId="20312" respawn="15" amount="2" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="2" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="2" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_011] -->
+	<group minZ="-3064" maxZ="-2064">
+		<vertex x="-27084" y="-127172" />
+		<vertex x="-22316" y="-127464" />
+		<vertex x="-20188" y="-124508" />
+		<vertex x="-21536" y="-120900" />
+		<vertex x="-23536" y="-121256" />
+		<vertex x="-25572" y="-123824" />
+		<spawn npcId="20312" respawn="15" amount="5" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="5" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_012] -->
+	<group minZ="-2412" maxZ="-1762">
+		<vertex x="-20188" y="-130892" />
+		<vertex x="-15620" y="-130892" />
+		<vertex x="-18668" y="-128052" />
+		<vertex x="-20308" y="-127648" />
+		<spawn npcId="20312" respawn="15" amount="3" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [riont_19_14_013] -->
+	<group minZ="-3052" maxZ="-2502">
+		<vertex x="-14692" y="-130916" />
+		<vertex x="-10292" y="-130892" />
+		<vertex x="-10464" y="-129804" />
+		<vertex x="-17500" y="-127804" />
+		<spawn npcId="20312" respawn="15" amount="3" /> <!-- Rakeclaw Imp Hunter -->
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_014] -->
+	<group minZ="-2232" maxZ="-1632">
+		<vertex x="-18640" y="-102200" />
+		<vertex x="-16708" y="-101868" />
+		<vertex x="-16580" y="-100684" />
+		<vertex x="-18308" y="-99944" />
+		<vertex x="-19620" y="-99944" />
+		<vertex x="-19252" y="-101548" />
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="2" /> <!-- Evil Eye -->
+		<spawn npcId="20316" respawn="15" amount="2" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_015] -->
+	<group minZ="-3076" maxZ="-2676">
+		<vertex x="-22556" y="-118584" />
+		<vertex x="-21560" y="-118612" />
+		<vertex x="-20328" y="-117280" />
+		<vertex x="-19784" y="-114864" />
+		<vertex x="-20428" y="-114016" />
+		<vertex x="-22116" y="-114004" />
+		<vertex x="-23496" y="-115352" />
+		<vertex x="-23820" y="-117020" />
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="3" /> <!-- Evil Eye -->
+	</group>
+	<!-- [rion_t19_14_016] -->
+	<group minZ="-2340" maxZ="-1040">
+		<vertex x="-21376" y="-108112" />
+		<vertex x="-18580" y="-105412" />
+		<vertex x="-21480" y="-102904" />
+		<vertex x="-24000" y="-103524" />
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="3" /> <!-- Evil Eye -->
+	</group>
+	<!-- [rion_t19_14_017] -->
+	<group minZ="-1704" maxZ="-404">
+		<vertex x="-19564" y="-104300" />
+		<vertex x="-15932" y="-105040" />
+		<vertex x="-13876" y="-103252" />
+		<vertex x="-15856" y="-102564" />
+		<spawn npcId="20363" respawn="15" amount="2" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="3" /> <!-- Evil Eye -->
+		<spawn npcId="20143" respawn="15" amount="3" /> <!-- Bear -->
+	</group>
+	<!-- [rion_t19_14_018] -->
+	<group minZ="-2788" maxZ="-1788">
+		<vertex x="-14624" y="-111588" />
+		<vertex x="-13620" y="-110436" />
+		<vertex x="-13220" y="-107092" />
+		<vertex x="-15808" y="-106080" />
+		<vertex x="-18700" y="-105660" />
+		<vertex x="-21116" y="-108200" />
+		<vertex x="-20472" y="-113208" />
+		<vertex x="-18848" y="-113532" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="8" /> <!-- Evil Eye -->
+		<spawn npcId="20143" respawn="15" amount="8" /> <!-- Bear -->
+	</group>
+	<!-- [riont_19_14_019] -->
+	<group minZ="-2552" maxZ="-1852">
+		<vertex x="-15088" y="-117452" />
+		<vertex x="-12724" y="-117536" />
+		<vertex x="-10944" y="-116928" />
+		<vertex x="-10812" y="-115636" />
+		<vertex x="-13088" y="-113756" />
+		<vertex x="-14780" y="-115340" />
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="3" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="4" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_020] -->
+	<group minZ="-2652" maxZ="-1952">
+		<vertex x="-19896" y="-118192" />
+		<vertex x="-15896" y="-119276" />
+		<vertex x="-15200" y="-117424" />
+		<vertex x="-14936" y="-115340" />
+		<vertex x="-19392" y="-115764" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="4" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_021] -->
+	<group minZ="-2552" maxZ="-1952">
+		<vertex x="-19460" y="-123984" />
+		<vertex x="-13832" y="-123220" />
+		<vertex x="-15808" y="-119432" />
+		<vertex x="-20592" y="-118752" />
+		<vertex x="-20776" y="-120536" />
+		<spawn npcId="20363" respawn="15" amount="6" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="6" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="6" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_022] -->
+	<group minZ="-2492" maxZ="-1492">
+		<vertex x="-17044" y="-126540" />
+		<vertex x="-13328" y="-127964" />
+		<vertex x="-12732" y="-126488" />
+		<vertex x="-14080" y="-123448" />
+		<vertex x="-18552" y="-124076" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="4" /> <!-- Rakeclaw Imp Leader -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_023] -->
+	<group minZ="-3020" maxZ="-2020">
+		<vertex x="-4284" y="-104428" />
+		<vertex x="-268" y="-104080" />
+		<vertex x="-216" y="-98600" />
+		<vertex x="-4096" y="-98680" />
+		<vertex x="-4996" y="-101508" />
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="6" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="6" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_14_024] -->
+	<group minZ="-2820" maxZ="-2320">
+		<vertex x="-4104" y="-111884" />
+		<vertex x="-292" y="-112836" />
+		<vertex x="-344" y="-104192" />
+		<vertex x="-4112" y="-104484" />
+		<vertex x="-4744" y="-109744" />
+		<spawn npcId="20316" respawn="15" amount="7" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="7" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="7" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_14_025] -->
+	<group minZ="-3628" maxZ="-3228">
+		<vertex x="-4652" y="-114732" />
+		<vertex x="-264" y="-115416" />
+		<vertex x="-328" y="-114576" />
+		<vertex x="-2512" y="-113624" />
+		<spawn npcId="20320" respawn="15" amount="2" /> <!-- Goblin Tomb Raider Leader -->
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_14_026] -->
+	<group minZ="-2976" maxZ="-2276">
+		<vertex x="-2868" y="-118668" />
+		<vertex x="-324" y="-118600" />
+		<vertex x="-296" y="-117164" />
+		<vertex x="-4216" y="-117052" />
+		<spawn npcId="20320" respawn="15" amount="3" /> <!-- Goblin Tomb Raider Leader -->
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_14_027] -->
+	<group minZ="-3052" maxZ="-2152">
+		<vertex x="-4644" y="-123488" />
+		<vertex x="-388" y="-124068" />
+		<vertex x="-440" y="-119488" />
+		<vertex x="-3824" y="-119084" />
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="4" /> <!-- Bear -->
+		<spawn npcId="20320" respawn="15" amount="5" /> <!-- Goblin Tomb Raider Leader -->
+	</group>
+	<!-- [rion_t19_14_028] -->
+	<group minZ="-3372" maxZ="-2472">
+		<vertex x="-3432" y="-129244" />
+		<vertex x="-416" y="-127604" />
+		<vertex x="-396" y="-124124" />
+		<vertex x="-4656" y="-123496" />
+		<vertex x="-5608" y="-124820" />
+		<vertex x="-5400" y="-127416" />
+		<spawn npcId="20316" respawn="15" amount="6" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="5" /> <!-- Bear -->
+		<spawn npcId="20320" respawn="15" amount="6" /> <!-- Goblin Tomb Raider Leader -->
+	</group>
+	<!-- [rion_t19_14_029] -->
+	<group minZ="-3216" maxZ="-2616">
+		<vertex x="-7220" y="-130924" />
+		<vertex x="-4208" y="-130884" />
+		<vertex x="-3544" y="-129424" />
+		<vertex x="-5396" y="-127676" />
+		<spawn npcId="20316" respawn="15" amount="3" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="3" /> <!-- Bear -->
+		<spawn npcId="20320" respawn="15" amount="3" /> <!-- Goblin Tomb Raider Leader -->
+	</group>
+	<!-- [rion_t19_14_030] -->
+	<group minZ="-2252" maxZ="-1752">
+		<vertex x="-24440" y="-121172" />
+		<vertex x="-23420" y="-120048" />
+		<vertex x="-24592" y="-118656" />
+		<vertex x="-26444" y="-118628" />
+		<vertex x="-26280" y="-120676" />
+		<spawn npcId="20312" respawn="15" amount="3" /> <!-- Rakeclaw Imp Hunter -->
+	</group>
+	<!-- [rion_t19_14_031] -->
+	<group minZ="-3036" maxZ="-2236">
+		<vertex x="-23980" y="-125872" />
+		<vertex x="-22244" y="-125880" />
+		<vertex x="-21332" y="-124492" />
+		<vertex x="-21928" y="-122688" />
+		<vertex x="-24208" y="-124208" />
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_032] -->
+	<group minZ="-3080" maxZ="-2680">
+		<vertex x="-21876" y="-117392" />
+		<vertex x="-21084" y="-117284" />
+		<vertex x="-20656" y="-116660" />
+		<vertex x="-20500" y="-115928" />
+		<vertex x="-20620" y="-115300" />
+		<vertex x="-21484" y="-114868" />
+		<vertex x="-22816" y="-115608" />
+		<vertex x="-22996" y="-116640" />
+		<vertex x="-22608" y="-117092" />
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_033] -->
+	<group minZ="-2100" maxZ="-1300">
+		<vertex x="-21240" y="-106496" />
+		<vertex x="-20200" y="-105428" />
+		<vertex x="-20808" y="-104204" />
+		<vertex x="-22132" y="-103864" />
+		<vertex x="-22412" y="-105196" />
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_034] -->
+	<group minZ="-2436" maxZ="-1836">
+		<vertex x="-16164" y="-111300" />
+		<vertex x="-14532" y="-111032" />
+		<vertex x="-14100" y="-109488" />
+		<vertex x="-16052" y="-109064" />
+		<vertex x="-16980" y="-110004" />
+		<vertex x="-16996" y="-110868" />
+		<spawn npcId="20316" respawn="15" amount="3" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_14_035] -->
+	<group minZ="-2352" maxZ="-1852">
+		<vertex x="-19200" y="-109516" />
+		<vertex x="-17364" y="-108516" />
+		<vertex x="-18556" y="-106612" />
+		<vertex x="-20896" y="-108308" />
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_14_036] -->
+	<group minZ="-2412" maxZ="-1912">
+		<vertex x="-17660" y="-122644" />
+		<vertex x="-15884" y="-122448" />
+		<vertex x="-16568" y="-119984" />
+		<vertex x="-18584" y="-119224" />
+		<vertex x="-19144" y="-120424" />
+		<vertex x="-19108" y="-121664" />
+		<spawn npcId="20320" respawn="15" amount="3" /> <!-- Goblin Tomb Raider Leader -->
+	</group>
+	<!-- [rion_t19_15_001] -->
+	<group minZ="-2892" maxZ="-2292">
+		<vertex x="-28592" y="-98156" />
+		<vertex x="-23260" y="-98192" />
+		<vertex x="-22188" y="-97148" />
+		<vertex x="-22520" y="-96456" />
+		<vertex x="-28128" y="-96476" />
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="6" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_15_002] -->
+	<group minZ="-2952" maxZ="-2552">
+		<vertex x="-28044" y="-96412" />
+		<vertex x="-26376" y="-96452" />
+		<vertex x="-26464" y="-91764" />
+		<vertex x="-28108" y="-92592" />
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="4" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_15_003] -->
+	<group minZ="-3780" maxZ="-2580">
+		<vertex x="-27744" y="-91368" />
+		<vertex x="-26312" y="-91044" />
+		<vertex x="-23308" y="-89144" />
+		<vertex x="-24916" y="-86908" />
+		<vertex x="-26908" y="-86080" />
+		<vertex x="-28412" y="-88592" />
+		<spawn npcId="20365" respawn="15" amount="5" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="10" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="2" /> <!-- Rakeclaw Imp Leader -->
+	</group>
+	<!-- [rion_t19_15_004] -->
+	<group minZ="-3728" maxZ="-3128">
+		<vertex x="-23200" y="-95652" />
+		<vertex x="-21400" y="-94228" />
+		<vertex x="-21160" y="-92232" />
+		<vertex x="-22808" y="-90264" />
+		<vertex x="-25416" y="-91264" />
+		<vertex x="-25464" y="-93784" />
+		<vertex x="-24652" y="-95452" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="7" /> <!-- Evil Eye -->
+		<spawn npcId="20313" respawn="15" amount="8" /> <!-- Rakeclaw Imp Leader -->
+	</group>
+	<!-- [rion_t19_15_005] -->
+	<group minZ="-3620" maxZ="-2820">
+		<vertex x="-26880" y="-82464" />
+		<vertex x="-21732" y="-82524" />
+		<vertex x="-22480" y="-80836" />
+		<vertex x="-24708" y="-79208" />
+		<spawn npcId="20426" respawn="15" amount="3" /> <!-- Evil Eye -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="4" /> <!-- Bear -->
+	</group>
+	<!-- [rion_t19_15_006] -->
+	<group minZ="-3008" maxZ="-2308">
+		<vertex x="-24604" y="-79092" />
+		<vertex x="-22068" y="-80344" />
+		<vertex x="-20800" y="-80196" />
+		<vertex x="-20268" y="-78300" />
+		<vertex x="-22692" y="-77432" />
+		<spawn npcId="20426" respawn="15" amount="2" /> <!-- Evil Eye -->
+		<spawn npcId="20143" respawn="15" amount="4" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="3" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_007] -->
+	<group minZ="-3480" maxZ="-2480">
+		<vertex x="-19812" y="-91920" />
+		<vertex x="-18848" y="-90880" />
+		<vertex x="-19752" y="-89768" />
+		<vertex x="-22456" y="-87808" />
+		<vertex x="-24448" y="-87856" />
+		<spawn npcId="20365" respawn="15" amount="3" /> <!-- Mountain Fungus -->
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20313" respawn="15" amount="3" /> <!-- Rakeclaw Imp Leader -->
+	</group>
+	<!-- [rion_t19_15_008] -->
+	<group minZ="-2820" maxZ="-1920">
+		<vertex x="-21924" y="-77512" />
+		<vertex x="-20240" y="-78096" />
+		<vertex x="-16920" y="-74336" />
+		<vertex x="-19092" y="-72952" />
+		<spawn npcId="20426" respawn="15" amount="3" /> <!-- Evil Eye -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="5" /> <!-- Bear -->
+	</group>
+	<!-- [rion_t19_15_009] -->
+	<group minZ="-2276" maxZ="-1576">
+		<vertex x="-17460" y="-73896" />
+		<vertex x="-12832" y="-74564" />
+		<vertex x="-11968" y="-73940" />
+		<vertex x="-13340" y="-72000" />
+		<vertex x="-15092" y="-71016" />
+		<vertex x="-17660" y="-71396" />
+		<vertex x="-19080" y="-72852" />
+		<spawn npcId="20316" respawn="15" amount="3" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="4" /> <!-- Bear -->
+		<spawn npcId="20320" respawn="15" amount="5" /> <!-- Goblin Tomb Raider Leader -->
+		<spawn npcId="20333" respawn="15" amount="5" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_010] -->
+	<group minZ="-2592" maxZ="-1892">
+		<vertex x="-11672" y="-75740" />
+		<vertex x="-10544" y="-76336" />
+		<vertex x="-9996" y="-74920" />
+		<vertex x="-10636" y="-74396" />
+		<vertex x="-12088" y="-73980" />
+		<vertex x="-12864" y="-74528" />
+		<spawn npcId="20320" respawn="15" amount="2" /> <!-- Goblin Tomb Raider Leader -->
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_011] -->
+	<group minZ="-3808" maxZ="-3408">
+		<vertex x="-4284" y="-75520" />
+		<vertex x="-2792" y="-74688" />
+		<vertex x="-1920" y="-73528" />
+		<vertex x="-2964" y="-72640" />
+		<vertex x="-4100" y="-72624" />
+		<vertex x="-5060" y="-75068" />
+		<spawn npcId="20333" respawn="15" amount="3" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="4" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t19_15_012] -->
+	<group minZ="-3004" maxZ="-2104">
+		<vertex x="-5048" y="-77864" />
+		<vertex x="-408" y="-78976" />
+		<vertex x="-424" y="-76288" />
+		<vertex x="-4332" y="-77372" />
+		<spawn npcId="20143" respawn="15" amount="3" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="3" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_013] -->
+	<group minZ="-2888" maxZ="-2488">
+		<vertex x="-8372" y="-77520" />
+		<vertex x="-5952" y="-78436" />
+		<vertex x="-5024" y="-77748" />
+		<vertex x="-8928" y="-76016" />
+		<vertex x="-10484" y="-76248" />
+		<spawn npcId="20320" respawn="15" amount="4" /> <!-- Goblin Tomb Raider Leader -->
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_014] -->
+	<group minZ="-3640" maxZ="-2740">
+		<vertex x="-18072" y="-81624" />
+		<vertex x="-14384" y="-83592" />
+		<vertex x="-12348" y="-79588" />
+		<vertex x="-12268" y="-78092" />
+		<vertex x="-14272" y="-76248" />
+		<vertex x="-16420" y="-76580" />
+		<vertex x="-18872" y="-78980" />
+		<spawn npcId="20316" respawn="15" amount="3" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="5" /> <!-- Bear -->
+		<spawn npcId="20320" respawn="15" amount="5" /> <!-- Goblin Tomb Raider Leader -->
+		<spawn npcId="20333" respawn="15" amount="5" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_015] -->
+	<group minZ="-2848" maxZ="-1848">
+		<vertex x="-15448" y="-98172" />
+		<vertex x="-11004" y="-98140" />
+		<vertex x="-14440" y="-95656" />
+		<vertex x="-18612" y="-96216" />
+		<vertex x="-18548" y="-96800" />
+		<spawn npcId="20363" respawn="15" amount="5" /> <!-- Maraku Werewolf -->
+		<spawn npcId="20426" respawn="15" amount="4" /> <!-- Evil Eye -->
+		<spawn npcId="20316" respawn="15" amount="5" /> <!-- Blackwing Bat -->
+	</group>
+	<!-- [rion_t19_15_016] -->
+	<group minZ="-3396" maxZ="-2896">
+		<vertex x="-10572" y="-96800" />
+		<vertex x="-9620" y="-97180" />
+		<vertex x="-9476" y="-95228" />
+		<vertex x="-10612" y="-95084" />
+		<spawn npcId="20316" respawn="15" amount="1" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="2" /> <!-- Bear -->
+	</group>
+	<!-- [rion_t19_15_017] -->
+	<group minZ="-3480" maxZ="-2480">
+		<vertex x="-9196" y="-96468" />
+		<vertex x="-8184" y="-97820" />
+		<vertex x="-6996" y="-97292" />
+		<vertex x="-7600" y="-96208" />
+		<vertex x="-8456" y="-95816" />
+		<vertex x="-9012" y="-95972" />
+		<spawn npcId="20316" respawn="15" amount="1" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="2" /> <!-- Bear -->
+	</group>
+	<!-- [rion_t19_13_018] -->
+	<group minZ="-3032" maxZ="-1832">
+		<vertex x="-4416" y="-98144" />
+		<vertex x="-256" y="-98160" />
+		<vertex x="-248" y="-95468" />
+		<vertex x="-1892" y="-94736" />
+		<vertex x="-4024" y="-96516" />
+		<spawn npcId="20316" respawn="15" amount="3" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="4" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="5" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_019] -->
+	<group minZ="-3180" maxZ="-2780">
+		<vertex x="-3888" y="-93740" />
+		<vertex x="-312" y="-93864" />
+		<vertex x="-272" y="-92660" />
+		<vertex x="-2584" y="-92632" />
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+		<spawn npcId="20426" respawn="15" amount="2" /> <!-- Evil Eye -->
+	</group>
+	<!-- [rion_t19_15_020] -->
+	<group minZ="-2884" maxZ="-2084">
+		<vertex x="-5300" y="-95084" />
+		<vertex x="-4692" y="-94332" />
+		<vertex x="-4648" y="-92180" />
+		<vertex x="-8324" y="-94424" />
+		<vertex x="-6128" y="-95288" />
+		<spawn npcId="20316" respawn="15" amount="2" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="2" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_021] -->
+	<group minZ="-2468" maxZ="-1468">
+		<vertex x="-4456" y="-91336" />
+		<vertex x="-468" y="-91324" />
+		<vertex x="-508" y="-86684" />
+		<vertex x="-7228" y="-86044" />
+		<vertex x="-9540" y="-87832" />
+		<spawn npcId="20333" respawn="15" amount="7" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="7" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20364" respawn="15" amount="8" /> <!-- Maraku Werewolf Chieftain -->
+	</group>
+	<!-- [rion_t19_15_022] -->
+	<group minZ="-3180" maxZ="-1880">
+		<vertex x="-10840" y="-94164" />
+		<vertex x="-9156" y="-94524" />
+		<vertex x="-4764" y="-92120" />
+		<vertex x="-4512" y="-91292" />
+		<vertex x="-9692" y="-87600" />
+		<vertex x="-12672" y="-92976" />
+		<spawn npcId="20316" respawn="15" amount="7" /> <!-- Blackwing Bat -->
+		<spawn npcId="20143" respawn="15" amount="6" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="7" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_023] -->
+	<group minZ="-3740" maxZ="-3440">
+		<vertex x="-24648" y="-93424" />
+		<vertex x="-23716" y="-93460" />
+		<vertex x="-23044" y="-92768" />
+		<vertex x="-23816" y="-91808" />
+		<vertex x="-24740" y="-92136" />
+		<vertex x="-24820" y="-92908" />
+		<spawn npcId="20333" respawn="15" amount="3" /> <!-- Greystone Golem -->
+	</group>
+	<!-- [rion_t19_15_0224] -->
+	<group minZ="-3644" maxZ="-2944">
+		<vertex x="-27240" y="-89300" />
+		<vertex x="-25192" y="-89064" />
+		<vertex x="-25376" y="-87428" />
+		<vertex x="-26772" y="-87192" />
+		<spawn npcId="20363" respawn="15" amount="3" /> <!-- Maraku Werewolf -->
+	</group>
+	<!-- [rion_t19_15_025] -->
+	<group minZ="-3580" maxZ="-3280">
+		<vertex x="-14492" y="-81768" />
+		<vertex x="-13312" y="-81120" />
+		<vertex x="-12912" y="-80028" />
+		<vertex x="-14084" y="-78688" />
+		<vertex x="-16108" y="-79216" />
+		<vertex x="-16168" y="-80680" />
+		<spawn npcId="20364" respawn="15" amount="4" /> <!-- Maraku Werewolf Chieftain -->
+	</group>
+	<!-- [rion_t19_15_026] -->
+	<group minZ="-3032" maxZ="-2182">
+		<vertex x="-10196" y="-91524" />
+		<vertex x="-8844" y="-93272" />
+		<vertex x="-6896" y="-92004" />
+		<vertex x="-7452" y="-90212" />
+		<vertex x="-8960" y="-89904" />
+		<spawn npcId="20364" respawn="15" amount="4" /> <!-- Maraku Werewolf Chieftain -->
+	</group>
+	<!-- [rion_t19_15_027] -->
+	<group minZ="-2664" maxZ="-2064">
+		<vertex x="-6764" y="-89020" />
+		<vertex x="-2764" y="-89400" />
+		<vertex x="-1336" y="-88336" />
+		<vertex x="-2772" y="-86928" />
+		<vertex x="-6852" y="-86876" />
+		<vertex x="-7604" y="-87972" />
+		<spawn npcId="20364" respawn="15" amount="2" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_13_001] -->
+	<group minZ="-3448" maxZ="-2248">
+		<vertex x="252" y="-133644" />
+		<vertex x="8360" y="-132800" />
+		<vertex x="9432" y="-131352" />
+		<vertex x="176" y="-131360" />
+		<spawn npcId="20143" respawn="15" amount="9" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="9" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="9" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_13_002] -->
+	<group minZ="-1272" maxZ="-372">
+		<vertex x="7716" y="-138436" />
+		<vertex x="10452" y="-136140" />
+		<vertex x="8764" y="-134760" />
+		<vertex x="5340" y="-135256" />
+		<vertex x="6256" y="-137512" />
+		<spawn npcId="20143" respawn="15" amount="7" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="7" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="7" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_13_003] -->
+	<group minZ="-1928" maxZ="-1078">
+		<vertex x="10992" y="-135132" />
+		<vertex x="12372" y="-135076" />
+		<vertex x="14204" y="-131388" />
+		<vertex x="10796" y="-131464" />
+		<vertex x="9276" y="-134068" />
+		<spawn npcId="20143" respawn="15" amount="7" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="7" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="7" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_13_004] -->
+	<group minZ="-1892" maxZ="-692">
+		<vertex x="14640" y="-138080" />
+		<vertex x="15816" y="-138192" />
+		<vertex x="18508" y="-135324" />
+		<vertex x="16076" y="-134756" />
+		<vertex x="14788" y="-135196" />
+		<vertex x="12892" y="-137140" />
+		<spawn npcId="20364" respawn="15" amount="8" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="7" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_13_005] -->
+	<group minZ="-1888" maxZ="-1088">
+		<vertex x="19796" y="-132792" />
+		<vertex x="22504" y="-132144" />
+		<vertex x="22440" y="-131416" />
+		<vertex x="18620" y="-131452" />
+		<vertex x="18432" y="-132368" />
+		<spawn npcId="20474" respawn="15" amount="2" /> <!-- Kasha Spider -->
+		<spawn npcId="20476" respawn="15" amount="4" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="2" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_13_006] -->
+	<group minZ="-1908" maxZ="-1508">
+		<vertex x="10096" y="-141852" />
+		<vertex x="10896" y="-142592" />
+		<vertex x="13404" y="-142056" />
+		<vertex x="15244" y="-140060" />
+		<vertex x="12020" y="-137648" />
+		<vertex x="10112" y="-139972" />
+		<spawn npcId="20428" respawn="15" amount="8" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="7" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="7" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_001] -->
+	<group minZ="-3388" maxZ="-2388">
+		<vertex x="396" y="-127640" />
+		<vertex x="3136" y="-126500" />
+		<vertex x="3464" y="-120532" />
+		<vertex x="1040" y="-119436" />
+		<vertex x="364" y="-119688" />
+		<spawn npcId="20143" respawn="15" amount="5" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="8" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="8" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_14_002] -->
+	<group minZ="-3336" maxZ="-2086">
+		<vertex x="3260" y="-127148" />
+		<vertex x="6500" y="-128716" />
+		<vertex x="9140" y="-125308" />
+		<vertex x="3532" y="-122676" />
+		<spawn npcId="20143" respawn="15" amount="6" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="7" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="6" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_14_003] -->
+	<group minZ="-2820" maxZ="-1420">
+		<vertex x="3768" y="-122744" />
+		<vertex x="9164" y="-125284" />
+		<vertex x="11372" y="-123208" />
+		<vertex x="9132" y="-121264" />
+		<vertex x="5784" y="-119992" />
+		<vertex x="3812" y="-121060" />
+		<spawn npcId="20143" respawn="15" amount="8" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="8" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="6" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_14_004] -->
+	<group minZ="-3136" maxZ="-1886">
+		<vertex x="6476" y="-130768" />
+		<vertex x="10388" y="-130972" />
+		<vertex x="9324" y="-125580" />
+		<vertex x="6416" y="-128988" />
+		<spawn npcId="20143" respawn="15" amount="4" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="4" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="4" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_14_005] -->
+	<group minZ="-2212" maxZ="-962">
+		<vertex x="10512" y="-130884" />
+		<vertex x="14492" y="-130944" />
+		<vertex x="15164" y="-129820" />
+		<vertex x="14308" y="-126832" />
+		<vertex x="9644" y="-126112" />
+		<spawn npcId="20428" respawn="15" amount="5" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="5" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="6" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_006] -->
+	<group minZ="-2168" maxZ="-1068">
+		<vertex x="9684" y="-125988" />
+		<vertex x="14280" y="-126724" />
+		<vertex x="15332" y="-125616" />
+		<vertex x="15048" y="-124416" />
+		<vertex x="11956" y="-122892" />
+		<spawn npcId="20428" respawn="15" amount="5" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="3" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_007] -->
+	<group minZ="-3528" maxZ="-2828">
+		<vertex x="2180" y="-130896" />
+		<vertex x="6468" y="-130892" />
+		<vertex x="6424" y="-128680" />
+		<vertex x="3076" y="-127080" />
+		<spawn npcId="20143" respawn="15" amount="2" /> <!-- Bear -->
+		<spawn npcId="20333" respawn="15" amount="2" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="2" /> <!-- Evil Eye Patrol -->
+	</group>
+	<!-- [rion_t20_14_008] -->
+	<group minZ="-1832" maxZ="-1432">
+		<vertex x="18568" y="-130976" />
+		<vertex x="22048" y="-130984" />
+		<vertex x="22664" y="-129468" />
+		<vertex x="21004" y="-128996" />
+		<vertex x="19348" y="-129676" />
+		<spawn npcId="20474" respawn="15" amount="2" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="1" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_009] -->
+	<group minZ="-1220" maxZ="-320">
+		<vertex x="21076" y="-127600" />
+		<vertex x="22588" y="-126736" />
+		<vertex x="21972" y="-125600" />
+		<vertex x="20856" y="-125340" />
+		<vertex x="20536" y="-127424" />
+		<spawn npcId="20474" respawn="15" amount="2" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_010] -->
+	<group minZ="-956" maxZ="-406">
+		<vertex x="25712" y="-128236" />
+		<vertex x="28256" y="-126992" />
+		<vertex x="29276" y="-124396" />
+		<vertex x="24072" y="-121376" />
+		<vertex x="22096" y="-123184" />
+		<vertex x="23316" y="-126552" />
+		<spawn npcId="20474" respawn="15" amount="5" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="5" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="5" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_14_011] -->
+	<group minZ="-972" maxZ="-372">
+		<vertex x="19028" y="-120460" />
+		<vertex x="22100" y="-122932" />
+		<vertex x="24024" y="-121356" />
+		<vertex x="21668" y="-120008" />
+		<spawn npcId="20474" respawn="15" amount="1" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="2" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="1" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_14_012] -->
+	<group minZ="-2112" maxZ="-1462">
+		<vertex x="5440" y="-118744" />
+		<vertex x="10000" y="-120784" />
+		<vertex x="10892" y="-119492" />
+		<vertex x="8424" y="-115948" />
+		<spawn npcId="20333" respawn="15" amount="3" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="3" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="3" /> <!-- Kasha Spider -->
+	</group>
+	<!-- [rion_t20_14_013] -->
+	<group minZ="-2800" maxZ="-1900">
+		<vertex x="3960" y="-119404" />
+		<vertex x="5296" y="-118632" />
+		<vertex x="6308" y="-117660" />
+		<vertex x="3544" y="-115664" />
+		<vertex x="360" y="-116448" />
+		<vertex x="324" y="-118324" />
+		<spawn npcId="20333" respawn="15" amount="3" /> <!-- Greystone Golem -->
+		<spawn npcId="20428" respawn="15" amount="3" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="3" /> <!-- Kasha Spider -->
+	</group>
+	<!-- [rion_t20_14_014] -->
+	<group minZ="-2244" maxZ="-1594">
+		<vertex x="6244" y="-117420" />
+		<vertex x="8212" y="-115348" />
+		<vertex x="6920" y="-113100" />
+		<vertex x="4028" y="-112808" />
+		<vertex x="4144" y="-115688" />
+		<spawn npcId="20428" respawn="15" amount="3" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="2" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_015] -->
+	<group minZ="-2420" maxZ="-1620">
+		<vertex x="3036" y="-112136" />
+		<vertex x="6820" y="-112956" />
+		<vertex x="7980" y="-108752" />
+		<vertex x="6208" y="-106892" />
+		<spawn npcId="20428" respawn="15" amount="3" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="5" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_016] -->
+	<group minZ="-2812" maxZ="-2262">
+		<vertex x="160" y="-111692" />
+		<vertex x="1300" y="-111912" />
+		<vertex x="3060" y="-109708" />
+		<vertex x="208" y="-107904" />
+		<spawn npcId="20364" respawn="15" amount="2" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="2" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_017] -->
+	<group minZ="-2904" maxZ="-2104">
+		<vertex x="248" y="-107680" />
+		<vertex x="3112" y="-109648" />
+		<vertex x="5788" y="-106140" />
+		<vertex x="3432" y="-103096" />
+		<vertex x="200" y="-103140" />
+		<spawn npcId="20364" respawn="15" amount="3" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [oren_t20_14_018] -->
+	<group minZ="-2784" maxZ="-1684">
+		<vertex x="5792" y="-105892" />
+		<vertex x="8680" y="-105600" />
+		<vertex x="8220" y="-102876" />
+		<vertex x="6712" y="-100884" />
+		<vertex x="3580" y="-100228" />
+		<vertex x="3424" y="-103024" />
+		<spawn npcId="20364" respawn="15" amount="3" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_019] -->
+	<group minZ="-2356" maxZ="-1556">
+		<vertex x="324" y="-102876" />
+		<vertex x="3308" y="-102828" />
+		<vertex x="3512" y="-98596" />
+		<vertex x="280" y="-98572" />
+		<spawn npcId="20364" respawn="15" amount="4" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="4" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="4" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_020] -->
+	<group minZ="-2160" maxZ="-1560">
+		<vertex x="3528" y="-100132" />
+		<vertex x="6596" y="-100808" />
+		<vertex x="6180" y="-98504" />
+		<vertex x="3524" y="-98560" />
+		<spawn npcId="20364" respawn="15" amount="1" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="1" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="1" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_021] -->
+	<group minZ="-2524" maxZ="-1624">
+		<vertex x="8660" y="-102272" />
+		<vertex x="10332" y="-101652" />
+		<vertex x="10292" y="-98612" />
+		<vertex x="6776" y="-98572" />
+		<vertex x="7036" y="-100520" />
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="3" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_14_022] -->
+	<group minZ="-972" maxZ="-372">
+		<vertex x="18124" y="-107836" />
+		<vertex x="23196" y="-107916" />
+		<vertex x="24344" y="-104288" />
+		<vertex x="20696" y="-103472" />
+		<vertex x="18488" y="-105008" />
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="5" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="5" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_14_023] -->
+	<group minZ="-808" maxZ="-158">
+		<vertex x="16924" y="-107292" />
+		<vertex x="18004" y="-107772" />
+		<vertex x="18340" y="-104844" />
+		<vertex x="16056" y="-104476" />
+		<vertex x="15676" y="-105520" />
+		<spawn npcId="20474" respawn="15" amount="2" /> <!-- Kasha Spider -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_14_024] -->
+	<group minZ="-832" maxZ="-432">
+		<vertex x="24164" y="-102876" />
+		<vertex x="25368" y="-101864" />
+		<vertex x="25196" y="-100356" />
+		<vertex x="23880" y="-102024" />
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_025] -->
+	<group minZ="-2920" maxZ="-2370">
+		<vertex x="6044" y="-126916" />
+		<vertex x="7228" y="-125940" />
+		<vertex x="6492" y="-124424" />
+		<vertex x="4404" y="-124716" />
+		<spawn npcId="20364" respawn="15" amount="3" /> <!-- Maraku Werewolf Chieftain -->
+	</group>
+	<!-- [rion_t20_14_026] -->
+	<group minZ="-1996" maxZ="-1146">
+		<vertex x="11340" y="-130252" />
+		<vertex x="13368" y="-130292" />
+		<vertex x="12416" y="-127672" />
+		<vertex x="10532" y="-127992" />
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_027] -->
+	<group minZ="-2812" maxZ="-2312">
+		<vertex x="1660" y="-107844" />
+		<vertex x="3432" y="-106452" />
+		<vertex x="1860" y="-104116" />
+		<vertex x="704" y="-105932" />
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_028] -->
+	<group minZ="-2732" maxZ="-1982">
+		<vertex x="5064" y="-104412" />
+		<vertex x="7412" y="-104164" />
+		<vertex x="5524" y="-101616" />
+		<vertex x="3904" y="-102704" />
+		<spawn npcId="20478" respawn="15" amount="3" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_14_029] -->
+	<group minZ="-2104" maxZ="-1704">
+		<vertex x="1004" y="-101520" />
+		<vertex x="2520" y="-102348" />
+		<vertex x="3072" y="-100176" />
+		<vertex x="1820" y="-99376" />
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_15_030] -->
+	<group minZ="-856" maxZ="-556">
+		<vertex x="20300" y="-106320" />
+		<vertex x="21684" y="-106692" />
+		<vertex x="22656" y="-106144" />
+		<vertex x="22760" y="-105172" />
+		<vertex x="21744" y="-104144" />
+		<vertex x="20380" y="-104624" />
+		<vertex x="19956" y="-105648" />
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_14_031] -->
+	<group minZ="-892" maxZ="-592">
+		<vertex x="24384" y="-124680" />
+		<vertex x="25044" y="-126792" />
+		<vertex x="26576" y="-126544" />
+		<vertex x="27584" y="-125232" />
+		<vertex x="26704" y="-123556" />
+		<vertex x="24848" y="-122724" />
+		<spawn npcId="20479" respawn="15" amount="1" /> <!-- Kasha Bear -->
+		<spawn npcId="20478" respawn="15" amount="2" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_15_001] -->
+	<group minZ="-3208" maxZ="-2808">
+		<vertex x="1716" y="-95584" />
+		<vertex x="3340" y="-95232" />
+		<vertex x="3896" y="-93496" />
+		<vertex x="3680" y="-92144" />
+		<vertex x="2248" y="-91716" />
+		<vertex x="164" y="-92840" />
+		<vertex x="188" y="-94416" />
+		<spawn npcId="20428" respawn="15" amount="7" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="4" /> <!-- Kasha Spider -->
+	</group>
+	<!-- [rion_t20_15_002] -->
+	<group minZ="-2136" maxZ="-1736">
+		<vertex x="176" y="-98184" />
+		<vertex x="3456" y="-98240" />
+		<vertex x="3292" y="-97196" />
+		<vertex x="176" y="-96260" />
+		<spawn npcId="20364" respawn="15" amount="2" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="1" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_15_003] -->
+	<group minZ="-2064" maxZ="-1664">
+		<vertex x="3480" y="-98192" />
+		<vertex x="6012" y="-98212" />
+		<vertex x="5852" y="-95556" />
+		<vertex x="4512" y="-95688" />
+		<spawn npcId="20364" respawn="15" amount="2" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="1" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="1" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_15_004] -->
+	<group minZ="-2256" maxZ="-1656">
+		<vertex x="132" y="-91464" />
+		<vertex x="1584" y="-90888" />
+		<vertex x="3856" y="-89028" />
+		<vertex x="2224" y="-87424" />
+		<vertex x="112" y="-87468" />
+		<spawn npcId="20364" respawn="15" amount="3" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_15_005] -->
+	<group minZ="-2432" maxZ="-1732">
+		<vertex x="104" y="-87432" />
+		<vertex x="2132" y="-87404" />
+		<vertex x="1536" y="-84616" />
+		<vertex x="1212" y="-84224" />
+		<vertex x="128" y="-84380" />
+		<spawn npcId="20364" respawn="15" amount="3" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="3" /> <!-- Kasha Fang Spider -->
+	</group>
+	<!-- [rion_t20_15_006] -->
+	<group minZ="-2808" maxZ="-2408">
+		<vertex x="144" y="-83108" />
+		<vertex x="1752" y="-84096" />
+		<vertex x="1536" y="-82792" />
+		<vertex x="152" y="-81664" />
+		<spawn npcId="20364" respawn="15" amount="2" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_15_007] -->
+	<group minZ="-2792" maxZ="-2492">
+		<vertex x="140" y="-81596" />
+		<vertex x="1840" y="-82356" />
+		<vertex x="1448" y="-81084" />
+		<vertex x="588" y="-79828" />
+		<vertex x="124" y="-79688" />
+		<spawn npcId="20364" respawn="15" amount="2" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="2" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_15_008] -->
+	<group minZ="-2572" maxZ="-1672">
+		<vertex x="1876" y="-80128" />
+		<vertex x="2832" y="-80016" />
+		<vertex x="3868" y="-79408" />
+		<vertex x="3920" y="-77012" />
+		<vertex x="2508" y="-75780" />
+		<vertex x="140" y="-76092" />
+		<vertex x="212" y="-79092" />
+		<spawn npcId="20364" respawn="15" amount="9" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="9" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_15_009] -->
+	<group minZ="-2104" maxZ="-1704">
+		<vertex x="180" y="-75956" />
+		<vertex x="2492" y="-75668" />
+		<vertex x="2964" y="-74392" />
+		<vertex x="2280" y="-73340" />
+		<vertex x="1368" y="-73352" />
+		<vertex x="156" y="-74496" />
+		<spawn npcId="20364" respawn="15" amount="5" /> <!-- Maraku Werewolf Chieftain -->
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_15_010] -->
+	<group minZ="-2736" maxZ="-1936">
+		<vertex x="2896" y="-84964" />
+		<vertex x="4296" y="-84972" />
+		<vertex x="4608" y="-84028" />
+		<vertex x="3560" y="-81260" />
+		<vertex x="2572" y="-81188" />
+		<spawn npcId="20428" respawn="15" amount="3" /> <!-- Evil Eye Patrol -->
+		<spawn npcId="20474" respawn="15" amount="3" /> <!-- Kasha Spider -->
+	</group>
+	<!-- [rion_t20_15_011] -->
+	<group minZ="-1796" maxZ="-996">
+		<vertex x="5352" y="-89560" />
+		<vertex x="7108" y="-90876" />
+		<vertex x="9076" y="-88068" />
+		<vertex x="6560" y="-86600" />
+		<vertex x="4844" y="-88584" />
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="4" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="4" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_15_012] -->
+	<group minZ="-2952" maxZ="-2552">
+		<vertex x="15752" y="-98104" />
+		<vertex x="16304" y="-96572" />
+		<vertex x="14656" y="-94140" />
+		<vertex x="11096" y="-94424" />
+		<vertex x="12476" y="-98124" />
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="5" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="4" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [rion_t20_15_013] -->
+	<group minZ="-2884" maxZ="-2284">
+		<vertex x="11264" y="-94340" />
+		<vertex x="14592" y="-94004" />
+		<vertex x="14872" y="-92360" />
+		<vertex x="12216" y="-91088" />
+		<vertex x="11064" y="-91476" />
+		<vertex x="10752" y="-93136" />
+		<spawn npcId="20479" respawn="15" amount="4" /> <!-- Kasha Bear -->
+		<spawn npcId="20476" respawn="15" amount="4" /> <!-- Kasha Fang Spider -->
+		<spawn npcId="20478" respawn="15" amount="4" /> <!-- Kasha Blade Spider -->
+	</group>
+	<!-- [oren_t20_15_014] -->
+	<group minZ="-3296" maxZ="-2696">
+		<vertex x="864" y="-94328" />
+		<vertex x="2052" y="-94724" />
+		<vertex x="3064" y="-94240" />
+		<vertex x="3268" y="-93432" />
+		<vertex x="2796" y="-92184" />
+		<vertex x="1736" y="-92060" />
+		<vertex x="988" y="-92468" />
+		<vertex x="544" y="-93292" />
+		<vertex x="508" y="-93896" />
+		<spawn npcId="20479" respawn="15" amount="4" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_15_015] -->
+	<group minZ="-1508" maxZ="-1108">
+		<vertex x="5996" y="-88740" />
+		<vertex x="6948" y="-90052" />
+		<vertex x="7772" y="-88540" />
+		<vertex x="6620" y="-87696" />
+		<spawn npcId="20479" respawn="15" amount="3" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [rion_t20_15_016] -->
+	<group minZ="-2892" maxZ="-2492">
+		<vertex x="13684" y="-96912" />
+		<vertex x="15344" y="-96732" />
+		<vertex x="15388" y="-95596" />
+		<vertex x="14252" y="-94828" />
+		<vertex x="13032" y="-95872" />
+		<spawn npcId="20479" respawn="15" amount="5" /> <!-- Kasha Bear -->
+	</group>
+	<!-- [orc_dungeon010] -->
+	<spawn npcId="20415" x="16800" y="-112736" z="-3200" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander -->
+	<spawn npcId="20416" x="16560" y="-112656" z="-3200" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander Elder -->
+	<spawn npcId="20416" x="16576" y="-112864" z="-3200" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander Elder -->
+	<!-- [orc_dungeon020] -->
+	<spawn npcId="20415" x="15904" y="-112544" z="-3160" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander -->
+	<spawn npcId="20415" x="16032" y="-112704" z="-3160" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander -->
+	<spawn npcId="20416" x="16032" y="-112240" z="-3160" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander Elder -->
+	<!-- [orc_dungeon030] -->
+	<spawn npcId="20415" x="17264" y="-112240" z="-3160" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander -->
+	<spawn npcId="20416" x="17040" y="-112000" z="-3136" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander Elder -->
+	<spawn npcId="20415" x="16800" y="-112224" z="-3160" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander -->
+	<spawn npcId="20416" x="16272" y="-112192" z="-3136" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander Elder -->
+	<spawn npcId="20415" x="16544" y="-111856" z="-3160" heading="0" respawn="30" randomRespawn="15" /> <!-- Scarlet Salamander -->
+	<spawn npcId="20340" x="16592" y="-112048" z="-3136" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="17056" y="-112160" z="-3136" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<!-- [orc_dungeon040] -->
+	<spawn npcId="20340" x="18416" y="-112448" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="18784" y="-112400" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="18592" y="-111936" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="18912" y="-113328" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="19728" y="-112016" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20427" x="19312" y="-113536" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20427" x="19552" y="-113200" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20429" x="19856" y="-112944" z="-3200" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20427" x="20032" y="-112480" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20427" x="19808" y="-111408" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20341" x="18672" y="-112800" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<spawn npcId="20341" x="19120" y="-111520" z="-3232" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<!-- [orc_dungeon050] -->
+	<spawn npcId="20429" x="20736" y="-115408" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20427" x="20768" y="-114768" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20429" x="21760" y="-115504" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20491" x="21536" y="-115088" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20491" x="21168" y="-115936" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20340" x="20352" y="-114608" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="20976" y="-115216" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21760" y="-116128" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20341" x="20544" y="-115136" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<!-- [orc_dungeon060] -->
+	<spawn npcId="20340" x="22448" y="-118832" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20429" x="22208" y="-118560" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20429" x="22784" y="-118656" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20491" x="23440" y="-118640" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20341" x="23152" y="-118656" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<!-- [orc_dungeon070] -->
+	<spawn npcId="20340" x="22080" y="-120048" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="22432" y="-120464" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="22784" y="-119696" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="22624" y="-119648" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20491" x="22688" y="-120016" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20491" x="23280" y="-120032" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20491" x="23136" y="-119568" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20491" x="21552" y="-119904" z="-3282" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20427" x="22048" y="-119552" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20429" x="23072" y="-120272" z="-3280" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<!-- [orc_dungeon080] -->
+	<spawn npcId="20491" x="24048" y="-114080" z="-3388" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20491" x="23312" y="-115360" z="-3408" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20491" x="23776" y="-116016" z="-3408" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20429" x="23168" y="-115840" z="-3408" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20427" x="24016" y="-115136" z="-3408" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20427" x="23952" y="-114592" z="-3408" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20429" x="23312" y="-114432" z="-3408" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20341" x="23488" y="-114848" z="-3416" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<spawn npcId="20341" x="23792" y="-115568" z="-3401" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<!-- [orc_dungeon090] -->
+	<spawn npcId="20340" x="21264" y="-109568" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="20912" y="-109616" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21408" y="-109360" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21008" y="-110192" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21728" y="-110224" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21056" y="-110848" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21600" y="-110736" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21504" y="-111536" z="-3296" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="21056" y="-110640" z="-3280" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<!-- [orc_dungeon100] -->
+	<spawn npcId="20340" x="23136" y="-110800" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="23312" y="-110784" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="23520" y="-110800" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20487" x="24016" y="-109376" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20487" x="23136" y="-109824" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20340" x="23968" y="-109920" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20340" x="23520" y="-109808" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20491" x="23616" y="-110416" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Crypt Horror -->
+	<spawn npcId="20340" x="23536" y="-109504" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Slave Skeleton -->
+	<spawn npcId="20375" x="23408" y="-108640" z="-3336" heading="0" respawn="30" randomRespawn="15" /> <!-- Varangka's Escort -->
+	<spawn npcId="20375" x="23728" y="-108624" z="-3336" heading="0" respawn="30" randomRespawn="15" /> <!-- Varangka's Escort -->
+	<spawn npcId="20375" x="23712" y="-108848" z="-3336" heading="0" respawn="30" randomRespawn="15" /> <!-- Varangka's Escort -->
+	<spawn npcId="20374" x="23472" y="-108848" z="-3336" heading="0" respawn="30" randomRespawn="15" /> <!-- Varangka's Guard -->
+	<spawn npcId="20374" x="23552" y="-109008" z="-3336" heading="0" respawn="30" randomRespawn="15" /> <!-- Varangka's Guard -->
+	<spawn npcId="20488" x="24080" y="-110336" z="-3344" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman Hunter -->
+	<!-- [orc_dungeon110] -->
+	<spawn npcId="20329" x="18448" y="-107888" z="-3056" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<spawn npcId="20329" x="18656" y="-107616" z="-3056" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<spawn npcId="20329" x="18848" y="-107744" z="-3056" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<spawn npcId="20329" x="18256" y="-107584" z="-3056" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<spawn npcId="20329" x="19024" y="-107920" z="-3028" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<spawn npcId="20329" x="18688" y="-107248" z="-3037" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<spawn npcId="20329" x="18080" y="-108112" z="-3037" heading="0" respawn="30" randomRespawn="15" /> <!-- Ghost Guardian -->
+	<!-- [orc_dungeon120] -->
+	<spawn npcId="20368" x="18640" y="-109968" z="-3030" heading="0" respawn="30" randomRespawn="15" /> <!-- Graveyard Keeper -->
+	<spawn npcId="20368" x="18896" y="-109488" z="-3020" heading="0" respawn="30" randomRespawn="15" /> <!-- Graveyard Keeper -->
+	<spawn npcId="20368" x="18224" y="-109488" z="-3030" heading="0" respawn="30" randomRespawn="15" /> <!-- Graveyard Keeper -->
+	<spawn npcId="20368" x="18608" y="-109616" z="-3030" heading="0" respawn="30" randomRespawn="15" /> <!-- Graveyard Keeper -->
+	<spawn npcId="20368" x="18512" y="-109200" z="-3030" heading="0" respawn="30" randomRespawn="15" /> <!-- Graveyard Keeper -->
+	<!-- [orc_dungeon130] -->
+	<spawn npcId="20487" x="16400" y="-108416" z="-3024" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20487" x="16640" y="-108304" z="-3040" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20487" x="16896" y="-108432" z="-3040" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20487" x="16624" y="-108736" z="-3040" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20488" x="16320" y="-108688" z="-3040" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman Hunter -->
+	<spawn npcId="20488" x="16464" y="-109008" z="-3040" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman Hunter -->
+	<!-- [orc_dungeon140] -->
+	<spawn npcId="20487" x="14400" y="-109792" z="-3430" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman -->
+	<spawn npcId="20488" x="14688" y="-109856" z="-3360" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman Hunter -->
+	<!-- [orc_dungeon150] -->
+	<spawn npcId="20488" x="13056" y="-110064" z="-3440" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman Hunter -->
+	<spawn npcId="20488" x="13088" y="-109680" z="-3424" heading="0" respawn="30" randomRespawn="15" /> <!-- Kuruka Ratman Hunter -->
+	<spawn npcId="20489" x="13600" y="-110016" z="-3456" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<spawn npcId="20489" x="13696" y="-109584" z="-3456" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<spawn npcId="20489" x="13360" y="-109520" z="-3456" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<!-- [orc_dungeon160] -->
+	<spawn npcId="20489" x="14960" y="-110864" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<!-- [orc_dungeon170] -->
+	<spawn npcId="20489" x="14960" y="-114032" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<spawn npcId="20489" x="14960" y="-114560" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<!-- [orc_dungeon180] -->
+	<spawn npcId="20341" x="15200" y="-115792" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<spawn npcId="20341" x="15072" y="-115520" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<spawn npcId="20341" x="14608" y="-115536" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<spawn npcId="20341" x="14784" y="-115792" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<spawn npcId="20341" x="14864" y="-115392" z="-3328" heading="0" respawn="30" randomRespawn="15" /> <!-- Undead Slave -->
+	<!-- [orc_dungeon190] -->
+	<spawn npcId="20489" x="15888" y="-116736" z="-3184" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<spawn npcId="20489" x="16000" y="-116992" z="-3184" heading="0" respawn="30" randomRespawn="15" /> <!-- Quicksilver Beast -->
+	<!-- [orc_dungeon200] -->
+	<spawn npcId="20429" x="16176" y="-119504" z="-3152" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20429" x="16272" y="-119232" z="-3152" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20427" x="16000" y="-119184" z="-3152" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<!-- [orc_dungeon210] -->
+	<spawn npcId="20427" x="18896" y="-120384" z="-3152" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20429" x="18624" y="-120256" z="-3152" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<spawn npcId="20427" x="18544" y="-120528" z="-3136" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Watchman -->
+	<spawn npcId="20429" x="18352" y="-120384" z="-3152" heading="0" respawn="30" randomRespawn="15" /> <!-- Evil Eye Lookout -->
+	<!-- [quest_030919_20_14_001] -->
+	<group minZ="-3624" maxZ="-3024">
+		<vertex x="10900" y="-108040" />
+		<vertex x="12392" y="-107080" />
+		<vertex x="12524" y="-106076" />
+		<vertex x="11524" y="-105636" />
+		<vertex x="10536" y="-106760" />
+		<spawn npcId="20778" respawn="180" amount="2" /> <!-- Ragna Orc Prefect -->
+		<spawn npcId="20779" respawn="180" amount="2" /> <!-- Ragna Orc Priest -->
+	</group>
+	<!-- [quest_030919_20_15_001] -->
+	<group minZ="-3100" maxZ="-2400">
+		<vertex x="9688" y="-92960" />
+		<vertex x="10460" y="-93268" />
+		<vertex x="11136" y="-90396" />
+		<vertex x="9608" y="-88708" />
+		<vertex x="9044" y="-89312" />
+		<spawn npcId="20778" respawn="180" amount="4" /> <!-- Ragna Orc Prefect -->
+		<spawn npcId="20779" respawn="180" amount="4" /> <!-- Ragna Orc Priest -->
+	</group>
+	<!-- [event_orc_2013] -->
+	<spawn npcId="25426" respawn="7200" randomRespawn="3600"> <!-- Betrayer of Urutu Freki -->
+		<randomCoord x="11232" y="-141648" z="-1879" heading="0" chance="25" />
+		<randomCoord x="11712" y="-139488" z="-1879" heading="0" chance="25" />
+		<randomCoord x="12512" y="-140512" z="-1879" heading="0" chance="25" />
+		<randomCoord x="14048" y="-139952" z="-1879" heading="0" chance="25" />
+	</spawn>
+</list>

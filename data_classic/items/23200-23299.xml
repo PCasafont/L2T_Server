@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Wrapped Pack containing Traditional Taiwanese Top/Pants/Gloves/Shoes/Hair Accessory Appearance Stone. -->
+	<item id="23200" type="EtcItem" name="Traditional Taiwanese Costume Appearance Stone Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="23194,1,1,100;23195,1,1,100;23196,1,1,100;23197,1,1,100;23198,1,1,100;" />
+	</item>
+	<!-- Double-click to receive either Antharas' Earring, Valakas' Necklace, Earth Wyrm Heart Ring, Bottle of Antharas' Soul, or Bottle of Valakas' Soul. -->
+	<item id="23201" type="EtcItem" name="Dark Accessory Pack - Event">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- CON + 1, MEN + 1 and INT + 1. 3-day. -->
+	<item id="23202" type="Armor" name="Shiny Alien Mask">
+		<set name="icon" val="icon.ev_shiny_alien_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 1, STR + 1 and DEX + 1. 3-day. -->
+	<item id="23203" type="Armor" name="Shiny Reanimated Corpse Mask">
+		<set name="icon" val="icon.ev_shiny_frankenstein_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 1, DEX + 1 and WIT + 1. 3-day. -->
+	<item id="23204" type="Armor" name="Shiny Shriek Mask">
+		<set name="icon" val="icon.ev_shiny_scream_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 1, MEN + 1 and WIT + 1. 3-day. -->
+	<item id="23205" type="Armor" name="Shiny Red Devil Mask">
+		<set name="icon" val="icon.ev_shiny_doccabi_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 1, DEX + 1 and WIT + 1. 3-day. -->
+	<item id="23206" type="Armor" name="Shiny Mummy Mask">
+		<set name="icon" val="icon.ev_shiny_mummy_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Gives a hair accessory perfect for a fun summer festival. -->
+	<item id="23207" type="EtcItem" name="Playful Hair Accessory Pack">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Restores 3000 HP and the remaining power restores CP. Instant effect with no duration. -->
+	<item id="23208" type="EtcItem" name="Red Potion of Regeneration">
+		<set name="icon" val="BranchSys2.br_essence_rose_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Magic potion that instantly restores Mana. Instant effect with no duration. -->
+	<item id="23209" type="EtcItem" name="Blue Potion of Recovery">
+		<set name="icon" val="BranchSys.icon.br_vitality_potion_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Transforms you into a Festering Zombie for 30 min. -->
+	<item id="23210" type="EtcItem" name="Transformation Scroll: Zombie">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Changes the appearance of a two-handed blunt into that of a Drake Maul. -->
+	<item id="23211" type="EtcItem" name="Drake Maul Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="22775" />
+	</item>
+	<!-- Changes the appearance of a two-handed blunt into that of Freya's Staff. -->
+	<item id="23212" type="EtcItem" name="Freya's Staff Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_blunt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="22791" />
+	</item>
+	<!-- Changes the appearance of a two-handed fist weapon into that of Spezion's Claw. -->
+	<item id="23213" type="EtcItem" name="Spezion's Claw Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualfist" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="22807" />
+	</item>
+	<!-- Changes the appearance of a spear into that of a Maliss Stormer. -->
+	<item id="23214" type="EtcItem" name="Maliss Stormer Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_pole" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="22814" />
+	</item>
+	<!-- Changes the appearance of a one-handed dagger into that of Steregos' Dagger. -->
+	<item id="23215" type="EtcItem" name="Steregos' Dagger Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dagger" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="22821" />
+	</item>
+	<!-- Changes the appearance of a dual blunt into that of Ron's Dual Blunt. -->
+	<item id="23216" type="EtcItem" name="Ron's Dual Blunt Weapon Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualblunt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="22828" />
+	</item>
+	<!-- Changes the appearance of a one-handed sword into that of Darion's Hellblade. -->
+	<item id="23217" type="EtcItem" name="Darion's Hellblade Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="21919" />
+	</item>
+	<!-- Changes the appearance of a dual dagger into that of a Doll Blader's Butcher Blade. -->
+	<item id="23218" type="EtcItem" name="Doll Blader's Butcher Blades Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dualdagger" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="21935" />
+	</item>
+	<!-- Changes the appearance of a one-handed blunt into that of Tiat's Claw of Destruction. -->
+	<item id="23219" type="EtcItem" name="Tiat's Claw of Destruction Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_blunt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="21939" />
+	</item>
+	<!-- Changes the appearance of a dualsword into that of Aenkinel's Blades of Delusion. -->
+	<item id="23220" type="EtcItem" name="Aenkinel's Blades of Delusion Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_dual" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="21955" />
+	</item>
+	<!-- Changes the appearance of a two-handed sword into that of a Blood Brother. -->
+	<item id="23221" type="EtcItem" name="Yehan Klanikus' Blood Brother Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_twohand_sword" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="21959" />
+	</item>
+	<!-- Changes the appearance of a one-handed sword into that of a Mardil's Fan. -->
+	<item id="23222" type="EtcItem" name="Mardil's Fan Appearance Stone">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_sword" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="21973" />
+	</item>
+	<!-- Wrapped Pack containing Appearance Stone for either Drake Maul, Spezion's Claw, Steregos' Dagger, Darion's Hellblade, Tiat's Claw of Destruction, or Yehan Klanikus' Blood Brother. -->
+	<item id="23223" type="EtcItem" name="Monster Weapon Appearance Stone Pack A">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wrapped Pack containing Appearance Stone for either Freya's Staff, Maliss Stormer, Ron's Dual Blunt, Doll Blader's Butcher Blades, Aenkinel's Blades of Delusion or Mardil's Fan. -->
+	<item id="23224" type="EtcItem" name="Monster Weapon Appearance Stone Pack B">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Restores full Soul Avatar Energy (up to 200000) when used. Can be replenished only when the Soul Avatar is equipped and 10000 or more energy has been consumed. -->
+	<item id="23225" type="EtcItem" name="Soul Avatar's Giant Placid">
+		<set name="icon" val="BranchSys.icon.br_shield_bread_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Seductive swimsuit with exquisite prints. -->
+	<item id="23226" type="Armor" name="Seductive Swimsuit">
+		<set name="icon" val="BranchSys3.icon1.g_co_swimsuit_event_03" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="17" />
+	</item>
+	<!-- Refreshing apple drink. Maintains Vitality for 30 min. Cooldown is 60 min. Vitality item with limited usage. -->
+	<item id="23227" type="EtcItem" name="Apple Spritzer">
+		<set name="icon" val="BranchSys3.icon1.g_apfelschorle_germany" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Delicious sausage. Restores Vitality upon XP gain through hunting for 30 min. Vitality item with limited usage. -->
+	<item id="23228" type="EtcItem" name="Roasted Sausage">
+		<set name="icon" val="BranchSys3.icon1.g_bratwurst_germany" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Nutritious pretzel. Increases XP gain by 50% for 1 hr. -->
+	<item id="23229" type="EtcItem" name="Pretzel">
+		<set name="icon" val="BranchSys3.icon1.g_brezel_germany" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Instantly restores HP by 500 and MP by 200. Cooldown is 60 sec. Use this right away if you're feeling tired! -->
+	<item id="23230" type="EtcItem" name="Snack Mix">
+		<set name="icon" val="BranchSys3.icon1.g_studentenfutter_germany" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Helmet for brave warriors on server Aria. Uses 2 hair accessory slots. -->
+	<item id="23231" type="Armor" name="Aria's Warrior Helmet">
+		<set name="icon" val="BranchSys2.icon.br_close_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="13" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Traces of Ancient Kartia's Labyrinth. Perhaps a Kartia Researcher may know more about it. -->
+	<item id="23232" type="EtcItem" name="Traces of Ancient Kartia's Labyrinth">
+		<set name="icon" val="BranchSys3.Icon.g_ev_magic_powder" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Traces of Ancient Kartia's Labyrinth. Perhaps a Kartia Researcher may know more about it. -->
+	<item id="23233" type="EtcItem" name="Traces of Ancient Kartia's Labyrinth - Event">
+		<set name="icon" val="BranchSys3.Icon.g_ev_magic_powder" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Changes the appearance of upper armor into that of an Alluring Swimsuit. One pieces are also possible. It modifies everything, making the appearance of all armor into that of swimwear. When changed, the cloak is not visible. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="23234" type="EtcItem" name="Alluring Swimsuit Appearance Stone">
+		<set name="icon" val="BranchSys3.lcon.g_scrl_change_co_swimsuit_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23173" />
+	</item>
+	<!-- Changes the appearance of upper armor into that of a Seductive Swimsuit. One pieces are also possible. It modifies everything, making the appearance of all armor into that of swimwear. When changed, the cloak is not visible. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="23235" type="EtcItem" name="Seductive Swimsuit Appearance Stone">
+		<set name="icon" val="BranchSys3.lcon.g_scrl_change_co_swimsuit_01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="23226" />
+	</item>
+	<!-- Scroll of Escape dropped by Pirate Captain Uthanka's spirit. Use it to return to his tomb. -->
+	<item id="23236" type="EtcItem" name="Scroll of Escape: Uthanka's Tomb">
+		<set name="icon" val="icon.etc_scroll_of_return_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Bracelet acquired when you mourn for Pirate Captain Uthanka's spirit. Use it to summon the Uthanka Agathion. -->
+	<item id="23237" type="Armor" name="Agathion - Pirate Captain Uthanka">
+		<set name="icon" val="BranchSys.icon.br_aga_uthanka_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="4" />
+	</item>
+	<!-- Wrapped Pack containing 30 Blessed Scroll: Enchant Elemental Shirt. Has a very low chance of acquiring a +7 Pa'agrio's Shirt. -->
+	<item id="23238" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Pa'agrio's Shirt enchanted to +7. -->
+	<item id="23239" type="EtcItem" name="Enchanted Pa'agrio's Shirt Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Magic shirt filled with the power of Pa'agrio, the god of fire.
+		Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +7 or above, can remove abnormal conditions and use the ultimate invincibility skill for a certain amount of time.
+	-->
+	<item id="23240" type="Armor" name="Pa'agrio's Shirt">
+		<set name="icon" val="icon.pi_shirt_of_wolf_2nd_fire" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="130" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="28" />
+		</for>
+	</item>
+	<!-- Enchant Scroll exclusive to Pa'agrio, Sayha, Maphr and Eva Shirts. When enchanted, increases P. Def. and M. Def. by 1. From +3, Elemental defense increases by 3, and from +4, P. Def. Increases by 3. Can be safely enchanted up to +3 and can be enchanted up to a max of +10. Basic stats (CON, MEN, STR, INT, DEX, WIT) are gradually increased with each enchant level starting from +4. At +5, +6, +7, +8, +9, and +10, additional bonuses are also applied. If enchanting fails, the enchant value will be reset to 0. -->
+	<item id="23241" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt">
+		<set name="icon" val="BranchSys2.icon.etc_scroll_of_enchant_shirt_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains a standard or blessed D-grade weapon. -->
+	<item id="23242" type="EtcItem" name="Weapon Pack Blessed by Light (D-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains a standard or blessed C-grade weapon. -->
+	<item id="23243" type="EtcItem" name="Weapon Pack Blessed by Light (C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains a standard or blessed B-grade weapon. -->
+	<item id="23244" type="EtcItem" name="Weapon Pack Blessed by Light (B-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains a standard or blessed A-grade weapon. -->
+	<item id="23245" type="EtcItem" name="Weapon Pack Blessed by Light (A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains a standard or blessed S-grade weapon. -->
+	<item id="23246" type="EtcItem" name="Weapon Pack Blessed by Light (S-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains standard or blessed D-grade armor. -->
+	<item id="23247" type="EtcItem" name="Armor Pack Blessed by Light (D-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains standard or blessed C-grade armor. -->
+	<item id="23248" type="EtcItem" name="Armor Pack Blessed by Light (C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains standard or blessed B-grade armor. -->
+	<item id="23249" type="EtcItem" name="Armor Pack Blessed by Light (B-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains standard or blessed A-grade armor. -->
+	<item id="23250" type="EtcItem" name="Armor Pack Blessed by Light (A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Obtained by defeating a raid boss. Contains standard or blessed S-grade armor. -->
+	<item id="23251" type="EtcItem" name="Armor Pack Blessed by Light (S-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="23252" type="EtcItem" name="Pledge Token">
+		<set name="icon" val="icon.etc_badge_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 50%. The remaining time decreases even when not playing. -->
+	<item id="23253" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% - 30-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 100%. The remaining time decreases even when not playing. -->
+	<item id="23254" type="EtcItem" name="XP Rune III (Lv. 1-99) 100% - 1-hour">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 100%. The remaining time decreases even when not playing. -->
+	<item id="23255" type="EtcItem" name="XP Rune III (Lv. 1-99) 100% - 7-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 100%. The remaining time decreases even when not playing. -->
+	<item id="23256" type="EtcItem" name="XP Rune III (Lv. 1-99) 100% - 30-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 200%. The remaining time decreases even when not playing. -->
+	<item id="23257" type="EtcItem" name="XP Rune III (Lv. 1-99) 200% - 1-hour">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 200%. The remaining time decreases even when not playing. -->
+	<item id="23258" type="EtcItem" name="XP Rune III (Lv. 1-99) 200% - 7-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 200%. The remaining time decreases even when not playing. -->
+	<item id="23259" type="EtcItem" name="XP Rune III (Lv. 1-99) 200% - 30-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_exp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 50%. The remaining time decreases even when not playing. -->
+	<item id="23260" type="EtcItem" name="SP Rune 50% - 30-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 100%. The remaining time decreases even when not playing. -->
+	<item id="23261" type="EtcItem" name="SP Rune 100% - 1-hour">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 100%. The remaining time decreases even when not playing. -->
+	<item id="23262" type="EtcItem" name="SP Rune 100% - 7-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 100%. The remaining time decreases even when not playing. -->
+	<item id="23263" type="EtcItem" name="SP Rune 100% - 30-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 200%. The remaining time decreases even when not playing. -->
+	<item id="23264" type="EtcItem" name="SP Rune 200% - 1-hour">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 200%. The remaining time decreases even when not playing. -->
+	<item id="23265" type="EtcItem" name="SP Rune 200% - 7-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 200%. The remaining time decreases even when not playing. -->
+	<item id="23266" type="EtcItem" name="SP Rune 200% - 30-day">
+		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
+	<item id="23267" type="EtcItem" name="Eva's Rune - 1-hour">
+		<set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
+	<item id="23268" type="EtcItem" name="Eva's Rune - 7-day">
+		<set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
+	<item id="23269" type="EtcItem" name="Eva's Rune - 30-day">
+		<set name="icon" val="BranchSys.icon.br_rune_of_eva_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When possessed in the inventory, increases the rate of item acquisition through hunting by 50%. -->
+	<item id="23270" type="EtcItem" name="Drop Rate Rune 50% - 1-hour">
+		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When possessed in the inventory, increases the rate of item acquisition through hunting by 100%. -->
+	<item id="23271" type="EtcItem" name="Drop Rate Rune 100% - 1-hour">
+		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When possessed in the inventory, increases the rate of item acquisition through hunting by 200%. -->
+	<item id="23272" type="EtcItem" name="Drop Rate Rune 200% - 1-hour">
+		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When possessed in the inventory, increases the rate of item acquisition through hunting by 50%. -->
+	<item id="23273" type="EtcItem" name="Drop Rate Rune 50% - 30-day">
+		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When possessed in the inventory, increases the rate of item acquisition through hunting by 100%. -->
+	<item id="23274" type="EtcItem" name="Drop Rate Rune 100% - 30-day">
+		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When possessed in the inventory, increases the rate of item acquisition through hunting by 200%. -->
+	<item id="23275" type="EtcItem" name="Drop Rate Rune 200% - 30-day">
+		<set name="icon" val="BranchSys3.lcon.g_rune_itemdrop_up" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 50% (30-day). -->
+	<item id="23276" type="EtcItem" name="XP Rune III (Lv. 1-99) 50% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 100% (1-hour). -->
+	<item id="23277" type="EtcItem" name="XP Rune III (Lv. 1-99) 100% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 100% (7-day). -->
+	<item id="23278" type="EtcItem" name="XP Rune III (Lv. 1-99) 100% Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 100% (30-day). -->
+	<item id="23279" type="EtcItem" name="XP Rune III (Lv. 1-99) 100% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 200% (1-hour). -->
+	<item id="23280" type="EtcItem" name="XP Rune III (Lv. 1-99) 200% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 200% (7-day). -->
+	<item id="23281" type="EtcItem" name="XP Rune III (Lv. 1-99) 200% Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing XP Rune III (Lv. 1-99) 200% (30-day). -->
+	<item id="23282" type="EtcItem" name="XP Rune III (Lv. 1-99) 200% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 50% (30-day). -->
+	<item id="23283" type="EtcItem" name="SP Rune 50% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 100% (1-hour). -->
+	<item id="23284" type="EtcItem" name="SP Rune 100% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 100% (7-day). -->
+	<item id="23285" type="EtcItem" name="SP Rune 100% Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 100% (30-day). -->
+	<item id="23286" type="EtcItem" name="SP Rune 100% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 200% (1-hour). -->
+	<item id="23287" type="EtcItem" name="SP Rune 200% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 200% (7-day). -->
+	<item id="23288" type="EtcItem" name="SP Rune 200% Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing SP Rune 200% (30-day). -->
+	<item id="23289" type="EtcItem" name="SP Rune 200% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Eva's Rune (1-hour). -->
+	<item id="23290" type="EtcItem" name="Eva's Rune Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Eva's Rune (7-day). -->
+	<item id="23291" type="EtcItem" name="Eva's Rune Pack (7-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Eva's Rune (30-day). -->
+	<item id="23292" type="EtcItem" name="Eva's Rune Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Drop Rate Rune 50% (1-hour). -->
+	<item id="23293" type="EtcItem" name="Drop Rate Rune 50% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Drop Rate Rune 100% (1-hour). -->
+	<item id="23294" type="EtcItem" name="Drop Rate Rune 100% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Drop Rate Rune 200% (1-hour). -->
+	<item id="23295" type="EtcItem" name="Drop Rate Rune 200% Pack (1-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Drop Rate Rune 50% (30-day). -->
+	<item id="23296" type="EtcItem" name="Drop Rate Rune 50% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Drop Rate Rune 100% (30-day). -->
+	<item id="23297" type="EtcItem" name="Drop Rate Rune 100% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing Drop Rate Rune 200% (30-day). -->
+	<item id="23298" type="EtcItem" name="Drop Rate Rune 200% Pack (30-day)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Wrapped Pack containing 30 Blessed Scroll: Enchant Elemental Shirt. Has a very low chance of acquiring a +7 Sayha's Shirt. -->
+	<item id="23299" type="EtcItem" name="Blessed Scroll: Enchant Elemental Shirt Pack">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

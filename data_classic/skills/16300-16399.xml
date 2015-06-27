@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Weiss into puppets called Vengeful Lerazia, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
+	<skill id="16300" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Krakia into puppets called Vengeful Oretross, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
+	<skill id="16301" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Bamonti into puppets called Vengeful Edaire, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
+	<skill id="16302" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Nemis manipulated the vengeance embedded in the weapons of the Giants, turning the Weiss into puppets called Vengeful Agonia, who since then have taken a place in the magic circle within Kamael Village and the Isle of Souls. -->
+	<skill id="16303" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- A wizard of Aden buried in the Cemetary, Afjak was forcefully awakened by Shilen's Disciple Lavidos as Dark Messenger Afjak. -->
+	<skill id="16304" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- A knight of Aden buried in the Cemetary, Feilnor was forcefully awakened by Shilen's Disciple Lavidos as a Dusk Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+	<skill id="16305" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- A wizard of Aden buried in the Cemetary, Amormio was forcefully awakened by Shilen's Disciple Lavidos as a Chaos Wizard, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+	<skill id="16306" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- A knight of Aden buried in the Cemetary, Lahav was forcefully awakened by Shilen's Disciple Lavidos as an Insolence Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+	<skill id="16307" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- A priest of Aden buried in the Cemetary, Borhunt was forcefully awakened by Shilen's Disciple Lavidos as a Death Priest, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+	<skill id="16308" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Once a famous knight of Aden, Zeruel was forcefully awakened from the Cemetary by Shilen's Disciple Lavidos as a Destruction Knight, and now brings around a follower of Shilen's army previously sealed away in the nearby Seal of Shilen area. -->
+	<skill id="16309" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Weary from the battle with the gods, Light Dragon Auracia continues to sleep - but the dragon's power was taken by Shilen's Disciples and forcefully infused into a small dinosaur in Primeval Isle, which grew tremendous in size and power, becoming the Megaloprepis of today. In order to complete the giant magic circle, Shilen's Disciples placed Megaloprepis at the Immortal Plateau as Auracia's Herald, along with the heralds of the other dragons. -->
+	<skill id="16310" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- To aid the resurrection of its mother Shilen, Antharas accepted her Disciples' plea and sent its herald Komabor to the Immortal Plateau to complete the monster magic circle. Komabor commands a circle of Minos, otherwise known as Dragon Fragments, and possesses earth-attribute powers as great as those of Antharas. -->
+	<skill id="16311" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- To aid the resurrection of its mother Shilen, Skellrus accepted her Disciples' plea and sent its herald Iskios to the Immortal Plateau to complete the monster magic circle. Iskios commands a circle of Minos, otherwise known as Dragon Fragments, and possesses dark-attribute powers as great as those of Skellrus. -->
+	<skill id="16312" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- To aid the resurrection of its mother Shilen, Valakas accepted her Disciples' plea and sent its herald Potigia to the Immortal Plateau to complete the monster magic circle. Potigia commands a circle of Minos, otherwise known as Dragon Fragments, and possesses fire-attribute powers as great as those of Valakas. -->
+	<skill id="16313" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- To aid the resurrection of its mother Shilen, Lindvior accepted her Disciples' plea and sent its herald Numa to the Immortal Plateau to complete the monster magic circle. Numa commands a circle of Minos, otherwise known as Dragon Fragments, and possesses wind-attribute powers as great as those of Lindvior. -->
+	<skill id="16314" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- To aid the resurrection of its mother Shilen, Fafurion accepted her Disciples' plea and sent its herald Aquarion to the Immortal Plateau to complete the monster magic circle. Unlike other dragons' heralds, Aquarion is able to summon countless Nephos from the water, and possesses water-attribute powers as great as those of Fafurion. -->
+	<skill id="16315" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- One of the 3 Hell Weapons created by the 5 Hell Lords of Avarice, Flaming Ladar is a voracious eater of souls, regardless of alliance. Though originally of no color or attribute, it absorbed a part of Valakas' soul and was reborn with the power of fire. Flaming Ladar can be summoned through Apparition Stones made of fake souls. -->
+	<skill id="16316" levels="1" name="Raid Boss (Lv. 98)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Resistance to Pull.
+		Level 3: Strong Resistance to Pull.
+		Level 5: Very strong Resistance to Pull.
+		Level 7: Extremely Strong Resistance to Pull.
+		Level 10: Ultimate Resistance to Pull.
+	-->
+	<skill id="16317" levels="10" name="Pull Resistance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- 
+		Level 1: Maximum Damage is 1.
+		Level 2: Maximum Damage is 10.
+	-->
+	<skill id="16318" levels="2" name="Damage 1">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Presentation skill -->
+	<skill id="16319" levels="1" name="Dance Time">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+	</skill>
+	<!-- For 10 sec., dance against your will to Frintezza's music. -->
+	<skill id="16320" levels="1" name="Dance Time">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+	</skill>
+	<!-- Blown away. -->
+	<skill id="16321" levels="1" name="Orc Cyclone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="10000" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<!-- Blown away. -->
+	<skill id="16323" levels="1" name="Orc Typhoon">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="10000" />
+		<set name="coolTime" val="500" />
+	</skill>
+</list>

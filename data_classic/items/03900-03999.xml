@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3900" type="Armor" name="Wolf's Luxury Plate">
+		<set name="icon" val="icon.etc_pet_armor_i02" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="566000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="38" />
+			<baseAdd stat="pDef" val="43" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3901" type="Armor" name="Wolf's Mithril Armor">
+		<set name="icon" val="icon.etc_pet_armor_i02" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="825000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="41" />
+			<baseAdd stat="pDef" val="47" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3902" type="Weapon" name="Ghost Canine">
+		<set name="icon" val="icon.etc_pet_arms_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="30500" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="11" />
+			<baseAdd stat="mAtk" val="10" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3903" type="Weapon" name="Mithril Canine">
+		<set name="icon" val="icon.etc_pet_arms_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="50000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="16" />
+			<baseAdd stat="mAtk" val="14" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3904" type="Weapon" name="Sylvan Canine">
+		<set name="icon" val="icon.etc_pet_arms_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="80000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="23" />
+			<baseAdd stat="mAtk" val="18" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3905" type="Weapon" name="Oriharukon Canine">
+		<set name="icon" val="icon.etc_pet_arms_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="120000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="31" />
+			<baseAdd stat="mAtk" val="24" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3906" type="Weapon" name="Fang of Saltydog">
+		<set name="icon" val="icon.etc_pet_arms_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="175000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="40" />
+			<baseAdd stat="mAtk" val="30" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3907" type="Weapon" name="Fang of Cerberus">
+		<set name="icon" val="icon.etc_pet_arms_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="450000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="49" />
+			<baseAdd stat="mAtk" val="36" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3908" type="Weapon" name="Fang of Coyote">
+		<set name="icon" val="icon.etc_pet_arms_i02" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="570000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="58" />
+			<baseAdd stat="mAtk" val="42" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3909" type="Weapon" name="Crystallized Ice Canine">
+		<set name="icon" val="icon.etc_pet_arms_i02" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="720000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="69" />
+			<baseAdd stat="mAtk" val="50" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+	<item id="3910" type="Weapon" name="Fang of the Blue Wolf">
+		<set name="icon" val="icon.etc_pet_arms_i02" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="1100000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="80" />
+			<baseAdd stat="mAtk" val="58" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for wolves, great wolves, and fenril. -->
+	<item id="3911" type="Weapon" name="Fang of Fenril">
+		<set name="icon" val="icon.etc_pet_arms_i02" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="1500000" />
+		<set name="equip_condition" val="{{ec_category;{@all_wolf_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="93" />
+			<baseAdd stat="mAtk" val="66" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3912" type="Armor" name="Hatchling's Soft Leather">
+		<set name="icon" val="icon.etc_pet_armor_i03" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="117000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="26" />
+			<baseAdd stat="pDef" val="26" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3913" type="Armor" name="Hatchling's Scale Mail">
+		<set name="icon" val="icon.etc_pet_armor_i03" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="86000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="29" />
+			<baseAdd stat="pDef" val="29" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3914" type="Armor" name="Hatchling's Brigandine">
+		<set name="icon" val="icon.etc_pet_armor_i03" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="113000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="31" />
+			<baseAdd stat="pDef" val="31" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3915" type="Armor" name="Hatchling's Bronze Coat">
+		<set name="icon" val="icon.etc_pet_armor_i04" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="145500" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="33" />
+			<baseAdd stat="pDef" val="33" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3916" type="Armor" name="Hatchling's Steel Coat">
+		<set name="icon" val="icon.etc_pet_armor_i04" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="186000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="36" />
+			<baseAdd stat="pDef" val="36" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3917" type="Armor" name="Hatchling's Shadowplate">
+		<set name="icon" val="icon.etc_pet_armor_i04" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="566000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="38" />
+			<baseAdd stat="pDef" val="38" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3918" type="Armor" name="Hatchling's Mithril Coat">
+		<set name="icon" val="icon.etc_pet_armor_i04" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="160" />
+		<set name="price" val="825000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="mDef" val="41" />
+			<baseAdd stat="pDef" val="41" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3919" type="Weapon" name="Serpent Fang">
+		<set name="icon" val="icon.etc_pet_arms_i03" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="200000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="8" />
+			<baseAdd stat="mAtk" val="7" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3920" type="Weapon" name="Viperbite">
+		<set name="icon" val="icon.etc_pet_arms_i03" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="155000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="9" />
+			<baseAdd stat="mAtk" val="10" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3921" type="Weapon" name="Shadow Fang">
+		<set name="icon" val="icon.etc_pet_arms_i03" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="210000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="10" />
+			<baseAdd stat="mAtk" val="11" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3922" type="Weapon" name="Alya Fang">
+		<set name="icon" val="icon.etc_pet_arms_i04" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="285000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="12" />
+			<baseAdd stat="mAtk" val="13" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3923" type="Weapon" name="Torturer">
+		<set name="icon" val="icon.etc_pet_arms_i04" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="380000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="13" />
+			<baseAdd stat="mAtk" val="16" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3924" type="Weapon" name="Unuk Alhay Fang">
+		<set name="icon" val="icon.etc_pet_arms_i04" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="1100000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="15" />
+			<baseAdd stat="mAtk" val="18" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Double-click to wear. Only for hatchlings. -->
+	<item id="3925" type="Weapon" name="Antiplague">
+		<set name="icon" val="icon.etc_pet_arms_i04" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;40;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="price" val="1600000" />
+		<set name="equip_condition" val="{{ec_category;{@hatchling_group}}}" />
+		<for>
+			<baseAdd stat="pAtk" val="17" />
+			<baseAdd stat="mAtk" val="21" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="277" />
+		</for>
+	</item>
+	<!-- Accuracy increases. -->
+	<item id="3926" type="EtcItem" name="Scroll: Guidance">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2050-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Increases P. Critical Damage. -->
+	<item id="3927" type="EtcItem" name="Scroll: Death Whisper">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2051-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- P. Critical Rate increases. -->
+	<item id="3928" type="EtcItem" name="Scroll: Focus">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2052-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Spell Casting Spd. Increases. -->
+	<item id="3929" type="EtcItem" name="Scroll: Greater Acumen">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2053-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Increases Atk. Spd. -->
+	<item id="3930" type="EtcItem" name="Scroll: Haste">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2054-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Increases Evasion. -->
+	<item id="3931" type="EtcItem" name="Scroll: Agility">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2055-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- M. Atk. Increases. -->
+	<item id="3932" type="EtcItem" name="Scroll: Mystic Empower">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2056-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- P. Atk. Increases. -->
+	<item id="3933" type="EtcItem" name="Scroll: Might">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2057-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Speed increases. -->
+	<item id="3934" type="EtcItem" name="Scroll: Wind Walk">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2058-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- P. Def. Increases. -->
+	<item id="3935" type="EtcItem" name="Scroll: Shield">
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2059-1" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_flying}}}" />
+	</item>
+	<!-- Magic scroll that resurrects a dead character and restores his or her XP completely. -->
+	<item id="3936" type="EtcItem" name="Blessed Scroll of Resurrection">
+		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="price" val="400000" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ScrollOfResurrection" />
+		<set name="item_skill" val="2049-1" />
+	</item>
+	<item id="3937" type="Weapon" name="Monster Only (Lesser Giant)">
+		<set name="icon" val="icon.weapon_monster_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="743" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="300" />
+		<set name="price" val="409000" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="3599-1" />
+		<for>
+			<set stat="pAtk" val="50" />
+			<set stat="mAtk" val="26" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="3938" type="Weapon" name="Monster Only (Lesser Giant Wizard's Weapon)">
+		<set name="icon" val="icon.weapon_monster_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="743" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="300" />
+		<set name="price" val="409000" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="3599-1" />
+		<for>
+			<set stat="pAtk" val="50" />
+			<set stat="mAtk" val="26" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<item id="3939" type="Weapon" name="Monster Only (Bensh)">
+		<set name="icon" val="icon.weapon_monster_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="attack_range" val="80" />
+		<set name="damage_range" val="0;0;66;120" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="743" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="300" />
+		<set name="price" val="409000" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="3599-1" />
+		<for>
+			<set stat="pAtk" val="50" />
+			<set stat="mAtk" val="26" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!--
+		Blueprint needed to learn the Summon Siege Golem technique.
+		Required level: 49
+	-->
+	<item id="3940" type="EtcItem" name="Blueprint: Summon Siege Golem">
+		<set name="icon" val="icon.etc_plan_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="4800" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Spellbook needed to learn Mass Resurrection. Used by Bishops.
+		Required level: 40
+	-->
+	<item id="3941" type="EtcItem" name="Spellbook: Mass Resurrection">
+		<set name="icon" val="icon.etc_spell_books_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="4600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Spellbook needed to learn Party Return. Used by Elven Elders.
+		Required level: 48
+	-->
+	<item id="3942" type="EtcItem" name="Spellbook: Party Return">
+		<set name="icon" val="icon.etc_spell_books_assistance_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="4600" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Amulet required for the Pa'agrio's Heart spell. Used by Overlords.
+		Required level: 44
+	-->
+	<item id="3943" type="EtcItem" name="Amulet: Pa'agrio's Heart">
+		<set name="icon" val="icon.etc_orcish_talisman_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="3850" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Spellbook needed to learn Decrease Weight. Used by Elven Oracles.
+		Required level: 35
+	-->
+	<item id="3944" type="EtcItem" name="Spellbook: Decrease Weight">
+		<set name="icon" val="icon.etc_spell_books_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="120" />
+		<set name="price" val="2450" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Ship ticket: From Talking Island - To Giran -->
+	<item id="3945" type="EtcItem" name="Boat Ticket: Talking Island to Giran">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="price" val="5000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Ship ticket: From Giran - To Talking Island -->
+	<item id="3946" type="EtcItem" name="Boat Ticket: Giran to Talking Island">
+		<set name="icon" val="icon.etc_ticket_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+		<set name="price" val="5000" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with No-grade weapons. -->
+	<item id="3947" type="EtcItem" name="Blessed Spiritshot (No-grade)">
+		<set name="icon" val="icon.etc_spell_shot_white_i01" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="4" />
+		<set name="price" val="35" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="item_skill" val="2061-1" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with D-grade weapons. -->
+	<item id="3948" type="EtcItem" name="Blessed Spiritshot (D-grade)">
+		<set name="icon" val="icon.etc_spell_shot_blue_i01" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="weight" val="4" />
+		<set name="price" val="28" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="item_skill" val="2160-1" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with C-grade weapons. -->
+	<item id="3949" type="EtcItem" name="Blessed Spiritshot (C-grade)">
+		<set name="icon" val="icon.etc_spell_shot_green_i01" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="weight" val="2" />
+		<set name="price" val="42" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="item_skill" val="2161-1" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with B-grade weapons. -->
+	<item id="3950" type="EtcItem" name="Blessed Spiritshot (B-grade)">
+		<set name="icon" val="icon.etc_spell_shot_red_i01" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="2" />
+		<set name="price" val="245" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="item_skill" val="2162-1" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with a-grade weapons. -->
+	<item id="3951" type="EtcItem" name="Blessed Spiritshot (A-grade)">
+		<set name="icon" val="icon.etc_spell_shot_silver_i01" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="1" />
+		<set name="price" val="290" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="item_skill" val="2163-1" />
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its magic significantly. Used with S-grade weapons. -->
+	<item id="3952" type="EtcItem" name="Blessed Spiritshot (S-grade)">
+		<set name="icon" val="icon.etc_spell_shot_gold_i01" />
+		<set name="default_action" val="spiritshot" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1" />
+		<set name="price" val="350" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="BlessedSpiritShot" />
+		<set name="item_skill" val="2164-1" />
+	</item>
+	<!-- For Dwarves only. Recipe for the Blessed Spiritshot (D-grade) . Requires Create Item - Skill Lv. 2. The success rate is 100%. -->
+	<item id="3953" type="EtcItem" name="Recipe: Blessed Spiritshot (D-grade)">
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="5000" />
+		<set name="recipe_id" val="323" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for the Blessed Spiritshot (C-grade) . Requires Create Item - Skill Lv. 4. The success rate is 100%. -->
+	<item id="3954" type="EtcItem" name="Recipe: Blessed Spiritshot (C-grade)">
+		<set name="icon" val="icon.etc_recipe_yellow_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="60000" />
+		<set name="recipe_id" val="324" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for the Blessed Spiritshot (B-grade). Requires Create Item - Skill Lv. 6. The success rate is 100%. -->
+	<item id="3955" type="EtcItem" name="Recipe: Blessed Spiritshot (B-grade)">
+		<set name="icon" val="icon.etc_recipe_red_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="100000" />
+		<set name="recipe_id" val="325" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for the Blessed Spiritshot (A-grade) . Requires Create Item - Skill Lv. 7. The success rate is 100%. -->
+	<item id="3956" type="EtcItem" name="Recipe: Blessed Spiritshot (A-grade)">
+		<set name="icon" val="icon.etc_recipe_violet_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="150000" />
+		<set name="recipe_id" val="326" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for the Blessed Spiritshot (S-grade) . Requires Create Item - Skill Lv. 8. The success rate is 100%. -->
+	<item id="3957" type="EtcItem" name="Recipe: Blessed Spiritshot (S-grade)">
+		<set name="icon" val="icon.etc_recipe_black_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="price" val="450000" />
+		<set name="recipe_id" val="327" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- Magical scroll that relocates user to the nearest village -->
+	<item id="3958" type="EtcItem" name="Blessed Scroll of Escape">
+		<set name="icon" val="icon.etc_scroll_of_return_i01" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="2036-2" />
+	</item>
+	<!-- Magic scroll that resurrects a dead character and restores his or her XP completely. -->
+	<item id="3959" type="EtcItem" name="Blessed Scroll of Resurrection">
+		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
+		<set name="default_action" val="skill_reduce" />
+		<set name="etcitem_type" val="scroll" />
+		<set name="weight" val="120" />
+		<set name="is_stackable" val="true" />
+		<set name="isOlyRestricted" val="true" />
+		<set name="handler" val="ScrollOfResurrection" />
+		<set name="item_skill" val="2062-1" />
+	</item>
+	<!-- Gludio/Sword/Stationary. -->
+	<item id="3960" type="EtcItem" name="Mercenary Posting Ticket (Sword/Stationary)">
+		<set name="icon" val="icon.mticket_sword_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Spear/Stationary. -->
+	<item id="3961" type="EtcItem" name="Mercenary Posting Ticket (Spear/Stationary)">
+		<set name="icon" val="icon.mticket_pole_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Bow/Stationary. -->
+	<item id="3962" type="EtcItem" name="Mercenary Posting Ticket (Bow/Stationary)">
+		<set name="icon" val="icon.mticket_bow_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="70000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Cleric/Stationary. -->
+	<item id="3963" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Stationary)">
+		<set name="icon" val="icon.mticket_cleric_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Wizard/Stationary. -->
+	<item id="3964" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Stationary)">
+		<set name="icon" val="icon.mticket_wizard_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Sword/Mobile. -->
+	<item id="3965" type="EtcItem" name="Mercenary Posting Ticket (Sword/Mobile)">
+		<set name="icon" val="icon.mticket_sword_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Spear/Mobile. -->
+	<item id="3966" type="EtcItem" name="Mercenary Posting Ticket (Spear/Mobile)">
+		<set name="icon" val="icon.mticket_pole_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Bow/Mobile. -->
+	<item id="3967" type="EtcItem" name="Mercenary Posting Ticket (Bow/Mobile)">
+		<set name="icon" val="icon.mticket_bow_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="70000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Cleric/Mobile. -->
+	<item id="3968" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Mobile)">
+		<set name="icon" val="icon.mticket_cleric_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Gludio/Wizard/Mobile. -->
+	<item id="3969" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Mobile)">
+		<set name="icon" val="icon.mticket_wizard_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Gludio, at the Teleporter or inside the castle, this ticket allows teleportation to the inner castle or the guardian's location. -->
+	<item id="3970" type="EtcItem" name="Mercenary Posting Ticket (Teleporter1)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Gludio, at the Teleporter or inside the castle, this ticket allows teleportation to the outer castle or the guardian's location. -->
+	<item id="3971" type="EtcItem" name="Mercenary Posting Ticket (Teleporter2)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Gludio, at the Teleporter or inside the castle, this ticket allows teleportation to the inner or outer castle. -->
+	<item id="3972" type="EtcItem" name="Mercenary Posting Ticket (Teleporter3)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Sword/Stationary. -->
+	<item id="3973" type="EtcItem" name="Mercenary Posting Ticket (Sword/Stationary)">
+		<set name="icon" val="icon.mticket_sword_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Spear/Stationary. -->
+	<item id="3974" type="EtcItem" name="Mercenary Posting Ticket (Spear/Stationary)">
+		<set name="icon" val="icon.mticket_pole_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Bow/Stationary. -->
+	<item id="3975" type="EtcItem" name="Mercenary Posting Ticket (Bow/Stationary)">
+		<set name="icon" val="icon.mticket_bow_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="70000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Cleric/Stationary. -->
+	<item id="3976" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Stationary)">
+		<set name="icon" val="icon.mticket_cleric_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Wizard/Stationary. -->
+	<item id="3977" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Stationary)">
+		<set name="icon" val="icon.mticket_wizard_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Sword/Mobile. -->
+	<item id="3978" type="EtcItem" name="Mercenary Posting Ticket (Sword/Mobile)">
+		<set name="icon" val="icon.mticket_sword_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Spear/Mobile. -->
+	<item id="3979" type="EtcItem" name="Mercenary Posting Ticket (Spear/Mobile)">
+		<set name="icon" val="icon.mticket_pole_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Bow/Mobile. -->
+	<item id="3980" type="EtcItem" name="Mercenary Posting Ticket (Bow/Mobile)">
+		<set name="icon" val="icon.mticket_bow_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="70000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Cleric/Mobile. -->
+	<item id="3981" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Mobile)">
+		<set name="icon" val="icon.mticket_cleric_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Dion/Wizard/Mobile. -->
+	<item id="3982" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Mobile)">
+		<set name="icon" val="icon.mticket_wizard_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Dion, at the Teleporter or inside the castle, this ticket allows teleportation to the inner castle or the guardian's location. -->
+	<item id="3983" type="EtcItem" name="Mercenary Posting Ticket (Teleporter1)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Dion, at the Teleporter or inside the castle, this ticket allows teleportation to the outer castle or the guardian's location. -->
+	<item id="3984" type="EtcItem" name="Mercenary Posting Ticket (Teleporter2)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Dion, at the Teleporter or inside the castle, this ticket allows teleportation to the inner or outer castle. -->
+	<item id="3985" type="EtcItem" name="Mercenary Posting Ticket (Teleporter3)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Sword/Stationary. -->
+	<item id="3986" type="EtcItem" name="Mercenary Posting Ticket (Sword/Stationary)">
+		<set name="icon" val="icon.mticket_sword_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Spear/Stationary. -->
+	<item id="3987" type="EtcItem" name="Mercenary Posting Ticket (Spear/Stationary)">
+		<set name="icon" val="icon.mticket_pole_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Bow/Stationary. -->
+	<item id="3988" type="EtcItem" name="Mercenary Posting Ticket (Bow/Stationary)">
+		<set name="icon" val="icon.mticket_bow_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="70000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Cleric/Stationary. -->
+	<item id="3989" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Stationary)">
+		<set name="icon" val="icon.mticket_cleric_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Wizard/Stationary. -->
+	<item id="3990" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Stationary)">
+		<set name="icon" val="icon.mticket_wizard_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Sword/Mobile. -->
+	<item id="3991" type="EtcItem" name="Mercenary Posting Ticket (Sword/Mobile)">
+		<set name="icon" val="icon.mticket_sword_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Spear/Mobile. -->
+	<item id="3992" type="EtcItem" name="Mercenary Posting Ticket (Spear/Mobile)">
+		<set name="icon" val="icon.mticket_pole_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="60000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Bow/Mobile. -->
+	<item id="3993" type="EtcItem" name="Mercenary Posting Ticket (Bow/Mobile)">
+		<set name="icon" val="icon.mticket_bow_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="70000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Cleric/Mobile. -->
+	<item id="3994" type="EtcItem" name="Mercenary Posting Ticket (Cleric/Mobile)">
+		<set name="icon" val="icon.mticket_cleric_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Giran/Wizard/Mobile. -->
+	<item id="3995" type="EtcItem" name="Mercenary Posting Ticket (Wizard/Mobile)">
+		<set name="icon" val="icon.mticket_wizard_move_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="170000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Giran, at the Teleporter or inside the castle, this ticket allows teleportation to the inner castle or the guardian's location. -->
+	<item id="3996" type="EtcItem" name="Mercenary Posting Ticket (Teleporter1)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Giran, at the Teleporter or inside the castle, this ticket allows teleportation to the outer castle or the guardian's location. -->
+	<item id="3997" type="EtcItem" name="Mercenary Posting Ticket (Teleporter2)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Placed in Giran, at the Teleporter or inside the castle, this ticket allows teleportation to the inner or outer castle. -->
+	<item id="3998" type="EtcItem" name="Mercenary Posting Ticket (Teleporter3)">
+		<set name="icon" val="icon.mticket_teleporter_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="100000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+	<!-- Oren/Sword/Stationary. -->
+	<item id="3999" type="EtcItem" name="Mercenary Posting Ticket (Sword/Stationary)">
+		<set name="icon" val="icon.mticket_sword_fix_i00" />
+		<set name="etcitem_type" val="castle_guard" />
+		<set name="immediate_effect" val="1" />
+		<set name="price" val="50000" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="MercTicket" />
+	</item>
+</list>

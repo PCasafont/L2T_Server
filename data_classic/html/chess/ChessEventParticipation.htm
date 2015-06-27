@@ -1,0 +1,15 @@
+<html>
+<title>Tenkai</title>
+<body>
+<center>
+List of the people that is waiting for a challenger:
+<br>
+%list%
+<br>
+<button value="Wait (I choose white)" action="bypass -h npc_%objectId%_wait0" width=150 height=20 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
+<button value="Wait (I choose black)" action="bypass -h npc_%objectId%_wait1" width=150 height=20 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
+Player to challenge: <edit width=80 var="name">
+<button value="Challenge Player" action="bypass -h npc_%objectId%_challenge $name" width=130 height=20 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df">
+</center>
+</body>
+</html>

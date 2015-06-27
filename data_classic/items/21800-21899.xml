@@ -1,0 +1,1485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Can be assigned an attribute. -->
+	<item id="21800" type="Armor" name="Dynasty Leather Armor of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t92_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="4180" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="170" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21801" type="Armor" name="Dynasty Leather Leggings of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t92_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="light" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1370" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="106" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21802" type="Armor" name="Dynasty Leather Helmet of Fortune - 90-day">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="530" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="92" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21803" type="Armor" name="Dynasty Leather Gloves of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t92_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="520" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="61" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21804" type="Armor" name="Dynasty Leather Boots of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t92_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1090" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="61" />
+		</for>
+	</item>
+	<!-- When used, you acquire a Dynasty Leather Armor of Fortune Set. Expires after 90 days if not used. -->
+	<item id="21805" type="EtcItem" name="Dynasty Leather Armor of Fortune Set Pack (S-grade) - 90-day">
+		<set name="icon" val="icon.etc_equip_item_box_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21806" type="Armor" name="Dynasty Tunic of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t93_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1780" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="113" />
+			<add stat="maxMp" val="592" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21807" type="Armor" name="Dynasty Stockings of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t93_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="armor_type" val="magic" />
+		<set name="bodypart" val="legs" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="860" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="71" />
+			<add stat="maxMp" val="370" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21808" type="Armor" name="Dynasty Circlet of Fortune - 90-day">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="head" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="530" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="92" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21809" type="Armor" name="Dynasty Gloves of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t93_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="520" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="61" />
+		</for>
+	</item>
+	<!-- Can be assigned an attribute. -->
+	<item id="21810" type="Armor" name="Dynasty Shoes of Fortune - 90-day">
+		<set name="icon" val="icon.armor_t93_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="feet" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1090" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="61" />
+		</for>
+	</item>
+	<item id="21811" type="Armor" name="Dynasty Sigil of Fortune - 90-day">
+		<set name="icon" val="icon.dynasty_sigil_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="930" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="pDef" val="15" />
+			<baseSub stat="rEvas" val="8" />
+			<baseSub stat="mEvasRate" val="8" />
+		</for>
+	</item>
+	<!-- When used, you acquire a Dynasty Robe of Fortune Set. Expires after 90 days if not used. -->
+	<item id="21812" type="EtcItem" name="Dynasty Tunic of Fortune Set Pack (S-grade) - 90-day">
+		<set name="icon" val="icon.etc_equip_item_box_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- The effect is MP + 31. -->
+	<item id="21813" type="Armor" name="Tateossian Earring of Fortune - 90-day">
+		<set name="icon" val="icon.accessory_tateossian_earring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="71" />
+			<add stat="maxMp" val="31" />
+		</for>
+	</item>
+	<!-- The effect is MP + 21. -->
+	<item id="21814" type="Armor" name="Tateossian Ring of Fortune - 90-day">
+		<set name="icon" val="icon.accessory_tateossian_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="48" />
+			<add stat="maxMp" val="21" />
+		</for>
+	</item>
+	<!-- The effect is MP + 42. -->
+	<item id="21815" type="Armor" name="Tateossian Necklace of Fortune - 90-day">
+		<set name="icon" val="icon.accessory_tateossian_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="95" />
+			<add stat="maxMp" val="42" />
+		</for>
+	</item>
+	<!-- When used, you acquire a Tateossian Accessory Set. Expires after 90 days if not used. -->
+	<item id="21816" type="EtcItem" name="Tateossian Accessory of Fortune Pack (S-grade) - 90-day">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Increases MP by 35. -->
+	<item id="21817" type="Armor" name="Dynasty Earring of Fortune - 90-day">
+		<set name="icon" val="icon.accessary_dynasty_earing_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="35" />
+		</for>
+	</item>
+	<!-- Increases MP by 46. -->
+	<item id="21818" type="Armor" name="Dynasty Necklace of Fortune - 90-day">
+		<set name="icon" val="icon.accessary_dynasty_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+			<add stat="maxMp" val="46" />
+		</for>
+	</item>
+	<!-- Increases MP by 23. -->
+	<item id="21819" type="Armor" name="Dynasty Ring of Fortune - 90-day">
+		<set name="icon" val="icon.accessary_dynasty_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="60" />
+			<add stat="maxMp" val="23" />
+		</for>
+	</item>
+	<!-- Wrapped Pack containing S-grade Jewelry Set of Fortune that. 90 days. -->
+	<item id="21820" type="EtcItem" name="Dynasty Accessory of Fortune Pack (S-grade) - 90-day">
+		<set name="icon" val="icon.etc_jewel_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Increases Magic Casting Spd. by 15%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21821" type="Weapon" name="Arcana Mace of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_arcana_mace_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="225" />
+			<set stat="mAtk" val="175" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- During Critical, P. Atk. + 265. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21822" type="Weapon" name="Angel Slayer of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_angel_slayer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="950" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="246" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- Increases Critical by 88. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21823" type="Weapon" name="Draconic Bow of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_draconic_bow_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1650" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="581" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!-- Increases Maximum HP by 25%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21824" type="Weapon" name="Basalt Battlehammer of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_basalt_battlehammer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1570" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="281" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Increases Critical by 84. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21825" type="Weapon" name="Forgotten Blade of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_forgotten_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="281" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Increases Critical by 84. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21826" type="Weapon" name="Heaven's Divider of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_heavens_divider_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1380" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="342" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Increases Critical by 80. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21827" type="Weapon" name="Demon Splinter of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_demon_splinter_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1350" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="342" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Increases Max HP + 15%, Max MP + 20%, and Max CP + 30%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21828" type="Weapon" name="Tallum Blade*Dark Legion's Edge of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="2080" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="342" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Increases Atk. Spd. by about 7%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21829" type="Weapon" name="Saint Spear of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_saint_spear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1800" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="281" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive weapon
+		Increases Critical by 84. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="21830" type="Weapon" name="Gram of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_gram_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="15" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1800" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="304" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive weapon
+		Increases Critical by 84. Increases damage inflicted during PvP.
+		During Critical, party members including yourself will receive increased P. Atk., M. Atk., and healing capacity by a fixed rate. But decreased MP consumption per skill during a Critical Attack. Can be assigned an attribute.
+	-->
+	<item id="21831" type="Weapon" name="Laevateinn of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_leavatein_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="40" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1300" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="255" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive weapon
+		Increases Critical by 88. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="21832" type="Weapon" name="Sarunga of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_sarnga_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1600" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="356" />
+			<set stat="mAtk" val="132" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+		</for>
+	</item>
+	<!-- Increases Magic Casting Spd. by 15%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21833" type="Weapon" name="Dynasty Phantom of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_magic_sword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="267" />
+			<set stat="mAtk" val="202" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Increases P. Critical Rate by 116. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21834" type="Weapon" name="Dynasty Knife of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_dagger_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dagger" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="291" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- Increases P. Critical Rate by 116. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21835" type="Weapon" name="Dynasty Bow of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_bow_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="bow" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="6" />
+		<set name="reuse_delay" val="1500" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="654" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="12" />
+			<set stat="mCritRate" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!-- Increases Maximum HP by 25%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21836" type="Weapon" name="Dynasty Cudgel of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_hammer_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="20" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="333" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Increases P. Critical Rate by 111. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21837" type="Weapon" name="Dynasty Sword of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_blade_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="333" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Increases P. Critical Rate by 111. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21838" type="Weapon" name="Dynasty Blade of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_twohand_sword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Increases P. Critical Rate by 106. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21839" type="Weapon" name="Dynasty Bagh-Nakh of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_jamadhr_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dualfist" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="5" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Increases P. Critical Rate by 109, Maximum HP by 10%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21840" type="Weapon" name="Dynasty Dualsword of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dual_sword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="dual" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="405" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- During Critical, inflicts Stun with a 48% probability. Increases damage inflicted during PvP. Can be assigned an attribute. -->
+	<item id="21841" type="Weapon" name="Dynasty Halberd of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_spear_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="pole" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="333" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<baseSub stat="accMagic" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive weapon
+		Increases P. Critical Rate by 111. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="21842" type="Weapon" name="Dynasty Ancient Sword of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_ancient_sword_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="ancientsword" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="15" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1800" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="361" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="8" />
+			<set stat="mCritRate" val="8" />
+			<baseAdd stat="accCombat" val="2" />
+			<baseAdd stat="accMagic" val="2" />
+			<set stat="pAtkSpd" val="350" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive weapon
+		Increases P. Critical Rate by 111. Increases damage inflicted during PvP. Has a chance that party members including yourself will get increased P. Atk., M. Atk., healing power received, and decreased Skill MP consumption during a Critical Attack. Can be assigned an attribute.
+	-->
+	<item id="21843" type="Weapon" name="Dynasty Rapier of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_rapier_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="rapier" />
+		<set name="bodypart" val="rhand" />
+		<set name="random_damage" val="40" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1280" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="302" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="406" />
+		</for>
+	</item>
+	<!--
+		Kamael-exclusive weapon
+		Increases P. Critical Rate by 116. Increases damage inflicted during PvP. Can be assigned an attribute.
+	-->
+	<item id="21844" type="Weapon" name="Dynasty Crossbow of Fortune - 90-day">
+		<set name="icon" val="icon.weapon_dynasty_crossbow_i01" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="crossbowk" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="10" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="reuse_delay" val="400" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<set stat="pAtk" val="401" />
+			<set stat="mAtk" val="151" />
+			<set stat="rCrit" val="10" />
+			<set stat="mCritRate" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<baseSub stat="accMagic" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+		</for>
+	</item>
+	<!-- Soulshot containing the light of Spirits; instantly inflicts a powerful attack on the enemy. It. none grade weapons. -->
+	<item id="21845" type="EtcItem" name="Mysterious No-grade Soulshot">
+		<set name="icon" val="icon.etc_spirit_bullet_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Soulshot containing the light of Spirits; instantly inflicts a powerful attack on the enemy. It. D-grade weapons. -->
+	<item id="21846" type="EtcItem" name="Mysterious Soulshot (D-grade)">
+		<set name="icon" val="icon.etc_spirit_bullet_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Soulshot containing the light of Spirits; instantly inflicts a powerful attack on the enemy. It. C-grade weapons. -->
+	<item id="21847" type="EtcItem" name="Mysterious Soulshot (C-grade)">
+		<set name="icon" val="icon.etc_spirit_bullet_green_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Soulshot containing the light of Spirits; instantly inflicts a powerful attack on the enemy. It. B-grade weapons. -->
+	<item id="21848" type="EtcItem" name="Mysterious Soulshot (B-grade)">
+		<set name="icon" val="icon.etc_spirit_bullet_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Soulshot containing the light of Spirits; instantly inflicts a powerful attack on the enemy. It. A-grade weapons. -->
+	<item id="21849" type="EtcItem" name="Mysterious Soulshot (A-grade)">
+		<set name="icon" val="icon.etc_spirit_bullet_silver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="a" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Soulshot containing the light of Spirits; instantly inflicts a powerful attack on the enemy. It. S-grade weapons. -->
+	<item id="21850" type="EtcItem" name="Mysterious Soulshot (S-grade)">
+		<set name="icon" val="icon.etc_spirit_bullet_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="s" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Spiritshot containing the light of Spirits; it instantly and greatly increases the power of magic. It. none grade weapons. -->
+	<item id="21851" type="EtcItem" name="Mysterious Blessed No-grade Spiritshot">
+		<set name="icon" val="icon.etc_spell_shot_white_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Spiritshot containing the light of Spirits; it instantly and greatly increases the power of magic. It. D-grade weapons. -->
+	<item id="21852" type="EtcItem" name="Mysterious Blessed Spiritshot (D-grade)">
+		<set name="icon" val="icon.etc_spell_shot_blue_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="d" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Spiritshot containing the light of Spirits; it instantly and greatly increases the power of magic. It. C-grade weapons. -->
+	<item id="21853" type="EtcItem" name="Mysterious Blessed Spiritshot (C-grade)">
+		<set name="icon" val="icon.etc_spell_shot_green_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="c" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Spiritshot containing the light of Spirits; it instantly and greatly increases the power of magic. It. B-grade weapons. -->
+	<item id="21854" type="EtcItem" name="Mysterious Blessed Spiritshot (B-grade)">
+		<set name="icon" val="icon.etc_spell_shot_red_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Spiritshot containing the light of Spirits; it instantly and greatly increases the power of magic. It. A-grade weapons. -->
+	<item id="21855" type="EtcItem" name="Mysterious Blessed Spiritshot (A-grade)">
+		<set name="icon" val="icon.etc_spell_shot_silver_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="a" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Spiritshot containing the light of Spirits; it instantly and greatly increases the power of magic. It. S-grade weapons. -->
+	<item id="21856" type="EtcItem" name="Mysterious Blessed Spiritshot (S-grade)">
+		<set name="icon" val="icon.etc_spell_shot_gold_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_type" val="s" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Hero's Gold Chest
+		Wrapped Pack containing each of a Hero's Treasure Chest, Dimensional Support Pack, Potion Support Pack, and Supplies Support Pack.
+	-->
+	<item id="21857" type="EtcItem" name="Hero's Gold Chest - 90-day">
+		<set name="icon" val="icon.etc_treasure_box_i08" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Dimensional support pack
+		Wrapped Pack containing 2 Superior Minion coupon, 3 feathers of blessing, 5 Kamaloka (Near Kamaloka, Hall of the Abyss, Labyrinth of the Abyss) entrance passes, and 3 Vitality Replenishing Potions.
+	-->
+	<item id="21858" type="EtcItem" name="Dimensional Support Pack - 90-day">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Potion support pack
+		Wrapped Pack containing 20 Superior Quick Healing Potions, 50 Superior Healing Potions, 5 fresh milks, and 5 Leaf of Appreciations.
+	-->
+	<item id="21859" type="EtcItem" name="Potion Support Pack - 90-day">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!--
+		Supplies support pack
+		Wrapped Pack containing 200,000 mysterious soulshots and spirits according to grade.
+	-->
+	<item id="21860" type="EtcItem" name="Supplies Support Pack - 90-day">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When used, for 1 hour, energy is replenished when XP is acquired through hunting. Cooldown is 60 min. Can only be used at levels 1 - 75. Vitality item with limited usage. -->
+	<item id="21861" type="EtcItem" name="PC Vitality (1-hour)">
+		<set name="icon" val="icon.etc_pccafe_point_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Player Commendation - Vitality Pack
+		Wrapped Pack containing 3 PC Vitality. When used, has a chance of receiving a 1h~4h PC Vitality buff. Can only be used at levels 1 - 75.
+	-->
+	<item id="21862" type="EtcItem" name="Player Commendation - Vitality Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- When used, replenishes Vitality while hunting for all party members during 20 min. Cooldown is 60 min. -->
+	<item id="21863" type="EtcItem" name="Player Commendation - Blessing">
+		<set name="icon" val="BranchSys.icon.br_flag_of_bookmark_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Player Commendation - Blessing pack
+		Wrapped Pack containing Player Commendation - Blessing.
+	-->
+	<item id="21864" type="EtcItem" name="Player Commendation - Blessing Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- When used, for 2 hours, energy is replenished when XP is acquired through hunting. Cooldown is 60 min. Can only be used at levels 1 - 75. Vitality item with limited usage. -->
+	<item id="21865" type="EtcItem" name="PC Vitality (2-hour)">
+		<set name="icon" val="icon.etc_pccafe_point_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- When used, for 3 hours, energy is replenished when XP is acquired through hunting. Cooldown is 60 min. Can only be used at levels 1 - 75. Vitality item with limited usage. -->
+	<item id="21866" type="EtcItem" name="PC Vitality (3-hour)">
+		<set name="icon" val="icon.etc_pccafe_point_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- When used, for 4 hours, energy is replenished when XP is acquired through hunting. Cooldown is 60 min. Can only be used at levels 1 - 75. Vitality item with limited usage. -->
+	<item id="21867" type="EtcItem" name="PC Vitality (4-hour)">
+		<set name="icon" val="icon.etc_pccafe_point_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Gift provided for Halloween. When used, can obtain 20 Scrolls: Summon Belldandy. -->
+	<item id="21868" type="EtcItem" name="Joy of Halloween">
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Hero's Gold Chest Pack
+		Wrapped Pack that contains a Hero's Gold Chest.
+	-->
+	<item id="21869" type="EtcItem" name="Hero's Gold Chest Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Bracelet that can summon a Neolithic Agathion. Requires room in inventory and weight limit to receive a New Year gift from a Neolithic Agathion. -->
+	<item id="21870" type="Armor" name="Agathion - Neolithica - 14-day">
+		<set name="icon" val="icon.pi_high_agathion_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="shirt" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Coupon for an item set that helps a hero to grow stronger. Bestows an Equipment Set 7-day Pak, an Agathion - Button-eyed Bear Doll Pack (7-day), a Quick Healing Potion, and a Mount - Steam Beetle Pack (7-day). -->
+	<item id="21871" type="EtcItem" name="Hero Assistance Package">
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Herb that Rudolph likes. When the seal on Rudolph is removed, Rudolph automatically eats for 10 min. -->
+	<item id="21872" type="EtcItem" name="Fresh Herb">
+		<set name="icon" val="icon.etc_herb_green_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Santa's Gift Box. When used, you can receive Santa's gift. -->
+	<item id="21873" type="EtcItem" name="Santa's Gift Box - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Item for obtaining Fame. If you bring it to the Olympiad Manager, you can exchange it for 100 Fame points. -->
+	<item id="21874" type="EtcItem" name="Medal of Glory">
+		<set name="icon" val="icon.etc_badge_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- You can start a campfire by using this flint. Campfire near a battleground can help raise HP, MP, and CP Recovery Rate, but only when far away from towns. -->
+	<item id="21875" type="EtcItem" name="Campfire Flint">
+		<set name="icon" val="BranchSys2.icon.g_campfire_flint" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing each of Pa'agrio's Warm Breeze (4-hour) pack, XP Buff 50% Pack (4-hour), party cake, and shiny party hat. -->
+	<item id="21876" type="EtcItem" name="Pa'agrio's Christmas Package">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing each of Pa'agrio's Warm Breeze (4-hour) pack, XP Buff 50% Pack (4-hour), party cake, and shiny party hat. -->
+	<item id="21877" type="EtcItem" name="Pa'agrio's Christmas Package - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 15 Pa'agrio's warm breezes. -->
+	<item id="21878" type="EtcItem" name="Pa'agrio's Warm Breeze Pack (4-hour)">
+		<set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!--
+		Dimensional pack
+		Wrapped Pack containing 15 XP Buff 50%es (4-hour).
+	-->
+	<item id="21879" type="EtcItem" name="XP Buff 50% Pack (4-hour)">
+		<set name="icon" val="BranchSys.icon.br_four_leaf_clover_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Upon use, for 4 hours, you can temporarily feel the Vitality recovery herb's effect. No effect applies when used while the "Birthday Joy" buff is in effect. Cooldown is 60 min. Vitality item with limited usage. -->
+	<item id="21880" type="EtcItem" name="Pa'agrio's Warm Breeze (4-hour)">
+		<set name="icon" val="BranchSys2.Icon.pi_wind_of_paagrio" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_vitality" val="true" />
+	</item>
+	<!-- Upon use, a party cake that maintains Vitality is summoned for 20 min. -->
+	<item id="21881" type="EtcItem" name="Party Cake">
+		<set name="icon" val="BranchSys.icon.br_birthday_cake_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Shiny party hat. When equipped, can use the Blessed Body skill. -->
+	<item id="21882" type="Armor" name="Shiny Party Hat - Blessed Body (90-day)">
+		<set name="icon" val="BranchSys.icon.br_party_hat_gold_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- (Not in Use) -->
+	<item id="21883" type="EtcItem" name="(Not in Use)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- (Not in Use) -->
+	<item id="21884" type="EtcItem" name="(Not in Use)">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 2 Rose Spirit Coupons. -->
+	<item id="21885" type="EtcItem" name="Rose Spirit Coupon Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Rose Spirit Coupon Pack and 1 Sweet Chocolate Box. -->
+	<item id="21886" type="EtcItem" name="Rose Spirit Set Pack">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Coupon that can be exchanged for a necklace (5-hour) that summons an Improved Rose Spirit. -->
+	<item id="21887" type="EtcItem" name="Rose Spirit Coupon">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 3 sweet chocolates and 50 rose essences. -->
+	<item id="21888" type="EtcItem" name="Sweet Chocolate Box">
+		<set name="icon" val="BranchSys.icon.br_lucky_bag_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Upon use, replenishes Vitality while hunting for 4 hours. The effect doesn't apply while "Birthday Vitality Buff" is in effect. Cooldown is 60 minutes. Vitality item with limited usage. -->
+	<item id="21889" type="EtcItem" name="Sweet Chocolate (4-hour)">
+		<set name="icon" val="BranchSys.icon.br_valentine_darkchoco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing 2 improved rose spirit coupons. -->
+	<item id="21890" type="EtcItem" name="Rose Spirit Coupon Pack - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Wrapped Pack containing Rose Spirit Coupon and 1 Sweet Chocolate Box. -->
+	<item id="21891" type="EtcItem" name="Rose Spirit Set Pack - Event">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Pirate King Zaken's Hat. Would probably match well with Zaken's Cloak. Uses 2 hair accessory slots. -->
+	<item id="21892" type="Armor" name="Pirate King Hat">
+		<set name="icon" val="BranchSys2.icon.zaken_hair_accessary" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Scarlet van Halisha's Hat. Would probably match well with Frintezza's Cloak. Uses 2 hair accessory slots. -->
+	<item id="21893" type="Armor" name="Halisha's Helmet">
+		<set name="icon" val="BranchSys2.icon.frintessa_hair_accessary" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ice Queen Freya's Tiara. Would probably match well with Freya's Cloak. Uses 2 hair accessory slots. -->
+	<item id="21894" type="Armor" name="Ice Queen's Tiara">
+		<set name="icon" val="BranchSys2.icon.freya_hair_accessary" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- One-time use scroll that teleports you to Valakas Watchman Klein in the Hall of Flames. -->
+	<item id="21895" type="EtcItem" name="Scroll: Valakas Call">
+		<set name="icon" val="BranchSys2.icon.call_of_fire_dragon" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Mysterious jewel that teleports you to Valakas Watchman Klein in the Hall of Flames. Cooldown is 60 min. -->
+	<item id="21896" type="EtcItem" name="Jewel of Valakas">
+		<set name="icon" val="BranchSys2.icon.orb_of_fire_dragon" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- One-time use scroll that teleports you to the entrance to Antharas' Lair. -->
+	<item id="21897" type="EtcItem" name="Scroll: Antharas Call">
+		<set name="icon" val="BranchSys2.icon.call_of_earth_dragon" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Mysterious jewel that teleports you to the entrance to Antharas' Lair. Cooldown is 60 min. -->
+	<item id="21898" type="EtcItem" name="Jewel of Antharas">
+		<set name="icon" val="BranchSys2.icon.orb_of_earth_dragon" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Summons a totem that increases HP Recovery Rate by 30% and decreases damage from the topography by 80%. Total duration is 30 min. Can only be used inside the lairs of Valakas and Antharas. But cannot be used in "Balthus Knights - Antharas Expedition." cooldown is 10 min. -->
+	<item id="21899" type="EtcItem" name="Totem of Body">
+		<set name="icon" val="BranchSys2.icon.totem_of_body" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_stackable" val="true" />
+	</item>
+</list>

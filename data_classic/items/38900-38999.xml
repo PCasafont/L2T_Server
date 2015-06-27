@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Test Brooch -->
+	<item id="38900" type="Armor" name="Brooch (1-slot)">
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Test Brooch -->
+	<item id="38901" type="Armor" name="Brooch (2-slot)">
+		<set name="icon" val="icon.etc_bm_jewelbox_onyx_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Test Brooch -->
+	<item id="38902" type="Armor" name="Brooch (3-slot)">
+		<set name="icon" val="icon.r2_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Test Brooch -->
+	<item id="38903" type="Armor" name="Brooch (4-slot)">
+		<set name="icon" val="icon.r2_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Test Brooch -->
+	<item id="38904" type="Armor" name="Brooch (5-slot)">
+		<set name="icon" val="icon.r2_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Test Brooch -->
+	<item id="38905" type="Armor" name="Brooch (6-slot)">
+		<set name="icon" val="icon.r2_bracelet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="150" />
+	</item>
+	<!-- Lineage II 10th Anniversary item. It is exchanged for items needed to participate in the events through the Chaotic Chronicle, Chaotic Throne, and Goddess of Destruction event NPC's in the village. -->
+	<item id="38906" type="EtcItem" name="10th Anniversary Item">
+		<set name="icon" val="icon.ev_10th" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Ears, gently flapping, like wings that soar. -->
+	<item id="38907" type="EtcItem" name="Secret Fragment 1 - The">
+		<set name="icon" val="icon.ev_ertheia1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Wide eyes, reflecting the vast sky above. -->
+	<item id="38908" type="EtcItem" name="Secret Fragment 2 - People">
+		<set name="icon" val="icon.ev_ertheia2" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Merciful Einhasad! A free soul was their only sin, as they cry for freedom within a cage. Have mercy, Goddess! -->
+	<item id="38909" type="EtcItem" name="Secret Fragment 3 - Of">
+		<set name="icon" val="icon.ev_ertheia3" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Keep the blood pure, and make it a swifter vessel of mana. Mix the blood free, and it will forge a body of steel. -->
+	<item id="38910" type="EtcItem" name="Secret Fragment 4 - The">
+		<set name="icon" val="icon.ev_ertheia4" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Humans call her the goddess of light and righteousness. Elves call her the protector of mithril. Dark Elves call her the hypocrite of the light. Orcs call her the mother of gold, while the Dwarves call her the goddess of justice. -->
+	<item id="38911" type="EtcItem" name="Secret Fragment 5 - Wind">
+		<set name="icon" val="icon.ev_ertheia5" />
+		<set name="weight" val="0" />
+	</item>
+	<!--
+		Sylph's Soliloquy
+		
+		Do you hear it, the laughter?
+		As clear as the wind...
+		Do you feel it, their hearts?
+		Innocent and pure, those children of Sayha!
+	-->
+	<item id="38912" type="EtcItem" name="Secret Fragment 6 - Er">
+		<set name="icon" val="icon.ev_ertheia6" />
+		<set name="weight" val="0" />
+	</item>
+	<!--
+		"Does your soul sing with sorrow in this chaotic time? Lend us your strength, and we will certainly win." 
+		
+		"Forgive us, but we cannot hold your bloodied hand. The wind is indiscriminate, and does not favor one side over another."
+	-->
+	<item id="38913" type="EtcItem" name="Secret Fragment 7 - The">
+		<set name="icon" val="icon.ev_ertheia7" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Humans call him Archangel, while Elves call him the ruler of the wind sprites. Dark Elves call him the hypocrite's child. Orcs call him the keeper of the storm, while the Dwarves him the wanderer of the wind. -->
+	<item id="38914" type="EtcItem" name="Secret Fragment 8 - Ia">
+		<set name="icon" val="icon.ev_ertheia8" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38915" type="EtcItem" name="Memory Fragment: Harbingers of War">
+		<set name="icon" val="icon.ev_puzzle1" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38916" type="EtcItem" name="Memory Fragment: Age of Splendor">
+		<set name="icon" val="icon.ev_puzzle2" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38917" type="EtcItem" name="Memory Fragment: Oath of Blood">
+		<set name="icon" val="icon.ev_puzzle3" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38918" type="EtcItem" name="Memory Fragment: The Kamael">
+		<set name="icon" val="icon.ev_puzzle4" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38919" type="EtcItem" name="Memory Fragment: Gracia">
+		<set name="icon" val="icon.ev_puzzle5" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38920" type="EtcItem" name="Memory Fragment: Goddess of Destruction">
+		<set name="icon" val="icon.ev_puzzle6" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38921" type="EtcItem" name="Memory Fragment: Tauti">
+		<set name="icon" val="icon.ev_puzzle7" />
+		<set name="weight" val="0" />
+	</item>
+	<item id="38922" type="EtcItem" name="Memory Fragment: Lindvior">
+		<set name="icon" val="icon.ev_puzzle8" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Solo-type squash seed. Double-click to make a High Quality Squash or a Defective Squash appear. -->
+	<item id="38923" type="EtcItem" name="Squash Seed">
+		<set name="icon" val="icon.etc_gourd_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Party-type squash seed. Double-click to make a High Quality Large Squash or a Defective Large Squash appear. -->
+	<item id="38924" type="EtcItem" name="Large Squash Seed">
+		<set name="icon" val="icon.etc_gourd_i01" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Staff provided by Master Yogi for the Lineage II 10th Anniversary. Raise it to +5~+10 to exchange for a reward. When receiving a +8~+10 Master Yogi's Staff as a reward, there is a chance of acquiring Secret Fragments 3 and 7. -->
+	<item id="38925" type="Weapon" name="Master Yogi's Staff">
+		<set name="icon" val="icon.yogi_stick_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="11" />
+			<set stat="mAtk" val="12" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Scroll: Enchant Weapon that can only be used on Master Yogi's staff. Find the Goddess of Destruction event NPC in the village. Cannot use enchant rate increasing items. -->
+	<item id="38926" type="EtcItem" name="Master Yogi's Scroll: Enchant Weapon">
+		<set name="icon" val="icon.yogi_scroll_of_enchant_weapon_grade_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 1%. Effect does not stack with additional jewels of the same type. -->
+	<item id="38927" type="Armor" name="Sapphire - Lv. 1">
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="jewel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 3.5%. Effect does not stack with additional jewels of the same type. -->
+	<item id="38928" type="Armor" name="Sapphire - Lv. 2">
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="jewel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 7.5%. Effect does not stack with additional jewels of the same type. -->
+	<item id="38929" type="Armor" name="Sapphire - Lv. 3">
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="jewel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 12.5%. Effect does not stack with additional jewels of the same type. -->
+	<item id="38930" type="Armor" name="Sapphire - Lv. 4">
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="jewel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 20%. Effect does not stack with additional jewels of the same type. -->
+	<item id="38931" type="Armor" name="Sapphire - Lv. 5">
+		<set name="icon" val="icon.etc_bm_jewel_sapphire_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="jewel" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="5" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Ruby. -->
+	<item id="38932" type="EtcItem" name="La Vie En Rose's Ruby Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_ruby_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38855,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Sapphire. -->
+	<item id="38933" type="EtcItem" name="La Vie En Rose's Sapphire Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_sapphire_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38927,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Topaz. -->
+	<item id="38934" type="EtcItem" name="La Vie En Rose's Topaz Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_topaz_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38850,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Opal. -->
+	<item id="38935" type="EtcItem" name="La Vie En Rose's Opal Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_opal_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38875,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Obsidian. -->
+	<item id="38936" type="EtcItem" name="La Vie En Rose's Obsidian Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_obsidian_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38870,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Diamond. -->
+	<item id="38937" type="EtcItem" name="La Vie En Rose's Diamond Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_diamond_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38890,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Emerald. -->
+	<item id="38938" type="EtcItem" name="La Vie En Rose's Emerald Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_emerald_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38880,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Aquamarine. -->
+	<item id="38939" type="EtcItem" name="La Vie En Rose's Aquamarine Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_aquamarine_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38885,1,1,100" />
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Pearl. -->
+	<item id="38940" type="EtcItem" name="La Vie En Rose's Pearl Chest">
+		<set name="icon" val="icon.etc_bm_jewelbox_pearl_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="ExtractableItems" />
+		<set name="capsuled_items" val="38895,1,1,100" />
+	</item>
+	<!-- Double-click to acquire 1 of La Vie En Rose's jewels. -->
+	<item id="38941" type="EtcItem" name="La Vie En Rose's Jewelry Box">
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="17824-1" />
+	</item>
+	<!-- Double-click to acquire 10 La Vie En Rose's Jewelry Boxes. -->
+	<item id="38942" type="EtcItem" name="La Vie En Rose's Jewelry Pack">
+		<set name="icon" val="icon.etc_bm_jewelbox_main_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Double-click to acquire 1 La Vie En Rose's Noble Brooch. -->
+	<item id="38943" type="EtcItem" name="La Vie En Rose's Noble Brooch Chest">
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Double-click to acquire 1 La Vie En Rose's Brilliant Brooch. -->
+	<item id="38944" type="EtcItem" name="La Vie En Rose's Brilliant Brooch Chest">
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Double-click to acquire 30 La Vie En Rose's Jewelry Boxes and 1 Noble Brooch Chest. -->
+	<item id="38945" type="EtcItem" name="La Vie En Rose's Noble Brooch Pack">
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Double-click to acquire 55 La Vie En Rose's Jewelry Boxes and 1 Noble Brooch Chest. -->
+	<item id="38946" type="EtcItem" name="La Vie En Rose's Brilliant Brooch Pack">
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="weight" val="0" />
+	</item>
+	<!--
+		Dimensional Item Pack
+		Lineage II 10th Anniversary item. Can acquire a Shiny Elemental Shirt and a 10th Anniversary Festival's Cloak pack. Cannot be shared once opened.
+	-->
+	<item id="38947" type="EtcItem" name="10th Anniversary Time Capsule">
+		<set name="icon" val="br_cashtex.item.br_cash_lucky_box_i00" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Lineage II 10th Anniversary item. It contains the 10th Anniversary Cake. Can only be opened by characters above level 85. -->
+	<item id="38948" type="EtcItem" name="10th Anniversary Cake Pack">
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Lineage II 10th Anniversary item. It contains 1 of the 2 special outfit appearance stones with a 100-day limit. -->
+	<item id="38949" type="EtcItem" name="10th Anniversary Designer's Edition">
+		<set name="icon" val="icon.ev_10th_present1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Lineage II 10th Anniversary item. It contains 1 of the 3 special hair accessory appearance stones with a 100-day limit. -->
+	<item id="38950" type="EtcItem" name="10th Anniversary Welcome Pack">
+		<set name="icon" val="icon.etc_pi_box_love_pack" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Lineage II 10th Anniversary item. -->
+	<item id="38951" type="Armor" name="Festival's Cloack - Pitch Black">
+		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="40" />
+			<baseAdd stat="pDef" val="50" />
+		</for>
+	</item>
+	<!-- Lineage II 10th Anniversary item. -->
+	<item id="38952" type="Armor" name="Festival's Cloack - Pearl White">
+		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="40" />
+			<baseAdd stat="pDef" val="50" />
+		</for>
+	</item>
+	<!-- Lineage II 10th Anniversary item. -->
+	<item id="38953" type="Armor" name="Festival's Cloack - Blood Red">
+		<set name="icon" val="BranchSys2.Icon.7anni_cloack_i01" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="220" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<baseAdd stat="mDef" val="40" />
+			<baseAdd stat="pDef" val="50" />
+		</for>
+	</item>
+	<!-- Lineage II 10th Anniversary item. When used, recovers 5000 HP and the remaining power is recovered as CP. No duration. -->
+	<item id="38954" type="EtcItem" name="10th Anniversary Cake">
+		<set name="icon" val="icon.ev_10th_present3" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Appearance stone that changes an armor's appearance for 100 days. Can be used as a top or a one piece. It modifies everything, making the appearance of all armor into that of formalwear. -->
+	<item id="38955" type="EtcItem" name="Formal Wear Appearance Stone (100-day)">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Appearance stone that changes an armor's appearance in an NPC Dinos Uniform for 100 days. Can be used as a top or a one piece. It modifies everything, making the appearance of all armor into that of an NC Dinos Uniform. -->
+	<item id="38956" type="EtcItem" name="NC Dinos Appearance Stone (100-day)">
+		<set name="icon" val="BranchSys3.icon1.g_scrl_change_chest" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="37725" />
+	</item>
+	<!-- Changes the appearance of a hair accessory to that of a wedding veil for 100 days. Can only be used on hair accessories that use 2 slots. When changed to the appearance of a female-only hair accessory, it cannot be equipped by a male character. -->
+	<item id="38957" type="EtcItem" name="Wedding Veil Appearance Stone (100-day)">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a hair accessory to that of a Black Phantom Mask for 100 days. Can only be used on hair accessories that use 2 slots. -->
+	<item id="38958" type="EtcItem" name="Black Phantom Mask Appearance Stone (100-day)">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Changes the appearance of a hair accessory to that of an NC Dinos Hat for 100 days. Can only be used on hair accessories that use 2 slots. -->
+	<item id="38959" type="EtcItem" name="NC Dinos Hat Appearance Stone (100-day)">
+		<set name="icon" val="BranchSys3.Icon.g_shape_shifting_hair2" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="handler" val="AppearanceStone" />
+		<set name="standardItem" val="37726" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Shaper. Deleted after event. -->
+	<item id="38960" type="Weapon" name="+ 4 Amaranthine Shaper Coupon">
+		<set name="icon" val="icon.weapon_stanpid_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Cutter. Deleted after event. -->
+	<item id="38961" type="Weapon" name="+ 4 Amaranthine Cutter Coupon">
+		<set name="icon" val="icon.weapon_plenitas_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Slasher. Deleted after event. -->
+	<item id="38962" type="Weapon" name="+ 4 Amaranthine Slasher Coupon">
+		<set name="icon" val="icon.weapon_bauen_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Avenger. Deleted after event. -->
+	<item id="38963" type="Weapon" name="+ 4 Amaranthine Avenger Coupon">
+		<set name="icon" val="icon.weapon_qutram_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Fighter. Deleted after event. -->
+	<item id="38964" type="Weapon" name="+ 4 Amaranthine Fighter Coupon">
+		<set name="icon" val="icon.weapon_durga_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Stormer. Deleted after event. -->
+	<item id="38965" type="Weapon" name="+ 4 Amaranthine Stormer Coupon">
+		<set name="icon" val="icon.weapon_crabel_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Thrower. Deleted after event. -->
+	<item id="38966" type="Weapon" name="+ 4 Amaranthine Thrower Coupon">
+		<set name="icon" val="icon.weapon_castron_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Shooter. Deleted after event. -->
+	<item id="38967" type="Weapon" name="+ 4 Amaranthine Shooter Coupon">
+		<set name="icon" val="icon.weapon_stilla_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Buster. Deleted after event. -->
+	<item id="38968" type="Weapon" name="+ 4 Amaranthine Buster Coupon">
+		<set name="icon" val="icon.weaon_serapear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Caster. Deleted after event. -->
+	<item id="38969" type="Weapon" name="+ 4 Amaranthine Caster Coupon">
+		<set name="icon" val="icon.weapon_pilia_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Retributer. Deleted after event. -->
+	<item id="38970" type="Weapon" name="+ 4 Amaranthine Retributer Coupon">
+		<set name="icon" val="icon.weapon_shaelon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Dualsword. Deleted after event. -->
+	<item id="38971" type="Weapon" name="+ 4 Amaranthine Dualsword Coupon">
+		<set name="icon" val="icon.weapon_r_dualsword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Dual Dagger. Deleted after event. -->
+	<item id="38972" type="Weapon" name="+ 4 Amaranthine Dual Dagger Coupon">
+		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 4 Amaranthine Dual Blunt Weapon. Deleted after event. -->
+	<item id="38973" type="Weapon" name="+ 4 Amaranthine Dual Blunt Weapon Coupon">
+		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Shaper. Deleted after event. -->
+	<item id="38974" type="Weapon" name="+ 5 Amaranthine Shaper Coupon">
+		<set name="icon" val="icon.weapon_stanpid_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Cutter. Deleted after event. -->
+	<item id="38975" type="Weapon" name="+ 5 Amaranthine Cutter Coupon">
+		<set name="icon" val="icon.weapon_plenitas_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Slasher. Deleted after event. -->
+	<item id="38976" type="Weapon" name="+ 5 Amaranthine Slasher Coupon">
+		<set name="icon" val="icon.weapon_bauen_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Avenger. Deleted after event. -->
+	<item id="38977" type="Weapon" name="+ 5 Amaranthine Avenger Coupon">
+		<set name="icon" val="icon.weapon_qutram_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Fighter. Deleted after event. -->
+	<item id="38978" type="Weapon" name="+ 5 Amaranthine Fighter Coupon">
+		<set name="icon" val="icon.weapon_durga_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Stormer. Deleted after event. -->
+	<item id="38979" type="Weapon" name="+ 5 Amaranthine Stormer Coupon">
+		<set name="icon" val="icon.weapon_crabel_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Thrower. Deleted after event. -->
+	<item id="38980" type="Weapon" name="+ 5 Amaranthine Thrower Coupon">
+		<set name="icon" val="icon.weapon_castron_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Shooter. Deleted after event. -->
+	<item id="38981" type="Weapon" name="+ 5 Amaranthine Shooter Coupon">
+		<set name="icon" val="icon.weapon_stilla_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Buster. Deleted after event. -->
+	<item id="38982" type="Weapon" name="+ 5 Amaranthine Buster Coupon">
+		<set name="icon" val="icon.weaon_serapear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Caster. Deleted after event. -->
+	<item id="38983" type="Weapon" name="+ 5 Amaranthine Caster Coupon">
+		<set name="icon" val="icon.weapon_pilia_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Retributer. Deleted after event. -->
+	<item id="38984" type="Weapon" name="+ 5 Amaranthine Retributer Coupon">
+		<set name="icon" val="icon.weapon_shaelon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Dualsword. Deleted after event. -->
+	<item id="38985" type="Weapon" name="+ 5 Amaranthine Dualsword Coupon">
+		<set name="icon" val="icon.weapon_r_dualsword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Dual Dagger. Deleted after event. -->
+	<item id="38986" type="Weapon" name="+ 5 Amaranthine Dual Dagger Coupon">
+		<set name="icon" val="icon.weapon_r_dualdagger_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2050" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 5 Amaranthine Dual Blunt Weapon. Deleted after event. -->
+	<item id="38987" type="Weapon" name="+ 5 Amaranthine Dual Blunt Weapon Coupon">
+		<set name="icon" val="icon.weapon_r_dualblunt_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Shaper. Deleted after event. -->
+	<item id="38988" type="Weapon" name="+ 6 Amaranthine Shaper Coupon">
+		<set name="icon" val="icon.weapon_stanpid_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Cutter. Deleted after event. -->
+	<item id="38989" type="Weapon" name="+ 6 Amaranthine Cutter Coupon">
+		<set name="icon" val="icon.weapon_plenitas_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Slasher. Deleted after event. -->
+	<item id="38990" type="Weapon" name="+ 6 Amaranthine Slasher Coupon">
+		<set name="icon" val="icon.weapon_bauen_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Avenger. Deleted after event. -->
+	<item id="38991" type="Weapon" name="+ 6 Amaranthine Avenger Coupon">
+		<set name="icon" val="icon.weapon_qutram_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1740" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Fighter. Deleted after event. -->
+	<item id="38992" type="Weapon" name="+ 6 Amaranthine Fighter Coupon">
+		<set name="icon" val="icon.weapon_durga_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1550" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Stormer. Deleted after event. -->
+	<item id="38993" type="Weapon" name="+ 6 Amaranthine Stormer Coupon">
+		<set name="icon" val="icon.weapon_crabel_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="2010" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Thrower. Deleted after event. -->
+	<item id="38994" type="Weapon" name="+ 6 Amaranthine Thrower Coupon">
+		<set name="icon" val="icon.weapon_castron_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Shooter. Deleted after event. -->
+	<item id="38995" type="Weapon" name="+ 6 Amaranthine Shooter Coupon">
+		<set name="icon" val="icon.weapon_stilla_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1580" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Buster. Deleted after event. -->
+	<item id="38996" type="Weapon" name="+ 6 Amaranthine Buster Coupon">
+		<set name="icon" val="icon.weaon_serapear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Caster. Deleted after event. -->
+	<item id="38997" type="Weapon" name="+ 6 Amaranthine Caster Coupon">
+		<set name="icon" val="icon.weapon_pilia_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Retributer. Deleted after event. -->
+	<item id="38998" type="Weapon" name="+ 6 Amaranthine Retributer Coupon">
+		<set name="icon" val="icon.weapon_shaelon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1080" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+	<!-- Bring this to the Master Yogi's Staff manager Goddess of Destruction to exchange it for a + 6 Amaranthine Dualsword. Deleted after event. -->
+	<item id="38999" type="Weapon" name="+ 6 Amaranthine Dualsword Coupon">
+		<set name="icon" val="icon.weapon_r_dualsword_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1520" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="1" />
+	</item>
+</list>

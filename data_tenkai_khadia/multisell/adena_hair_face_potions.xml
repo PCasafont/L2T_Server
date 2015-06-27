@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <list maintainEnchantment="true" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5235" /> <!-- Facelifting Potion - A -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5236" /> <!-- Facelifting Potion - B -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5237" /> <!-- Facelifting Potion - C -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5238" /> <!-- Dye Potion - A -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5239" /> <!-- Dye Potion - B -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5240" /> <!-- Dye Potion - C -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5241" /> <!-- Dye Potion - D -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5242" /> <!-- Hair Style Change Potion - A -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5243" /> <!-- Hair Style Change Potion - B -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5244" /> <!-- Hair Style Change Potion - C -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5245" /> <!-- Hair Style Change Potion - D -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5246" /> <!-- Hair Style Change Potion - E -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5247" /> <!-- Hair Style Change Potion - F -->
+	</item>
+	<item>
+		<ingredient count="24000" id="57" /> <!-- Adena -->
+		<production count="1" id="5248" /> <!-- Hair Style Change Potion - G -->
+	</item>
+ </list>
+ 

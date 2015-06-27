@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Low-grade Magic Rune Clip that can improve the function of R-grade Belt. -->
+	<item id="32700" type="EtcItem" name="Low-grade Magic Rune Clip (R-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Magic Rune Clip that can improve the function of R-grade Belt. -->
+	<item id="32701" type="EtcItem" name="Mid-grade Magic Rune Clip (R-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- High-grade Magic Rune Clip that can improve the function of R-grade Belt. -->
+	<item id="32702" type="EtcItem" name="High-grade Magic Rune Clip (R-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Top-grade Magic Rune Clip that can improve the function of R-grade Belt. -->
+	<item id="32703" type="EtcItem" name="Top-grade Magic Rune Clip (R-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Low-grade Magic Pin that can improve the function of an R-grade Belt. -->
+	<item id="32704" type="EtcItem" name="Low-grade Magic Ornament (R-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Magic Pin that can improve the function of an R-grade Belt. -->
+	<item id="32705" type="EtcItem" name="Mid-grade Magic Ornament (R-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- High-grade Magic Pin that can improve the function of an R-grade Belt. -->
+	<item id="32706" type="EtcItem" name="High-grade Magic Ornament (R-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Top-grade Magic Pin that can improve the function of an R-grade Belt. -->
+	<item id="32707" type="EtcItem" name="Top-grade Magic Ornament (R-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Low-grade Magic Rune Clip that can improve the function of R95-grade Belt. -->
+	<item id="32708" type="EtcItem" name="Low-grade Magic Rune Clip (R95-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Magic Rune Clip that can improve the function of R95-grade Belt. -->
+	<item id="32709" type="EtcItem" name="Mid-grade Magic Rune Clip (R95-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- High-grade Magic Rune Clip that can improve the function of R95-grade Belt. -->
+	<item id="32710" type="EtcItem" name="High-grade Magic Rune Clip (R95-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Top-grade Magic Rune Clip that can improve the function of R95-grade Belt. -->
+	<item id="32711" type="EtcItem" name="Top-grade Magic Rune Clip (R95-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Low-grade Magic Pin that can improve the function of an R95-grade Belt. -->
+	<item id="32712" type="EtcItem" name="Low-grade Magic Ornament (R95-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Magic Pin that can improve the function of an R95-grade Belt. -->
+	<item id="32713" type="EtcItem" name="Mid-grade Magic Ornament (R95-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- High-grade Magic Pin that can improve the function of an R95-grade Belt. -->
+	<item id="32714" type="EtcItem" name="High-grade Magic Ornament (R95-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Top-grade Magic Pin that can improve the function of an R95-grade Belt. -->
+	<item id="32715" type="EtcItem" name="Top-grade Magic Ornament (R95-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Low-grade Magic Rune Clip that can improve the function of R99-grade Belt. -->
+	<item id="32716" type="EtcItem" name="Low-grade Magic Rune Clip (R99-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Magic Rune Clip that can improve the function of R99-grade Belt. -->
+	<item id="32717" type="EtcItem" name="Mid-grade Magic Rune Clip (R99-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- High-grade Magic Rune Clip that can improve the function of R99-grade Belt. -->
+	<item id="32718" type="EtcItem" name="High-grade Magic Rune Clip (R99-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Top-grade Magic Rune Clip that can improve the function of R99-grade Belt. -->
+	<item id="32719" type="EtcItem" name="Top-grade Magic Rune Clip (R99-grade)">
+		<set name="icon" val="icon.etc_rune_clip_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Low-grade Magic Pin that can improve the function of an R99-grade Belt. -->
+	<item id="32720" type="EtcItem" name="Low-grade Magic Ornament (R99-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Magic Pin that can improve the function of an R99-grade Belt. -->
+	<item id="32721" type="EtcItem" name="Mid-grade Magic Ornament (R99-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- High-grade Magic Pin that can improve the function of an R99-grade Belt. -->
+	<item id="32722" type="EtcItem" name="High-grade Magic Ornament (R99-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Top-grade Magic Pin that can improve the function of an R99-grade Belt. -->
+	<item id="32723" type="EtcItem" name="Top-grade Magic Ornament (R99-grade)">
+		<set name="icon" val="icon.etc_belt_deco_i02" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="20" />
+	</item>
+	<!-- Reward box containing special item that was crafted to praise the warriors who defeated Shilen's creations. You must open it to see what it contains. Double-click to examine. -->
+	<item id="32724" type="EtcItem" name="Guardian Warrior's Reward Box">
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Chic Silver Chapeau. 3-day. STR/INT + 1. Uses 2 hair accessory slots. -->
+	<item id="32725" type="Armor" name="Chic Silver Chapeau - 3-day">
+		<set name="icon" val="BranchSys2.icon2.pi_silverchaperon" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Hair accessory with weak energy. 3-day. CON/MEN + 1. Uses 2 hair accessory slots. -->
+	<item id="32726" type="Armor" name="Demon Circlet - 3-day">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Double-click to acquire at random a Hair Accessory Pack, Pendant Pack, Enchant Scroll Pack and Elixir Pack. -->
+	<item id="32727" type="EtcItem" name="Treasure Chest">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Chest containing Hair Accessory. -->
+	<item id="32728" type="EtcItem" name="Hair Accessory Pack">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Chest containing pendant that can strengthen hair accessories. -->
+	<item id="32729" type="EtcItem" name="Pendant Pack">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing S-grade enchant scroll. -->
+	<item id="32730" type="EtcItem" name="Enchant Scroll Pack (S-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing R-grade enchant scroll. -->
+	<item id="32731" type="EtcItem" name="Enchant Scroll Pack (R-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing D-grade enchant scroll. -->
+	<item id="32732" type="EtcItem" name="Enchant Scroll Pack (D-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing C-grade enchant scroll. -->
+	<item id="32733" type="EtcItem" name="Enchant Scroll Pack (C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing B-grade enchant scroll. -->
+	<item id="32734" type="EtcItem" name="Enchant Scroll Pack (B-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing A-grade enchant scroll. -->
+	<item id="32735" type="EtcItem" name="Enchant Scroll Pack (A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing S-grade elixir. -->
+	<item id="32736" type="EtcItem" name="Elixir Pack (S-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing R-grade elixir. -->
+	<item id="32737" type="EtcItem" name="Elixir Pack (R-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing D-grade elixir. -->
+	<item id="32738" type="EtcItem" name="Elixir Pack (D-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing C-grade elixir. -->
+	<item id="32739" type="EtcItem" name="Elixir Pack (C-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing B-grade elixir. -->
+	<item id="32740" type="EtcItem" name="Elixir Pack (B-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Box containing A-grade elixir. -->
+	<item id="32741" type="EtcItem" name="Elixir Pack (A-grade)">
+		<set name="icon" val="icon.event_hero_treasure_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- STR + 3 when equipped. -->
+	<item id="32742" type="Armor" name="Rabbit Ears - STR">
+		<set name="icon" val="icon.accessory_rabbit_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3 when equipped. -->
+	<item id="32743" type="Armor" name="Rabbit Ears - DEX">
+		<set name="icon" val="icon.accessory_rabbit_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 3 when equipped. -->
+	<item id="32744" type="Armor" name="Raccoon Ears - CON">
+		<set name="icon" val="icon.accessory_racoon_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9556-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MEN + 3 when equipped. -->
+	<item id="32745" type="Armor" name="Raccoon Ears - MEN">
+		<set name="icon" val="icon.accessory_racoon_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9557-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 3 when equipped. -->
+	<item id="32746" type="Armor" name="Cat Ears - INT">
+		<set name="icon" val="icon.accessory_cat_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9558-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- WIT + 3 when equipped. -->
+	<item id="32747" type="Armor" name="Cat Ears - WIT">
+		<set name="icon" val="icon.accessory_cat_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9559-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Critical Rate + 50 when equipped. -->
+	<item id="32748" type="Armor" name="Romantic Chapeau - Critical Rate">
+		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9560-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. P. Critical Damage + 90 and M. Critical Damage + 68 when equipped. -->
+	<item id="32749" type="Armor" name="Romantic Chapeau - Critical Damage">
+		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9561-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Def. + 5% when equipped. -->
+	<item id="32750" type="Armor" name="Angel Circlet - P. Def.">
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Def. + 5% when equipped. -->
+	<item id="32751" type="Armor" name="Angel Circlet - M. Def.">
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Evasion + 5 when equipped. -->
+	<item id="32752" type="Armor" name="Angel Circlet - Evasion">
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. + 5% when equipped. -->
+	<item id="32753" type="Armor" name="Demon Circlet - P. Atk.">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Atk. + 10% when equipped. -->
+	<item id="32754" type="Armor" name="Demon Circlet - M. Atk.">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Accuracy + 5 when equipped. -->
+	<item id="32755" type="Armor" name="Demon Circlet - Accuracy">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines rabbit ears to make Rabbit Ears - STR. -->
+	<item id="32756" type="Armor" name="Rabbit Ears - STR Pendant">
+		<set name="icon" val="icon.accessory_rabbit_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Combines rabbit ears to make Rabbit Ears - DEX. -->
+	<item id="32757" type="Armor" name="Rabbit Ears - DEX Pendant">
+		<set name="icon" val="icon.accessory_rabbit_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Combines raccoon ears to make Raccoon Ear - CON. -->
+	<item id="32758" type="Armor" name="Raccoon Ears: CON Pendant">
+		<set name="icon" val="icon.accessory_racoon_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Combines raccoon ears to make Raccoon Ear - MEN. -->
+	<item id="32759" type="Armor" name="Raccoon Ears: MEN Pendant">
+		<set name="icon" val="icon.accessory_racoon_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Combines cat ears to make Cat Ear - INT. -->
+	<item id="32760" type="Armor" name="Cat Ears: INT Pendant">
+		<set name="icon" val="icon.accessory_cat_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Combines cat ears to make Cat Ear - WIT. -->
+	<item id="32761" type="Armor" name="Cat Ears: WIT Pendant">
+		<set name="icon" val="icon.accessory_cat_ear_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="none" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Combines romantic chapeaus to make Romantic Chapeau - P. Critical Rate. -->
+	<item id="32762" type="Armor" name="Romantic Chapeau - P. Critical Rate Pendant">
+		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines romantic chapeaus to make Romantic Chapeau - P. Critical Damage. -->
+	<item id="32763" type="Armor" name="Romantic Chapeau - Critical Damage Pendant">
+		<set name="icon" val="icon.accessory_romantic_chaperon_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines angel circlets to make Angel Circlet - P. Def. -->
+	<item id="32764" type="Armor" name="Angel Circlet - P. Def. Pendant">
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines angel circlets to make Angel Circlet - M. Def. -->
+	<item id="32765" type="Armor" name="Angel Circlet - M. Def. Pendant">
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines angel circlets to make Angel Circlet - Evasion. -->
+	<item id="32766" type="Armor" name="Angel Circlet - Evasion Pendant">
+		<set name="icon" val="icon.Accessary_angel_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines demon circlets to make Demon Circlet - P. Atk. -->
+	<item id="32767" type="Armor" name="Demon Circlet - P. Atk. Pendant">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines demon circlets to make Demon Circlet - M. Atk. -->
+	<item id="32768" type="Armor" name="Demon Circlet - M. Atk. Pendant">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Combines demon circlets to make Demon Circlet - Accuracy. -->
+	<item id="32769" type="Armor" name="Demon Circlet - Accuracy Pendant">
+		<set name="icon" val="icon.Accessary_demon_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- For NPC. -->
+	<item id="32770" type="Weapon" name="Beaker">
+		<set name="icon" val="icon.weapon_iron_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1850" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="31" />
+			<set stat="mAtk" val="21" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- For NPC. -->
+	<item id="32771" type="Weapon" name="Flask">
+		<set name="icon" val="icon.weapon_iron_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="material" val="paper" />
+		<set name="weight" val="1850" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="31" />
+			<set stat="mAtk" val="21" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- For NPC. -->
+	<item id="32772" type="Weapon" name="Firecracker">
+		<set name="icon" val="icon.weapon_iron_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1850" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="31" />
+			<set stat="mAtk" val="21" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- For NPC. -->
+	<item id="32773" type="Weapon" name="Blacksmith' Hammer">
+		<set name="icon" val="icon.weapon_iron_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1850" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="31" />
+			<set stat="mAtk" val="21" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- For NPC. -->
+	<item id="32774" type="Weapon" name="Scroll">
+		<set name="icon" val="icon.weapon_iron_hammer_i00" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="blunt" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="1850" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="31" />
+			<set stat="mAtk" val="21" />
+			<set stat="rCrit" val="6" />
+			<set stat="mCritRate" val="4" />
+			<baseAdd stat="accCombat" val="8" />
+			<baseAdd stat="accMagic" val="8" />
+			<set stat="pAtkSpd" val="379" />
+			<enchant stat="pAtk" val="0" />
+			<enchant stat="mAtk" val="0" />
+		</for>
+	</item>
+	<!-- Proof of undertaking a mission from Cruma Tower with the code name Crisis. Collect them and bring them to Ridenbag at the entrance of Cruma Tower to exchange for a reward. -->
+	<item id="32775" type="EtcItem" name="Mark of Crisis - Cruma Tower">
+		<set name="icon" val="icon.etc_permit_card_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Proof of undertaking a mission from the Tower of Insolence with the code name Crisis. Collect them and bring them to the dwarf Ende at the entrance of the Tower of Insolence to exchange for a reward. -->
+	<item id="32776" type="EtcItem" name="Mark of Crisis - Tower of Insolence">
+		<set name="icon" val="icon.etc_paper_white_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="2" />
+	</item>
+	<!-- Book for adventurers between levels 40-85. It contains information on locations to visit for a variety of level ranges. -->
+	<item id="32777" type="EtcItem" name="Goddess of Destruction Guide">
+		<set name="icon" val="icon.etc_spell_books_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Book for adventurers between levels 85-99. It contains information on locations to visit for a variety of level ranges. -->
+	<item id="32778" type="EtcItem" name="Goddess of Destruction Guide">
+		<set name="icon" val="icon.etc_spell_books_blue_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Pouch containing A-grade R hardener. -->
+	<item id="32779" type="EtcItem" name="Hardener Pouch - R">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing A-grade R95 hardener. -->
+	<item id="32780" type="EtcItem" name="Hardener Pouch - R95">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing A-grade R99 hardener. -->
+	<item id="32781" type="EtcItem" name="Hardener Pouch - R99">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing D-grade weapon. -->
+	<item id="32782" type="EtcItem" name="Weapon Pouch - D">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing C-grade weapon. -->
+	<item id="32783" type="EtcItem" name="Weapon Pouch - C">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing B-grade weapon. -->
+	<item id="32784" type="EtcItem" name="Weapon Pouch - B">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing A-grade weapon. -->
+	<item id="32785" type="EtcItem" name="Weapon Pouch - A">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing S-grade weapon. -->
+	<item id="32786" type="EtcItem" name="Weapon Pouch - S">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing R-grade weapon. -->
+	<item id="32787" type="EtcItem" name="Weapon Pouch - R">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing R95-grade weapon. -->
+	<item id="32788" type="EtcItem" name="Weapon Pouch - R95">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing R99-grade weapon. -->
+	<item id="32789" type="EtcItem" name="Weapon Pouch - R99">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing D-grade armor Fragment. -->
+	<item id="32790" type="EtcItem" name="Armor Pouch - D">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing C-grade armor Fragment. -->
+	<item id="32791" type="EtcItem" name="Armor Pouch - C">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing B-grade armor Fragment. -->
+	<item id="32792" type="EtcItem" name="Armor Pouch - B">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing A-grade armor Fragment. -->
+	<item id="32793" type="EtcItem" name="Armor Pouch - A">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing S-grade armor Fragment. -->
+	<item id="32794" type="EtcItem" name="Armor Pouch - S">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing R-grade armor Fragment. -->
+	<item id="32795" type="EtcItem" name="Armor Pouch - R">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing R95-grade armor Fragment. -->
+	<item id="32796" type="EtcItem" name="Armor Pouch - R95">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Pouch containing R99-grade armor Fragment. -->
+	<item id="32797" type="EtcItem" name="Armor Pouch - R99">
+		<set name="icon" val="icon.etc_pouch_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- The set effect will appear only after the seal is broken. -->
+	<item id="32798" type="Armor" name="Sealed Bound Zubei's Gauntlets">
+		<set name="icon" val="icon.armor_t64_g_i02" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="590" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- The set effect will appear only after the seal is broken. -->
+	<item id="32799" type="Armor" name="Sealed Bound Avadon Gloves">
+		<set name="icon" val="icon.armor_t66_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="b" />
+		<set name="weight" val="590" />
+		<for>
+			<baseAdd stat="pDef" val="41" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+</list>

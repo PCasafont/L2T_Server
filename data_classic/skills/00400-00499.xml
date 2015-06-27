@@ -1,0 +1,2447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- 
+		Level 1: Inflicts holy damage on the enemy with 924 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 30% and Melee Weapon Resistance by 12. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 2: Inflicts holy damage on the enemy with 1054 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 30% and Melee Weapon Resistance by 12. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 3: Inflicts holy damage on the enemy with 1146 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 30% and Melee Weapon Resistance by 12. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 4: Inflicts holy damage on the enemy with 1240 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 30% and Melee Weapon Resistance by 12. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 5: Inflicts holy damage on the enemy with 1337 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 30% and Melee Weapon Resistance by 12. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 6: Inflicts holy damage on the enemy with 1437 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 40% and Melee Weapon Resistance by 16. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 7: Inflicts holy damage on the enemy with 1538 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 40% and Melee Weapon Resistance by 16. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 8: Inflicts holy damage on the enemy with 1639 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 40% and Melee Weapon Resistance by 16. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 9: Inflicts holy damage on the enemy with 1741 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 40% and Melee Weapon Resistance by 16. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+		Level 10: Inflicts holy damage on the enemy with 1841 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Rate by 50% and Melee Weapon Resistance by 20. Requires a sword or blunt weapon to be equipped. Over-hit and Critical are possible.
+	-->
+	<skill id="400" levels="10" name="Tribunal">
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
+		<table name="#power"> 924 1054 1146 1240 1337 1437 1538 1639 1741 1841 </table>
+		<table name="#rCrit"> 30 30 30 30 30 40 40 40 40 50 </table>
+		<table name="#vuln"> 12 12 12 12 12 16 16 16 16 20 </table>
+		<table name="#abnormalLvl"> 1 1 1 1 1 2 2 2 2 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1300" />
+		<set name="coolTime" val="700" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="baseCritRate" val="10" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="4" />
+		<set name="elementPower" val="20" />
+		<set name="weaponsAllowed" val="Sword, Blunt, Big Blunt, Big Sword" />
+		<set name="saveVs" val="MEN" />
+		<set name="aggroPoints" val="#power" />
+		<for>
+			<abnormal duration="30" effectType="DEBUFF" landRate="80" stackLvl="#abnormalLvl" stackType="critical_prob_down">
+				<effect type="Debuff" val="0" />
+				<subPercentBase stat="rCrit" val="#rCrit" />
+				<addPercent stat="swordWpnVuln" val="#vuln" />
+				<addPercent stat="bigSwordWpnVuln" val="#vuln" />
+				<addPercent stat="bluntWpnVuln" val="#vuln" />
+				<addPercent stat="bigBluntWpnVuln" val="#vuln" />
+				<addPercent stat="daggerWpnVuln" val="#vuln" />
+				<addPercent stat="dualDaggerWpnVuln" val="#vuln" />
+				<addPercent stat="poleWpnVuln" val="#vuln" />
+				<addPercent stat="fistWpnVuln" val="#vuln" />
+				<addPercent stat="dualFistWpnVuln" val="#vuln" />
+				<addPercent stat="dualWpnVuln" val="#vuln" />
+				<addPercent stat="rapierWpnVuln" val="#vuln" />
+				<addPercent stat="ancientWpnVuln" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Inflicts dark damage on the enemy with 1056 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 25% and Melee Weapon Resistance by 12. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 2: Inflicts dark damage on the enemy with 1205 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 25% and Melee Weapon Resistance by 12. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 3: Inflicts dark damage on the enemy with 1309 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 25% and Melee Weapon Resistance by 12. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 4: Inflicts dark damage on the enemy with 1417 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 25% and Melee Weapon Resistance by 12. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 5: Inflicts dark damage on the enemy with 1528 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 25% and Melee Weapon Resistance by 12. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 6: Inflicts dark damage on the enemy with 1642 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 30% and Melee Weapon Resistance by 16. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 7: Inflicts dark damage on the enemy with 1757 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 30% and Melee Weapon Resistance by 16. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 8: Inflicts dark damage on the enemy with 1873 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 30% and Melee Weapon Resistance by 16. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 9: Inflicts dark damage on the enemy with 1989 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 30% and Melee Weapon Resistance by 16. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+		Level 10: Inflicts dark damage on the enemy with 2104 Power added to P. Atk. and greatly provokes the enemy. For 30 sec., decreases Critical Damage by 35% and Melee Weapon Resistance by 20. Requires a sword, blunt weapon, or dualsword. Over-hit and Critical are possible.
+	-->
+	<skill id="401" levels="10" name="Judgment">
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
+		<table name="#power"> 1056 1205 1309 1417 1528 1642 1757 1873 1989 2104 </table>
+		<table name="#cAtk"> 25 25 25 25 25 30 30 30 30 35 </table>
+		<table name="#vuln"> 12 12 12 12 12 16 16 16 16 20 </table>
+		<table name="#abnormalLvl"> 1 1 1 1 1 2 2 2 2 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1300" />
+		<set name="coolTime" val="700" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="baseCritRate" val="10" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="5" />
+		<set name="elementPower" val="20" />
+		<set name="weaponsAllowed" val="Sword, Blunt, Dual Sword, Big Blunt, Big Sword" />
+		<set name="saveVs" val="MEN" />
+		<set name="aggroPoints" val="#power" />
+		<for>
+			<abnormal duration="30" effectType="DEBUFF" landRate="80" stackLvl="#abnormalLvl" stackType="critical_dmg_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="pCritDmg" val="#cAtk" />
+				<addPercent stat="swordWpnVuln" val="#vuln" />
+				<addPercent stat="bigSwordWpnVuln" val="#vuln" />
+				<addPercent stat="bluntWpnVuln" val="#vuln" />
+				<addPercent stat="bigBluntWpnVuln" val="#vuln" />
+				<addPercent stat="daggerWpnVuln" val="#vuln" />
+				<addPercent stat="dualDaggerWpnVuln" val="#vuln" />
+				<addPercent stat="poleWpnVuln" val="#vuln" />
+				<addPercent stat="fistWpnVuln" val="#vuln" />
+				<addPercent stat="dualFistWpnVuln" val="#vuln" />
+				<addPercent stat="dualWpnVuln" val="#vuln" />
+				<addPercent stat="rapierWpnVuln" val="#vuln" />
+				<addPercent stat="ancientWpnVuln" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Provokes the enemy to attack, then immobilizes them for 10 seconds. -->
+	<skill id="402" levels="10" name="Arrest">
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 25 27 28 29 30 31 32 33 34 34 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="10" landRate="80" stackLvl="1" stackType="root_physically">
+				<effect type="Root" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Provokes the enemy to attack, then immobilizes them for 10 seconds. -->
+	<skill id="403" levels="10" name="Shackle">
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 25 27 28 29 30 31 32 33 34 34 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="10" landRate="80" stackLvl="1" stackType="root_physically">
+				<effect type="Root" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Provokes nearby enemies to attack, then immobilizes them for 10 seconds. -->
+	<skill id="404" levels="14" name="Mass Shackling">
+		<table name="#mpConsume"> 40 43 46 49 51 52 53 54 55 57 59 61 63 65 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="470" />
+		<set name="reuseDelay" val="30000" />
+		<set name="skillRadius" val="100" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="10" landRate="40" stackLvl="1" stackType="root_physically">
+				<effect type="Root" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Fills undead with fear, causing them to flee for 20 seconds. Consumes 6 Soulstone. Lethal strike is possible.
+		Level 3: Fills undead with fear, causing them to flee for 20 seconds. Consumes 7 Soulstone. Lethal strike is possible.
+		Level 5: Fills undead with fear, causing them to flee for 20 seconds. Consumes 8 Soulstone. Lethal strike is possible.
+		Level 7: Fills undead with fear, causing them to flee for 20 seconds. Consumes 9 Soulstone. Lethal strike is possible.
+		Level 9: Fills undead with fear, causing them to flee for 20 seconds. Consumes 10 Soulstone. Lethal strike is possible.
+	-->
+	<skill id="405" levels="10" name="Banish Undead">
+		<table name="#itemConsumeCount"> 5 6 7 7 8 8 9 9 10 10 </table>
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 50 53 55 58 59 61 63 65 67 68 </table>
+		<table name="#aggro"> 523 549 566 582 597 611 624 635 646 655 </table>
+		<set name="target" val="TARGET_UNDEAD" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeId" val="1785" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="4" />
+		<set name="elementPower" val="20" />
+		<set name="aggroPoints" val="#aggro" />
+		<set name="lethal2" val="25" />
+		<for>
+			<abnormal count="10" duration="2" landRate="30">
+				<effect type="Fear" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Channels the gods' strength to greatly increase your combat effectiveness.  For 1 minute, increases Debuff Resistance by 40%, P. Def. by 50%, M. Def. by 50%, Accuracy by 6 when a sword/blunt weapon is equipped, Speed by 10, Atk. Spd. by 10% when a sword/blunt weapon is equipped, Critical Rate by 33 when a sword is equipped, Critical Damage by 33% when a blunt weapon is equipped, and Buff-canceling Attack Resistance by 40%. Decreases the effect of recovery magic by 80%. Available when HP is 30% or lower.
+		Level 2: Channels the gods' strength to greatly increase your combat effectiveness.  For 1 minute, increases Debuff Resistance by 40%, P. Def. by 50%, M. Def. by 50%, Accuracy by 6 when a sword/blunt weapon is equipped, Speed by 20, Atk. Spd. by 20% when a sword/blunt weapon is equipped, Critical Rate by 66 when a sword is equipped, Critical Damage by 66% when a blunt weapon is equipped, and Buff-canceling Attack Resistance by 40%. Decreases the effect of recovery magic by 80%. Available when HP is 30% or lower.
+		Level 3: Channels the gods' strength to greatly increase your combat effectiveness.  For 1 minute, increases Debuff Resistance by 40%, P. Def. by 50%, M. Def. by 50%, Accuracy by 6 when a sword/blunt weapon is equipped, Speed by 30, Atk. Spd. by 30% when a sword/blunt weapon is equipped, Critical Rate by 100 when a sword is equipped, Critical Damage by 100% when a blunt weapon is equipped, and Buff-canceling Attack Resistance by 40%. Decreases the effect of recovery magic by 80%. Available when HP is 30% or lower.
+	-->
+	<skill id="406" levels="3" name="Angelic Archon">
+		<table name="#magicLvl"> 58 66 74 </table>
+		<table name="#mpConsume"> 133 153 170 </table>
+		<table name="#runSpd"> 10 20 30 </table>
+		<table name="#rCrit"> 33 66 100 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="300000" />
+		<cond addName="1" msgId="113">
+			<player hp="30" />
+		</cond>
+		<for>
+			<abnormal duration="60" stackLvl="#abnormalLvl" stackType="possession">
+				<effect type="Buff" val="0" />
+				<addPercent stat="debuffRes" val="40" />
+				<addPercent stat="pDef" val="50" />
+				<addPercent stat="mDef" val="50" />
+				<add stat="accCombat" val="6">
+					<using kind="Sword,Big Sword,Blunt,Big Blunt" />
+				</add>
+				<add stat="runSpd" val="#runSpd" />
+				<addPercent stat="pAtkSpd" val="#runSpd">
+					<using kind="Sword,Big Sword,Blunt,Big Blunt" />
+				</addPercent>
+				<add stat="rCrit" val="#rCrit">
+					<using kind="Sword,Big Sword" />
+				</add>
+				<addPercentBase stat="pCritDmg" val="#rCrit">
+					<using kind="Blunt,Big Blunt" />
+				</addPercentBase>
+				<addPercent stat="cancelRes" val="40" />
+				<subPercent stat="gainHp" val="80" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Attacks nearby enemies with 687 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 10% for 10 seconds. Over-hit and Critical are possible.
+		Level 2: Attacks nearby enemies with 784 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 10% for 10 seconds. Over-hit and Critical are possible.
+		Level 3: Attacks nearby enemies with 852 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 10% for 10 seconds. Over-hit and Critical are possible.
+		Level 4: Attacks nearby enemies with 923 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 15% for 10 seconds. Over-hit and Critical are possible.
+		Level 5: Attacks nearby enemies with 995 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 15% for 10 seconds. Over-hit and Critical are possible.
+		Level 6: Attacks nearby enemies with 1069 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 20% for 10 seconds. Over-hit and Critical are possible.
+		Level 7: Attacks nearby enemies with 1144 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 20% for 10 seconds. Over-hit and Critical are possible.
+		Level 8: Attacks nearby enemies with 1220 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 25% for 10 seconds. Over-hit and Critical are possible.
+		Level 9: Attacks nearby enemies with 1295 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 25% for 10 seconds. Over-hit and Critical are possible.
+		Level 10: Attacks nearby enemies with 1370 Power added to P. Atk. and decreases Speed/Atk. Spd./Casting Spd. by 30% for 10 seconds. Over-hit and Critical are possible.
+	-->
+	<skill id="407" levels="10" name="Psycho Symphony">
+		<table name="#debuff"> 10 10 10 15 15 20 20 25 25 30 </table>
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 39 42 44 45 47 48 50 51 53 54 </table>
+		<table name="#power"> 687 784 852 923 995 1069 1144 1220 1295 1370 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 3 3 4 4 5 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="15000" />
+		<set name="skillRadius" val="150" />
+		<set name="SSBoost" val="2.0" />
+		<set name="baseCritRate" val="10" />
+		<set name="overHit" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" effectType="DEBUFF" landRate="40" stackLvl="#abnormalLvl" stackType="all_speed_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="runSpd" val="#debuff" />
+				<subPercent stat="pAtkSpd" val="#debuff" />
+				<subPercent stat="mAtkSpd" val="#debuff" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Attacks nearby enemies with 825 Power added to P. Atk. and decreases P. Atk./M. Atk. by 10% for 10 seconds. Over-hit and Critical are possible.
+		Level 2: Attacks nearby enemies with 941 Power added to P. Atk. and decreases P. Atk./M. Atk. by 10% for 10 seconds. Over-hit and Critical are possible.
+		Level 3: Attacks nearby enemies with 1023 Power added to P. Atk. and decreases P. Atk./M. Atk. by 10% for 10 seconds. Over-hit and Critical are possible.
+		Level 4: Attacks nearby enemies with 1107 Power added to P. Atk. and decreases P. Atk./M. Atk. by 15% for 10 seconds. Over-hit and Critical are possible.
+		Level 5: Attacks nearby enemies with 1194 Power added to P. Atk. and decreases P. Atk./M. Atk. by 15% for 10 seconds. Over-hit and Critical are possible.
+		Level 6: Attacks nearby enemies with 1283 Power added to P. Atk. and decreases P. Atk./M. Atk. by 20% for 10 seconds. Over-hit and Critical are possible.
+		Level 7: Attacks nearby enemies with 1373 Power added to P. Atk. and decreases P. Atk./M. Atk. by 20% for 10 seconds. Over-hit and Critical are possible.
+		Level 8: Attacks nearby enemies with 1464 Power added to P. Atk. and decreases P. Atk./M. Atk. by 25% for 10 seconds. Over-hit and Critical are possible.
+		Level 9: Attacks nearby enemies with 1554 Power added to P. Atk. and decreases P. Atk./M. Atk. by 25% for 10 seconds. Over-hit and Critical are possible.
+		Level 10: Attacks nearby enemies with 1644 Power added to P. Atk. and decreases P. Atk./M. Atk. by 30% for 10 seconds. Over-hit and Critical are possible.
+	-->
+	<skill id="408" levels="10" name="Demonic Blade Dance">
+		<table name="#debuff"> 10 10 10 15 15 20 20 25 25 30 </table>
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 39 42 44 45 47 48 50 51 53 54 </table>
+		<table name="#power"> 825 941 1023 1107 1194 1283 1373 1464 1554 1644 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 3 3 4 4 5 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="15000" />
+		<set name="skillRadius" val="150" />
+		<set name="SSBoost" val="2.0" />
+		<set name="baseCritRate" val="10" />
+		<set name="overHit" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="weaponsAllowed" val="Dual Sword" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="10" effectType="DEBUFF" landRate="60" stackLvl="#abnormalLvl" stackType="all_attack_down">
+				<effect type="Debuff" val="0" />
+				<subPercent stat="mAtk" val="#debuff" />
+				<subPercent stat="pAtk" val="#debuff" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Attacks the target's vital points with 1832 Power added to P. Atk. Increases your Vital Spot Attack Rate by 10% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 2: Attacks the target's vital points with 2091 Power added to P. Atk. Increases your Vital Spot Attack Rate by 10% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 3: Attacks the target's vital points with 2272 Power added to P. Atk. Increases your Vital Spot Attack Rate by 10% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 4: Attacks the target's vital points with 2460 Power added to P. Atk. Increases your Vital Spot Attack Rate by 15% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 5: Attacks the target's vital points with 2653 Power added to P. Atk. Increases your Vital Spot Attack Rate by 15% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 6: Attacks the target's vital points with 2850 Power added to P. Atk. Increases your Vital Spot Attack Rate by 20% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 7: Attacks the target's vital points with 3050 Power added to P. Atk. Increases your Vital Spot Attack Rate by 20% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 8: Attacks the target's vital points with 3252 Power added to P. Atk. Increases your Vital Spot Attack Rate by 25% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 9: Attacks the target's vital points with 3453 Power added to P. Atk. Increases your Vital Spot Attack Rate by 25% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+		Level 10: Attacks the target's vital points with 3653 Power added to P. Atk. Increases your Vital Spot Attack Rate by 30% for 15 seconds. Requires a dagger. Over-hit and Half-kill are possible.
+	-->
+	<skill id="409" levels="10" name="Critical Blow">
+		<table name="#blowRate"> 10 10 10 15 15 20 20 25 25 30 </table>
+		<table name="#mpConsume"> 52 56 58 60 62 64 66 68 70 72 </table>
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#power"> 1832 2091 2272 2460 2653 2850 3050 3252 3453 3653 </table>
+		<table name="#abnormalLvl"> 1 1 1 2 2 3 3 4 4 5 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BLOW" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1300" />
+		<set name="coolTime" val="700" />
+		<set name="reuseDelay" val="30000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="blowChance" val="25" />
+		<set name="lethal1" val="5" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
+		<set name="condition" val="16" />
+		<for>
+			<abnormal duration="15" self="1" stackLvl="#abnormalLvl" stackType="might_mortal">
+				<effect type="Buff" val="0" />
+				<addPercent stat="blowRate" val="#blowRate" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases your Vital Spot Attack Rate by 10% for 2 minutes. Requires a dagger or dual dagger.
+		Level 2: Increases your Vital Spot Attack Rate by 15% for 2 minutes. Requires a dagger or dual dagger.
+		Level 3: Increases your Vital Spot Attack Rate by 20% for 2 minutes. Requires a dagger or dual dagger.
+	-->
+	<skill id="410" levels="3" name="Mortal Strike">
+		<table name="#mpConsume"> 27 31 34 </table>
+		<table name="#blowRate"> 10 15 20 22 24 26 28 30 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="150000" />
+		<set name="weaponsAllowed" val="Dagger, Dual Dagger" />
+		<for>
+			<abnormal duration="120" effectType="BUFF" stackLvl="1" stackType="might_mortal">
+				<addPercent stat="blowRate" val="#blowRate" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Prevents being pre-emptively attacked by monsters for 2 minutes, and decreases Evasion by 12, P. Def. by 45%, M. Def. by 45%, Accuracy by 12 and P. Atk. by 45%.
+		Level 2: Prevents being pre-emptively attacked by monsters for 2 minutes, and decreases Evasion by 8, P. Def. by 30%, M. Def. by 30%, Accuracy by 12 and P. Atk. by 45%.
+		Level 3: Prevents being pre-emptively attacked by monsters for 2 minutes, and decreases Evasion by 4, P. Def. by 15%, M. Def. by 15%, Accuracy by 12 and P. Atk. by 45%.
+	-->
+	<skill id="411" levels="3" name="Stealth">
+		<table name="#mpConsume"> 27 31 34 </table>
+		<table name="#rEvas"> 12 8 4 </table>
+		<table name="#amount"> 45 30 15 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<for>
+			<abnormal duration="120" stackLvl="#abnormalLvl" stackType="stealth" visualEffect="stealth">
+				<effect type="SilentMove" val="0" />
+				<sub stat="rEvas" val="#rEvas" />
+				<subPercent stat="pDef" val="#amount" />
+				<subPercent stat="mDef" val="#amount" />
+				<sub stat="accCombat" val="12" />
+				<subPercent stat="pAtk" val="45" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Detonates a sand bomb to decrease the enemy's Accuracy by 6 for 30 seconds.
+		Level 6: Detonates a sand bomb to decrease the enemy's Accuracy by 9 for 30 seconds.
+		Level 10: Detonates a sand bomb to decrease the enemy's Accuracy by 12 for 30 seconds.
+	-->
+	<skill id="412" levels="10" name="Sand Bomb">
+		<table name="#accCombat"> 6 6 6 6 6 9 9 9 9 12 </table>
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 25 27 28 29 30 31 32 33 34 34 </table>
+		<table name="#abnormalLvl"> 1 1 1 1 1 2 2 2 2 3 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="2" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<for>
+			<abnormal duration="30" landRate="80" stackLvl="#abnormalLvl" stackType="hit_down">
+				<effect type="Debuff" val="0" />
+				<sub stat="accCombat" val="#accCombat" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 2 minutes, increases P. Atk. by 62 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 2: For 2 minutes, increases P. Atk. by 67 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 3: For 2 minutes, increases P. Atk. by 73 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 4: For 2 minutes, increases P. Atk. by 78 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 5: For 2 minutes, increases P. Atk. by 83 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 6: For 2 minutes, increases P. Atk. by 89 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 7: For 2 minutes, increases P. Atk. by 94 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+		Level 8: For 2 minutes, increases P. Atk. by 100 and Atk. Spd. by 20%. Decreases range by 50%. Requires a bow.
+	-->
+	<skill id="413" levels="8" name="Rapid Fire">
+		<table name="#mpConsume"> 28 29 30 31 32 33 34 34 </table>
+		<table name="#pAtk"> 62 67 73 78 83 89 94 100 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="75000" />
+		<set name="weaponsAllowed" val="Bow" />
+		<for>
+			<abnormal duration="120" stackLvl="#abnormalLvl" stackType="snipe">
+				<effect type="Buff" val="0" />
+				<add stat="pAtk" val="#pAtk">
+					<using kind="Bow" />
+				</add>
+				<addPercent stat="pAtkSpd" val="20">
+					<using kind="Bow" />
+				</addPercent>
+				<subPercent stat="pAtkRange" val="50">
+					<using kind="Bow" />
+				</subPercent>
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 2 minutes, when using a bow, increases one's own Accuracy by 1, P. Atk. by 124, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+		Level 2: For 2 minutes, when using a bow, increases one's own Accuracy by 1, P. Atk. by 134, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+		Level 3: For 2 minutes, when using a bow, increases one's own Accuracy by 2, P. Atk. by 155, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+		Level 5: For 2 minutes, when using a bow, increases one's own Accuracy by 2, P. Atk. by 166, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+		Level 6: For 2 minutes, when using a bow, increases one's own Accuracy by 3, P. Atk. by 177, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+		Level 7: For 2 minutes, when using a bow, increases one's own Accuracy by 3, P. Atk. by 188, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+		Level 8: For 2 minutes, when using a bow, increases one's own Accuracy by 3, P. Atk. by 199, and Critical Damage by 20%. Decreases Atk. Spd. by 10%. Requires a bow.
+	-->
+	<skill id="414" levels="8" name="Dead Eye">
+		<table name="#mpConsume"> 28 29 30 31 32 33 34 34 </table>
+		<table name="#pAtk"> 124 134 155 155 166 177 188 199 </table>
+		<table name="#accCombat"> 1 1 2 2 2 3 3 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="75000" />
+		<set name="weaponsAllowed" val="Bow" />
+		<for>
+			<abnormal duration="120" stackLvl="#abnormalLvl" stackType="snipe">
+				<effect type="Buff" val="0" />
+				<subPercent stat="pAtkSpd" val="10">
+					<using kind="Bow" />
+				</subPercent>
+				<add stat="pAtk" val="#pAtk">
+					<using kind="Bow" />
+				</add>
+				<add stat="accCombat" val="#accCombat">
+					<using kind="Bow" />
+				</add>
+				<addPercentBase stat="pCritDmg" val="20">
+					<using kind="Bow" />
+				</addPercentBase>
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Decreases physical skill MP Consumption by 10% for 20 minutes.
+		Level 2: Decreases physical skill MP Consumption by 20% for 20 minutes.
+		Level 3: Decreases physical skill MP Consumption by 30% for 20 minutes.
+	-->
+	<skill id="415" levels="3" name="Spirit of Sagittarius">
+		<table name="#mpConsume"> 27 31 34 </table>
+		<table name="#abnormalLvl"> 2 4 6 </table>
+		<table name="#PhysicalMpConsumeRate"> 10 20 30 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="mp_cost_down">
+				<effect type="Buff" val="0" />
+				<subPercent stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Decreases physical skill Cooldown by 10% for 20 minutes.
+		Level 2: Decreases physical skill Cooldown by 15% for 20 minutes.
+		Level 3: Decreases physical skill Cooldown by 20% for 20 minutes.
+	-->
+	<skill id="416" levels="3" name="Blessing of Sagittarius">
+		<table name="#mpConsume"> 27 31 34 </table>
+		<table name="#abnormalLvl"> 2 4 6 </table>
+		<table name="#pReuse"> 10 15 20 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="reuse_delay_down">
+				<effect type="Buff" val="0" />
+				<subPercent stat="pReuse" val="#pReuse" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Sacrifices your own HP to regenerate MP with 36 Power.
+		Level 2: Sacrifices your own HP to regenerate MP with 39 Power.
+		Level 3: Sacrifices your own HP to regenerate MP with 41 Power.
+		Level 4: Sacrifices your own HP to regenerate MP with 43 Power.
+		Level 5: Sacrifices your own HP to regenerate MP with 46 Power.
+	-->
+	<skill id="417" levels="5" name="Pain of Sagittarius">
+		<table name="#hpConsume"> 318 343 366 387 407 </table>
+		<table name="#power"> 36 39 41 43 46 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="MANAHEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hpConsume" val="#hpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="8000" />
+	</skill>
+	<!-- 
+		Level 1: Increases Weight limit by 30%.
+		Level 2: Increases Weight limit by 40%.
+		Level 3: Increases Weight limit by 50%.
+	-->
+	<skill id="418" levels="3" name="Quiver of Holding">
+		<table name="#maxLoad"> 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="maxLoad" val="#maxLoad" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Channels the power of your guardian deity for 1 minute, increasing Debuff Resistance by 80%, Buff-canceling Attack Resistance by 40%, Speed by 10, Accuracy by 6 when using a sword, blunt weapon or spear/fist weapon, Atk. Spd. by 10%, Critical Rate by 33 when using a sword/spear, and Critical Damage by 33% when using a blunt/fist weapon. Decreases physical skill MP Consumption by 50% and the Healing power received by 50%. Available when HP is 30% or lower.
+		Level 2: Channels the power of your guardian deity for 1 minute, increasing Debuff Resistance by 80%, Buff-canceling Attack Resistance by 40%, Speed by 20, Accuracy by 6 when using a sword/blunt weapon/spear/fist weapon, Atk. Spd. by 20%, Critical Rate by 66 when using a sword/spear, and Critical Damage by 66% when using a blunt/fist weapon. Decreases physical skill MP Consumption by 50% and the Healing power received by 50%. Available when HP is 30% or lower.
+		Level 3: Channels the power of your guardian deity for 1 minute, increasing Debuff Resistance by 80%, Buff-canceling Attack Resistance by 40%, Speed by 30, Accuracy by 6 when using a sword/blunt weapon/spear/fist weapon, Atk. Spd. by 30%, Critical Rate by 100 when using a sword/spear, and Critical Damage by 100% when using a blunt/fist weapon. Decreases physical skill MP Consumption by 50% and the Healing power received by 50%. Available when HP is 30% or lower.
+	-->
+	<skill id="420" levels="3" name="Zealot">
+		<table name="#hpConsume"> 159 183 204 </table>
+		<table name="#mpConsume"> 106 122 136 </table>
+		<table name="#runSpd"> 10 20 30 </table>
+		<table name="#rCrit"> 33 66 100 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hpConsume" val="#hpConsume" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="300000" />
+		<cond addName="1" msgId="113">
+			<player hp="30" />
+		</cond>
+		<for>
+			<abnormal duration="60" stackLvl="#abnormalLvl" stackType="pd_up_special">
+				<effect type="Buff" val="0" />
+				<addPercent stat="debuffRes" val="80" />
+				<addPercent stat="cancelRes" val="40" />
+				<add stat="runSpd" val="#runSpd" />
+				<add stat="accCombat" val="6">
+					<using kind="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Fist" />
+				</add>
+				<addPercent stat="pAtkSpd" val="#runSpd">
+					<using kind="Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Fist" />
+				</addPercent>
+				<add stat="rCrit" val="#rCrit">
+					<using kind="Sword,Big Sword,Pole" />
+				</add>
+				<addPercentBase stat="pCritDmg" val="#rCrit">
+					<using kind="Blunt,Big Blunt,Dual Fist" />
+				</addPercentBase>
+				<subPercent stat="PhysicalMpConsumeRate" val="50" />
+				<subPercent stat="gainHp" val="50" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 2 minutes, increases the number of simultaneous targets by 1. Requires a polearm.
+		Level 2: For 2 minutes, increases the number of simultaneous targets by 2. Requires a polearm.
+		Level 3: For 2 minutes, increases the number of simultaneous targets by 3. Requires a polearm.
+		Level 4: For 2 minutes, increases the number of simultaneous targets by 4. Requires a polearm.
+		Level 5: For 2 minutes, increases the number of simultaneous targets by 5. Requires a polearm.
+	-->
+	<skill id="421" levels="5" name="Fell Swoop">
+		<table name="#mpConsume"> 27 29 31 33 34 </table>
+		<table name="#atkCountMax"> 1 2 3 4 5 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="75000" />
+		<set name="weaponsAllowed" val="Pole" />
+		<for>
+			<abnormal duration="120" stackLvl="#atkCountMax" stackType="polearm_attack">
+				<effect type="Buff" val="0" />
+				<add stat="atkCountMax" val="#atkCountMax">
+					<using kind="Pole" />
+				</add>
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Accuracy by 2 when using a spear. Continuously consumes MP proportionately to your level.
+		Level 2: Increases Accuracy by 3 when using a spear. Continuously consumes MP proportionately to your level.
+		Level 3: Increases Accuracy by 4 when using a spear. Continuously consumes MP proportionately to your level.
+	-->
+	<skill id="422" levels="3" name="Polearm Accuracy">
+		<table name="#mpConsume"> 11 13 14 </table>
+		<table name="#accCombat"> 2 3 4 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3">
+				<effect type="MpConsumePerLevel" val="0.2" />
+				<add stat="accCombat" val="#accCombat">
+					<using kind="Pole" />
+				</add>
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 5 minutes, increases Fire P. Atk. by 10 and Fire Resistance by 3.
+		Level 2: For 5 minutes, increases Fire P. Atk. by 15 and Fire Resistance by 5.
+		Level 3: For 5 minutes, increases Fire P. Atk. by 20 and Fire Resistance by 10.
+	-->
+	<skill id="423" levels="3" name="Dark Form">
+		<table name="#mpConsume"> 27 31 34 </table>
+		<table name="#vuln"> 3 5 10 </table>
+		<table name="#firePower"> 10 15 20 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="element" val="0" />
+		<for>
+			<abnormal duration="300" stackLvl="1" stackType="holy_attack">
+				<effect type="Buff" val="0" />
+				<add stat="firePower" val="#firePower" />
+				<add stat="fireRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Stun Resistance by 5 and Sleep Resistance by 10. Continuously consumes MP proportionately to your level.
+		Level 2: Increases Stun Resistance by 10 and Sleep Resistance by 20. Continuously consumes MP proportionately to your level.
+		Level 3: Increases Stun Resistance by 15 and Sleep Resistance by 30. Continuously consumes MP proportionately to your level.
+	-->
+	<skill id="424" levels="3" name="War Frenzy">
+		<table name="#mpConsume"> 11 13 14 </table>
+		<table name="#stunVuln"> 5 10 15 </table>
+		<table name="#sleepVuln"> 10 20 30 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3">
+				<effect type="MpConsumePerLevel" val="0.2" />
+				<addPercent stat="stunRes" val="#stunVuln" />
+				<addPercent stat="sleepRes" val="#sleepVuln" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Becomes possessed by a Hawk's soul. For 5 minutes, when using a fist weapon, increases Accuracy by 6, Critical Rate by 100, and Critical Damage by 30%. Requires a fist weapon. -->
+	<skill id="425" levels="1" name="Hawk Spirit Totem">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="74" />
+		<set name="mpConsume" val="68" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="weaponsAllowed" val="Dual Fist" />
+		<for>
+			<abnormal duration="300" stackLvl="1" stackType="possession">
+				<effect type="Buff" val="0" />
+				<add stat="accCombat" val="6">
+					<using kind="Dual Fist" />
+				</add>
+				<add stat="rCrit" val="100">
+					<using kind="Dual Fist" />
+				</add>
+				<addPercentBase stat="pCritDmg" val="30">
+					<using kind="Dual Fist" />
+				</addPercentBase>
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Transfers your strength to a party member. The effect can be canceled if you incur damage. -->
+	<skill id="426" levels="1" name="Battle Stance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="15000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Transfers your magical strength to a party member. The effect can be canceled if you incur damage. -->
+	<skill id="427" levels="1" name="Spell Stance">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="15000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+	</skill>
+	<!-- Decreases MP Consumption for song and dance by 10%. -->
+	<skill id="428" levels="1" name="Inner Rhythm">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<subPercent stat="DanceMpConsumeRate" val="10" />
+		</for>
+	</skill>
+	<!-- Increases P. Def. by 87.1 and Shield Defense by 10 when equipped with heavy armor. -->
+	<skill id="429" levels="1" name="Knighthood">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="78" />
+		<for>
+			<add stat="pDef" val="87.1">
+				<using kind="Heavy" />
+			</add>
+			<addPercent stat="sDef" val="10" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Max CP + 2% and Max HP + 1%.
+		Level 2: Max CP + 4% and Max HP + 2%. When equipped with heavy armor, received P./M. Critical Damage - 5%.
+		Level 3: Max CP + 6% and Max HP + 3%. When equipped with heavy armor, received P./M. Critical Damage - 10%.
+		Level 4: Max CP + 8% and Max HP + 4%. When equipped with heavy armor, received P./M. Critical Damage - 15%.
+		Level 5: Max CP + 10% and Max HP + 5%. When equipped with heavy armor, received P./M. Critical Damage - 20%.
+		Level 6: Max CP + 12% and Max HP + 6%. When equipped with heavy armor, received P./M. Critical Damage - 25%.
+		Level 7: Max CP + 14% and Max HP + 7%. When equipped with heavy armor, received P./M. Critical Damage - 30%.
+		Level 8: Max CP + 16% and Max HP + 8%. When equipped with heavy armor, received P./M. Critical Damage - 35%.
+	-->
+	<skill id="430" levels="8" name="Master of Combat">
+		<table name="#maxCp"> 2 4 6 8 10 12 14 16 </table>
+		<table name="#maxHp"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#critVuln"> 0 5 10 15 20 25 30 35 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="maxCp" val="#maxCp" />
+			<addPercent stat="maxHp" val="#maxHp" />
+			<subPercent stat="critVuln" val="#critVuln">
+				<using kind="Heavy" />
+			</subPercent>
+			<subPercent stat="magicCritVuln" val="#critVuln">
+				<using kind="Heavy" />
+			</subPercent>
+		</for>
+	</skill>
+	<!-- When using a bow, increases P. Atk. by 200 and maximum range by 50. -->
+	<skill id="431" levels="1" name="Archery">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pAtk" val="200">
+				<using kind="Bow" />
+			</add>
+			<add stat="pAtkRange" val="50">
+				<using kind="Bow" />
+			</add>
+		</for>
+	</skill>
+	<!-- When using a dagger, increases P. Atk. by 70 and Critical Rate by 3%. -->
+	<skill id="432" levels="1" name="Assassination">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pAtk" val="70">
+				<using kind="Dagger,Dual Dagger" />
+			</add>
+			<addPercent stat="blowRate" val="3" />
+		</for>
+	</skill>
+	<!-- Increases Fire/Water/Wind/Earth Resistance by 5 and M. Atk. by 3%. -->
+	<skill id="433" levels="1" name="Arcane Roar">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="fireRes" val="5" />
+			<add stat="windRes" val="5" />
+			<add stat="waterRes" val="5" />
+			<add stat="earthRes" val="5" />
+			<addPercent stat="mAtk" val="3" />
+		</for>
+	</skill>
+	<!-- Increases Dark Attack Resistance by 10 and M. Atk. by 3%. -->
+	<skill id="434" levels="1" name="Necromancy">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="darkRes" val="10" />
+			<addPercent stat="mAtk" val="3" />
+		</for>
+	</skill>
+	<!-- When equipped with light armor, increases P. Def. by 80 and Casting Spd. by 5%. When equipped with a robe, increases P. Def. by 60 and Casting Spd. by 7%, and decreases MP Consumption for magic skills by 3%. -->
+	<skill id="435" levels="1" name="Summon Lore">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pDef" val="80">
+				<using kind="Light" />
+			</add>
+			<addPercent stat="mAtkSpd" val="5">
+				<using kind="Light" />
+			</addPercent>
+			<add stat="pDef" val="60">
+				<using kind="Magic" />
+			</add>
+			<addPercent stat="mAtkSpd" val="7">
+				<using kind="Magic" />
+			</addPercent>
+			<subPercent stat="MagicalMpConsumeRate" val="3">
+				<using kind="Magic" />
+			</subPercent>
+		</for>
+	</skill>
+	<!-- Decreases MP Consumption for magic skills by 5%. -->
+	<skill id="436" levels="1" name="Divine Lore">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<subPercent stat="MagicalMpConsumeRate" val="5" />
+		</for>
+	</skill>
+	<!-- Sings a Song of Silence. Blocks all the enemies' physical/magic skills for 10 seconds. -->
+	<skill id="437" levels="7" name="Song of Silence">
+		<table name="#mpConsume"> 50 75 90 126 139 153 166 </table>
+		<table name="#hitTime"> 2500 2400 2300 2200 2100 2000 1900 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="#hitTime" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="120000" />
+		<set name="skillRadius" val="150" />
+		<set name="isDebuff" val="true" />
+		<set name="saveVs" val="MEN" />
+		<set name="aggroPoints" val="523" />
+		<for>
+			<abnormal duration="10" effectType="DEBUFF" landRate="80" stackLvl="1" stackType="silence_all">
+				<effect type="SilenceMagicPhysical" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- For 5 min., has a chance of reflecting melee damage to the attacker. -->
+	<skill id="439" levels="1" name="Shield of Revenge">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="79" />
+		<set name="mpConsume" val="78" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="150000" />
+		<for>
+			<abnormal duration="300" stackLvl="1" stackType="counter_skill">
+				<effect type="Buff" val="0" />
+				<add stat="vengeancePdam" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases combat spirit to recover CP by 1000. -->
+	<skill id="440" levels="1" name="Braveheart">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="COMBATPOINTHEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="57" />
+		<set name="power" val="1000" />
+		<set name="hitTime" val="1500" />
+		<set name="reuseDelay" val="150000" />
+	</skill>
+	<!-- Uses Momentum to recover 60 HP and 10 MP per second for 1 minute. While skill is in effect, user is unable to move, and P. Def. is decreased by 80%. The effect is canceled if user is stunned. Must recharge 3rd Momentum level. -->
+	<skill id="441" levels="1" name="Force Meditation">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="numCharges" val="3" />
+		<set name="removedOnDamage" val="true" />
+		<cond addName="1" msgId="113">
+			<player Charges="3" />
+		</cond>
+		<for>
+			<abnormal duration="60" stackLvl="1" stackType="force_meditation">
+				<effect type="Paralyze" val="0" />
+				<subPercent stat="pDef" val="80" />
+			</abnormal>
+			<abnormal count="60" duration="1" noicon="1">
+				<effect type="HealOverTime" val="60" />
+			</abnormal>
+			<abnormal count="60" duration="1" noicon="1">
+				<effect type="ManaHealOverTime" val="10" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Uses Momentum make user invincible against standard targets, skills and debuffs for 10 seconds. Requires a dualsword. Requires 5th stage Momentum. -->
+	<skill id="442" levels="1" name="Sonic Barrier">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="65" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="weaponsAllowed" val="Dual Sword" />
+		<set name="numCharges" val="5" />
+		<set name="removedOnAction" val="true" />
+		<cond addName="1" msgId="113">
+			<player Charges="5" />
+		</cond>
+		<for>
+			<abnormal duration="10" stackLvl="1" stackType="invincibility" visualEffect="invincible">
+				<effect type="Invincible" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Makes user invincible against standard targets, skills and debuffs for 10 seconds. Requires a fist weapon. Requires 4th Momentum level. -->
+	<skill id="443" levels="1" name="Force Barrier">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="72" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="weaponsAllowed" val="Dual Fist" />
+		<set name="numCharges" val="4" />
+		<set name="removedOnAction" val="true" />
+		<cond addName="1" msgId="113">
+			<player Charges="4" />
+		</cond>
+		<for>
+			<abnormal duration="10" stackLvl="1" stackType="invincibility" visualEffect="invincible">
+				<effect type="Invincible" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- When used on nearby corpses that are in a Spoil state, extra items may be obtained. -->
+	<skill id="444" levels="1" name="Sweeper Festival">
+		<set name="target" val="TARGET_AURA_CORPSE_MOB" />
+		<set name="skillType" val="SWEEP" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="12" />
+		<set name="power" val="100" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="20" />
+		<set name="effectRange" val="400" />
+	</skill>
+	<!-- For 1 minute, provides a chance to cancel the target of an attacking enemy. -->
+	<skill id="445" levels="1" name="Mirage">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="79" />
+		<set name="mpConsume" val="43" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="150000" />
+		<set name="aggroPoints" val="673" />
+		<for>
+			<abnormal duration="60" stackLvl="1" stackType="mirage">
+				<effect activationChance="80" chanceType="ON_ATTACKED" triggeredId="5144" type="ChanceSkillTrigger" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Allows user to evade short-range and long-range physical attack skills for 10 seconds. -->
+	<skill id="446" levels="1" name="Evasion">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="29" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="150000" />
+		<for>
+			<abnormal duration="10" stackLvl="1" stackType="avoid_skill">
+				<effect type="Buff" val="0" />
+				<add stat="pSkillEvas" val="90" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- For 10 seconds, transfers damage from melee attacks and skills back to the enemy. -->
+	<skill id="447" levels="1" name="Counterattack">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="79" />
+		<set name="mpConsume" val="29" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="150000" />
+		<for>
+			<abnormal duration="10" stackLvl="1" stackType="counter_skill">
+				<effect type="Buff" val="0" />
+				<add stat="vengeancePdam" val="90" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Summons a Swoop Cannon. Requires 27 A-grade Crystals. -->
+	<skill id="448" levels="1" name="Summon Swoop Cannon">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="1461" />
+		<set name="itemConsumeCount" val="27" />
+		<set name="mpConsume" val="530" />
+		<set name="hitTime" val="10000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="npcId" val="14839" />
+		<set name="summonTotalLifeTime" val="1200000" />
+		<set name="summonTimeLostIdle" val="1000" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="itemConsumeIdOT" val="2132" />
+		<set name="itemConsumeCountOT" val="13" />
+		<set name="itemConsumeSteps" val="60" />
+	</skill>
+	<!-- 
+		Level 1: Summons Attractive Cubic. Attractive Cubic can continuously use hate and hold magic on the enemy. Requires 8 Spirit Ore.
+		Level 2: Summons Attractive Cubic. Attractive Cubic can continuously use hate and hold magic on the enemy. Requires 9 Spirit Ore.
+		Level 3: Summons Attractive Cubic. Attractive Cubic can continuously use hate and hold magic on the enemy. Requires 10 Spirit Ore.
+		Level 4: Summons Attractive Cubic. Attractive Cubic can continuously use hate and hold magic on the enemy. Requires 11 Spirit Ore.
+	-->
+	<skill id="449" levels="4" name="Summon Attractive Cubic">
+		<table name="#itemConsumeCount"> 8 9 10 11 </table>
+		<table name="#magicLvl"> 62 66 70 74 </table>
+		<table name="#mpConsume"> 58 62 65 69 </table>
+		<table name="#power"> 1026 1264 1530 1822 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SUMMON" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="6000" />
+		<set name="reuseDelay" val="5000" />
+		<set name="isCubic" val="true" />
+		<set name="maxcount" val="300" />
+		<set name="activationchance" val="50" />
+		<set name="activationtime" val="8" />
+		<set name="npcId" val="9" />
+		<set name="summonTotalLifeTime" val="900000" />
+	</skill>
+	<!-- 
+		Level 1: For 20 seconds, frightens an angel into fleeing. Consumes 5 Soulstone. Lethal Strike is possible.
+		Level 2: For 20 seconds, frightens an angel into fleeing. Consumes 6 Soulstone. Lethal Strike is possible.
+		Level 3: For 20 seconds, frightens an angel into fleeing. Consumes 7 Soulstone. Lethal Strike is possible.
+		Level 5: For 20 seconds, frightens an angel into fleeing. Consumes 8 Soulstone. Lethal Strike is possible.
+		Level 7: For 20 seconds, frightens an angel into fleeing. Consumes 9 Soulstone. Lethal Strike is possible.
+		Level 9: For 20 seconds, frightens an angel into fleeing. Consumes 10 Soulstone. Lethal Strike is possible.
+	-->
+	<skill id="450" levels="10" name="Banish Seraph">
+		<table name="#itemConsumeCount"> 5 6 7 7 8 8 9 9 10 10 </table>
+		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 50 53 55 58 59 61 63 65 67 68 </table>
+		<table name="#aggro"> 523 549 566 582 597 611 624 635 646 655 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeId" val="1785" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="650" />
+		<set name="isDebuff" val="true" />
+		<set name="element" val="5" />
+		<set name="elementPower" val="20" />
+		<set name="lethal2" val="25" />
+		<set name="aggroPoints" val="#aggro" />
+		<cond addName="1" msgId="113">
+			<target race_id="8" />
+		</cond>
+		<for>
+			<abnormal count="10" duration="2" landRate="30">
+				<effect type="Fear" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Uses Momentum to increase Speed by 40 for 15 seconds. Need to recharge 2nd stage of Momentum. Requires a dualsword.
+		Level 2: Uses Momentum to increase Speed by 66 for 15 seconds. Requires 3rd stage of Momentum recharge. Requires a dualsword.
+	-->
+	<skill id="451" levels="2" name="Sonic Move">
+		<table name="#numCharges"> 2 3 </table>
+		<table name="#runSpd"> 40 66 </table>
+		<table name="#mpConsume"> 29 32 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="weaponsAllowed" val="Dual Sword" />
+		<set name="numCharges" val="#numCharges" />
+		<cond addName="1" msgId="113">
+			<player Charges="#numCharges" />
+		</cond>
+		<for>
+			<abnormal duration="15" stackLvl="1" stackType="speed_up_special">
+				<effect type="Buff" val="0" />
+				<add stat="runSpd" val="#runSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Performs a mighty foot stomp that stuns nearby enemies for 9 seconds. Requires a polearm. Target cancel is possible. -->
+	<skill id="452" levels="5" name="Stun Stomp">
+		<table name="#landRate"> 40 50 60 70 80 </table>
+		<table name="#magicLvl"> 55 60 64 68 72 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="52" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="isDebuff" val="true" />
+		<set name="weaponsAllowed" val="Pole" />
+		<set name="saveVs" val="CON" />
+		<for>
+			<abnormal duration="9" landRate="80" stackLvl="2" stackType="stun" visualEffect="stun">
+				<effect type="Stun" val="0" />
+			</abnormal>
+			<abnormal effectType="DEBUFF" landRate="#landRate" noicon="1">
+				<effect type="RemoveTarget" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Allows you to escape from a captured state. -->
+	<skill id="453" levels="1" name="Escape Shackle">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="NEGATE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="60" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="15000" />
+		<set name="negateAbnormals" val="root_physically,3" />
+	</skill>
+	<!-- 
+		Level 1: Use your spirit to escape from an immobile state. Requires Level 2 Momentum.
+		Level 2: Use your spirit to escape from a slow or immobile state. Requires Level 3 Momentum.
+	-->
+	<skill id="461" levels="2" name="Break Duress">
+		<table name="#mpConsume"> 33 37 </table>
+		<table name="#negateAbnormals">
+			root_physically,3;root_magically,3
+			speed_down,3;root_physically,3;root_magically,3
+		</table>
+		<table name="#numCharges"> 2 3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="NEGATE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="3000" />
+		<set name="reuseDelay" val="4000" />
+		<set name="negateAbnormals" val="#negateAbnormals" />
+		<set name="numCharges" val="#numCharges" />
+		<cond addName="1" msgId="113">
+			<player Charges="#numCharges" />
+		</cond>
+	</skill>
+	<!-- Body of original sin. Only light armor types can equip it. -->
+	<skill id="462" levels="1" name="Guilted Body">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="1" />
+		<for>
+			<subPercent stat="gainHp" val="5" />
+			<addPercent stat="maxLoad" val="25" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases P. Atk. by 8.5% and additionally by 2.
+		Level 2: Increases P. Atk. by 8.5% and additionally by 3.
+		Level 3: Increases P. Atk. by 8.5% and additionally by 4.
+	-->
+	<skill id="463" levels="3" name="Weapon Mastery">
+		<table name="#magicLvl"> 5 10 15 </table>
+		<table name="#pAtk"> 2 3 4 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<for>
+			<addPercent stat="pAtk" val="8.5" />
+			<add stat="pAtk" val="#pAtk" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases P. Def. by 9 and MP Recovery Bonus by 10%.
+		Level 2: Increases P. Def. by 11 and MP Recovery Bonus by 10%.
+		Level 3: Increases P. Def. by 12 and MP Recovery Bonus by 10%.
+		Level 4: Increases P. Def. by 13, MP Recovery Bonus by 10%, and Evasion by 3.
+		Level 5: Increases P. Def. by 14, MP Recovery Bonus by 10%, and Evasion by 3.
+	-->
+	<skill id="464" levels="5" name="Armor Mastery">
+		<table name="#magicLvl"> 5 8 10 13 15 </table>
+		<table name="#pDef"> 9 11 12 13 14 </table>
+		<table name="#rEvas"> 0 0 0 3 3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<for>
+			<add stat="pDef" val="#pDef" />
+			<addPercent stat="regMp" val="10" />
+			<add stat="rEvas" val="#rEvas" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: When equipped with light armor, increases P. Def. by 0.9 and Evasion by 3, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 2: When equipped with light armor, increases P. Def. by 2.2 and Evasion by 3, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 3: When equipped with light armor, increases P. Def. by 3.2 and Evasion by 5, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 4: When equipped with light armor, increases P. Def. by 4.2 and Evasion by 5, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 5: When equipped with light armor, increases P. Def. by 5.3 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 6: When equipped with light armor, increases P. Def. by 6 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 7: When equipped with light armor, increases P. Def. by 6.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 8: When equipped with light armor, increases P. Def. by 8.4 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 9: When equipped with light armor, increases P. Def. by 9.2 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 10: When equipped with light armor, increases P. Def. by 10.1 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 11: When equipped with light armor, increases P. Def. by 11.9 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 12: When equipped with light armor, increases P. Def. by 12.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 13: When equipped with light armor, increases P. Def. by 13.7 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 14: When equipped with light armor, increases P. Def. by 15.7 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 15: When equipped with light armor, increases P. Def. by 16.7 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 16: When equipped with light armor, increases P. Def. by 17.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 17: When equipped with light armor, increases P. Def. by 18.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 18: When equipped with light armor, increases P. Def. by 19.9 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 19: When equipped with light armor, increases P. Def. by 21.1 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 20: When equipped with light armor, increases P. Def. by 22.2 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 21: When equipped with light armor, increases P. Def. by 23.4 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 22: When equipped with light armor, increases P. Def. by 24.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 23: When equipped with light armor, increases P. Def. by 25.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 24: When equipped with light armor, increases P. Def. by 27 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 25: When equipped with light armor, increases P. Def. by 28.2 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 26: When equipped with light armor, increases P. Def. by 29.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 27: When equipped with light armor, increases P. Def. by 30.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 28: When equipped with light armor, increases P. Def. by 32.1 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 29: When equipped with light armor, increases P. Def. by 33.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 30: When equipped with light armor, increases P. Def. by 34.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 31: When equipped with light armor, increases P. Def. by 36.2 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 32: When equipped with light armor, increases P. Def. by 37.6 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 33: When equipped with light armor, increases P. Def. by 39.1 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 34: When equipped with light armor, increases P. Def. by 40.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 35: When equipped with light armor, increases P. Def. by 42 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 36: When equipped with light armor, increases P. Def. by 43.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 37: When equipped with light armor, increases P. Def. by 44.9 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 38: When equipped with light armor, increases P. Def. by 46.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 39: When equipped with light armor, increases P. Def. by 48 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 40: When equipped with light armor, increases P. Def. by 49.5 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 41: When equipped with light armor, increases P. Def. by 51.1 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 42: When equipped with light armor, increases P. Def. by 52.7 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 43: When equipped with light armor, increases P. Def. by 54.2 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 44: When equipped with light armor, increases P. Def. by 55.8 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 45: When equipped with light armor, increases P. Def. by 57.4 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 46: When equipped with light armor, increases P. Def. by 59.1 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 47: When equipped with light armor, increases P. Def. by 60.7 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 48: When equipped with light armor, increases P. Def. by 62.3 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 49: When equipped with light armor, increases P. Def. by 63.9 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+		Level 50: When equipped with light armor, increases P. Def. by 65.6 and Evasion by 6, and decreases the enemy's Critical Rate/Damage by 5%.
+	-->
+	<skill id="465" levels="50" name="Light Armor Mastery">
+		<table name="#pDef"> 0.9 2.2 3.2 4.2 5.3 6 6.8 8.4 9.2 10.1 11.9 12.8 13.7 15.7 16.7 17.8 18.8 19.9 21.1 22.2 23.4 24.5 25.8 27 28.2 29.5 30.8 32.1 33.5 34.8 36.2 37.6 39.1 40.5 42 43.5 44.9 46.5 48 49.5 51.1 52.7 54.2 55.8 57.4 59.1 60.7 62.3 63.9 65.6 </table>
+		<table name="#rEvas"> 3 3 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pDef" val="#pDef">
+				<using kind="Light" />
+			</add>
+			<add stat="rEvas" val="#rEvas">
+				<using kind="Light" />
+			</add>
+			<addPercent stat="critDamEvas" val="5">
+				<using kind="Light" />
+			</addPercent>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases M. Def. by 11.
+		Level 2: Increases M. Def. by 12.
+		Level 3: Increases M. Def. by 13.
+		Level 4: Increases M. Def. by 15.
+		Level 5: Increases M. Def. by 17.
+		Level 6: Increases M. Def. by 19.
+		Level 7: Increases M. Def. by 20.
+		Level 8: Increases M. Def. by 22.
+		Level 9: Increases M. Def. by 24.
+		Level 10: Increases M. Def. by 26 and Magic Damage Resistance by 5%.
+		Level 11: Increases M. Def. by 27 and Magic Damage Resistance by 5%.
+		Level 12: Increases M. Def. by 28 and Magic Damage Resistance by 5%.
+		Level 13: Increases M. Def. by 30 and Magic Damage Resistance by 5%.
+		Level 14: Increases M. Def. by 31 and Magic Damage Resistance by 5%.
+		Level 15: Increases M. Def. by 32 and Magic Damage Resistance by 5%.
+		Level 16: Increases M. Def. by 35 and Magic Damage Resistance by 5%.
+		Level 17: Increases M. Def. by 36 and Magic Damage Resistance by 5%.
+		Level 18: Increases M. Def. by 37 and Magic Damage Resistance by 5%.
+		Level 19: Increases M. Def. by 40 and Magic Damage Resistance by 10%.
+		Level 20: Increases M. Def. by 42 and Magic Damage Resistance by 10%.
+		Level 21: Increases M. Def. by 43 and Magic Damage Resistance by 10%.
+		Level 22: Increases M. Def. by 44 and Magic Damage Resistance by 10%.
+		Level 23: Increases M. Def. by 46 and Magic Damage Resistance by 10%.
+		Level 24: Increases M. Def. by 47 and Magic Damage Resistance by 10%.
+		Level 25: Increases M. Def. by 49 and Magic Damage Resistance by 10%.
+		Level 26: Increases M. Def. by 51 and Magic Damage Resistance by 10%.
+		Level 27: Increases M. Def. by 52 and Magic Damage Resistance by 10%.
+		Level 28: Increases M. Def. by 54 and Magic Damage Resistance by 10%.
+		Level 29: Increases M. Def. by 56 and Magic Damage Resistance by 10%.
+		Level 30: Increases M. Def. by 57 and Magic Damage Resistance by 10%.
+		Level 31: Increases M. Def. by 59 and Magic Damage Resistance by 15%.
+		Level 32: Increases M. Def. by 61 and Magic Damage Resistance by 15%.
+		Level 33: Increases M. Def. by 63 and Magic Damage Resistance by 15%.
+		Level 34: Increases M. Def. by 64 and Magic Damage Resistance by 15%.
+		Level 35: Increases M. Def. by 66 and Magic Damage Resistance by 15%.
+		Level 36: Increases M. Def. by 68 and Magic Damage Resistance by 15%.
+		Level 37: Increases M. Def. by 70 and Magic Damage Resistance by 15%.
+		Level 38: Increases M. Def. by 72 and Magic Damage Resistance by 15%.
+		Level 39: Increases M. Def. by 74 and Magic Damage Resistance by 15%.
+		Level 40: Increases M. Def. by 76 and Magic Damage Resistance by 15%.
+		Level 41: Increases M. Def. by 78 and Magic Damage Resistance by 15%.
+		Level 42: Increases M. Def. by 80 and Magic Damage Resistance by 15%.
+		Level 43: Increases M. Def. by 82 and Magic Damage Resistance by 15%.
+		Level 44: Increases M. Def. by 84 and Magic Damage Resistance by 20%.
+		Level 45: Increases M. Def. by 86 and Magic Damage Resistance by 20%.
+		Level 46: Increases M. Def. by 88 and Magic Damage Resistance by 20%.
+		Level 47: Increases M. Def. by 91 and Magic Damage Resistance by 20%.
+		Level 48: Increases M. Def. by 93 and Magic Damage Resistance by 20%.
+		Level 49: Increases M. Def. by 95 and Magic Damage Resistance by 20%.
+		Level 50: Increases M. Def. by 97 and Magic Damage Resistance by 25%.
+		Level 51: Increases M. Def. by 99 and Magic Damage Resistance by 25%.
+		Level 52: Increases M. Def. by 102 and Magic Damage Resistance by 25%.
+		Level 53: Increases M. Def. by 104 and Magic Damage Resistance by 25%.
+		Level 54: Increases M. Def. by 106 and Magic Damage Resistance by 25%.
+		Level 55: Increases M. Def. by 108 and Magic Damage Resistance by 25%.
+	-->
+	<skill id="466" levels="55" name="Magic Immunity">
+		<table name="#mDef"> 11 12 13 15 17 19 20 22 24 26 27 28 30 31 32 35 36 37 40 42 43 44 46 47 49 51 52 54 56 57 59 61 63 64 66 68 70 72 74 76 78 80 82 84 86 88 91 93 95 97 99 102 104 106 108 </table>
+		<table name="#magicDamVul"> 0 0 0 0 0 0 0 0 0 5 5 5 5 5 5 5 5 5 10 10 10 10 10 10 10 10 10 10 10 10 15 15 15 15 15 15 15 15 15 15 15 15 15 20 20 20 20 20 20 25 25 25 25 25 25 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="mDef" val="#mDef" />
+			<subPercent stat="magicDamVul" val="#magicDamVul" />
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Absorbs a soul. 73 or more XP is needed to absorb a soul. Maximum of 5 souls can be absorbed.
+		Level 2: Absorbs souls. 147 or more XP is needed to absorb a soul. Maximum of 8 souls can be absorbed.
+		Level 3: Absorbs souls. 220 or more XP is needed to absorb a soul. Maximum of 10 souls can be absorbed.
+		Level 4: Absorbs souls. 294 or more XP is needed to absorb a soul. There is a 15 percent chance of absorbing an additional soul on a critical hit. Maximum of 12 souls can be absorbed.
+		Level 5: Absorbs souls. 385 or more XP is needed to absorb a soul. There is a 15 percent chance of absorbing an additional soul on a critical hit. Maximum of 14 souls can be absorbed.
+		Level 6: Absorbs souls. 486 or more XP is needed to absorb a soul. There is a 15 percent chance of absorbing an additional soul on a critical hit. Maximum of 16 souls can be absorbed.
+		Level 7: Absorbs souls. 614 or more XP is needed to absorb a soul. There is a 15 percent chance of absorbing an additional soul on a critical hit. Maximum of 18 souls can be absorbed.
+		Level 8: Absorbs souls. 777 or more XP is needed to absorb a soul. There is a 15 percent chance of absorbing an additional soul on a critical hit. Maximum of 20 souls can be absorbed.
+		Level 9: Absorbs souls. 960 or more XP is needed to absorb a soul. There is a 20 percent chance of absorbing an additional soul on a critical hit. Maximum of 21 souls can be absorbed.
+		Level 10: Absorbs souls. 1109 or more XP is needed to absorb a soul. There is a 20 percent chance of absorbing an additional soul on a critical hit. Maximum of 22 souls can be absorbed.
+		Level 11: Absorbs souls. 1269 or more XP is needed to absorb a soul. There is a 20 percent chance of absorbing an additional soul on a critical hit. Maximum of 23 souls can be absorbed.
+		Level 12: Absorbs souls. 1440 or more XP is needed to absorb a soul. There is a 20 percent chance of absorbing an additional soul on a critical hit. Maximum of 24 souls can be absorbed.
+		Level 13: Absorbs souls. 1622 or more XP is needed to absorb a soul. There is a 20 percent chance of absorbing an additional soul on a critical hit. Maximum of 25 souls can be absorbed.
+		Level 14: Absorbs souls. 1815 or more XP is needed to absorb a soul. There is a 20 percent chance of absorbing an additional soul on a critical hit. Maximum of 26 souls can be absorbed.
+		Level 15: Absorbs souls. 2018 or more XP is needed to absorb a soul. There is a 25 percent chance of absorbing an additional soul on a critical hit. Maximum of 27 souls can be absorbed.
+		Level 16: Absorbs souls. 2160 or more XP is needed to absorb a soul. There is a 25 percent chance of absorbing an additional soul on a critical hit. Maximum of 28 souls can be absorbed.
+		Level 17: Absorbs souls. 2306 or more XP is needed to absorb a soul. There is a 25 percent chance of absorbing an additional soul on a critical hit. Maximum of 29 souls can be absorbed.
+		Level 18: Absorbs souls. 2457 or more XP is needed to absorb a soul. There is a 25 percent chance of absorbing an additional soul on a critical hit. Maximum of 30 souls can be absorbed.
+		Level 19: Absorbs souls. 2613 or more XP is needed to absorb a soul. There is a 25 percent chance of absorbing an additional soul on a critical hit. Maximum of 32 souls can be absorbed.
+		Level 20: Absorbs souls. 2774 or more XP is needed to absorb a soul. There is a 25 percent chance of absorbing an additional soul on a critical hit. Maximum of 34 souls can be absorbed.
+		Level 21: Absorbs souls. 2940 or more XP is needed to absorb a soul. There is a 30 percent chance of absorbing an additional soul on a critical hit. Maximum of 36 souls can be absorbed.
+		Level 22: Absorbs souls. 3110 or more XP is needed to absorb a soul. There is a 30 percent chance of absorbing an additional soul on a critical hit. Maximum of 38 souls can be absorbed.
+		Level 23: Absorbs souls. 3285 or more XP is needed to absorb a soul. There is a 30 percent chance of absorbing an additional soul on a critical hit. Maximum of 40 souls can be absorbed.
+	-->
+	<skill id="467" levels="23" name="Soul Mastery">
+		<table name="#activationChance"> 0 0 0 15 15 15 15 15 20 20 20 20 20 20 25 25 25 25 25 25 30 30 30 </table>
+		<table name="#expNeeded"> 73 147 220 294 385 486 614 777 960 1109 1269 1440 1622 1815 2018 2160 2306 2457 2613 2774 2940 3110 3285 </table>
+		<table name="#magicLvl"> 5 10 15 20 24 28 32 36 40 43 46 49 52 55 58 60 62 64 66 68 70 72 74 </table>
+		<table name="#num_souls"> 5 8 10 12 14 16 18 20 21 22 23 24 25 26 27 28 29 30 32 34 36 38 40 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="activationChance" val="#activationChance" />
+		<set name="chanceType" val="ON_CRIT" />
+		<set name="expNeeded" val="#expNeeded" />
+		<set name="num_souls" val="#num_souls" />
+		<set name="triggeredId" val="5548" />
+		<set name="triggeredLevel" val="1" />
+	</skill>
+	<!-- 
+		Level 1: Attacks an enemy with 30 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 2: Attacks an enemy with 32 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 3: Attacks an enemy with 35 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 4: Attacks an enemy with 46 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 5: Attacks an enemy with 51 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 6: Attacks an enemy with 55 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 7: Attacks an enemy with 71 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 8: Attacks an enemy with 78 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+		Level 9: Attacks an enemy with 84 Power added to P. Atk. Requires a sword, blunt weapon or short sword. Over-hit is possible.
+	-->
+	<skill id="468" levels="9" name="Fallen Attack">
+		<table name="#magicLvl"> 3 4 5 8 9 10 13 14 15 </table>
+		<table name="#mpConsume"> 9 9 10 11 12 13 16 16 17 </table>
+		<table name="#power"> 30 32 35 46 51 55 71 78 84 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Sword, Blunt, Rapier, Big Blunt, Big Sword" />
+	</skill>
+	<!-- Increases Atk. Spd. by 15% for 20 minutes. -->
+	<skill id="469" levels="1" name="Rapid Attack">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="10" />
+		<set name="mpConsume" val="14" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="2000" />
+		<for>
+			<abnormal duration="1200" stackLvl="1" stackType="attack_time_down">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtkSpd" val="15" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases P. Atk. by 5.2 when using an ancient sword.
+		Level 2: Increases P. Atk. by 8.1 when using an ancient sword.
+		Level 3: Increases P. Atk. by 9.9 when using an ancient sword.
+		Level 4: Increases P. Atk. by 11.9 when using an ancient sword.
+		Level 5: Increases P. Atk. by 14.1 when using an ancient sword.
+		Level 6: Increases P. Atk. by 16.6 when using an ancient sword.
+		Level 7: Increases P. Atk. by 19.4 when using an ancient sword.
+		Level 8: Increases P. Atk. by 22.5 when using an ancient sword.
+		Level 9: Increases P. Atk. by 25.9 when using an ancient sword.
+		Level 10: Increases P. Atk. by 27.7 when using an ancient sword.
+		Level 11: Increases P. Atk. by 29.6 when using an ancient sword.
+		Level 12: Increases P. Atk. by 31.6 when using an ancient sword.
+		Level 13: Increases P. Atk. by 33.7 when using an ancient sword.
+		Level 14: Increases P. Atk. by 35.9 when using an ancient sword.
+		Level 15: Increases P. Atk. by 38.1 when using an ancient sword.
+		Level 16: Increases P. Atk. by 40.5 when using an ancient sword.
+		Level 17: Increases P. Atk. by 42.9 when using an ancient sword.
+		Level 18: Increases P. Atk. by 45.4 when using an ancient sword.
+		Level 19: Increases P. Atk. by 48.1 when using an ancient sword.
+		Level 20: Increases P. Atk. by 50.8 when using an ancient sword.
+		Level 21: Increases P. Atk. by 53.6 when using an ancient sword.
+		Level 22: Increases P. Atk. by 56.5 when using an ancient sword.
+		Level 23: Increases P. Atk. by 59.4 when using an ancient sword.
+		Level 24: Increases P. Atk. by 62.5 when using an ancient sword.
+		Level 25: Increases P. Atk. by 65.6 when using an ancient sword.
+		Level 26: Increases P. Atk. by 68.9 when using an ancient sword.
+		Level 27: Increases P. Atk. by 72.2 when using an ancient sword.
+		Level 28: Increases P. Atk. by 75.6 when using an ancient sword.
+		Level 29: Increases P. Atk. by 79 when using an ancient sword.
+		Level 30: Increases P. Atk. by 82.5 when using an ancient sword.
+		Level 31: Increases P. Atk. by 86.1 when using an ancient sword.
+		Level 32: Increases P. Atk. by 89.8 when using an ancient sword.
+		Level 33: Increases P. Atk. by 93.5 when using an ancient sword.
+		Level 34: Increases P. Atk. by 97.3 when using an ancient sword.
+		Level 35: Increases P. Atk. by 101.1 when using an ancient sword.
+		Level 36: Increases P. Atk. by 104.9 when using an ancient sword.
+		Level 37: Increases P. Atk. by 108.8 when using an ancient sword.
+		Level 38: Increases P. Atk. by 112.7 when using an ancient sword.
+		Level 39: Increases P. Atk. by 116.7 when using an ancient sword.
+		Level 40: Increases P. Atk. by 120.6 when using an ancient sword.
+		Level 41: Increases P. Atk. by 124.6 when using an ancient sword.
+		Level 42: Increases P. Atk. by 128.5 when using an ancient sword.
+		Level 43: Increases P. Atk. by 132.5 when using an ancient sword.
+		Level 44: Increases P. Atk. by 136.4 when using an ancient sword.
+		Level 45: Increases P. Atk. by 140.3 when using an ancient sword.
+	-->
+	<skill id="472" levels="45" name="Ancient Sword Mastery">
+		<table name="#pAtk"> 5.2 8.1 9.9 11.9 14.1 16.6 19.4 22.5 25.9 27.7 29.6 31.6 33.7 35.9 38.1 40.5 42.9 45.4 48.1 50.8 53.6 56.5 59.4 62.5 65.6 68.9 72.2 75.6 79 82.5 86.1 89.8 93.5 97.3 101.1 104.9 108.8 112.7 116.7 120.6 124.6 128.5 132.5 136.4 140.3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pAtk" val="#pAtk">
+				<using kind="Ancient" />
+			</add>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases P. Atk. by 12.64 when using a crossbow.
+		Level 2: Increases P. Atk. by 18 when using a crossbow.
+		Level 3: Increases P. Atk. by 21.28 when using a crossbow.
+		Level 4: Increases P. Atk. by 24.88 when using a crossbow.
+		Level 5: Increases P. Atk. by 29.04 when using a crossbow.
+		Level 6: Increases P. Atk. by 33.6 when using a crossbow.
+		Level 7: Increases P. Atk. by 38.72 when using a crossbow.
+		Level 8: Increases P. Atk. by 44.32 when using a crossbow.
+		Level 9: Increases P. Atk. by 50.56 when using a crossbow.
+		Level 10: Increases P. Atk. by 53.92 when using a crossbow.
+		Level 11: Increases P. Atk. by 86.72 when using a crossbow.
+		Level 12: Increases P. Atk. by 92.16 when using a crossbow.
+		Level 13: Increases P. Atk. by 97.84 when using a crossbow.
+		Level 14: Increases P. Atk. by 103.76 when using a crossbow.
+		Level 15: Increases P. Atk. by 109.92 when using a crossbow.
+		Level 16: Increases P. Atk. by 116.32 when using a crossbow.
+		Level 17: Increases P. Atk. by 122.96 when using a crossbow.
+		Level 18: Increases P. Atk. by 129.84 when using a crossbow.
+		Level 19: Increases P. Atk. by 136.96 when using a crossbow.
+		Level 20: Increases P. Atk. by 144.4 when using a crossbow.
+		Level 21: Increases P. Atk. by 152 when using a crossbow.
+		Level 22: Increases P. Atk. by 159.92 when using a crossbow.
+		Level 23: Increases P. Atk. by 168 when using a crossbow.
+		Level 24: Increases P. Atk. by 176.32 when using a crossbow.
+		Level 25: Increases P. Atk. by 184.96 when using a crossbow.
+		Level 26: Increases P. Atk. by 193.76 when using a crossbow.
+		Level 27: Increases P. Atk. by 202.8 when using a crossbow.
+		Level 28: Increases P. Atk. by 212 when using a crossbow.
+		Level 29: Increases P. Atk. by 221.44 when using a crossbow.
+		Level 30: Increases P. Atk. by 231.04 when using a crossbow.
+		Level 31: Increases P. Atk. by 240.88 when using a crossbow.
+		Level 32: Increases P. Atk. by 250.8 when using a crossbow.
+		Level 33: Increases P. Atk. by 260.96 when using a crossbow.
+		Level 34: Increases P. Atk. by 271.2 when using a crossbow.
+		Level 35: Increases P. Atk. by 281.6 when using a crossbow.
+		Level 36: Increases P. Atk. by 292.16 when using a crossbow.
+		Level 37: Increases P. Atk. by 302.72 when using a crossbow.
+		Level 38: Increases P. Atk. by 313.44 when using a crossbow.
+		Level 39: Increases P. Atk. by 324.16 when using a crossbow.
+		Level 40: Increases P. Atk. by 334.96 when using a crossbow.
+		Level 41: Increases P. Atk. by 345.76 when using a crossbow.
+		Level 42: Increases P. Atk. by 356.56 when using a crossbow.
+		Level 43: Increases P. Atk. by 367.28 when using a crossbow.
+		Level 44: Increases P. Atk. by 378 when using a crossbow.
+		Level 45: Increases P. Atk. by 388.72 when using a crossbow.
+	-->
+	<skill id="473" levels="45" name="Crossbow Mastery">
+		<table name="#pAtk"> 12.64 18 21.28 24.88 29.04 33.6 38.72 44.32 50.56 53.92 86.72 92.16 97.84 103.76 109.92 116.32 122.96 129.84 136.96 144.4 152 159.92 168 176.32 184.96 193.76 202.8 212 221.44 231.04 240.88 250.8 260.96 271.2 281.6 292.16 302.72 313.44 324.16 334.96 345.76 356.56 367.28 378 388.72 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pAtk" val="#pAtk">
+				<using kind="Crossbow" />
+			</add>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases P. Atk. by 3.2 when using a short sword.
+		Level 2: Increases P. Atk. by 5.28 when using a short sword.
+		Level 3: Increases P. Atk. by 6.48 when using a short sword.
+		Level 4: Increases P. Atk. by 7.84 when using a short sword.
+		Level 5: Increases P. Atk. by 9.36 when using a short sword.
+		Level 6: Increases P. Atk. by 11.12 when using a short sword.
+		Level 7: Increases P. Atk. by 13.04 when using a short sword.
+		Level 8: Increases P. Atk. by 15.2 when using a short sword.
+		Level 9: Increases P. Atk. by 17.52 and Casting Spd. by 15% when using a short sword.
+		Level 10: Increases P. Atk. by 18.8 and Casting Spd. by 15% when using a short sword.
+		Level 11: Increases P. Atk. by 20.08 and Casting Spd. by 15% when using a short sword.
+		Level 12: Increases P. Atk. by 21.44 and Casting Spd. by 15% when using a short sword.
+		Level 13: Increases P. Atk. by 22.88 and Casting Spd. by 15% when using a short sword.
+		Level 14: Increases P. Atk. by 24.4 and Casting Spd. by 15% when using a short sword.
+		Level 15: Increases P. Atk. by 25.92 and Casting Spd. by 15% when using a short sword.
+		Level 16: Increases P. Atk. by 27.6 and Casting Spd. by 15% when using a short sword.
+		Level 17: Increases P. Atk. by 29.28 and Casting Spd. by 15% when using a short sword.
+		Level 18: Increases P. Atk. by 30.96 and Casting Spd. by 15% when using a short sword.
+		Level 19: Increases P. Atk. by 32.8 and Casting Spd. by 15% when using a short sword.
+		Level 20: Increases P. Atk. by 34.64 and Casting Spd. by 15% when using a short sword.
+		Level 21: Increases P. Atk. by 36.56 and Casting Spd. by 15% when using a short sword.
+		Level 22: Increases P. Atk. by 38.56 and Casting Spd. by 15% when using a short sword.
+		Level 23: Increases P. Atk. by 40.64 and Casting Spd. by 15% when using a short sword.
+		Level 24: Increases P. Atk. by 42.72 and Casting Spd. by 15% when using a short sword.
+		Level 25: Increases P. Atk. by 44.88 and Casting Spd. by 15% when using a short sword.
+		Level 26: Increases P. Atk. by 47.12 and Casting Spd. by 15% when using a short sword.
+		Level 27: Increases P. Atk. by 49.44 and Casting Spd. by 15% when using a short sword.
+		Level 28: Increases P. Atk. by 51.76 and Casting Spd. by 15% when using a short sword.
+		Level 29: Increases P. Atk. by 54.16 and Casting Spd. by 15% when using a short sword.
+		Level 30: Increases P. Atk. by 56.56 and Casting Spd. by 15% when using a short sword.
+		Level 31: Increases P. Atk. by 59.04 and Casting Spd. by 15% when using a short sword.
+		Level 32: Increases P. Atk. by 61.52 and Casting Spd. by 15% when using a short sword.
+		Level 33: Increases P. Atk. by 64.08 and Casting Spd. by 15% when using a short sword.
+		Level 34: Increases P. Atk. by 66.72 and Casting Spd. by 15% when using a short sword.
+		Level 35: Increases P. Atk. by 69.36 and Casting Spd. by 15% when using a short sword.
+		Level 36: Increases P. Atk. by 72 and Casting Spd. by 15% when using a short sword.
+		Level 37: Increases P. Atk. by 74.64 and Casting Spd. by 15% when using a short sword.
+		Level 38: Increases P. Atk. by 77.36 and Casting Spd. by 15% when using a short sword.
+		Level 39: Increases P. Atk. by 80.08 and Casting Spd. by 15% when using a short sword.
+		Level 40: Increases P. Atk. by 82.8 and Casting Spd. by 15% when using a short sword.
+		Level 41: Increases P. Atk. by 85.52 and Casting Spd. by 15% when using a short sword.
+		Level 42: Increases P. Atk. by 88.24 and Casting Spd. by 15% when using a short sword.
+		Level 43: Increases P. Atk. by 90.96 and Casting Spd. by 15% when using a short sword.
+		Level 44: Increases P. Atk. by 93.68 and Casting Spd. by 15% when using a short sword.
+		Level 45: Increases P. Atk. by 96.4 and Casting Spd. by 15% when using a short sword.
+	-->
+	<skill id="474" levels="45" name="Rapier Mastery">
+		<table name="#pAtk"> 3.2 5.28 6.48 7.84 9.36 11.12 13.04 15.2 17.52 18.8 20.08 21.44 22.88 24.4 25.92 27.6 29.28 30.96 32.8 34.64 36.56 38.56 40.64 42.72 44.88 47.12 49.44 51.76 54.16 56.56 59.04 61.52 64.08 66.72 69.36 72 74.64 77.36 80.08 82.8 85.52 88.24 90.96 93.68 96.4 </table>
+		<table name="#mAtkSpd"> 0 0 0 0 0 0 0 0 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 15 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pAtk" val="#pAtk">
+				<using kind="Rapier" />
+			</add>
+			<addPercent stat="mAtkSpd" val="#mAtkSpd">
+				<using kind="Rapier" />
+			</addPercent>
+		</for>
+	</skill>
+	<!-- Transfers damage received from melee attacks and skills back to the enemy. Continuously consumes MP proportionately to your level. -->
+	<skill id="475" levels="1" name="Strike Back">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="magicLvl" val="20" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3">
+				<effect type="MpConsumePerLevel" val="0.2" />
+				<add stat="vengeancePdam" val="3" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Attacks the enemy with 108 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 2: Attacks the enemy with 117 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 3: Attacks the enemy with 126 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 4: Attacks the enemy with 147 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 5: Attacks the enemy with 159 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 6: Attacks the enemy with 171 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 7: Attacks the enemy with 198 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 8: Attacks the enemy with 213 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 9: Attacks the enemy with 229 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 10: Attacks the enemy with 263 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 11: Attacks the enemy with 281 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 12: Attacks the enemy with 301 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 13: Attacks the enemy with 344 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 14: Attacks the enemy with 367 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+		Level 15: Attacks the enemy with 391 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a sword, blunt weapon, or ancient sword. Over-hit is possible.
+	-->
+	<skill id="476" levels="15" name="Dark Strike">
+		<table name="#power"> 108 117 126 147 159 171 198 213 229 263 281 301 344 367 391 </table>
+		<table name="#mpConsume"> 16 16 16 17 18 18 20 21 21 23 23 24 25 26 27 </table>
+		<table name="#magicLvl"> 20 21 22 24 25 26 28 29 30 32 33 34 36 37 38 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Sword, Blunt, Ancient, Big Blunt, Big Sword" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- 
+		Level 1: Attack targets with 738 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 2: Attack targets with 784 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 3: Attack targets with 833 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 4: Attack targets with 884 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 5: Attack targets with 937 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 6: Attack targets with 992 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 7: Attack targets with 1049 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 8: Attack targets with 1109 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 9: Attack targets with 1171 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 10: Attack targets with 1236 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 11: Attack targets with 1302 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 12: Attack targets with 1371 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 13: Attack targets with 1443 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 14: Attack targets with 1516 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 15: Attack targets with 1592 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 16: Attack targets with 1670 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 17: Attack targets with 1750 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 18: Attack targets with 1832 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 19: Attack targets with 1917 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 20: Attack targets with 2003 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 21: Attack targets with 2091 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 22: Attack targets with 2181 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 23: Attack targets with 2272 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 24: Attack targets with 2366 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 25: Attack targets with 2460 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 26: Attack targets with 2556 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 27: Attack targets with 2653 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 28: Attack targets with 2751 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 29: Attack targets with 2850 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 30: Attack targets with 2950 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 31: Attack targets with 3050 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 32: Attack targets with 3151 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 33: Attack targets with 3252 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 34: Attack targets with 3353 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 35: Attack targets with 3453 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 36: Attack targets with 3553 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 37: Attack targets with 3653 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+	-->
+	<skill id="477" levels="37" name="Dark Smash">
+		<table name="#magicLvl"> 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#mpConsume"> 29 30 31 31 32 33 34 35 36 37 38 39 40 40 41 42 43 44 45 46 47 48 49 49 50 51 52 53 54 54 55 56 57 58 59 59 60 </table>
+		<table name="#power"> 738 784 833 884 937 992 1049 1109 1171 1236 1302 1371 1443 1516 1592 1670 1750 1832 1917 2003 2091 2181 2272 2366 2460 2556 2653 2751 2850 2950 3050 3151 3252 3353 3453 3553 3653 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- 
+		Level 1: Attacks the enemy with 108 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 2: Attacks the enemy with 117 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 3: Attacks the enemy with 126 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 4: Attacks the enemy with 147 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 5: Attacks the enemy with 159 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 6: Attacks the enemy with 171 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 7: Attacks the enemy with 198 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 8: Attacks the enemy with 213 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 9: Attacks the enemy with 229 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 10: Attacks the enemy with 263 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 11: Attacks the enemy with 281 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 12: Attacks the enemy with 301 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 13: Attacks the enemy with 344 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 14: Attacks the enemy with 367 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+		Level 15: Attacks the enemy with 391 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a short sword to be equipped. Over-hit is possible.
+	-->
+	<skill id="478" levels="15" name="Double Thrust">
+		<table name="#mpConsume"> 16 16 16 18 18 19 20 21 21 23 23 24 25 26 27 </table>
+		<table name="#power"> 108 117 126 147 159 171 198 213 229 263 281 301 344 367 391 </table>
+		<table name="#magicLvl"> 20 21 22 24 25 26 28 29 30 32 33 34 36 37 38 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="3000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Rapier" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- Increases Speed by 20. Continuously consumes MP proportionately to your level. -->
+	<skill id="479" levels="1" name="Hard March">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="magicLvl" val="24" />
+		<for>
+			<abnormal count="0x7fffffff" duration="5">
+				<effect type="MpConsumePerLevel" val="0.4" />
+				<add stat="runSpd" val="20" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Increases Dark attacks by 10. -->
+	<skill id="480" levels="1" name="Dark Blade">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<set name="magicLvl" val="36" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3">
+				<effect type="ManaDamOverTime" val="0" />
+				<add stat="darkPower" val="10" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases Dark Attack Resistance by 7.
+		Level 2: Increases Dark Attack Resistance by 10.
+	-->
+	<skill id="481" levels="2" name="Dark Armor">
+		<table name="#darkRes"> 7 10 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CONT" />
+		<set name="operateType" val="OP_TOGGLE" />
+		<for>
+			<abnormal count="0x7fffffff" duration="3">
+				<effect type="ManaDamOverTime" val="0" />
+				<add stat="darkRes" val="#darkRes" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 1 minute 30 seconds, increases Critical Rate by 20% and Critical Damage by 25%. Decreases P. Def. by 5%.
+		Level 2: For 1 minute 30 seconds, increases Critical Rate by 30% and Critical Damage by 30%. Decreases P. Def. by 5%.
+	-->
+	<skill id="482" levels="2" name="Furious Soul">
+		<table name="#rCrit"> 20 30 </table>
+		<table name="#cAtk"> 25 30 </table>
+		<table name="#mpConsume"> 11 25 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="75000" />
+		<for>
+			<abnormal duration="90" stackLvl="#abnormalLvl" stackType="pa_up_special">
+				<effect type="Buff" val="0" />
+				<addPercentBase stat="rCrit" val="#rCrit" />
+				<addPercentBase stat="pCritDmg" val="#cAtk" />
+				<subPercent stat="pDef" val="5" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: For 30 sec., increases P. Def. by 2000 and decreases Speed by 40%.
+		Level 2: For 30 sec., increases P. Def. by 4000 and decreases Speed by 40%.
+		Level 3: For 30 sec., increases P. Def. + 4750 and decreases Spd. - 40%.
+		Level 4: For 30 sec., increases P. Def. + 5250 and decreases Spd. - 40%.
+		Level 5: For 30 sec., increases P. Def. + 6250 and decreases Spd. - 30%.
+		Level 6: For 30 sec., increases P. Def. + 6250 and decreases Spd. - 20%.
+		Level 7: For 30 sec., increases P. Def. + 6250 and decreases Spd. - 10%.
+		Level 8: For 30 sec., increases P. Def. + 7500.
+	-->
+	<skill id="483" levels="8" name="Sword Shield">
+		<table name="#pDef"> 2000 4000 4750 5250 6250 6250 6250 7500 </table>
+		<table name="#runSpd"> 40 40 40 40 30 20 10 0 </table>
+		<table name="#mpConsume"> 16 18 20 22 24 26 28 30 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="300000" />
+		<for>
+			<abnormal duration="30" effectType="BUFF" stackLvl="1" stackType="pd_up_special">
+				<add stat="pDef" val="#pDef" />
+				<subPercent stat="runSpd" val="#runSpd" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Charges into the enemy. Can be used while dagger, ancient sword, short sword is equipped. -->
+	<skill id="484" levels="1" name="Rush">
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DUMMY" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="32" />
+		<set name="mpConsume" val="20" />
+		<set name="hitTime" val="800" />
+		<set name="coolTime" val="200" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Rapier, Ancient" />
+		<set name="flyType" val="CHARGE" />
+		<set name="neutral" val="true" />
+		<cond addName="1" msgId="113">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<abnormal noicon="1">
+				<effect type="EnemyCharge" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- Disarms the enemy for 5 seconds. Requires an ancient sword, sword, blunt weapon,spear, fist weapon, dual blunt weapon,or dualsword. -->
+	<skill id="485" levels="16" name="Disarm">
+		<table name="#mpConsume"> 25 25 25 35 35 35 35 45 45 45 45 45 55 55 55 55 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="DEBUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="60000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="isDebuff" val="true" />
+		<set name="weaponsAllowed" val="Ancient,Sword,Big Sword,Blunt,Big Blunt,Pole,Dual Sword,Dual Blunt,Dual Fist" />
+		<set name="saveVs" val="STR" />
+		<for>
+			<abnormal duration="5" landRate="70" stackLvl="1" stackType="disarm" visualEffect="bleed">
+				<effect type="Disarm" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Increases a crossbow's range by 200.
+		Level 2: Increases a crossbow's range by 400.
+	-->
+	<skill id="486" levels="2" name="Increase Range">
+		<table name="#pAtkRange"> 200 400 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="pAtkRange" val="#pAtkRange">
+				<using kind="Crossbow" />
+			</add>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Fires a powerful bolt to attack the enemy with 179 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 2: Fires a powerful bolt to attack the enemy with 194 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 3: Fires a powerful bolt to attack the enemy with 210 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 4: Fires a powerful bolt to attack the enemy with 245 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 5: Fires a powerful bolt to attack the enemy with 264 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 6: Fires a powerful bolt to attack the enemy with 285 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 7: Fires a powerful bolt to attack the enemy with 330 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 8: Fires a powerful bolt to attack the enemy with 354 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 9: Fires a powerful bolt to attack the enemy with 381 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 10: Fires a powerful bolt to attack the enemy with 438 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 11: Fires a powerful bolt to attack the enemy with 469 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 12: Fires a powerful bolt to attack the enemy with 502 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 13: Fires a powerful bolt to attack the enemy with 573 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 14: Fires a powerful bolt to attack the enemy with 611 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+		Level 15: Fires a powerful bolt to attack the enemy with 651 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires a crossbow. Over-hit is possible.
+	-->
+	<skill id="487" levels="15" name="Penetrating Shot">
+		<table name="#mpConsume"> 69 70 71 74 78 81 88 91 95 101 101 104 112 116 120 </table>
+		<table name="#power"> 179 194 210 245 264 285 330 354 381 438 469 502 573 611 651 </table>
+		<table name="#magicLvl"> 20 21 22 24 25 26 28 29 30 32 33 34 36 37 38 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="3200" />
+		<set name="coolTime" val="800" />
+		<set name="reuseDelay" val="6000" />
+		<set name="castRange" val="500" />
+		<set name="effectRange" val="1000" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="weaponsAllowed" val="Crossbow" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- Transfers the Aggression of nearby enemies to a selected party members only. Requires a crossbow. -->
+	<skill id="489" levels="1" name="Shift Target">
+		<set name="target" val="TARGET_PARTY_MEMBER" />
+		<set name="skillType" val="SHIFT_TARGET" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="53" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="5000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="skillRadius" val="205" />
+		<set name="weaponsAllowed" val="Crossbow" />
+	</skill>
+	<!-- 
+		Level 1: Increases crossbow Atk. Spd. by 8% for 20 minutes.
+		Level 2: Increases crossbow Atk. Spd. by 12% for 20 minutes.
+	-->
+	<skill id="490" levels="2" name="Fast Shot">
+		<table name="#pAtkSpd"> 8 12 </table>
+		<table name="#mpConsume"> 14 25 </table>
+		<table name="#abnormalLvl"> 1 2 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2500" />
+		<set name="reuseDelay" val="3000" />
+		<for>
+			<abnormal duration="1200" stackLvl="#abnormalLvl" stackType="attack_speed_up_bow">
+				<effect type="Buff" val="0" />
+				<addPercent stat="pAtkSpd" val="#pAtkSpd">
+					<using kind="Crossbow" />
+				</addPercent>
+			</abnormal>
+		</for>
+	</skill>
+	<skill id="491" levels="1" name="Not in Use">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="366" />
+		<set name="hitTime" val="3000" />
+	</skill>
+	<!-- 
+		Level 1: Spreads wings to attack nearby enemies with 866 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 2: Spreads wings to attack nearby enemies with 910 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 3: Spreads wings to attack nearby enemies with 955 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 4: Spreads wings to attack nearby enemies with 1002 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 5: Spreads wings to attack nearby enemies with 1050 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 6: Spreads wings to attack nearby enemies with 1100 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 7: Spreads wings to attack nearby enemies with 1150 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 8: Spreads wings to attack nearby enemies with 1202 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 9: Spreads wings to attack nearby enemies with 1255 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 10: Spreads wings to attack nearby enemies with 1309 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 11: Spreads wings to attack nearby enemies with 1364 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 12: Spreads wings to attack nearby enemies with 1420 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 13: Spreads wings to attack nearby enemies with 1476 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 14: Spreads wings to attack nearby enemies with 1534 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 15: Spreads wings to attack nearby enemies with 1592 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 16: Spreads wings to attack nearby enemies with 1651 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 17: Spreads wings to attack nearby enemies with 1710 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 18: Spreads wings to attack nearby enemies with 1770 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 19: Spreads wings to attack nearby enemies with 1830 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 20: Spreads wings to attack nearby enemies with 1891 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 21: Spreads wings to attack nearby enemies with 1951 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 22: Spreads wings to attack nearby enemies with 2012 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 23: Spreads wings to attack nearby enemies with 2072 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 24: Spreads wings to attack nearby enemies with 2132 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+		Level 25: Spreads wings to attack nearby enemies with 2192 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Over-hit is possible.
+	-->
+	<skill id="492" levels="25" name="Spread Wing">
+		<table name="#magicLvl"> 52 52 52 55 55 55 58 58 58 60 60 62 62 64 64 66 66 68 68 70 70 72 72 74 74 </table>
+		<table name="#mpConsume"> 50 50 51 52 53 55 56 57 58 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<table name="#power"> 866 910 955 1002 1050 1100 1150 1202 1255 1309 1364 1420 1476 1534 1592 1651 1710 1770 1830 1891 1951 2012 2072 2132 2192 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1080" />
+		<set name="coolTime" val="720" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="skillRadius" val="300" />
+		<set name="overHit" val="true" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- 
+		Level 1: Makes a hurricane-like assault on the enemy's surroundings with 742 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 2: Makes a hurricane-like assault on the enemy's surroundings with 782 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 3: Makes a hurricane-like assault on the enemy's surroundings with 823 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 4: Makes a hurricane-like assault on the enemy's surroundings with 866 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 5: Makes a hurricane-like assault on the enemy's surroundings with 910 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 6: Makes a hurricane-like assault on the enemy's surroundings with 955 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 7: Makes a hurricane-like assault on the enemy's surroundings with 1002 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 8: Makes a hurricane-like assault on the enemy's surroundings with 1050 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 9: Makes a hurricane-like assault on the enemy's surroundings with 1100 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 10: Makes a hurricane-like assault on the enemy's surroundings with 1150 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 11: Makes a hurricane-like assault on the enemy's surroundings with 1202 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 12: Makes a hurricane-like assault on the enemy's surroundings with 1255 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 13: Makes a hurricane-like assault on the enemy's surroundings with 1309 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 14: Makes a hurricane-like assault on the enemy's surroundings with 1364 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 15: Makes a hurricane-like assault on the enemy's surroundings with 1420 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 16: Makes a hurricane-like assault on the enemy's surroundings with 1476 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 17: Makes a hurricane-like assault on the enemy's surroundings with 1534 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 18: Makes a hurricane-like assault on the enemy's surroundings with 1592 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 19: Makes a hurricane-like assault on the enemy's surroundings with 1651 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 20: Makes a hurricane-like assault on the enemy's surroundings with 1710 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 21: Makes a hurricane-like assault on the enemy's surroundings with 1770 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 22: Makes a hurricane-like assault on the enemy's surroundings with 1830 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 23: Makes a hurricane-like assault on the enemy's surroundings with 1891 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 24: Makes a hurricane-like assault on the enemy's surroundings with 1951 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 25: Makes a hurricane-like assault on the enemy's surroundings with 2012 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 26: Makes a hurricane-like assault on the enemy's surroundings with 2072 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 27: Makes a hurricane-like assault on the enemy's surroundings with 2132 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 28: Makes a hurricane-like assault on the enemy's surroundings with 2192 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+	-->
+	<skill id="493" levels="28" name="Storm Assault">
+		<table name="#mpConsume"> 46 47 48 50 50 51 52 53 55 56 57 58 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<table name="#power"> 742 782 823 866 910 955 1002 1050 1100 1150 1202 1255 1309 1364 1420 1476 1534 1592 1651 1710 1770 1830 1891 1951 2012 2072 2132 2192 </table>
+		<table name="#magicLvl"> 46 47 48 49 50 51 52 53 54 55 56 57 58 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<table name="#castRange"> 400 400 400 400 400 400 400 400 400 400 500 500 500 500 500 500 500 500 500 500 600 600 600 600 600 600 600 600 </table>
+		<table name="#effectRange"> 900 900 900 900 900 900 900 900 900 900 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1100 1100 1100 1100 1100 1100 1100 1100 </table>
+		<set name="target" val="TARGET_FRONT_AREA" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="800" />
+		<set name="coolTime" val="200" />
+		<set name="castRange" val="#castRange" />
+		<set name="effectRange" val="#effectRange" />
+		<set name="skillRadius" val="#castRange" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="flyType" val="CHARGE" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<cond addName="1" msgId="113">
+			<target mindistance="200" />
+		</cond>
+	</skill>
+	<!-- Rushes in with the shoulder to attack the enemy. Inflicted with fear for 9 seconds. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. -->
+	<skill id="494" levels="37" name="Shoulder Charge">
+		<table name="#castRange"> 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 400 500 500 500 500 500 500 500 500 500 500 600 600 600 600 600 600 600 600 </table>
+		<table name="#effectRange"> 900 900 900 900 900 900 900 900 900 900 900 900 900 900 900 900 900 900 900 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1100 1100 1100 1100 1100 1100 1100 1100 </table>
+		<table name="#magicLvl"> 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<table name="#mpConsume"> 25 26 27 27 28 29 30 30 31 32 33 34 35 35 36 37 38 38 39 40 41 42 43 43 44 45 45 46 47 48 48 49 50 51 51 52 53 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="1" />
+		<set name="hitTime" val="800" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="#castRange" />
+		<set name="effectRange" val="#effectRange" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="flyType" val="CHARGE" />
+		<set name="saveVs" val="CON" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<cond addName="1" msgId="113">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<abnormal noicon="1">
+				<effect type="EnemyCharge" val="0" />
+			</abnormal>
+			<abnormal duration="9" effectType="STUN" landRate="70" stackLvl="1" stackType="stun" visualEffect="stun">
+				<effect type="Stun" val="0" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Holds a sword up and rushes forward to inflict bleed on the enemies in the rushing path for 20 seconds. Makes them consume 107 HP every second. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or sword to be equipped. Over-hit is possible.
+		Level 3: Holds a sword up and rushes forward to inflict bleed on the enemies in the rushing path for 20 seconds. Makes them consume 123 HP every second. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or sword to be equipped. Over-hit is possible.
+		Level 8: Holds a sword up and rushes forward to inflict bleed on the enemies in the rushing path for 20 seconds. Makes them consume 134 HP every second. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or sword to be equipped. Over-hit is possible.
+	-->
+	<skill id="495" levels="10" name="Blade Rush">
+		<table name="#abnormalLvl"> 6 6 7 7 7 7 8 8 8 8 </table>
+		<table name="#castRange"> 400 500 500 500 500 500 600 600 600 600 </table>
+		<table name="#dot"> 107 107 123 123 123 123 123 134 134 134 </table>
+		<table name="#effectRange"> 900 1000 1000 1000 1000 1000 1100 1100 1100 1100 </table>
+		<table name="#magicLvl"> 55 57 59 61 63 66 68 70 72 74 </table>
+		<table name="#mpConsume"> 65 70 73 75 77 80 83 85 88 90 </table>
+		<set name="target" val="TARGET_FRONT_AREA" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlDepend" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="1" />
+		<set name="hitTime" val="800" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="4000" />
+		<set name="castRange" val="#castRange" />
+		<set name="effectRange" val="#effectRange" />
+		<set name="skillRadius" val="#castRange" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="flyType" val="CHARGE" />
+		<set name="saveVs" val="CON" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<cond addName="1" msgId="113">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<abnormal count="20" effectType="BLEED" landRate="50" stackLvl="#abnormalLvl" stackType="bleeding" visualEffect="bleed">
+				<effect type="DamOverTime" val="#dot" />
+			</abnormal>
+		</for>
+	</skill>
+	<!-- 
+		Level 1: Wields a sword at nearby enemies with 787 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 2: Wields a sword at nearby enemies with 832 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 3: Wields a sword at nearby enemies with 879 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 4: Wields a sword at nearby enemies with 927 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 5: Wields a sword at nearby enemies with 977 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 6: Wields a sword at nearby enemies with 1029 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 7: Wields a sword at nearby enemies with 1082 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 8: Wields a sword at nearby enemies with 1137 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 9: Wields a sword at nearby enemies with 1194 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 10: Wields a sword at nearby enemies with 1253 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 11: Wields a sword at nearby enemies with 1313 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 12: Wields a sword at nearby enemies with 1374 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 13: Wields a sword at nearby enemies with 1438 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 14: Wields a sword at nearby enemies with 1502 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 15: Wields a sword at nearby enemies with 1568 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 16: Wields a sword at nearby enemies with 1636 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 17: Wields a sword at nearby enemies with 1704 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 18: Wields a sword at nearby enemies with 1774 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 19: Wields a sword at nearby enemies with 1845 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 20: Wields a sword at nearby enemies with 1917 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 21: Wields a sword at nearby enemies with 1990 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 22: Wields a sword at nearby enemies with 2064 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 23: Wields a sword at nearby enemies with 2138 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 24: Wields a sword at nearby enemies with 2213 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 25: Wields a sword at nearby enemies with 2288 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 26: Wields a sword at nearby enemies with 2363 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 27: Wields a sword at nearby enemies with 2439 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 28: Wields a sword at nearby enemies with 2515 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 29: Wields a sword at nearby enemies with 2590 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 30: Wields a sword at nearby enemies with 2665 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+		Level 31: Wields a sword at nearby enemies with 2740 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit.
+	-->
+	<skill id="496" levels="31" name="Slashing Blade">
+		<table name="#mpConsume"> 42 43 44 46 47 48 50 50 51 52 53 55 56 57 58 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<table name="#power"> 787 832 879 927 977 1029 1082 1137 1194 1253 1313 1374 1438 1502 1568 1636 1704 1774 1845 1917 1990 2064 2138 2213 2288 2363 2439 2515 2590 2665 2740 </table>
+		<table name="#magicLvl"> 46 47 48 49 50 51 52 53 54 55 56 57 58 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="4000" />
+		<set name="skillRadius" val="100" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- 
+		Level 1: Attack targets with 4558 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 2: Attack targets with 4750 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 3: Attack targets with 4944 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 4: Attack targets with 5142 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 5: Attack targets with 5342 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 6: Attack targets with 5545 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 7: Attack targets with 5751 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 8: Attack targets with 5958 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 9: Attack targets with 6166 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 10: Attack targets with 6376 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 11: Attack targets with 6586 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 12: Attack targets with 6797 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 13: Attack targets with 7008 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 14: Attack targets with 7218 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 15: Attack targets with 7427 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+		Level 16: Attack targets with 7635 Power added to P. Atk. Consumes up to 5 souls to increase power. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Over-hit. Ignores shield defense.
+	-->
+	<skill id="497" levels="16" name="Crushing Pain">
+		<table name="#mpConsume"> 60 61 61 62 63 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<table name="#power"> 4558 4750 4944 5142 5342 5545 5751 5958 6166 6376 6586 6797 7008 7218 7427 7635 </table>
+		<table name="#magicLvl"> 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2200" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="7000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="ignoreShld" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="soulMaxConsumeCount" val="5" />
+	</skill>
+	<!-- 
+		Level 1: Attacks the enemy's wound with 5342 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 2: Attacks the enemy's wound with 5545 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 3: Attacks the enemy's wound with 5751 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 4: Attacks the enemy's wound with 5958 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 5: Attacks the enemy's wound with 6166 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 6: Attacks the enemy's wound with 6376 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 7: Attacks the enemy's wound with 6586 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 8: Attacks the enemy's wound with 6797 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 9: Attacks the enemy's wound with 7008 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 10: Attacks the enemy's wound with 7218 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 11: Attacks the enemy's wound with 7427 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+		Level 12: Attacks the enemy's wound with 7635 Power added to P. Atk. Increases Power upon the consumption of up to 5 souls. Requires an ancient sword or a sword. Over-hit is possible. Ignores Shield Defense.
+	-->
+	<skill id="498" levels="12" name="Contagion">
+		<table name="#power"> 5342 5545 5751 5958 6166 6376 6586 6797 7008 7218 7427 7635 </table>
+		<table name="#magicLvl"> 63 64 65 66 67 68 69 70 71 72 73 74 </table>
+		<table name="#mpConsume"> 63 65 66 67 68 69 70 71 72 73 74 75 </table>
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="PDAM" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="power" val="#power" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="700" />
+		<set name="reuseDelay" val="7000" />
+		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
+		<set name="SSBoost" val="2.0" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="ignoreShld" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="weaponsAllowed" val="Ancient" />
+		<set name="soulMaxConsumeCount" val="5" />
+		<cond addName="1" msgId="113">
+			<target abnormal="1" />
+		</cond>
+	</skill>
+	<!-- 
+		Level 1: Increases Mental Attack Resistance by 40 for 1 minute.
+		Level 2: Increases Mental Attack Resistance by 60 for 1 minute.
+		Level 3: Increases Mental Attack Resistance by 100 for 1 minute.
+	-->
+	<skill id="499" levels="3" name="Courage">
+		<table name="#mpConsume"> 16 22 29 </table>
+		<table name="#vuln"> 40 60 100 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="225000" />
+		<for>
+			<abnormal duration="60" stackLvl="#abnormalLvl" stackType="resist_spiritless">
+				<effect type="Buff" val="0" />
+				<addPercent stat="derangementRes" val="#vuln" />
+			</abnormal>
+		</for>
+	</skill>
+</list>

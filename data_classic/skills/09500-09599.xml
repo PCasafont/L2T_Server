@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<skill id="9504" levels="1" name="Scroll: PK (Low-grade)">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="DUMMY" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="23474" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="1" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<skill id="9505" levels="1" name="Scroll: PK (Mid-grade)">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="DUMMY" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="23475" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="3" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<skill id="9506" levels="1" name="Scroll: PK (High-grade)">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="DUMMY" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="23476" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="5" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+	<skill id="9507" levels="1" name="Scroll: PK (Top-grade)">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="DUMMY" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="23477" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="10" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="3000" />
+	</skill>
+</list>

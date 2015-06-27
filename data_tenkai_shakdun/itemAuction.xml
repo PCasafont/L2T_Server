@@ -1,0 +1,9 @@
+﻿<list>
+	<currency position="1" itemId="57"/> <!-- Adena -->
+	<currency position="2" itemId="4357"/> <!-- Silver Shilen -->
+	<currency position="3" itemId="4355"/> <!-- Blue Eva -->
+	<currency position="4" itemId="4037"/> <!-- Coin of Luck -->
+	<auction id="1" itemId="36417,36418,36419,36420,36421,36422,36423,36424,36425,36426,36427,36428,36429,36430,36431,36432,36433,36434,36435,36436,36437,36438,36439,36440" count="1" repeatTime="8" randomRepeatTime="4" initialCurrencyId="57" initialPrice="1" initialDuration="24"/> <!-- Dragon Claw Fragment Weapons -->
+	<auction id="2" itemId="35564" count="1" repeatTime="50" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48"/> <!-- Ruler's Authority -->
+	<auction id="3" itemId="36515" count="1000" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="24"/> <!-- Elcyum -->
+</list>

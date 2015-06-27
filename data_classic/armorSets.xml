@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Wooden Breastplate -->
+	<armorSet id="23" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3500" levels="1" /> <!-- Wooden Set -->
+	</armorSet>
+	<!-- Mithril Breastplate -->
+	<armorSet id="58" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3502" levels="1" /> <!-- Mithril Heavy Armor Set -->
+		<enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
+		<shieldSkill id="3543" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Compound Armor -->
+	<armorSet id="60" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3512" levels="1" /> <!-- Compound Heavy Armor Set -->
+		<enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
+		<shieldSkill id="3546" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Brigandine Tunic -->
+	<armorSet id="352" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
+		<enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
+		<shieldSkill id="3544" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Chain Mail Shirt -->
+	<armorSet id="354" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3509" levels="1" /> <!-- Chain Mail Heavy Armor Set -->
+		<enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
+		<shieldSkill id="3545" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Full Plate Armor -->
+	<armorSet id="356" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
+		<enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
+		<shieldSkill id="3547" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Zubei's Breastplate -->
+	<armorSet id="357" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3518" levels="1" /> <!-- Zubei's Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+	</armorSet>
+	<!-- Blue Wolf Breastplate -->
+	<armorSet id="358" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3524" levels="1" /> <!-- Blue Wolf Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Breastplate -->
+	<armorSet id="365" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3530" levels="1" /> <!-- Dark Crystal Breastplate Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+		<shieldSkill id="3550" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Armor of Nightmare -->
+	<armorSet id="374" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Reinforced Leather Shirt -->
+	<armorSet id="394" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3503" levels="1" /> <!-- Reinforced Leather Set -->
+		<enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
+	</armorSet>
+	<!-- Manticore Skin Shirt -->
+	<armorSet id="395" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3505" levels="1" /> <!-- Manticore Set -->
+		<enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
+	</armorSet>
+	<!-- Mithril Shirt -->
+	<armorSet id="397" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3508" levels="1" /> <!-- Reinforced Mithril Light Armor Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Plated Leather -->
+	<armorSet id="398" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3511" levels="1" /> <!-- Plated Leather Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Theca Leather Armor -->
+	<armorSet id="400" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3514" levels="1" /> <!-- Theca Leather Light Armor Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Drake Leather Armor -->
+	<armorSet id="401" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3515" levels="1" /> <!-- Drake Leather Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Tunic of Knowledge -->
+	<armorSet id="436" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3504" levels="1" /> <!-- Knowledge Set -->
+		<enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
+	</armorSet>
+	<!-- Mithril Tunic -->
+	<armorSet id="437" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
+		<enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
+	</armorSet>
+	<!-- Karmian Tunic -->
+	<armorSet id="439" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3510" levels="1" /> <!-- Karmian Set -->
+		<enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
+	</armorSet>
+	<!-- Demon's Tunic -->
+	<armorSet id="441" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3513" levels="1" /> <!-- Demon's Set -->
+		<enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
+	</armorSet>
+	<!-- Divine Tunic -->
+	<armorSet id="442" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3517" levels="1" /> <!-- Divine Set -->
+		<enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
+	</armorSet>
+	<!-- Tunic of Devotion -->
+	<armorSet id="1101" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3501" levels="1" /> <!-- Devotion Set -->
+	</armorSet>
+	<!-- Avadon Breastplate -->
+	<armorSet id="2376" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3519" levels="1" /> <!-- Avadon Breastplate Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+		<shieldSkill id="3548" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Doom Plate Armor -->
+	<armorSet id="2381" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+		<shieldSkill id="3549" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Tallum Plate Armor -->
+	<armorSet id="2382" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3531" levels="1" /> <!-- Tallum Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Majestic Plate Armor -->
+	<armorSet id="2383" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3537" levels="1" /> <!-- Majestic Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Zubei's Leather Shirt -->
+	<armorSet id="2384" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3520" levels="1" /> <!-- Zubei's Leather Shirt Light Armor Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Leather Armor -->
+	<armorSet id="2385" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Avadon Leather Armor -->
+	<armorSet id="2390" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3521" levels="1" /> <!-- Avadon Light Armor Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Blue Wolf Leather Armor -->
+	<armorSet id="2391" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3526" levels="1" /> <!-- Blue Wolf Light Armor Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Leather Armor of Doom -->
+	<armorSet id="2392" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+</list>

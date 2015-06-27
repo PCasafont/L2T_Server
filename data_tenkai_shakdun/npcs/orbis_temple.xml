@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Orbis' Chief Curator -->
+	<npc id="22927">
+		<itemDrop itemId="19467" min="1" max="1" chance="25" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19468" min="1" max="1" chance="10" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="1.5" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="9" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Ancient Hero -->
+	<npc id="22925">
+		<itemDrop itemId="19468" min="1" max="1" chance="25" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19469" min="1" max="1" chance="10" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="15" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Thrower -->
+	<npc id="22919">
+		<itemDrop itemId="19469" min="1" max="1" chance="25" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19468" min="1" max="1" chance="10" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="15" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Thrower -->
+	<npc id="22918">
+		<itemDrop itemId="19467" min="1" max="1" chance="25" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19469" min="1" max="1" chance="10" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="15" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Thrower -->
+	<npc id="22917">
+		<itemDrop itemId="19468" min="1" max="1" chance="25" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19467" min="1" max="1" chance="10" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="1.5" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="9" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Guard -->
+	<npc id="22916">
+		<itemDrop itemId="19467" min="1" max="1" chance="25" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19469" min="1" max="1" chance="10" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="4" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Guard -->
+	<npc id="22915">
+		<itemDrop itemId="19468" min="1" max="1" chance="25" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19469" min="1" max="1" chance="10" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="4" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Guard -->
+	<npc id="22914">
+		<itemDrop itemId="19469" min="1" max="1" chance="25" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19467" min="1" max="1" chance="10" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="15" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Victim -->
+	<npc id="22913">
+		<itemDrop itemId="19467" min="1" max="1" chance="25" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19468" min="1" max="1" chance="10" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="1.5" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="9" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Victim -->
+	<npc id="22912">
+		<itemDrop itemId="19467" min="1" max="1" chance="25" custom="true" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19469" min="1" max="1" chance="10" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="4" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+	<!-- Orbis' Victim -->
+	<npc id="22911">
+		<itemDrop itemId="19468" min="1" max="1" chance="25" custom="true" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="19469" min="1" max="1" chance="10" custom="true" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<itemDrop itemId="17526" min="1" max="1" chance="1.5" custom="true" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+		<itemDrop itemId="17527" min="1" max="1" chance="9" custom="true" /> <!-- Scroll: Enchant Armor (R-grade) -->
+		<itemDrop itemId="19446" min="1" max="1" chance="2.5" custom="true" /> <!-- Unbind Scroll (R99-grade) -->
+	</npc>
+</list>

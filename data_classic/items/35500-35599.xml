@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Leather Armor. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35500" type="EtcItem" name="Recipe: Blessed Seraph Leather Armor (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1246" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Seraph Leather Leggings. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35501" type="EtcItem" name="Recipe: Blessed Seraph Leather Leggings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1247" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Seraph Leather Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35502" type="EtcItem" name="Recipe: Blessed Seraph Leather Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1248" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Seraph Leather Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35503" type="EtcItem" name="Recipe: Blessed Seraph Leather Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1249" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Circlet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35504" type="EtcItem" name="Recipe: Blessed Seraph Circlet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1250" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Tunic. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35505" type="EtcItem" name="Recipe: Blessed Seraph Tunic (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1251" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Seraph Stockings. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35506" type="EtcItem" name="Recipe: Blessed Seraph Stockings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1252" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Seraph Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35507" type="EtcItem" name="Recipe: Blessed Seraph Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1253" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Seraph Shoes. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35508" type="EtcItem" name="Recipe: Blessed Seraph Shoes (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1254" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Sigil. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35509" type="EtcItem" name="Recipe: Blessed Seraph Sigil (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1255" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Necklace. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35510" type="EtcItem" name="Recipe: Blessed Seraph Necklace (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1256" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Earring. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35511" type="EtcItem" name="Recipe: Blessed Seraph Earring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1257" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Seraph Ring. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
+	<item id="35512" type="EtcItem" name="Recipe: Blessed Seraph Ring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1258" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Shaper. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35513" type="EtcItem" name="Recipe: Blessed Amaranthine Shaper (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1259" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Cutter. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35514" type="EtcItem" name="Recipe: Blessed Amaranthine Cutter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1260" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Slasher. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35515" type="EtcItem" name="Recipe: Blessed Amaranthine Slasher (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1261" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Avenger. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35516" type="EtcItem" name="Recipe: Blessed Amaranthine Avenger (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1262" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Fighter. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35517" type="EtcItem" name="Recipe: Blessed Amaranthine Fighter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1263" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Stormer. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35518" type="EtcItem" name="Recipe: Blessed Amaranthine Stormer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1264" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Thrower. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35519" type="EtcItem" name="Recipe: Blessed Amaranthine Thrower (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1265" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Shooter. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35520" type="EtcItem" name="Recipe: Blessed Amaranthine Shooter (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1266" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Buster. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35521" type="EtcItem" name="Recipe: Blessed Amaranthine Buster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1267" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Caster. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35522" type="EtcItem" name="Recipe: Blessed Amaranthine Caster (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1268" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Retributer. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35523" type="EtcItem" name="Recipe: Blessed Amaranthine Retributer (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1269" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35524" type="EtcItem" name="Recipe: Blessed Eternal Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1270" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Breastplate. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35525" type="EtcItem" name="Recipe: Blessed Eternal Breastplate (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1271" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Gaiters. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35526" type="EtcItem" name="Recipe: Blessed Eternal Gaiters (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1272" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Gauntlets. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35527" type="EtcItem" name="Recipe: Blessed Eternal Gauntlets (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1273" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35528" type="EtcItem" name="Recipe: Blessed Eternal Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1274" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Shield. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35529" type="EtcItem" name="Recipe: Blessed Eternal Shield (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1275" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Leather Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35530" type="EtcItem" name="Recipe: Blessed Eternal Leather Helmet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1276" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Leather Armor. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35531" type="EtcItem" name="Recipe: Blessed Eternal Leather Armor (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1277" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Leather Leggings. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35532" type="EtcItem" name="Recipe: Blessed Eternal Leather Leggings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1278" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Leather Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35533" type="EtcItem" name="Recipe: Blessed Eternal Leather Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1279" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Leather Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35534" type="EtcItem" name="Recipe: Blessed Eternal Leather Boots (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1280" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Circlet. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35535" type="EtcItem" name="Recipe: Blessed Eternal Circlet (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1281" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Tunic. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35536" type="EtcItem" name="Recipe: Blessed Eternal Tunic (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1282" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Stockings. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35537" type="EtcItem" name="Recipe: Blessed Eternal Stockings (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1283" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35538" type="EtcItem" name="Recipe: Blessed Eternal Gloves (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1284" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for Blessed Eternal Shoes. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35539" type="EtcItem" name="Recipe: Blessed Eternal Shoes (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1285" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Sigil. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35540" type="EtcItem" name="Recipe: Blessed Eternal Sigil (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1286" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Necklace. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35541" type="EtcItem" name="Recipe: Blessed Eternal Necklace (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1287" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Earring. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35542" type="EtcItem" name="Recipe: Blessed Eternal Earring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1288" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- For Dwarves only. Recipe for a Blessed Eternal Ring. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
+	<item id="35543" type="EtcItem" name="Recipe: Blessed Eternal Ring (60%)">
+		<set name="icon" val="icon.etc_recipe_gold_i00" />
+		<set name="default_action" val="recipe" />
+		<set name="etcitem_type" val="recipe" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="30" />
+		<set name="recipe_id" val="1289" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="Recipes" />
+	</item>
+	<!-- A mysterious mark. It is used at the Mysterious Mansion in the Mysterious Suggestion quest as proof of participation in the tournament. -->
+	<item id="35544" type="EtcItem" name="Tournament Remnants I">
+		<set name="icon" val="icon.etc_badge_silver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Box obtained after consoling the soul of the dead wandering in the Guillotine Fortress. Double-click to check for more information. -->
+	<item id="35546" type="EtcItem" name="Deadman's Chest">
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box obtained after consoling the soul of the dead wandering in the Guillotine Fortress. Double-click to check for more information. -->
+	<item id="35547" type="EtcItem" name="Deadman's Chest">
+		<set name="icon" val="icon.etc_exchange_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box obtaining after completing the Destroy the Machine Device mission on the 2nd floor of the Seed of Hellfire. Double-click to check for more information. -->
+	<item id="35548" type="EtcItem" name="Engineer Zofan's Supply Box">
+		<set name="icon" val="icon.etc_pi_gift_box_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box obtained after helping the resistances forces in the Seed of Hellfire. Double-click to check for more information. -->
+	<item id="35549" type="EtcItem" name="Rebel's Supply Box">
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- Box obtained after helping Aku in the Seed of Hellfire. Double-click to check for more information. -->
+	<item id="35550" type="EtcItem" name="Aku's Supply Box">
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+	</item>
+	<!-- A mysterious mark. It is used at the Mysterious Mansion in the Mysterious Suggestion quest as proof of participation in the tournament. -->
+	<item id="35551" type="EtcItem" name="Tournament Remnants II">
+		<set name="icon" val="icon.etc_badge_silver_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Einhasad's Superior Medal obtained after defeating the Chamberlain of Darkness. Exchange it for a reward from the Captain of the Revolutionaries. -->
+	<item id="35552" type="EtcItem" name="Einhasad's Superior Medal">
+		<set name="icon" val="icon.etc_badge_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Einhasad's Medal obtained after defeating the Chamberlain of Darkness. Exchange it for a reward from the Captain of the Revolutionaries. -->
+	<item id="35553" type="EtcItem" name="Einhasad's Medal">
+		<set name="icon" val="icon.etc_badge_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Revolutionaries' Superior Medal obtained after defeating the Chamberlain of Darkness. Exchange it for a reward from the Captain of the Revolutionaries. -->
+	<item id="35554" type="EtcItem" name="Revolutionaries' Superior Medal">
+		<set name="icon" val="icon.etc_badge_gold_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Revolutionaries' Medal obtained after defeating the Chamberlain of Darkness. Exchange it for a reward from the Captain of the Revolutionaries. -->
+	<item id="35555" type="EtcItem" name="Revolutionaries' Medal">
+		<set name="icon" val="icon.etc_badge_black_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 85 solo dungeon. Can be used only once a day. -->
+	<item id="35556" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Solo">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 90 solo dungeon. Can be used only once a day. -->
+	<item id="35557" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Solo">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 95 solo dungeon. Can be used only once a day. -->
+	<item id="35558" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Solo">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 85 party dungeon. Can be used only once a day. -->
+	<item id="35559" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 85 Party">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 90 party dungeon. Can be used only once a day. -->
+	<item id="35560" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 90 Party">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Kartia's Labyrinth Extra Pass delivered to adventurers from the Kartia Research Center. When used, you can reset your instance timer for the level 95 party dungeon. Can be used only once a day. -->
+	<item id="35561" type="EtcItem" name="Entrance Pass: Kartia's Labyrinth Lv. 95 Party">
+		<set name="icon" val="icon.etc_ticket_red_i00" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<!-- Use to exchange or enhance special items. -->
+	<item id="35562" type="EtcItem" name="Energy of Destruction">
+		<set name="icon" val="icon.etc_talisman_beads_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Use to exchange or enhance special items. -->
+	<item id="35563" type="EtcItem" name="Giant's Energy">
+		<set name="icon" val="icon.etc_talisman_energy_i01" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="true" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<!-- Item given to the winner of the Ceremony of Chaos that takes place in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 1000, weight by 25600, and damage by 8%. Decreases received damage by 9% and Damage Reflect Resistance by 5%. Increases the number of inventory slots by 36, and Attribute Resistance by 15. -->
+	<item id="35564" type="Armor" name="Ruler's Authority">
+		<set name="icon" val="icon.belt_rulers_authority" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="440" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="15145-1" />
+		<for>
+			<baseAdd stat="pDef" val="50" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Item acquired after winning the Ceremony of Chaos Tournament in the Mysterious Mansion. When equipped, increases Max HP, MP, and CP by 500, PvP damage by 6%, and Damage Reflect Resistance by 5%. Decreases damage received during PvP by 7%. -->
+	<item id="35565" type="Armor" name="Mysterious Belt - 3-day">
+		<set name="icon" val="icon.belt_rulers_authority" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="waist" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s" />
+		<set name="weight" val="440" />
+		<set name="enchant_enabled" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="item_skill" val="15146-1" />
+		<for>
+			<baseAdd stat="pDef" val="50" />
+			<enchant stat="pDef" val="0" />
+		</for>
+	</item>
+	<!-- Bestows the PvP option on an Amaranthine weapon through the blacksmith. When the option is bestowed, Energy of Destruction and Giant's Energy are additionally requested. -->
+	<item id="35566" type="EtcItem" name="Dark Amaranthine Enhancement Stone">
+		<set name="icon" val="icon.energy_condenser_i03" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="isBlessed" val="true" />
+	</item>
+	<!-- Bestows the PvP option on Eternal armor through the blacksmith. When the option is bestowed, Energy of Destruction and Giant's Energy are additionally requested. -->
+	<item id="35567" type="EtcItem" name="Dark Eternal Enhancement Stone">
+		<set name="icon" val="icon.energy_condenser_i04" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="isBlessed" val="true" />
+	</item>
+	<!-- Bestows the PvE option on an Amaranthine weapon through the blacksmith. When the option is bestowed, Energy of Destruction and Giant's Energy are additionally requested. -->
+	<item id="35568" type="EtcItem" name="Bloody Amaranthine Enhancement Stone">
+		<set name="icon" val="icon.energy_condenser_i05" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="isBlessed" val="true" />
+	</item>
+	<!-- Bestows the PvE option on Eternal armor through the blacksmith. When the option is bestowed, Energy of Destruction and Giant's Energy are additionally requested. -->
+	<item id="35569" type="EtcItem" name="Bloody Eternal Enhancement Stone">
+		<set name="icon" val="icon.energy_condenser_i06" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="0" />
+		<set name="is_stackable" val="true" />
+		<set name="isBlessed" val="true" />
+	</item>
+	<!-- Tauti's Ring. Fire/Dark Resistance + 25, MP + 38, Critical Damage + 15%, Skill Power + 5%, PvP damage + 5%, Paralysis/Binding/Banishment Resistance + 10, Damage Reflect Resistance + 5, Absorption Resistance + 5, received PvP damage - 5%, and critical + 54 when a blunt is equipped. Even if you wear two identical rings, only the effects of one apply (excluding attributes/M. Def.). -->
+	<item id="35570" type="Armor" name="Tauti's Ring">
+		<set name="icon" val="icon.accessary_tauti_ring" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="8870-1" />
+		<for>
+			<baseAdd stat="mDef" val="108" />
+			<add stat="fireRes" val="25" />
+			<add stat="darkRes" val="25" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Water Resistance + 26, MP + 33. -->
+	<item id="35571" type="Armor" name="Water Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="85" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Holy Resistance + 26, MP + 33. -->
+	<item id="35572" type="Armor" name="Holy Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="85" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Wind Resistance + 26, MP + 33. -->
+	<item id="35573" type="Armor" name="Wind Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="85" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Dark Resistance + 26, MP + 33. -->
+	<item id="35574" type="Armor" name="Dark Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="85" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Earth Resistance + 26, MP + 33. -->
+	<item id="35575" type="Armor" name="Earth Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="85" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Fire Resistance + 26, MP + 33. -->
+	<item id="35576" type="Armor" name="Fire Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="85" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Water Resistance + 30, MP + 62. -->
+	<item id="35577" type="Armor" name="Top-grade Water Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="158" />
+			<add stat="maxMp" val="30" />
+			<add stat="waterRes" val="30" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Fire Resistance + 30, MP + 62. -->
+	<item id="35578" type="Armor" name="Top-grade Fire Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="158" />
+			<add stat="maxMp" val="30" />
+			<add stat="fireRes" val="30" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Holy Resistance + 30, MP + 62. -->
+	<item id="35579" type="Armor" name="Top-grade Holy Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="158" />
+			<add stat="maxMp" val="30" />
+			<add stat="holyRes" val="30" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Dark Resistance + 30, MP + 62. -->
+	<item id="35580" type="Armor" name="Top-grade Dark Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="158" />
+			<add stat="maxMp" val="30" />
+			<add stat="darkRes" val="30" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Wind Resistance + 30, MP + 62. -->
+	<item id="35581" type="Armor" name="Top-grade Wind Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="158" />
+			<add stat="maxMp" val="30" />
+			<add stat="windRes" val="30" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Earth Resistance + 30, MP + 62. -->
+	<item id="35582" type="Armor" name="Top-grade Earth Resistance Necklace">
+		<set name="icon" val="icon.accessary_inferno_necklace_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="158" />
+			<add stat="maxMp" val="30" />
+			<add stat="earthRes" val="30" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Earth Resistance + 12, MP + 17. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35583" type="Armor" name="Earth Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="42" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Water Resistance + 12, MP + 17. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35584" type="Armor" name="Water Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="42" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Fire Resistance + 12, MP + 17. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35585" type="Armor" name="Fire Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="42" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Holy Resistance + 12, MP + 17. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35586" type="Armor" name="Holy Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="42" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Dark Resistance + 12, MP + 17. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35587" type="Armor" name="Dark Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="42" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Wind Resistance + 12, MP + 17. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35588" type="Armor" name="Wind Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="a" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="42" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Earth Resistance + 15, MP + 31. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35589" type="Armor" name="Top-grade Earth Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13456-1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="31" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Water Resistance + 15, MP + 31. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35590" type="Armor" name="Top-grade Water Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13457-1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="31" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Fire Resistance + 15, MP + 31. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35591" type="Armor" name="Top-grade Fire Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13458-1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="31" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Holy Resistance + 15, MP + 31. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35592" type="Armor" name="Top-grade Holy Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13459-1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="31" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Dark Resistance + 15, MP + 31. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35593" type="Armor" name="Top-grade Dark Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13460-1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="31" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Ring purchased at the Mysterious Mansion. Wind Resistance + 15, MP + 31. Only one effect is applied when two rings with the same effect are equipped. -->
+	<item id="35594" type="Armor" name="Top-grade Wind Resistance Ring">
+		<set name="icon" val="icon.accessary_inferno_ring_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="r" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<set name="item_skill" val="13461-1" />
+		<for>
+			<baseAdd stat="mDef" val="79" />
+			<add stat="maxMp" val="31" />
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Water Resistance + 30, MP + 46. -->
+	<item id="35595" type="Armor" name="Water Royal Guard Necklace">
+		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Earth Resistance + 30, MP + 46. -->
+	<item id="35596" type="Armor" name="Earth Royal Guard Necklace">
+		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Fire Resistance + 30, MP + 46. -->
+	<item id="35597" type="Armor" name="Fire Royal Guard Necklace">
+		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Holy Resistance + 30, MP + 46. -->
+	<item id="35598" type="Armor" name="Holy Royal Guard Necklace">
+		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+		</for>
+	</item>
+	<!-- Necklace purchased at the Mysterious Mansion. Dark Resistance + 30, MP + 46. -->
+	<item id="35599" type="Armor" name="Dark Royal Guard Necklace">
+		<set name="icon" val="icon.accessory_nectklace_of_domi_protection_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="0" />
+		<set name="crystal_type" val="s80" />
+		<set name="weight" val="150" />
+		<set name="enchant_enabled" val="1" />
+		<for>
+			<baseAdd stat="mDef" val="106" />
+		</for>
+	</item>
+</list>

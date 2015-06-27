@@ -1,0 +1,1819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Avenger Focus. -->
+	<item id="46000" type="EtcItem" name="Apocalypse Avenger Focus Capsule - Event" icon="icon.weapon_raksilion_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Fighter Focus. -->
+	<item id="46001" type="EtcItem" name="Apocalypse Fighter Focus Capsule - Event" icon="icon.weapon_kirche_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Stormer Damage Up. -->
+	<item id="46002" type="EtcItem" name="Apocalypse Stormer Damage Up Capsule - Event" icon="icon.weapon_grave_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Thrower Focus. -->
+	<item id="46003" type="EtcItem" name="Apocalypse Thrower Focus Capsule - Event" icon="icon.weapon_spina_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Shooter Focus. -->
+	<item id="46004" type="EtcItem" name="Apocalypse Shooter Focus Capsule - Event" icon="icon.weapon_medianox_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Buster Acumen. -->
+	<item id="46005" type="EtcItem" name="Apocalypse Buster Acumen Capsule - Event" icon="icon.weapon_imerose_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Caster Acumen. -->
+	<item id="46006" type="EtcItem" name="Apocalypse Caster Acumen Capsule - Event" icon="icon.weapon_yuke_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Apocalypse Retributer Acumen. -->
+	<item id="46007" type="EtcItem" name="Apocalypse Retributer Acumen Capsule - Event" icon="icon.weapon_herencia_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Shaper Focus. -->
+	<item id="46008" type="EtcItem" name="Specter Shaper Focus Capsule - Event" icon="icon.weapon_ignicion_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Cutter Focus. -->
+	<item id="46009" type="EtcItem" name="Specter Cutter Focus Capsule - Event" icon="icon.weapon_ninfea_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Slasher Focus. -->
+	<item id="46010" type="EtcItem" name="Specter Slasher Focus Capsule - Event" icon="icon.weapon_skia_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Dualsword Damage Up. -->
+	<item id="46011" type="EtcItem" name="Specter Dualsword Damage Up Capsule - Event" icon="icon.weapon_r_dualsword_i21" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Dual Dagger Focus. -->
+	<item id="46012" type="EtcItem" name="Specter Dual Dagger Focus Capsule - Event" icon="icon.weapon_r_dualdagger_i21" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Dual Blunt Weapon Damage Up. -->
+	<item id="46013" type="EtcItem" name="Specter Dual Blunt Weapon Damage Up Capsule - Event" icon="icon.weapon_r_dualblunt_i21"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Avenger Focus. -->
+	<item id="46014" type="EtcItem" name="Specter Avenger Focus Capsule - Event" icon="icon.weapon_ikeon_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Fighter Focus. -->
+	<item id="46015" type="EtcItem" name="Specter Fighter Focus Capsule - Event" icon="icon.weapon_deodos_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Stormer Damage Up. -->
+	<item id="46016" type="EtcItem" name="Specter Stormer Damage Up Capsule - Event" icon="icon.weapon_transgredi_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Thrower Focus. -->
+	<item id="46017" type="EtcItem" name="Specter Thrower Focus Capsule - Event" icon="icon.weapon_solenas_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Shooter Focus. -->
+	<item id="46018" type="EtcItem" name="Specter Shooter Focus Capsule - Event" icon="icon.weapon_lapis_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Buster Acumen. -->
+	<item id="46019" type="EtcItem" name="Specter Buster Acumen Capsule - Event" icon="icon.weapon_zihel_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Caster Acumen. -->
+	<item id="46020" type="EtcItem" name="Specter Caster Acumen Capsule - Event" icon="icon.weapon_alacer_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Specter Retributer Acumen. -->
+	<item id="46021" type="EtcItem" name="Specter Retributer Acumen Capsule - Event" icon="icon.weapon_rupe_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Shaper Focus. -->
+	<item id="46022" type="EtcItem" name="Amaranthine Shaper Focus Capsule - Event" icon="icon.weapon_stanpid_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Cutter Focus. -->
+	<item id="46023" type="EtcItem" name="Amaranthine Cutter Focus Capsule - Event" icon="icon.weapon_plenitas_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Slasher Focus. -->
+	<item id="46024" type="EtcItem" name="Amaranthine Slasher Focus Capsule - Event" icon="icon.weapon_bauen_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Dualsword Damage Up. -->
+	<item id="46025" type="EtcItem" name="Amaranthine Dualsword Damage Up Capsule - Event" icon="icon.weapon_r_dualsword_i21"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Dual Dagger Focus. -->
+	<item id="46026" type="EtcItem" name="Amaranthine Dual Dagger Focus Capsule - Event" icon="icon.weapon_r_dualdagger_i21"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Dual Blunt Weapon Damage Up. -->
+	<item id="46027" type="EtcItem" name="Amaranthine Dual Blunt Weapon Damage Up Capsule - Event" icon="icon.weapon_r_dualblunt_i21"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Avenger Focus. -->
+	<item id="46028" type="EtcItem" name="Amaranthine Avenger Focus Capsule - Event" icon="icon.weapon_qutram_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Fighter Focus. -->
+	<item id="46029" type="EtcItem" name="Amaranthine Fighter Focus Capsule - Event" icon="icon.weapon_durga_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Stormer Damage Up. -->
+	<item id="46030" type="EtcItem" name="Amaranthine Stormer Damage Up Capsule - Event" icon="icon.weapon_crabel_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Thrower Focus. -->
+	<item id="46031" type="EtcItem" name="Amaranthine Thrower Focus Capsule - Event" icon="icon.weapon_castron_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Shooter Focus. -->
+	<item id="46032" type="EtcItem" name="Amaranthine Shooter Focus Capsule - Event" icon="icon.weapon_stilla_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Buster Acumen. -->
+	<item id="46033" type="EtcItem" name="Amaranthine Buster Acumen Capsule - Event" icon="icon.weaon_serapear_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Caster Acumen. -->
+	<item id="46034" type="EtcItem" name="Amaranthine Caster Acumen Capsule - Event" icon="icon.weapon_pilia_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 6 enchanted Amaranthine Retributer Acumen. -->
+	<item id="46035" type="EtcItem" name="Amaranthine Retributer Acumen Capsule - Event" icon="icon.weapon_shaelon_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!--
+		Needed to learn passive skill, Fate of the Exalted Lv. 1, with the effect of + 3 LUC.
+		Can be obtained in the main class status.
+	-->
+	<item id="46036" type="EtcItem" name="Spellbook: Fate of the Exalted" icon="icon.giant_book_i02" immediateEffect="1" weight="20"
+			isStackable="true">
+	</item>
+	<!-- An Olympiad gift for awakened heroes. -->
+	<item id="46037" type="EtcItem" name="Awakened Hero's Olympiad Gift" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- An Olympiad gift for heroes who have participated in 50 Olympiad matches. -->
+	<item id="46038" type="EtcItem" name="Indomitable Hero's Olympiad Gift" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- STR + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46039" type="Weapon" name="Player Commendation Talisman - STR - PC-exclusive" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- INT + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46040" type="Weapon" name="Player Commendation Talisman - INT - PC-exclusive" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- DEX + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46041" type="Weapon" name="Player Commendation Talisman - DEX - PC-exclusive" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- WIT + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46042" type="Weapon" name="Player Commendation Talisman - WIT - PC-exclusive" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- CON + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46043" type="Weapon" name="Player Commendation Talisman - CON - PC-exclusive" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- MEN + 5 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46044" type="Weapon" name="Player Commendation Talisman - MEN - PC-exclusive" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Atk. Attribute + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46045" type="Weapon" name="Player Commendation Talisman - Atk. Attribute Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Fire Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46046" type="Weapon" name="Player Commendation Talisman - Fire Resistance Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Water Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46047" type="Weapon" name="Player Commendation Talisman - Water Resistance Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Wind Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46048" type="Weapon" name="Player Commendation Talisman - Wind Resistance Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Earth Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46049" type="Weapon" name="Player Commendation Talisman - Earth Resistance Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Holy Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46050" type="Weapon" name="Player Commendation Talisman - Holy Resistance Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Dark Resistance + 50 when equipped. Only one effect is applied even when wearing two talismans with the same effect. -->
+	<item id="46051" type="Weapon" name="Player Commendation Talisman - Dark Resistance Boost - PC-exclusive" icon="" bodypart="none"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Soul Stone obtained from defeating Armed Veridan. When combined with Kechi's Soul Stone and Michaela's Soul Stone, it will be turned into a Dark Soul Stone. Take it to Head Priest of the Earth Daichir to be recognized for defeating  Earth Wyrm Trasken. -->
+	<item id="46052" type="EtcItem" name="Veridan's Soul Stone" icon="icon.low_star_stone_piece_i02" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Soul Stone obtained from defeating Armed Kechi. When combined with Veridan's Soul Stone and Michaela's Soul Stone, it will be turned into a Dark Soul Stone. Take it to Head Priest of the Earth Daichir to be recognized for defeating  Earth Wyrm Trasken. -->
+	<item id="46053" type="EtcItem" name="Kechi's Soul Stone" icon="icon.low_star_stone_piece_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Soul Stone obtained from defeating Armed Michaela. When combined with Veridan's Soul Stone and Kechi's Soul Stone, it will be turned into a Dark Soul Stone. Take it to Head Priest of the Earth Daichir to be recognized for defeating  Earth Wyrm Trasken. -->
+	<item id="46054" type="EtcItem" name="Michaela's Soul Stone" icon="icon.low_star_stone_piece_i01" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Item obtained from defeating Earth Wyrm Trasken or from collecting Veridan, Kechi, and Michaela's Soul Stones. Take it to Head Priest of the Earth Daichir to be recognized for defeating  Earth Wyrm Trasken. -->
+	<item id="46055" type="EtcItem" name="Dark Soul Stone" icon="icon.etc_black_freezing_core_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Certificate received from Merlot for finishing the mission. Take it to Lionel Hunter in Heine to get your Exalted qualification. -->
+	<item id="46056" type="EtcItem" name="Merlot's Certificate" icon="icon.etc_roll_of_paper_white_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Certificate from Captain Kurtiz for finishing the mission. Take it to Lionel Hunter in Heine to get your Exalted qualification. -->
+	<item id="46057" type="EtcItem" name="Kurtiz' Certificate" icon="icon.etc_roll_of_paper_red_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Mark obtained for defeating the monsters in the Dimensional Raid. Take it to Merlot in Hunters' Village. -->
+	<item id="46058" type="EtcItem" name="Mark of Advance" icon="icon.accessary_necklace_of_valor_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Mark obtained for obtaining the Flag of Protection by participating in a Castle Siege or a Dimensional Castle Siege. Take it to Captain Kurtiz in the Town of Aden. -->
+	<item id="46059" type="EtcItem" name="Mark of Valor" icon="icon.etc_leash_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!--
+		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
+		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+	-->
+	<item id="46060" type="Weapon" name="Kelbim Dagger" icon="" weaponType="dagger" bodypart="rhand" crystalType="r" material="steel"
+			weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
+		<set stat="pAtk" val="647" />
+		<set stat="mAtk" val="322" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="433" />
+		<add stat="darkPower" val="450" />
+		<skill id="13816" level="1" /> <!-- Kelbim's Dagger -->
+	</item>
+	<!--
+		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
+		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+	-->
+	<item id="46061" type="Weapon" name="Kelbim Dual Dagger" icon="" weaponType="dualdagger" bodypart="lrhand" crystalType="r"
+			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
+		<set stat="pAtk" val="740" />
+		<set stat="mAtk" val="322" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="433" />
+		<add stat="darkPower" val="450" />
+		<skill id="13817" level="1" /> <!-- Kelbim's Dual Dagger -->
+	</item>
+	<!--
+		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
+		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+	-->
+	<item id="46062" type="Weapon" name="Kelbim Bow" icon="" weaponType="bow" bodypart="lrhand" crystalType="r" material="steel"
+			weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false" reuseDelay="1500">
+		<set stat="pAtk" val="1457" />
+		<set stat="mAtk" val="322" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="293" />
+		<add stat="darkPower" val="450" />
+		<skill id="13818" level="1" /> <!-- Kelbim's Bow -->
+	</item>
+	<!--
+		Weapon created by augmenting Kelbim's Atelia Fragments. PVP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%. Return 20% of additional damage to the enemy. 
+		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
+	-->
+	<item id="46063" type="Weapon" name="Kelbim Crossbow" icon="" weaponType="crossbow" bodypart="lrhand" crystalType="r" material="steel"
+			weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false" reuseDelay="400">
+		<set stat="pAtk" val="1312" />
+		<set stat="mAtk" val="322" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+		<add stat="darkPower" val="450" />
+		<skill id="13819" level="1" /> <!-- Kelbim's Crossbow -->
+	</item>
+	<!-- Badge bearing the mark of the Town of Gludio. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46064" type="EtcItem" name="Dimensional Gludio Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of Gludin Village. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46065" type="EtcItem" name="Dimensional Gludin Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of the Town of Giran. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46066" type="EtcItem" name="Dimensional Giran Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of the Town of Oren. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46067" type="EtcItem" name="Dimensional Oren Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of the Town of Aden. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46068" type="EtcItem" name="Dimensional Aden Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of Gainak. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46069" type="EtcItem" name="Dimensional Gainak Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of the Town of Goddard. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46070" type="EtcItem" name="Dimensional Goddard Badge" icon="icon.etc_badge_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Badge bearing the mark of the Town of Schuttgart. You must have the corresponding badge when running the Dimensional Raid in order to receive the reward from that town's raid boss. -->
+	<item id="46071" type="EtcItem" name="Dimensional Schuttgart Badge" icon="icon.etc_badge_black_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A coupon given to one of the warriors who participated in the Dimensional Raid and had top scores. Exchange it for a Bloody Amaranthine Enhancement Stone through Merlot in Hunters' Village. -->
+	<item id="46072" type="EtcItem" name="Bloody Amaranthine Enhancement Stone Coupon" icon="icon.etc_letter_white_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A coupon given to one of the warriors who participated in the Dimensional Raid and had top scores. Exchange it for a Bloody Eternal Enhancement Stone through Merlot in Hunters' Village. -->
+	<item id="46073" type="EtcItem" name="Bloody Eternal Enhancement Stone Coupon" icon="icon.etc_letter_white_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get 1 of the following: Elcyum Powder, Elcyum Crystal, or Elcyum. -->
+	<item id="46074" type="EtcItem" name="Dimensional Elcyum Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get 1 of the following: High-grade Spirit Stone, Top-grade Spirit Stone, Spirit Stone: Hair Accessory, Life Stone Instilled with Giants' Power. -->
+	<item id="46075" type="EtcItem" name="Dimensional Augment Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get 1 of the following: Scroll: Enchant Armor (R-grade), Lucky Enchant Stone: Armor (S-grade), Scroll: Enchant Weapon (R-grade), Blessed Scroll: Enchant Armor (R-grade), Lucky Enchant Stone: Armor (R-grade), Lucky Enchant Stone: Weapon (S-grade), Blessed Scroll: Enchant Weapon (R-grade), or Lucky Enchant Stone: Weapon (R-grade). -->
+	<item id="46076" type="EtcItem" name="Dimensional Enhancement Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Enchant success rate + 10% for weapons (R-grade). Only for items enchanted between + 3 and + 9. -->
+	<item id="46077" type="EtcItem" name="Lucky Enchant Stone: Weapon (R-grade)" icon="icon.ench_wp_potion_violet_i00" immediateEffect="1"
+			crystalType="c" weight="120" isStackable="true">
+	</item>
+	<!-- Enchant success rate + 15% for armor (R-grade). Only for items enchanted between + 3 and + 9. For one-piece armor, enchant must be between + 4 and + 9. -->
+	<item id="46078" type="EtcItem" name="Lucky Enchant Stone: Armor (R-grade)" icon="icon.ench_am_potion_violet_i00" immediateEffect="1"
+			crystalType="c" weight="120" isStackable="true">
+	</item>
+	<!-- A fragment from Kelbim's weapon. The metal was made with Atelia and it's instilled with Kelbim's power. -->
+	<item id="46079" type="EtcItem" name="Kelbim's Atelia Fragment" icon="icon.kelbim_piece" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- For Tyrr Maestros only. Recipe for making a Mysterious Soulshot (R-grade). Requires Create Item level 14. Success rate is 100%. -->
+	<item id="46080" type="EtcItem" name="Recipe: Mysterious Soulshot (R-grade)" icon="icon.etc_recipe_gold_i00" immediateEffect="1"
+			crystalType="c" weight="30" isStackable="true" handler="Recipes" immediate_effect="1">
+	</item>
+	<!-- For Tyrr Maestros only. Recipe for making a Mysterious Blessed Spiritshot (R-grade). Requires Create Item level 14. Success rate is 100% -->
+	<item id="46081" type="EtcItem" name="Recipe: Mysterious Blessed Spiritshot (R-grade)" icon="icon.etc_recipe_gold_i00" immediateEffect="1"
+			crystalType="c" weight="30" isStackable="true" handler="Recipes" immediate_effect="1">
+	</item>
+	<!-- The power of a spirit is bestowed upon a weapon (R-grade), temporarily inflicting a powerful attack on the enemy. -->
+	<item id="46082" type="EtcItem" name="Mysterious Soulshot (R-grade)" icon="icon.soulshot_r_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- The power of a higher-level spirit is bestowed upon a weapon (R-grade), temporarily increasing its magic significantly. -->
+	<item id="46083" type="EtcItem" name="Mysterious Blessed Spiritshot (R-grade)" icon="icon.blessed_spiritshot_r_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Special bait for fishing. You can get Treasure Map Pieces when fishing with it. Can be used outside a PC. -->
+	<item id="46084" type="EtcItem" name="Player Commendation Special Bait - PC-exclusive" icon="icon.etc_bait_i02" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A treasure map piece caught with Player Commendation Special Bait. Collect pieces 1~4 and exchange for Stew through the Fishing Guild Member. If you collect pieces 1~5, take it to Fishing Guild Member Linnaeus in the Town of Aden to exchange for a Complete Treasure Map. -->
+	<item id="46085" type="EtcItem" name="Treasure Map Piece - 1" icon="icon.etc_map_piece_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A treasure map piece caught with Player Commendation Special Bait. Collect pieces 1~4 and exchange for Stew through the Fishing Guild Member. If you collect pieces 1~5, take it to Fishing Guild Member Linnaeus in the Town of Aden to exchange for a Complete Treasure Map. -->
+	<item id="46086" type="EtcItem" name="Treasure Map Piece - 2" icon="icon.etc_map_piece_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A treasure map piece caught with Player Commendation Special Bait. Collect pieces 1~4 and exchange for Stew through the Fishing Guild Member. If you collect pieces 1~5, take it to Fishing Guild Member Linnaeus in the Town of Aden to exchange for a Complete Treasure Map. -->
+	<item id="46087" type="EtcItem" name="Treasure Map Piece - 3" icon="icon.etc_map_piece_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A treasure map piece caught with Player Commendation Special Bait. Collect pieces 1~4 and exchange for Stew through the Fishing Guild Member. If you collect pieces 1~5, take it to Fishing Guild Member Linnaeus in the Town of Aden to exchange for a Complete Treasure Map. -->
+	<item id="46088" type="EtcItem" name="Treasure Map Piece - 4" icon="icon.etc_map_piece_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A treasure map piece caught with Player Commendation Special Bait. Collect pieces 1~4 and exchange for Stew through the Fishing Guild Member. If you collect pieces 1~5, take it to Fishing Guild Member Linnaeus in the Town of Aden to exchange for a Complete Treasure Map. -->
+	<item id="46089" type="EtcItem" name="Treasure Map Piece - 5" icon="icon.etc_map_piece_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. Seeing that Zaken's signature is at the bottom, it looks like it's Zaken's treasure. Double-click to receive the quest. -->
+	<item id="46090" type="EtcItem" name="Treasure Map - Great Pirate Zaken" icon="icon.etc_map_yellow_i00" immediateEffect="1"
+			weight="1" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. The name Leona Blackbird is written next to the location, so it's probably a treasure for Leona. Double-click to receive the quest. -->
+	<item id="46091" type="EtcItem" name="Treasure Map - Leona Blackbird" icon="icon.etc_map_yellow_i01" immediateEffect="1"
+			weight="1" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says, "The legacy of the great Elf queen Beora is hereâ€¦". Double-click to receive the quest. -->
+	<item id="46092" type="EtcItem" name="Treasure Map - Beora" icon="icon.etc_map_yellow_i02" immediateEffect="1" weight="1"
+			isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says, "He lived a bloody life, but he was a good man. I leave his treasure here". Double-click to receive the quest. -->
+	<item id="46093" type="EtcItem" name="Treasure Map - Unknown Gladiator" icon="icon.etc_map_yellow_i03" immediateEffect="1"
+			weight="1" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says "For the High Priest", so it's probably a gift for the temple. Double-click to receive the quest. -->
+	<item id="46094" type="EtcItem" name="Treasure Map - High Priest Raymond" icon="icon.etc_map_yellow_i04" immediateEffect="1"
+			weight="1" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says, "Glory to the Turek Orcs". It looks like it is related to the Turek Orcs. Double-click to receive the quest. -->
+	<item id="46095" type="EtcItem" name="Treasure Map - Turek Orc's Legacy" icon="icon.etc_map_yellow_i05" immediateEffect="1"
+			weight="1" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. Seeing that Zaken's signature is at the bottom, it looks like it's Zaken's treasure. -->
+	<item id="46096" type="EtcItem" name="Treasure Map - Great Pirate Zaken" icon="icon.etc_map_yellow_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. The name Leona Blackbird is written next to the location, so it's probably a treasure for Leona. -->
+	<item id="46097" type="EtcItem" name="Treasure Map - Leona Blackbird" icon="icon.etc_map_yellow_i01" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says, "The legacy of the great Elf queen Beora is hereâ€¦". -->
+	<item id="46098" type="EtcItem" name="Treasure Map - Beora" icon="icon.etc_map_yellow_i02" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says, "He lived a bloody life, but he was a good man. I leave his treasure here". -->
+	<item id="46099" type="EtcItem" name="Treasure Map - Unknown Gladiator" icon="icon.etc_map_yellow_i03" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says "For the High Priest", so it's probably a gift for the temple. -->
+	<item id="46100" type="EtcItem" name="Treasure Map - High Priest Raymond" icon="icon.etc_map_yellow_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A map showing the location of some treasure. It says, "Glory to the Turek Orcs". It looks like it is related to the Turek Orcs. -->
+	<item id="46101" type="EtcItem" name="Treasure Map - Turek Orc's Legacy" icon="icon.etc_map_yellow_i05" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Zaken's treasure chest. Double-click to get an item. -->
+	<item id="46102" type="EtcItem" name="Zaken's Treasure Chest" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Leona Blackbird's treasure chest. Double-click to get an item. -->
+	<item id="46103" type="EtcItem" name="Leona Blackbird's Treasure Chest" icon="icon.etc_jewel_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Beora's treasure chest. Double-click to get an item. -->
+	<item id="46104" type="EtcItem" name="Beora's Treasure Chest" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Gladiator's treasure chest. Double-click to get an item. -->
+	<item id="46105" type="EtcItem" name="Gladiator's Treasure Chest" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Raymond's treasure chest. Double-click to get an item. -->
+	<item id="46106" type="EtcItem" name="Raymond's Treasure Chest" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Turek Orc's treasure chest. Double-click to get an item. -->
+	<item id="46107" type="EtcItem" name="Turek Orc's Treasure Chest" icon="icon.etc_jewel_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Changes the appearance of a two-handed blunt into that of Drake Maul. 30-day. -->
+	<item id="46108" type="EtcItem" name="Drake Maul Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_twohand_blunt"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a two-handed magic blunt into that of Freya's Staff. 30-day. -->
+	<item id="46109" type="EtcItem" name="Freya's Staff Appearance Stone - 30-day" icon="icon.shape_shifting_magic_twohand_blunt_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a two-handed fist weapon into that of Spezion's Claw. 30-day. -->
+	<item id="46110" type="EtcItem" name="Spezion's Claw Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_dualfist"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a spear into that of a Maliss Stormer. 30-day. -->
+	<item id="46111" type="EtcItem" name="Maliss Stormer Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_pole"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a one handed dagger into that of Steregos' Dagger. 30-day. -->
+	<item id="46112" type="EtcItem" name="Steregos' Dagger Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_dagger"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a dual blunt into that of Ron's Dual Blunt Weapon. 30-day. -->
+	<item id="46113" type="EtcItem" name="Ron's Dual Blunt Weapon Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_dualblunt"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a two-handed blunt into that of Drake Maul's. -->
+	<item id="46114" type="EtcItem" name="Drake Maul Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_twohand_blunt"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a two-handed magic blunt into that of Freya's Staff. -->
+	<item id="46115" type="EtcItem" name="Freya's Staff Appearance Stone" icon="icon.shape_shifting_magic_twohand_blunt_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a two-handed fist weapon into that of Spezion's Claw. -->
+	<item id="46116" type="EtcItem" name="Spezion's Claw Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_dualfist"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a spear into that of a Maliss Stormer. -->
+	<item id="46117" type="EtcItem" name="Maliss Stormer Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_pole" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a one handed dagger into that of Steregos' Dagger. -->
+	<item id="46118" type="EtcItem" name="Steregos' Dagger Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_dagger"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a dual blunt into that of Ron's Dual Blunt Weapon. -->
+	<item id="46119" type="EtcItem" name="Ron's Dual Blunt Weapon Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_dualblunt"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Little Girl's Hat. 30-day. Can be used only on hair accessories that take up 2 slots. Female only. -->
+	<item id="46120" type="EtcItem" name="Little Girls' Hat Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Little Boy's Hat. 30-day. Can be used only on hair accessories that take up 2 slots. Male only. -->
+	<item id="46121" type="EtcItem" name="Little Boy's Hat Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Little Girl's Hat. Can be used only on hair accessories that take up 2 slots. Female only. -->
+	<item id="46122" type="EtcItem" name="Little Girls' Hat Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Little Boy's Hat. Can be used only on hair accessories that take up 2 slots. Male only. -->
+	<item id="46123" type="EtcItem" name="Little Boy's Hat Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Uniform Hat. 30-day. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46124" type="EtcItem" name="Uniform Hat Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Gold Afro. 30-day. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46125" type="EtcItem" name="Afro - Gold Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Pink Afro. 30-day. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46126" type="EtcItem" name="Afro - Pink Appearance Stone - 30-day" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Uniform Hat. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46127" type="EtcItem" name="Uniform Hat Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Gold Afro. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46128" type="EtcItem" name="Afro - Gold Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Pink Afro. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46129" type="EtcItem" name="Afro - Pink Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A piece of El Floato's evil thoughts. Use it to open the door to get to Harpe in the Garden of Spirits. -->
+	<item id="46130" type="EtcItem" name="Spirit Evil Thought Piece" icon="icon.etc_ertheia_prophecy_device_piece" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<item id="46131" type="Weapon" name="Kelbim Exclusive Weapon" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	</item>
+	<!-- Seal that proves that one is a member of the Blackbird Clan. The seal proves that one is a member of the clan or is someone trusted by the clan. -->
+	<item id="46132" type="EtcItem" name="Blackbird Seal" icon="icon.etc_piece_holy_light" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A neutralizer that prevents addiction of the by-product that is produced when creating Dark Atelia. All the Embryo in the Atelia Fortress carry this neutralizer. -->
+	<item id="46133" type="EtcItem" name="Dark Atelia Neutralizer" icon="icon.etc_potion_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Glenkinchie's report to Elikia. It says stuff about the Embryo. -->
+	<item id="46134" type="EtcItem" name="Blackbird Report - Glenkinchie" icon="icon.etc_scroll_gray_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Hurak's report to Elikia. It says stuff about the Embryo. -->
+	<item id="46135" type="EtcItem" name="Blackbird Report - Hurak" icon="icon.etc_scroll_gray_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Laffian's report to Elikia. It says stuff about the Embryo. -->
+	<item id="46136" type="EtcItem" name="Blackbird Report - Laffian" icon="icon.etc_scroll_gray_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Sherry's report to Elikia. It says stuff about the Embryo. -->
+	<item id="46137" type="EtcItem" name="Blackbird Report - Sherry" icon="icon.etc_scroll_gray_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You haven't been recognized by every member yet. -->
+	<item id="46138" type="EtcItem" name="Low-grade Honorary Member Certificate" icon="icon.etc_london_olympic_bronze" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You haven't been recognized by every member yet. -->
+	<item id="46139" type="EtcItem" name="Low-grade Honorary Member Certificate" icon="icon.etc_london_olympic_bronze" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You haven't been recognized by every member yet. -->
+	<item id="46140" type="EtcItem" name="Low-grade Honorary Member Certificate" icon="icon.etc_london_olympic_bronze" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You've been recognized for being helpful, but they won't tell you their deepest secrets. -->
+	<item id="46141" type="EtcItem" name="Mid-grade Honorary Member Certificate" icon="icon.etc_london_olympic_silver" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A piece of cloth to fix the flag that represents the stronghold. Take it to the Aden Vanguard. -->
+	<item id="46142" type="EtcItem" name="Stronghold Flag Repair Cloth" icon="icon.etc_piece_of_cloth_white_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Tools to repair the stronghold. Take it to the Aden Stronghold. -->
+	<item id="46143" type="EtcItem" name="Stronghold Repair Tools" icon="icon.etc_squares_gray_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A piece of the armor that Kelbim was wearing. Kaysia needs it in order to find out what the Embryo are using the Atelia for. Take it to Kaysia in the Town of Oren. -->
+	<item id="46144" type="EtcItem" name="Kelbim's Armor Piece" icon="icon.etc_plate_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Powder from the Giant Atelia that turned black. It will be useful in finding out how it's different from the Atelia of the Wind Spirit Realm. Take it to Kaysia in the Town of Oren. -->
+	<item id="46145" type="EtcItem" name="Black Atelia Powder" icon="icon.etc_powder_black_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A teleport device that takes you to Stronghold I. It was brought from Aden in order to facilitate movement. Because of the instability in the Atelia Fortress, it can only be used for 24 hours. -->
+	<item id="46146" type="EtcItem" name="Atelia Fortress Stronghold I Teleport Device - 24-hr" icon="icon.etc_mechanic_box_i00"
+			immediateEffect="1" weight="150" isStackable="true">
+	</item>
+	<!-- A teleport device that takes you to Stronghold II. It was brought from Aden in order to facilitate movement. Because of the instability in the Atelia Fortress, it can only be used for 24 hours. -->
+	<item id="46147" type="EtcItem" name="Atelia Fortress Stronghold II Teleport Device - 24-hr" icon="icon.etc_mechanic_box_i00"
+			immediateEffect="1" weight="150" isStackable="true">
+	</item>
+	<!-- A teleport device that takes you to Stronghold III. It was brought from Aden in order to facilitate movement. Because of the instability in the Atelia Fortress, it can only be used for 24 hours. -->
+	<item id="46148" type="EtcItem" name="Atelia Fortress Stronghold III Teleport Device - 24-hr" icon="icon.etc_mechanic_box_i00"
+			immediateEffect="1" weight="150" isStackable="true">
+	</item>
+	<!-- A teleport device that takes you to Stronghold IV. It was brought from Aden in order to facilitate movement. Because of the instability in the Atelia Fortress, it can only be used for 24 hours. -->
+	<item id="46149" type="EtcItem" name="Atelia Fortress Stronghold IV Teleport Device - 24-hr" icon="icon.etc_mechanic_box_i00"
+			immediateEffect="1" weight="150" isStackable="true">
+	</item>
+	<!-- Superior Giant's Codex. Rare item needed for enchanting skills between + 11~+ 20 after Awakening. -->
+	<item id="46150" type="EtcItem" name="Superior Giant's Codex Chapter 1" icon="icon.codex_of_incuse" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Superior Giant's Codex. Rare item needed for enchanting blessed skills between + 11~+ 20 after Awakening. -->
+	<item id="46151" type="EtcItem" name="Superior Giant's Codex - Mastery Chapter 1" icon="icon.codex_of_incuse_dexterity"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Superior Giant's Codex. Rare item needed for changing enchantment paths for skills between + 11~+ 20 after Awakening. -->
+	<item id="46152" type="EtcItem" name="Superior Giant's Codex - Discipline Chapter 1" icon="icon.codex_of_incuse_training"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Enchants a skill between + 11~+ 20 to the next grade with a success rate of 100% without consuming extra materials. -->
+	<item id="46153" type="EtcItem" name="Immortal Scroll Chapter 1" icon="icon.esagira_telepo_01" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+	<!-- Superior Giant's Codex. Rare item needed for enchanting skills between + 21~+ 30 after Awakening. -->
+	<item id="46154" type="EtcItem" name="Superior Giant's Codex Chapter 2" icon="icon.codex_of_incuse" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Superior Giant's Codex. Rare item needed for enchanting blessed skills between + 21~+ 30 after Awakening. -->
+	<item id="46155" type="EtcItem" name="Superior Giant's Codex - Mastery Chapter 2" icon="icon.codex_of_incuse_dexterity"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Superior Giant's Codex. Rare item needed for changing enchantment paths for skills between + 21~+ 30 after Awakening. -->
+	<item id="46156" type="EtcItem" name="Superior Giant's Codex - Discipline Chapter 2" icon="icon.codex_of_incuse_training"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Enchants a skill between + 21~+ 30 to the next grade with a success rate of 100% without consuming extra materials. -->
+	<item id="46157" type="EtcItem" name="Immortal Scroll Chapter 2" icon="icon.esagira_telepo_01" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+	<!-- Scroll for teleporting to Blackbird Campsite. -->
+	<item id="46158" type="EtcItem" name="Scroll of Escape: Blackbird Campsite" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+			crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You've been recognized for being helpful, but they won't tell you their deepest secrets. -->
+	<item id="46159" type="EtcItem" name="Mid-grade Honorary Member Certificate" icon="icon.etc_london_olympic_silver" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You've been recognized for being helpful, but they won't tell you their deepest secrets. -->
+	<item id="46160" type="EtcItem" name="Mid-grade Honorary Member Certificate" icon="icon.etc_london_olympic_silver" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You've been recognized for being helpful, but they won't tell you their deepest secrets. -->
+	<item id="46161" type="EtcItem" name="Mid-grade Honorary Member Certificate" icon="icon.etc_london_olympic_silver" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You've been recognized for being helpful, but they won't tell you their deepest secrets. -->
+	<item id="46162" type="EtcItem" name="Mid-grade Honorary Member Certificate" icon="icon.etc_london_olympic_silver" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A certificate that proves that you are an honorary member of the Aden Vanguard. You are being trusted with various stories. -->
+	<item id="46163" type="EtcItem" name="High-grade Honorary Member Certificate" icon="icon.etc_london_olympic_gold" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- A reward for finishing the missions as an honorary member of the Aden Vanguard. Double-click to use. -->
+	<item id="46164" type="EtcItem" name="Aden Vanguard Reward Box" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Reward for helping Ferin and her people. Double-click to open. -->
+	<item id="46165" type="EtcItem" name="Ferin's Reward Box" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- A letter from the first stronghold's Barton to the Aden Vanguard Captain Adolph. Take it to Adolph in the Blackbird Campsite. -->
+	<item id="46166" type="EtcItem" name="Barton's Letter" icon="icon.etc_letter_envelope_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A letter from the second stronghold's Hayuk to the Aden Vanguard Captain Adolph. Take it to Adolph in the Blackbird Campsite. -->
+	<item id="46167" type="EtcItem" name="Hayuk's Letter" icon="icon.etc_letter_envelope_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A letter from the third stronghold's Elise to the Aden Vanguard Captain Adolph. Take it to Adolph in the Blackbird Campsite. -->
+	<item id="46168" type="EtcItem" name="Elise's Letter" icon="icon.etc_letter_envelope_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- A letter from the fourth stronghold's Elliyah to the Aden Vanguard Captain Adolph. Take it to Adolph in the Blackbird Campsite. -->
+	<item id="46169" type="EtcItem" name="Eliyah's Letter" icon="icon.etc_letter_envelope_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Reward for Drew's Golden Dice event. Will be deleted once the event ends. -->
+	<item id="46170" type="EtcItem" name="Atelia Fortress Protection Box - Event" icon="BranchSys.br_bright_gold_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Reward for Drew's Golden Dice event. Will be deleted once the event ends. -->
+	<item id="46171" type="EtcItem" name="Garden of the Spirits Protection Box - Event" icon="BranchSys.br_gold_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Reward for Drew's Golden Dice event. Will be deleted once the event ends. -->
+	<item id="46172" type="EtcItem" name="Drew Protection Box - Event" icon="BranchSys.br_silver_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of upper armor into that of Male Swimwear No. 1. Works on one-pieces too. It modifies everything, making the appearance of all armor into that of swimwear. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="46173" type="EtcItem" name="Male Swimsuit No.1 Appearance Stone - 30-day" icon="BranchSys3.lcon.g_scrl_change_co_swimsuit_01"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of upper armor into that of Male Swimwear No. 2. Works on one-pieces too. It modifies everything, making the appearance of all armor into that of swimwear. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="46174" type="EtcItem" name="Male Swimsuit No.2 Appearance Stone - 30-day" icon="BranchSys3.lcon.g_scrl_change_co_swimsuit_01"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of upper armor into that of Bikini No. 1. Works on one-pieces too. It modifies everything, making the appearance of all armor into that of a bikini. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="46175" type="EtcItem" name="Bikini No.1 Appearance Stone - 30-day" icon="BranchSys3.lcon.g_scrl_change_co_swimsuit_01"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of upper armor into that of Bikini No. 2. Works on one-pieces too. It modifies everything, making the appearance of all armor into that of a bikini. Appearance is restored through the use of a Restoration Stone. -->
+	<item id="46176" type="EtcItem" name="Bikini No.2 Appearance Stone - 30-day" icon="BranchSys3.lcon.g_scrl_change_co_swimsuit_01"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 bottle containing Antharas, Valakas, Queen Ant, Orfen, Frintezza, or Baium's soul. -->
+	<item id="46177" type="EtcItem" name="Soul Bottle Pack" icon="icon.etc_elite_marguene_collection_box_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- For 60 minutes, it receives the following level 2 effects: Horn Melody, Lute Melody, Pipe Organ Melody, Guitar Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
+	<item id="46178" type="EtcItem" name="Heavenly Cocktail" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<item id="46179" type="Weapon" name="Male Swimwear No.1" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	</item>
+	<item id="46180" type="Weapon" name="Male Swimwear No.2" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	</item>
+	<item id="46181" type="Weapon" name="Bikini No.1" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	</item>
+	<item id="46182" type="Weapon" name="Bikini No.2" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	</item>
+	<!-- A gift from Alegria for your character's birthday. Double-click to get 10 Happy Birthday Potions and a Birthday Hat. -->
+	<item id="46183" type="EtcItem" name="Joyful Birthday Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
+			crystalType="c" weight="100" isStackable="true">
+	</item>
+	<!-- 3 out of 4 bars on the vitality gauge are replenished. Cooldown is 60 minutes. Cannot be used in the Olympiad. The limit on usage of 5 times per week does not apply. -->
+	<item id="46184" type="EtcItem" name="Happy Birthday Potion" icon="icon.etc_potion_blue_i00" immediateEffect="1" crystalType="c"
+			weight="80" isStackable="true">
+	</item>
+	<item id="46185" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="" weight="0" material="steel" bodypart="none"
+			crystal_type="none">
+	</item>
+	<item id="46186" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="" weight="0" material="steel" bodypart="none"
+			crystal_type="none">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Anakim Holy Barrier (30-day). -->
+	<item id="46187" type="EtcItem" name="Agathion - Anakim Holy Barrier Pack - 30-day" icon="icon.event_high_oriental_park_i00"
+			immediateEffect="1" crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing an Agathion - Anakim Holy Barrier (30-day) or an Agathion - Anakim Holy Barrier. -->
+	<item id="46188" type="EtcItem" name="Agathion - Anakim Holy Barrier Pack" icon="icon.event_high_oriental_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Changes the appearace of your armor into that of a Vampiric Style. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Vampiric Style. -->
+	<item id="46189" type="EtcItem" name="Vampiric Style Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of your armor into that of a Vampiric Style. 30-day. Can be used as a top or a one piece. It changes everything, making the appearance of all armor into that of a Vampiric Style. -->
+	<item id="46190" type="EtcItem" name="Vampiric Style Appearance Stone - 30-day" icon="BranchSys3.icon1.g_scrl_change_chest"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing a Vampiric Style Appearance Stone (30-day) or a Vampiric Style Appearance Stone. -->
+	<item id="46191" type="EtcItem" name="Vampiric Style Appearance Stone Pack" icon="icon.event_high_oriental_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<item id="46192" type="Weapon" name="Vampiric Outfit" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	</item>
+	<!-- Magic shirt for P. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a P. Def. effect is given. -->
+	<item id="46193" type="Weapon" name="Reflect Attack T-shirt" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Magic shirt for M. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a M. Def. effect is given. -->
+	<item id="46194" type="Weapon" name="Reflect Magic T-shirt" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Double-click to get 1 Shiny Elemental Shirt and 10 Elemental Shirt Enchant Scrolls. -->
+	<item id="46195" type="Weapon" name="Shiny Elemental T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Double-click to get 1 Reflect Attack T-shirt and 10 Elemental Shirt Enchant Scrolls. -->
+	<item id="46196" type="Weapon" name="Reflect Attack T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Double-click to get 1 Reflect Magic T-shirt and 10 Elemental Shirt Enchant Scrolls. -->
+	<item id="46197" type="Weapon" name="Reflect Magic T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- A shiny gold medal. Sell it at the shop for a lot of money. -->
+	<item id="46198" type="EtcItem" name="Gold Medal" icon="icon.etc_event_medal_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a top armor or a one-piece into that of a Halloween outfit. It changes everything, making the appearance of all armor into that of the Halloween outfit. -->
+	<item id="46199" type="EtcItem" name="Halloween Appearance Stone - 7-day" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a top armor or a one-piece into that of a Halloween outfit. It changes everything, making the appearance of all armor into that of the Halloween outfit. -->
+	<item id="46200" type="EtcItem" name="Halloween Appearance Stone - 90-day" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a weapon into that of a Halloween weapon. -->
+	<item id="46201" type="EtcItem" name="Halloween Weapon Appearance Stone - 7-day" icon="icon.shape_shifting_sword_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a weapon into that of a Halloween weapon. -->
+	<item id="46202" type="EtcItem" name="Halloween Weapon Appearance Stone - 90-day" icon="icon.shape_shifting_sword_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Halloween appearance. -->
+	<item id="46203" type="Weapon" name="Halloween Outfit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46204" type="Weapon" name="Halloween Shaper" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46205" type="Weapon" name="Halloween Cutter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46206" type="Weapon" name="Halloween Slasher" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46207" type="Weapon" name="Halloween Avenger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46208" type="Weapon" name="Halloween Fighter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46209" type="Weapon" name="Halloween Stormer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46210" type="Weapon" name="Halloween Thrower" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46211" type="Weapon" name="Halloween Shooter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46212" type="Weapon" name="Halloween Buster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46213" type="Weapon" name="Halloween Caster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46214" type="Weapon" name="Halloween Retributer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46215" type="Weapon" name="Halloween Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46216" type="Weapon" name="Halloween Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46217" type="Weapon" name="Halloween Dual Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- A Magic Number Cube that will allow you to participate in the Market Eleven giveaway. Use it on Eleveny, which is summoned at 11 AM and 11 PM in order to participate in the giveaway. Will be deleted once the event ends. -->
+	<item id="46218" type="EtcItem" name="Magic Number Cube - Event" icon="icon.etc_11th_event_group" immediateEffect="1" weight="1"
+			isStackable="true">
+	</item>
+	<!-- Scroll that summons Market Eleven's mascot, Piero. Use it to play 'Win Against Piero'. Will be deleted once the event ends. -->
+	<item id="46219" type="EtcItem" name="Summon Scroll: Piero - Event" icon="icon.etc_11th_event_solo" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- A membership card for the Eleven Market that was opened to celebrate Lineage 2's 11th anniversary. Will be deleted once the event ends. -->
+	<item id="46220" type="EtcItem" name="Membership Card - Market Eleven - Event" icon="icon.ev_buff_11th" immediateEffect="1"
+			crystalType="c" weight="1" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a Bloody or Dark Eternal Enhancement Stone. Will be deleted once the event ends. -->
+	<item id="46221" type="EtcItem" name="L2 Market R99 Armor Enhancement Stone Pack - Event" icon="icon.etc_treasure_box_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a + 8 Amaranthine weapon. Will be deleted once the event ends. -->
+	<item id="46222" type="EtcItem" name="L2 Market +8 Amaranthine Weapon Pack - Event" icon="icon.etc_treasure_box_i01" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a Desire, Insanity, or Venir's Talisman. Will be deleted once the event ends. -->
+	<item id="46223" type="EtcItem" name="L2 Market Seed Talisman Pack - Event" icon="icon.etc_treasure_box_i02" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a + 4 Eternal armor set. Will be deleted once the event ends. -->
+	<item id="46224" type="EtcItem" name="L2 Market +4 Eternal Armor Pack - Event" icon="icon.etc_treasure_box_i03" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a Lindvior's Earring, Antharas' Earring, Valakas' Necklace, or Tauti's Ring. Will be deleted once the event ends. -->
+	<item id="46225" type="EtcItem" name="L2 Market Rare Accessory Pack - Event" icon="icon.etc_treasure_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a Bottle of Antharas, Valakas or Baium's Soul. Will be deleted once the event ends. -->
+	<item id="46226" type="EtcItem" name="L2 Market Soul Bottle Pack - Event" icon="icon.etc_treasure_box_i05" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get Tiat or Ekimus' Belt. Will be deleted once the event ends. -->
+	<item id="46227" type="EtcItem" name="L2 Market Belt Pack - Event" icon="icon.etc_treasure_box_i06" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get an Anakim, Lilith, or Seven Signs Talisman. Will be deleted once the event ends. -->
+	<item id="46228" type="EtcItem" name="L2 Market Talisman - Seven Signs Pack - Event" icon="icon.etc_treasure_box_i07" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- 1st place prize for the L2 Market giveaway. Get a Bloody or Dark Amaranthine Enhancement Stone. Will be deleted once the event ends. -->
+	<item id="46229" type="EtcItem" name="L2 Market R99 Weapon Enhancement Stone Pack - Event" icon="icon.etc_treasure_box_i08"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Shaper. -->
+	<item id="46230" type="EtcItem" name="+8  Amaranthine Shaper Capsule - Not in Use" icon="icon.weapon_stanpid_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Cutter. -->
+	<item id="46231" type="EtcItem" name="+8  Amaranthine Cutter Capsule - Not in Use" icon="icon.weapon_plenitas_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Slasher. -->
+	<item id="46232" type="EtcItem" name="+8  Amaranthine Slasher Capsule - Not in Use" icon="icon.weapon_bauen_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Dualsword. -->
+	<item id="46233" type="EtcItem" name="+8  Amaranthine Avenger Capsule - Not in Use" icon="icon.weapon_r_dualsword_i21" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Dual Dagger. -->
+	<item id="46234" type="EtcItem" name="+8  Amaranthine Fighter Capsule - Not in Use" icon="icon.weapon_r_dualdagger_i21"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Dual Blunt Weapon. -->
+	<item id="46235" type="EtcItem" name="+8  Amaranthine Stormer Capsule - Not in Use" icon="icon.weapon_r_dualblunt_i21" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Avenger. -->
+	<item id="46236" type="EtcItem" name="+8  Amaranthine Thrower Capsule - Not in Use" icon="icon.weapon_qutram_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Fighter. -->
+	<item id="46237" type="EtcItem" name="+8  Amaranthine Shooter Capsule - Not in Use" icon="icon.weapon_durga_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Stormer. -->
+	<item id="46238" type="EtcItem" name="+8  Amaranthine Buster Capsule - Not in Use" icon="icon.weapon_crabel_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Thrower. -->
+	<item id="46239" type="EtcItem" name="+8  Amaranthine Caster Capsule - Not in Use" icon="icon.weapon_castron_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 8 enchanted Amaranthine Shooter. -->
+	<item id="46240" type="EtcItem" name="+8  Amaranthine Retributer Capsule - Not in Use" icon="icon.weapon_stilla_i01" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 4 enchanted Eternal Heavy Armor set. -->
+	<item id="46241" type="EtcItem" name="+4 Eternal Heavy Armor Capsule - Event" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 4 enchanted Eternal Light Armor set. -->
+	<item id="46242" type="EtcItem" name="+4 Eternal Light Armor Capsule - Event" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 4 enchanted Eternal Robe Armor set. -->
+	<item id="46243" type="EtcItem" name="+4 Eternal Robe Armor Capsule - Event" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
+			isStackable="true">
+	</item>
+	<!-- 11th Anniversary coin. Purchase various items at Market Eleven. Will be deleted once the event ends. -->
+	<item id="46244" type="EtcItem" name="11th Anniversary Coin - Event" icon="icon.etc_11th_token" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
+	</item>
+	<!-- Piero's victory box. Will be deleted once the event ends. -->
+	<item id="46245" type="EtcItem" name="Piero's Victory Box - Event" icon="icon.etc_box_of_adventure_1_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Piero's jackpot box. Will be deleted once the event ends. -->
+	<item id="46246" type="EtcItem" name="Piero's Jackpot Box - Event" icon="icon.etc_box_of_adventure_3_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<item id="46247" type="Weapon" name="Halloween Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46248" type="Weapon" name="Halloween Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- 11th anniversary's dual candle sword. -->
+	<item id="46249" type="Weapon" name="Dual Candle Sword - Event" icon="" weaponType="dual" bodypart="lrhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Keep this in your inventory to gain XP/SP + 11% when hunting. All levels. Will be deleted once the event ends. -->
+	<item id="46250" type="EtcItem" name="Blessed Venezia Rune" icon="icon.skill19226" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing an 11th Anniversary Venezia Runes that can be used at all levels. Will be deleted once the event ends. -->
+	<item id="46251" type="EtcItem" name="Blessed Venezia Rune Pack - 15-day" icon="icon.etc_pi_box_belief_pack" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Keep this in your inventory to gain XP/SP + 22% when hunting. The effect only applies to characters below Lv. 99. Will be deleted once the event ends. -->
+	<item id="46252" type="EtcItem" name="Venezia Rune" icon="icon.skill19226" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Venezia Runes for characters below Lv. 99. Will be deleted once the event ends. -->
+	<item id="46253" type="EtcItem" name="Venezia Rune Pack - 15-day" icon="icon.etc_pi_box_love_pack" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- For 1 hr., XP/SP gain + 100%, and changes the appearance of your armor into that of an NC Dinos uniform. Cannot be stacked with the Fall of the Dragon or XP Buff 50%. Will be deleted once the event ends. -->
+	<item id="46254" type="EtcItem" name="Dandy's Golden Ball" icon="icon.ev_dinos_baseball_gold" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Changes the appearance of upper armor into that of a Halloween Outfit. Works on one-pieces too. -->
+	<item id="46255" type="EtcItem" name="Automatic Appearance: Halloween Outfit" icon="icon.ev_wp_halloween" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of all weapons into that of the corresponding Halloween Weapon. Can be used on shields and sigils. -->
+	<item id="46256" type="EtcItem" name="Automatic Appearance: Halloween Weapon" icon="icon.ev_wp_halloween" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Teleports you to the Enchanted Valley. -->
+	<item id="46257" type="EtcItem" name="Scroll of Escape: Enchanted Valley" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
+			crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- Nymph Stamen obtained from defeating the Nymphs in the Enchanted Valley. Take it to Mimyu to receive a reward. -->
+	<item id="46258" type="EtcItem" name="Nymph Stamen" icon="icon.etc_fir_spring_i00" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Reward obtained from defeating Nymphs in the Enchanted Valley. Double-click to use. -->
+	<item id="46259" type="EtcItem" name="Mimyu's Reward Box" icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Dark Knight suit. -->
+	<item id="46260" type="Armor" name="Dark Knight Suit" icon="" defaultAction="equip" bodypart="alldress" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Ninja outfit. -->
+	<item id="46261" type="Weapon" name="Ninja Outfit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Metal suit. -->
+	<item id="46262" type="Weapon" name="Metal Suit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<!-- Double-click to get 1 Freya's Frozen Scroll and 1 Freya's Art of Seduction. Has a chance of obtaining one of the following items: Freya's Wish Box, Sirra's Wish Box, or a Snowman's Wish Box. -->
+	<item id="46263" type="EtcItem" name="Freya's Wish Stick" icon="icon.bm_freya_wand" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- For 30 min., Max HP/MP/CP + 30%, P./M. Def. + 30%, Speed + 20, P. Atk. + 10%, M. Atk. + 20%, Skill MP Consumption - 15%. Cannot be stacked with Art of Seduction. Cannot be used in the Olympiad. Can be used in the Ceremony of Chaos. Cooldown is 5 min. -->
+	<item id="46264" type="EtcItem" name="Freya's Art of Seduction" icon="icon.bm_freya_rose_red_i00" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 random rare item. -->
+	<item id="46265" type="EtcItem" name="Freya's Wish-filled Gift" icon="icon.freya_box_i01" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 random item for enchantment. -->
+	<item id="46266" type="EtcItem" name="Sirra's Wish-filled Gift" icon="icon.freya_box_i02" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 random item for skill enchantment. -->
+	<item id="46267" type="EtcItem" name="Snowman's Wish-filled Gift" icon="icon.freya_box_i03" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Changes the appearance of a weapon into that of a Frozen weapon. Can be used on shields and sigils. -->
+	<item id="46268" type="EtcItem" name="Frozen Weapon Appearance Stone - 90-day" icon="icon.shape_shifting_sword_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of all weapons into those of Frozen Weapons of corresponding types. Can be used on shields and sigils. -->
+	<item id="46269" type="EtcItem" name="Automatic Appearance: Frozen Weapon" icon="BranchSys3.iconWeapon.g_tears_sword_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Modifies the appearance of armor into that of a Dark Knight Suit. Works on one-piece armor. It changes everything, making the appearance of all armor into a Dark Knight suit. -->
+	<item id="46270" type="EtcItem" name="Dark Knight Suit Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true" handler="AppearanceStone" standardItem="46260">
+	</item>
+	<!-- Modifies the appearance of armor into that of a Ninja Outfit. Works on one-piece armor. It changes everything, making the appearance of all armor into that of a Ninja's outfit. -->
+	<item id="46271" type="EtcItem" name="Ninja Outfit Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Modifies the appearance of armor into that of a Metal Suit. Works on one-piece armor. It changes everything, making the appearance of all armor into a Metal suit. -->
+	<item id="46272" type="EtcItem" name="Metal Suit Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 random item out of the following: Dark Assassin Suit, Dark Knight Suit, Ninja Outfit, Metal Suit, or Vampiric Style. -->
+	<item id="46273" type="EtcItem" name="Freya's Kindness" icon="icon.event_six_party_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Vitality extract containing the power of the wind. Half of 1 bar on the vitality gauge is replenished. Cooldown is 10 minutes. Cannot be used in the Olympiad. The limit on usage of 5 times per week does not apply. -->
+	<item id="46274" type="EtcItem" name="Wind Vitality Tonic" icon="icon.etc_potion_blue_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing a Vampiric Style Appearance Stone and a Vampiric Hair Accessory Appearance Stone. -->
+	<item id="46275" type="EtcItem" name="Vampiric Style Appearance Stone Pack" icon="icon.ev_10th_present2" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing a Ninja Outfit Appearance Stone and a Ninja Hair Accessory Appearance Stone. -->
+	<item id="46276" type="EtcItem" name="Ninja Outfit Appearance Stone" icon="icon.ev_10th_present2" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing a Metal Suit Appearance Stone and a Metal Suit Hair Accessory Appearance Stone. -->
+	<item id="46277" type="EtcItem" name="Metal Suit Appearance Stone Pack" icon="icon.ev_10th_present2" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Vamparic style. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46278" type="EtcItem" name="Vampiric Hair Accessory Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Ninja style. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46279" type="EtcItem" name="Ninja Hair Accessory Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Changes the appearance of a hair accessory into that of a Metal Suit. Can be used only on hair accessories that take up 2 slots. -->
+	<item id="46280" type="EtcItem" name="Metal Suit Hair Accessory Appearance Stone" icon="BranchSys3.Icon.g_shape_shifting_hair2"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get Agathion - Freya (30-day). Cannot be used in the Olympiad. Will be deleted once the event ends. -->
+	<item id="46281" type="EtcItem" name="Freya Agathion Pack" icon="icon.ev_10th_present2" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Supplies obtained from the Embryo Supply Box. Take these to Glenkinchie to receive rewards. -->
+	<item id="46282" type="EtcItem" name="Embryo Supplies" icon="icon.etc_crystal_spice_comp_i00" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Reward received after incapacitating the Embryo Command Post in the Atelia Fortress. Double-click to use. -->
+	<item id="46283" type="EtcItem" name="Aden Vanguard Supply Box" icon="icon.etc_box_of_adventure_2_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Exclusive Christmas bait. Use it to catch Fish Gift Boxes. Will be deleted after the event. -->
+	<item id="46284" type="EtcItem" name="Exclusive Christmas Bait" icon="icon.etc_bait_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Box containing Exclusive Christmas Bait. Double-click to get 120 of them. Will be deleted after the event. -->
+	<item id="46285" type="EtcItem" name="Christmas Bait Box" icon="icon.etc_treasure_box_i03" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Fishing rod purchased from Santa Claus. Changes appearance to that into that of Santa Claus. Consumes 1 Fishing Shot. Will be deleted after the event. -->
+	<item id="46286" type="Weapon" name="Christmas Fishing Rod" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Fish that has swallowed one of Santa Claus' gift box. Double-click to get Santa's Small Gift Box. Will be deleted after the event. -->
+	<item id="46287" type="EtcItem" name="Fish Gift Box" icon="icon.fish_swallowing_gift_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get + 10% XP/SP for 2 hours, Vitality Consumption - 20%. Additionaly, recovers 1 bar of Vitality and changes the appearance into that of Santa Claus. Will be deleted after the event. -->
+	<item id="46288" type="EtcItem" name="Holiday Blessing" icon="BranchSys.icon.br_xmas_miracle_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Santa's gift for bringing back Santa's Small Gift Boxes. Double-click to get the reward. Will be deleted after the event. -->
+	<item id="46289" type="EtcItem" name="Miraculous Christmas Gift Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Santa's gifts spread throughout Aden. Collect these and take them to Santa Claus. Will be deleted after the event. -->
+	<item id="46290" type="EtcItem" name="Santa's Small Gift Box" icon="icon.event_six_party_box_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Event item. All Stats + 2 when equipped. Effect does not stack with additional Talismans of the same type. -->
+	<item id="46291" type="Weapon" name="Christmas Talisman - ALL STAT +2" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Event item. All Stats + 1 when equipped. Effect does not stack with additional Talismans of the same type. -->
+	<item id="46292" type="Weapon" name="Christmas Talisman - ALL STAT +1" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Event item. P. Skill Critical Damage + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46293" type="Weapon" name="Christmas Talisman: P. Skill Critical Damage - 1-hour" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Event item. M. Skill Critical Damage + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46294" type="Weapon" name="Christmas Talisman: M. Skill Critical Damage - 1-hour" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Event item. P. Atk. + 5000 and M. Def. + 5000 for 15 seconds. Cooldown is 10 min. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46295" type="Weapon" name="Christmas Talisman: Ultimate Defense - 1-hour" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Event Item. Defends against Debuffs 5 times for 15 seconds. Cooldown is 10 min. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46296" type="Weapon" name="Christmas Talisman: Debuff Resistance - 1-hour" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Event item. P. Atk. + 5% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46297" type="Weapon" name="Christmas Talisman: P. Atk. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Event item. M. Atk. + 5% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46298" type="Weapon" name="Christmas Talisman: M. Atk. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Event item. P. Def. + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46299" type="Weapon" name="Christmas Talisman: P. Def. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Event item. M. Def. + 7% when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46300" type="Weapon" name="Christmas Talisman: M. Def. - 1-hour" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Event item. All Attributes Defense + 30 when equipped. Effect does not stack with additional Talismans of the same type. 1-hour. -->
+	<item id="46301" type="Weapon" name="Christmas Talisman: Attribute Defense - 1-hour" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: P. Skill Critical Damage (1-hour). Will be deleted after the event. -->
+	<item id="46302" type="EtcItem" name="Christmas Talisman Pack - P. Skill Critical Damage" icon="icon.etc_box_of_adventure_4_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: M. Skill Critical Damage (1-hour). Will be deleted after the event. -->
+	<item id="46303" type="EtcItem" name="Christmas Talisman Pack - M. Skill Critical Damage" icon="icon.etc_box_of_adventure_4_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: Ultimate Defense (1-hour). Will be deleted after the event. -->
+	<item id="46304" type="EtcItem" name="Christmas Talisman Pack - Ultimate Defense" icon="icon.etc_box_of_adventure_4_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: Debuff Resistance (1-hour). Will be deleted after the event. -->
+	<item id="46305" type="EtcItem" name="Christmas Talisman Pack - Debuff Resistance" icon="icon.etc_box_of_adventure_4_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: P. Atk. (1-hour). Will be deleted after the event. -->
+	<item id="46306" type="EtcItem" name="Christmas Talisman Pack - P. Atk." icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: M. Atk. (1-hour). Will be deleted after the event. -->
+	<item id="46307" type="EtcItem" name="Christmas Talisman Pack - M. Atk." icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: P. Def. (1-hour). Will be deleted after the event. -->
+	<item id="46308" type="EtcItem" name="Christmas Talisman Pack - P. Def." icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: M. Def. (1-hour). Will be deleted after the event. -->
+	<item id="46309" type="EtcItem" name="Christmas Talisman Pack - M. Def." icon="icon.etc_box_of_adventure_4_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to get a Christmas Talisman: Attribute Defense (1-hour). Will be deleted after the event. -->
+	<item id="46310" type="EtcItem" name="Christmas Talisman Pack - Attribute Resistance" icon="icon.etc_box_of_adventure_4_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<!-- Send a signal to Adolph, who will use the Protection of Faith skill. The whistle disappears after 2 uses. -->
+	<item id="46311" type="EtcItem" name="Emergency Whistle - Adolph" icon="icon.etc_dragon_flute_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Send a signal to Barton, who will use the Berserker skill. Using the Berserker skill will increase Barton's Debuff Resistance/Speed/P. Atk./P. Accuracy/P. Def./Atk. Spd./Critical Damage. Recovre 20% of HP when killing the opponent. Additionally, P. Atk. + 10% and Critical Rate + 100 when HP is below 60%. P. Atk. + 30% and Critical Rate + 300 when HP is below 30%. The whistle disappears after 2 uses. -->
+	<item id="46312" type="EtcItem" name="Emergency Whistle - Barton" icon="icon.etc_dragon_flute_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Send a signal to Hayuk, who will use the Phoenix Arrow skill. The whistle disappears after 2 uses. -->
+	<item id="46313" type="EtcItem" name="Emergency Whistle - Hayuk" icon="icon.etc_dragon_flute_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Send a signal to Elise, who will use the Celestial Party Protection skill. The whistle disappears after 2 uses. -->
+	<item id="46314" type="EtcItem" name="Emergency Whistle - Elise" icon="icon.etc_dragon_flute_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Send a signal to Eliyah, who will use the Shadow Hell skill. The whistle disappears after 2 uses. -->
+	<item id="46315" type="EtcItem" name="Emergency Whistle - Eliyah" icon="icon.etc_dragon_flute_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!-- Key to get to Core in the Cruma Tower. Key to the System Control Room. -->
+	<item id="46316" type="EtcItem" name="System Control Room Key" icon="icon.etc_dark_key_i00" immediateEffect="1" crystalType="c"
+			weight="5" isStackable="true">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46317" type="Weapon" name="Shadow Shaper" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46318" type="Weapon" name="Shadow Cutter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46319" type="Weapon" name="Shadow Slasher" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46320" type="Weapon" name="Shadow Fighter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46321" type="Weapon" name="Shadow Stormer" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46322" type="Weapon" name="Shadow Thrower" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46323" type="Weapon" name="Shadow Shooter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46324" type="Weapon" name="Shadow Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46325" type="Weapon" name="Shadow Retributer" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Can only be enchanted up to + 10 with a Scroll: Enchant Shadow Weapon. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46326" type="Weapon" name="Shadow Dualsword" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
+			crystalType="none" material="steel" weight="0">
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46327" type="Weapon" name="Shadow Shaper" icon="" defaultAction="equip" weaponType="dagger" bodypart="rhand" crystalType="r99"
+			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
+		<set stat="pAtk" val="575" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="433" />
+		<skill id="13842" level="12" /> <!-- Shadow Shaper -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46328" type="Weapon" name="Shadow Cutter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="r99"
+			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
+		<set stat="pAtk" val="658" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="8" />
+		<set stat="pAtkSpd" val="379" />
+		<skill id="13837" level="12" /> <!-- Shadow Cutter -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46329" type="Weapon" name="Shadow Slasher" icon="" defaultAction="equip" weaponType="bigsword" bodypart="lrhand"
+			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
+		<set stat="pAtk" val="800" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="8" />
+		<set stat="pAtkSpd" val="325" />
+		<skill id="13838" level="12" /> <!-- Shadow Slasher -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46330" type="Weapon" name="Shadow Fighter" icon="" defaultAction="equip" weaponType="dualfist" bodypart="lrhand"
+			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
+		<set stat="pAtk" val="800" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="6" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="pAtkSpd" val="325" />
+		<skill id="13839" level="12" /> <!-- Shadow Fighter -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46331" type="Weapon" name="Shadow Stormer" icon="" defaultAction="equip" weaponType="pole" bodypart="lrhand" crystalType="r99"
+			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
+		<set stat="pAtk" val="658" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="8" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+		<skill id="13840" level="12" /> <!-- Shadow Stormer -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46332" type="Weapon" name="Shadow Thrower" icon="" defaultAction="equip" weaponType="bow" bodypart="lrhand" crystalType="r99"
+			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
+		<set stat="pAtk" val="1295" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="293" />
+		<skill id="13843" level="12" /> <!-- Shadow Thrower -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Damage + 10%, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46333" type="Weapon" name="Shadow Shooter" icon="" defaultAction="equip" weaponType="crossbow" bodypart="lrhand"
+			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
+		<set stat="pAtk" val="1166" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="12" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+		<skill id="13844" level="12" /> <!-- Shadow Shooter -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46334" type="Weapon" name="Shadow Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="r99"
+			material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
+		<set stat="pAtk" val="526" />
+		<set stat="mAtk" val="382" />
+		<set stat="rCrit" val="8" />
+		<set stat="pAtkSpd" val="379" />
+		<skill id="13845" level="12" /> <!-- Shadow Buster -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46335" type="Weapon" name="Shadow Retributer" icon="" defaultAction="equip" weaponType="bigblunt" bodypart="lrhand"
+			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
+		<set stat="pAtk" val="640" />
+		<set stat="mAtk" val="420" />
+		<set stat="rCrit" val="6" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="pAtkSpd" val="325" />
+		<skill id="13846" level="12" /> <!-- Shadow Retributer -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!--
+		Weapon of the Ashen Shadow Revolutionaries. 
+		Atk. Spd. + 15%, P. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
+	-->
+	<item id="46336" type="Weapon" name="Shadow Dualsword" icon="" defaultAction="equip" weaponType="dual" bodypart="lrhand"
+			crystalType="r99" material="steel" weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false"
+			isAugmentable="false" canBeUsedAsApp="false">
+		<set stat="pAtk" val="800" />
+		<set stat="mAtk" val="286" />
+		<set stat="rCrit" val="8" />
+		<set stat="pAtkSpd" val="325" />
+		<skill id="13841" level="12" /> <!-- Shadow Dualsword -->
+		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
+	</item>
+	<!-- A scroll to enchant a Shadow Weapon that can be obtained from the Ashen Shadow Revolutionaries. Cannot be used on regular weapons. -->
+	<item id="46337" type="EtcItem" name="Scroll: Enchant Shadow Weapon" icon="icon.weapon_shadow_ench_wp" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Sigel Knight Transformation appearance. -->
+	<item id="46338" type="Weapon" name="Sigel Knight Transformation Appearance" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Tyrr Warrior Transformation appearance. -->
+	<item id="46339" type="Weapon" name="Tyrr Warrior Transformation Appearance" icon="" bodypart="alldress" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Othell Rogue Transformation appearance. -->
+	<item id="46340" type="Weapon" name="Othell Rogue Transformation Appearance" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Yul Archer Transformation appearance. -->
+	<item id="46341" type="Weapon" name="Yul Archer Transformation Appearance" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Feoh Wizard Transformation appearance. -->
+	<item id="46342" type="Weapon" name="Feoh Wizard Transformation Appearance" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Iss Enchanter Transformation appearance. -->
+	<item id="46343" type="Weapon" name="Iss Enchanter Transformation Appearance" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Wynn Summoner Transformation appearance. -->
+	<item id="46344" type="Weapon" name="Wynn Summoner Transformation Appearance" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!-- Aeore Healer Transformation appearance. -->
+	<item id="46345" type="Weapon" name="Aeore Healer Transformation Appearance" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Can summon Virgo.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine. (Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy Atk. and Def. each increase by 30.
+	-->
+	<item id="46346" type="Weapon" name="Agathion - Blessed Virgo - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Capricorn.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46347" type="Weapon" name="Agathion - Blessed Capricorn - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Libra.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46348" type="Weapon" name="Agathion - Blessed Libra - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Aries.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46349" type="Weapon" name="Agathion - Blessed Aries - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Taurus.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46350" type="Weapon" name="Agathion - Blessed Taurus - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Leo.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46351" type="Weapon" name="Agathion - Blessed Leo - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Gemini.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46352" type="Weapon" name="Agathion - Blessed Gemini - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Scorpio.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46353" type="Weapon" name="Agathion - Blessed Scorpio - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Aquarius.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46354" type="Weapon" name="Agathion - Blessed Aquarius - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!--
+		Summons Sagittarius.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46355" type="Weapon" name="Agathion - Blessed Sagittarius - 30-day" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<!--
+		Summons Cancer.
+		
+		<Active Skill>
+		1. Agathion Teleport: Town of Aden/Town of Rune/Town of Giran/Heine.(Cooldown is 30min.)
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/ Water/ Earth/ Wind/ Dark/ Holy  Atk. and Def. each increases by 30.
+	-->
+	<item id="46356" type="Weapon" name="Agathion - Blessed Cancer - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Virgo (30-day). -->
+	<item id="46357" type="EtcItem" name="Agathion - Blessed Virgo Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Capricorn (30-day). -->
+	<item id="46358" type="EtcItem" name="Agathion - Blessed Capricorn Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Libra (30-day). -->
+	<item id="46359" type="EtcItem" name="Agathion - Blessed Libra Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Aries (30-day). -->
+	<item id="46360" type="EtcItem" name="Agathion - Blessed Aries Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Taurus (30-day). -->
+	<item id="46361" type="EtcItem" name="Agathion - Blessed Taurus Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Leo (30-day). -->
+	<item id="46362" type="EtcItem" name="Agathion - Blessed Leo Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Gemini (30-day). -->
+	<item id="46363" type="EtcItem" name="Agathion - Blessed Gemini Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Scorpio (30-day). -->
+	<item id="46364" type="EtcItem" name="Agathion - Blessed Scorpio Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Aquarius (30-day). -->
+	<item id="46365" type="EtcItem" name="Agathion - Blessed Aquarius Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Pisces (30-day). -->
+	<item id="46366" type="EtcItem" name="Agathion - Blessed Pisces Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Sagittarius (30-day). -->
+	<item id="46367" type="EtcItem" name="Agathion - Blessed Sagittarius Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Agathion - Blessed Cancer (30-day). -->
+	<item id="46368" type="EtcItem" name="Agathion - Blessed Cancer Pack - 30-day" icon="icon.etc_exchange_box_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing a Blessed Zodiac Agathion (30-day). -->
+	<item id="46369" type="EtcItem" name="Blessed Zodiac Agathion Pack (30-day)" icon="icon.etc_treasure_box_i05" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Christmas Card given by Santa Claus. Only given to people who have been good for a year. Will be deleted after the event. -->
+	<item id="46370" type="EtcItem" name="Christmas Card - Event" icon="icon.etc_letter_envelope_i00" immediateEffect="1" crystalType="c"
+			weight="1" isStackable="true">
+	</item>
+	<!-- Certificate of the Revolutionaries that Refugee Neti has requested. -->
+	<item id="46371" type="EtcItem" name="Ashen Certificate" icon="icon.etc_scroll_gray_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Part of the map that shows the strategy of the Ashen Shadow Revolutionaries. If you've collected them all, take them to Sir Klaus Vasper. -->
+	<item id="46372" type="EtcItem" name="Revolutionaries' Strategic Map Piece" icon="icon.etc_piece_of_paper_gray_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Goods that Blacksmith Kluto has requested from you. If you've collected them all, take them to Blacksmith Kluto. -->
+	<item id="46373" type="EtcItem" name="Transport Goods" icon="icon.etc_treasure_box_i03" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Proof that you've completed that Yuyuria has requested from you. If you've collected them all, take them to Wanderer Yuyuria. -->
+	<item id="46374" type="EtcItem" name="Destroyed Mark Fragment" icon="icon.etc_broken_crystal_silver_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Reward box given in exchange for saving Gludin from danger. Double-click to use. -->
+	<item id="46375" type="EtcItem" name="Gludin Hero's Reward Box" icon="icon.etc_treasure_box_i02" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Coupon you can trade in for a Shadow Weapon. -->
+	<item id="46376" type="EtcItem" name="Shadow Weapon Coupon" icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<item id="46377" type="Weapon" name="Frozen One-handed Sword" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46378" type="Weapon" name="Frozen Dagger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46379" type="Weapon" name="Frozen Two-handed Sword" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46380" type="Weapon" name="Frozen Fist Weapon" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46381" type="Weapon" name="Frozen Spear" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46382" type="Weapon" name="Frozen Bow" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46383" type="Weapon" name="Frozen Crossbow" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46384" type="Weapon" name="Frozen One-handed Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46385" type="Weapon" name="Frozen Two-handed Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46386" type="Weapon" name="Frozen One-handed Magic Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46387" type="Weapon" name="Frozen Two-handed Magic Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46388" type="Weapon" name="Frozen Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46389" type="Weapon" name="Frozen Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46390" type="Weapon" name="Frozen Dual Blunt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46391" type="Weapon" name="Frozen Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46392" type="Weapon" name="Frozen Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+	</item>
+	<item id="46393" type="Weapon" name="NPC Ashen Shadow Revolutionary Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46394" type="Weapon" name="NPC Ashen Shadow Revolutionary Mask" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Item needed to craft a Shadow Weapon. Take a + 10 Shadow Weapon and 10 Shadow Ingots to Neti in Gludio to get an enhanced Shadow weapon. -->
+	<item id="46395" type="EtcItem" name="Shadow Ingot" icon="icon.etc_lump_yellow_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<item id="46396" type="Weapon" name="NPC Sigel Knight Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46397" type="Weapon" name="NPC Tyrr Warrior Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46398" type="Weapon" name="NPC Othell Rogue Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46399" type="Weapon" name="NPC Yul Archer Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46400" type="Weapon" name="NPC Feoh Wizard Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<item id="46401" type="Weapon" name="NPC Iss Enchanter Transformation Cloak" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<item id="46402" type="Weapon" name="NPC Wynn Summoner Transformation Cloak" icon="" bodypart="none" crystalType="none"
+			material="steel" weight="0">
+	</item>
+	<item id="46403" type="Weapon" name="NPC Aeore Healer Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
+			weight="0">
+	</item>
+	<!-- Use it during your battle against Burnstein inside the Command Post, and one of the 5 Aden Vanguard members will appear randomly to support you. 30-minute. Can only be used inside the Command Post. -->
+	<item id="46404" type="EtcItem" name="Emergency Whistle - Aden Vanguard" icon="icon.etc_dragon_flute_i00" immediateEffect="1"
+			crystalType="c" weight="1" isStackable="true">
+	</item>
+	<!-- Mr. K's gift basket. Obtain 50 My Teleport Scrolls, 1 My Teleport Book, 10 Feathers of Blessing, 5 Emperor's Vitality Tonics, 5 Emperor's Rune 2-hour Boxes, 25 Vitality Replenishing Potions. Also, randomly get one of the following: Chic Silver Chapeau/White Uniform Hat/Ribbon Hairband. -->
+	<item id="46405" type="EtcItem" name="Mr. K's Gift Basket" icon="icon.mrk_basket_i00" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+</list>

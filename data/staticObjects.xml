@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>	
+	<object name="darkelf_village_001" id="20180001" x="15258" y="15631" z="-4366" type="0" texture="town_map_darkelf_t00" mapX="1" mapY="1" />
+	<object name="darkelf_village_002" id="20180002" x="7557" y="18055" z="-4366" type="0" texture="town_map_darkelf_t00" mapX="1" mapY="1" />
+	<object name="dwarven_village_001" id="23120001" x="115462" y="-177295" z="-880" type="0" texture="town_map_dwarf_t00" mapX="1" mapY="1" />
+	<object name="dwarven_village_002" id="23120002" x="117450" y="-182299" z="-1488" type="0" texture="town_map_dwarf_t00" mapX="1" mapY="1" />
+	<object name="dwarven_village_003" id="23120003" x="116657" y="-183997" z="-1550" type="0" texture="town_map_dwarf_t00" mapX="1" mapY="1" />
+	<object name="elf_village_001" id="21190001" x="47616" y="51349" z="-2968" type="0" texture="town_map_elf_t00" mapX="1" mapY="1" />
+	<object name="elf_village_002" id="21190002" x="45915" y="46695" z="-2969" type="0" texture="town_map_elf_t00" mapX="1" mapY="1" />
+	<object name="elf_village_003" id="21190003" x="43175" y="51424" z="-2968" type="0" texture="town_map_elf_t00" mapX="1" mapY="1" />
+	<object name="human_village_001" id="17250001" x="-82873" y="244808" z="-3717" type="0" texture="town_map_talking_t00" mapX="1" mapY="1" />
+	<object name="human_village_002" id="17250002" x="-82765" y="241439" z="-3718" type="0" texture="town_map_talking_t00" mapX="1" mapY="1" />
+	<object name="human_village_003" id="17250003" x="-86121" y="241452" z="-3719" type="0" texture="town_map_talking_t00" mapX="1" mapY="1" />
+	<object name="orc_village_001" id="18140001" x="-45824" y="-116764" z="-219" type="0" texture="town_map_orc_t00" mapX="1" mapY="1" />
+	<object name="orc_village_002" id="18140002" x="-46504" y="-110394" z="-220" type="0" texture="town_map_orc_t00" mapX="1" mapY="1" />
+	<object name="orc_village_003" id="18140003" x="-47332" y="-113246" z="-220" type="0" texture="town_map_orc_t00" mapX="1" mapY="1" />
+	<object name="aden_castle_throne" id="24180017" x="147456" y="3272" z="-42" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="oren_castle_throne" id="22190010" x="83237" y="37192" z="-2286" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="dion_castle_throne" id="20220010" x="22073" y="160989" z="-2686" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="giran_castle_throne" id="23220010" x="117161" y="145097" z="-2559" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="gludio_castle_throne" id="19210010" x="-18112" y="108761" z="-2492" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="innadril_castle_throne" id="23250010" x="116024" y="249768" z="-782" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="goddard_castle_throne" id="24160024" x="147464" y="-49339" z="-2123" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="schuttgart_castle_throne" id="22130016" x="77551" y="-153410" z="-389" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="rune_castle_throne" id="20160010" x="10103" y="-49153" z="-272" type="1" texture="none" mapX="0" mapY="0" />
+	<object name="floran_arena_001" id="20230001" x="12110" y="182771" z="-3538" type="2" texture="none" mapX="0" mapY="0" />
+	<object name="floran_arena_002" id="20230002" x="12979" y="183365" z="-3538" type="2" texture="none" mapX="0" mapY="0" />
+	<object name="giran_arena_001" id="22220001" x="73766" y="142489" z="-3748" type="2" texture="none" mapX="0" mapY="0" />
+	<object name="giran_arena_002" id="22220002" x="72200" y="143102" z="-3748" type="2" texture="none" mapX="0" mapY="0" />
+	<object name="gludin_arena_001" id="17220015" x="-88697" y="142316" z="-3621" type="2" texture="none" mapX="0" mapY="0" />
+	<object name="gludin_arena_002" id="17220016" x="-87136" y="142491" z="-3623" type="2" texture="none" mapX="0" mapY="0" />
+	<object name="Shanty_flagpole" id="18220500" x="-52752" y="156493" z="-1130" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Southern_flagpole" id="19240500" x="-22702" y="219801" z="-2314" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Hive_flagpole" id="20230500" x="16585" y="188066" z="-2002" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Valley_flagpole" id="23210500" x="126084" y="123350" z="-1663" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Ivory_flagpole" id="22180500" x="72856" y="4281" z="-2123" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Narsell_flagpole" id="24190500" x="154894" y="55308" z="-2332" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Bayou_flagpole" id="25190500" x="189933" y="39745" z="-2487" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="White Sands_flagpole" id="23240500" x="118419" y="204919" z="-2411" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Borderland_flagpole" id="24150500" x="159145" y="-70302" z="-1942" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Swamp_flagpole" id="22160500" x="69839" y="-61422" z="-1864" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Archaic_flagpole" id="23130500" x="109478" y="-141219" z="-2034" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Floran_flagpole" id="20220500" x="5606" y="149756" z="-1967" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Cloud Mountain_flagpole" id="18200500" x="-53230" y="91229" z="-1899" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Tanor_flagpole" id="21220500" x="60280" y="139444" z="-832" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Dragonspine_flagpole" id="20200500" x="11546" y="95030" z="-2498" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Antharas_flagpole" id="22200500" x="79252" y="91052" z="-1962" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Western_flagpole" id="23170500" x="111371" y="-15139" z="-72" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Hunters_flagpole" id="23200500" x="125248" y="95143" z="-1218" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Aaru_flagpole" id="22230500" x="73113" y="185988" z="-1659" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Demon_flagpole" id="23160500" x="100708" y="-55315" z="277" type="3" texture="none" mapX="0" mapY="0" />
+	<object name="Monastic_flagpole" id="22150500" x="72173" y="-94761" z="-506" type="3" texture="none" mapX="0" mapY="0" />
+</list>

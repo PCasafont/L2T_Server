@@ -1,0 +1,13 @@
+20001 - Lucky Chests
+20002 - Capture The Flag
+20003 - Cursed Battle
+20004 - Death Math
+20005 - Death TvT
+20006 - Field Domination
+20007 - Destroy the Golem
+20008 - King of the Hill
+20009 - Mass PvP
+20010 - Simon Says
+20011 - Stalked Stalkers
+20012 - TvT
+20013 - VIP TvT

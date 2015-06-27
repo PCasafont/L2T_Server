@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list>
+	<jewelSets>
+		<set id="1">
+			<part id="8191"/> <!-- Frintezza's Necklace -->
+			<part id="6656"/> <!-- Antharas' Earring -->
+			<part id="21712"/> <!-- Blessed Zaken's Earring -->
+			<part id="35570"/> <!-- Tauti's Ring -->
+			<part id="6658"/> <!-- Baium's Ring -->
+		</set>
+	</jewelSets>
+	<randomSetItems>
+		<set id="1">
+			<part id="38591" /> <!-- Tiat's Belt -->
+			<part id="19455" /> <!-- Istina's Bracelet -->
+			<part id="19456" /> <!-- Istina's Shirt -->
+			<part id="38768" /> <!-- La Vie En Rose's Brilliant Brooch -->
+		</set>
+		<set id="2">
+			<part id="38592" /> <!-- Ekimus' Belt -->
+			<part id="19461" /> <!-- Octavis's Bracelet -->
+			<part id="19462" /> <!-- Octavis's Shirt -->
+			<part id="38768" /> <!-- La Vie En Rose's Brilliant Brooch -->
+		</set>
+	</randomSetItems>
+	<talismanSetItems>
+		<set id="1">
+			<part id="39572" /> <!-- Talisman - Insanity -->
+			<part id="23835" /> <!-- Talisman - Abundance - Morale -->
+			<part id="39646" /> <!-- Venir's Talisman - Stage 13 -->
+		</set>
+	</talismanSetItems>
+	<abilitySkills>
+		<!-- Mage -->
+		<set id="1">
+			<part id="19154" level="4" /> <!-- Noble Empower -->
+			<part id="19157" level="2" /> <!-- Noble Wild Magic -->
+			<part id="19175" level="2" /> <!-- Noble Life -->
+			<part id="19166" level="2" /> <!-- Noble Robe Attack -->
+			<part id="19160" level="2" /> <!-- Noble Magic Death -->
+			<part id="19165" level="4" /> <!-- Noble Robe Defense -->
+		</set>
+		<!-- Fighter -->
+		<set id="2">
+			<part id="19171" level="4" /> <!-- Noble Condition -->
+			<part id="19170" level="2" /> <!-- Noble Blessing -->
+			<part id="19139" level="4" /> <!-- Noble Might -->
+			<part id="19143" level="2" /> <!-- Noble Focus -->
+			<part id="19145" level="2" /> <!-- Noble Death Whisper -->
+			<part id="19150" level="2" /> <!-- Noble Light Armor Attack -->
+		</set>
+		<!-- Tank -->
+		<set id="3">
+			<part id="19171" level="4" /> <!-- Noble Condition -->
+			<part id="19170" level="2" /> <!-- Noble Blessing -->
+			<part id="19122" level="4" /> <!-- Noble Blessed Body -->
+			<part id="19121" level="4" /> <!-- Noble Magic Barrier -->
+			<part id="19134" level="4" /> <!-- Noble Heavy Armor Defense -->
+		</set>
+	</abilitySkills>
+	<broochesSetItems>
+		<!-- Mage Brooches -->
+		<set id="1">
+			<part id="38927" /> <!-- Sapphire - Lv. 1 -->
+			<part id="38870" /> <!-- Obsidian - Lv. 1 -->
+			<part id="38880" /> <!-- Emerald - Lv. 1 -->
+			<part id="38890" /> <!-- Diamond - Lv. 1 -->
+		</set>
+		<!-- Fighter Brooches -->
+		<set id="2">
+			<part id="38855" /> <!-- Ruby - Lv. 1 -->
+			<part id="38870" /> <!-- Obsidian - Lv. 1 -->
+			<part id="38880" /> <!-- Emerald - Lv. 1 -->
+			<part id="38895" /> <!-- Pearl - Lv. 1 -->
+		</set>
+	</broochesSetItems>
+	<hatSetItems>
+		<set id="1">
+			<part id="35801"/> <!-- Romantic Chapeau - INT -->
+			<part id="35802"/> <!-- Romantic Chapeau - WIT -->
+			<part id="35807"/> <!-- Romantic Chapeau - M. Atk. -->
+			<part id="35813"/> <!-- Angel Circlet - INT -->
+			<part id="35814"/> <!-- Angel Circlet - WIT -->
+			<part id="35818"/> <!-- Angel Circlet - M. Atk. -->
+			<part id="35824"/> <!-- Demon Circlet - INT -->
+			<part id="35825"/> <!-- Demon Circlet - WIT -->
+			<part id="35871"/> <!-- Party Hat - INT -->
+			<part id="35872"/> <!-- Party Hat - WIT -->
+			<part id="35877"/> <!-- Party Hat - M. Atk. -->
+			<part id="35883"/> <!-- Refined Angel Ring - INT -->
+			<part id="35884"/> <!-- Refined Angel Ring - WIT -->
+			<part id="35888"/> <!-- Refined Angel Ring - M. Atk. -->
+			<part id="35894"/> <!-- Refined Devil Horn - INT -->
+			<part id="35895"/> <!-- Refined Devil Horn - WIT -->
+			<part id="35919"/> <!-- Draco's Hat - INT (Event) -->
+			<part id="35920"/> <!-- Draco's Hat - WIT (Event) -->
+			<part id="35927"/> <!-- Draco's Hat - M. Atk. (Event) -->
+		</set>
+		<set id="2">
+			<part id="35797"/> <!-- Romantic Chapeau - STR -->
+			<part id="35798"/> <!-- Romantic Chapeau - DEX -->
+			<part id="35799"/> <!-- Romantic Chapeau - CON -->
+			<part id="35806"/> <!-- Romantic Chapeau - P. Atk. -->
+			<part id="35809"/> <!-- Angel Circlet - STR -->
+			<part id="35810"/> <!-- Angel Circlet - DEX -->
+			<part id="35811"/> <!-- Angel Circlet - CON -->
+			<part id="35817"/> <!-- Angel Circlet - P. Atk. -->
+			<part id="35820"/> <!-- Demon Circlet - STR -->
+			<part id="35821"/> <!-- Demon Circlet - DEX -->
+			<part id="35822"/> <!-- Demon Circlet - CON -->
+			<part id="35867"/> <!-- Party Hat - STR -->
+			<part id="35868"/> <!-- Party Hat - DEX -->
+			<part id="35869"/> <!-- Party Hat - CON -->
+			<part id="35876"/> <!-- Party Hat - P. Atk. -->
+			<part id="35879"/> <!-- Refined Angel Ring - STR -->
+			<part id="35880"/> <!-- Refined Angel Ring - DEX -->
+			<part id="35881"/> <!-- Refined Angel Ring - CON -->
+			<part id="35887"/> <!-- Refined Angel Ring - P. Atk. -->
+			<part id="35890"/> <!-- Refined Devil Horn - STR -->
+			<part id="35891"/> <!-- Refined Devil Horn - DEX -->
+			<part id="35892"/> <!-- Refined Devil Horn - CON -->
+			<part id="35915"/> <!-- Draco's Hat - STR (Event) -->
+			<part id="35916"/> <!-- Draco's Hat - DEX (Event) -->
+			<part id="35917"/> <!-- Draco's Hat - CON (Event) -->
+			<part id="35926"/> <!-- Draco's Hat - P. Atk. (Event) -->
+		</set>
+	</hatSetItems>
+	<weaponSets>
+		<!-- Dualswords -->
+		<set id="1">
+			<part id="35184"/> <!-- Dark Amaranthine Dualsword - Haste + Damage Up -->
+			<part id="35185"/> <!-- Dark Amaranthine Dualsword - Damage Up + Health -->
+			<part id="35186"/> <!-- Dark Amaranthine Dualsword - Health + Haste -->
+		</set>
+		<!-- Dagger -->
+		<set id="2">
+			<part id="35151"/> <!-- Dark Amaranthine Shaper - Guidance + Haste -->
+			<part id="35152"/> <!-- Dark Amaranthine Shaper - Haste + Focus -->
+			<part id="35153"/> <!-- Dark Amaranthine Shaper - Focus + Guidance -->
+		</set>
+		<!-- Dual Dagger -->
+		<set id="3">
+			<part id="35187"/> <!-- Dark Amaranthine Dual Dagger - Damage Up + Focus -->
+			<part id="35188"/> <!-- Dark Amaranthine Dual Dagger - Focus + Guidance -->
+			<part id="35189"/> <!-- Dark Amaranthine Dual Dagger - Guidance + Damage Up -->
+		</set>
+		<!-- Bows -->
+		<set id="4">
+			<part id="35169"/> <!-- Dark Amaranthine Thrower - Damage Up + Focus -->
+			<part id="35170"/> <!-- Dark Amaranthine Thrower - Focus + Long Blow -->
+			<part id="35171"/> <!-- Dark Amaranthine Thrower - Long Blow + Damage Up -->
+		</set>
+		<!-- Crossbow -->
+		<set id="5">
+			<part id="35172"/> <!-- Dark Amaranthine Shooter - Focus + Critical Slow -->
+			<part id="35173"/> <!-- Dark Amaranthine Shooter - Critical Slow + Haste -->
+			<part id="35174"/> <!-- Dark Amaranthine Shooter - Haste + Focus -->
+		</set>
+		<!-- Dual Blunt -->
+		<set id="6">
+			<part id="35190"/> <!-- Dark Amaranthine Dual Blunt Weapon - Focus + Guidance -->
+			<part id="35191"/> <!-- Dark Amaranthine Dual Blunt Weapon - Guidance + Damage Up -->
+			<part id="35192"/> <!-- Dark Amaranthine Dual Blunt Weapon - Damage Up + Focus -->
+		</set>
+		<!-- Fists -->
+		<set id="7">
+			<part id="35163"/> <!-- Dark Amaranthine Fighter - Focus + Damage -->
+			<part id="35164"/> <!-- Dark Amaranthine Fighter - Damage Up + Haste -->
+			<part id="35165"/> <!-- Dark Amaranthine Fighter - Haste + Focus -->
+		</set>
+		<!-- Big Sword -->
+		<set id="8">
+			<part id="35157"/> <!-- Dark Amaranthine Slasher - Focus + Damage -->
+			<part id="35158"/> <!-- Dark Amaranthine Slasher - Damage Up + Haste -->
+			<part id="35159"/> <!-- Dark Amaranthine Slasher - Haste + Focus -->
+		</set>
+		<!-- Spear -->
+		<set id="9">
+			<part id="35166"/> <!-- Dark Amaranthine Stormer - HP Drain + Guidance -->
+			<part id="35167"/> <!-- Dark Amaranthine Stormer - Guidance + Damage Up -->
+			<part id="35168"/> <!-- Dark Amaranthine Stormer - Damage Up + HP Drain -->
+		</set>
+		<!-- Blunt Two Hands (Magic) -->
+		<set id="10">
+			<part id="35178"/> <!-- Dark Amaranthine Caster - Empower + Acumen -->
+			<part id="35179"/> <!-- Dark Amaranthine Caster - Acumen + Magic Hold -->
+			<part id="35180"/> <!-- Dark Amaranthine Caster - Magic Hold + Empower -->
+		</set>
+		<!-- Blunt (Fighter) -->
+		<set id="11">
+			<part id="35160"/> <!-- Dark Amaranthine Avenger - Haste + Critical Damage -->
+			<part id="35161"/> <!-- Dark Amaranthine Avenger - Critical Damage + Focus -->
+			<part id="35162"/> <!-- Dark Amaranthine Avenger - Focus + Haste -->
+		</set>
+		<!-- Sword (Magic) -->
+		<set id="12">
+			<part id="35175"/> <!-- Dark Amaranthine Buster - Acumen + Magic Hold -->
+			<part id="35176"/> <!-- Dark Amaranthine Buster - Magic Hold + Mana Up -->
+			<part id="35177"/> <!-- Dark Amaranthine Buster - Mana Up + Acumen -->
+		</set>
+		<!-- Sword (Fighter) -->
+		<set id="13">
+			<part id="35154"/> <!-- Dark Amaranthine Cutter - Haste + Focus -->
+			<part id="35155"/> <!-- Dark Amaranthine Cutter - Focus + Health -->
+			<part id="35156"/> <!-- Dark Amaranthine Cutter - Health + Haste -->
+		</set>
+	</weaponSets>
+	<armorSets>
+		<!-- Heavy Sets -->
+		<set id="1">
+			<part id="35033"/> <!-- Bloody Eternal Helmet - Attack Type / Heavy -->
+			<part id="35034"/> <!-- Bloody Eternal Breastplate - Attack Type / Heavy -->
+			<part id="35035"/> <!-- Bloody Eternal Gaiters - Attack Type / Heavy -->
+			<part id="35036"/> <!-- Bloody Eternal Gauntlets - Attack Type / Heavy -->
+			<part id="35037"/> <!-- Bloody Eternal Boots - Attack Type / Heavy -->
+			<part id="19703"/> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
+		</set>
+		<set id="2">
+			<part id="35002"/> <!-- Dark Eternal Helmet - Attack Type / Heavy -->
+			<part id="35003"/> <!-- Dark Eternal Breastplate - Attack Type / Heavy -->
+			<part id="35004"/> <!-- Dark Eternal Gaiters - Attack Type / Heavy -->
+			<part id="35005"/> <!-- Dark Eternal Gauntlets - Attack Type / Heavy -->
+			<part id="35006"/> <!-- Dark Eternal Boots - Attack Type / Heavy -->
+			<part id="19703"/> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
+		</set>
+		<set id="3">
+			<part id="19698"/> <!-- Blessed Eternal Helmet - Attack Type / Heavy -->
+			<part id="19699"/> <!-- Blessed Eternal Breastplate - Attack Type / Heavy -->
+			<part id="19700"/> <!-- Blessed Eternal Gaiters - Attack Type / Heavy -->
+			<part id="19701"/> <!-- Blessed Eternal Gauntlets - Attack Type / Heavy -->
+			<part id="19702"/> <!-- Blessed Eternal Boots - Attack Type / Heavy -->
+			<part id="19703"/> <!-- Blessed Eternal Shield - Attack Type / Heavy -->
+		</set>
+		<set id="4">
+			<part id="35048"/> <!-- Bloody Eternal Helmet - Defense Type / Heavy -->
+			<part id="35049"/> <!-- Bloody Eternal Breastplate - Defense Type / Heavy -->
+			<part id="35050"/> <!-- Bloody Eternal Gaiters - Defense Type / Heavy -->
+			<part id="35051"/> <!-- Bloody Eternal Gauntlets - Defense Type / Heavy -->
+			<part id="35052"/> <!-- Bloody Eternal Boots - Defense Type / Heavy -->
+			<part id="19911"/> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
+		</set>
+		<set id="5">
+			<part id="35018"/> <!-- Dark Eternal Helmet - Defense Type / Heavy -->
+			<part id="35019"/> <!-- Dark Eternal Breastplate - Defense Type / Heavy -->
+			<part id="35020"/> <!-- Dark Eternal Gaiters - Defense Type / Heavy -->
+			<part id="35021"/> <!-- Dark Eternal Gauntlets - Defense Type / Heavy -->
+			<part id="35022"/> <!-- Dark Eternal Boots - Defense Type / Heavy -->
+			<part id="19911"/> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
+		</set>
+		<set id="6">
+			<part id="19906"/> <!-- Blessed Eternal Helmet - Defense Type / Heavy -->
+			<part id="19907"/> <!-- Blessed Eternal Breastplate - Defense Type / Heavy -->
+			<part id="19908"/> <!-- Blessed Eternal Gaiters - Defense Type / Heavy -->
+			<part id="19909"/> <!-- Blessed Eternal Gauntlets - Defense Type / Heavy -->
+			<part id="19910"/> <!-- Blessed Eternal Boots - Defense Type / Heavy -->
+			<part id="19911"/> <!-- Blessed Eternal Shield - Defense Type / Heavy -->
+		</set>
+		<!-- Light Sets -->
+		<set id="7">
+			<part id="35038"/> <!-- Bloody Eternal Leather Helmet - Assassin Type / Light -->
+			<part id="35039"/> <!-- Bloody Eternal Leather Armor - Assassin Type / Light -->
+			<part id="35040"/> <!-- Bloody Eternal Leather Leggings - Assassin Type / Light -->
+			<part id="35041"/> <!-- Bloody Eternal Leather Gloves - Assassin Type / Light -->
+			<part id="35042"/> <!-- Bloody Eternal Leather Boots - Assassin Type / Light -->
+		</set>
+		<set id="8">
+			<part id="35008"/> <!-- Dark Eternal Leather Helmet - Assassin Type / Light -->
+			<part id="35009"/> <!-- Dark Eternal Leather Armor - Assassin Type / Light -->
+			<part id="35010"/> <!-- Dark Eternal Leather Leggings - Assassin Type / Light -->
+			<part id="35011"/> <!-- Dark Eternal Leather Gloves - Assassin Type / Light -->
+			<part id="35012"/> <!-- Dark Eternal Leather Boots - Assassin Type / Light -->
+		</set>
+		<set id="9">
+			<part id="19704"/> <!-- Blessed Eternal Leather Helmet - Assassin Type / Light -->
+			<part id="19705"/> <!-- Blessed Eternal Leather Armor - Assassin Type / Light -->
+			<part id="19706"/> <!-- Blessed Eternal Leather Leggings - Assassin Type / Light -->
+			<part id="19707"/> <!-- Blessed Eternal Leather Gloves - Assassin Type / Light -->
+			<part id="19708"/> <!-- Blessed Eternal Leather Boots - Assassin Type / Light -->
+		</set>
+		<set id="10">
+			<part id="35053"/> <!-- Bloody Eternal Leather Helmet - Enchant Type / Light -->
+			<part id="35054"/> <!-- Bloody Eternal Leather Armor - Enchant Type / Light -->
+			<part id="35055"/> <!-- Bloody Eternal Leather Leggings - Enchant Type / Light -->
+			<part id="35056"/> <!-- Bloody Eternal Leather Gloves - Enchant Type / Light -->
+			<part id="35057"/> <!-- Bloody Eternal Leather Boots - Enchant Type / Light -->
+		</set>
+		<set id="11">
+			<part id="35023"/> <!-- Dark Eternal Leather Helmet - Enchant Type / Light -->
+			<part id="35024"/> <!-- Dark Eternal Leather Armor - Enchant Type / Light -->
+			<part id="35025"/> <!-- Dark Eternal Leather Leggings - Enchant Type / Light -->
+			<part id="35026"/> <!-- Dark Eternal Leather Gloves - Enchant Type / Light -->
+			<part id="35027"/> <!-- Dark Eternal Leather Boots - Enchant Type / Light -->
+		</set>
+		<set id="12">
+			<part id="19912"/> <!-- Blessed Eternal Leather Helmet - Enchant Type / Light -->
+			<part id="19913"/> <!-- Blessed Eternal Leather Armor - Enchant Type / Light -->
+			<part id="19914"/> <!-- Blessed Eternal Leather Leggings - Enchant Type / Light -->
+			<part id="19915"/> <!-- Blessed Eternal Leather Gloves - Enchant Type / Light -->
+			<part id="19916"/> <!-- Blessed Eternal Leather Boots - Enchant Type / Light -->
+		</set>
+		<!-- Robe Sets -->
+		<set id="13">
+			<part id="35043"/> <!-- Bloody Eternal Circlet - Magic Type / Robe -->
+			<part id="35044"/> <!-- Bloody Eternal Tunic - Magic Type / Robe -->
+			<part id="35045"/> <!-- Bloody Eternal Stockings - Magic Type / Robe -->
+			<part id="35046"/> <!-- Bloody Eternal Gloves - Magic Type / Robe -->
+			<part id="35047"/> <!-- Bloody Eternal Shoes - Magic Type / Robe -->
+			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
+		</set>
+		<set id="14">
+			<part id="35013"/> <!-- Dark Eternal Circlet - Magic Type / Robe -->
+			<part id="35014"/> <!-- Dark Eternal Tunic - Magic Type / Robe -->
+			<part id="35015"/> <!-- Dark Eternal Stockings - Magic Type / Robe -->
+			<part id="35016"/> <!-- Dark Eternal Gloves - Magic Type / Robe -->
+			<part id="35017"/> <!-- Dark Eternal Shoes - Magic Type / Robe -->
+			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
+		</set>
+		<set id="15">
+			<part id="19709"/> <!-- Blessed Eternal Circlet - Magic Type / Robe -->
+			<part id="19710"/> <!-- Blessed Eternal Tunic - Magic Type / Robe -->
+			<part id="19711"/> <!-- Blessed Eternal Stockings - Magic Type / Robe -->
+			<part id="19712"/> <!-- Blessed Eternal Gloves - Magic Type / Robe -->
+			<part id="19713"/> <!-- Blessed Eternal Shoes - Magic Type / Robe -->
+			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
+		</set>
+		<set id="16">
+			<part id="35058"/> <!-- Bloody Eternal Circlet - Recovery Type / Robe -->
+			<part id="35059"/> <!-- Bloody Eternal Tunic - Recovery Type / Robe -->
+			<part id="35060"/> <!-- Bloody Eternal Stockings - Recovery Type / Robe -->
+			<part id="35061"/> <!-- Bloody Eternal Gloves - Recovery Type / Robe -->
+			<part id="35062"/> <!-- Bloody Eternal Shoes - Recovery Type / Robe -->
+			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
+		</set>
+		<set id="17">
+			<part id="35028"/> <!-- Dark Eternal Circlet - Recovery Type / Robe -->
+			<part id="35029"/> <!-- Dark Eternal Tunic - Recovery Type / Robe -->
+			<part id="35030"/> <!-- Dark Eternal Stockings - Recovery Type / Robe -->
+			<part id="35031"/> <!-- Dark Eternal Gloves - Recovery Type / Robe -->
+			<part id="35032"/> <!-- Dark Eternal Shoes - Recovery Type / Robe -->
+			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
+		</set>
+		<set id="18">
+			<part id="19917"/> <!-- Blessed Eternal Circlet - Recovery Type / Robe -->
+			<part id="19918"/> <!-- Blessed Eternal Tunic - Recovery Type / Robe -->
+			<part id="19919"/> <!-- Blessed Eternal Stockings - Recovery Type / Robe -->
+			<part id="19920"/> <!-- Blessed Eternal Gloves - Recovery Type / Robe -->
+			<part id="19921"/> <!-- Blessed Eternal Shoes - Recovery Type / Robe -->
+			<part id="18099"/> <!-- Blessed Eternal Sigil - Robe -->
+		</set>
+	</armorSets>
+	<classItems>
+		<class id="139">	<!-- Sigel Knight -->
+			<presetAbilities id="3" /> <!-- Tank -->
+			<dye id="267" count="3"/> <!-- Lv. 5 Legendary CON Dye - CON + 5 / STR + 1 / Dark Resistance + 25 -->
+			<brooches id="2"/> <!-- Figther Brooches -->
+			<hat id="2" /> <!-- Figther Hats -->
+			<weapon id="11"/> <!-- Amaranthine Avenger -->
+			<weapon id="13"/> <!-- Amaranthine Cutter -->
+			<armorSet id="2"/> <!-- Dark Eternal - Attack Type / Heavy -->
+			<armorSet id="5"/> <!-- Dark Eternal - Defense Type / Heavy -->
+		</class>
+		<class id="140">	<!-- Tyrr Warrior -->
+			<presetAbilities id="2" /> <!-- Fighter -->
+			<dye id="265" count="3"/> <!-- Lv. 5 Legendary STR Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
+			<brooches id="2"/> <!-- Figther Brooches -->
+			<hat id="2" /> <!-- Figther Hats -->
+			<weapon id="8"/> <!-- Amaranthine Slasher -->
+			<!-- Tyrr Duelist -->
+			<weapon id="1" classId="152"/> <!-- Amaranthine Dualsword -->
+			<!-- Tyrr DreadNought -->
+			<weapon id="9" classId="153"/> <!-- Amaranthine Stormer -->
+			<!-- Tyrr Grand Khauatari -->
+			<weapon id="7" classId="155"/> <!-- Amaranthine Fighter -->
+			<armorSet id="2"/> <!-- Dark Eternal - Attack Type / Heavy -->
+			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
+		</class>
+		<class id="141">	<!-- Othell Rogue -->
+			<presetAbilities id="2" /> <!-- Fighter -->
+			<dye id="265" count="3"/> <!-- Lv. 5 Legendary STR Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
+			<brooches id="2"/> <!-- Figther Brooches -->
+			<hat id="2" /> <!-- Figther Hats -->
+			<weapon id="2"/> <!-- Amaranthine Shaper -->
+			<weapon id="3"/> <!-- Amaranthine Dual Dagger -->
+			<armorSet id="8" /> <!-- Dark Eternal Leather - Assassin Type / Light -->
+			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
+		</class>
+		<class id="142">	<!-- Yul Archer -->
+			<presetAbilities id="2" /> <!-- Fighter -->
+			<dye id="265" count="3"/> <!-- Lv. 5 Legendary STR Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
+			<brooches id="2"/> <!-- Figther Brooches -->
+			<hat id="2" /> <!-- Figther Hats -->
+			<weapon id="4"/> <!--  Amaranthine Thrower -->
+			<weapon id="5"/> <!--  Amaranthine Shooter -->
+			<armorSet id="8" /> <!-- Dark Eternal Leather - Assassin Type / Light -->
+			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
+		</class>
+		<class id="143">	<!-- Feoh Wizard -->
+			<presetAbilities id="1" /> <!-- Mage -->
+			<dye id="268" count="3"/> <!-- Lv. 5 Legendary INT Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
+			<brooches id="1"/> <!-- Mage Brooches -->
+			<hat id="1" /> <!-- Mage Hats -->
+			<weapon id="12"/> <!-- Amaranthine Buster -->
+			<weapon id="10"/> <!-- Amaranthine Caster -->
+			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
+		</class>
+		<class id="144">	<!-- Iss Enchante -->
+			<presetAbilities id="1" /> <!-- Mage -->
+			<dye id="267" count="3"/> <!-- Lv. 5 Legendary CON Dye - CON + 5 / STR + 1 / Dark Resistance + 25 -->
+			<brooches id="1"/> <!-- Mage Brooches -->
+			<hat id="1" /> <!-- Mage Hats -->
+			<weapon id="1"/> <!-- Amaranthine Dualsword -->
+			<weapon id="6"/> <!-- Amaranthine Dual Blunt Weapon -->
+			<weapon id="10"/> <!-- Amaranthine Caster -->
+			<armorSet id="2"/> <!-- Dark Eternal - Attack Type / Heavy -->
+			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
+			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
+		</class>
+		<class id="145">	<!-- Wynn Summoner -->
+			<presetAbilities id="1" /> <!-- Mage -->
+			<dye id="267" count="3"/> <!-- Lv. 5 Legendary CON Dye - CON + 5 / STR + 1 / Dark Resistance + 25 -->
+			<brooches id="1"/> <!-- Mage Brooches -->
+			<hat id="1" /> <!-- Mage Hats -->
+			<weapon id="4"/> <!-- Amaranthine Thrower -->
+			<weapon id="12"/> <!-- Amaranthine Buster -->
+			<weapon id="10"/> <!-- Amaranthine Caster -->
+			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
+			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
+		</class>
+		<class id="146">	<!-- Aeore Healer -->
+			<presetAbilities id="1" /> <!-- Mage -->
+			<dye id="268" count="3"/> <!-- Lv. 5 Legendary INT Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
+			<brooches id="1"/> <!-- Mage Brooches -->
+			<hat id="1" /> <!-- Mage Hats -->
+			<weapon id="10"/> <!-- Amaranthine Caster -->
+			<weapon id="12"/> <!-- Amaranthine Buster -->
+			<armorSet id="11" />  <!-- Dark  Eternal Leather Helmet - Enchant Type / Light -->
+			<armorSet id="14" /> <!-- Dark Eternal Circlet - Magic Type / Robe -->
+			<armorSet id="17" /> <!-- Dark Eternal Circlet - Recovery Type / Robe -->
+		</class>
+	</classItems>	
+</list>

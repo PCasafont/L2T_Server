@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="381" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="191" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="128" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="76" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9530" /> <!-- Sealed Dynasty Breastplate Piece -->
+	</item>
+	<item>
+		<ingredient count="256" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="129" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="86" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="51" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9531" /> <!-- Sealed Dynasty Gaiters Piece -->
+	</item>
+	<item>
+		<ingredient count="160" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="80" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="54" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="32" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9532" /> <!-- Sealed Dynasty Helmet Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="40" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9533" /> <!-- Sealed Dynasty Gauntlets Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="40" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9534" /> <!-- Sealed Dynasty Boots Piece -->
+	</item>
+	<item>
+		<ingredient count="299" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="150" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="100" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="60" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9535" /> <!-- Sealed Dynasty Leather Armor Fragment -->
+	</item>
+	<item>
+		<ingredient count="200" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="100" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="67" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="39" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9536" /> <!-- Sealed Dynasty Leather Leggings Piece -->
+	</item>
+	<item>
+		<ingredient count="160" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="81" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="53" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="32" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9537" /> <!-- Sealed Dynasty Leather Helmet Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="40" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9538" /> <!-- Sealed Dynasty Leather Gloves Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="40" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9539" /> <!-- Sealed Dynasty Leather Boots Piece -->
+	</item>
+	<item>
+		<ingredient count="299" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="150" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="100" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="60" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9540" /> <!-- Sealed Dynasty Tunic Piece -->
+	</item>
+	<item>
+		<ingredient count="200" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="100" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="67" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="39" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9541" /> <!-- Sealed Dynasty Stockings Piece -->
+	</item>
+	<item>
+		<ingredient count="160" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="81" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="53" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="32" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9542" /> <!-- Sealed Dynasty Circlet Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="40" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9543" /> <!-- Sealed Dynasty Gloves Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="40" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9544" /> <!-- Sealed Dynasty Shoes Piece -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="39" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9545" /> <!-- Sealed Dynasty Shield Fragment -->
+	</item>
+	<item>
+		<ingredient count="120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="60" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="39" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="24" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="10114" /> <!-- Sealed Dynasty Sigil Piece -->
+	</item>
+	<item>
+		<ingredient count="126" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="64" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="42" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="25" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9991" /> <!-- Sealed Dynasty Earring Gemstone -->
+	</item>
+	<item>
+		<ingredient count="165" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="82" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="56" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="32" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="3" id="9992" /> <!-- Sealed Dynasty Necklace Gemstone -->
+	</item>
+	<item>
+		<ingredient count="89" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="44" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="30" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="18" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<production count="3" id="9993" /> <!-- Sealed Dynasty Ring Gemstone -->
+	</item>
+	<item>
+		<ingredient count="1120" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="561" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="373" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="224" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="2" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9482" /> <!-- Recipe: Sealed Dynasty Breastplate (60%) -->
+	</item>
+	<item>
+		<ingredient count="699" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="350" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="233" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="140" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="2" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9483" /> <!-- Recipe: Sealed Dynasty Gaiters (60%) -->
+	</item>
+	<item>
+		<ingredient count="419" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="209" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="139" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="84" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9484" /> <!-- Recipe: Sealed Dynasty Helmet (60%) -->
+	</item>
+	<item>
+		<ingredient count="280" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="139" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="94" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9485" /> <!-- Recipe: Sealed Dynasty Gauntlets (60%) -->
+	</item>
+	<item>
+		<ingredient count="280" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="139" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="94" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9486" /> <!-- Recipe: Sealed Dynasty Boots (60%) -->
+	</item>
+	<item>
+		<ingredient count="839" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="420" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="280" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="168" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="2" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9487" /> <!-- Recipe: Sealed Dynasty Leather Armor (60%) -->
+	</item>
+	<item>
+		<ingredient count="524" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="262" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="174" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="105" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="2" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9488" /> <!-- Recipe: Sealed Dynasty Leather Leggings (60%) -->
+	</item>
+	<item>
+		<ingredient count="419" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="209" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="139" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="84" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9489" /> <!-- Recipe: Sealed Dynasty Leather Helmet (60%) -->
+	</item>
+	<item>
+		<ingredient count="280" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="139" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="94" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9490" /> <!-- Recipe: Sealed Dynasty Leather Gloves (60%) -->
+	</item>
+	<item>
+		<ingredient count="280" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="139" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="94" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9491" /> <!-- Recipe: Sealed Dynasty Leather Boots (60%) -->
+	</item>
+	<item>
+		<ingredient count="839" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="420" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="280" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="168" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="2" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9492" /> <!-- Recipe: Sealed Dynasty Tunic (60%) -->
+	</item>
+	<item>
+		<ingredient count="524" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="262" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="174" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="105" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="2" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9493" /> <!-- Recipe: Sealed Dynasty Stockings (60%) -->
+	</item>
+	<item>
+		<ingredient count="419" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="209" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="139" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="84" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9494" /> <!-- Recipe: Sealed Dynasty Circlet (60%) -->
+	</item>
+	<item>
+		<ingredient count="280" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="139" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="94" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9495" /> <!-- Recipe: Sealed Dynasty Gloves (60%) -->
+	</item>
+	<item>
+		<ingredient count="280" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="139" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="94" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9496" /> <!-- Recipe: Sealed Dynasty Shoes (60%) -->
+	</item>
+	<item>
+		<ingredient count="294" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="146" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="97" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="59" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9497" /> <!-- Recipe: Sealed Dynasty Shield (60%) -->
+	</item>
+	<item>
+		<ingredient count="294" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="146" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="97" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="59" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="10115" /> <!-- Recipe: Sealed Dynasty Sigil (60%) -->
+	</item>
+	<item>
+		<ingredient count="272" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="136" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="90" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="55" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9985" /> <!-- Recipe: Sealed Dynasty Earring (70%) -->
+	</item>
+	<item>
+		<ingredient count="364" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="181" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="122" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="72" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9986" /> <!-- Recipe: Sealed Dynasty Necklace (70%) -->
+	</item>
+	<item>
+		<ingredient count="181" id="9593" /> <!-- Yellow Seed of Evil Fragment -->
+		<ingredient count="90" id="9594" /> <!-- Green Seed of Evil Fragment -->
+		<ingredient count="61" id="9595" /> <!-- Blue Seed of Evil Fragment -->
+		<ingredient count="36" id="9596" /> <!-- Red Seed of Evil Fragment -->
+		<ingredient count="1" id="9597" /> <!-- White Seed of Evil Fragment -->
+		<ingredient count="1" id="9598" /> <!-- Black Seed of Evil Fragment -->
+		<production count="1" id="9987" /> <!-- Recipe: Sealed Dynasty Ring (70%) -->
+	</item>
+</list>

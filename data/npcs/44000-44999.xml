@@ -1,0 +1,470 @@
+<list>
+	<npc id="44000" templateId="21822" name="Lucky Chest" serverSideName="true" title="Tenkai Events" serverSideTitle="true"
+			level="84" type="L2Chest" atkRange="0" hpMax="1" hpReg="0.0" mpMax="1" mpReg="0.0" STR="0" CON="1" DEX="1" INT="1" WIT="1"
+			MEN="1" pAtk="0" mAtk="0" pDef="0" mDef="0" pAtkSpd="0" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120"
+			collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
+			aiType="fighter">
+	</npc>
+	<npc id="44001" templateId="20099" name="Clone" serverSideName="true" level="99" type="L2Monster" atkRange="40" hpMax="7814989"
+			hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31" sp="5000" pAtk="91135"
+			mAtk="28667" pDef="58769" mDef="42553" pAtkSpd="359" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="20" runSpd="250"
+			collisionRadius="10" collisionHeight="24" fireRes="600" waterRes="600" windRes="600" earthRes="600" holyRes="600" darkRes="600"
+			aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="4357" min="800" max="1200" chance="100" /> <!-- Silver Shilen -->
+	</npc>
+	<npc id="44003" templateId="25523" name="Golem" serverSideName="true" title="Tenkai Events" level="99" type="L2EventGolem"
+			atkRange="0" hpMax="15630" hpReg="0.01" mpMax="1494" mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="590" pAtk="32909" mAtk="1089" pDef="2938436" mDef="2127664" pAtkSpd="303" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="10" runSpd="10" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44004" templateId="35609" name="Flag" serverSideName="true" title="Tenkai Events" level="70" type="L2EventFlag"
+			atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
+			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
+			darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44005" templateId="35608" name="Flag" serverSideName="true" title="Tenkai Events" level="70" type="L2EventFlag"
+			atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
+			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
+			darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44006" templateId="35607" name="Flag" serverSideName="true" title="Tenkai Events" level="70" type="L2EventFlag"
+			atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
+			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
+			darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44007" templateId="35610" name="Flag" serverSideName="true" title="Tenkai Events" level="70" type="L2EventFlag"
+			atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
+			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
+			darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44008" templateId="35611" name="Flag" serverSideName="true" title="Tenkai Events" level="70" type="L2EventFlag"
+			atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377" pCritRate="40" mCritRate="40" walkSpd="80"
+			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
+			darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44010" templateId="20626" name="Skeleton Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44011" templateId="20099" name="Skeleton Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44012" templateId="20100" name="Skeleton Archer" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="500" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="14809" mAtk="2867" pDef="8815" mDef="6383" pAtkSpd="299" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44020" templateId="21600" name="Zombie Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44021" templateId="20457" name="Zombie Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="13670" mAtk="4300" pDef="17631" mDef="12766" pAtkSpd="359" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="60" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44022" templateId="20552" name="Zombie Berserker" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="11392" mAtk="3583" pDef="8815" mDef="6383" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44023" templateId="20235" name="Zombie Scout" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44030" templateId="21339" name="Orc Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44031" templateId="21336" name="Orc Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44032" templateId="21335" name="Orc Scout" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="11392" mAtk="3583" pDef="8815" mDef="6383" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44033" templateId="21328" name="Orc Archer" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="500" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="14809" mAtk="2867" pDef="8815" mDef="6383" pAtkSpd="299" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44040" templateId="21366" name="Silenos Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44041" templateId="21358" name="Silenos Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44042" templateId="21353" name="Silenos Scout" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="11392" mAtk="3583" pDef="8815" mDef="6383" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44043" templateId="21354" name="Silenos Hunter" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="500" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="14809" mAtk="2867" pDef="8815" mDef="6383" pAtkSpd="299" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44050" templateId="20356" name="Lizardman Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44051" templateId="20008" name="Lizardman Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44052" templateId="20296" name="Lizardman Scout" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="500" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="14809" mAtk="2867" pDef="8815" mDef="6383" pAtkSpd="299" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44060" templateId="21263" name="Ol Mahum Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44061" templateId="20066" name="Ol Mahum Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44062" templateId="20058" name="Ol Mahum Scout" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="11392" mAtk="3583" pDef="8815" mDef="6383" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44063" templateId="20053" name="Ol Mahum Archer" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="500" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="14809" mAtk="2867" pDef="8815" mDef="6383" pAtkSpd="299" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44070" templateId="22238" name="Wolf Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44071" templateId="20120" name="Wolf Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44072" templateId="22229" name="Wolf Scout" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="11392" mAtk="3583" pDef="8815" mDef="6383" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44080" templateId="20002" name="Elpy Commander" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="31259956" hpReg="200.0" mpMax="50000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" sp="50000" pAtk="45568" mAtk="2867" pDef="29384" mDef="21277" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="10" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44081" templateId="20432" name="Elpy Warrior" serverSideName="true" title="Tenkai Army" level="99" type="L2ArmyMonster"
+			atkRange="40" hpMax="156300" hpReg="200.0" mpMax="5000" mpReg="7.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="31"
+			sp="5000" pAtk="9114" mAtk="2867" pDef="11754" mDef="8511" pAtkSpd="418" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="50" runSpd="250" aggressive="true" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15" clanRange="300">
+		<itemDrop itemId="6393" min="1" max="1" chance="100" /> <!-- Event - Glittering Medal -->
+	</npc>
+	<npc id="44400" templateId="31049" name="Smith" serverSideName="true" title="Tenkai Chess" serverSideTitle="true" level="70"
+			type="L2ChessManager" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61" INT="28"
+			WIT="53" MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377" pCritRate="40" mCritRate="40"
+			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="44401" templateId="20099" name="Pawn" serverSideName="true" title="White" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="27" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44402" templateId="20626" name="Rook" serverSideName="true" title="White" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="282" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44403" templateId="20513" name="Knight" serverSideName="true" title="White" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="282" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44404" templateId="20519" name="Bishop" serverSideName="true" title="White" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="282" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44405" templateId="20516" name="Queen" serverSideName="true" title="White" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="282" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44406" templateId="20169" name="King" serverSideName="true" title="White" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="282" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44411" templateId="20004" name="Pawn" serverSideName="true" title="Black" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="1013" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44412" templateId="20016" name="Rook" serverSideName="true" title="Black" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="1013" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44413" templateId="20138" name="Knight" serverSideName="true" title="Black" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="1013" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44414" templateId="21092" name="Bishop" serverSideName="true" title="Black" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="1013" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44415" templateId="21590" name="Queen" serverSideName="true" title="Black" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="1013" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+	<npc id="44416" templateId="35647" name="King" serverSideName="true" title="Black" serverSideTitle="true" level="85" type="L2ChessPiece"
+			atkRange="40" hpMax="6" hpReg="0.0" mpMax="1" mpReg="0.0" STR="1" CON="1" DEX="1" INT="1" WIT="1" MEN="1" pAtk="733"
+			mAtk="1013" pDef="0" mDef="0" pAtkSpd="307" mAtkSpd="334" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="10"
+			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter" skillChance="15"
+			clanRange="300">
+	</npc>
+</list>

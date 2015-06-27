@@ -1,0 +1,1234 @@
+<list>
+	<npc id="8401" name="Jermann" title="Ancient Kartia's Ruler" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
+			mpMax="3066" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="35"
+			collisionHeight="74" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="5467" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="8402" name="Jermann" title="Ancient Kartia's Ruler" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
+			mpMax="3066" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="35"
+			collisionHeight="74" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="5467" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="8403" name="Jermann" title="Ancient Kartia's Ruler" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
+			mpMax="3066" mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="35"
+			collisionHeight="74" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="5467" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="8404" name="Fairweather Borna" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0" mpMax="3066" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8" collisionHeight="23" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="4" /> <!-- Animals -->
+	</npc>
+	<npc id="8405" name="Ancient Kartia Records" title="Holder of Mysterious Power" level="80" type="L2Npc" atkRange="40" hpMax="2894"
+			hpReg="6.96" mpMax="2044" mpReg="5.05" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145"
+			pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="32"
+			collisionHeight="46.5" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8406" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8407" name="Supreme Tank" title="Sigel Knight" level="88" type="L2Npc" atkRange="40" hpMax="1151532" hpReg="56.56"
+			mpMax="80000" mpReg="41.04" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="35980" mAtk="22900" pDef="4616"
+			mDef="1876" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8"
+			collisionHeight="26.5" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="16" /> <!-- Dark Elves -->
+	</npc>
+	<npc id="8408" name="King of Destruction" title="Tyrr Warrior" level="88" type="L2Npc" atkRange="40" hpMax="511792" hpReg="42.59"
+			mpMax="80000" mpReg="30.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="54600" mAtk="22900" pDef="2308"
+			mDef="1876" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10"
+			collisionHeight="30" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="17" /> <!-- Orcs -->
+	</npc>
+	<npc id="8409" name="Torturer" title="Feoh Wizard" level="88" type="L2Npc" atkRange="40" hpMax="511792" hpReg="42.59" mpMax="80000"
+			mpReg="30.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17990" mAtk="32765" pDef="1027" mDef="2872"
+			pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="7" collisionHeight="26.2"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="15" /> <!-- Elves -->
+	</npc>
+	<npc id="8410" name="Noble Healer" title="Aeore Healer" level="88" type="L2Npc" atkRange="40" hpMax="511792" hpReg="42.59"
+			mpMax="80000" mpReg="30.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17990" mAtk="31782" pDef="1272"
+			mDef="2378" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8"
+			collisionHeight="25.3" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8411" name="Romantic Assassin" title="Othell Rogue" level="93" type="L2Npc" atkRange="40" hpMax="541220" hpReg="43.43"
+			mpMax="80000" mpReg="31.51" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="41723" mAtk="11450" pDef="1092"
+			mDef="1531" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="7"
+			collisionHeight="20.5" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="18" /> <!-- Dwarves -->
+	</npc>
+	<npc id="8412" name="Bad Fellow" title="Feoh Wizard" level="93" type="L2Npc" atkRange="40" hpMax="541220" hpReg="43.43"
+			mpMax="80000" mpReg="31.51" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="17990" mAtk="44572" pDef="1191"
+			mDef="3982" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="7"
+			collisionHeight="26.2" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="15" /> <!-- Elves -->
+	</npc>
+	<npc id="8413" name="Divine Buff" title="Iss Enchanter" level="93" type="L2Npc" atkRange="40" hpMax="541220" hpReg="43.43"
+			mpMax="80000" mpReg="31.51" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="27901" mAtk="22783" pDef="2131"
+			mDef="1587" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="6"
+			collisionHeight="26" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="15" /> <!-- Elves -->
+	</npc>
+	<npc id="8414" name="Legendary Knight" title="Sigel Knight" level="98" type="L2Npc" atkRange="40" hpMax="1385779" hpReg="60.35"
+			mpMax="80000" mpReg="43.79" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="41723" mAtk="23400" pDef="5123"
+			mDef="1982" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8"
+			collisionHeight="25.2" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8415" name="Master Marksman" title="Yul Archer" level="98" type="L2Npc" atkRange="600" hpMax="615901" hpReg="45.44"
+			mpMax="80000" mpReg="32.97" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="58422" mAtk="17832" pDef="1341"
+			mDef="1579" pAtkSpd="543" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="7"
+			collisionHeight="24.7" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="25" /> <!-- Kamael -->
+	</npc>
+	<npc id="8416" name="Crystal of Protection" level="99" type="L2Npc" atkRange="40" hpMax="48000" hpReg="18.61" mpMax="3066"
+			mpReg="13.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="7" collisionHeight="35" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+	</npc>
+	<npc id="8417" name="Ancient Kartia's Labyrinth Teleport Device" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="0.0"
+			mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="15" collisionHeight="51.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8418" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8419" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8420" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8421" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8422" name="Jermann" title="Ancient Kartia's Ruler" level="99" type="L2Npc" atkRange="40" hpMax="35715" hpReg="16.77"
+			mpMax="3066" mpReg="12.17" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="10" mCritRate="10" walkSpd="30" runSpd="120" collisionRadius="35"
+			collisionHeight="74" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8423" name="Warrior of Death" level="99" type="L2Npc" atkRange="40" hpMax="24317" hpReg="14.66" mpMax="3066" mpReg="10.64"
+			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="16" collisionHeight="27.2" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+	</npc>
+	<npc id="8424" name="Kajin" title="Obedient" level="88" type="L2Npc" atkRange="40" hpMax="348077" hpReg="37.21" mpMax="2044"
+			mpReg="27.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="30" mCritRate="30" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="9" /> <!-- Demons -->
+	</npc>
+	<npc id="8425" name="Beryn" title="Obedient" level="88" type="L2Npc" atkRange="40" hpMax="348077" hpReg="37.21" mpMax="2044"
+			mpReg="27.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="30" mCritRate="30" walkSpd="30" runSpd="120" collisionRadius="17" collisionHeight="30" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+	</npc>
+	<npc id="8426" name="Unicorn" level="88" type="L2Npc" atkRange="40" hpMax="348077" hpReg="0.0" mpMax="2044" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="10" mCritRate="10" walkSpd="30" runSpd="120" collisionRadius="33" collisionHeight="31" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="4" /> <!-- Animals -->
+	</npc>
+	<npc id="8427" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8428" name="Endless Stamina" title="Sigel Knight" level="93" type="L2Npc" atkRange="40" hpMax="1217747" hpReg="57.68"
+			mpMax="80000" mpReg="41.86" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="39771" mAtk="23100" pDef="4872"
+			mDef="1899" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8"
+			collisionHeight="26.5" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="16" /> <!-- Dark Elves -->
+	</npc>
+	<npc id="8429" name="Thunder Heal" title="Aeore Healer" level="93" type="L2Npc" atkRange="40" hpMax="541220" hpReg="43.43"
+			mpMax="80000" mpReg="31.51" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18990" mAtk="34782" pDef="1572"
+			mDef="2778" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8"
+			collisionHeight="25.3" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8430" name="Beauty Buff" title="Iss Enchanter" level="98" type="L2Npc" atkRange="40" hpMax="615901" hpReg="45.44"
+			mpMax="80000" mpReg="32.97" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="31901" mAtk="24783" pDef="2431"
+			mDef="1787" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="6"
+			collisionHeight="26" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="15" /> <!-- Elves -->
+	</npc>
+	<npc id="8431" name="Star Healer" title="Aeore Healer" level="98" type="L2Npc" atkRange="40" hpMax="615901" hpReg="45.44"
+			mpMax="80000" mpReg="32.97" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="19990" mAtk="37782" pDef="1772"
+			mDef="3178" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8"
+			collisionHeight="25.3" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8432" name="Man of Fire" title="Othell Rogue" level="98" type="L2Npc" atkRange="40" hpMax="615901" hpReg="45.44"
+			mpMax="80000" mpReg="32.97" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="45771" mAtk="12450" pDef="1172"
+			mDef="1863" pAtkSpd="672" mAtkSpd="722" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="7"
+			collisionHeight="20.5" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="18" /> <!-- Dwarves -->
+	</npc>
+	<npc id="8433" name="Warrior of Death" level="99" type="L2Npc" atkRange="40" hpMax="24317" hpReg="14.66" mpMax="3066" mpReg="10.64"
+			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="16" collisionHeight="27.2" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+	</npc>
+	<npc id="8434" name="Warrior of Death" level="99" type="L2Npc" atkRange="40" hpMax="24317" hpReg="14.66" mpMax="3066" mpReg="10.64"
+			STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="16" collisionHeight="27.2" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+	</npc>
+	<npc id="8435" name="Russia's Test" level="99" type="L2Npc" atkRange="40" hpMax="24317" hpReg="0.0" mpMax="3066" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="10" mCritRate="10" walkSpd="30" runSpd="120" collisionRadius="9" collisionHeight="23" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="4" /> <!-- Animals -->
+	</npc>
+	<npc id="8436" name="Kajin" title="Obedient" level="93" type="L2Npc" atkRange="40" hpMax="416740" hpReg="39.63" mpMax="2555"
+			mpReg="28.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="30" mCritRate="30" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="9" /> <!-- Demons -->
+	</npc>
+	<npc id="8437" name="Beryn" title="Obedient" level="93" type="L2Npc" atkRange="40" hpMax="416740" hpReg="39.63" mpMax="2555"
+			mpReg="28.76" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="30" mCritRate="30" walkSpd="30" runSpd="120" collisionRadius="17" collisionHeight="30" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+	</npc>
+	<npc id="8438" name="Kajin" title="Obedient" level="98" type="L2Npc" atkRange="40" hpMax="474244" hpReg="41.47" mpMax="3066"
+			mpReg="30.09" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="30" mCritRate="30" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="9" /> <!-- Demons -->
+	</npc>
+	<npc id="8439" name="Beryn" title="Obedient" level="98" type="L2Npc" atkRange="40" hpMax="474244" hpReg="41.47" mpMax="3066"
+			mpReg="30.09" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="30" mCritRate="30" walkSpd="30" runSpd="120" collisionRadius="17" collisionHeight="30" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+	</npc>
+	<npc id="8440" name="Pirate Captain Uthanka's Tombstone" level="70" type="L2Npc" atkRange="40" hpMax="68" hpReg="1.87" mpMax="45"
+			mpReg="1.36" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="20" collisionHeight="30" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="19" /> <!-- Misc. -->
+	</npc>
+	<npc id="8441" name="Pirate Captain Uthanka's Spirit" level="10" type="L2Npc" atkRange="40" hpMax="258" hpReg="2.99" mpMax="133"
+			mpReg="2.17" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1637" mAtk="950" pDef="635" mDef="516" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="12" collisionHeight="26.4" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
+		<skill id="4410" level="10" /> <!-- Slightly Weak P. Atk. -->
+		<skill id="4411" level="10" /> <!-- Slightly Weak M. Atk. -->
+		<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+		<itemDrop itemId="23236" min="1" max="1" chance="100" /> <!-- Scroll of Escape: Uthanka's Tomb -->
+	</npc>
+	<npc id="8442" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95" mpMax="1642" mpReg="5.77" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8443" name="" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="9.63" mpMax="2044" mpReg="6.99" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="44.5" collisionHeight="7" fireRes="20" waterRes="20"
+			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8444" name="Ancient Kartia Guard" title="Sworn to Loyalty" level="96" type="L2Npc" atkRange="40" hpMax="11487"
+			hpReg="11.28" mpMax="2555" mpReg="8.18" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1799" mAtk="1145"
+			pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="17"
+			collisionHeight="30" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8445" name="Ancient Kartia Watchman" title="Sworn to Loyalty" level="96" type="L2Npc" atkRange="40" hpMax="11487"
+			hpReg="11.28" mpMax="2555" mpReg="8.18" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1799" mAtk="1145"
+			pDef="577" mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10"
+			collisionHeight="24" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8446" name="Kajin" title="Sworn to Loyalty" level="98" type="L2Npc" atkRange="80" hpMax="15269" hpReg="12.46" mpMax="3066"
+			mpReg="9.04" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="50" mCritRate="50" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8447" name="Beryn" title="Sworn to Loyalty" level="98" type="L2Npc" atkRange="80" hpMax="15269" hpReg="12.46" mpMax="3066"
+			mpReg="9.04" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469" pAtkSpd="253"
+			mAtkSpd="333" pCritRate="50" mCritRate="50" walkSpd="30" runSpd="120" collisionRadius="17" collisionHeight="30" fireRes="20"
+			waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8448" name="Chest of Offerings" title="For the New Ruler" level="99" type="L2Npc" atkRange="40" hpMax="596" hpReg="4.0"
+			mpMax="3066" mpReg="2.9" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8.5" collisionHeight="8.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8449" name="Zellaka" title="Shilen's Subordinate" level="88" type="L2Npc" atkRange="40" hpMax="3194995" hpReg="80.84"
+			mpMax="2044" mpReg="58.66" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="30"
+			collisionHeight="54" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8450" name="Pelline" title="Shilen's Subordinate" level="93" type="L2Npc" atkRange="40" hpMax="3497549" hpReg="83.45"
+			mpMax="2555" mpReg="60.55" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="18"
+			collisionHeight="46" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8451" name="Kalios" title="Shilen's Subordinate" level="98" type="L2Npc" atkRange="40" hpMax="3916294" hpReg="86.81"
+			mpMax="3066" mpReg="63.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="1799" mAtk="1145" pDef="577"
+			mDef="469" pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="25"
+			collisionHeight="65.5" fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8452" name="Kartia Guard" title="Shilen's Subordinate" level="88" type="L2Npc" atkRange="40" hpMax="7824" hpReg="9.86"
+			mpMax="2044" mpReg="7.15" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="14" collisionHeight="14"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8453" name="Kartia Watchman" title="Shilen's Subordinate" level="88" type="L2Npc" atkRange="40" hpMax="7824" hpReg="9.86"
+			mpMax="2044" mpReg="7.15" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="21.12" collisionHeight="40.48"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8454" name="Kartia Guard" title="Shilen's Subordinate" level="93" type="L2Npc" atkRange="40" hpMax="8342" hpReg="10.08"
+			mpMax="2555" mpReg="7.32" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="18" collisionHeight="33"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8455" name="Kartia Watchman" title="Shilen's Subordinate" level="93" type="L2Npc" atkRange="40" hpMax="8342" hpReg="10.08"
+			mpMax="2555" mpReg="7.32" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="14" collisionHeight="40"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8456" name="Kartia Guard" title="Shilen's Subordinate" level="98" type="L2Npc" atkRange="40" hpMax="9089" hpReg="10.39"
+			mpMax="3066" mpReg="7.54" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="22" collisionHeight="42"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8457" name="Kartia Watchman" title="Shilen's Subordinate" level="98" type="L2Npc" atkRange="40" hpMax="9089" hpReg="10.39"
+			mpMax="3066" mpReg="7.54" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="25" collisionHeight="34.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8458" name="Stone Statue of Jermann the Great Leader" level="99" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.95"
+			mpMax="1642" mpReg="5.77" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="30" collisionHeight="57"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+	</npc>
+	<npc id="8459" name="Sandy the Cat" title="Test Server Helper" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="7.95"
+			mpMax="1642" mpReg="5.77" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1799" mAtk="1145" pDef="577" mDef="469"
+			pAtkSpd="253" mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="8" collisionHeight="15"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+	</npc>
+	<npc id="8460" name="Herina" title="Summer Slushie Maniac" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="24.7"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+	</npc>
+	<npc id="8461" name="Herina's Chair" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="18" collisionHeight="16" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+	</npc>
+	<npc id="8462" name="Protection Crystal" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="35" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+	</npc>
+	<npc id="8463" name="Kajin" title="Pledged" level="98" type="L2Npc" atkRange="80" hpMax="15269" hpReg="11.6" mpMax="3066"
+			mpReg="8.41" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="50" mCritRate="50" walkSpd="60" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8464" name="Beryn" title="Pledged" level="98" type="L2Npc" atkRange="80" hpMax="15269" hpReg="11.6" mpMax="3066"
+			mpReg="8.41" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="50" mCritRate="50" walkSpd="60" runSpd="120" collisionRadius="17" collisionHeight="30" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8465" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="1642" mpReg="0.0" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8466" name="Queen of Hearts" title="Beer Messenger" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="6" collisionHeight="18"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+	</npc>
+	<npc id="8467" name="Giant Rat" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="15" collisionHeight="20" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="4" /> <!-- Animals -->
+	</npc>
+	<npc id="8468" name="Male Human Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="23"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8469" name="Female Human Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="23.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8470" name="Male Human Model" title="Weapon Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5"
+			collisionHeight="22.8" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8471" name="Female Human Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="6.5"
+			collisionHeight="22.5" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8472" name="Male Elf Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5"
+			collisionHeight="24" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8473" name="Female Elf Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5"
+			collisionHeight="23" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8474" name="Male Dark Elf Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5"
+			collisionHeight="24" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8475" name="Female Dark Elf Model" title="Weapon Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="23.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8476" name="Adenia Andron III" title="Renowned Fashion Designer" level="90" type="L2Npc" atkRange="40" hpMax="615901"
+			hpReg="42.29" mpMax="2555" mpReg="30.69" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+			pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9"
+			collisionHeight="18" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8477" name="Female Dwarf Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="5" collisionHeight="19"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8478" name="Male Orc Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="11"
+			collisionHeight="28" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8479" name="Female Orc Model" title="Weapon Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="27"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8480" name="Male Orc Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="27.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8481" name="Female Orc Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="25.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8482" name="Male Kamael Model" title="Armor Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="25.2"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8483" name="Female Kamael Model" title="Weapon Transformation Expert" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+			hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
+			mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="22.4"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8484" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="23" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8485" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="23.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8486" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0" mpMax="2555" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5" collisionHeight="22.8" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8487" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="6.5" collisionHeight="22.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8488" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5" collisionHeight="24" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8489" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5" collisionHeight="23" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8490" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5" collisionHeight="24" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8491" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0" mpMax="2555" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="23.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8492" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0" mpMax="2555" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="18" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8493" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="5" collisionHeight="19" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8494" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="42.29" mpMax="2555" mpReg="30.69"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="11" collisionHeight="28" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8495" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0" mpMax="2555" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="27" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8496" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0" mpMax="2555" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="27.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8497" name="Walking Model" level="90" type="L2Npc" atkRange="40" hpMax="615901" hpReg="0.0" mpMax="2555" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="25.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8498" name="Andron's Assistant" title="Fashion Show Promoter" level="90" type="L2Npc" atkRange="40" hpMax="615901"
+			hpReg="42.29" mpMax="2555" mpReg="30.69" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+			pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8"
+			collisionHeight="25.2" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8499" name="Andron's Companion" title="Fashion Show Coordinator" level="90" type="L2Npc" atkRange="40" hpMax="615901"
+			hpReg="42.29" mpMax="2555" mpReg="30.69" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550"
+			pDef="3840" mDef="825" pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7"
+			collisionHeight="22.4" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8500" name="Gerrard" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="24"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8501" name="Ruben" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="17" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="18" /> <!-- Dwarves -->
+	</npc>
+	<npc id="8502" name="Prode" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="23" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8503" name="Elin" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="22" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8504" name="Seirian" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="13" collisionHeight="22.25"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="25" /> <!-- Kamael -->
+	</npc>
+	<npc id="8505" name="Wild Maguen" title="Pickpocket" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="11" collisionHeight="13.25" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8506" name="Edmund" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="17" collisionHeight="25"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="25" /> <!-- Kamael -->
+	</npc>
+	<npc id="8507" name="Ferman" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="24"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8508" name="Sebina" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="22.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8509" name="Siriel" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+			mpMax="1642" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="24"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="15" /> <!-- Elves -->
+	</npc>
+	<npc id="8510" name="Irene" title="Person of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="21.5" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8511" name="Contender Chek" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="16.3" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8512" name="Flying Vanker" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7.5" collisionHeight="15" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8513" name="Flying Avan" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8.45" collisionHeight="14.3" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8514" name="Walking Oak" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="16.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8515" name="Walking Pirate" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8.84" collisionHeight="14.56" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8516" name="Crawling Spider" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8.37" collisionHeight="7.91" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8517" name="Crawling Scorpion" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="6.16" collisionHeight="14.52" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8518" name="Handy" title="Tumon Manager" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="5" collisionHeight="3.75" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8519" name="Gerrard" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="24"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8520" name="Ruben" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="17"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="18" /> <!-- Dwarves -->
+	</npc>
+	<npc id="8521" name="Prode" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="7" collisionHeight="23"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8522" name="Elin" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="22"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8523" name="Seirian" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="13" collisionHeight="22.25"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="25" /> <!-- Kamael -->
+	</npc>
+	<npc id="8524" name="Edmund" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="17" collisionHeight="25"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="25" /> <!-- Kamael -->
+	</npc>
+	<npc id="8525" name="Ferman" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="24"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8526" name="Sebina" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.48"
+			mpMax="1642" mpReg="4.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="22.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8527" name="Siriel" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="24"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="15" /> <!-- Elves -->
+	</npc>
+	<npc id="8528" name="Irene" title="Spectator of Influence" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4"
+			mpMax="1642" mpReg="5.37" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
+			pAtkSpd="253" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="8" collisionHeight="21.5"
+			fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8529" name="Mate" title="Monster Duel Guide" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="12" collisionHeight="31" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8530" name="Contender Stale" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="16.3" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8531" name="Contender Stale" title="Fighting" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="16.3" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8532" name="Contender Chek" title="Fighting" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="9" collisionHeight="16.3" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8533" name="Musician Snow" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="0.01" collisionHeight="10.25" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8534" name="Performer Snow" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="0.01" collisionHeight="8" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8535" name="Jester Snow" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="5" collisionHeight="18" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8536" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0" STR="88"
+			CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="5" collisionHeight="12.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8537" name="Hussar Agathion" title="Test" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+			mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
+			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="15" collisionHeight="10" fireRes="150"
+			waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8538" name="Roaring Campfire" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.0"
+			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253" mAtkSpd="500"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="120" collisionRadius="29" collisionHeight="30.5" fireRes="150" waterRes="150"
+			windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
+	</npc>
+	<npc id="8539" name="Eve" title="Card Reader" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="26" runSpd="120" collisionRadius="22" collisionHeight="21.5" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8540" name="Jayce" title="Fortunetelling Mentor" level="120" type="L2Npc" atkRange="40" hpMax="615900" hpReg="42.29"
+			mpMax="128429" mpReg="30.69" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3"
+			pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="36" runSpd="190" collisionRadius="7.5" collisionHeight="24"
+			fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8541" name="Niko" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="36" runSpd="190" collisionRadius="7.5" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8542" name="Eve" title="Crystal Seer" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4" mpMax="881"
+			mpReg="5.37" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="1" pDef="3" mDef="2" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="26" runSpd="120" collisionRadius="22" collisionHeight="21.5" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8543" name="Uthanka" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="45" runSpd="110" collisionRadius="12" collisionHeight="26.4" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+	</npc>
+	<npc id="8544" name="Uthanka" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="60" collisionHeight="120" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+	</npc>
+	<npc id="8545" name="Uthanka's Pirate" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="45" runSpd="110" collisionRadius="10" collisionHeight="21" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+	</npc>
+	<npc id="8546" name="Uthanka's Tombstone" title="Great Pirate" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+			mpMax="0" mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="100" collisionRadius="20" collisionHeight="30" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="19" /> <!-- Misc. -->
+	</npc>
+	<npc id="8547" name="Uthanka Pomona" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="50" runSpd="100" collisionRadius="23" collisionHeight="25" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8548" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="91"
+			DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40" mCritRate="40"
+			walkSpd="225" runSpd="550" collisionRadius="60" collisionHeight="120" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8549" name="" level="120" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.4" mpMax="881" mpReg="5.37" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="120" collisionRadius="10" collisionHeight="22.5" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8550" name="Anakim Agathion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="30" collisionHeight="20" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8551" name="Katura Queen" title="Raid Boss" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="36" collisionHeight="55.5" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="6062" level="1" /> <!-- Raid Boss (Lv. 99) -->
+	</npc>
+	<npc id="8552" name="Fire Katura" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="30" collisionHeight="20" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="6062" level="1" /> <!-- Raid Boss (Lv. 99) -->
+	</npc>
+	<npc id="8553" name="Ice Katura" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="30" collisionHeight="20" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="6062" level="1" /> <!-- Raid Boss (Lv. 99) -->
+	</npc>
+	<npc id="8554" name="Dark Katura" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="28" collisionHeight="15" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="6062" level="1" /> <!-- Raid Boss (Lv. 99) -->
+	</npc>
+	<npc id="8555" name="Earth Katura" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="28" collisionHeight="15" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="6062" level="1" /> <!-- Raid Boss (Lv. 99) -->
+	</npc>
+	<npc id="8556" name="Bloody Katura" title="Bloody Tracker" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+			mpMax="0" mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="120" collisionRadius="31" collisionHeight="31" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="5465" level="1" /> <!-- Earth Attack -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="6062" level="1" /> <!-- Raid Boss (Lv. 99) -->
+	</npc>
+	<npc id="8557" name="Lunatic Lord" title="Raid Boss" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="300" collisionRadius="30" collisionHeight="56" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="5462" level="1" /> <!-- Fire Attack -->
+		<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="16269" level="1" /> <!-- 94Lv. Raid Boss -->
+	</npc>
+	<npc id="8558" name="Lunatic Warrior" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="40" runSpd="230" collisionRadius="15" collisionHeight="35" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="5462" level="1" /> <!-- Fire Attack -->
+		<skill id="4410" level="7" /> <!-- Weak P. Atk. -->
+		<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+	</npc>
+	<npc id="8559" name="Lunatic Shaman" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="15" collisionHeight="36" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="5462" level="1" /> <!-- Fire Attack -->
+	</npc>
+	<npc id="8560" name="Melanie" title="Dimensional Captain" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="120" collisionRadius="10" collisionHeight="23.75" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="14" /> <!-- Humans -->
+	</npc>
+	<npc id="8561" name="invisible1" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8562" name="invisible2" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8563" name="invisible3" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407" pCritRate="40"
+			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="0.1" collisionHeight="0.1" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8564" name="Kamaloka's Fancy Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="1" collisionRadius="11" collisionHeight="8" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8565" name="Kamaloka's Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="156" collisionRadius="8.5" collisionHeight="8.5" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+	</npc>
+	<npc id="8566" name="Kamaloka's Fancy Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
+			mAtkSpd="407" pCritRate="40" mCritRate="40" walkSpd="30" runSpd="1" collisionRadius="11" collisionHeight="8" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8567" name="Kamaloka's Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299" mAtkSpd="407"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="156" collisionRadius="8.5" collisionHeight="8.5" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+	</npc>
+	<npc id="8568" name="Katura Fire Altar" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8569" name="Katura Water Altar" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8570" name="Katura Dark Altar" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8571" name="Katura Earth Altar" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8572" name="invisible1" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8573" name="Fire Katura" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8574" name="Ice Katura" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8575" name="Dark Katura" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8576" name="Earth Katura" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8577" name="Test NPC" title="Infernal" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8578" name="Test NPC" title="Lunatic" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8579" name="Pisces" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8580" name="Aquarius" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8581" name="Cancer" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8582" name="Virgo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8583" name="Aries" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8584" name="Capricorn" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8585" name="Gemini" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8586" name="Leo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
+			DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40" mCritRate="40"
+			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8587" name="Libra" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8588" name="Sagittarius" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8589" name="Scorpio" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8590" name="Taurus" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8591" name="Pisces" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8592" name="Aquarius" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8593" name="Cancer" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8594" name="Virgo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8595" name="Aries" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8596" name="Capricorn" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8597" name="Gemini" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8598" name="Leo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
+			DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40" mCritRate="40"
+			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8599" name="Libra" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8600" name="Sagittarius" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8601" name="Scorpio" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8602" name="Taurus" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8603" name="Pisces" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8604" name="Aquarius" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8605" name="Cancer" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8606" name="Virgo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8607" name="Aries" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8608" name="Capricorn" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8609" name="Gemini" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8610" name="Leo" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86"
+			DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40" mCritRate="40"
+			walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0"
+			holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8611" name="Libra" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8612" name="Sagittarius" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8613" name="Scorpio" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8614" name="Taurus" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8615" name="Toy Knight" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8616" name="Tsubaki" title="Priestess" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8617" name="Gaudi" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8618" name="Minion Eye" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
+	</npc>
+	<npc id="8619" name="Three-headed Dragon" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+	</npc>
+	<npc id="8620" name="Daddy Bear" title="NightSkye" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+	</npc>
+	<npc id="8621" name="Mommy Bear" title="Cheshire" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+			mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
+			mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0"
+			waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+	</npc>
+	<npc id="8622" name="Baby Bear" title="Brianna" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+			STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
+			pCritRate="40" mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="">
+	</npc>
+	<npc id="8623" name="Campfire" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="">
+	</npc>
+	<npc id="8624" name="Kotatz" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+			CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333" pCritRate="40"
+			mCritRate="40" walkSpd="80" runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0"
+			earthRes="0" holyRes="0" darkRes="0" aiType="">
+	</npc>
+</list>

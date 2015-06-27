@@ -1,0 +1,2403 @@
+<list>
+	<npc id="25100" name="Spirit of the Sea of Spores" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="419849.6" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="583.0888" baseMAtk="119.062096" basePDef="253.70125" baseMDef="247.54" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="5.0" collisionHeight="25.0"
+			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="13" /> <!-- Fairies -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4213" level="4" /> <!-- Haste -->
+		<skill id="4782" level="4" /> <!-- Heal -->
+	</npc>
+	<npc id="25101" name="Warrior of the Sea of Spores" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="419849.6" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="583.0888" baseMAtk="119.062096" basePDef="253.70125" baseMDef="247.54" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="170.0" collisionRadius="21.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25102" name="Shacram" title="Raid Boss" level="45" type="L2RaidBoss" baseAtkRange="40" baseHpMax="131815.92" baseHpReg="108.3564" baseMpMax="610.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1042754" sp="250" basePAtk="667.34894" baseMAtk="142.92804" basePDef="533.36237" baseMDef="260.2" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="300" collisionRadius="42.0" collisionHeight="94.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4827" level="1" /> <!-- Raid Boss (Lv. 45) -->
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4731" level="5" /> <!-- Mortal Blow -->
+		<skill id="4172" level="5" /> <!-- Stun -->
+		<skill id="4175" level="5" /> <!-- Haste -->
+		<skill id="4177" level="5" /> <!-- Cancel -->
+		<itemDrop itemId="9816" min="1" max="3" chance="75" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="1" chance="75" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="79.9578" >
+			<itemDrop itemId="854" min="1" max="1" chance="19.8956" /> <!-- Earring of Seal -->
+			<itemDrop itemId="885" min="1" max="1" chance="29.8368" /> <!-- Ring of Ages -->
+			<itemDrop itemId="917" min="1" max="1" chance="14.9233" /> <!-- Necklace of Mermaid -->
+			<itemDrop itemId="1914" min="81" max="243" chance="7.8172" /> <!-- Earring of Seal Gemstone -->
+			<itemDrop itemId="1915" min="280" max="840" chance="3.5465" /> <!-- Ring of Ages Gemstone -->
+			<itemDrop itemId="1916" min="20" max="60" chance="23.9806" /> <!-- Necklace of Mermaid Teardrop -->
+		</dropCategory>
+		<dropCategory chance="23.9593" >
+			<itemDrop itemId="326" min="1" max="1" chance="20.4898" /> <!-- Heathen's Book -->
+			<itemDrop itemId="2110" min="12" max="36" chance="79.5102" /> <!-- Heathen's Book Page -->
+		</dropCategory>
+		<dropCategory chance="65.0305" >
+			<itemDrop itemId="4607" min="1" max="3" chance="44.9102" /> <!-- Greater INT Dye Int + 3 Men - 3 -->
+			<itemDrop itemId="4608" min="2" max="4" chance="29.9401" /> <!-- Greater INT Dye Int + 3 Wit - 3 -->
+			<itemDrop itemId="4609" min="2" max="6" chance="22.4551" /> <!-- Greater MEN Dye Men + 3 Int - 3 -->
+			<itemDrop itemId="6573" min="1" max="1" chance="2.6946" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25103" name="Wizard Isirr" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="103150.734" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1238553" sp="297" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="195" collisionRadius="30.0" collisionHeight="63.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25104" min="1" max="1" /> <!-- Isirr's Escort -->
+		<minion npcId="25105" min="4" max="4" /> <!-- Isirr's Escorts -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4828" level="1" /> <!-- Raid Boss (Lv. 55) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4191" level="5" /> <!-- Wind Strike -->
+		<skill id="4185" level="5" /> <!-- Sleep -->
+		<itemDrop itemId="9816" min="2" max="3" chance="75" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="1" chance="90" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="66.7962" >
+			<itemDrop itemId="554" min="1" max="1" chance="12.6691" /> <!-- Sealed Zubei's Boots -->
+			<itemDrop itemId="600" min="1" max="1" chance="12.6691" /> <!-- Sealed Avadon Boots -->
+			<itemDrop itemId="612" min="1" max="1" chance="12.6691" /> <!-- Sealed Zubei's Gauntlets -->
+			<itemDrop itemId="2464" min="1" max="1" chance="12.6691" /> <!-- Sealed Avadon Gloves -->
+			<itemDrop itemId="4097" min="60" max="180" chance="10.9641" /> <!-- Sealed Zubei's Boot Design -->
+			<itemDrop itemId="4098" min="116" max="346" chance="5.6957" /> <!-- Sealed Avadon Boot Design -->
+			<itemDrop itemId="4100" min="192" max="576" chance="3.4263" /> <!-- Sealed Zubei's Gauntlet Fragment -->
+			<itemDrop itemId="4073" min="23" max="67" chance="29.2375" /> <!-- Sealed Avadon Glove Fragment -->
+		</dropCategory>
+		<dropCategory chance="58.282" >
+			<itemDrop itemId="91" min="1" max="1" chance="2.6023" /> <!-- Heavy War Axe -->
+			<itemDrop itemId="92" min="1" max="1" chance="2.6023" /> <!-- Spirit's Staff -->
+			<itemDrop itemId="4105" min="4" max="12" chance="62.1779" /> <!-- Heavy War Axe Head -->
+			<itemDrop itemId="4106" min="8" max="22" chance="32.6175" /> <!-- Spirit's Staff Head -->
+		</dropCategory>
+		<dropCategory chance="99.6014" >
+			<itemDrop itemId="6572" min="1" max="1" chance="17.5824" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
+			<itemDrop itemId="948" min="1" max="3" chance="82.4176" /> <!-- Scroll: Enchant Armor (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25104" name="Isirr's Escort" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="21375.59" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="95" collisionRadius="13.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="11" /> <!-- Spear -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4722" level="5" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25105" name="Isirr's Escorts" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="10687.795" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1156.0404" baseMAtk="348.4617" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="131" collisionRadius="11.0" collisionHeight="32.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25106" name="Ghost of the Well Lidia" title="Raid Boss" level="60" type="L2RaidBoss" baseAtkRange="40" baseHpMax="120249.83" baseHpReg="72.964386" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1367516" sp="328" basePAtk="785.1774" baseMAtk="133.51196" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="85.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25107" min="3" max="3" /> <!-- Lidia's Archer -->
+		<minion npcId="25108" min="2" max="2" /> <!-- Lidia's Warrior -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4829" level="1" /> <!-- Raid Boss (Lv. 60) -->
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4741" level="6" /> <!-- Power Strike -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<itemDrop itemId="9814" min="1" max="4" chance="84" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="2" chance="72" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="75.0445" >
+			<itemDrop itemId="5290" min="1" max="1" chance="6.4863" /> <!-- Sealed Dark Crystal Gloves -->
+			<itemDrop itemId="5291" min="1" max="1" chance="6.4863" /> <!-- Sealed Dark Crystal Boots -->
+			<itemDrop itemId="5295" min="1" max="1" chance="6.4863" /> <!-- Sealed Tallum Gloves -->
+			<itemDrop itemId="5296" min="1" max="1" chance="6.4863" /> <!-- Sealed Tallum Boots -->
+			<itemDrop itemId="5508" min="60" max="180" chance="5.6397" /> <!-- Sealed Dark Crystal Glove Design -->
+			<itemDrop itemId="5496" min="11" max="31" chance="32.2269" /> <!-- Sealed Dark Crystal Boot Lining -->
+			<itemDrop itemId="5509" min="16" max="48" chance="21.1489" /> <!-- Sealed Tallum Glove Design -->
+			<itemDrop itemId="5497" min="23" max="67" chance="15.0393" /> <!-- Sealed Tallum Boot Lining -->
+		</dropCategory>
+		<dropCategory chance="44.1023" >
+			<itemDrop itemId="212" min="1" max="1" chance="2.0903" /> <!-- Dasparion's Staff -->
+			<itemDrop itemId="2504" min="1" max="1" chance="2.0903" /> <!-- Meteor Shower -->
+			<itemDrop itemId="5543" min="4" max="12" chance="62.6947" /> <!-- Dasparion's Staff Head -->
+			<itemDrop itemId="5532" min="8" max="22" chance="33.1247" /> <!-- Meteor Shower Head -->
+		</dropCategory>
+		<dropCategory chance="11.7664" >
+			<itemDrop itemId="6570" min="1" max="1" chance="79.5455" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+			<itemDrop itemId="6571" min="1" max="1" chance="20.4545" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25107" name="Lidia's Archer" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="1100" baseHpMax="16852.871" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1497.5505" baseMAtk="490.5419" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="279" collisionRadius="11.0" collisionHeight="27.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4761" level="5" /> <!-- Stun -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25108" name="Lidia's Warrior" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="12576.473" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1497.5505" baseMAtk="490.5419" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" rHand="1472" collisionRadius="15.0" collisionHeight="45.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25109" name="Antharas Priest Cloe" title="Raid Boss" level="74" type="L2RaidBoss" baseAtkRange="40" baseHpMax="324813.9" baseHpReg="122.14275" baseMpMax="1475.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5199406" sp="852059" basePAtk="2396.9902" baseMAtk="851.8972" basePDef="943.9796" baseMDef="460.5" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="75.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25110" min="3" max="3" /> <!-- Cloe's Servitor -->
+		<minion npcId="25111" min="1" max="1" /> <!-- Cloe's Servitor -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4830" level="1" /> <!-- Raid Boss (Lv. 74) -->
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<itemDrop itemId="8619" min="1" max="1" chance="56" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
+		<itemDrop itemId="9814" min="3" max="7" chance="82" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="4" chance="82" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="52.398" >
+			<itemDrop itemId="5311" min="1" max="1" chance="3.2538" /> <!-- Sealed Armor of Nightmare -->
+			<itemDrop itemId="5316" min="1" max="1" chance="3.2538" /> <!-- Sealed Majestic Plate Armor -->
+			<itemDrop itemId="5522" min="4" max="12" chance="60.9733" /> <!-- Sealed Armor of Nightmare Pattern -->
+			<itemDrop itemId="5523" min="8" max="22" chance="32.5191" /> <!-- Sealed Majestic Plate Armor Pattern -->
+		</dropCategory>
+		<dropCategory chance="27.8985" >
+			<itemDrop itemId="305" min="1" max="1" chance="7.7821" /> <!-- Tallum Glaive -->
+			<itemDrop itemId="5541" min="12" max="36" chance="92.2179" /> <!-- Tallum Glaive Edge -->
+		</dropCategory>
+		<dropCategory chance="22.7006" >
+			<itemDrop itemId="6578" min="1" max="1" chance="28.5714" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+			<itemDrop itemId="6570" min="1" max="1" chance="71.4286" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25110" name="Cloe's Servitor" title="Raid Fighter" level="73" type="L2Monster" baseAtkRange="40" baseHpMax="41619.855" baseHpReg="121.063995" baseMpMax="1442.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="6239.9766" baseMAtk="5934.256" basePDef="465.04437" baseMDef="453.74" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4194" level="7" /> <!-- Aura Burn -->
+		<skill id="4200" level="7" /> <!-- Decrease Atk. Spd. -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25111" name="Cloe's Servitor" title="Raid Fighter" level="73" type="L2Monster" baseAtkRange="40" baseHpMax="62119.188" baseHpReg="121.063995" baseMpMax="1442.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="9360.199" baseMAtk="13352.66" basePDef="465.04437" baseMDef="453.74" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="30.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4170" level="7" /> <!-- Mortal Blow -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25112" name="Beleth' Agent Meana" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="29200.252" baseHpReg="21.714039" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="461657" sp="110" basePAtk="111.21878" baseMAtk="7.2148776" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="53.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25113" min="3" max="3" /> <!-- Meana's Maid -->
+		<minion npcId="25114" min="1" max="1" /> <!-- Meana's Guard Doll -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4831" level="1" /> <!-- Raid Boss (Lv. 30) -->
+		<skill id="4416" level="3" /> <!-- Beast -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<dropCategory chance="65.7659" >
+			<itemDrop itemId="850" min="6" max="18" chance="4.031" /> <!-- Elven Earring -->
+			<itemDrop itemId="881" min="5" max="15" chance="7.2609" /> <!-- Elven Ring -->
+			<itemDrop itemId="913" min="1" max="1" chance="36.3043" /> <!-- Elven Necklace -->
+			<itemDrop itemId="1902" min="81" max="243" chance="10.8758" /> <!-- Elven Earring Beads -->
+			<itemDrop itemId="1903" min="40" max="120" chance="36.2588" /> <!-- Elven Ring Piece -->
+			<itemDrop itemId="1904" min="154" max="462" chance="5.2692" /> <!-- Elven Necklace Beads -->
+		</dropCategory>
+		<dropCategory chance="64.6009" >
+			<itemDrop itemId="93" min="1" max="1" chance="7.4176" /> <!-- Winged Spear -->
+			<itemDrop itemId="294" min="1" max="1" chance="7.4176" /> <!-- War Pick -->
+			<itemDrop itemId="2033" min="4" max="12" chance="55.5422" /> <!-- Winged Spear Blade -->
+			<itemDrop itemId="2041" min="8" max="22" chance="29.6226" /> <!-- War Pick Head -->
+		</dropCategory>
+		<dropCategory chance="92.657" >
+			<itemDrop itemId="956" min="12" max="36" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25113" name="Meana's Maid" title="Raid Fighter" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="4012.1616" baseHpReg="20.929197" baseMpMax="315.12" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="273.91394" baseMAtk="46.621162" basePDef="172.50897" baseMDef="168.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4192" level="2" /> <!-- Vampiric Touch -->
+		<skill id="4199" level="2" /> <!-- Decrease P. Atk. -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25114" name="Meana's Guard Doll" title="Raid Fighter" level="29" type="L2Monster" baseAtkRange="40" baseHpMax="5988.492" baseHpReg="20.929197" baseMpMax="315.12" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="410.8812" baseMAtk="104.90221" basePDef="172.50897" baseMDef="168.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="15.0" collisionHeight="38.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4726" level="2" /> <!-- Stun -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25115" name="Icarus Sample 1" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="67377.48" baseHpReg="45.769264" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="548282" sp="131" basePAtk="441.8825" baseMAtk="64.685616" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="42.0" collisionHeight="45.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25116" min="3" max="3" /> <!-- Icarus Sample 2 -->
+		<minion npcId="25117" min="2" max="2" /> <!-- Icarus Sample 3 -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4832" level="1" /> <!-- Raid Boss (Lv. 40) -->
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4740" level="4" /> <!-- Power Strike -->
+		<itemDrop itemId="9817" min="1" max="4" chance="81" /> <!-- Nonliving Nucleus -->
+		<itemDrop itemId="8176" min="1" max="2" chance="68" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="77.345" >
+			<itemDrop itemId="62" min="11" max="33" chance="0.9817" /> <!-- Reinforced Mithril Boots -->
+			<itemDrop itemId="2429" min="12" max="34" chance="0.939" /> <!-- Chain Boots -->
+			<itemDrop itemId="2430" min="12" max="36" chance="0.8999" /> <!-- Karmian Boots -->
+			<itemDrop itemId="2431" min="13" max="37" chance="0.8639" /> <!-- Plated Leather Boots -->
+			<itemDrop itemId="2432" min="13" max="39" chance="0.8306" /> <!-- Dwarven Chain Boots -->
+			<itemDrop itemId="2433" min="14" max="40" chance="0.7999" /> <!-- Boots of Seal -->
+			<itemDrop itemId="2452" min="14" max="42" chance="0.7713" /> <!-- Reinforced Mithril Gloves -->
+			<itemDrop itemId="2453" min="15" max="43" chance="0.7447" /> <!-- Chain Gloves -->
+			<itemDrop itemId="2454" min="1" max="1" chance="21.5965" /> <!-- Karmian Gloves -->
+			<itemDrop itemId="1958" min="220" max="660" chance="2.142" /> <!-- Reinforced Mithril Boot Design -->
+			<itemDrop itemId="2937" min="378" max="1134" chance="1.2467" /> <!-- Chain Boot Fragment -->
+			<itemDrop itemId="2938" min="26" max="78" chance="18.1246" /> <!-- Karmian Boot Fabric -->
+			<itemDrop itemId="2939" min="35" max="105" chance="13.464" /> <!-- Plated Leather Boot Lining -->
+			<itemDrop itemId="2940" min="45" max="135" chance="10.472" /> <!-- Dwarven Chain Boot Fragment -->
+			<itemDrop itemId="2941" min="56" max="168" chance="8.415" /> <!-- Boots of Seal Pattern -->
+			<itemDrop itemId="2942" min="68" max="204" chance="6.93" /> <!-- Reinforced Mithril Glove Design -->
+			<itemDrop itemId="2943" min="81" max="243" chance="5.8178" /> <!-- Chain Glove Design -->
+			<itemDrop itemId="2944" min="95" max="285" chance="4.9604" /> <!-- Karmian Glove Fabric -->
+		</dropCategory>
+		<dropCategory chance="47.682" >
+			<itemDrop itemId="263" min="1" max="1" chance="26.0498" /> <!-- Chakram -->
+			<itemDrop itemId="2073" min="12" max="36" chance="73.9502" /> <!-- Chakram Edge -->
+		</dropCategory>
+		<dropCategory chance="84.1979" >
+			<itemDrop itemId="4594" min="2" max="6" chance="35.1171" /> <!-- Greater DEX Dye Dex + 2 CON - 2 -->
+			<itemDrop itemId="4595" min="3" max="7" chance="28.0936" /> <!-- Greater INT Dye Int + 2 Men - 2 -->
+			<itemDrop itemId="4596" min="3" max="9" chance="23.4114" /> <!-- Greater INT Dye Int + 2 Wit - 2 -->
+			<itemDrop itemId="952" min="21" max="63" chance="13.3779" /> <!-- Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25116" name="Icarus Sample 2" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="1100" baseHpMax="9144.606" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="822.6762" baseMAtk="239.8804" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="273" collisionRadius="11.0" collisionHeight="27.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="53"
+			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4755" level="3" /> <!-- Power Shot -->
+	</npc>
+	<npc id="25117" name="Icarus Sample 3" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="6824.7056" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="822.6762" baseMAtk="239.8804" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="20.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25118" name="Execution Grounds Watchman Guillotine" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="75543.2" baseHpReg="66.98598" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1912394" sp="144137" basePAtk="327.3913" baseMAtk="51.719986" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" rHand="96" collisionRadius="20.0" collisionHeight="58.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4833" level="1" /> <!-- Raid Boss (Lv. 35) -->
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4726" level="4" /> <!-- Stun -->
+		<skill id="4736" level="4" /> <!-- Spinning Slasher -->
+		<skill id="4175" level="4" /> <!-- Haste -->
+		<skill id="4177" level="4" /> <!-- Cancel -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<dropCategory chance="62.272" >
+			<itemDrop itemId="353" min="1" max="1" chance="21.5211" /> <!-- Half Plate Armor -->
+			<itemDrop itemId="380" min="1" max="1" chance="34.4338" /> <!-- Plate Gaiters -->
+			<itemDrop itemId="1950" min="53" max="157" chance="10.0053" /> <!-- Half Plate Temper -->
+			<itemDrop itemId="1951" min="24" max="72" chance="34.0398" /> <!-- Plate Gaiter Fragment -->
+		</dropCategory>
+		<dropCategory chance="60.1536" >
+			<itemDrop itemId="159" min="1" max="1" chance="2.899" /> <!-- Bonebreaker -->
+			<itemDrop itemId="187" min="1" max="1" chance="2.899" /> <!-- Atuba Hammer -->
+			<itemDrop itemId="188" min="1" max="1" chance="2.899" /> <!-- Ghost Staff -->
+			<itemDrop itemId="189" min="1" max="1" chance="2.899" /> <!-- Staff of Life -->
+			<itemDrop itemId="190" min="1" max="1" chance="2.899" /> <!-- Atuba Mace -->
+			<itemDrop itemId="2048" min="18" max="54" chance="4.6176" /> <!-- Bonebreaker Head -->
+			<itemDrop itemId="2049" min="3" max="7" chance="33.2471" /> <!-- Atuba Hammer Head -->
+			<itemDrop itemId="2050" min="7" max="21" chance="12.5902" /> <!-- Ghost Staff Head -->
+			<itemDrop itemId="2051" min="12" max="36" chance="7.3443" /> <!-- Staff of Life Shaft -->
+			<itemDrop itemId="2058" min="3" max="9" chance="27.7058" /> <!-- Atuba Mace Head -->
+		</dropCategory>
+		<dropCategory chance="72.0703" >
+			<itemDrop itemId="4591" min="1" max="3" chance="45.3172" /> <!-- Greater CON Dye Con + 2 Str - 2 -->
+			<itemDrop itemId="4592" min="2" max="4" chance="30.2115" /> <!-- Greater CON Dye Con + 2 DEX - 2 -->
+			<itemDrop itemId="4593" min="2" max="6" chance="22.6586" /> <!-- Greater DEX Dye Dex + 2 Str - 2 -->
+			<itemDrop itemId="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25119" name="Fairy Queen's Messenger Berun" title="Raid Boss" level="50" type="L2RaidBoss" baseAtkRange="40" baseHpMax="115923.664" baseHpReg="73.9339" baseMpMax="747.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1775596" sp="426" basePAtk="857.79694" baseMAtk="196.05673" basePDef="600.71533" baseMDef="293.06" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="170.0" aggressive="true" rHand="213" collisionRadius="42.0" collisionHeight="73.0"
+			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25120" min="3" max="3" /> <!-- Berun's Servant -->
+		<minion npcId="25121" min="1" max="1" /> <!-- Berun's Prattler -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4834" level="1" /> <!-- Raid Boss (Lv. 50) -->
+		<skill id="4416" level="13" /> <!-- Fairies -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<itemDrop itemId="9818" min="2" max="5" chance="77" /> <!-- Angelic Essence -->
+		<itemDrop itemId="8176" min="1" max="2" chance="90" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="77.6418" >
+			<itemDrop itemId="357" min="1" max="1" chance="3.9351" /> <!-- Zubei's Breastplate -->
+			<itemDrop itemId="383" min="1" max="1" chance="6.295" /> <!-- Zubei's Gaiters -->
+			<itemDrop itemId="2376" min="1" max="1" chance="3.9351" /> <!-- Avadon Breastplate -->
+			<itemDrop itemId="2379" min="1" max="1" chance="6.295" /> <!-- Avadon Gaiters -->
+			<itemDrop itemId="4056" min="16" max="48" chance="17.7615" /> <!-- Zubei's Breastplate Part -->
+			<itemDrop itemId="4057" min="60" max="180" chance="7.3199" /> <!-- Zubei's Gaiter Material -->
+			<itemDrop itemId="4064" min="23" max="67" chance="12.6304" /> <!-- Avadon Breastplate Part -->
+			<itemDrop itemId="4065" min="11" max="31" chance="41.828" /> <!-- Avadon Gaiter Material -->
+		</dropCategory>
+		<dropCategory chance="57.3566" >
+			<itemDrop itemId="78" min="1" max="1" chance="2.5452" /> <!-- Great Sword -->
+			<itemDrop itemId="142" min="1" max="1" chance="2.5452" /> <!-- Keshanberk -->
+			<itemDrop itemId="148" min="1" max="1" chance="2.5452" /> <!-- Sword of Valhalla -->
+			<itemDrop itemId="4104" min="5" max="15" chance="48.6498" /> <!-- Great Sword Blade -->
+			<itemDrop itemId="4107" min="9" max="27" chance="26.6089" /> <!-- Keshanberk Blade -->
+			<itemDrop itemId="4108" min="14" max="42" chance="17.1057" /> <!-- Sword of Valhalla Blade -->
+		</dropCategory>
+		<dropCategory chance="75.1501" >
+			<itemDrop itemId="4607" min="5" max="15" chance="14.0187" /> <!-- Greater INT Dye Int + 3 Men - 3 -->
+			<itemDrop itemId="4608" min="2" max="4" chance="46.729" /> <!-- Greater INT Dye Int + 3 Wit - 3 -->
+			<itemDrop itemId="4609" min="2" max="6" chance="35.0467" /> <!-- Greater MEN Dye Men + 3 Int - 3 -->
+			<itemDrop itemId="6573" min="1" max="1" chance="4.2056" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25120" name="Berun's Servant" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="15916.209" baseHpReg="70.884285" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2151.2969" baseMAtk="1280.4276" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="110.0" rHand="90" collisionRadius="14.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="13" /> <!-- Fairies -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4191" level="4" /> <!-- Wind Strike -->
+		<skill id="4199" level="4" /> <!-- Decrease P. Atk. -->
+	</npc>
+	<npc id="25121" name="Berun's Prattler" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="23755.63" baseHpReg="70.884285" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="3227.0261" baseMAtk="2881.0881" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="120.0" collisionRadius="5.0" collisionHeight="25.0"
+			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="13" /> <!-- Fairies -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4170" level="4" /> <!-- Mortal Blow -->
+	</npc>
+	<npc id="25122" name="Refugee Applicant Leo" title="Raid Boss" level="56" type="L2RaidBoss" baseAtkRange="40" baseHpMax="106765.336" baseHpReg="66.084885" baseMpMax="918.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1264899" sp="303" basePAtk="643.7848" baseMAtk="100.16291" basePDef="685.20404" baseMDef="334.26" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="201" collisionRadius="22.5" collisionHeight="54.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25123" min="1" max="1" /> <!-- Leo's Servant -->
+		<minion npcId="25124" min="4" max="4" /> <!-- Leo's Steward -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4835" level="1" /> <!-- Raid Boss (Lv. 56) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4196" level="5" /> <!-- Decrease Speed -->
+		<skill id="4190" level="5" /> <!-- Decrease MP -->
+		<itemDrop itemId="9816" min="1" max="4" chance="77" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="2" chance="65" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="39.0672" >
+			<itemDrop itemId="2391" min="1" max="1" chance="5.9121" /> <!-- Blue Wolf Leather Armor -->
+			<itemDrop itemId="2392" min="1" max="1" chance="5.9121" /> <!-- Leather Armor of Doom -->
+			<itemDrop itemId="4082" min="24" max="72" chance="20.9943" /> <!-- Blue Wolf Leather Armor Texture -->
+			<itemDrop itemId="4083" min="8" max="22" chance="67.1815" /> <!-- Leather Armor of Doom Design -->
+		</dropCategory>
+		<dropCategory chance="78.196" >
+			<itemDrop itemId="268" min="1" max="1" chance="2.6492" /> <!-- Bellion Cestus -->
+			<itemDrop itemId="4120" min="3" max="9" chance="97.3508" /> <!-- Bellion Cestus Edge -->
+		</dropCategory>
+		<dropCategory chance="78.9418" >
+			<itemDrop itemId="4616" min="2" max="4" chance="19.7287" /> <!-- Greater CON Dye Con + 4 DEX - 4 -->
+			<itemDrop itemId="4617" min="2" max="6" chance="14.7965" /> <!-- Greater DEX Dye Dex + 4 Str - 4 -->
+			<itemDrop itemId="4618" min="3" max="7" chance="11.8372" /> <!-- Greater DEX Dye Dex + 4 CON - 4 -->
+			<itemDrop itemId="948" min="1" max="3" chance="53.6376" /> <!-- Scroll: Enchant Armor (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25123" name="Leo's Servant" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="22167.658" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2441.756" baseMAtk="1496.2983" basePDef="335.4543" baseMDef="327.3" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3937" collisionRadius="50.0" collisionHeight="44.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4727" level="5" /> <!-- Stun -->
+	</npc>
+	<npc id="25124" name="Leo's Steward" title="Raid Fighter" level="55" type="L2Monster" baseAtkRange="40" baseHpMax="11083.829" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1220.878" baseMAtk="374.0746" basePDef="335.4543" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3938" collisionRadius="50.0" collisionHeight="44.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="mage" skillChance="100" clanRange="300" dodge="-18">
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25125" name="Fierce Tiger King Angel" title="Raid Boss" level="65" type="L2RaidBoss" baseAtkRange="40" baseHpMax="567110.8" baseHpReg="277.0576" baseMpMax="1188.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4489692" sp="1077" basePAtk="3631.0151" baseMAtk="2425.2378" basePDef="815.671" baseMDef="397.92" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="72.0" collisionHeight="87.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4836" level="1" /> <!-- Raid Boss (Lv. 65) -->
+		<skill id="4416" level="3" /> <!-- Beast -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4170" level="6" /> <!-- Mortal Blow -->
+		<skill id="4171" level="6" /> <!-- Spinning Slasher -->
+		<skill id="4176" level="6" /> <!-- Reflect Damage -->
+		<skill id="4177" level="6" /> <!-- Cancel -->
+		<itemDrop itemId="9816" min="3" max="7" chance="80" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="4" chance="80" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="52.4223" >
+			<itemDrop itemId="5304" min="1" max="1" chance="6.8601" /> <!-- Sealed Tallum Tunic -->
+			<itemDrop itemId="5305" min="1" max="1" chance="10.9721" /> <!-- Sealed Tallum Stockings -->
+			<itemDrop itemId="5308" min="1" max="1" chance="4.221" /> <!-- Sealed Dark Crystal Robe -->
+			<itemDrop itemId="5485" min="9" max="27" chance="42.8005" /> <!-- Sealed Tallum Tunic Texture -->
+			<itemDrop itemId="5489" min="28" max="84" chance="21.5934" /> <!-- Sealed Tallum Stocking Fabric -->
+			<itemDrop itemId="5486" min="20" max="60" chance="13.5529" /> <!-- Sealed Dark Crystal Robe Fabric -->
+		</dropCategory>
+		<dropCategory chance="73.3393" >
+			<itemDrop itemId="212" min="1" max="1" chance="2.0903" /> <!-- Dasparion's Staff -->
+			<itemDrop itemId="2504" min="1" max="1" chance="2.0903" /> <!-- Meteor Shower -->
+			<itemDrop itemId="5543" min="4" max="12" chance="62.6947" /> <!-- Dasparion's Staff Head -->
+			<itemDrop itemId="5532" min="8" max="22" chance="33.1247" /> <!-- Meteor Shower Head -->
+		</dropCategory>
+		<dropCategory chance="17.4322" >
+			<itemDrop itemId="6570" min="1" max="1" chance="89.2857" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+			<itemDrop itemId="6569" min="1" max="1" chance="10.7143" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25126" name="Longhorn Golkonda" title="Raid Boss" level="79" type="L2RaidBoss" baseAtkRange="40" baseHpMax="683800.75" baseHpReg="319.2293" baseMpMax="1641.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5390002" sp="1205333" basePAtk="5267.0464" baseMAtk="3790.295" basePDef="1011.21027" baseMDef="493.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="91" collisionRadius="42.0" collisionHeight="94.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4837" level="1" /> <!-- Raid Boss (Lv. 79) -->
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4169" level="7" /> <!-- Stun -->
+		<skill id="4172" level="7" /> <!-- Stun -->
+		<skill id="4173" level="7" /> <!-- Might -->
+		<skill id="4177" level="7" /> <!-- Cancel -->
+		<dropCategory chance="61.0341" >
+			<itemDrop itemId="6678" min="1" max="1" chance="4.9387" /> <!-- Sealed Imperial Crusader Shield -->
+			<itemDrop itemId="6679" min="1" max="1" chance="3.457" /> <!-- Sealed Imperial Crusader Helmet -->
+			<itemDrop itemId="6683" min="1" max="1" chance="3.457" /> <!-- Sealed Draconic Leather Helmet -->
+			<itemDrop itemId="6687" min="1" max="1" chance="3.457" /> <!-- Sealed Major Arcana Circlet -->
+			<itemDrop itemId="6705" min="23" max="67" chance="25.6752" /> <!-- Sealed Imperial Crusader Shield Part -->
+			<itemDrop itemId="6706" min="60" max="180" chance="11.1994" /> <!-- Sealed Imperial Crusader Helmet Pattern -->
+			<itemDrop itemId="6710" min="116" max="346" chance="5.8179" /> <!-- Sealed Draconic Leather Helmet Pattern -->
+			<itemDrop itemId="6714" min="16" max="48" chance="41.9978" /> <!-- Sealed Major Arcana Circlet Pattern -->
+		</dropCategory>
+		<dropCategory chance="60.344" >
+			<itemDrop itemId="6365" min="1" max="1" chance="0.5879" /> <!-- Basalt Battlehammer -->
+			<itemDrop itemId="6366" min="1" max="1" chance="0.5879" /> <!-- Imperial Staff -->
+			<itemDrop itemId="6369" min="1" max="1" chance="0.5879" /> <!-- Dragon Hunter Axe -->
+			<itemDrop itemId="6579" min="1" max="1" chance="0.5879" /> <!-- Arcana Mace -->
+			<itemDrop itemId="6689" min="16" max="48" chance="8.3295" /> <!-- Basalt Battlehammer Head -->
+			<itemDrop itemId="6690" min="11" max="31" chance="12.961" /> <!-- Imperial Staff Head -->
+			<itemDrop itemId="6693" min="6" max="18" chance="23.0489" /> <!-- Dragon Hunter Axe Blade -->
+			<itemDrop itemId="6697" min="3" max="7" chance="53.309" /> <!-- Arcana Mace Head -->
+		</dropCategory>
+		<dropCategory chance="57.8999" >
+			<itemDrop itemId="6578" min="1" max="1" chance="15.0943" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+			<itemDrop itemId="3936" min="1" max="3" chance="84.9057" /> <!-- Blessed Scroll of Resurrection -->
+		</dropCategory>
+	</npc>
+	<npc id="25127" name="Langk Matriarch Rashkos" title="Raid Boss" level="24" type="L2RaidBoss" baseAtkRange="40" baseHpMax="45414.387" baseHpReg="44.901924" baseMpMax="245.52" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="516822" sp="124" basePAtk="136.6409" baseMAtk="17.20301" basePDef="296.12756" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="56.0" baseRunSpd="170.0" aggressive="true" rHand="124" collisionRadius="19.0" collisionHeight="57.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4838" level="1" /> <!-- Raid Boss (Lv. 24) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4732" level="3" /> <!-- Mortal Blow -->
+		<skill id="4172" level="3" /> <!-- Stun -->
+		<skill id="4175" level="3" /> <!-- Haste -->
+		<skill id="4177" level="3" /> <!-- Cancel -->
+		<dropCategory chance="76.0957" >
+			<itemDrop itemId="46" min="2" max="4" chance="65.1332" /> <!-- Bronze Helmet -->
+			<itemDrop itemId="627" min="4" max="12" chance="34.8668" /> <!-- Aspis -->
+		</dropCategory>
+		<dropCategory chance="34.5695" >
+			<itemDrop itemId="222" min="1" max="1" chance="100" /> <!-- Poniard Dagger -->
+		</dropCategory>
+		<dropCategory chance="78.1263" >
+			<itemDrop itemId="6575" min="1" max="1" chance="5.2632" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
+			<itemDrop itemId="6576" min="1" max="1" chance="47.3684" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
+			<itemDrop itemId="955" min="1" max="3" chance="47.3684" /> <!-- Scroll: Enchant Weapon (D-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25128" name="Vuku Grand Priest Gharmash" title="Raid Boss" level="33" type="L2RaidBoss" baseAtkRange="40" baseHpMax="33936.543" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="386511" sp="92" basePAtk="140.55753" baseMAtk="11.194507" basePDef="387.69284" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" aggressive="true" rHand="195" collisionRadius="22.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25129" min="3" max="3" /> <!-- Vuku Shaman -->
+		<minion npcId="25130" min="1" max="1" /> <!-- Gharmash's Pet Trimden -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4839" level="1" /> <!-- Raid Boss (Lv. 33) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<dropCategory chance="57.4167" >
+			<itemDrop itemId="851" min="6" max="18" chance="3.8396" /> <!-- Onyx Beast's Eye Earring -->
+			<itemDrop itemId="882" min="5" max="15" chance="6.9113" /> <!-- Mithril Ring -->
+			<itemDrop itemId="914" min="1" max="1" chance="34.5564" /> <!-- Dark Necklace -->
+			<itemDrop itemId="1905" min="81" max="243" chance="12.9066" /> <!-- Onyx Beast's Eye Earring Gemstone -->
+			<itemDrop itemId="1906" min="40" max="120" chance="36.9314" /> <!-- Mithril Ring Wire -->
+			<itemDrop itemId="1907" min="154" max="462" chance="4.8547" /> <!-- Dark Necklace Gem -->
+		</dropCategory>
+		<dropCategory chance="75.6541" >
+			<itemDrop itemId="159" min="1" max="1" chance="2.117" /> <!-- Bonebreaker -->
+			<itemDrop itemId="187" min="1" max="1" chance="2.117" /> <!-- Atuba Hammer -->
+			<itemDrop itemId="188" min="1" max="1" chance="2.117" /> <!-- Ghost Staff -->
+			<itemDrop itemId="189" min="1" max="1" chance="2.117" /> <!-- Staff of Life -->
+			<itemDrop itemId="190" min="1" max="1" chance="2.117" /> <!-- Atuba Mace -->
+			<itemDrop itemId="2048" min="2" max="6" chance="30.3479" /> <!-- Bonebreaker Head -->
+			<itemDrop itemId="2049" min="3" max="7" chance="24.2784" /> <!-- Atuba Hammer Head -->
+			<itemDrop itemId="2050" min="7" max="21" chance="9.1939" /> <!-- Ghost Staff Head -->
+			<itemDrop itemId="2051" min="12" max="36" chance="5.3631" /> <!-- Staff of Life Shaft -->
+			<itemDrop itemId="2058" min="3" max="9" chance="20.2317" /> <!-- Atuba Mace Head -->
+		</dropCategory>
+		<dropCategory chance="98.5563" >
+			<itemDrop itemId="951" min="1" max="1" chance="44.2696" /> <!-- Scroll: Enchant Weapon (C-grade) -->
+			<itemDrop itemId="952" min="3" max="9" chance="54.1072" /> <!-- Scroll: Enchant Armor (C-grade) -->
+			<itemDrop itemId="6573" min="1" max="1" chance="1.6232" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25129" name="Vuku Shaman" title="Raid Fighter" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="4640.4414" baseHpReg="23.504309" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="346.92627" baseMAtk="73.99716" basePDef="188.3659" baseMDef="183.78" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="45.0" baseRunSpd="170.0" rHand="7" collisionRadius="9.0" collisionHeight="22.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4194" level="3" /> <!-- Aura Burn -->
+		<skill id="4203" level="3" /> <!-- Decrease Speed -->
+	</npc>
+	<npc id="25130" name="Gharmash's Pet Trimden" title="Raid Fighter" level="32" type="L2Monster" baseAtkRange="40" baseHpMax="6925.7935" baseHpReg="23.504309" baseMpMax="358.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="520.4024" baseMAtk="166.5009" basePDef="188.3659" baseMDef="183.78" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="27.0" collisionHeight="25.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="12" /> <!-- Bugs -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4722" level="3" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25131" name="Slaughter Lord Gato" title="Raid Boss" level="50" type="L2RaidBoss" baseAtkRange="40" baseHpMax="84324.984" baseHpReg="53.854633" baseMpMax="747.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1194883" sp="286" basePAtk="458.48044" baseMAtk="56.52768" basePDef="600.71533" baseMDef="293.06" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="71" collisionRadius="30.0" collisionHeight="57.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25132" min="3" max="3" /> <!-- Gato's Sniper -->
+		<minion npcId="25133" min="2" max="2" /> <!-- Gato's Troop Captain -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4840" level="1" /> <!-- Raid Boss (Lv. 50) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4741" level="5" /> <!-- Power Strike -->
+		<itemDrop itemId="9814" min="1" max="3" chance="85" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="1" chance="85" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="60.3173" >
+			<itemDrop itemId="2397" min="1" max="1" chance="5.6807" /> <!-- Tunic of Zubei -->
+			<itemDrop itemId="2402" min="1" max="1" chance="9.0869" /> <!-- Stockings of Zubei -->
+			<itemDrop itemId="2406" min="1" max="1" chance="3.4942" /> <!-- Avadon Robe -->
+			<itemDrop itemId="4069" min="9" max="27" chance="44.5318" /> <!-- Tunic of Zubei Fabric -->
+			<itemDrop itemId="4070" min="40" max="120" chance="15.2133" /> <!-- Stockings of Zubei Fabric -->
+			<itemDrop itemId="4071" min="14" max="42" chance="21.9931" /> <!-- Avadon Robe Fabric -->
+		</dropCategory>
+		<dropCategory chance="53.0828" >
+			<itemDrop itemId="91" min="1" max="1" chance="2.6023" /> <!-- Heavy War Axe -->
+			<itemDrop itemId="92" min="1" max="1" chance="2.6023" /> <!-- Spirit's Staff -->
+			<itemDrop itemId="4105" min="4" max="12" chance="62.1779" /> <!-- Heavy War Axe Head -->
+			<itemDrop itemId="4106" min="8" max="22" chance="32.6175" /> <!-- Spirit's Staff Head -->
+		</dropCategory>
+		<dropCategory chance="89.0863" >
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye Men + 3 Wit - 3 -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye Wit + 3 Int - 3 -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye Wit + 3 Men - 3 -->
+			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25132" name="Gato's Sniper" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="1100" baseHpMax="11595.666" baseHpReg="51.71931" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="862.5667" baseMAtk="207.71039" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="273" collisionRadius="14.0" collisionHeight="25.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4761" level="4" /> <!-- Stun -->
+	</npc>
+	<npc id="25133" name="Gato's Troop Captain" title="Raid Fighter" level="49" type="L2Monster" baseAtkRange="40" baseHpMax="8653.243" baseHpReg="51.71931" baseMpMax="720.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="862.5667" baseMAtk="207.71039" basePDef="293.49454" baseMDef="286.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="69" collisionRadius="14.0" collisionHeight="27.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25134" name="Leto Chief Talkin" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="50001.855" baseHpReg="34.038776" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="406193" sp="97" basePAtk="236.34363" baseMAtk="18.662918" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="37.5" collisionHeight="30.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25135" min="2" max="2" /> <!-- Talkin's Priest -->
+		<minion npcId="25136" min="2" max="2" /> <!-- Talkin's Escort -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4841" level="1" /> <!-- Raid Boss (Lv. 40) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4178" level="4" /> <!-- Flame Strike -->
+		<itemDrop itemId="9816" min="1" max="2" chance="85" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="1" chance="65" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="53.7777" >
+			<itemDrop itemId="631" min="6" max="16" chance="5.1143" /> <!-- Eldarake -->
+			<itemDrop itemId="2413" min="1" max="1" chance="39.3841" /> <!-- Chain Hood -->
+			<itemDrop itemId="2495" min="6" max="18" chance="4.6881" /> <!-- Chain Shield -->
+			<itemDrop itemId="1964" min="40" max="120" chance="28.9811" /> <!-- Eldarake Temper -->
+			<itemDrop itemId="2936" min="140" max="420" chance="7.5207" /> <!-- Chain Hood Pattern -->
+			<itemDrop itemId="2945" min="81" max="243" chance="14.3117" /> <!-- Chain Shield Fragment -->
+		</dropCategory>
+		<dropCategory chance="28.3674" >
+			<itemDrop itemId="281" min="1" max="1" chance="27.7681" /> <!-- Crystallized Ice Bow -->
+			<itemDrop itemId="2074" min="12" max="36" chance="72.2319" /> <!-- Crystallized Ice Bow Shaft -->
+		</dropCategory>
+		<dropCategory chance="82.7549" >
+			<itemDrop itemId="4597" min="1" max="3" chance="45.3172" /> <!-- Greater MEN Dye Men + 2 Int - 2 -->
+			<itemDrop itemId="4598" min="2" max="4" chance="30.2115" /> <!-- Greater MEN Dye Men + 2 Wit - 2 -->
+			<itemDrop itemId="4599" min="2" max="6" chance="22.6586" /> <!-- Greater WIT Dye Wit + 2 Int - 2 -->
+			<itemDrop itemId="6573" min="1" max="1" chance="1.8127" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25135" name="Talkin's Priest" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="10153.565" baseHpReg="32.411747" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="439.93872" baseMAtk="69.19756" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="43.0" baseRunSpd="170.0" rHand="7" collisionRadius="10.0" collisionHeight="29.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4211" level="4" /> <!-- Might -->
+		<skill id="4781" level="4" /> <!-- Heal -->
+	</npc>
+	<npc id="25136" name="Talkin's Escort" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="5076.7827" baseHpReg="32.411747" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="439.93872" baseMAtk="69.19756" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="16" collisionRadius="13.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25137" name="Beleth' Seer Sephia" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="103150.734" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1238553" sp="297" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="85.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25138" min="3" max="3" /> <!-- Soul Drinker -->
+		<minion npcId="25139" min="1" max="1" /> <!-- Sephia's Salve -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4842" level="1" /> <!-- Raid Boss (Lv. 55) -->
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<itemDrop itemId="9814" min="1" max="4" chance="75" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="4" chance="75" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="60.1781" >
+			<itemDrop itemId="503" min="1" max="1" chance="9.3757" /> <!-- Zubei's Helmet -->
+			<itemDrop itemId="633" min="1" max="1" chance="13.3946" /> <!-- Zubei's Shield -->
+			<itemDrop itemId="673" min="1" max="1" chance="13.3946" /> <!-- Avadon Shield -->
+			<itemDrop itemId="2415" min="1" max="1" chance="9.3757" /> <!-- Avadon Circlet -->
+			<itemDrop itemId="4102" min="192" max="576" chance="3.2821" /> <!-- Zubei's Helmet Design -->
+			<itemDrop itemId="4101" min="116" max="346" chance="7.0422" /> <!-- Zubei's Shield Fragment -->
+			<itemDrop itemId="4439" min="60" max="180" chance="16.1273" /> <!-- Avadon Shield Fragment -->
+			<itemDrop itemId="4072" min="23" max="67" chance="28.0078" /> <!-- Avadon Circlet Pattern -->
+		</dropCategory>
+		<dropCategory chance="27.1919" >
+			<itemDrop itemId="267" min="1" max="1" chance="11.1553" /> <!-- Arthro Nail -->
+			<itemDrop itemId="4111" min="12" max="36" chance="88.8447" /> <!-- Arthro Nail Blade -->
+		</dropCategory>
+		<dropCategory chance="83.9707" >
+			<itemDrop itemId="4613" min="1" max="3" chance="26.968" /> <!-- Greater STR Dye STR + 4 CON - 4 -->
+			<itemDrop itemId="4614" min="2" max="4" chance="17.9787" /> <!-- Greater STR Dye STR + 4 DEX - 4 -->
+			<itemDrop itemId="4615" min="1" max="1" chance="53.936" /> <!-- Greater CON Dye Con + 4 Str - 4 -->
+			<itemDrop itemId="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25138" name="Soul Drinker" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="19604.83" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1541.3486" baseMAtk="619.4604" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="90.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="20.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4191" level="5" /> <!-- Wind Strike -->
+		<skill id="4205" level="5" /> <!-- Paralysis -->
+	</npc>
+	<npc id="25139" name="Sephia's Salve" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="29260.94" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" collisionRadius="24.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4731" level="5" /> <!-- Mortal Blow -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25140" name="Hekaton Prime" title="Raid Boss" level="83" type="L2RaidBoss" baseAtkRange="40" baseHpMax="284473.94" baseHpReg="110.823044" baseMpMax="1188.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5614732" sp="1265702" basePAtk="1815.5076" baseMAtk="606.30945" basePDef="815.671" baseMDef="397.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="27.0" baseRunSpd="170.0" aggressive="true" collisionRadius="20.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25141" min="1" max="1" /> <!-- Hekaton Cottus -->
+		<minion npcId="25142" min="4" max="4" /> <!-- Hekaton Chires -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4843" level="1" /> <!-- Raid Boss (Lv. 65) -->
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4195" level="6" /> <!-- Twister -->
+		<skill id="4189" level="6" /> <!-- Paralysis -->
+		<itemDrop itemId="9817" min="3" max="7" chance="80" /> <!-- Nonliving Nucleus -->
+		<itemDrop itemId="8176" min="1" max="4" chance="80" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="65.8965" >
+			<itemDrop itemId="6323" min="1" max="1" chance="10.8781" /> <!-- Sealed Phoenix Necklace -->
+			<itemDrop itemId="6324" min="1" max="1" chance="14.5042" /> <!-- Sealed Phoenix Earring -->
+			<itemDrop itemId="6325" min="1" max="1" chance="21.7562" /> <!-- Sealed Phoenix Ring -->
+			<itemDrop itemId="6343" min="140" max="420" chance="5.5655" /> <!-- Sealed Phoenix Necklace Beads -->
+			<itemDrop itemId="6341" min="81" max="243" chance="12.4436" /> <!-- Sealed Phoenix Earring Gemstone -->
+			<itemDrop itemId="6345" min="40" max="120" chance="34.8524" /> <!-- Sealed Phoenix Ring Gemstone -->
+		</dropCategory>
+		<dropCategory chance="33.4335" >
+			<itemDrop itemId="98" min="1" max="1" chance="9.1705" /> <!-- Halberd -->
+			<itemDrop itemId="5542" min="12" max="36" chance="90.8295" /> <!-- Halberd Edge -->
+		</dropCategory>
+		<dropCategory chance="89.4441" >
+			<itemDrop itemId="729" min="1" max="1" chance="11.6009" /> <!-- Scroll: Enchant Weapon (A-grade) -->
+			<itemDrop itemId="730" min="1" max="1" chance="87.007" /> <!-- Scroll: Enchant Armor (A-grade) -->
+			<itemDrop itemId="6569" min="1" max="1" chance="1.3921" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25141" name="Hekaton Cottus" title="Raid Fighter" level="83" type="L2Monster" baseAtkRange="40" baseHpMax="53978.89" baseHpReg="109.161964" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="6982.6865" baseMAtk="9405.354" basePDef="400.56702" baseMDef="390.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="32.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4720" level="6" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25142" name="Hekaton Chires" title="Raid Fighter" level="83" type="L2Monster" baseAtkRange="40" baseHpMax="26989.445" baseHpReg="109.161964" baseMpMax="1158.0" baseMpReg="2.7" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="3491.3433" baseMAtk="2351.3384" basePDef="400.56702" baseMDef="390.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3937" collisionRadius="50.0" collisionHeight="44.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25143" name="Fire of Wrath Shuriel" title="Raid Boss" level="78" type="L2RaidBoss" baseAtkRange="40" baseHpMax="338354.47" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5346496" sp="1283" basePAtk="2592.7188" baseMAtk="929.62085" basePDef="998.1018" baseMDef="486.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="30.0" baseRunSpd="170.0" aggressive="true" rHand="2500" collisionRadius="13.5" collisionHeight="36.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="15"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25144" min="2" max="2" /> <!-- Shuriel's Oracle -->
+		<minion npcId="25145" min="2" max="2" /> <!-- Shuriel's Paladin -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4844" level="1" /> <!-- Raid Boss (Lv. 78) -->
+		<skill id="4416" level="8" /> <!-- Angels -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4178" level="8" /> <!-- Flame Strike -->
+		<dropCategory chance="45.6035" >
+			<itemDrop itemId="6680" min="1" max="1" chance="5.855" /> <!-- Sealed Draconic Leather Armor -->
+			<itemDrop itemId="6707" min="12" max="36" chance="94.145" /> <!-- Sealed Draconic Leather Armor Part -->
+		</dropCategory>
+		<dropCategory chance="29.0236" >
+			<itemDrop itemId="6371" min="1" max="1" chance="5.0271" /> <!-- Demon Splinter -->
+			<itemDrop itemId="6695" min="12" max="36" chance="94.9729" /> <!-- Demon Splinter Blade -->
+		</dropCategory>
+		<dropCategory chance="60.2057" >
+			<itemDrop itemId="959" min="1" max="1" chance="8.9552" /> <!-- Scroll: Enchant Weapon (S-grade) -->
+			<itemDrop itemId="960" min="1" max="1" chance="89.5522" /> <!-- Scroll: Enchant Armor (S-grade) -->
+			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25144" name="Shuriel's Oracle" title="Raid Fighter" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="65696.086" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="5185.4375" baseMAtk="3718.4834" basePDef="499.0509" baseMDef="486.92" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="70.0" baseRunSpd="170.0" rHand="201" collisionRadius="15.0" collisionHeight="34.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="mage" skillChance="100" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4214" level="7" /> <!-- Reflect Damage -->
+		<skill id="4210" level="7" /> <!-- Chant of Life -->
+	</npc>
+	<npc id="25145" name="Shuriel's Paladin" title="Raid Fighter" level="78" type="L2Monster" baseAtkRange="40" baseHpMax="32848.043" baseHpReg="126.5361" baseMpMax="1607.4" baseMpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="5185.4375" baseMAtk="3718.4834" basePDef="499.0509" baseMDef="486.92" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="147" collisionRadius="13.0" collisionHeight="32.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="53" darkRes="15"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="8" /> <!-- Angels -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25146" name="Evil Spirit Bifrons" title="Raid Boss" level="21" type="L2RaidBoss" baseAtkRange="40" baseHpMax="20605.367" baseHpReg="16.826967" baseMpMax="205.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="529271" sp="127" basePAtk="53.12758" baseMAtk="3.168605" basePDef="269.19177" baseMDef="131.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="70.0" baseRunSpd="170.0" aggressive="true" rHand="73" collisionRadius="25.0" collisionHeight="72.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25147" min="3" max="3" /> <!-- Assassin of Bifrons -->
+		<minion npcId="25148" min="2" max="2" /> <!-- Butcher of Bifrons -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4845" level="1" /> <!-- Raid Boss (Lv. 21) -->
+		<skill id="4416" level="3" /> <!-- Beast -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4743" level="5" /> <!-- Power Strike -->
+		<dropCategory chance="53.525" >
+			<itemDrop itemId="848" min="3" max="9" chance="24.9403" /> <!-- Earring of Magic -->
+			<itemDrop itemId="879" min="3" max="7" chance="45.0298" /> <!-- Ring of Magic -->
+			<itemDrop itemId="911" min="4" max="10" chance="16.0453" /> <!-- Magic Necklace -->
+			<itemDrop itemId="1900" min="96" max="288" chance="13.9846" /> <!-- Necklace Chain of Magic -->
+		</dropCategory>
+		<dropCategory chance="36.8012" >
+			<itemDrop itemId="275" min="1" max="1" chance="28.8143" /> <!-- Longbow -->
+			<itemDrop itemId="276" min="1" max="1" chance="28.8143" /> <!-- Elven Bow -->
+			<itemDrop itemId="2024" min="12" max="36" chance="42.3714" /> <!-- Elven Bow Shaft -->
+		</dropCategory>
+		<dropCategory chance="56.7592" >
+			<itemDrop itemId="6575" min="1" max="1" chance="10" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
+			<itemDrop itemId="6576" min="1" max="1" chance="90" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25147" name="Assassin of Bifrons" title="Raid Fighter" level="20" type="L2Monster" baseAtkRange="1100" baseHpMax="2885.4807" baseHpReg="16.540031" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="97.65033" baseMAtk="9.52955" basePDef="130.30574" baseMDef="127.14" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="43.0" baseRunSpd="170.0" rHand="2507" collisionRadius="10.0" collisionHeight="22.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4778" level="2" /> <!-- Spear Attack -->
+	</npc>
+	<npc id="25148" name="Butcher of Bifrons" title="Raid Fighter" level="20" type="L2Monster" baseAtkRange="40" baseHpMax="2152.914" baseHpReg="16.540031" baseMpMax="192.0" baseMpReg="1.2" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="97.65033" baseMAtk="9.52955" basePDef="130.30574" baseMDef="127.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="52.0" baseRunSpd="170.0" rHand="16" collisionRadius="12.0" collisionHeight="30.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25149" name="Zombie Lord Crowl" title="Raid Boss" level="25" type="L2RaidBoss" baseAtkRange="40" baseHpMax="23558.236" baseHpReg="18.438532" baseMpMax="259.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="508202" sp="121" basePAtk="74.22232" baseMAtk="4.6796722" basePDef="305.50598" baseMDef="149.04" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="30.0" collisionHeight="21.25" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25150" min="3" max="3" /> <!-- Evil Spirit Archer -->
+		<minion npcId="25151" min="2" max="2" /> <!-- Evil Spirit Warrior -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4846" level="1" /> <!-- Raid Boss (Lv. 25) -->
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="1" /> <!-- Bare Hands -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4741" level="2" /> <!-- Power Strike -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<dropCategory chance="56.8719" >
+			<itemDrop itemId="436" min="2" max="4" chance="29.4331" /> <!-- Tunic of Knowledge -->
+			<itemDrop itemId="469" min="1" max="3" chance="70.5669" /> <!-- Stockings of Knowledge -->
+		</dropCategory>
+		<dropCategory chance="51.986" >
+			<itemDrop itemId="83" min="1" max="1" chance="10.2596" /> <!-- Sword of Magic -->
+			<itemDrop itemId="144" min="1" max="1" chance="10.2596" /> <!-- Sword of Occult -->
+			<itemDrop itemId="124" min="1" max="1" chance="7.6006" /> <!-- Two-handed Sword -->
+			<itemDrop itemId="127" min="1" max="1" chance="7.6006" /> <!-- Crimson Sword -->
+			<itemDrop itemId="130" min="1" max="1" chance="7.6006" /> <!-- Elven Sword -->
+			<itemDrop itemId="2026" min="3" max="9" chance="56.679" /> <!-- Two-handed Sword Edge -->
+		</dropCategory>
+		<dropCategory chance="57.1224" >
+			<itemDrop itemId="6576" min="1" max="3" chance="100" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25150" name="Evil Spirit Archer" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="1100" baseHpMax="3269.3584" baseHpReg="17.96077" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="136.6409" baseMAtk="17.20301" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="14" collisionRadius="11.0" collisionHeight="27.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4756" level="2" /> <!-- Power Shot -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25151" name="Evil Spirit Warrior" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="2439.5427" baseHpReg="17.96077" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="136.6409" baseMAtk="17.20301" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" rHand="946" collisionRadius="11.0" collisionHeight="25.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25152" name="Flame Lord Shadar" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="37771.6" baseHpReg="26.794392" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="382478" sp="91" basePAtk="163.69565" baseMAtk="12.9299965" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" collisionRadius="28.0" collisionHeight="75.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25153" min="1" max="1" /> <!-- Claws of Shadar -->
+		<minion npcId="25154" min="4" max="4" /> <!-- Whip of Shadar -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4847" level="1" /> <!-- Raid Boss (Lv. 35) -->
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="1" /> <!-- Bare Hands -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4192" level="3" /> <!-- Vampiric Touch -->
+		<skill id="4186" level="3" /> <!-- Hold -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<dropCategory chance="75.7935" >
+			<itemDrop itemId="438" min="1" max="1" chance="29.0162" /> <!-- Sage's Rags -->
+			<itemDrop itemId="1953" min="12" max="36" chance="70.9838" /> <!-- Sage's Rag Lining -->
+		</dropCategory>
+		<dropCategory chance="29.5519" >
+			<itemDrop itemId="262" min="1" max="1" chance="29.5049" /> <!-- Scallop Jamadhr -->
+			<itemDrop itemId="2053" min="12" max="36" chance="70.4951" /> <!-- Scallop Jamadhr Edge -->
+		</dropCategory>
+		<dropCategory chance="81.9617" >
+			<itemDrop itemId="4594" min="1" max="3" chance="39.8482" /> <!-- Greater DEX Dye Dex + 2 CON - 2 -->
+			<itemDrop itemId="4595" min="2" max="4" chance="26.5655" /> <!-- Greater INT Dye Int + 2 Men - 2 -->
+			<itemDrop itemId="4596" min="2" max="6" chance="19.9241" /> <!-- Greater INT Dye Int + 2 Wit - 2 -->
+			<itemDrop itemId="6574" min="1" max="1" chance="13.6622" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25153" name="Claws of Shadar" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="7689.71" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="606.9712" baseMAtk="192.6498" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="24.0"
+			fireRes="20" waterRes="20" windRes="53" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="13" /> <!-- Fairies -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4731" level="3" /> <!-- Mortal Blow -->
+	</npc>
+	<npc id="25154" name="Whip of Shadar" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="3844.5352" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" collisionRadius="10.0" collisionHeight="36.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25155" name="Shaman King Selu" title="Raid Boss" level="40" type="L2RaidBoss" baseAtkRange="40" baseHpMax="67377.48" baseHpReg="45.769264" baseMpMax="478.8" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="548282" sp="131" basePAtk="441.8825" baseMAtk="64.685616" basePDef="469.65106" baseMDef="229.12" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" rHand="79" collisionRadius="24.0" collisionHeight="52.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25156" min="3" max="3" /> <!-- Fanatic Wizard -->
+		<minion npcId="25157" min="1" max="1" /> <!-- Fanatic Soldier -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4848" level="1" /> <!-- Raid Boss (Lv. 40) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<itemDrop itemId="9814" min="1" max="4" chance="81" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="2" chance="68" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="45.7112" >
+			<itemDrop itemId="397" min="1" max="1" chance="54.8719" /> <!-- Reinforced Mithril Shirt -->
+			<itemDrop itemId="2387" min="5" max="13" chance="9.743" /> <!-- Reinforced Mithril Gaiters -->
+			<itemDrop itemId="1961" min="53" max="157" chance="24.3318" /> <!-- Reinforced Mithril Shirt Fabric -->
+			<itemDrop itemId="2935" min="192" max="576" chance="11.0533" /> <!-- Reinforced Mithril Gaiter Fragment -->
+		</dropCategory>
+		<dropCategory chance="50.4548" >
+			<itemDrop itemId="226" min="1" max="1" chance="12.3091" /> <!-- Cursed Dagger -->
+			<itemDrop itemId="232" min="1" max="1" chance="12.3091" /> <!-- Dark Elven Dagger -->
+			<itemDrop itemId="2070" min="24" max="72" chance="17.9481" /> <!-- Cursed Dagger Blade -->
+			<itemDrop itemId="2072" min="8" max="22" chance="57.4337" /> <!-- Dark Elven Dagger Edge -->
+		</dropCategory>
+		<dropCategory chance="79.974" >
+			<itemDrop itemId="4600" min="3" max="9" chance="49.2958" /> <!-- Greater WIT Dye Wit + 2 Men - 2 -->
+			<itemDrop itemId="6574" min="1" max="1" chance="50.7042" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25156" name="Fanatic Wizard" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="9144.606" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1096.8741" baseMAtk="426.4354" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="123" lHand="19" collisionRadius="11.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4194" level="3" /> <!-- Aura Burn -->
+		<skill id="4199" level="3" /> <!-- Decrease P. Atk. -->
+	</npc>
+	<npc id="25157" name="Fanatic Soldier" title="Raid Fighter" level="39" type="L2Monster" baseAtkRange="40" baseHpMax="13649.411" baseHpReg="43.47678" baseMpMax="463.32" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1645.3524" baseMAtk="959.5216" basePDef="228.70128" baseMDef="223.14" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="80.0" baseRunSpd="170.0" rHand="7" collisionRadius="10.0" collisionHeight="20.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4719" level="3" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25158" name="King Tarlk" title="Raid Boss" level="48" type="L2RaidBoss" baseAtkRange="40" baseHpMax="210416.53" baseHpReg="169.60869" baseMpMax="692.4" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1721605" sp="413" basePAtk="1515.6378" baseMAtk="663.4981" basePDef="573.3841" baseMDef="279.72" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="55.0" baseRunSpd="170.0" aggressive="true" rHand="160" collisionRadius="45.0" collisionHeight="126.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4849" level="1" /> <!-- Raid Boss (Lv. 48) -->
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4720" level="5" /> <!-- Power Strike -->
+		<skill id="4735" level="5" /> <!-- Spinning Slasher -->
+		<skill id="4174" level="5" /> <!-- Shield -->
+		<skill id="4177" level="5" /> <!-- Cancel -->
+		<itemDrop itemId="9817" min="2" max="4" chance="76" /> <!-- Nonliving Nucleus -->
+		<itemDrop itemId="8176" min="1" max="2" chance="77" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="58.9613" >
+			<itemDrop itemId="400" min="1" max="1" chance="15.0141" /> <!-- Theca Leather Armor -->
+			<itemDrop itemId="420" min="1" max="1" chance="24.0332" /> <!-- Theca Leather Gaiters -->
+			<itemDrop itemId="401" min="1" max="1" chance="7.1096" /> <!-- Drake Leather Armor -->
+			<itemDrop itemId="1984" min="81" max="243" chance="6.3078" /> <!-- Theca Leather Armor Pattern -->
+			<itemDrop itemId="1985" min="28" max="84" chance="29.3533" /> <!-- Theca Leather Gaiter Pattern -->
+			<itemDrop itemId="1987" min="20" max="60" chance="18.182" /> <!-- Drake Leather Armor Texture -->
+		</dropCategory>
+		<dropCategory chance="60.944" >
+			<itemDrop itemId="135" min="1" max="1" chance="4.403" /> <!-- Samurai Long Sword -->
+			<itemDrop itemId="5286" min="1" max="1" chance="4.403" /> <!-- Berserker Blade -->
+			<itemDrop itemId="2115" min="8" max="22" chance="31.6936" /> <!-- Samurai Long Sword Blade -->
+			<itemDrop itemId="5530" min="4" max="12" chance="59.5004" /> <!-- Berserker Blade Edge -->
+		</dropCategory>
+		<dropCategory chance="85.6649" >
+			<itemDrop itemId="4610" min="5" max="15" chance="10.6329" /> <!-- Greater MEN Dye Men + 3 Wit - 3 -->
+			<itemDrop itemId="4611" min="2" max="4" chance="35.443" /> <!-- Greater WIT Dye Wit + 3 Int - 3 -->
+			<itemDrop itemId="4612" min="2" max="6" chance="26.5823" /> <!-- Greater WIT Dye Wit + 3 Men - 3 -->
+			<itemDrop itemId="6574" min="1" max="1" chance="27.3418" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25159" name="Paniel the Unicorn" title="Raid Boss" level="54" type="L2RaidBoss" baseAtkRange="40" baseHpMax="99463.45" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1211141" sp="290" basePAtk="578.0202" baseMAtk="87.115425" basePDef="656.6877" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="46.0" baseRunSpd="170.0" aggressive="true" collisionRadius="14.0" collisionHeight="30.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25160" min="2" max="2" /> <!-- Rapini the Unicorn -->
+		<minion npcId="25161" min="2" max="2" /> <!-- Ririf the Unicorn -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4850" level="1" /> <!-- Raid Boss (Lv. 54) -->
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4178" level="5" /> <!-- Flame Strike -->
+		<itemDrop itemId="9818" min="1" max="3" chance="90" /> <!-- Angelic Essence -->
+		<itemDrop itemId="8176" min="1" max="1" chance="90" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="52.1239" >
+			<itemDrop itemId="357" min="1" max="1" chance="3.9351" /> <!-- Zubei's Breastplate -->
+			<itemDrop itemId="383" min="1" max="1" chance="6.295" /> <!-- Zubei's Gaiters -->
+			<itemDrop itemId="2376" min="1" max="1" chance="3.9351" /> <!-- Avadon Breastplate -->
+			<itemDrop itemId="2379" min="1" max="1" chance="6.295" /> <!-- Avadon Gaiters -->
+			<itemDrop itemId="4056" min="16" max="48" chance="17.7615" /> <!-- Zubei's Breastplate Part -->
+			<itemDrop itemId="4057" min="60" max="180" chance="7.3199" /> <!-- Zubei's Gaiter Material -->
+			<itemDrop itemId="4064" min="23" max="67" chance="12.6304" /> <!-- Avadon Breastplate Part -->
+			<itemDrop itemId="4065" min="11" max="31" chance="41.828" /> <!-- Avadon Gaiter Material -->
+		</dropCategory>
+		<dropCategory chance="26.1079" >
+			<itemDrop itemId="284" min="1" max="1" chance="11.2615" /> <!-- Dark Elven Longbow -->
+			<itemDrop itemId="4112" min="12" max="36" chance="88.7385" /> <!-- Dark Elven Longbow Shaft -->
+		</dropCategory>
+		<dropCategory chance="81.3906" >
+			<itemDrop itemId="4619" min="1" max="3" chance="26.968" /> <!-- Greater INT Dye Int + 4 Men - 4 -->
+			<itemDrop itemId="4620" min="2" max="4" chance="17.9787" /> <!-- Greater INT Dye Int + 4 Wit - 4 -->
+			<itemDrop itemId="4621" min="1" max="1" chance="53.936" /> <!-- Greater MEN Dye Men + 4 Int - 4 -->
+			<itemDrop itemId="6571" min="1" max="1" chance="1.1173" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25160" name="Rapini the Unicorn" title="Raid Fighter" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="20570.727" baseHpReg="60.163395" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1093.1543" baseMAtk="322.4891" basePDef="321.2749" baseMDef="313.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="11.0" collisionHeight="18.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4213" level="5" /> <!-- Haste -->
+		<skill id="4781" level="5" /> <!-- Heal -->
+	</npc>
+	<npc id="25161" name="Ririf the Unicorn" title="Raid Fighter" level="53" type="L2Monster" baseAtkRange="40" baseHpMax="10285.363" baseHpReg="60.163395" baseMpMax="832.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1093.1543" baseMAtk="322.4891" basePDef="321.2749" baseMDef="313.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="13.0" collisionHeight="17.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25162" name="Giant Marpanak" title="Raid Boss" level="82" type="L2RaidBoss" baseAtkRange="40" baseHpMax="507810.84" baseHpReg="253.24435" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5553282" sp="1249267" basePAtk="2937.0505" baseMAtk="1851.6011" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" aggressive="true" rHand="3937" collisionRadius="50.0" collisionHeight="91.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4851" level="1" /> <!-- Raid Boss (Lv. 60) -->
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4730" level="6" /> <!-- Mortal Blow -->
+		<skill id="4735" level="6" /> <!-- Spinning Slasher -->
+		<skill id="4173" level="6" /> <!-- Might -->
+		<skill id="4177" level="6" /> <!-- Cancel -->
+		<itemDrop itemId="9817" min="2" max="6" chance="83" /> <!-- Nonliving Nucleus -->
+		<itemDrop itemId="8176" min="1" max="3" chance="83" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="66.6264" >
+			<itemDrop itemId="110" min="1" max="1" chance="18.4386" /> <!-- Doom Shield -->
+			<itemDrop itemId="2416" min="1" max="1" chance="12.9069" /> <!-- Blue Wolf Helmet -->
+			<itemDrop itemId="2417" min="1" max="1" chance="12.9069" /> <!-- Doom Helmet -->
+			<itemDrop itemId="4077" min="40" max="120" chance="33.686" /> <!-- Doom Shield Fragment -->
+			<itemDrop itemId="4088" min="81" max="243" chance="13.9757" /> <!-- Blue Wolf Helmet Design -->
+			<itemDrop itemId="4089" min="140" max="420" chance="8.0859" /> <!-- Doom Helmet Pattern -->
+		</dropCategory>
+		<dropCategory chance="36.1528" >
+			<itemDrop itemId="287" min="1" max="1" chance="9.8463" /> <!-- Bow of Peril -->
+			<itemDrop itemId="4121" min="12" max="36" chance="90.1537" /> <!-- Bow of Peril Shaft -->
+		</dropCategory>
+		<dropCategory chance="75.0177" >
+			<itemDrop itemId="4622" min="2" max="4" chance="35.6745" /> <!-- Greater MEN Dye Men + 4 Wit - 4 -->
+			<itemDrop itemId="4623" min="2" max="6" chance="26.7559" /> <!-- Greater WIT Dye Wit + 4 Int - 4 -->
+			<itemDrop itemId="4624" min="3" max="7" chance="21.4047" /> <!-- Greater WIT Dye Wit + 4 Men - 4 -->
+			<itemDrop itemId="948" min="6" max="18" chance="16.1649" /> <!-- Scroll: Enchant Armor (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25163" name="Roaring Skylancer" title="Raid Boss" level="70" type="L2RaidBoss" baseAtkRange="40" baseHpMax="615376.3" baseHpReg="294.2109" baseMpMax="1345.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4596479" sp="1103" basePAtk="4309.762" baseMAtk="2869.6155" basePDef="887.7479" baseMDef="433.08" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="44.0" collisionHeight="51.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4852" level="1" /> <!-- Raid Boss (Lv. 70) -->
+		<skill id="4416" level="10" /> <!-- Dragons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4730" level="7" /> <!-- Mortal Blow -->
+		<skill id="4735" level="7" /> <!-- Spinning Slasher -->
+		<skill id="4173" level="7" /> <!-- Might -->
+		<skill id="4177" level="7" /> <!-- Cancel -->
+		<itemDrop itemId="8619" min="1" max="1" chance="52" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
+		<itemDrop itemId="9815" min="3" max="7" chance="81" /> <!-- Dragon Heart -->
+		<itemDrop itemId="8176" min="1" max="4" chance="81" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="67.7458" >
+			<itemDrop itemId="5320" min="1" max="1" chance="3.2901" /> <!-- Sealed Leather Armor of Nightmare -->
+			<itemDrop itemId="5323" min="1" max="1" chance="3.2901" /> <!-- Sealed Majestic Leather Armor -->
+			<itemDrop itemId="5480" min="4" max="12" chance="60.926" /> <!-- Sealed Leather Armor of Nightmare Fabric -->
+			<itemDrop itemId="5481" min="8" max="22" chance="32.4938" /> <!-- Sealed Majestic Leather Armor Fabric -->
+		</dropCategory>
+		<dropCategory chance="42.7305" >
+			<itemDrop itemId="81" min="1" max="1" chance="1.6606" /> <!-- Dragon Slayer -->
+			<itemDrop itemId="151" min="1" max="1" chance="1.6606" /> <!-- Sword of Miracles -->
+			<itemDrop itemId="2500" min="1" max="1" chance="1.6606" /> <!-- Dark Legion's Edge -->
+			<itemDrop itemId="5529" min="9" max="27" chance="26.2482" /> <!-- Dragon Slayer Edge -->
+			<itemDrop itemId="5546" min="5" max="15" chance="51.8961" /> <!-- Sword of Miracles Edge -->
+			<itemDrop itemId="5545" min="14" max="42" chance="16.8739" /> <!-- Dark Legion's Edge Blade -->
+		</dropCategory>
+		<dropCategory chance="42.6081" >
+			<itemDrop itemId="959" min="1" max="1" chance="8.9552" /> <!-- Scroll: Enchant Weapon (S-grade) -->
+			<itemDrop itemId="960" min="1" max="1" chance="89.5522" /> <!-- Scroll: Enchant Armor (S-grade) -->
+			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25166" name="Ikuntai" title="Raid Boss" level="25" type="L2RaidBoss" baseAtkRange="40" baseHpMax="30807.164" baseHpReg="24.086233" baseMpMax="259.2" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="317859" sp="76" basePAtk="138.03738" baseMAtk="16.133173" basePDef="305.50598" baseMDef="149.04" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" aggressive="true" rHand="150" collisionRadius="15.0" collisionHeight="39.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25167" min="2" max="2" /> <!-- Ikuntai's Servitor -->
+		<minion npcId="25168" min="2" max="2" /> <!-- Ikuntai's Pawn -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4853" level="1" /> <!-- Raid Boss (Lv. 25) -->
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4178" level="2" /> <!-- Flame Strike -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<dropCategory chance="71.936" >
+			<itemDrop itemId="849" min="4" max="10" chance="18.484" /> <!-- Tiger's Eye -->
+			<itemDrop itemId="880" min="3" max="7" chance="38.7379" /> <!-- Black Pearl Ring -->
+			<itemDrop itemId="912" min="4" max="12" chance="12.124" /> <!-- Near Forest Necklace -->
+			<itemDrop itemId="1901" min="72" max="216" chance="30.6541" /> <!-- Tiger's Eye Stone -->
+		</dropCategory>
+		<dropCategory chance="49.8345" >
+			<itemDrop itemId="157" min="1" max="1" chance="24.8191" /> <!-- Spiked Club -->
+			<itemDrop itemId="186" min="1" max="1" chance="24.8191" /> <!-- Staff of Magic -->
+			<itemDrop itemId="2027" min="12" max="36" chance="50.3618" /> <!-- Spiked Club Head -->
+		</dropCategory>
+		<dropCategory chance="29.8017" >
+			<itemDrop itemId="6387" min="60" max="180" chance="100" /> <!-- Blessed Scroll of Resurrection (Pet) -->
+		</dropCategory>
+	</npc>
+	<npc id="25167" name="Ikuntai's Servitor" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="6373.6494" baseHpReg="23.437468" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="253.59238" baseMAtk="59.183464" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4214" level="2" /> <!-- Reflect Damage -->
+		<skill id="4780" level="2" /> <!-- Heal -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25168" name="Ikuntai's Pawn" title="Raid Fighter" level="24" type="L2Monster" baseAtkRange="40" baseHpMax="3186.8247" baseHpReg="23.437468" baseMpMax="245.52" baseMpReg="1.5" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="253.59238" baseMAtk="59.183464" basePDef="148.06378" baseMDef="144.46" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="50.0" baseRunSpd="170.0" rHand="299" collisionRadius="10.0" collisionHeight="28.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25169" name="Ragraman" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="76949.04" baseHpReg="71.411606" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="373715" sp="89" basePAtk="416.07297" baseMAtk="100.07089" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" aggressive="true" rHand="72" collisionRadius="24.0" collisionHeight="52.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4854" level="1" /> <!-- Raid Boss (Lv. 30) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4720" level="3" /> <!-- Power Strike -->
+		<skill id="4172" level="3" /> <!-- Stun -->
+		<skill id="4173" level="3" /> <!-- Might -->
+		<skill id="4177" level="3" /> <!-- Cancel -->
+		<dropCategory chance="71.3663" >
+			<itemDrop itemId="606" min="10" max="30" chance="1.5126" /> <!-- Rip Gauntlets -->
+			<itemDrop itemId="1124" min="11" max="31" chance="1.4406" /> <!-- Boots of Strength -->
+			<itemDrop itemId="2424" min="11" max="33" chance="1.3751" /> <!-- Manticore Skin Boots -->
+			<itemDrop itemId="2425" min="12" max="34" chance="1.3153" /> <!-- Brigandine Boots -->
+			<itemDrop itemId="2426" min="12" max="36" chance="1.2605" /> <!-- Elven Mithril Boots -->
+			<itemDrop itemId="2448" min="13" max="37" chance="1.2101" /> <!-- Manticore Skin Gloves -->
+			<itemDrop itemId="2449" min="13" max="39" chance="1.1635" /> <!-- Brigandine Gauntlets -->
+			<itemDrop itemId="2450" min="14" max="40" chance="1.1205" /> <!-- Elven Mithril Gloves -->
+			<itemDrop itemId="1946" min="180" max="540" chance="3.2592" /> <!-- Rip Gauntlet Pattern -->
+			<itemDrop itemId="1948" min="314" max="940" chance="1.8713" /> <!-- Boots of Strength Pattern -->
+			<itemDrop itemId="2923" min="24" max="72" chance="24.4437" /> <!-- Manticore Skin Boot Lining -->
+			<itemDrop itemId="2924" min="33" max="97" chance="18.0507" /> <!-- Brigandine Boot Design -->
+			<itemDrop itemId="2925" min="42" max="126" chance="13.9678" /> <!-- Elven Mithril Boot Design -->
+			<itemDrop itemId="2926" min="53" max="157" chance="11.1742" /> <!-- Manticore Skin Glove Lining -->
+			<itemDrop itemId="2927" min="64" max="192" chance="9.1664" /> <!-- Brigandine Gauntlet Pattern -->
+			<itemDrop itemId="2928" min="77" max="229" chance="7.6685" /> <!-- Elven Mithril Glove Design -->
+		</dropCategory>
+		<dropCategory chance="46.5805" >
+			<itemDrop itemId="129" min="1" max="1" chance="29.7257" /> <!-- Sword of Revolution -->
+			<itemDrop itemId="2034" min="12" max="36" chance="70.2743" /> <!-- Sword of Revolution Blade -->
+		</dropCategory>
+		<dropCategory chance="71.2189" >
+			<itemDrop itemId="4553" min="5" max="15" chance="13.5338" /> <!-- Greater STR Dye STR + 1 CON - 1 -->
+			<itemDrop itemId="4554" min="2" max="4" chance="45.1128" /> <!-- Greater STR Dye STR + 1 DEX - 1 -->
+			<itemDrop itemId="4555" min="2" max="6" chance="33.8346" /> <!-- Greater CON Dye Con + 1 Str - 1 -->
+			<itemDrop itemId="6575" min="1" max="1" chance="7.5188" /> <!-- Blessed Scroll: Enchant Weapon (D-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25170" name="Lizardmen Captain Hellion" title="Raid Boss" level="38" type="L2RaidBoss" baseAtkRange="40" baseHpMax="44645.71" baseHpReg="30.872686" baseMpMax="447.96" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="391521" sp="93" basePAtk="204.55421" baseMAtk="16.14769" basePDef="445.3286" baseMDef="217.24" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="223" collisionRadius="30.0" collisionHeight="63.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25171" min="3" max="3" /> <!-- Hellion's Archers -->
+		<minion npcId="25172" min="2" max="2" /> <!-- Hellion's Escort -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4855" level="1" /> <!-- Raid Boss (Lv. 38) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="7" /> <!-- Dagger -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4752" level="3" /> <!-- Mortal Blow -->
+		<dropCategory chance="76.0425" >
+			<itemDrop itemId="631" min="6" max="16" chance="3.3742" /> <!-- Eldarake -->
+			<itemDrop itemId="2413" min="1" max="1" chance="25.9842" /> <!-- Chain Hood -->
+			<itemDrop itemId="2495" min="1" max="1" chance="37.1167" /> <!-- Chain Shield -->
+			<itemDrop itemId="1964" min="40" max="120" chance="19.1207" /> <!-- Eldarake Temper -->
+			<itemDrop itemId="2936" min="140" max="420" chance="4.9619" /> <!-- Chain Hood Pattern -->
+			<itemDrop itemId="2945" min="81" max="243" chance="9.4423" /> <!-- Chain Shield Fragment -->
+		</dropCategory>
+		<dropCategory chance="56.6384" >
+			<itemDrop itemId="226" min="1" max="1" chance="6.4873" /> <!-- Cursed Dagger -->
+			<itemDrop itemId="232" min="1" max="1" chance="6.4873" /> <!-- Dark Elven Dagger -->
+			<itemDrop itemId="2070" min="4" max="12" chance="56.7557" /> <!-- Cursed Dagger Blade -->
+			<itemDrop itemId="2072" min="8" max="22" chance="30.2697" /> <!-- Dark Elven Dagger Edge -->
+		</dropCategory>
+		<dropCategory chance="76.3333" >
+			<itemDrop itemId="951" min="1" max="3" chance="100" /> <!-- Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25171" name="Hellion's Archers" title="Raid Fighter" level="37" type="L2Monster" baseAtkRange="1100" baseHpMax="6076.144" baseHpReg="29.423286" baseMpMax="432.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="380.12442" baseMAtk="60.273266" basePDef="216.71637" baseMDef="211.44" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="278" collisionRadius="11.0" collisionHeight="30.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="archer" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4757" level="3" /> <!-- Power Shot -->
+	</npc>
+	<npc id="25172" name="Hellion's Escort" title="Raid Fighter" level="37" type="L2Monster" baseAtkRange="40" baseHpMax="4534.2354" baseHpReg="29.423286" baseMpMax="432.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="380.12442" baseMAtk="60.273266" basePDef="216.71637" baseMDef="211.44" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="291" collisionRadius="13.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25173" name="Tiger King Karuta" title="Raid Boss" level="45" type="L2RaidBoss" baseAtkRange="40" baseHpMax="65907.96" baseHpReg="43.34256" baseMpMax="610.8" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1042754" sp="250" basePAtk="333.67447" baseMAtk="35.73201" basePDef="533.36237" baseMDef="260.2" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="170.0" aggressive="true" collisionRadius="72.0" collisionHeight="87.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25174" min="2" max="2" /> <!-- Karuta's Follower -->
+		<minion npcId="25175" min="2" max="2" /> <!-- Karuta's Subordinate -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4856" level="1" /> <!-- Raid Boss (Lv. 45) -->
+		<skill id="4416" level="3" /> <!-- Beast -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4178" level="4" /> <!-- Flame Strike -->
+		<itemDrop itemId="9816" min="1" max="3" chance="75" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="1" chance="75" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="76.5669" >
+			<itemDrop itemId="64" min="1" max="1" chance="37.4047" /> <!-- Compound Boots -->
+			<itemDrop itemId="608" min="1" max="1" chance="37.4047" /> <!-- Mithril Gauntlets -->
+			<itemDrop itemId="2956" min="192" max="576" chance="5.409" /> <!-- Compound Boot Fragment -->
+			<itemDrop itemId="1981" min="53" max="157" chance="19.7816" /> <!-- Mithril Gauntlet Design -->
+		</dropCategory>
+		<dropCategory chance="23.9593" >
+			<itemDrop itemId="326" min="1" max="1" chance="20.4898" /> <!-- Heathen's Book -->
+			<itemDrop itemId="2110" min="12" max="36" chance="79.5102" /> <!-- Heathen's Book Page -->
+		</dropCategory>
+		<dropCategory chance="78.2981" >
+			<itemDrop itemId="4610" min="1" max="3" chance="37.3002" /> <!-- Greater MEN Dye Men + 3 Wit - 3 -->
+			<itemDrop itemId="4611" min="2" max="4" chance="24.8668" /> <!-- Greater WIT Dye Wit + 3 Int - 3 -->
+			<itemDrop itemId="4612" min="2" max="6" chance="18.6501" /> <!-- Greater WIT Dye Wit + 3 Men - 3 -->
+			<itemDrop itemId="6574" min="1" max="1" chance="19.1829" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25174" name="Karuta's Follower" title="Raid Fighter" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="13425.482" baseHpReg="41.347042" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="624.12427" baseMAtk="130.5309" basePDef="260.1533" baseMDef="253.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" rHand="127" collisionRadius="13.0" collisionHeight="31.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4214" level="4" /> <!-- Reflect Damage -->
+		<skill id="4781" level="4" /> <!-- Heal -->
+	</npc>
+	<npc id="25175" name="Karuta's Subordinate" title="Raid Fighter" level="44" type="L2Monster" baseAtkRange="40" baseHpMax="6712.741" baseHpReg="41.347042" baseMpMax="584.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="624.12427" baseMAtk="130.5309" basePDef="260.1533" baseMDef="253.82" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="170.0" collisionRadius="19.0" collisionHeight="36.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="4" /> <!-- Animals -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25176" name="Black Lily" title="Raid Boss" level="55" type="L2RaidBoss" baseAtkRange="40" baseHpMax="156795.56" baseHpReg="64.17134" baseMpMax="889.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="2477106" sp="327038" basePAtk="610.439" baseMAtk="93.51865" basePDef="670.9086" baseMDef="327.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="12.0" collisionHeight="30.700000762939453" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25177" min="1" max="1" /> <!-- Guardian Knight of Black Lily -->
+		<minion npcId="25178" min="4" max="4" /> <!-- Servitor of Black Lily -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4857" level="1" /> <!-- Raid Boss (Lv. 55) -->
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="1" /> <!-- Bare Hands -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4192" level="5" /> <!-- Vampiric Touch -->
+		<skill id="4188" level="5" /> <!-- Bleed -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<itemDrop itemId="9814" min="1" max="4" chance="75" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="1" chance="90" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="66.225" >
+			<itemDrop itemId="2384" min="1" max="1" chance="5.6807" /> <!-- Zubei's Leather Shirt -->
+			<itemDrop itemId="2388" min="1" max="1" chance="9.0869" /> <!-- Zubei's Leather Gaiters -->
+			<itemDrop itemId="2390" min="1" max="1" chance="3.4942" /> <!-- Avadon Leather Armor -->
+			<itemDrop itemId="4066" min="9" max="27" chance="44.5318" /> <!-- Zubei's Leather Shirt Fabric -->
+			<itemDrop itemId="4067" min="40" max="120" chance="15.2133" /> <!-- Zubei's Leather Gaiter Texture -->
+			<itemDrop itemId="4068" min="14" max="42" chance="21.9931" /> <!-- Avadon Leather Armor Lining -->
+		</dropCategory>
+		<dropCategory chance="26.9355" >
+			<itemDrop itemId="284" min="1" max="1" chance="11.2615" /> <!-- Dark Elven Longbow -->
+			<itemDrop itemId="4112" min="12" max="36" chance="88.7385" /> <!-- Dark Elven Longbow Shaft -->
+		</dropCategory>
+		<dropCategory chance="91.7885" >
+			<itemDrop itemId="4616" min="1" max="3" chance="24.6711" /> <!-- Greater CON Dye Con + 4 DEX - 4 -->
+			<itemDrop itemId="4617" min="2" max="4" chance="16.4474" /> <!-- Greater DEX Dye Dex + 4 Str - 4 -->
+			<itemDrop itemId="4618" min="1" max="1" chance="49.3421" /> <!-- Greater DEX Dye Dex + 4 CON - 4 -->
+			<itemDrop itemId="6572" min="1" max="1" chance="9.5394" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25177" name="Guardian Knight of Black Lily" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="29260.94" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2312.0808" baseMAtk="1393.8468" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" rHand="75" collisionRadius="12.0" collisionHeight="31.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4727" level="5" /> <!-- Stun -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25178" name="Servitor of Black Lily" title="Raid Fighter" level="54" type="L2Monster" baseAtkRange="40" baseHpMax="14630.47" baseHpReg="62.19439" baseMpMax="861.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1156.0404" baseMAtk="348.4617" basePDef="328.34384" baseMDef="320.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="23.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25179" name="Giant Statue Guardian Karum" title="Raid Boss" level="60" type="L2RaidBoss" baseAtkRange="1100" baseHpMax="120249.83" baseHpReg="72.964386" baseMpMax="1036.8" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1367516" sp="328" basePAtk="785.1774" baseMAtk="133.51196" basePDef="742.95026" baseMDef="362.44" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="80.0" baseRunSpd="180.0" aggressive="true" rHand="4028" collisionRadius="30.0" collisionHeight="66.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25180" min="3" max="3" /> <!-- Karum's Guard -->
+		<minion npcId="25181" min="1" max="1" /> <!-- Karum's Warrior -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4858" level="1" /> <!-- Raid Boss (Lv. 60) -->
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<itemDrop itemId="9817" min="1" max="4" chance="85" /> <!-- Nonliving Nucleus -->
+		<itemDrop itemId="8176" min="1" max="1" chance="95" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="43.7313" >
+			<itemDrop itemId="2391" min="1" max="1" chance="5.9121" /> <!-- Blue Wolf Leather Armor -->
+			<itemDrop itemId="2392" min="1" max="1" chance="5.9121" /> <!-- Leather Armor of Doom -->
+			<itemDrop itemId="4082" min="24" max="72" chance="20.9943" /> <!-- Blue Wolf Leather Armor Texture -->
+			<itemDrop itemId="4083" min="8" max="22" chance="67.1815" /> <!-- Leather Armor of Doom Design -->
+		</dropCategory>
+		<dropCategory chance="23.6582" >
+			<itemDrop itemId="234" min="1" max="1" chance="9.8016" /> <!-- Demon's Dagger -->
+			<itemDrop itemId="4119" min="12" max="36" chance="90.1984" /> <!-- Demon's Dagger Edge -->
+		</dropCategory>
+		<dropCategory chance="84.864" >
+			<itemDrop itemId="947" min="1" max="1" chance="23.8298" /> <!-- Scroll: Enchant Weapon (B-grade) -->
+			<itemDrop itemId="948" min="1" max="3" chance="74.4681" /> <!-- Scroll: Enchant Armor (B-grade) -->
+			<itemDrop itemId="6571" min="1" max="1" chance="1.7021" /> <!-- Blessed Scroll: Enchant Weapon (B-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25180" name="Karum's Guard" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="16852.871" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1996.6841" baseMAtk="872.0363" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="15.0" baseRunSpd="180.0" rHand="3938" collisionRadius="50.0" collisionHeight="44.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="mage" skillChance="100" clanRange="300" dodge="-18">
+		<skill id="4416" level="11" /> <!-- Giants -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4193" level="5" /> <!-- Life Drain -->
+		<skill id="4198" level="5" /> <!-- Poison -->
+	</npc>
+	<npc id="25181" name="Karum's Warrior" title="Raid Fighter" level="59" type="L2Monster" baseAtkRange="40" baseHpMax="25153.586" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="2995.101" baseMAtk="1962.1676" basePDef="364.2239" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="27.0" baseRunSpd="170.0" collisionRadius="20.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4721" level="5" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25182" name="Demon Kuri" title="Raid Boss" level="59" type="L2RaidBoss" baseAtkRange="40" baseHpMax="117045.35" baseHpReg="71.371056" baseMpMax="1007.0" baseMpReg="2.4" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="1342137" sp="322" basePAtk="748.77527" baseMAtk="122.635475" basePDef="728.4478" baseMDef="355.36" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="37.0" baseRunSpd="200.0" aggressive="true" collisionRadius="50.0" collisionHeight="180.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25183" min="2" max="2" /> <!-- Kuri's Wife -->
+		<minion npcId="25184" min="2" max="2" /> <!-- Devil Blader of Chaos -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4859" level="1" /> <!-- Raid Boss (Lv. 59) -->
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4178" level="5" /> <!-- Flame Strike -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<itemDrop itemId="9814" min="1" max="4" chance="83" /> <!-- Memento Mori -->
+		<itemDrop itemId="8176" min="1" max="2" chance="70" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="57.3513" >
+			<itemDrop itemId="5290" min="1" max="1" chance="9.174" /> <!-- Sealed Dark Crystal Gloves -->
+			<itemDrop itemId="5291" min="1" max="1" chance="9.174" /> <!-- Sealed Dark Crystal Boots -->
+			<itemDrop itemId="5295" min="1" max="1" chance="9.174" /> <!-- Sealed Tallum Gloves -->
+			<itemDrop itemId="5296" min="1" max="1" chance="9.174" /> <!-- Sealed Tallum Boots -->
+			<itemDrop itemId="5508" min="60" max="180" chance="7.9766" /> <!-- Sealed Dark Crystal Glove Design -->
+			<itemDrop itemId="5496" min="116" max="346" chance="4.1437" /> <!-- Sealed Dark Crystal Boot Lining -->
+			<itemDrop itemId="5509" min="16" max="48" chance="29.9124" /> <!-- Sealed Tallum Glove Design -->
+			<itemDrop itemId="5497" min="23" max="67" chance="21.2713" /> <!-- Sealed Tallum Boot Lining -->
+		</dropCategory>
+		<dropCategory chance="47.796" >
+			<itemDrop itemId="80" min="1" max="1" chance="2.0848" /> <!-- Tallum Blade -->
+			<itemDrop itemId="150" min="1" max="1" chance="2.0848" /> <!-- Elemental Sword -->
+			<itemDrop itemId="5548" min="4" max="12" chance="62.4981" /> <!-- Tallum Blade Edge -->
+			<itemDrop itemId="5547" min="8" max="22" chance="33.3323" /> <!-- Elemental Sword Edge -->
+		</dropCategory>
+		<dropCategory chance="20.2337" >
+			<itemDrop itemId="6570" min="1" max="1" chance="50" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+			<itemDrop itemId="729" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Weapon (A-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25183" name="Kuri's Wife" title="Raid Fighter" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="24440.213" baseHpReg="69.69069" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1426.0444" baseMAtk="460.0128" basePDef="356.99142" baseMDef="348.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="14.0" collisionHeight="40.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-13" darkRes="189"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="9" /> <!-- Demons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4213" level="5" /> <!-- Haste -->
+		<skill id="4786" level="5" /> <!-- Chant of Life -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+	</npc>
+	<npc id="25184" name="Devil Blader of Chaos" title="Raid Fighter" level="58" type="L2Monster" baseAtkRange="40" baseHpMax="12220.106" baseHpReg="69.69069" baseMpMax="977.4" baseMpReg="2.4" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1426.0444" baseMAtk="460.0128" basePDef="356.99142" baseMDef="348.3" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" rHand="1472" collisionRadius="15.0" collisionHeight="45.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="-32" darkRes="53"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="1" /> <!-- Undead -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+	</npc>
+	<npc id="25185" name="Tasaba Patriarch Hellena" title="Raid Boss" level="35" type="L2RaidBoss" baseAtkRange="40" baseHpMax="37771.6" baseHpReg="26.794392" baseMpMax="402.6" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="382478" sp="91" basePAtk="163.69565" baseMAtk="12.9299965" basePDef="410.18845" baseMDef="200.1" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="53.0" baseRunSpd="170.0" aggressive="true" rHand="225" collisionRadius="20.0" collisionHeight="40.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25186" min="3" max="3" /> <!-- Hellena's Sniper -->
+		<minion npcId="25187" min="2" max="2" /> <!-- Hellena's Soldier -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4860" level="1" /> <!-- Raid Boss (Lv. 35) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="7" /> <!-- Dagger -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4751" level="3" /> <!-- Mortal Blow -->
+		<dropCategory chance="62.5165" >
+			<itemDrop itemId="851" min="6" max="18" chance="3.8396" /> <!-- Onyx Beast's Eye Earring -->
+			<itemDrop itemId="882" min="5" max="15" chance="6.9113" /> <!-- Mithril Ring -->
+			<itemDrop itemId="914" min="1" max="1" chance="34.5564" /> <!-- Dark Necklace -->
+			<itemDrop itemId="1905" min="81" max="243" chance="12.9066" /> <!-- Onyx Beast's Eye Earring Gemstone -->
+			<itemDrop itemId="1906" min="40" max="120" chance="36.9314" /> <!-- Mithril Ring Wire -->
+			<itemDrop itemId="1907" min="154" max="462" chance="4.8547" /> <!-- Dark Necklace Gem -->
+		</dropCategory>
+		<dropCategory chance="30.1618" >
+			<itemDrop itemId="280" min="1" max="1" chance="28.9083" /> <!-- Light Crossbow -->
+			<itemDrop itemId="2054" min="12" max="36" chance="71.0917" /> <!-- Light Crossbow Shaft -->
+		</dropCategory>
+		<dropCategory chance="77.8897" >
+			<itemDrop itemId="4597" min="1" max="3" chance="41.9314" /> <!-- Greater MEN Dye Men + 2 Int - 2 -->
+			<itemDrop itemId="4598" min="2" max="4" chance="27.9543" /> <!-- Greater MEN Dye Men + 2 Wit - 2 -->
+			<itemDrop itemId="4599" min="2" max="6" chance="20.9657" /> <!-- Greater WIT Dye Wit + 2 Int - 2 -->
+			<itemDrop itemId="951" min="3" max="7" chance="9.1486" /> <!-- Scroll: Enchant Weapon (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25186" name="Hellena's Sniper" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="1100" baseHpMax="5151.6387" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="37.0" baseRunSpd="170.0" rHand="272" collisionRadius="11.0" collisionHeight="30.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4761" level="3" /> <!-- Stun -->
+	</npc>
+	<npc id="25187" name="Hellena's Soldier" title="Raid Fighter" level="34" type="L2Monster" baseAtkRange="40" baseHpMax="3844.5352" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="303.4856" baseMAtk="48.16245" basePDef="199.4229" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="40.0" baseRunSpd="170.0" rHand="16" collisionRadius="13.0" collisionHeight="35.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25188" name="Apepi" title="Raid Boss" level="30" type="L2RaidBoss" baseAtkRange="40" baseHpMax="58400.85" baseHpReg="54.285095" baseMpMax="329.4" baseMpReg="1.5" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="461657" sp="110" basePAtk="222.43756" baseMAtk="28.85951" basePDef="355.39282" baseMDef="173.38" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="100.0" baseRunSpd="170.0" aggressive="true" collisionRadius="12.0" collisionHeight="50.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4861" level="1" /> <!-- Raid Boss (Lv. 30) -->
+		<skill id="4416" level="3" /> <!-- Beast -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4732" level="3" /> <!-- Mortal Blow -->
+		<skill id="4172" level="3" /> <!-- Stun -->
+		<skill id="4175" level="3" /> <!-- Haste -->
+		<skill id="4177" level="3" /> <!-- Cancel -->
+		<dropCategory chance="58.137" >
+			<itemDrop itemId="629" min="5" max="15" chance="6.5246" /> <!-- Kite Shield -->
+			<itemDrop itemId="2411" min="1" max="1" chance="45.6949" /> <!-- Brigandine Helmet -->
+			<itemDrop itemId="2493" min="6" max="16" chance="5.9314" /> <!-- Brigandine Shield -->
+			<itemDrop itemId="1947" min="336" max="1008" chance="4.215" /> <!-- Kite Shield Fragment -->
+			<itemDrop itemId="2922" min="27" max="81" chance="14.03" /> <!-- Brigandine Helmet Design -->
+			<itemDrop itemId="2929" min="60" max="180" chance="23.6041" /> <!-- Brigandine Shield Fragment -->
+		</dropCategory>
+		<dropCategory chance="60.9532" >
+			<itemDrop itemId="88" min="1" max="1" chance="3.1446" /> <!-- Morning Star -->
+			<itemDrop itemId="90" min="1" max="1" chance="3.1446" /> <!-- Goat Head Staff -->
+			<itemDrop itemId="158" min="1" max="1" chance="3.1446" /> <!-- Tarbar -->
+			<itemDrop itemId="169" min="1" max="1" chance="3.1446" /> <!-- Skull Breaker -->
+			<itemDrop itemId="172" min="1" max="1" chance="3.1446" /> <!-- Heavy Bone Club -->
+			<itemDrop itemId="2031" min="7" max="21" chance="12.2101" /> <!-- Morning Star Head -->
+			<itemDrop itemId="2032" min="3" max="9" chance="26.0076" /> <!-- Goat Head Staff Head -->
+			<itemDrop itemId="2035" min="12" max="36" chance="7.1226" /> <!-- Tarbar Head -->
+			<itemDrop itemId="2036" min="18" max="54" chance="4.7484" /> <!-- Skull Breaker Head -->
+			<itemDrop itemId="2037" min="3" max="7" chance="34.1883" /> <!-- Heavy Bone Club Head -->
+		</dropCategory>
+		<dropCategory chance="78.9438" >
+			<itemDrop itemId="4556" min="5" max="15" chance="8.4507" /> <!-- Greater CON Dye Con + 1 DEX - 1 -->
+			<itemDrop itemId="4557" min="2" max="4" chance="28.169" /> <!-- Greater DEX Dye Dex + 1 Str - 1 -->
+			<itemDrop itemId="4558" min="2" max="6" chance="21.1268" /> <!-- Greater DEX Dye Dex + 1 CON - 1 -->
+			<itemDrop itemId="6576" min="1" max="1" chance="42.2535" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25189" name="Cronos' Servitor Mumu" title="Raid Boss" level="34" type="L2RaidBoss" baseAtkRange="40" baseHpMax="35781.91" baseHpReg="25.612831" baseMpMax="387.72" baseMpReg="1.8" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="383723" sp="92" basePAtk="151.7428" baseMAtk="12.040612" basePDef="398.8458" baseMDef="194.58" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="170.0" aggressive="true" collisionRadius="8.0" collisionHeight="15.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25190" min="3" max="3" /> <!-- Mumu's Wizard -->
+		<minion npcId="25191" min="1" max="1" /> <!-- Mumu's Warrior -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4862" level="1" /> <!-- Raid Boss (Lv. 34) -->
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<dropCategory chance="72.5609" >
+			<itemDrop itemId="438" min="1" max="1" chance="29.0162" /> <!-- Sage's Rags -->
+			<itemDrop itemId="1953" min="12" max="36" chance="70.9838" /> <!-- Sage's Rag Lining -->
+		</dropCategory>
+		<dropCategory chance="28.8754" >
+			<itemDrop itemId="280" min="1" max="1" chance="28.9083" /> <!-- Light Crossbow -->
+			<itemDrop itemId="2054" min="12" max="36" chance="71.0917" /> <!-- Light Crossbow Shaft -->
+		</dropCategory>
+		<dropCategory chance="41.6897" >
+			<itemDrop itemId="952" min="12" max="36" chance="100" /> <!-- Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25190" name="Mumu's Wizard" title="Raid Fighter" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="4886.123" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="374.8107" baseMAtk="79.6019" basePDef="193.84642" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="48.0" baseRunSpd="170.0" collisionRadius="8.0" collisionHeight="15.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4194" level="3" /> <!-- Aura Burn -->
+		<skill id="4202" level="3" /> <!-- Hold -->
+	</npc>
+	<npc id="25191" name="Mumu's Warrior" title="Raid Fighter" level="33" type="L2Monster" baseAtkRange="40" baseHpMax="9983.703" baseHpReg="24.517094" baseMpMax="372.96" baseMpReg="1.8" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="562.2301" baseMAtk="179.1121" basePDef="193.84642" baseMDef="189.14" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="80.0" baseRunSpd="170.0" collisionRadius="9.0" collisionHeight="16.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="7" /> <!-- Spirits -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4722" level="3" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25192" name="Earth Protector Panathen" title="Raid Boss" level="43" type="L2RaidBoss" baseAtkRange="40" baseHpMax="59151.527" baseHpReg="39.411274" baseMpMax="557.4" baseMpReg="2.1" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="988446" sp="237" basePAtk="291.5444" baseMAtk="29.765524" basePDef="507.4025" baseMDef="247.54" basePAtkSpd="253" baseCritRate="1" baseWalkSpd="15.0" baseRunSpd="170.0" aggressive="true" rHand="183" collisionRadius="16.0" collisionHeight="31.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25193" min="1" max="1" /> <!-- Panathen's Knight -->
+		<minion npcId="25194" min="4" max="4" /> <!-- Panathen's Protectors -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4863" level="1" /> <!-- Raid Boss (Lv. 43) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4191" level="4" /> <!-- Wind Strike -->
+		<skill id="4189" level="4" /> <!-- Paralysis -->
+		<itemDrop itemId="9816" min="1" max="2" chance="89" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="1" chance="70" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="63.0811" >
+			<itemDrop itemId="440" min="1" max="1" chance="26.2497" /> <!-- Robe of Seal -->
+			<itemDrop itemId="1970" min="12" max="36" chance="73.7503" /> <!-- Robe of Seal Fabric -->
+		</dropCategory>
+		<dropCategory chance="28.8116" >
+			<itemDrop itemId="325" min="1" max="1" chance="23.5602" /> <!-- Horn of Glory -->
+			<itemDrop itemId="2088" min="12" max="36" chance="76.4398" /> <!-- Horn of Glory Fragment -->
+		</dropCategory>
+		<dropCategory chance="55.5541" >
+			<itemDrop itemId="6574" min="1" max="1" chance="100" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25193" name="Panathen's Knight" title="Raid Fighter" level="42" type="L2Monster" baseAtkRange="40" baseHpMax="12026.248" baseHpReg="37.54353" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="1088.4075" baseMAtk="433.04587" basePDef="247.3277" baseMDef="241.32" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="18.0" baseRunSpd="170.0" rHand="5130" collisionRadius="26.0" collisionHeight="42.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4721" level="4" /> <!-- Power Strike -->
+	</npc>
+	<npc id="25194" name="Panathen's Protectors" title="Raid Fighter" level="42" type="L2Monster" baseAtkRange="1100" baseHpMax="6012.804" baseHpReg="37.54353" baseMpMax="531.0" baseMpReg="2.1" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" basePAtk="544.20374" baseMAtk="108.26147" basePDef="247.3277" baseMDef="241.32" basePAtkSpd="253" baseCritRate="8" baseWalkSpd="18.0" baseRunSpd="170.0" rHand="5127" collisionRadius="20.0" collisionHeight="28.0"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="fighter" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="3" /> <!-- Light Armor Type -->
+		<skill id="4415" level="9" /> <!-- Bow -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+	</npc>
+	<npc id="25198" name="Fafurion's Herald Lokness" title="Raid Boss" level="70" type="L2RaidBoss" baseAtkRange="40" baseHpMax="615376.3" baseHpReg="294.2109" baseMpMax="1345.8" baseMpReg="2.7" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="4596479" sp="1103" basePAtk="4309.762" baseMAtk="2869.6155" basePDef="887.7479" baseMDef="433.08" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="60.0" baseRunSpd="190.0" aggressive="true" collisionRadius="55.0" collisionHeight="80.5"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4985" level="1" /> <!-- Raid Boss (Lv. 70) -->
+		<skill id="4416" level="10" /> <!-- Dragons -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4169" level="7" /> <!-- Stun -->
+		<skill id="4172" level="7" /> <!-- Stun -->
+		<skill id="4176" level="7" /> <!-- Reflect Damage -->
+		<skill id="4177" level="7" /> <!-- Cancel -->
+		<itemDrop itemId="8619" min="1" max="1" chance="52" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
+		<itemDrop itemId="9815" min="3" max="7" chance="82" /> <!-- Dragon Heart -->
+		<itemDrop itemId="8176" min="1" max="4" chance="82" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="4.7625" >
+			<itemDrop itemId="5311" min="1" max="1" chance="35.1007" /> <!-- Sealed Armor of Nightmare -->
+			<itemDrop itemId="5316" min="1" max="1" chance="35.1007" /> <!-- Sealed Majestic Plate Armor -->
+			<itemDrop itemId="164" min="1" max="1" chance="14.8993" /> <!-- Elysian -->
+			<itemDrop itemId="213" min="1" max="1" chance="14.8993" /> <!-- Branch of the Mother Tree -->
+		</dropCategory>
+		<dropCategory chance="65.4089" >
+			<itemDrop itemId="5522" min="6" max="18" chance="47.8918" /> <!-- Sealed Armor of Nightmare Pattern -->
+			<itemDrop itemId="5523" min="11" max="31" chance="27.3667" /> <!-- Sealed Majestic Plate Armor Pattern -->
+			<itemDrop itemId="5533" min="16" max="48" chance="14.4653" /> <!-- Elysian Head -->
+			<itemDrop itemId="5544" min="23" max="67" chance="10.2762" /> <!-- Branch of the Mother Tree Head -->
+		</dropCategory>
+		<dropCategory chance="8.2672" >
+			<itemDrop itemId="6578" min="1" max="1" chance="76.9231" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+			<itemDrop itemId="6569" min="1" max="1" chance="23.0769" /> <!-- Blessed Scroll: Enchant Weapon (A-grade) -->
+		</dropCategory>
+	</npc>
+	<npc id="25199" name="Water Dragon Priest Sheshark" title="Raid Boss" level="72" type="L2RaidBoss" baseAtkRange="40" baseHpMax="315989.56" baseHpReg="119.969284" baseMpMax="1410.0" baseMpReg="3.0" STR="120" CON="125" DEX="116" INT="135" WIT="200" MEN="249" exp="5140646" sp="1233" basePAtk="2280.5664" baseMAtk="813.6372" basePDef="916.0784" baseMDef="446.9" basePAtkSpd="253" baseCritRate="4" baseWalkSpd="43.0" baseRunSpd="200.0" aggressive="true" rHand="181" collisionRadius="10.0" collisionHeight="29.0" elemAtkType="5" elemAtkValue="20"
+			fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="110"
+			aiType="balanced" skillChance="15" clanRange="300" dodge="-18">
+		<minion npcId="25200" min="3" max="3" /> <!-- Sheshark's Family -->
+		<minion npcId="25201" min="1" max="1" /> <!-- Sheshark's Escort -->
+		<skill id="4494" level="1" /> <!-- Raid Boss -->
+		<skill id="4986" level="1" /> <!-- Raid Boss (Lv. 72) -->
+		<skill id="4416" level="6" /> <!-- Humanoids -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="3" /> <!-- One-handed Sword -->
+		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+		<skill id="4278" level="1" /> <!-- Dark Attack -->
+		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+		<itemDrop itemId="8619" min="1" max="1" chance="54" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
+		<itemDrop itemId="9816" min="3" max="7" chance="82" /> <!-- Earth Egg -->
+		<itemDrop itemId="8176" min="1" max="4" chance="82" /> <!-- Destruction Tombstone -->
+		<dropCategory chance="32.9778" >
+			<itemDrop itemId="6326" min="1" max="1" chance="22.5728" /> <!-- Sealed Majestic Necklace -->
+			<itemDrop itemId="6327" min="1" max="1" chance="30.1071" /> <!-- Sealed Majestic Earring -->
+			<itemDrop itemId="6328" min="1" max="1" chance="45.1456" /> <!-- Sealed Majestic Ring -->
+			<itemDrop itemId="270" min="1" max="1" chance="2.1745" /> <!-- Dragon Grinder -->
+		</dropCategory>
+		<dropCategory chance="57.3376" >
+			<itemDrop itemId="6344" min="240" max="720" chance="5.9416" /> <!-- Sealed Majestic Necklace Beads -->
+			<itemDrop itemId="6342" min="90" max="270" chance="24.4833" /> <!-- Sealed Majestic Earring Gemstone -->
+			<itemDrop itemId="6346" min="308" max="924" chance="10.2824" /> <!-- Sealed Majestic Ring Gemstone -->
+			<itemDrop itemId="5538" min="5" max="13" chance="59.2927" /> <!-- Dragon Grinder Edge -->
+		</dropCategory>
+		<dropCategory chance="22.4933" >
+			<itemDrop itemId="6578" min="1" max="1" chance="28.5714" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
+			<itemDrop itemId="6570" min="1" max="1" chance="71.4286" /> <!-- Blessed Scroll: Enchant Armor (A-grade) -->
+		</dropCategory>
+	</npc>
+</list>

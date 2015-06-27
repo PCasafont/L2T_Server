@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Change hair accessories. -->
+	<skill id="17192" levels="1" name="Change Hair Accessory">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="CHANGE_HAIR_ACCESSORY" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="180000" />
+	</skill>
+</list>

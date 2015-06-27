@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="1" id="46079" /> <!-- Kelbim's Atelia Fragment -->
+		<ingredient count="40931" id="17371" /> <!-- Crystal (R-grade) -->
+		<ingredient count="3411" id="19440" /> <!-- Gemstone (R-grade) -->
+		<production count="1" id="46060" /> <!-- Kelbim Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="46079" /> <!-- Kelbim's Atelia Fragment -->
+		<ingredient count="40931" id="17371" /> <!-- Crystal (R-grade) -->
+		<ingredient count="3411" id="19440" /> <!-- Gemstone (R-grade) -->
+		<production count="1" id="46061" /> <!-- Kelbim Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="46079" /> <!-- Kelbim's Atelia Fragment -->
+		<ingredient count="40931" id="17371" /> <!-- Crystal (R-grade) -->
+		<ingredient count="3411" id="19440" /> <!-- Gemstone (R-grade) -->
+		<production count="1" id="46062" /> <!-- Kelbim Bow -->
+	</item>
+	<item>
+		<ingredient count="1" id="46079" /> <!-- Kelbim's Atelia Fragment -->
+		<ingredient count="40931" id="17371" /> <!-- Crystal (R-grade) -->
+		<ingredient count="3411" id="19440" /> <!-- Gemstone (R-grade) -->
+		<production count="1" id="46063" /> <!-- Kelbim Crossbow -->
+	</item>
+</list>

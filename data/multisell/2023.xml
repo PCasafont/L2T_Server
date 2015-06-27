@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<!-- Ingredients -->
+		<ingredient count="10000" id="57" />
+
+		<!-- Products -->
+		<production count="1" id="34921" />
+	</item>
+	<item>
+		<!-- Ingredients -->
+		<ingredient count="10000" id="57" />
+
+		<!-- Products -->
+		<production count="1" id="34922" />
+	</item>
+	<item>
+		<!-- Ingredients -->
+		<ingredient count="10000" id="57" />
+
+		<!-- Products -->
+		<production count="1" id="34924" />
+	</item>
+</list>

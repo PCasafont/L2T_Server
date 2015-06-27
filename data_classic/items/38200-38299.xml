@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Turns the appearance of a one-handed sword into that of a Blue Mackerel . -->
+	<item id="38200" type="EtcItem" name="Blue Mackerel Appearance Stone: One-handed Sword">
+		<set name="icon" val="icon.shape_shifting_sword_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a one-handed dagger into that of a Trumpetfish . -->
+	<item id="38201" type="EtcItem" name="Trumpetfish Appearance Stone: Dagger">
+		<set name="icon" val="icon.shape_shifting_dagger_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a two-handed sword into that of a Shark . -->
+	<item id="38202" type="EtcItem" name="Shark Appearance Stone: Two-handed Sword">
+		<set name="icon" val="icon.shape_shifting_twohand_sword_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a spear into that of a Squid . -->
+	<item id="38203" type="EtcItem" name="Squid Appearance Stone: Spear">
+		<set name="icon" val="icon.shape_shifting_pole_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a two-handed blunt weapon into that of a Sea Horse . -->
+	<item id="38204" type="EtcItem" name="Sea Horse Appearance Stone: Two-handed Magic Blunt Weapon">
+		<set name="icon" val="icon.shape_shifting_magic_twohand_blunt_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a fist weapon into that of a Lobster . -->
+	<item id="38205" type="EtcItem" name="Lobster Appearance Stone: Fist Weapon">
+		<set name="icon" val="icon.shape_shifting_dualfist_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a bow into that of a Giant Crab . -->
+	<item id="38206" type="EtcItem" name="Giant Crab Appearance Stone: Bow">
+		<set name="icon" val="icon.shape_shifting_bow_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a crossbow into that of a Crayfish . -->
+	<item id="38207" type="EtcItem" name="Crayfish Appearance Stone: Crossbow">
+		<set name="icon" val="icon.shape_shifting_twohand_crossbow_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a sigil into that of a Starfish . -->
+	<item id="38208" type="EtcItem" name="Starfish Appearance Stone: Sigil">
+		<set name="icon" val="Icon.shape_shifting_sigil_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a shield into that of a Turtle . -->
+	<item id="38209" type="EtcItem" name="Turtle Appearance Stone: Shield">
+		<set name="icon" val="icon.shape_shifting_shield_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Turns the appearance of a dualsword into that of a Blue Mackerel . -->
+	<item id="38210" type="EtcItem" name="Blue Mackerel Appearance Stone: Dualsword">
+		<set name="icon" val="icon.shape_shifting_dual_i00" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- Blue Mackerel-shaped weapon. One-handed sword. -->
+	<item id="38211" type="Weapon" name="Blue Mackerel: One-handed Sword">
+		<set name="icon" val="icon.wp_fishing1" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="144" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="379" />
+		</for>
+	</item>
+	<!-- Trumpetfish-shaped weapon. Dagger. -->
+	<item id="38212" type="Weapon" name="Trumpetfish: Dagger">
+		<set name="icon" val="icon.wp_fishing2" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="106" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="80" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="433" />
+		</for>
+	</item>
+	<!-- Shark-shaped weapon. Two-handed sword. -->
+	<item id="38213" type="Weapon" name="Shark: Two-handed Sword">
+		<set name="icon" val="icon.wp_fishing3" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="209" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Squid-shaped weapon. Spear. -->
+	<item id="38214" type="Weapon" name="Squid: Spear">
+		<set name="icon" val="icon.wp_fishing4" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="205" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="92" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="8" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Sea Horse-shaped weapon. Two-handed magic blunt weapon. -->
+	<item id="38215" type="Weapon" name="Sea Horse: Two-handed Magic Blunt Weapon">
+		<set name="icon" val="icon.wp_fishing5" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="101" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="20" />
+		<for>
+			<set stat="pAtk" val="152" />
+			<set stat="mAtk" val="122" />
+			<set stat="rCrit" val="6" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Lobster-shaped weapon. Fist weapon. -->
+	<item id="38216" type="Weapon" name="Lobster: Fist Weapon">
+		<set name="icon" val="icon.wp_fishing6" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="152" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="112" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="6" />
+			<baseAdd stat="accCombat" val="8" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- Giant crab-shaped weapon. Bow. -->
+	<item id="38217" type="Weapon" name="Giant Crab: Bow">
+		<set name="icon" val="icon.wp_fishing7" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="5" />
+		<for>
+			<set stat="pAtk" val="191" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="12" />
+			<baseSub stat="accCombat" val="3.75" />
+			<set stat="pAtkSpd" val="293" />
+		</for>
+	</item>
+	<!-- Crayfish-shaped weapon. Crossbow. -->
+	<item id="38218" type="Weapon" name="Crayfish: Crossbow">
+		<set name="icon" val="icon.wp_fishing8" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="181" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="117" />
+			<set stat="mAtk" val="54" />
+			<set stat="rCrit" val="10" />
+			<baseSub stat="accCombat" val="1.5" />
+			<set stat="pAtkSpd" val="303" />
+		</for>
+	</item>
+	<!-- Starfish-shaped sigil. -->
+	<item id="38219" type="Armor" name="Starfish: Sigil">
+		<set name="icon" val="icon.wp_fishing9" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="100" />
+		<for>
+			<baseSub stat="rEvas" val="8" />
+			<set stat="rShld" val="20" />
+			<set stat="sDef" val="47" />
+		</for>
+	</item>
+	<!-- Turtle-shaped shield. -->
+	<item id="38220" type="Armor" name="Turtle: Shield">
+		<set name="icon" val="icon.wp_fishing10" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="200" />
+		<for>
+			<baseAdd stat="pDef" val="25" />
+		</for>
+	</item>
+	<!-- Blue Mackerel-shaped weapon. Dualsword. -->
+	<item id="38221" type="Weapon" name="Blue Mackerel: Dualsword">
+		<set name="icon" val="icon.wp_fishing11" />
+		<set name="default_action" val="equip" />
+		<set name="weapon_type" val="sword" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="247" />
+		<set name="soulshots" val="0" />
+		<set name="spiritshots" val="0" />
+		<set name="random_damage" val="10" />
+		<for>
+			<set stat="pAtk" val="107" />
+			<set stat="mAtk" val="51" />
+			<set stat="rCrit" val="6" />
+			<set stat="pAtkSpd" val="325" />
+		</for>
+	</item>
+	<!-- For 30 min., WIT + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+	<item id="38222" type="EtcItem" name="Fish Stew - WIT">
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- For 30 min., INT + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+	<item id="38223" type="EtcItem" name="Fish Stew - INT">
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- For 30 min., MEN + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+	<item id="38224" type="EtcItem" name="Fish Stew - MEN">
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- For 30 min., DEX + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+	<item id="38225" type="EtcItem" name="Fish Stew - DEX">
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- For 30 min., STR + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+	<item id="38226" type="EtcItem" name="Fish Stew - STR">
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- For 30 min., CON + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+	<item id="38227" type="EtcItem" name="Fish Stew - CON">
+		<set name="icon" val="icon.fish_stew_buff" />
+		<set name="weight" val="0" />
+	</item>
+	<!-- STR + 3. Female only. -->
+	<item id="38228" type="Armor" name="Lady's Hairpin - STR">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3. Female only. -->
+	<item id="38229" type="Armor" name="Lady's Hairpin - DEX">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 3. Female only. -->
+	<item id="38230" type="Armor" name="Lady's Hairpin - CON">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9556-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MEN + 3. Female only. -->
+	<item id="38231" type="Armor" name="Lady's Hairpin - MEN">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9557-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 3. Female only. -->
+	<item id="38232" type="Armor" name="Lady's Hairpin - INT">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9558-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- WIT + 3. Female only. -->
+	<item id="38233" type="Armor" name="Lady's Hairpin - WIT">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9559-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Rate + 50. Female only. -->
+	<item id="38234" type="Armor" name="Lady's Hairpin - Critical Rate">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9560-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Damage + 90, M. Critical Damage + 68. Female only. -->
+	<item id="38235" type="Armor" name="Lady's Hairpin - Critical Damage">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9561-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Def. + 5%. Female only. -->
+	<item id="38236" type="Armor" name="Lady's Hairpin - P. Def.">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9562-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Def. + 5%. Female only. -->
+	<item id="38237" type="Armor" name="Lady's Hairpin - M. Def.">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9563-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Evasion + 5. Female only. -->
+	<item id="38238" type="Armor" name="Lady's Hairpin - Evasion">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9564-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. + 5%. Female only. -->
+	<item id="38239" type="Armor" name="Lady's Hairpin - P. Atk.">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9565-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Atk. + 10%. Female only. -->
+	<item id="38240" type="Armor" name="Lady's Hairpin - M. Atk.">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9566-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Accuracy + 5. Female only. -->
+	<item id="38241" type="Armor" name="Lady's Hairpin - Accuracy">
+		<set name="icon" val="icon.accessory_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9567-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- STR + 3. -->
+	<item id="38242" type="Armor" name="Party Mask - STR">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- DEX + 3. -->
+	<item id="38243" type="Armor" name="Party Mask - DEX">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- CON + 3. -->
+	<item id="38244" type="Armor" name="Party Mask - CON">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- MEN + 3. -->
+	<item id="38245" type="Armor" name="Party Mask - MEN">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- INT + 3. -->
+	<item id="38246" type="Armor" name="Party Mask - INT">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- WIT + 3. -->
+	<item id="38247" type="Armor" name="Party Mask - WIT">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Critical Rate + 50. -->
+	<item id="38248" type="Armor" name="Party Mask - Critical Rate">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
+	<item id="38249" type="Armor" name="Party Mask - Critical Damage">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- P. Def. + 5%. -->
+	<item id="38250" type="Armor" name="Party Mask - P. Def.">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- M. Def. + 5%. -->
+	<item id="38251" type="Armor" name="Party Mask - M. Def.">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Evasion + 5. -->
+	<item id="38252" type="Armor" name="Party Mask - Evasion">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- P. Atk. + 5%. -->
+	<item id="38253" type="Armor" name="Party Mask - P. Atk.">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- M. Atk. + 10%. -->
+	<item id="38254" type="Armor" name="Party Mask - M. Atk.">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- Accuracy + 5. -->
+	<item id="38255" type="Armor" name="Party Mask - Accuracy">
+		<set name="icon" val="icon.etc_party_mask_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+	</item>
+	<!-- STR + 3. -->
+	<item id="38256" type="Armor" name="Monocle - STR">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3. -->
+	<item id="38257" type="Armor" name="Monocle - DEX">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 3. -->
+	<item id="38258" type="Armor" name="Monocle - CON">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9556-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MEN + 3. -->
+	<item id="38259" type="Armor" name="Monocle - MEN">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9557-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 3. -->
+	<item id="38260" type="Armor" name="Monocle - INT">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9558-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- WIT + 3. -->
+	<item id="38261" type="Armor" name="Monocle - WIT">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9559-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Rate + 50. -->
+	<item id="38262" type="Armor" name="Monocle - Critical Rate">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9560-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Damage + 90, M. Critical Damage + 68. -->
+	<item id="38263" type="Armor" name="Monocle - Critical Damage">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9561-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Def. + 5%. -->
+	<item id="38264" type="Armor" name="Monocle - P. Def.">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9562-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Def. + 5%. -->
+	<item id="38265" type="Armor" name="Monocle - M. Def.">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9563-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Evasion + 5. -->
+	<item id="38266" type="Armor" name="Monocle - Evasion">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9564-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. + 5%. -->
+	<item id="38267" type="Armor" name="Monocle - P. Atk.">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9565-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Atk. + 10%. -->
+	<item id="38268" type="Armor" name="Monocle - M. Atk.">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9566-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Accuracy + 5. -->
+	<item id="38269" type="Armor" name="Monocle - Accuracy">
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9567-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- STR + 3. Female only. -->
+	<item id="38270" type="Armor" name="Maiden's Hairpin - STR">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3. Female only. -->
+	<item id="38271" type="Armor" name="Maiden's Hairpin - DEX">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 3. Female only. -->
+	<item id="38272" type="Armor" name="Maiden's Hairpin - CON">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9556-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MEN + 3. Female only. -->
+	<item id="38273" type="Armor" name="Maiden's Hairpin - MEN">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9557-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 3. Female only. -->
+	<item id="38274" type="Armor" name="Maiden's Hairpin - INT">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9558-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- WIT + 3. Female only. -->
+	<item id="38275" type="Armor" name="Maiden's Hairpin - WIT">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9559-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Rate + 50. Female only. -->
+	<item id="38276" type="Armor" name="Maiden's Hairpin - Critical Rate">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9560-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Damage + 90, M. Critical Damage + 68. Female only. -->
+	<item id="38277" type="Armor" name="Maiden's Hairpin - Critical Damage">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9561-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Def. + 5%. Female only. -->
+	<item id="38278" type="Armor" name="Maiden's Hairpin - P. Def.">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9562-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Def. + 5%. Female only. -->
+	<item id="38279" type="Armor" name="Maiden's Hairpin - M. Def.">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9563-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Evasion + 5. Female only. -->
+	<item id="38280" type="Armor" name="Maiden's Hairpin - Evasion">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9564-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. + 5%. Female only. -->
+	<item id="38281" type="Armor" name="Maiden's Hairpin - P. Atk.">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9565-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Atk. + 10%. Female only. -->
+	<item id="38282" type="Armor" name="Maiden's Hairpin - M. Atk.">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9566-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Accuracy + 5. Female only. -->
+	<item id="38283" type="Armor" name="Maiden's Hairpin - Accuracy">
+		<set name="icon" val="icon.accessory_maidens_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9567-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- STR + 3. Female only. -->
+	<item id="38284" type="Armor" name="Forget-me-not Hairpin - STR">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3. Female only. -->
+	<item id="38285" type="Armor" name="Forget-me-not Hairpin - DEX">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- CON + 3. Female only. -->
+	<item id="38286" type="Armor" name="Forget-me-not Hairpin - CON">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9556-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- MEN + 3. Female only. -->
+	<item id="38287" type="Armor" name="Forget-me-not Hairpin - MEN">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9557-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- INT + 3. Female only. -->
+	<item id="38288" type="Armor" name="Forget-me-not Hairpin - INT">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9558-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- WIT + 3. Female only. -->
+	<item id="38289" type="Armor" name="Forget-me-not Hairpin - WIT">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9559-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Rate + 50. Female only. -->
+	<item id="38290" type="Armor" name="Forget-me-not Hairpin - Critical Rate">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9560-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Critical Damage + 90, M. Critical Damage + 68. Female only. -->
+	<item id="38291" type="Armor" name="Forget-me-not Hairpin - Critical Damage">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9561-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Def. + 5%. Female only. -->
+	<item id="38292" type="Armor" name="Forget-me-not Hairpin - P. Def.">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9562-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Def. + 5%. Female only. -->
+	<item id="38293" type="Armor" name="Forget-me-not Hairpin - M. Def.">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9563-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Evasion + 5. Female only. -->
+	<item id="38294" type="Armor" name="Forget-me-not Hairpin - Evasion">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9564-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- P. Atk. + 5%. Female only. -->
+	<item id="38295" type="Armor" name="Forget-me-not Hairpin - P. Atk.">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9565-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- M. Atk. + 10%. Female only. -->
+	<item id="38296" type="Armor" name="Forget-me-not Hairpin - M. Atk.">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9566-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- Accuracy + 5. Female only. -->
+	<item id="38297" type="Armor" name="Forget-me-not Hairpin - Accuracy">
+		<set name="icon" val="icon.accessory_forget_me_not_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9567-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- STR + 3. Female only. -->
+	<item id="38298" type="Armor" name="Daisy Hairpin - STR">
+		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9554-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+	<!-- DEX + 3. Female only. -->
+	<item id="38299" type="Armor" name="Daisy Hairpin - DEX">
+		<set name="icon" val="icon.accessory_daisy_hairpin_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="1" />
+		<set name="weight" val="10" />
+		<set name="item_skill" val="9555-1" />
+		<for>
+			<enchant stat="mDef" val="0" />
+		</for>
+	</item>
+</list>

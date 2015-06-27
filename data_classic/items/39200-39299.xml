@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Stockings. Deleted after event. -->
+	<item id="39200" type="Armor" name="+ 6 Eternal Stockings Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="850" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Gloves. Deleted after event. -->
+	<item id="39201" type="Armor" name="+ 6 Eternal Gloves Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Eternal Shoes. Deleted after event. -->
+	<item id="39202" type="Armor" name="+ 6 Eternal Shoes Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Eternal Sigil. Deleted after event. -->
+	<item id="39203" type="Armor" name="+ 6 Eternal Sigil Coupon - Robe">
+		<set name="icon" val="icon.elos_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="920" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Helmet. Deleted after event. -->
+	<item id="39204" type="Armor" name="+ 8 Eternal Helmet Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Breastplate. Deleted after event. -->
+	<item id="39205" type="Armor" name="+ 8 Eternal Breastplate Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="7520" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Gaiters. Deleted after event. -->
+	<item id="39206" type="Armor" name="+ 8 Eternal Gaiters Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="3170" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Gauntlets. Deleted after event. -->
+	<item id="39207" type="Armor" name="+ 8 Eternal Gauntlets Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Boots. Deleted after event. -->
+	<item id="39208" type="Armor" name="+ 8 Eternal Boots Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t701_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Shield. Deleted after event. -->
+	<item id="39209" type="Armor" name="+ 8 Eternal Shield Coupon - Heavy Armor">
+		<set name="icon" val="icon.weapon_akra_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1130" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Leather Helmet. Deleted after event. -->
+	<item id="39210" type="Armor" name="+ 8 Eternal Leather Helmet Coupon - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Leather Armor. Deleted after event. -->
+	<item id="39211" type="Armor" name="+ 8 Eternal Leather Armor Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t702_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="4140" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Leather Leggings. Deleted after event. -->
+	<item id="39212" type="Armor" name="+ 8 Eternal Leather Leggings Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t702_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1320" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Leather Gloves. Deleted after event. -->
+	<item id="39213" type="Armor" name="+ 8 Eternal Leather Gloves Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t702_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Leather Boots. Deleted after event. -->
+	<item id="39214" type="Armor" name="+ 8 Eternal Leather Boots Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t702_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Circlet. Deleted after event. -->
+	<item id="39215" type="Armor" name="+ 8 Eternal Circlet Coupon - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Tunic. Deleted after event. -->
+	<item id="39216" type="Armor" name="+ 8 Eternal Tunic Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1750" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Stockings. Deleted after event. -->
+	<item id="39217" type="Armor" name="+ 8 Eternal Stockings Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="850" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Gloves. Deleted after event. -->
+	<item id="39218" type="Armor" name="+ 8 Eternal Gloves Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Eternal Shoes. Deleted after event. -->
+	<item id="39219" type="Armor" name="+ 8 Eternal Shoes Coupon - Robe">
+		<set name="icon" val="icon.armor_t703_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Eternal Sigil. Deleted after event. -->
+	<item id="39220" type="Armor" name="+ 8 Eternal Sigil Coupon - Robe">
+		<set name="icon" val="icon.elos_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="920" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Helmet. Deleted after event. -->
+	<item id="39221" type="Armor" name="+ 5 Seraph Helmet Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Breastplate. Deleted after event. -->
+	<item id="39222" type="Armor" name="+ 5 Seraph Breastplate Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="7520" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Gaiters. Deleted after event. -->
+	<item id="39223" type="Armor" name="+ 5 Seraph Gaiters Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="3170" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Gauntlets. Deleted after event. -->
+	<item id="39224" type="Armor" name="+ 5 Seraph Gauntlets Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Boots. Deleted after event. -->
+	<item id="39225" type="Armor" name="+ 5 Seraph Boots Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Shield. Deleted after event. -->
+	<item id="39226" type="Armor" name="+ 5 Seraph Shield Coupon - Heavy Armor">
+		<set name="icon" val="icon.beranka_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1130" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Leather Helmet. Deleted after event. -->
+	<item id="39227" type="Armor" name="+ 5 Seraph Leather Helmet Coupon - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Leather Armor. Deleted after event. -->
+	<item id="39228" type="Armor" name="+ 5 Seraph Leather Armor Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="4140" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Leather Leggings. Deleted after event. -->
+	<item id="39229" type="Armor" name="+ 5 Seraph Leather Leggings Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1320" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Leather Gloves. Deleted after event. -->
+	<item id="39230" type="Armor" name="+ 5 Seraph Leather Gloves Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Leather Boots. Deleted after event. -->
+	<item id="39231" type="Armor" name="+ 5 Seraph Leather Boots Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Circlet. Deleted after event. -->
+	<item id="39232" type="Armor" name="+ 5 Seraph Circlet Coupon - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Tunic. Deleted after event. -->
+	<item id="39233" type="Armor" name="+ 5 Seraph Tunic Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1750" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Stockings. Deleted after event. -->
+	<item id="39234" type="Armor" name="+ 5 Seraph Stockings Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="850" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Gloves. Deleted after event. -->
+	<item id="39235" type="Armor" name="+ 5 Seraph Gloves Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Seraph Shoes. Deleted after event. -->
+	<item id="39236" type="Armor" name="+ 5 Seraph Shoes Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Seraph Sigil. Deleted after event. -->
+	<item id="39237" type="Armor" name="+ 5 Seraph Sigil Coupon - Robe">
+		<set name="icon" val="icon.airtoil_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="920" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Helmet. Deleted after event. -->
+	<item id="39238" type="Armor" name="+ 6 Seraph Helmet Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Breastplate. Deleted after event. -->
+	<item id="39239" type="Armor" name="+ 6 Seraph Breastplate Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="7520" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Gaiters. Deleted after event. -->
+	<item id="39240" type="Armor" name="+ 6 Seraph Gaiters Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="3170" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Gauntlets. Deleted after event. -->
+	<item id="39241" type="Armor" name="+ 6 Seraph Gauntlets Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Boots. Deleted after event. -->
+	<item id="39242" type="Armor" name="+ 6 Seraph Boots Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Shield. Deleted after event. -->
+	<item id="39243" type="Armor" name="+ 6 Seraph Shield Coupon - Heavy Armor">
+		<set name="icon" val="icon.beranka_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1130" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Leather Helmet. Deleted after event. -->
+	<item id="39244" type="Armor" name="+ 6 Seraph Leather Helmet Coupon - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Leather Armor. Deleted after event. -->
+	<item id="39245" type="Armor" name="+ 6 Seraph Leather Armor Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="4140" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Leather Leggings. Deleted after event. -->
+	<item id="39246" type="Armor" name="+ 6 Seraph Leather Leggings Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1320" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Leather Gloves. Deleted after event. -->
+	<item id="39247" type="Armor" name="+ 6 Seraph Leather Gloves Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Leather Boots. Deleted after event. -->
+	<item id="39248" type="Armor" name="+ 6 Seraph Leather Boots Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Circlet. Deleted after event. -->
+	<item id="39249" type="Armor" name="+ 6 Seraph Circlet Coupon - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Tunic. Deleted after event. -->
+	<item id="39250" type="Armor" name="+ 6 Seraph Tunic Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1750" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Stockings. Deleted after event. -->
+	<item id="39251" type="Armor" name="+ 6 Seraph Stockings Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="850" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Gloves. Deleted after event. -->
+	<item id="39252" type="Armor" name="+ 6 Seraph Gloves Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Seraph Shoes. Deleted after event. -->
+	<item id="39253" type="Armor" name="+ 6 Seraph Shoes Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Seraph Sigil. Deleted after event. -->
+	<item id="39254" type="Armor" name="+ 6 Seraph Sigil Coupon - Robe">
+		<set name="icon" val="icon.airtoil_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="920" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Helmet. Deleted after event. -->
+	<item id="39255" type="Armor" name="+ 8 Seraph Helmet Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Breastplate. Deleted after event. -->
+	<item id="39256" type="Armor" name="+ 8 Seraph Breastplate Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="7520" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Gaiters. Deleted after event. -->
+	<item id="39257" type="Armor" name="+ 8 Seraph Gaiters Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="3170" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Gauntlets. Deleted after event. -->
+	<item id="39258" type="Armor" name="+ 8 Seraph Gauntlets Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Boots. Deleted after event. -->
+	<item id="39259" type="Armor" name="+ 8 Seraph Boots Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t401_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Shield. Deleted after event. -->
+	<item id="39260" type="Armor" name="+ 8 Seraph Shield Coupon - Heavy Armor">
+		<set name="icon" val="icon.beranka_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1130" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Leather Helmet. Deleted after event. -->
+	<item id="39261" type="Armor" name="+ 8 Seraph Leather Helmet Coupon - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Leather Armor. Deleted after event. -->
+	<item id="39262" type="Armor" name="+ 8 Seraph Leather Armor Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="4140" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Leather Leggings. Deleted after event. -->
+	<item id="39263" type="Armor" name="+ 8 Seraph Leather Leggings Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1320" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Leather Gloves. Deleted after event. -->
+	<item id="39264" type="Armor" name="+ 8 Seraph Leather Gloves Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Leather Boots. Deleted after event. -->
+	<item id="39265" type="Armor" name="+ 8 Seraph Leather Boots Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t402_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Circlet. Deleted after event. -->
+	<item id="39266" type="Armor" name="+ 8 Seraph Circlet Coupon - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Tunic. Deleted after event. -->
+	<item id="39267" type="Armor" name="+ 8 Seraph Tunic Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1750" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Stockings. Deleted after event. -->
+	<item id="39268" type="Armor" name="+ 8 Seraph Stockings Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="850" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Gloves. Deleted after event. -->
+	<item id="39269" type="Armor" name="+ 8 Seraph Gloves Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 8 Seraph Shoes. Deleted after event. -->
+	<item id="39270" type="Armor" name="+ 8 Seraph Shoes Coupon - Robe">
+		<set name="icon" val="icon.armor_t403_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 8 Seraph Sigil. Deleted after event. -->
+	<item id="39271" type="Armor" name="+ 8 Seraph Sigil Coupon - Robe">
+		<set name="icon" val="icon.airtoil_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="920" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Helmet. Deleted after event. -->
+	<item id="39272" type="Armor" name="+ 5 Twilight Helmet Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Breastplate. Deleted after event. -->
+	<item id="39273" type="Armor" name="+ 5 Twilight Breastplate Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="7520" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Gaiters. Deleted after event. -->
+	<item id="39274" type="Armor" name="+ 5 Twilight Gaiters Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="3170" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Gauntlets. Deleted after event. -->
+	<item id="39275" type="Armor" name="+ 5 Twilight Gauntlets Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Boots. Deleted after event. -->
+	<item id="39276" type="Armor" name="+ 5 Twilight Boots Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Shield. Deleted after event. -->
+	<item id="39277" type="Armor" name="+ 5 Twilight Shield Coupon - Heavy Armor">
+		<set name="icon" val="icon.kratere_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1130" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Leather Helmet. Deleted after event. -->
+	<item id="39278" type="Armor" name="+ 5 Twilight Leather Helmet Coupon - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Leather Armor. Deleted after event. -->
+	<item id="39279" type="Armor" name="+ 5 Twilight Leather Armor Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="4140" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Leather Leggings. Deleted after event. -->
+	<item id="39280" type="Armor" name="+ 5 Twilight Leather Leggings Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1320" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Leather Gloves. Deleted after event. -->
+	<item id="39281" type="Armor" name="+ 5 Twilight Leather Gloves Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Leather Boots. Deleted after event. -->
+	<item id="39282" type="Armor" name="+ 5 Twilight Leather Boots Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Circlet. Deleted after event. -->
+	<item id="39283" type="Armor" name="+ 5 Twilight Circlet Coupon - Robe">
+		<set name="icon" val="icon.armor_circlet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Tunic. Deleted after event. -->
+	<item id="39284" type="Armor" name="+ 5 Twilight Tunic Coupon - Robe">
+		<set name="icon" val="icon.armor_t603_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1750" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Stockings. Deleted after event. -->
+	<item id="39285" type="Armor" name="+ 5 Twilight Stockings Coupon - Robe">
+		<set name="icon" val="icon.armor_t603_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="850" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Gloves. Deleted after event. -->
+	<item id="39286" type="Armor" name="+ 5 Twilight Gloves Coupon - Robe">
+		<set name="icon" val="icon.armor_t603_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 5 Twilight Shoes. Deleted after event. -->
+	<item id="39287" type="Armor" name="+ 5 Twilight Shoes Coupon - Robe">
+		<set name="icon" val="icon.armor_t603_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 5 Twilight Sigil. Deleted after event. -->
+	<item id="39288" type="Armor" name="+ 5 Twilight Sigil Coupon - Robe">
+		<set name="icon" val="icon.weapon_dynaksus_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="920" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Twilight Helmet. Deleted after event. -->
+	<item id="39289" type="Armor" name="+ 6 Twilight Helmet Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Twilight Breastplate. Deleted after event. -->
+	<item id="39290" type="Armor" name="+ 6 Twilight Breastplate Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="7520" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Gaiters. Deleted after event. -->
+	<item id="39291" type="Armor" name="+ 6 Twilight Gaiters Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="3170" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Gauntlets. Deleted after event. -->
+	<item id="39292" type="Armor" name="+ 6 Twilight Gauntlets Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Boots. Deleted after event. -->
+	<item id="39293" type="Armor" name="+ 6 Twilight Boots Coupon - Heavy Armor">
+		<set name="icon" val="icon.armor_t601_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Twilight Shield. Deleted after event. -->
+	<item id="39294" type="Armor" name="+ 6 Twilight Shield Coupon - Heavy Armor">
+		<set name="icon" val="icon.kratere_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1130" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for a + 6 Twilight Leather Helmet. Deleted after event. -->
+	<item id="39295" type="Armor" name="+ 6 Twilight Leather Helmet Coupon - Light Armor">
+		<set name="icon" val="icon.armor_leather_helmet_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="530" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Leather Armor. Deleted after event. -->
+	<item id="39296" type="Armor" name="+ 6 Twilight Leather Armor Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_u_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="4140" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Leather Leggings. Deleted after event. -->
+	<item id="39297" type="Armor" name="+ 6 Twilight Leather Leggings Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_l_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1320" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Leather Gloves. Deleted after event. -->
+	<item id="39298" type="Armor" name="+ 6 Twilight Leather Gloves Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_g_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="510" />
+	</item>
+	<!-- Bring this to the Memory Fragment manager Chaotic Chronicle to exchange it for + 6 Twilight Leather Boots. Deleted after event. -->
+	<item id="39299" type="Armor" name="+ 6 Twilight Leather Boots Coupon - Light Armor">
+		<set name="icon" val="icon.armor_t602_b_i00" />
+		<set name="default_action" val="equip" />
+		<set name="bodypart" val="rhand" />
+		<set name="immediate_effect" val="1" />
+		<set name="crystal_count" val="1" />
+		<set name="weight" val="1070" />
+	</item>
+</list>
