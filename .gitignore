@@ -1,2 +1,8 @@
 /bin/
 /log/
+/*.mdmp
+/*.log
+/*.txt
+/config/hexid.txt
+/data/crests/*.bmp
+/data/geodata/*.l2j

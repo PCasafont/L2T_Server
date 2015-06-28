@@ -203,6 +203,7 @@ public class DMGManager
 			
 			if (rewardedCharIds.contains(charId))
 				continue;
+			
 			rewardedCharIds.add(charId);
 				
 			Message msg = new Message(-1, charId, false, "Damage Manager", "Congratulations, you was classified on Damage Ranking, here is your reward!", 0);
@@ -211,7 +212,7 @@ public class DMGManager
 			attachments.addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID, Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
 				
 			MailManager.getInstance().sendMessage(msg);
-			Log.warning("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
+			//Log.info("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
 		}
 		
 		// Restart The Ranking (BD)
