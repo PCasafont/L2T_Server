@@ -529,6 +529,7 @@
 	<config name="ExpireNormalWarPeriod" var="EXPIRE_NORMAL_WAR_PERIOD" default="7" />
 	<config name="CancelClanWarRepuationPoints" var="CANCEL_CLAN_WAR_REPUTATION_POINTS" default="5000" />
 	<config name="MinClanLevelToReceiveWar" var="CLAN_WAR_MIN_CLAN_LEVEL" default="5" />
+	<config name="AltClanMembersForWar" var="ALT_CLAN_MEMBERS_FOR_WAR" default="15" />
 	
 	<!--
 		-
