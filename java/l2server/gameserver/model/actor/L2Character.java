@@ -46,7 +46,6 @@ import l2server.gameserver.events.Curfew;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
 import l2server.gameserver.instancemanager.TownManager;
@@ -5790,15 +5789,6 @@ public abstract class L2Character extends L2Object
 			player.sendMessage("You can't attack your team mates.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
-		}
-		
-		if (player.getIsInsideWarZone())
-		{
-			if (!CustomWarAreas.getInstance().canAttack(player, player.getTarget(), null))
-			{
-				player.sendPacket(ActionFailed.STATIC_PACKET);
-				return;
-			}
 		}
 		
 		if (player.isInOlympiadMode() && player.getTarget() != null && player.getTarget() instanceof L2Playable)

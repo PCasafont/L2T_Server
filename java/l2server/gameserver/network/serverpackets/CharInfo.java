@@ -333,7 +333,7 @@ public class CharInfo extends L2GameServerPacket
 			else
 				writeS(_activeChar.getAppearance().getVisibleTitle());
 			
-			if (!_activeChar.getIsInsideWarZone() && !_activeChar.isCursedWeaponEquipped()
+			if (!_activeChar.isCursedWeaponEquipped()
 					&& !(_activeChar.isInEvent()
 					&& (_activeChar.getEvent().getType() == EventType.DeathMatch
 					|| _activeChar.getEvent().getType() == EventType.Survival
@@ -387,7 +387,7 @@ public class CharInfo extends L2GameServerPacket
 			
 			writeD(_activeChar.getClanCrestLargeId());
 			writeC(_activeChar.isNoble() ? 1 : 0); // Symbol on char menu ctrl+I
-			writeC(_activeChar.hasHeroAura() && !_activeChar.getIsInsideWarZone() ? 1 : 0); // Hero Aura
+			writeC(_activeChar.hasHeroAura() ? 1 : 0); // Hero Aura
 			
 			writeC(_activeChar.isFishing() ? 1 : 0); //0x01: Fishing Mode (Cant be undone by setting back to 0)
 			writeD(_activeChar.getFishx());
@@ -445,7 +445,6 @@ public class CharInfo extends L2GameServerPacket
 			if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
 			{
 				showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled()
-						&& !getWriteClient().getActiveChar().getIsInsideWarZone()
 						&& (getWriteClient().getActiveChar().isInEvent());
 			}
 			

@@ -32,9 +32,6 @@ public class Warpgate extends Quest
 	
 	private static final boolean canEnter(L2PcInstance player)
 	{
-		if (player.getIsInsideWarZone())
-			return true;
-		
 		if (player.isFlying())
 			return false;
 		

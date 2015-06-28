@@ -75,8 +75,6 @@ public class PcAppearance
 	 */
 	public final String getVisibleName()
 	{
-		if (_owner.getIsInsideWarZone() && !_owner.isGM())
-			return "NoName";
 		if (_owner.isInEvent()
 				&& (_owner.getEvent().getType() == EventType.DeathMatch
 				|| _owner.getEvent().getType() == EventType.Survival
@@ -101,8 +99,6 @@ public class PcAppearance
 	 */
 	public final String getVisibleTitle()
 	{
-		if (_owner.getIsInsideWarZone() && !_owner.isGM())
-			return "NoTitle";
 		if (_owner.isInEvent()
 				&& (_owner.getEvent().getType() == EventType.DeathMatch
 				|| _owner.getEvent().getType() == EventType.Survival
@@ -199,8 +195,6 @@ public class PcAppearance
 	
 	public int getNameColor()
 	{
-		if (_owner.getIsInsideWarZone())
-			return 0xFFFFFF;
 		return _nameColor;
 	}
 	
@@ -214,8 +208,6 @@ public class PcAppearance
 
 	public int getTitleColor()
 	{
-		if (_owner.getIsInsideWarZone())
-			return 0xFFFF77;
 		return _titleColor;
 	}
 	

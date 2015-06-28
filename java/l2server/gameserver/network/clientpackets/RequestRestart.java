@@ -60,14 +60,6 @@ public final class RequestRestart extends L2GameClientPacket
 			return;
 		}
 		
-		//LasTravel
-		if (player.getIsInsideWarZone() || player.getIsInsideGMEvent())
-		{
-			player.sendPacket(SystemMessageId.NO_RESTART_HERE);
-			sendPacket(RestartResponse.valueOf(false));
-			return;
-		}
-		
 		if (player.isLocked())
 		{
 			Log.warning("Player " + player.getName() + " tried to restart during class change.");

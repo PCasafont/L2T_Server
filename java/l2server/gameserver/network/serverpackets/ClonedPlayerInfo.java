@@ -284,7 +284,6 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
 		{
 			showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled()
-					&& !getWriteClient().getActiveChar().getIsInsideWarZone()
 					&& (getWriteClient().getActiveChar().isInEvent());
 		}
 		

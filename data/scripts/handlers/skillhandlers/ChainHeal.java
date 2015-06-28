@@ -193,14 +193,6 @@ public class ChainHeal implements ISkillHandler
 		if (targetPlayer.isCursedWeaponEquipped())
 			return false;
 		
-		if (playerCaster.getIsInsideWarZone() && targetPlayer.getIsInsideWarZone())
-		{
-			if (playerCaster.getTeam() != targetPlayer.getTeam())
-				return false;
-			
-			return true;
-		}
-		
 		//Event case, if playerCaster are at same team than the target and the event is not all vs all, target are automatically added
 		if (playerCaster.isInEvent())
 		{

@@ -28,7 +28,6 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.events.instanced.types.SimonSays;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2ManufactureList;
@@ -192,13 +191,6 @@ public final class RequestActionUse extends L2GameClientPacket
 				if (activeChar.isInOlympiadMode() && !activeChar.isOlympiadStart())
 				{
 					// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
-					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-					return;
-				}
-				
-				//LasTravel
-				if (activeChar.getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack(activeChar, target, null))
-				{
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}

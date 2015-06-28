@@ -42,7 +42,6 @@ import l2server.gameserver.datatables.GlobalDropTable.GlobalDropCategory;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2CommandChannel;
 import l2server.gameserver.model.L2DropCategory;
@@ -508,14 +507,7 @@ public class L2Attackable extends L2Npc
 		
 		// Add damage and hate to the attacker AggroInfo of the L2Attackable _aggroList
 		if (attacker != null)
-		{
-			if (attacker instanceof L2PcInstance)
-			{
-				if (((L2PcInstance)attacker).getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack((L2PcInstance)attacker, this, skill))
-					return;
-			}
 			addDamage(attacker, (int)damage, skill);
-		}
 		
 		// If this L2Attackable is a L2MonsterInstance and it has spawned minions, call its minions to battle
 		if (this instanceof L2MonsterInstance)
@@ -955,12 +947,6 @@ public class L2Attackable extends L2Npc
 		if (this instanceof L2GuardInstance && player instanceof L2Playable && isInvul(player))
 			return;
 		
-		//LasTravel
-		if (player instanceof L2PcInstance)
-		{
-			if (((L2PcInstance)player).getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack((L2PcInstance)player, this, null))
-				return;
-		}
 		getAttackByList().add(player);
 	}
 	
@@ -978,13 +964,6 @@ public class L2Attackable extends L2Npc
 		
 		if (this instanceof L2GuardInstance && attacker instanceof L2Playable && isInvul(attacker))
 			return;
-		
-		//LasTravel
-		if (attacker instanceof L2PcInstance)
-		{
-			if (((L2PcInstance)attacker).getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack((L2PcInstance)attacker, this, skill))
-				return;
-		}
 				
 		// Notify the L2Attackable AI with EVT_ATTACKED
 		if (!isDead())
@@ -1036,13 +1015,6 @@ public class L2Attackable extends L2Npc
 		{
 			escape("I have gone too far from my home... Sorry, but I must return.");
 			return;
-		}
-		
-		//LasTravel
-		if (attacker instanceof L2PcInstance)
-		{
-			if (((L2PcInstance)attacker).getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack((L2PcInstance)attacker, this, null))
-				return;
 		}
 		
 		L2PcInstance targetPlayer = attacker.getActingPlayer();

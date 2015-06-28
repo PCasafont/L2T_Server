@@ -107,7 +107,6 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CoupleManager;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.instancemanager.DuelManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.FortSiegeManager;
@@ -1254,9 +1253,6 @@ public class L2PcInstance extends L2Playable
 	public int getRelation(L2PcInstance target)
 	{
 		int result = 0;
-		
-		if (getIsInsideWarZone() && target.getIsInsideWarZone())
-			return result;
 		
 		if (getClan() != null)
 		{
@@ -5310,7 +5306,7 @@ public class L2PcInstance extends L2Playable
 	public boolean canOpenPrivateStore()
 	{
 		return !isAlikeDead() && !isInOlympiadMode() && !isMounted()
-		&& !isInsideZone(ZONE_NOSTORE) && !isCastingNow() && !getIsInsideWarZone();
+		&& !isInsideZone(ZONE_NOSTORE) && !isCastingNow();
 	}
 	
 	public void tryOpenPrivateBuyStore()
@@ -5868,9 +5864,6 @@ public class L2PcInstance extends L2Playable
 			L2PcInstance pk = killer.getActingPlayer();
 			if (getEvent() != null)
 				getEvent().onKill(killer, this);
-			
-			if (getIsInsideWarZone() && pk.getIsInsideWarZone())
-				CustomWarAreas.getInstance().onKill(pk, this);
 			
 			if (getIsInsideGMEvent() && pk.getIsInsideGMEvent())
 				GMEventManager.getInstance().onKill(killer, this);
@@ -9278,13 +9271,6 @@ public class L2PcInstance extends L2Playable
 		//if (isInvul())
 			//return false;
 		
-		if (getIsInsideWarZone())
-		{
-			if (!CustomWarAreas.getInstance().canAttack(this, attacker, null))
-				return false;
-			return true;
-		}
-		
 		if (getIsInsideGMEvent())
 		{
 			if (!GMEventManager.getInstance().canAttack(this, attacker))
@@ -9766,12 +9752,6 @@ public class L2PcInstance extends L2Playable
 				return false;
 			}
 			
-			//LasTravel
-			if (getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack(this, target, skill))
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
 			if (isInOlympiadMode() && !isOlympiadStart()){
 				// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
 				sendPacket(ActionFailed.STATIC_PACKET);
@@ -10495,9 +10475,6 @@ public class L2PcInstance extends L2Playable
 		
 		//LasTravel: Note: In official client hero weapons show enchant effect, but hero weapons can't be enchanted, so we will return always 0 as enchant effect on hero weapons
 		if (wpn.isHeroItem())
-			return 0;
-		
-		if (getIsInsideWarZone())
 			return 0;
 		
 		if (Config.isServer(Config.TENKAI))
@@ -12583,17 +12560,6 @@ public class L2PcInstance extends L2Playable
 			Log.log(Level.SEVERE, "deleteMe()", e);
 		}
 		
-		//LasTravel
-		try
-		{
-			if (getIsInsideWarZone())
-				CustomWarAreas.getInstance().onExitZone(this, true);
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.SEVERE, "deleteMe()", e);
-		}
-		
 		// Remove the player form the events
 		try
 		{
@@ -14327,9 +14293,6 @@ public class L2PcInstance extends L2Playable
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(this, damage);
 		}
 		
-		if (getIsInsideWarZone())
-			CustomWarAreas.getInstance().onDamage(this, target, damage);
-		
 		final SystemMessage sm;
 		
 		int dmgCap = (int)target.getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
@@ -14452,7 +14415,7 @@ public class L2PcInstance extends L2Playable
 			return false;
 		}
 		
-		if (summonerChar.getIsInsideWarZone() || summonerChar.getIsInsideGMEvent())
+		if (summonerChar.getIsInsideGMEvent())
 			return false;
 		
 		if (summonerChar.inObserverMode())
@@ -14510,7 +14473,7 @@ public class L2PcInstance extends L2Playable
 			return false;
 		}
 		
-		if (targetChar.getIsInsideWarZone() || targetChar.getIsInsideGMEvent())
+		if (targetChar.getIsInsideGMEvent())
 			return false;
 		
 		if (targetChar.isFlyingMounted())
@@ -18278,7 +18241,7 @@ public class L2PcInstance extends L2Playable
 	
 	public boolean getIsRefusalKillInfo()
 	{
-		return getConfigValue("isRefusalKillInfo") || getIsInsideWarZone();
+		return getConfigValue("isRefusalKillInfo");
 	}
 	
 	public void setIsRefusalKillInfo(boolean b)
@@ -18294,16 +18257,6 @@ public class L2PcInstance extends L2Playable
 	public void setIsInsideGMEvent(boolean b)
 	{
 		setConfigValue("isInsideGMEvent", b);
-	}
-	
-	public boolean getIsInsideWarZone()
-	{
-		return getConfigValue("isInsideWarZone");
-	}
-	
-	public void setIsInsideWarZone(boolean b)
-	{
-		setConfigValue("isInsideWarZone", b);
 	}
 	
 	public void setIsOfflineBuffer(boolean b)
@@ -18602,7 +18555,7 @@ public class L2PcInstance extends L2Playable
 	
 	public int getArmorEnchant()
 	{
-		if (getInventory() == null || getIsArmorGlowDisabled() || getIsInsideWarZone())
+		if (getInventory() == null || getIsArmorGlowDisabled())
 			return 0;
 		
 		L2ItemInstance chest = getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST);

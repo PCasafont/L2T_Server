@@ -17,7 +17,6 @@ package l2server.gameserver.model.actor.instance;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
@@ -141,9 +140,6 @@ public class L2TrapInstance extends L2Trap
 		{
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 		}
-		
-		if (getOwner().getIsInsideWarZone())
-			CustomWarAreas.getInstance().onDamage(getOwner(), target, damage);
 		
 		final SystemMessage sm;
 		

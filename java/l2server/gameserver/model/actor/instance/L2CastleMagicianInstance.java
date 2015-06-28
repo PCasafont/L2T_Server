@@ -457,8 +457,7 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 			}
 		}
 		
-		//LasTravel
-		if (clanLeader.getIsInsideWarZone() || player.getIsInsideWarZone() || clanLeader.getIsInsideGMEvent() || player.getIsInsideGMEvent())
+		if (clanLeader.getIsInsideGMEvent() || player.getIsInsideGMEvent())
 			return false;
 		
 		if (player.getEvent() != null && !player.getEvent().onEscapeUse(player.getObjectId()))

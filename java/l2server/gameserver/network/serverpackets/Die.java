@@ -66,7 +66,7 @@ public class Die extends L2GameServerPacket
 			_allowFixedRess = player.getAccessLevel().allowFixedRes();
 			_clan = player.getClan();
 			
-			if (_canTeleport && (player.getIsInsideWarZone() || player.getIsInsideGMEvent()))
+			if (_canTeleport && (player.getIsInsideGMEvent()))
 				_canTeleport = false;
 		}
 		

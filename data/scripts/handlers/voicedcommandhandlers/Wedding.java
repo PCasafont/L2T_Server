@@ -240,7 +240,7 @@ public class Wedding implements IVoicedCommandHandler
 			_log.severe("Married but couldn't find parter for " + activeChar.getName());
 			return false;
 		}
-		else if (activeChar.getIsInsideWarZone() || activeChar.getIsInsideGMEvent())
+		else if (activeChar.getIsInsideGMEvent())
 			return false;
 		else if (GrandBossManager.getInstance().getZone(activeChar) != null)
 		{
@@ -315,7 +315,7 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("Your partner is not online.");
 			return false;
 		}
-		else if (partner.getIsInsideWarZone() || partner.getIsInsideGMEvent())
+		else if (partner.getIsInsideGMEvent())
 			return false;
 		else if (activeChar.getInstanceId() != partner.getInstanceId())
 		{

@@ -107,7 +107,6 @@ import l2server.gameserver.instancemanager.CoupleManager;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.instancemanager.CustomAuctionManager;
 import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.instancemanager.CustomWorldAltars;
 import l2server.gameserver.instancemanager.DayNightSpawnManager;
 import l2server.gameserver.instancemanager.FarmZoneManager;
@@ -419,7 +418,6 @@ public class Server
 			//LasTravel
 			CustomCommunityBoard.getInstance();
 			BotsManager.getInstance();
-			CustomWarAreas.getInstance();
 			GMEventManager.getInstance();
 		}
 		

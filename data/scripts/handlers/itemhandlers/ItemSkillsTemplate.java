@@ -61,7 +61,7 @@ public class ItemSkillsTemplate implements IItemHandler
 		*/
 		
 		//LasTravel
-		if (activeChar.getIsInsideWarZone() || activeChar.getIsInsideGMEvent())
+		if (activeChar.getIsInsideGMEvent())
 			return;
 		
 		// pets can use items only when they are tradeable

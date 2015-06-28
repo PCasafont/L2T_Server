@@ -54,7 +54,7 @@ public class Resurrect implements ISkillHandler
 		
 		if (player != null)
 		{	
-			if ((player.isInOlympiadMode() && player.isOlympiadStart()) || player.getIsInsideWarZone() || player.getIsInsideGMEvent())
+			if ((player.isInOlympiadMode() && player.isOlympiadStart()) || player.getIsInsideGMEvent())
 				return;
 		}
 		

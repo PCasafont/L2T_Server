@@ -29,7 +29,6 @@ import l2server.gameserver.ai.L2CharacterAI;
 import l2server.gameserver.ai.L2SummonAI;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Object;
@@ -744,13 +743,6 @@ public abstract class L2Summon extends L2Playable
 				return false;
 			}
 			
-			//LasTravel
-			if (getOwner() != null && getOwner().getIsInsideWarZone() && !CustomWarAreas.getInstance().canAttack(getOwner(), target, skill))
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
-			
 			if (getOwner() != null && getOwner().isInOlympiadMode() && !getOwner().isOlympiadStart()){
 				// if L2PcInstance is in Olympia and the match isn't already start, send a Server->Client packet ActionFailed
 				sendPacket(ActionFailed.STATIC_PACKET);
@@ -848,9 +840,6 @@ public abstract class L2Summon extends L2Playable
 			{
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 			}
-			
-			if (getOwner().getIsInsideWarZone())
-				CustomWarAreas.getInstance().onDamage(getOwner(), target, damage);
 			
 			final SystemMessage sm;
 			

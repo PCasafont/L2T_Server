@@ -24,7 +24,6 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.instancemanager.DuelManager;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Object;
@@ -372,20 +371,6 @@ public class L2CubicInstance
 					}
 				}
 				
-				return;
-			}
-			
-			//LasTravel
-			if (_owner.getIsInsideWarZone())
-			{
-				if (ownerTarget.getActingPlayer() != null)
-				{
-					L2PcInstance target = ownerTarget.getActingPlayer();
-					if (CustomWarAreas.getInstance().canAttack(_owner, target, null))
-					{
-						_target = (L2Character)ownerTarget;
-					}
-				}
 				return;
 			}
 			

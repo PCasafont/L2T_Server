@@ -272,7 +272,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		activeChar.sendPacket(ms);
 		
 		if (Config.GMAUDIT)
-			GMAudit.auditGMAction(activeChar.getName()+" ["+activeChar.getObjectId()+"]", "getbuffs", target.getName() + " (" + Integer.toString(target.getObjectId()) + ")", "");
+			GMAudit.auditGMAction(activeChar.getName(), "getbuffs", target.getName() + " (" + Integer.toString(target.getObjectId()) + ")", "");
 	}
 	
 	private void removeBuff(L2PcInstance activeChar, int objId, int skillId)
@@ -300,7 +300,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			}
 			showBuffs(activeChar, target, 1);
 			if (Config.GMAUDIT)
-				GMAudit.auditGMAction(activeChar.getName()+" ["+activeChar.getObjectId()+"]", "stopbuff", target.getName() + " (" + objId + ")", Integer.toString(skillId));
+				GMAudit.auditGMAction(activeChar.getName(), "stopbuff", target.getName() + " (" + objId + ")", Integer.toString(skillId));
 		}
 	}
 	
@@ -321,7 +321,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			activeChar.sendMessage("Removed all effects from " + target.getName() + " (" + objId + ")");
 			showBuffs(activeChar, target, 1);
 			if (Config.GMAUDIT)
-				GMAudit.auditGMAction(activeChar.getName()+" ["+activeChar.getObjectId()+"]", "stopallbuffs", target.getName() + " (" + objId + ")", "");
+				GMAudit.auditGMAction(activeChar.getName(), "stopallbuffs", target.getName() + " (" + objId + ")", "");
 		}
 	}
 }

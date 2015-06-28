@@ -33,7 +33,6 @@ import l2server.gameserver.instancemanager.BossManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CustomAuctionManager;
 import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.instancemanager.CustomWorldAltars;
 import l2server.gameserver.instancemanager.GMEventManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
@@ -475,13 +474,6 @@ public class CustomCommunityBoard
 							activeChar.doInteract(target);
 							break;
 							
-						case "WarArea":
-							if (st.nextToken().equalsIgnoreCase("join"))
-								CustomWarAreas.getInstance().onEnterZone(activeChar);
-							else
-								CustomWarAreas.getInstance().onExitZone(activeChar, false);
-							break;
-							
 						case "searchDrop":
 							String itemName = "";
 							if (st.hasMoreTokens())
@@ -638,10 +630,6 @@ public class CustomCommunityBoard
 				
 			case "worldAltars":
 				sendCommunityBoardPage(getCommunityPage("WorldAltars").replace("%altars%", CustomWorldAltars.getInstance().getAltarsInfo(activeChar.isGM())), activeChar);
-				break;
-				
-			case "warZone":
-				sendCommunityBoardPage(getCommunityPage("WarZone").replace("%warZone%", CustomWarAreas.getInstance().getCustomWarAreas(activeChar, Integer.valueOf(st.nextToken()))), activeChar);
 				break;
 				
 			case "gainak":

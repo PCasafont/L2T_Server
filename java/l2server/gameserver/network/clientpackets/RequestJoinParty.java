@@ -80,7 +80,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			return;
 		}
 		
-		if ((requestor.getIsInsideWarZone() && target.getIsInsideWarZone()) || ((requestor.getIsInsideGMEvent() && !target.getIsInsideGMEvent()) || (!requestor.getIsInsideGMEvent() && target.getIsInsideGMEvent())))
+		if ((requestor.getIsInsideGMEvent() && !target.getIsInsideGMEvent()) || (!requestor.getIsInsideGMEvent() && target.getIsInsideGMEvent()))
 			return;
 		
 		if ((requestor.isInEvent() && requestor.getEvent() == target.getEvent()

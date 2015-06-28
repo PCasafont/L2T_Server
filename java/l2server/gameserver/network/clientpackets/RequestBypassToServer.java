@@ -118,7 +118,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				else
 				{
 					if (Config.GMAUDIT)
-						GMAudit.auditGMAction(activeChar.getName()+" ["+activeChar.getObjectId()+"]", _command, (activeChar.getTarget() != null?activeChar.getTarget().getName():"no-target"));
+						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null?activeChar.getTarget().getName():"no-target"));
 					
 					ach.useAdminCommand(_command, activeChar);
 				}

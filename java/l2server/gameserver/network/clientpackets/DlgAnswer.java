@@ -78,7 +78,7 @@ public final class DlgAnswer extends L2GameClientPacket
 				if (AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
 				{
 					if (Config.GMAUDIT)
-						GMAudit.auditGMAction(activeChar.getName()+" ["+activeChar.getObjectId()+"]", _command, (activeChar.getTarget() != null?activeChar.getTarget().getName():"no-target"));
+						GMAudit.auditGMAction(activeChar.getName(), _command, (activeChar.getTarget() != null?activeChar.getTarget().getName():"no-target"));
 					ach.useAdminCommand(_command, activeChar);
 				}
 			}

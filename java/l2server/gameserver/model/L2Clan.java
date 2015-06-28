@@ -2205,6 +2205,7 @@ public class L2Clan
 			}
 			return false;
 		}
+		
 		if (Config.isServer(Config.TENKAI) && !checkClanBalance(activeChar, activeChar.getClan()))
 			return false;
 		

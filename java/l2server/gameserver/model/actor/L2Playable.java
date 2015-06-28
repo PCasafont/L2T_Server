@@ -218,7 +218,7 @@ public abstract class L2Playable extends L2Character
 	// after resurrect
 	public final boolean isNoblesseBlessed()
 	{
-		return (_effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) || getActingPlayer().getIsInsideWarZone()) && !getActingPlayer().getIsInsideGMEvent();
+		return _effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
 	}
 
 	public final void stopNoblesseBlessing(L2Abnormal effect)

@@ -56,7 +56,7 @@ public class Escape implements IUserCommandHandler
 			return false;
 		}
 		//LasTravel
-		if (activeChar.getIsInsideWarZone() || activeChar.getIsInsideGMEvent())
+		if (activeChar.getIsInsideGMEvent())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

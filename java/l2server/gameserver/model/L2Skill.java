@@ -29,7 +29,6 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.instancemanager.CustomWarAreas;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
 import l2server.gameserver.model.actor.L2Attackable;
@@ -2771,12 +2770,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 						final L2PcInstance targetPlayer = (L2PcInstance)target;
 						final L2PcInstance casterPlayer = (L2PcInstance)activeChar;
 						
-						if (casterPlayer.getIsInsideWarZone())
-						{
-							if (!CustomWarAreas.getInstance().canAttack(casterPlayer, targetPlayer, this))
-								return _emptyTargetList;
-						}
-						
 						//Dummy checks
 						if (targetPlayer == casterPlayer  || (targetPlayer.getClan() != null && targetPlayer.getClanId() == casterPlayer.getClanId())
 								|| (targetPlayer.isInParty() && casterPlayer.isInParty() &&
@@ -3032,13 +3025,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					// Same commandchannel
 					if (player.getParty().getCommandChannel() != null
 							&& player.getParty().getCommandChannel() == targetPlayer.getParty().getCommandChannel())
-						return false;
-				}
-				
-				//LasTravel
-				if (player.getIsInsideWarZone())
-				{
-					if (!CustomWarAreas.getInstance().canAttack(player, target, skill))
 						return false;
 				}
 				

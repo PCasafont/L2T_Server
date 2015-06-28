@@ -61,8 +61,8 @@ public class SummonItems implements IItemHandler
 
 		if (activeChar.getEvent() != null && !activeChar.getEvent().onItemSummon(activeChar.getObjectId()))
 			return;
-		//LasTravel
-		if (activeChar.getIsInsideWarZone() || activeChar.getIsInsideGMEvent())
+		
+		if (activeChar.getIsInsideGMEvent())
 			return;
 		
 		if (!activeChar.getFloodProtectors().getItemPetSummon().tryPerformAction("summon items"))

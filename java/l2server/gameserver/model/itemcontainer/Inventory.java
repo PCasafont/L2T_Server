@@ -951,9 +951,6 @@ public abstract class Inventory extends ItemContainer
 	
 	public int getPaperdollAppearance(int slot)
 	{
-		if (slot == PAPERDOLL_CHEST && getOwner() instanceof L2PcInstance && ((L2PcInstance)getOwner()).getIsInsideWarZone())
-			return 36413;
-		
 		// Check for chest parts with full body appearance
 		L2ItemInstance item = _paperdoll[slot];
 		if (item != null)
