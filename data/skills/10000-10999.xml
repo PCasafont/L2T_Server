@@ -6039,23 +6039,30 @@
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="10000" />
+		<set name="mpConsume" val="65" />
+		<set name="power" val="16000" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
+		<set name="nextActionAttack" val="true" />
+		<set name="overHit" val="true" />
 	</skill>
 	<!-- Inflicts a powerful blow on target. -->
 	<skill id="10500" levels="1" name="Heavy Hit">
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="power" val="10000" />
+		<set name="power" val="30000" />
+		<set name="hitTime" val="660" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="flyType" val="CHARGE" />
+		<set name="skillRadius" val="200"/>
+		<set name="nextActionAttack" val="true"/>
 	</skill>
 	<!-- 
 		Level 1: P. Atk. + 739, Atk. Spd. + 25%, Accuracy + 8, and vital spot attack success rate + 5%. STR +2. Depending on your STR, Cooldown can be reset or abnormal status duration increases + 2 times.
@@ -9633,7 +9640,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="60000" />
-		<set name="skillRadius" val="600" />
+		<set name="skillRadius" val="100" />
 		<for>
 			<abnormal duration="5" stackLvl="1" stackType="flash">
 				<effect type="Untargetable" val="0" />
