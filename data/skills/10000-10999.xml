@@ -6673,18 +6673,14 @@
 		<enchantRoute id="1" level="5,6,7,8,9" /> <!-- Chance -->
 		<enchantRoute id="2" level="5,6,7,8,9" /> <!-- Distance -->
 		<table name="#mpConsume"> 38 39 41 43 45 47 49 51 53 </table>
-		<table name="#landRate"> 30 32 34 36 38 40 45 50 55 
-			<enchantRoute id="1" level="5"> 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 </enchantRoute>
-			<enchantRoute id="1" level="6"> 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 </enchantRoute>
-			<enchantRoute id="1" level="7"> 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 </enchantRoute>
-			<enchantRoute id="1" level="8"> 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 </enchantRoute>
-			<enchantRoute id="1" level="9"> 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 </enchantRoute>
+		<table name="#landRate"> 30
+			<enchantRoute id="1" level="5,6,7,8,9"> 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 </enchantRoute>
 		</table>
 		<table name="#castRange"> 600 
-			<enchantRoute id="2" level="6,7,8,9"> 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800 </enchantRoute>
+			<enchantRoute id="2" level="5,6,7,8,9"> 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800 </enchantRoute>
 		</table>
 		<table name="#effectRange"> 1100 
-			<enchantRoute id="2" level="6,7,8,9"> 1110 1120 1130 1140 1150 1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300 </enchantRoute>
+			<enchantRoute id="2" level="5,6,7,8,9"> 1110 1120 1130 1140 1150 1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="INSTANT_JUMP" />
