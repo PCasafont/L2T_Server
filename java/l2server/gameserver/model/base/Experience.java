@@ -43,7 +43,9 @@ public class Experience
 		LineNumberReader lnr = null;
 		try
 		{
-			File data = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/experience.dat");
+			File data = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/stats/experience.dat");
+			if (!data.exists())
+				data = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/experience.dat");
 			lnr = new LineNumberReader(new BufferedReader(new FileReader(data)));
 			
 			String line = null;
