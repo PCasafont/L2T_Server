@@ -11478,7 +11478,8 @@
 	-->
 	<skill id="11543" levels="6" name="Disperse">
 		<table name="#mpConsume"> 330 350 370 390 410 430 </table>
-		<table name="#pmDef"> 2000 3000 4000 4000 4000 4000 </table>
+		<table name="#pmDef"> 2000 3000 4000 4500 5000 5500 </table>
+		<table name="#runSpd"> 44 44 44 48 52 56 </table>
 		<set name="target" val="TARGET_PARTY" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -11494,7 +11495,7 @@
 				<effect type="Transformation" val="0" />
 				<add stat="pDef" val="#pmDef" />
 				<add stat="mDef" val="#pmDef" />
-				<add stat="runSpd" val="44" />
+				<add stat="runSpd" val="#runSpd" />
 				<subPercent stat="pAtk" val="80" />
 				<subPercent stat="mAtk" val="80" />
 			</abnormal>
