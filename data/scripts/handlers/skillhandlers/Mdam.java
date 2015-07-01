@@ -154,9 +154,12 @@ public class Mdam implements ISkillHandler
 							
 							if (reflectPercent > 0)
 							{
-								reflectedDamage = (int)(reflectPercent / 100. * damage);
-								if (reflectedDamage > target.getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
-									reflectedDamage = target.getMaxHp();
+								int damageForReflect = damage;
+								// to prevent extreme damage when hitting a low lvl char...
+								if (damageForReflect > target.getCurrentHp())
+									damageForReflect = (int)target.getCurrentHp();
+								
+								reflectedDamage = (int)(reflectPercent / 100. * damageForReflect);
 								
 								//damage -= reflectedDamage;
 							}
