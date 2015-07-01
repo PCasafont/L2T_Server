@@ -2118,13 +2118,13 @@
 	<!-- Copied from lvl 86 one -->
 	<lifeStone id="36731" grade="2" level="13">
 		<augmentGroup weaponType="warrior" order="0">
-			<augments ids="23247-23337" chance="100.00" /> <!-- 23337: Accuracy + 1.75. / Critical + 12.32. -->
+			<augments ids="23338-23428,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
 		<augmentGroup weaponType="warrior" order="1">
 			<augments ids="30268-30277" chance="100.0" /> <!-- 30277: Active: Increases the target's Critical Damage received and the chance of receiving critical attacks by 90% for 10 seconds -->
 		</augmentGroup>
 		<augmentGroup weaponType="mage" order="0">
-			<augments ids="23611-23701" chance="100.00" /> <!-- 23701: Accuracy + 1.75. / Critical + 12.32. -->
+			<augments ids="23702-23792,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
 		<augmentGroup weaponType="mage" order="1">
 			<augments ids="30268-30277" chance="100.0" /> <!-- 30277: Active: Increases the target's Critical Damage received and the chance of receiving critical attacks by 90% for 10 seconds -->
