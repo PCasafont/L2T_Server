@@ -18,6 +18,7 @@ import gnu.trove.TIntIntHashMap;
 
 import java.util.Collection;
 
+import l2server.gameserver.GmListTable;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -72,11 +73,20 @@ public class ChatGlobal implements IChatHandler
 			return;
 		}
 		
-		/*if (activeChar.getLevel() < 95)
+		String lowerText = text.toLowerCase();
+		if (lowerText.contains("l2world") || lowerText.contains("elcardia"))
+		{
+			GmListTable.broadcastMessageToGMs(activeChar.getName() + " tried to say through Global:");
+			GmListTable.broadcastMessageToGMs("\"" + text + "\"");
+			GmListTable.broadcastMessageToGMs("...but it has been blocked.");
+			return;
+		}
+		
+		if (activeChar.getLevel() < 95)
 		{
 			activeChar.sendMessage("You're not allowed to use this chat until level 95.");
 			return;
-		}*/
+		}
 		
 		int messages = 0;
 		synchronized (_messages)
