@@ -161,12 +161,12 @@
 	<customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"> <!-- Lvl: all | Strength: 3633365 | Exp Score: 20-150 -->
 		<itemDrop itemId="4357" min="33408271" max="50659134" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36513" min="3" max="8" chance="100" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="31" max="55" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="4355" min="94" max="162" chance="100" /> <!-- Blue Eva -->
 	</customFarm>
 	<customFarm farmZone="world_altar_raids" adjustDropsPerMob="80351"> <!-- Lvl: 99 | Strength: 1353000 | Exp Score: 69 -->
 		<itemDrop itemId="4357" min="13408271" max="17659134" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36513" min="3" max="8" chance="100" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="120" max="200" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="4355" min="360" max="600" chance="100" /> <!-- Blue Eva -->
 	</customFarm>
 	<customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" atkMultiplier="0.2"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
 		<itemDrop itemId="4357" min="69235" max="84258" chance="100"/> <!-- Silver Shilen -->
@@ -176,11 +176,12 @@
 		<itemDrop itemId="46150" min="1" max="1" chance="15" /> <!-- Superior Giant's Codex Chapter 1 -->
 		<itemDrop itemId="46152" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
 		<itemDrop itemId="46151" min="1" max="1" chance="0.50" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+		<itemDrop itemId="4355" min="1" max="1" chance="30" /> <!-- Blue Eva -->
 	</customFarm>
 	<customFarm farmZone="primeval_custom_altar" adjustDropsPerMob="25942"> <!-- Lvl: 105 | Strength: 3633365 | Exp Score: 41 -->
 		<itemDrop itemId="4357" min="10672986" max="14295638" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36514" min="2" max="3" chance="85" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="15" max="25" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="4355" min="45" max="75" chance="100" /> <!-- Blue Eva -->
 		<itemDrop itemId="46150" min="1" max="2" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
 	</customFarm>
 </list>
