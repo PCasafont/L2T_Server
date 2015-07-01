@@ -56,8 +56,7 @@ public class EffectHide extends L2Effect
 	public boolean onStart()
 	{
 		if (getEffected() instanceof L2PcInstance && !((L2PcInstance)getEffected()).isCombatFlagEquipped()
-				&& !(((L2PcInstance)getEffected()).getEvent() != null
-				&& ((L2PcInstance)getEffected()).getEvent().isType(EventType.Survival)))
+				&& !(((L2PcInstance)getEffected()).isInEvent() && ((L2PcInstance)getEffected()).getEvent().isType(EventType.Survival)))
 		{
 			L2PcInstance activeChar = ((L2PcInstance) getEffected());
 			activeChar.getAppearance().setInvisible();

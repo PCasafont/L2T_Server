@@ -72,6 +72,7 @@ import l2server.gameserver.stats.conditions.ConditionPlayerSiegeSide;
 import l2server.gameserver.stats.conditions.ConditionPlayerSouls;
 import l2server.gameserver.stats.conditions.ConditionPlayerState;
 import l2server.gameserver.stats.conditions.ConditionPlayerSubclass;
+import l2server.gameserver.stats.conditions.ConditionPlayerSurvivalEvent;
 import l2server.gameserver.stats.conditions.ConditionPlayerWeight;
 import l2server.gameserver.stats.conditions.ConditionSiegeZone;
 import l2server.gameserver.stats.conditions.ConditionSlotItemId;
@@ -442,6 +443,11 @@ public abstract class StatsParser
 			{
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerEvent(val));
+			}
+			else if (a.getKey().equalsIgnoreCase("onSurvivalEvent"))
+			{
+				boolean val = Boolean.valueOf(a.getValue());
+				cond = joinAnd(cond, new ConditionPlayerSurvivalEvent(val));
 			}
 			else if (a.getKey().equalsIgnoreCase("pledgeClass"))
 			{

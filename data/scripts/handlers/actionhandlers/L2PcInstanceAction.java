@@ -93,7 +93,7 @@ public class L2PcInstanceAction implements IActionHandler
 		
 		if (activeChar != target)
 		{
-			if ((((L2PcInstance)target).isFakeDeath() || ((L2PcInstance)target).isAffected(L2EffectType.UNTARGETABLE.getMask())) && !(((L2PcInstance)target).getFirstEffect(60) != null))
+			if (((L2PcInstance)target).isAffected(L2EffectType.UNTARGETABLE.getMask()))
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return false;
