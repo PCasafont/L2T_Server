@@ -652,12 +652,12 @@ public class EnterWorld extends L2GameClientPacket
 					getClient().sendPacket(new CreatureSay(0, Say2.CRITICAL_ANNOUNCE, "", expiration));
 					
 					getClient().setDetached(true);
-					Log.info("Player " + activeChar.getName() + " tried to log in but he/she was banned.");
+					/*Log.info("Player " + activeChar.getName() + " tried to log in but he/she was banned.");
 					Log.info("Account: " + activeChar.getAccountName());
 					Log.info("HWID: " + activeChar.getHWID());
 					Log.info("Ban author: " + author);
 					Log.info("Ban reason: " + reason);
-					Log.info(expiration);
+					Log.info(expiration);*/
 				}
 				else
 				{
