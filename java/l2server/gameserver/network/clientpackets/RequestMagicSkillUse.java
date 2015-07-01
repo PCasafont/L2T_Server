@@ -155,6 +155,10 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 				return;
 			}
 			
+			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001
+					&& skill.getId() != activeChar.getQueuedSkill().getSkillId())
+				activeChar.setQueuedSkill(null, _ctrlPressed, _shiftPressed);
+			
 			// activeChar.stopMove();
 			activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
 		}
