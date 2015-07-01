@@ -124,9 +124,9 @@ public class Anakim extends L2AttackableAIScript
 			{
 				if (!_debug)
 				{
-					if (_anakimStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, 99))
+					if (_anakimStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, 105))
 						return null;
-					else if (_anakimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, 99))
+					else if (_anakimStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.ANAKIM_MIN_PLAYERS, 100, 99, 105))
 						return null;
 					else if (_anakimStatus == GrandBossManager.getInstance().FIGHTING)
 						return "31101-01.html";
