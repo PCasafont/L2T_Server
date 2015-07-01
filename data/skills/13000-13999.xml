@@ -5195,7 +5195,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="staticReuse" val="true" />
 		<for>
-			<abnormal duration="300">
+			<abnormal duration="300" stackType="abnormal_item">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pCritDmg" val="15" />
 			</abnormal>
@@ -5220,7 +5220,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="staticReuse" val="true" />
 		<for>
-			<abnormal duration="300">
+			<abnormal duration="300" stackType="abnormal_item">
 				<effect type="Buff" val="0" />
 				<addPercent stat="maxHp" val="10" />
 				<addPercent stat="maxCp" val="10" />
@@ -5244,7 +5244,7 @@
 					<target active_effect="BlockInvincibility" />
 				</not>
 			</cond>
-			<abnormal duration="30" stackLvl="1" stackType="invincibility" visualEffect="invincible">
+			<abnormal duration="30" stackLvl="1" stackType="invincibility,abnormal_item" visualEffect="invincible">
 				<effect type="Buff" val="0" />
 				<effect type="Invincible" val="0" />
 				<effect type="BlockInvincibility" val="0" />
@@ -5263,7 +5263,7 @@
 			<cond addName="1" msgId="113">
 				<player hp="20" />
 			</cond>
-			<abnormal duration="10" stackLvl="1" stackType="immortal">
+			<abnormal duration="10" stackLvl="1" stackType="immortal,abnormal_item">
 				<effect type="Buff" val="0" />
 				<effect type="Immortal" val="0" />
 			</abnormal>

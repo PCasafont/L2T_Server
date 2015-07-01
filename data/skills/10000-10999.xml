@@ -7023,9 +7023,10 @@
 		<set name="hitTime" val="800" />
 		<for>
 			<cond msgId="1509">
-				<player onEvent="false" />
+				<player onSurvivalEvent="false" />
 			</cond>
 			<abnormal count="0x7fffffff" duration="1">
+				<effect type="Untargetable" val="0" />
 				<effect type="FakeDeath" val="300" />
 			</abnormal>
 		</for>

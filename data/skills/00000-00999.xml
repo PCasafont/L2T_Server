@@ -1910,7 +1910,7 @@
 		<set name="skillActionId" val="501554" />
 		<for>
 			<cond msgId="1509">
-				<player onEvent="false" />
+				<player onSurvivalEvent="false" />
 			</cond>
 			<abnormal count="0x7fffffff" duration="3">
 				<effect type="FakeDeath" val="30" />

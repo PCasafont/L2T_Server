@@ -125,9 +125,7 @@ public class Shutdown extends Thread
 		}
 		
 		if (_task != null)
-		{
 			_task.abort();
-		}
 		
 		//		 the main instance should only run for shutdown hook, so we start a new instance
 		_task = new ShutdownTask(seconds, restart);

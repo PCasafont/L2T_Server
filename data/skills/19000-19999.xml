@@ -2480,10 +2480,10 @@
 		<set name="power" val="100" />
 		<set name="negateId" val="19212" />
 		<for>
+			<cond>
+				<player hp="1" />
+			</cond>
 			<abnormal duration="1">
-				<cond>
-					<player hp="2" />
-				</cond>
 				 <effect type="Negate" val="0" />
 			</abnormal>
 		 </for>

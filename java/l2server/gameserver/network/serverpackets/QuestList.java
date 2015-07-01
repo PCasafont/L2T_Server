@@ -117,6 +117,7 @@ public class QuestList extends L2GameServerPacket
 			// write empty size
 			writeH(0x00);
 		}
+		
 		for (GlobalQuest q : GlobalQuest.values())
 			writeD(_activeChar.getGlobalQuestState(q));
 	}

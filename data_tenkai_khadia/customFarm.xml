@@ -106,11 +106,11 @@
 	</customFarm>
 	<customFarm farmZone="seed_of_hellfire" adjustDropsPerMob="23230"> <!-- Lvl: 98 | Strength: 3732 | Exp Score: 20 | Mobs' strength varies from 1700 to 17200 -->
 		<itemDrop itemId="4357" min="1800" max="2500" chance="100"/> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="1" max="2" chance="90" /> <!-- Energy of Destruction -->
+		<itemDrop itemId="35562" min="3" max="4" chance="90" /> <!-- Energy of Destruction -->
 	</customFarm>
 	<customFarm farmZone="guillotine_fortress" adjustDropsPerMob="23209"> <!-- Lvl: 96 | Strength: 4467 | Exp Score: 25 | Mobs' strength varies from 3000 to 17900 -->
 		<itemDrop itemId="4357" min="5500" max="7000" chance="100"/> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="2" max="3" chance="100" /> <!-- Energy of Destruction -->
+		<itemDrop itemId="35562" min="5" max="7" chance="100" /> <!-- Energy of Destruction -->
 		<dropCategory chance="70">
 			<itemDrop itemId="19467" min="1" max="1" chance="33" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
 			<itemDrop itemId="19468" min="1" max="1" chance="33" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
@@ -119,12 +119,12 @@
 	</customFarm>
 	<customFarm farmZone="cemetery" adjustDropsPerMob="23299" hpMultiplier="10"> <!-- Lvl: 98 | Strength: 60000/1720 | Exp Score: 20 | Extremelly easy for mages -->
 		<itemDrop itemId="4357" min="2800" max="3500" chance="100"/> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="1" max="1" chance="50" /> <!-- Energy of Destruction -->
+		<itemDrop itemId="35562" min="1" max="2" chance="80" /> <!-- Energy of Destruction -->
 		<itemDrop itemId="38941" min="1" max="1" chance="8"/> <!-- La Vie En Rose's Jewelry Box -->
 	</customFarm>
 	<customFarm farmZone="raider_crossroads" adjustDropsPerMob="23316"> <!-- Lvl: 99 | Strength: 19842 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
 		<itemDrop itemId="4357" min="58100" max="73900" chance="100"/> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="20" max="40" chance="100" /> <!-- Energy of Destruction -->
+		<itemDrop itemId="35562" min="25" max="40" chance="100" /> <!-- Energy of Destruction -->
 		<itemDrop itemId="36665" min="1" max="1" chance="5" /> <!-- Nerva's Temporary Prison Key -->
 		<itemDrop itemId="18577" min="1" max="1" chance="30"/> <!-- Legendary Life Stone (R99-grade) -->
 		<dropCategory chance="100">
@@ -140,7 +140,7 @@
 	</customFarm>
 	<customFarm farmZone="raider_crossroads_special" adjustDropsPerMob="23329"> <!-- Lvl: 99 | Strength: 40000 | Exp Score: 230 | Extremelly high attack -->
 		<itemDrop itemId="4357" min="75236" max="91853" chance="100"/> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="50" max="70" chance="100" /> <!-- Energy of Destruction -->
+		<itemDrop itemId="35562" min="55" max="75" chance="100" /> <!-- Energy of Destruction -->
 		<itemDrop itemId="30298" min="2" max="3" chance="80" /> <!-- Superior Giant's CoDEX - Mastery -->
 		<itemDrop itemId="18577" min="1" max="1" chance="80"/> <!-- Legendary Life Stone (R99-grade) -->
 		<itemDrop itemId="35566" min="1" max="1" chance="30" /> <!-- Dark Amaranthine Enhancement Stone -->
@@ -148,7 +148,7 @@
 	</customFarm>
 	<customFarm farmZone="lands_of_chaos" adjustDropsPerMob="23336"> <!-- Lvl: 96 | Strength: 38330 | Exp Score: 5 -->
 		<itemDrop itemId="4357" min="52375" max="68209" chance="100"/> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="8" max="20" chance="100" /> <!-- Energy of Destruction -->
+		<itemDrop itemId="35562" min="10" max="25" chance="100" /> <!-- Energy of Destruction -->
 		<itemDrop itemId="36978" min="1" max="1" chance="40" /> <!-- Scroll: Enchant Hair Accessory -->
 	</customFarm>
 	<customFarm farmZone="gainak_siege" adjustDropsPerMob="19471"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
@@ -161,12 +161,12 @@
 	<customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"> <!-- Lvl: all | Strength: 3633365 | Exp Score: 20-150 -->
 		<itemDrop itemId="4357" min="33408271" max="50659134" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36513" min="3" max="8" chance="100" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="31" max="55" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="4355" min="94" max="162" chance="100" /> <!-- Blue Eva -->
 	</customFarm>
 	<customFarm farmZone="world_altar_raids" adjustDropsPerMob="80351"> <!-- Lvl: 99 | Strength: 1353000 | Exp Score: 69 -->
 		<itemDrop itemId="4357" min="13408271" max="17659134" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36513" min="3" max="8" chance="100" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="120" max="200" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="4355" min="360" max="600" chance="100" /> <!-- Blue Eva -->
 	</customFarm>
 	<customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" atkMultiplier="0.2"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
 		<itemDrop itemId="4357" min="69235" max="84258" chance="100"/> <!-- Silver Shilen -->
@@ -176,11 +176,12 @@
 		<itemDrop itemId="46150" min="1" max="1" chance="15" /> <!-- Superior Giant's Codex Chapter 1 -->
 		<itemDrop itemId="46152" min="1" max="1" chance="5" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
 		<itemDrop itemId="46151" min="1" max="1" chance="0.50" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+		<itemDrop itemId="4355" min="1" max="1" chance="30" /> <!-- Blue Eva -->
 	</customFarm>
 	<customFarm farmZone="primeval_custom_altar" adjustDropsPerMob="25942"> <!-- Lvl: 105 | Strength: 3633365 | Exp Score: 41 -->
 		<itemDrop itemId="4357" min="10672986" max="14295638" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36514" min="2" max="3" chance="85" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="15" max="25" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="4355" min="45" max="75" chance="100" /> <!-- Blue Eva -->
 		<itemDrop itemId="46150" min="1" max="2" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
 	</customFarm>
 </list>

@@ -148,6 +148,9 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			
 			if (activeChar.getInstanceId() != activeChar.getObjectId())
 				InstanceManager.getInstance().destroyInstance(activeChar.getObjectId());
+			
+			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001)
+				activeChar.setQueuedSkill(null, false, false);
 		}
 	}
 	

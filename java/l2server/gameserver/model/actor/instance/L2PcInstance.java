@@ -9493,6 +9493,10 @@ public class L2PcInstance extends L2Playable
 		
 		// Notify the AI with AI_INTENTION_CAST and target
 		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
+		
+		if (skill.getId() == 30001)
+			setQueuedSkill(skill, forceUse, dontMove);
+		
 		return true;
 	}
 	
