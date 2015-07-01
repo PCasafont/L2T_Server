@@ -5590,6 +5590,9 @@ public abstract class L2Character extends L2Object
 					target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, this);
 				getAI().clientStartAutoAttack();
 				
+				if (target.isStunned() && Rnd.get(100) < (crit ? 75 : 10))
+					target.stopStunning(true);
+				
 				//Summon part
 				if (target instanceof L2PcInstance)
 				{

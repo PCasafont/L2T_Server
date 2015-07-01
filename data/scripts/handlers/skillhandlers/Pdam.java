@@ -228,6 +228,9 @@ public class Pdam implements ISkillHandler
 						record.setLoggerName("pdam");
 						_logDamage.log(record);
 					}
+					
+					if (target.isStunned() && Rnd.get(100) < (crit ? 75 : 10))
+						target.stopStunning(true);
 
 					// Possibility of a lethal strike
 					Formulas.calcLethalHit(activeChar, target, skill);
