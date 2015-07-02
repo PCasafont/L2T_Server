@@ -93,6 +93,9 @@ public class OfflineAdminCommandsManager
 		if (Config.GMAUDIT)
 			GMAudit.auditGMAction(author, commandName, "no-target");
 		
+		if (_dummy == null)
+			loadDummy();
+		
 		_dummy.setName(author);
 		ach.useAdminCommand(command, _dummy);
 		_dummy.setName("OffDummy");

@@ -850,9 +850,6 @@ public class HeroesManager
 						statement2.close();
 						con2.close();
 						
-						_heroes.remove(hero.getId());
-						_heroes.put(hero.getId(), hero);
-						
 						_pastAndCurrentHeroes.put(hero.getId(), hero);
 					}
 					else

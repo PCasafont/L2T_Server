@@ -205,16 +205,18 @@ public class Blow implements ISkillHandler
 						
 						if (reflectPercent > 0)
 						{
-							reflectedDamage = (int)(reflectPercent / 100. * damage);
+							int damageForReflect = (int)damage;
+							// to prevent extreme damage when hitting a low lvl char...
+							if (damageForReflect > target.getCurrentHp())
+								damageForReflect = (int)target.getCurrentHp();
+							
+							reflectedDamage = (int)(reflectPercent / 100. * damageForReflect);
 						
 							// Half the reflected damage for bows
 							/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
 							if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
 									 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
 								reflectedDamage *= 0.5f;*/
-							
-							if (reflectedDamage > target.getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
-								reflectedDamage = target.getMaxHp();
 							
 							//damage -= reflectedDamage;
 						}

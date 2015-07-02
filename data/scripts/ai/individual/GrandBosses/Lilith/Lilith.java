@@ -121,9 +121,9 @@ public class Lilith extends L2AttackableAIScript
 			{
 				if (!_debug)
 				{
-					if (_lilithStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, 99))
+					if (_lilithStatus == GrandBossManager.getInstance().ALIVE && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, 105))
 						return null;
-					else if (_lilithStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, 99))
+					else if (_lilithStatus == GrandBossManager.getInstance().WAITING && !InstanceManager.getInstance().checkInstanceConditions(player, -1, Config.LILITH_MIN_PLAYERS, 100, 99, 105))
 						return null;
 					else if (_lilithStatus == GrandBossManager.getInstance().FIGHTING)
 						return "31118-01.html";

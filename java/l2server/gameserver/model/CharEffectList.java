@@ -694,24 +694,22 @@ public class CharEffectList
 		{
 			for (L2Abnormal e : _buffs)
 			{
-				if (e != null && e.getSkill().isRemovedOnAction() && (!selfAction || e.getSkill().getId() != 10517))
+				if (e == null || !e.getSkill().isRemovedOnAction() || selfAction
+						|| skill == null || skill.getId() != e.getSkill().getId())
+					continue;
+				
+				e.exit(true);
+				
+				if (e.getSkill().getTargetType() == SkillTargetType.TARGET_PARTY && e.getEffected().isInParty())
 				{
-					if (skill != null && skill.getId() == e.getSkill().getId())
-						continue;
-					
-					e.exit(true);
-					
-					if (e.getSkill().getTargetType() == SkillTargetType.TARGET_PARTY && e.getEffected().isInParty())
+					for (L2PcInstance pMember : e.getEffected().getParty().getPartyMembers())
 					{
-						for (L2PcInstance pMember : e.getEffected().getParty().getPartyMembers())
-						{
-							if (pMember == null)
-								continue;
-							
-							L2Abnormal a = pMember.getFirstEffect(e.getSkill().getId());
-							if (a != null)
-								a.exit(true);
-						}
+						if (pMember == null)
+							continue;
+						
+						L2Abnormal a = pMember.getFirstEffect(e.getSkill().getId());
+						if (a != null)
+							a.exit(true);
 					}
 				}
 			}

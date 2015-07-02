@@ -40,11 +40,13 @@ public class KingOfTheHill extends EventInstance
 				{
 					if (player == null)
 						continue;
+					
 					if (highest == null || player.getZ() > highest.getZ())
 						highest = player;
 				}
 
-				highest.addEventPoints(1);
+				if (highest != null)
+					highest.addEventPoints(1);
 				ThreadPoolManager.getInstance().scheduleGeneral(this, 1000);
 			}
 		}, 10000);

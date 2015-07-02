@@ -82,7 +82,7 @@ public class CreatureInvasion extends Quest
 	private void loadCreatureDrops()
 	{
 		_dropInfo.clear();
-		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/events/SiegeMobs/creatureDrops.xml");
+		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/events/CreatureInvasion/creatureDrops.xml");
 		if (!file.exists())
 			return;
 		
@@ -345,7 +345,8 @@ public class CreatureInvasion extends Quest
 		
 		if (!isValidAttack(player, skill, npc))
 		{
-			player.doDie(null);
+			if (!player.isGM())
+				player.doDie(null);
 			return "";
 		}
 		
