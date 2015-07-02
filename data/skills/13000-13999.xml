@@ -8679,7 +8679,7 @@
 			<addPercent stat="pAtk" val="10" />
 			<addPercent stat="pAtkSpd" val="15" />
 			<addPercent stat="pCritDmg" val="15" />
-			<add stat="reflectDam" val="15" />
+			<add stat="reflectDam" val="20" />
 		</for>
 	</skill>
 	<!-- PvP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%, and 20% of it is reflected back to the attacker. -->
@@ -8695,7 +8695,7 @@
 			<addPercent stat="pAtk" val="10" />
 			<addPercent stat="pAtkSpd" val="15" />
 			<addPercent stat="pCritDmg" val="15" />
-			<add stat="reflectDam" val="15" />
+			<add stat="reflectDam" val="20" />
 		</for>
 	</skill>
 	<!-- PvP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%, and 20% of it is reflected back to the attacker. -->
@@ -8711,7 +8711,7 @@
 			<addPercent stat="pAtk" val="10" />
 			<addPercent stat="pAtkSpd" val="15" />
 			<addPercent stat="pCritDmg" val="15" />
-			<add stat="reflectDam" val="15" />
+			<add stat="reflectDam" val="20" />
 		</for>
 	</skill>
 	<!-- PvP Damage + 15%, Max HP + 25%, P. Atk. + 10%, Atk. Spd. + 15%, P. Critical Damage + 15%, and 20% of it is reflected back to the attacker. -->
@@ -8727,7 +8727,7 @@
 			<addPercent stat="pAtk" val="10" />
 			<addPercent stat="pAtkSpd" val="15" />
 			<addPercent stat="pCritDmg" val="15" />
-			<add stat="reflectDam" val="15" />
+			<add stat="reflectDam" val="20" />
 		</for>
 	</skill>
 	<!-- For 30 min., Damage Reflect Resistance + 20%. -->
