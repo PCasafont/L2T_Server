@@ -44,6 +44,8 @@ public class AeoreCardinalController extends MageController
 		336, // Arcane Wisdom
 	};
 	
+	// LLALALALA
+	
 	private static final int BODY_OF_AVATAR_ID = 1311;
 	private static final int DIVINE_POWER_ID = 1459;
 	
