@@ -74,42 +74,67 @@ public class Heal implements ISkillHandler
 				final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 				double staticShotBonus = 0;
 				double mAtkMul = 1; // mAtk multiplier
-				if (weaponInst != null
-						&& weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
+				double gradeMul = 20;
+				if (weaponInst != null)
 				{
-					if (activeChar instanceof L2PcInstance && ((L2PcInstance)activeChar).isMageClass())
+					if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
 					{
-						staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
+						if (activeChar instanceof L2PcInstance && ((L2PcInstance)activeChar).isMageClass())
+						{
+							staticShotBonus = skill.getMpConsume(); // static bonus for spiritshots
+							
+							if (weaponInst.getChargedSpiritShot() >= L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
+							{
+								mAtkMul = weaponInst.getChargedSpiritShot();
+								staticShotBonus *= 2.4; // static bonus for blessed spiritshots
+							}
+							else
+								mAtkMul = weaponInst.getChargedSpiritShot();
+						}
+						else
+						{
+							// no static bonus
+							// grade dynamic bonus
+							switch (weaponInst.getItem().getItemGrade())
+							{
+								case L2Item.CRYSTAL_S84:
+									mAtkMul = 4;
+									break;
+								case L2Item.CRYSTAL_S80:
+									mAtkMul = 2;
+									break;
+							}
+							// shot dynamic bonus
+							if (weaponInst.getChargedSpiritShot() >= L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
+								mAtkMul *= 4; // 16x/8x/4x s84/s80/other
+							else
+								mAtkMul += 1; // 5x/3x/1x s84/s80/other
+						}
 						
-						if (weaponInst.getChargedSpiritShot() >= L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-						{
-							mAtkMul = weaponInst.getChargedSpiritShot();
-							staticShotBonus *= 2.4; // static bonus for blessed spiritshots
-						}
-						else
-							mAtkMul = weaponInst.getChargedSpiritShot();
-					}
-					else
-					{
-						// no static bonus
-						// grade dynamic bonus
-						switch (weaponInst.getItem().getItemGrade())
-						{
-							case L2Item.CRYSTAL_S84:
-								mAtkMul = 4;
-								break;
-							case L2Item.CRYSTAL_S80:
-								mAtkMul = 2;
-								break;
-						}
-						// shot dynamic bonus
-						if (weaponInst.getChargedSpiritShot() >= L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-							mAtkMul *= 4; // 16x/8x/4x s84/s80/other
-						else
-							mAtkMul += 1; // 5x/3x/1x s84/s80/other
+						weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 					}
 					
-					weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+					switch (weaponInst.getItem().getItemGradePlain())
+					{
+						case L2Item.CRYSTAL_D:
+							gradeMul = 50;
+							break;
+						case L2Item.CRYSTAL_C:
+							gradeMul = 100;
+							break;
+						case L2Item.CRYSTAL_B:
+							gradeMul = 150;
+							break;
+						case L2Item.CRYSTAL_A:
+							gradeMul = 200;
+							break;
+						case L2Item.CRYSTAL_S:
+							gradeMul = 250;
+							break;
+						case L2Item.CRYSTAL_R:
+							gradeMul = 300;
+							break;
+					}
 				}
 				// If there is no weapon equipped, check for an active summon.
 				else if (activeChar instanceof L2Summon
@@ -135,13 +160,7 @@ public class Heal implements ISkillHandler
 					((L2Npc)activeChar)._spiritshotcharged = false;
 				}
 				
-				if (skill.getSkillType() == L2SkillType.OVERHEAL)
-				{
-					//mAtkMul = 500 + mAtkMul * 10;
-					mAtkMul = 100 + mAtkMul * 2;
-				}
-				
-				power += staticShotBonus + Math.sqrt(mAtkMul * activeChar.getMAtk(activeChar, null));
+				power += staticShotBonus + Math.pow(mAtkMul * activeChar.getMAtk(activeChar, null), 0.15) * gradeMul;
 		}
 		
 		double hp = 0;
