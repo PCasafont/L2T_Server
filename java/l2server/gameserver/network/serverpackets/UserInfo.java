@@ -152,7 +152,7 @@ public final class UserInfo extends L2GameServerPacket
 		buffer.putInt(player.getX());
 		buffer.putInt(player.getY());
 		buffer.putInt(player.getZ());
-		buffer.putInt(player.getHeading());
+		buffer.putInt(player.getVehicle() != null ? player.getVehicle().getObjectId() : 0);
 
 		// Speeds
 		float moveMultiplier = player.getMovementSpeedMultiplier();

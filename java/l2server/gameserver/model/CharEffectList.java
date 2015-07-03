@@ -688,14 +688,13 @@ public class CharEffectList
 	 */
 	public void stopEffectsOnAction(L2Skill skill)
 	{
-		boolean selfAction = (skill == null || skill.getTargetType() == SkillTargetType.TARGET_SELF);
-		
+		boolean selfAction = skill != null && skill.getTargetType() == SkillTargetType.TARGET_SELF;
 		if (_hasBuffsRemovedOnAction && _buffs != null && !_buffs.isEmpty())
 		{
 			for (L2Abnormal e : _buffs)
 			{
 				if (e == null || !e.getSkill().isRemovedOnAction() || selfAction
-						|| skill == null || skill.getId() != e.getSkill().getId())
+						|| (skill != null && skill.getId() == e.getSkill().getId()))
 					continue;
 				
 				e.exit(true);
