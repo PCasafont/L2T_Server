@@ -456,7 +456,7 @@ public class CreatureInvasion extends Quest
 				if (isValidAttack(killer, killer.getLastSkillCast(), npc))
 				{
 					String dropType = "newPlayer";
-					if ((System.currentTimeMillis() - killer.getCreateTime()) / (24 * 60 * 60 * 1000) > 10)
+					if (killer.getOnlineTime() > 10 * 3600)
 						dropType = "oldPlayer";
 					
 					int a = 0;
