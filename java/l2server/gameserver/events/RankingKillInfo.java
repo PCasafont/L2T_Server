@@ -14,28 +14,19 @@
  */
 package l2server.gameserver.events;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import l2server.gameserver.GmListTable;
-import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2CommandChannel;
-import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.util.Util;
-import l2server.util.Rnd;
 
 /**
  * @author LasTravel
@@ -83,6 +74,7 @@ public class RankingKillInfo
 		giveKillRewards(killerPlayer, killedPlayer);
 	}
 	
+	@SuppressWarnings("unused")
 	private boolean checkConditions(L2PcInstance killerPlayer, L2PcInstance killedPlayer)
 	{
 		if (killerPlayer == null || killedPlayer == null)
@@ -123,7 +115,7 @@ public class RankingKillInfo
 	
 	private void giveKillRewards(L2PcInstance killer, L2PcInstance killed)
 	{
-		if (killer == null || killed == null)
+		/*if (killer == null || killed == null)
 			return;
 		
 		List<String> rewardedPlayers = new ArrayList<String>();
@@ -196,7 +188,7 @@ public class RankingKillInfo
 					}
 				}
 			}
-		}
+		}*/
 	}
 	
 	private class KillInfo
