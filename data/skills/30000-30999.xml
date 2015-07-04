@@ -2558,7 +2558,7 @@
 		<enchantRoute id="1" level="11,12,13,14,15" /> <!-- Chance -->
 		<enchantRoute id="2" level="11,12,13,14,15" /> <!-- Distance -->
 		<enchantRoute id="3" level="11,12,13,14,15" /> <!-- Hex -->
-		<table name="#subStat"> 45 50 55 60 65 70 75 80 85 90 95 100 100 100 100 </table>
+		<table name="#subStat"> 30 31 32 33 34 35 36 37 38 39 40 41 42 43 45 </table>
 		<table name="#mpConsume"> 34 35 35 36 36 37 37 37 37 38 38 38 38 38 38 </table>
 		<table name="#castRange"> 600 
 			<enchantRoute id="2" level="11,12,13,14,15"> 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800 </enchantRoute>

@@ -27,6 +27,7 @@ import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -345,8 +346,9 @@ public class CreatureInvasion extends Quest
 		
 		if (!isValidAttack(player, skill, npc))
 		{
-			if (!player.isGM())
+			if (!player.isGM() && player.isInsideZone(L2Character.ZONE_PEACE))
 				player.doDie(null);
+			
 			return "";
 		}
 		
@@ -456,7 +458,7 @@ public class CreatureInvasion extends Quest
 				if (isValidAttack(killer, killer.getLastSkillCast(), npc))
 				{
 					String dropType = "newPlayer";
-					if ((System.currentTimeMillis() - killer.getCreateTime()) / (24 * 60 * 60 * 1000) > 10)
+					if (killer.getOnlineTime() > 10 * 3600)
 						dropType = "oldPlayer";
 					
 					int a = 0;

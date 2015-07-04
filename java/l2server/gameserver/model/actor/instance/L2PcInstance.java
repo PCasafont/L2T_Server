@@ -18878,4 +18878,21 @@ public class L2PcInstance extends L2Playable
 			if (getPet() != null)
 				getPet().setCurrentHpMp(getPet().getMaxHp(), getPet().getMaxMp());
 	}
+	
+	boolean _inWatcherMode = false;
+	
+	public void startWatcherMode()
+	{
+		_inWatcherMode = true;
+	}
+	
+	public void stopWatcherMode()
+	{
+		_inWatcherMode = false;
+	}
+	
+	public boolean isInWatcherMode()
+	{
+		return _inWatcherMode;
+	}
 }

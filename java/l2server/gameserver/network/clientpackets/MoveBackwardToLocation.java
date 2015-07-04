@@ -106,6 +106,8 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		_curX = activeChar.getX();
 		_curY = activeChar.getY();
 		_curZ = activeChar.getZ();
+
+		activeChar.stopWatcherMode();
 		
 		if (activeChar.getTeleMode() > 0)
 		{

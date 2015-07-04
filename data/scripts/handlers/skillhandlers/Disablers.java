@@ -290,10 +290,14 @@ public class Disablers implements ISkillHandler
 				}
 				case CANCEL_STATS: // same than CANCEL but
 				{
+					L2Character attacker = activeChar;
 					if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
+					{
 						target = activeChar;
+						attacker = target;
+					}
 					
-					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul))
+					if (Formulas.calcSkillSuccess(attacker, target, skill, shld, ssMul))
 					{
 						L2Abnormal[] effects = target.getAllEffects();
 						
@@ -372,12 +376,12 @@ public class Disablers implements ISkillHandler
 					}
 					else
 					{
-						if (activeChar instanceof L2PcInstance)
+						if (attacker instanceof L2PcInstance)
 						{
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 							sm.addCharName(target);
 							sm.addSkillName(skill);
-							activeChar.sendPacket(sm);
+							attacker.sendPacket(sm);
 						}
 					}
 					
@@ -387,6 +391,7 @@ public class Disablers implements ISkillHandler
 				{
 					if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
 						target = activeChar;
+					
 					if (skill.getNegateId().length != 0)
 					{
 						for (int i = 0; i < skill.getNegateId().length; i++)

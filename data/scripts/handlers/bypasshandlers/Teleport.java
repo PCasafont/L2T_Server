@@ -14,6 +14,9 @@
  */
 package handlers.bypasshandlers;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.StringTokenizer;
 
 import l2server.gameserver.handler.IBypassHandler;
@@ -93,6 +96,46 @@ public class Teleport implements IBypassHandler
 			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
 			if (mostPvP != null)
 			{
+				// Check if the player's clan is already outnumbering the PvP
+				if (activeChar.getClan() != null)
+				{
+					Map<Integer, Integer> clanNumbers = new HashMap<Integer, Integer>();
+					int allyId = activeChar.getAllyId();
+					if (allyId == 0)
+						allyId = activeChar.getClanId();
+					clanNumbers.put(allyId, 1);
+					for (L2PcInstance known : mostPvP.getKnownList().getKnownPlayers().values())
+					{
+						int knownAllyId = known.getAllyId();
+						if (knownAllyId == 0)
+							knownAllyId = known.getClanId();
+						if (knownAllyId != 0)
+						{
+							if (clanNumbers.containsKey(knownAllyId))
+								clanNumbers.put(knownAllyId, clanNumbers.get(knownAllyId) + 1);
+							else
+								clanNumbers.put(knownAllyId, 1);
+						}
+					}
+					
+					int biggestAllyId = 0;
+					int biggestAmount = 2;
+					for (Entry<Integer, Integer> clanNumber : clanNumbers.entrySet())
+					{
+						if (clanNumber.getValue() > biggestAmount)
+						{
+							biggestAllyId = clanNumber.getKey();
+							biggestAmount = clanNumber.getValue();
+						}
+					}
+					
+					if (biggestAllyId == allyId)
+					{
+						activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "Sorry, your clan/ally is outnumbering the place already so you can't move there."));
+						return true;
+					}
+				}
+				
 				activeChar.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
 				activeChar.setInstanceId(0);
 			}

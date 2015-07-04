@@ -89,15 +89,21 @@ public class AdminCamera implements IAdminCommandHandler
 					0,		// Turn
 					0,		// Rise
 					0,		// WideScreen
-					0));*/
+					0));
+			
+			activeChar.sendMessage("Usage: //camera dist yaw pitch time duration turn rise widescreen unknown");*/
 			
 			L2PcInstance watcher = activeChar;
 			if (activeChar.getTarget() instanceof L2PcInstance)
 				watcher = (L2PcInstance)activeChar.getTarget();
 			
+			watcher.startWatcherMode();
 			GamePlayWatcher.getInstance().makeWatcher(watcher);
-			
-			activeChar.sendMessage("Usage: //camera dist yaw pitch time duration turn rise widescreen unknown");
+			if (watcher != activeChar)
+				activeChar.sendMessage("Camera mode started on " + watcher.getName() + "!");
+
+			watcher.sendMessage("Camera mode started!");
+			watcher.sendMessage("To exit, press the right and left mouse buttons simultaneously.");
 			return false;
 		}
 		return true;

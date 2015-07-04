@@ -14,6 +14,8 @@
  */
 package l2server.gameserver.instancemanager;
 
+import java.util.concurrent.ScheduledFuture;
+
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2World;
@@ -43,7 +45,9 @@ public class GamePlayWatcher
 	
 	public void makeWatcher(L2PcInstance watcher)
 	{
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new WatchTask(watcher), 1000L, 1000L);
+		WatchTask watchTask = new WatchTask(watcher);
+		ScheduledFuture<?> schedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(watchTask, 1000L, 1000L);
+		watchTask.setSchedule(schedule);
 	}
 	
 	private class WatchTask implements Runnable
@@ -52,6 +56,8 @@ public class GamePlayWatcher
 		private L2PcInstance _pivot = null;
 		private long _checkForAnotherPivotTimer = 0L;
 		
+		private ScheduledFuture<?> _schedule = null;
+		
 		public WatchTask(L2PcInstance watcher)
 		{
 			_watcher = watcher;
@@ -59,8 +65,13 @@ public class GamePlayWatcher
 		
 		public void run()
 		{
-			if (!_watcher.isOnline())
-				return; //TODO: delete task
+			if (!_watcher.isOnline() || !_watcher.isInWatcherMode())
+			{
+				if (_schedule != null)
+					_schedule.cancel(false);
+				
+				return;
+			}
 			
 			if (_checkForAnotherPivotTimer < System.currentTimeMillis()
 					|| _pivot == null || !AttackStanceTaskManager.getInstance().getAttackStanceTask(_pivot)
@@ -213,6 +224,11 @@ public class GamePlayWatcher
 						0 // Relative to Object's angle
 					));
 			}
+		}
+		
+		public void setSchedule(ScheduledFuture<?> schedule)
+		{
+			_schedule = schedule;
 		}
 	}
 }

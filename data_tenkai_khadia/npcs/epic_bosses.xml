@@ -82,7 +82,7 @@
 		<itemDrop itemId="4357" min="50000000" max="80000000" chance="100" /> <!-- Silver Shilen -->
 	</npc>
 	<!-- Valakas -->
-	<npc id="29028" overrideDrops="true">
+	<npc id="29028" overrideDrops="true" hpMax="841657216">
 		<!-- Epic Items -->
 		<itemDrop itemId="6657" min="5" max="7" chance="100" /> <!-- Valakas' Necklace -->
 		<itemDrop itemId="19466" min="20" max="25" chance="100" /> <!-- Bottle of Valakas' Soul -->

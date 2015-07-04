@@ -5,39 +5,43 @@
 		<production id="4357" count="42000" /> <!-- Silver Shilen -->
 	</item>
 	<item>
-		<ingredient id="4358" count="200000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="6700" /> <!-- Bloody Pa'agrio -->
+		<production id="4355" count="10" /> <!-- Blue Eva -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
 		<production id="6656" count="1" /> <!-- Antharas' Earring -->
 	</item>
 	<item>
-		<ingredient id="4358" count="200000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
 		<production id="6657" count="1" /> <!-- Valakas' Necklace -->
 	</item>
 	<item>
-		<ingredient id="4358" count="120000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="60000" /> <!-- Bloody Pa'agrio -->
 		<production id="6658" count="1" /> <!-- Baium's Ring -->
 	</item>
 	<item>
-		<ingredient id="4358" count="160000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
 		<production id="6659" count="1" /> <!-- Zaken's Earring -->
 	</item>
 	<item>
-		<ingredient id="4358" count="120000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="60000" /> <!-- Bloody Pa'agrio -->
 		<production id="6660" count="1" /> <!-- Queen Ant's Ring -->
 	</item>
 	<item>
-		<ingredient id="4358" count="70000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
 		<production id="6661" count="1" /> <!-- Orfen's Earring -->
 	</item>
 	<item>
-		<ingredient id="4358" count="70000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
 		<production id="6662" count="1" /> <!-- Ring of Core -->
 	</item>
 	<item>
-		<ingredient id="4358" count="160000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
 		<production id="8191" count="1" /> <!-- Frintezza's Necklace -->
 	</item>
 	<item>
-		<ingredient id="4358" count="160000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
 		<production id="16025" count="1" /> <!-- Freya's Necklace -->
 	</item>
 	<item>
