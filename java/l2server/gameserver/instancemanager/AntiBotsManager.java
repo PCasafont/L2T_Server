@@ -522,7 +522,7 @@ public class AntiBotsManager
 							GmListTable.broadcastMessageToGMs("- Product Name:" + process.getProductName() + ", File Exe: " + process.getFileName() + ", File Path: " + process.getFilePath());
 							
 							// Log to file...
-							Util.logToFile("- " + process.getProductName() + " (" + process.getFileName() + ")", "Antibots", true);
+							Util.logToFile("- Product Name:" + process.getProductName() + ", File Exe: " + process.getFileName() + ", File Path: " + process.getFilePath(), "Antibots", true);
 						}
 						
 						Util.logToFile("He/She has been banned already " + timesBanned + " times.", "Antibots", true);
@@ -765,6 +765,9 @@ public class AntiBotsManager
 		final String filePath = process.getFilePath().toLowerCase();
 		
 		if (process.getProductName().equalsIgnoreCase("AlienAdrenaline.GameModeProcessor"))
+			return false;
+		
+		if (filePath.contains("lineage ii dreams"))
 			return false;
 		
 		for (int y = 0; y < PROHIBITED_PROCESSES_NAMES.length; y++)
