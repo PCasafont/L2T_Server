@@ -19,6 +19,7 @@ import java.sql.PreparedStatement;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GmListTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.handler.ChatHandler;
 import l2server.gameserver.handler.IChatHandler;
@@ -247,7 +248,21 @@ public final class Say2 extends L2GameClientPacket
 		
 		IChatHandler handler = ChatHandler.getInstance().getChatHandler(_type);
 		if (handler != null)
+		{
+			String checkText = _text.toLowerCase().replace(".", "")
+					.replace(" ", "").replace("_", "").replace("-", "");
+			if (checkText.contains("l2world") || checkText.contains("elcardia"))
+			{
+				GmListTable.broadcastMessageToGMs(activeChar.getName() + " tried to say through " + handler.getClass().getSimpleName().substring(4) + ":");
+				GmListTable.broadcastMessageToGMs("\"" + _text + "\"");
+				if (_target != null)
+					GmListTable.broadcastMessageToGMs("to " + _target);
+				GmListTable.broadcastMessageToGMs("...but it has been blocked.");
+				return;
+			}
+			
 			handler.handleChat(_type, activeChar, _target, _text);
+		}
 		else
 			Log.info("No handler registered for ChatType: "+_type+ " Player: "+getClient());
 	}

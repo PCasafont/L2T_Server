@@ -18,7 +18,6 @@ import gnu.trove.TIntIntHashMap;
 
 import java.util.Collection;
 
-import l2server.gameserver.GmListTable;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -70,15 +69,6 @@ public class ChatGlobal implements IChatHandler
 		if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() || !activeChar.getFloodProtectors().getTradeChat().tryPerformAction("global chat")))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
-			return;
-		}
-		
-		String lowerText = text.toLowerCase();
-		if (lowerText.contains("l2world") || lowerText.contains("elcardia"))
-		{
-			GmListTable.broadcastMessageToGMs(activeChar.getName() + " tried to say through Global:");
-			GmListTable.broadcastMessageToGMs("\"" + text + "\"");
-			GmListTable.broadcastMessageToGMs("...but it has been blocked.");
 			return;
 		}
 		
