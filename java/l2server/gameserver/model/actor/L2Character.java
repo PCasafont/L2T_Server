@@ -5513,12 +5513,9 @@ public abstract class L2Character extends L2Object
 						
 						if (reflectPercent > 0)
 						{
-							int damageForReflect = damage;
-							// to prevent extreme damage when hitting a low lvl char...
-							if (damageForReflect > target.getCurrentHp())
-								damageForReflect = (int)target.getCurrentHp();
-							
-							reflectedDamage = (int)(reflectPercent / 100. * damageForReflect);
+							// Killing blows are not reflected
+							if (damage < target.getCurrentHp())
+								reflectedDamage = (int)(reflectPercent / 100. * damage);
 							
 							// Half the reflected damage for bows
 							/*L2Weapon weaponItem = getActiveWeaponItem();
