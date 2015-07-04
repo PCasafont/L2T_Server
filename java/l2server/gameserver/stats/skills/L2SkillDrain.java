@@ -143,7 +143,7 @@ public class L2SkillDrain extends L2Skill
 					if ((Formulas.calcSkillReflect(target, this) & Formulas.SKILL_REFLECT_EFFECTS) > 0)
 					{
 						//activeChar.stopSkillEffects(getId());
-						getEffects(target,activeChar);
+						getEffects(target, activeChar);
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 						sm.addSkillName(getId());
 						activeChar.sendPacket(sm);

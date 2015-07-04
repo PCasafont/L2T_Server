@@ -88,13 +88,17 @@ public class Continuous implements ISkillHandler
 			byte shld = 0;
 			double ssMul = L2ItemInstance.CHARGED_NONE;
 			
+			L2Character attacker = activeChar;
 			if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
+			{
 				target = activeChar;
+				attacker = target;
+			}
 			
 			// Player holding a cursed weapon can't be buffed and can't buff
 			if (skill.getSkillType() == L2SkillType.BUFF && !(activeChar instanceof L2ClanHallManagerInstance))
 			{
-				if (target != activeChar)
+				if (target != attacker)
 				{
 					if (target instanceof L2PcInstance)
 					{
@@ -157,7 +161,7 @@ public class Continuous implements ISkillHandler
 					}
 				}
 				
-				shld = Formulas.calcShldUse(activeChar, target, skill);
+				shld = Formulas.calcShldUse(attacker, target, skill);
 				acted = true;//Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss);
 			}
 			
@@ -185,7 +189,7 @@ public class Continuous implements ISkillHandler
 				// if this is a debuff let the duel manager know about it
 				// so the debuff can be removed after the duel
 				// (player & target must be in the same duel)
-				L2Abnormal[] effects = skill.getEffects(activeChar, target, new Env(shld, ssMul));
+				L2Abnormal[] effects = skill.getEffects(attacker, target, new Env(shld, ssMul));
 				if (target instanceof L2PcInstance && ((L2PcInstance) target).isInDuel() && (skill.isDebuff() || skill.getSkillType() == L2SkillType.BUFF) && player != null
 						&& player.getDuelId() == ((L2PcInstance) target).getDuelId())
 				{
@@ -203,19 +207,19 @@ public class Continuous implements ISkillHandler
 						&& !skill.isToggle() && skill.canBeSharedWithSummon())
 				{
 					for (L2SummonInstance summon : ((L2PcInstance)target).getSummons())
-						skill.getEffects(activeChar, summon, new Env(shld, ssMul));
+						skill.getEffects(attacker, summon, new Env(shld, ssMul));
 				}
 				
 				if (skill.getSkillType() == L2SkillType.AGGDEBUFF && effects.length > 0)
 				{
 					if (target instanceof L2Attackable)
-						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, (int) skill.getPower());
+						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, attacker, (int) skill.getPower());
 					else if (target instanceof L2Playable)
 					{
-						if (target.getTarget() == activeChar)
+						if (target.getTarget() == attacker)
 							target.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, activeChar);
 						else
-							target.setTarget(activeChar);
+							target.setTarget(attacker);
 					}
 				}
 				
@@ -224,14 +228,14 @@ public class Continuous implements ISkillHandler
 			}
 			else
 			{
-				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
+				attacker.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
 			}
 			
 			if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF && !acted)
 				activeChar.abortCast();
 			
 			// Possibility of a lethal strike
-			Formulas.calcLethalHit(activeChar, target, skill);
+			Formulas.calcLethalHit(attacker, target, skill);
 		}
 		
 		// self Effect
