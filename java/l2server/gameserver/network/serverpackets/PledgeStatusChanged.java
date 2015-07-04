@@ -14,6 +14,7 @@
  */
 package l2server.gameserver.network.serverpackets;
 
+import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 
 /**
@@ -39,15 +40,15 @@ public final class PledgeStatusChanged extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		/*writeC(0xCD);
-		writeD(0); // ???
+		writeC(0xCD);
+		writeD(Config.SERVER_ID);
 		writeD(_clan.getLeaderId());
 		writeD(_clan.getClanId());
 		writeD(_clan.getCrestId());
 		writeD(_clan.getAllyId());
 		writeD(_clan.getAllyCrestId());
 		writeD(0);
-		writeD(0);*/
+		writeD(0);
 	}
 	
 	/* (non-Javadoc)

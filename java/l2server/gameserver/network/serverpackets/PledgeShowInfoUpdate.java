@@ -14,6 +14,7 @@
  */
 package l2server.gameserver.network.serverpackets;
 
+import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 
 /**
@@ -35,10 +36,10 @@ public class PledgeShowInfoUpdate extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		//dddddddddddSdd
-		/*writeC(0x8e);
+		writeC(0x8e);
 		//sending empty data so client will ask all the info in response ;)
 		writeD(_clan.getClanId());
-		writeD(0);
+		writeD(Config.SERVER_ID);
 		writeD(_clan.getCrestId());
 		writeD(_clan.getLevel()); //clan level
 		writeD(0); // GoD ???
@@ -55,7 +56,6 @@ public class PledgeShowInfoUpdate extends L2GameServerPacket
 		writeD(_clan.isAtWar() ? 1 : 0); //c5
 		writeD(0); // GoD ???
 		writeD(0); // GoD ???
-		*/
 	}
 	
 	/* (non-Javadoc)
