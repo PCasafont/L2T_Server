@@ -2964,7 +2964,7 @@
 			<enchantRoute id="3" level="3,4"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<table name="#addPercentMDef"> 0 
-			<enchantRoute id="4" level="3,4"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="3,4"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3033,7 +3033,7 @@
 			<enchantRoute id="2" level="1"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<table name="#addPercentMDef"> 0 
-			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 			<enchantRoute id="3" level="1"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 5 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
@@ -3200,7 +3200,7 @@
 			<enchantRoute id="2" level="3,4"> 1 1.6 2.2 2.8 3.4 4 4.6 5.2 5.8 6.4 7 7.6 8.2 8.8 9.4 10 10.6 11.2 11.8 12.4 13 13.6 14.2 14.8 15.4 16 16.6 17.2 17.8 18.4 </enchantRoute>
 		</table>
 		<table name="#addPercentDerangementProf"> 0 
-			<enchantRoute id="4" level="3,4"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="3,4"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -10757,10 +10757,10 @@
 			<enchantRoute id="1" level="1"> 1890 1980 2070 2160 2250 2340 2430 2520 2610 2700 2790 2880 2970 3060 3150 3240 3330 3420 3510 3600 3690 3780 3870 3960 4050 4140 4230 4320 4410 4500 </enchantRoute>
 		</table>
 		<table name="#addPercentPoisonProf"> 0 
-			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#addPercentBleedProf"> 0 
-			<enchantRoute id="5" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="5" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_PARTY_MEMBER" />
 		<set name="skillType" val="BUFF" />
@@ -10796,7 +10796,7 @@
 			<enchantRoute id="1" level="1"> 1890 1980 2070 2160 2250 2340 2430 2520 2610 2700 2790 2880 2970 3060 3150 3240 3330 3420 3510 3600 3690 3780 3870 3960 4050 4140 4230 4320 4410 4500 </enchantRoute>
 		</table>
 		<table name="#addPercentDerangementProf"> 0 
-			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_PARTY_MEMBER" />
 		<set name="skillType" val="BUFF" />
@@ -12525,10 +12525,10 @@
 			<enchantRoute id="1" level="1"> 1890 1980 2070 2160 2250 2340 2430 2520 2610 2700 2790 2880 2970 3060 3150 3240 3330 3420 3510 3600 3690 3780 3870 3960 4050 4140 4230 4320 4410 4500 </enchantRoute>
 		</table>
 		<table name="#addPercentPoisonProf"> 0 
-			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#addPercentBleedProf"> 0 
-			<enchantRoute id="5" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="5" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_CLAN_MEMBER" />
 		<set name="skillType" val="BUFF" />
@@ -12564,7 +12564,7 @@
 			<enchantRoute id="1" level="1"> 1890 1980 2070 2160 2250 2340 2430 2520 2610 2700 2790 2880 2970 3060 3150 3240 3330 3420 3510 3600 3690 3780 3870 3960 4050 4140 4230 4320 4410 4500 </enchantRoute>
 		</table>
 		<table name="#addPercentDerangementProf"> 0 
-			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 </enchantRoute>
+			<enchantRoute id="4" level="1"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_CLAN_MEMBER" />
 		<set name="skillType" val="BUFF" />
