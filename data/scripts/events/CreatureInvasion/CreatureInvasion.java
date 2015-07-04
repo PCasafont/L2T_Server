@@ -348,6 +348,7 @@ public class CreatureInvasion extends Quest
 		{
 			if (!player.isGM() && player.isInsideZone(L2Character.ZONE_PEACE))
 				player.doDie(null);
+			
 			return "";
 		}
 		

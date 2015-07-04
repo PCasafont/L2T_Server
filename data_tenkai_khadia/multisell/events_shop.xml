@@ -5,6 +5,10 @@
 		<production id="4357" count="42000" /> <!-- Silver Shilen -->
 	</item>
 	<item>
+		<ingredient id="4358" count="6700" /> <!-- Bloody Pa'agrio -->
+		<production id="4355" count="10" /> <!-- Blue Eva -->
+	</item>
+	<item>
 		<ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
 		<production id="6656" count="1" /> <!-- Antharas' Earring -->
 	</item>
