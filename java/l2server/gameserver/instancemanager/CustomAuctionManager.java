@@ -13,14 +13,12 @@ import java.util.concurrent.TimeUnit;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.Announcements;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
@@ -115,7 +113,7 @@ public class CustomAuctionManager implements Reloadable
 			{
 				public void run()
 				{
-					int auctionId = IdFactory.getInstance().getNextId();
+					/*int auctionId = IdFactory.getInstance().getNextId();
 					int itemId = AuctionTemplate.this.getRandomItemId();
 					addAuction(new Auction(auctionId, itemId, AuctionTemplate.this));
 					
@@ -140,7 +138,7 @@ public class CustomAuctionManager implements Reloadable
 					
 					Announcements.getInstance().announceToAll("Item Auction: " + ItemTable.getInstance().getTemplate(itemId).getName() + " has been added to the Item Auction (Alt + B)!");
 					
-					ThreadPoolManager.getInstance().scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);
+					ThreadPoolManager.getInstance().scheduleGeneral(this, _repeatTime * 1000L + Rnd.get(_randomRepeatTime) * 1000L);*/
 				}
 			}, nextAuction);
 		}
@@ -150,6 +148,7 @@ public class CustomAuctionManager implements Reloadable
 			return _id;
 		}
 		
+		@SuppressWarnings("unused")
 		private int getRandomItemId()
 		{
 			return _itemId[Rnd.get(_itemId.length)];
