@@ -77,10 +77,13 @@ public class TeamSurvival extends EventInstance
 			else
 				html += "Team " + team.getName() + " is disqualified.<br>";
 		}
+		
 		if (html.length() > 4)
 			html = html.substring(0, html.length() - 4);
+		
 		if (alive <= 1)
 			stopFight();
+		
 		return html;
 	}
 	

@@ -79,6 +79,7 @@ public class Survival extends EventInstance
 			html = html.substring(0, html.length()-2) + ".";
 		}
 		
+		System.out.println(alive);
 		if (alive <= 1)
 			stopFight();
 		
@@ -105,7 +106,7 @@ public class Survival extends EventInstance
 		for (L2PcInstance assistant : assistants)
 			assistant.addEventPoints(1);
 		
-		if (_teams[0].getParticipatedPlayerCount() == 1)
+		if (_teams[0].getParticipatedPlayerCount() <= 1)
 			stopFight();
 	}
 }

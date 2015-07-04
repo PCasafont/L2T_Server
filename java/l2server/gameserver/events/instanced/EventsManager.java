@@ -531,6 +531,9 @@ public class EventsManager implements Reloadable
 						
 				eventString += "<td align=center><button value=\""+event.getConfig().getEventName() + " #" + total +"\" action=\"bypass -h InstancedEventObserve " + event.getId() + "\" width=110 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
 				
+				// temp fix
+				event.getInfo(player);
+				
 				pageCheck++;
 				remaining--;
 				total++;
