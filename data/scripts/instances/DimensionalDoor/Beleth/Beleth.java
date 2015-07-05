@@ -508,7 +508,7 @@ public class Beleth extends L2AttackableAIScript
 							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 						}
 						else
-							pMember.sendMessage("Good try, but you already get a reward!");
+							pMember.sendMessage("Nice attempt, but you already got a reward!");
 					}
 				}
 				startQuestTimer("stage_final_1", 1000, null, player);

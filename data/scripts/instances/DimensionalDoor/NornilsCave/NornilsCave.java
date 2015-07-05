@@ -333,7 +333,7 @@ public class NornilsCave extends L2AttackableAIScript
 							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),  Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 10 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 						}
 						else
-							pMember.sendMessage("Good try, but you already get a reward!");
+							pMember.sendMessage("Nice attempt, but you already got a reward!");
 					}
 				}
 				InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, 6, 30);

@@ -491,7 +491,7 @@ public class Antharas extends L2AttackableAIScript
 						player.addItem(_qn, _expeditionVolunteerCrystalPouch, 1, npc, true);
 					}
 					else
-						player.sendMessage("Good try, but you already get a reward!");
+						player.sendMessage("Nice attempt, but you already got a reward!");
 				}
 			}
 		}

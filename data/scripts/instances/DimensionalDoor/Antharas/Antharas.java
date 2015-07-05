@@ -498,7 +498,7 @@ public class Antharas extends L2AttackableAIScript
 								Rnd.get(10 * DimensionalDoor.getDimensionalDoorRewardRate(), 18 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 					}
 					else
-						player.sendMessage("Good try, but you already get a reward!");	
+						player.sendMessage("Nice attempt, but you already got a reward!");	
 				}
 			}
 		}
