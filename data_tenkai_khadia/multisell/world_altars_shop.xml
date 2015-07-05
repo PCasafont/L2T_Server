@@ -6,7 +6,7 @@
 	</item>
 	<item>
 		<ingredient id="4355" count="10" /> <!-- Blue Eva -->
-		<production id="4358" count="1400" /> <!-- Bloody Pa'agrio -->
+		<production id="4358" count="60" /> <!-- Bloody Pa'agrio -->
 	</item>
 	<item>
 		<ingredient count="10" id="4355" /> <!-- Blue Eva -->

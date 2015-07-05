@@ -3473,7 +3473,11 @@ public final class Formulas
 	
 	public static double pveDamageMultiplier(L2PcInstance attacker, L2Attackable target)
 	{
-		return 1.0;
+		double multiplier = 1.0;
+		if (target.getInstanceId() == 0)
+			multiplier *= 3.0f;
+		
+		return multiplier;
 	}
 	
 	public static double pvpDamageMultiplier(L2PcInstance attacker, L2PcInstance target)
