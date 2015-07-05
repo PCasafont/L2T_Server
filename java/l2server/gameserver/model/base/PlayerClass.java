@@ -46,21 +46,12 @@ public class PlayerClass
 	private boolean _isMage;
 	private Race _race;
 	private int _level;
-	private int _baseHp;
-	private int _hpAdd;
-	private int _hpMod;
-	private int _baseMp;
-	private int _mpAdd;
-	private int _mpMod;
-	private int _baseCp;
-	private int _cpAdd;
-	private int _cpMod;
 	
 	private Map<Long, L2SkillLearn> _skills = new LinkedHashMap<Long, L2SkillLearn>();
 	
 	private List<L2Henna> _allowedDyes = new ArrayList<L2Henna>();
 	
-	public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level, int baseHp, int hpAdd, int hpMod, int baseMp, int mpAdd, int mpMod, int baseCp, int cpAdd, int cpMod)
+	public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level)
 	{
 		_id = id;
 		_name = name;
@@ -69,15 +60,6 @@ public class PlayerClass
 		_isMage = isMage;
 		_race = raceId < 0 ? null : Race.values()[raceId];
 		_level = level;
-		_baseHp = baseHp;
-		_hpAdd = hpAdd;
-		_hpMod = hpMod;
-		_baseMp = baseMp;
-		_mpAdd = mpAdd;
-		_mpMod = mpMod;
-		_baseCp = baseCp;
-		_cpAdd = cpAdd;
-		_cpMod = cpMod;
 	}
 	
 	public final int getId()
@@ -113,51 +95,6 @@ public class PlayerClass
 	public final Race getRace()
 	{
 		return _race;
-	}
-	
-	public final int getBaseHp()
-	{
-		return _baseHp;
-	}
-	
-	public final int getHpAdd()
-	{
-		return _hpAdd;
-	}
-	
-	public final int getHpMod()
-	{
-		return _hpMod;
-	}
-	
-	public final int getBaseMp()
-	{
-		return _baseMp;
-	}
-	
-	public final int getMpAdd()
-	{
-		return _mpAdd;
-	}
-	
-	public final int getMpMod()
-	{
-		return _mpMod;
-	}
-	
-	public final int getBaseCp()
-	{
-		return _baseCp;
-	}
-	
-	public final int getCpAdd()
-	{
-		return _cpAdd;
-	}
-	
-	public final int getCpMod()
-	{
-		return _cpMod;
 	}
 	
 	public final void addSkill(long hash, L2SkillLearn skill)

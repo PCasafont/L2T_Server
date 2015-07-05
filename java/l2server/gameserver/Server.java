@@ -69,7 +69,7 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.NpcWalkersTable;
 import l2server.gameserver.datatables.OfflineTradersTable;
 import l2server.gameserver.datatables.PetDataTable;
-import l2server.gameserver.datatables.PlayerRegenDataTable;
+import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.datatables.PledgeSkillTree;
 import l2server.gameserver.datatables.ResidentialSkillTable;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
@@ -249,7 +249,7 @@ public class Server
 		
 		printSection("Characters");
 		CharTemplateTable.getInstance();
-		PlayerRegenDataTable.getInstance();
+		PlayerStatDataTable.getInstance();
 		CharNameTable.getInstance();
 		AccessLevels.getInstance();
 		AdminCommandAccessRights.getInstance();

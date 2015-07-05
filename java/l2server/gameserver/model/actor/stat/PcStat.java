@@ -17,6 +17,7 @@ package l2server.gameserver.model.actor.stat;
 import l2server.Config;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.PlayerClassTable;
+import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.datatables.SkillTreeTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.instancemanager.MailManager;
@@ -413,7 +414,7 @@ public class PcStat extends PlayableStat
 			return 0;
 		
 		// Get the Max CP (base+modifier) of the L2PcInstance
-		int val = (int)calcStat(Stats.MAX_CP, getActiveChar().getCurrentClass().getBaseCp(), null, null);
+		int val = (int)calcStat(Stats.MAX_CP, PlayerStatDataTable.getInstance().getMaxCp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
 		
 		if (val != _oldMaxCp)
 		{
@@ -434,7 +435,7 @@ public class PcStat extends PlayableStat
 			return 1;
 		
 		// Get the Max HP (base+modifier) of the L2PcInstance
-		int maxHp = (int)calcStat(Stats.MAX_HP, getActiveChar().getCurrentClass().getBaseHp(), null, null);
+		int maxHp = (int)calcStat(Stats.MAX_HP, PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
 		int val = (int)calcStat(Stats.LIMIT_HP, maxHp, null, null);
 		
 		if (val != _oldMaxHp)
@@ -456,7 +457,7 @@ public class PcStat extends PlayableStat
 		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null)
 			return 1;
 		
-		return (int) calcStat(Stats.MAX_HP, getActiveChar().getCurrentClass().getBaseHp(), null, null);
+		return (int) calcStat(Stats.MAX_HP, PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
 	}
 	
 	@Override
@@ -466,7 +467,7 @@ public class PcStat extends PlayableStat
 			return 1;
 		
 		// Get the Max MP (base+modifier) of the L2PcInstance
-		int val = (int)calcStat(Stats.MAX_MP, getActiveChar().getCurrentClass().getBaseMp(), null, null);
+		int val = (int)calcStat(Stats.MAX_MP, PlayerStatDataTable.getInstance().getMaxMp(getActiveChar().getClassId(), getActiveChar().getLevel()), null, null);
 		
 		if (val != _oldMaxMp)
 		{

@@ -840,38 +840,6 @@ public final class Formulas
 		}
 	}
 	
-	static class FuncMaxHpAdd extends Func
-	{
-		static final FuncMaxHpAdd _fmha_instance = new FuncMaxHpAdd();
-		
-		static Func getInstance()
-		{
-			return _fmha_instance;
-		}
-		
-		private FuncMaxHpAdd()
-		{
-			super(Stats.MAX_HP, null);
-		}
-		
-		@Override
-		public int getOrder()
-		{
-			return 0x10;
-		}
-		
-		@Override
-		public void calc(Env env)
-		{
-			PlayerClass cl = PlayerClassTable.getInstance().getClassById(((L2PcInstance)env.player).getActiveClass());
-			int lvl = env.player.getLevel() - cl.getLevel();
-			double hpmod = cl.getHpMod() * lvl;
-			double hpmax = (cl.getHpAdd() + hpmod) * lvl;
-			double hpmin = (cl.getHpAdd() * lvl) + hpmod;
-			env.value += (hpmax + hpmin) / 2;
-		}
-	}
-	
 	static class FuncMaxHpMul extends Func
 	{
 		static final FuncMaxHpMul _fmhm_instance = new FuncMaxHpMul();
@@ -899,38 +867,6 @@ public final class Formulas
 		}
 	}
 	
-	static class FuncMaxCpAdd extends Func
-	{
-		static final FuncMaxCpAdd _fmca_instance = new FuncMaxCpAdd();
-		
-		static Func getInstance()
-		{
-			return _fmca_instance;
-		}
-		
-		private FuncMaxCpAdd()
-		{
-			super(Stats.MAX_CP, null);
-		}
-		
-		@Override
-		public int getOrder()
-		{
-			return 0x10;
-		}
-		
-		@Override
-		public void calc(Env env)
-		{
-			PlayerClass cl = PlayerClassTable.getInstance().getClassById(((L2PcInstance)env.player).getActiveClass());
-			int lvl = env.player.getLevel() - cl.getLevel();
-			double cpmod = cl.getCpMod() * lvl;
-			double cpmax = (cl.getCpAdd() + cpmod) * lvl;
-			double cpmin = (cl.getCpAdd() * lvl) + cpmod;
-			env.value += (cpmax + cpmin) / 2;
-		}
-	}
-	
 	static class FuncMaxCpMul extends Func
 	{
 		static final FuncMaxCpMul _fmcm_instance = new FuncMaxCpMul();
@@ -955,38 +891,6 @@ public final class Formulas
 		public void calc(Env env)
 		{
 			env.value *= BaseStats.CON.calcBonus(env.player) * BaseStats.CHA.calcBonus(env.player);
-		}
-	}
-	
-	static class FuncMaxMpAdd extends Func
-	{
-		static final FuncMaxMpAdd _fmma_instance = new FuncMaxMpAdd();
-		
-		static Func getInstance()
-		{
-			return _fmma_instance;
-		}
-		
-		private FuncMaxMpAdd()
-		{
-			super(Stats.MAX_MP, null);
-		}
-		
-		@Override
-		public int getOrder()
-		{
-			return 0x10;
-		}
-		
-		@Override
-		public void calc(Env env)
-		{
-			PlayerClass cl = PlayerClassTable.getInstance().getClassById(((L2PcInstance)env.player).getActiveClass());
-			int lvl = env.player.getLevel() - cl.getLevel();
-			double mpmod = cl.getMpMod() * lvl;
-			double mpmax = (cl.getMpAdd() + mpmod) * lvl;
-			double mpmin = (cl.getMpAdd() * lvl) + mpmod;
-			env.value += (mpmax + mpmin) / 2;
 		}
 	}
 	
@@ -1079,11 +983,8 @@ public final class Formulas
 	{
 		if (cha instanceof L2PcInstance)
 		{
-			cha.addStatFunc(FuncMaxHpAdd.getInstance());
 			cha.addStatFunc(FuncMaxHpMul.getInstance());
-			cha.addStatFunc(FuncMaxCpAdd.getInstance());
 			cha.addStatFunc(FuncMaxCpMul.getInstance());
-			cha.addStatFunc(FuncMaxMpAdd.getInstance());
 			cha.addStatFunc(FuncMaxMpMul.getInstance());
 			//cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_HP_RATE));
 			//cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_CP_RATE));

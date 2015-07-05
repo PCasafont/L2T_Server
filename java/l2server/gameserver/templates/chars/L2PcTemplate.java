@@ -17,7 +17,7 @@ package l2server.gameserver.templates.chars;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2server.gameserver.datatables.PlayerRegenDataTable;
+import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
 
@@ -136,18 +136,18 @@ public class L2PcTemplate extends L2CharTemplate
 	@Override
 	public float getBaseHpReg(int level)
 	{
-		return PlayerRegenDataTable.getInstance().getHpRegen(level);
+		return PlayerStatDataTable.getInstance().getHpRegen(level);
 	}
 	
 	@Override
 	public float getBaseMpReg(int level)
 	{
-		return PlayerRegenDataTable.getInstance().getMpRegen(level);
+		return PlayerStatDataTable.getInstance().getMpRegen(level);
 	}
 	
 	@Override
 	public float getBaseCpReg(int level)
 	{
-		return PlayerRegenDataTable.getInstance().getCpRegen(level);
+		return PlayerStatDataTable.getInstance().getCpRegen(level);
 	}
 }
