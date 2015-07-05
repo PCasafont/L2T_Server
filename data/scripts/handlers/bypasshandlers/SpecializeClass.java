@@ -75,9 +75,16 @@ public class SpecializeClass implements IBypassHandler
 				}
 			}
 			
-			if (activeChar.getClassId() == activeChar.getBaseClass()
-					&& (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
-				activeChar.sendPacket(new ExShowScreenMessage("WARNING: If you use this option, your olympiad records will be reset!", 6000));
+			if (activeChar.getClassId() == activeChar.getBaseClass())
+			{
+				if (activeChar.isHero())
+				{
+					activeChar.sendPacket(new ExShowScreenMessage("You cannot use this option while you're a hero!", 6000));
+					return false;		
+				}
+				else if (Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
+					activeChar.sendPacket(new ExShowScreenMessage("WARNING: If you use this option, your olympiad records will be reset!", 6000));
+			}
 			
 			for (PlayerClass cl : classes)
 				buttons += "<button value=\"" + cl.getName() + "\" action=\"bypass -h npc_%objectId%_SpecializeClass " + cl.getId() + "\" width=\"200\" height=\"31\" back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"><br>";
@@ -93,6 +100,9 @@ public class SpecializeClass implements IBypassHandler
 		{
 			try
 			{
+				if (activeChar.getClassId() == activeChar.getBaseClass() && activeChar.isHero())
+					return false;
+				
 				int classId = Integer.parseInt(command.substring(16));
 				PlayerClass prev = activeChar.getCurrentClass();
 				if (!hasDeprecatedClass && prev.getLevel() == 85)
@@ -110,7 +120,7 @@ public class SpecializeClass implements IBypassHandler
 				}
 				
 				if (activeChar.getClassId() == activeChar.getBaseClass()
-						&& (activeChar.isHero() || Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null))
+						&& Olympiad.getInstance().getNobleInfo(activeChar.getObjectId()) != null)
 					Olympiad.getInstance().removeNoble(activeChar.getObjectId());
 				
 				activeChar.setClassId(classId);
