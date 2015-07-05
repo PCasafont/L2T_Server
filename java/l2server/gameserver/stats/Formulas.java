@@ -1131,7 +1131,7 @@ public final class Formulas
 	 */
 	public static final double calcHpRegen(L2Character cha)
 	{
-		double init = cha.getTemplate().baseHpReg;
+		double init = cha.getTemplate().getBaseHpReg(cha.getLevel());
 		double hpRegenMultiplier = cha.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
 		double hpRegenBonus = 0;
 		
@@ -1224,7 +1224,7 @@ public final class Formulas
 	 */
 	public static final double calcMpRegen(L2Character cha)
 	{
-		double init = cha.getTemplate().baseMpReg;
+		double init = cha.getTemplate().getBaseMpReg(cha.getLevel());
 		double mpRegenMultiplier = cha.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
 		double mpRegenBonus = 0;
 		
@@ -1312,7 +1312,7 @@ public final class Formulas
 	 */
 	public static final double calcCpRegen(L2Character cha)
 	{
-		double init = cha.getTemplate().baseHpReg;
+		double init = cha.getTemplate().getBaseCpReg(cha.getLevel());
 		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
 		double cpRegenBonus = 0;
 		

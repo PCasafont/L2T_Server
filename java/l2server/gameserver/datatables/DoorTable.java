@@ -36,7 +36,6 @@ import l2server.util.xml.XmlNode;
 
 public class DoorTable
 {
-	
 	private static final TIntObjectHashMap<Set<Integer>> _groups = new TIntObjectHashMap<Set<Integer>>();
 	
 	private final TIntObjectHashMap<L2DoorInstance> _doors;
