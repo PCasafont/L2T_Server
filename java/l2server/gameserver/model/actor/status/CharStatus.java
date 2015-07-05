@@ -21,6 +21,7 @@ import java.util.logging.Level;
 
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -182,12 +183,17 @@ public class CharStatus
 		if ((!isDOT && !isHPConsumption) || isHide)
 		{
 			getActiveChar().stopEffectsOnDamage(awake);
-			if (getActiveChar().isStunned() && Rnd.get(10) == 0)
+			if (getActiveChar().isStunned() && Rnd.get(100) < 10)
 				getActiveChar().stopStunning(true);
 		}
-		
-		if (isDOT && getActiveChar().getActingPlayer() != null && attacker.getActingPlayer() != null)
-			value *= Formulas.damageMultiplier(attacker.getActingPlayer(), getActiveChar().getActingPlayer());
+
+		if (isDOT && attacker.getActingPlayer() != null)
+		{
+			if (getActiveChar().getActingPlayer() != null)
+				value *= Formulas.pvpDamageMultiplier(attacker.getActingPlayer(), getActiveChar().getActingPlayer());
+			else if (getActiveChar() instanceof L2Attackable)
+				value *= Formulas.pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)getActiveChar());
+		}
 		
 		StatusUpdateDisplay display = StatusUpdateDisplay.NONE;
 		if (isDOT)

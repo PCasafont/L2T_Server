@@ -1445,11 +1445,14 @@ public final class Formulas
 				damage *= Config.NPC_SKILL_DMG_PENALTY.get(lvlDiff);
 		}
 
-		// Custom - apply damage modifiers for PvP
-		if (attacker.getActingPlayer() != null && target.getActingPlayer() != null)
-			damage *= damageMultiplier(attacker.getActingPlayer(), target.getActingPlayer());
-		
-		//TODO: calcStunBreak(target, damage);
+		// Custom - apply damage modifiers
+		if (attacker.getActingPlayer() != null)
+		{
+			if (target.getActingPlayer() != null)
+				damage *= pvpDamageMultiplier(attacker.getActingPlayer(), target.getActingPlayer());
+			else if (target instanceof L2Attackable)
+				damage *= pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)target);
+		}
 		
 		if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
 		{
@@ -1792,9 +1795,14 @@ public final class Formulas
 			}
 		}
 		
-		// Custom - apply damage modifiers for PvP
-		if (attacker.getActingPlayer() != null && target.getActingPlayer() != null)
-			damage *= damageMultiplier(attacker.getActingPlayer(), target.getActingPlayer());
+		// Custom - apply damage modifiers
+		if (attacker.getActingPlayer() != null)
+		{
+			if (target.getActingPlayer() != null)
+				damage *= pvpDamageMultiplier(attacker.getActingPlayer(), target.getActingPlayer());
+			else if (target instanceof L2Attackable)
+				damage *= pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)target);
+		}
 		
 		//Behind damage for all the non skill damage
 		if (skill == null)
@@ -1911,9 +1919,14 @@ public final class Formulas
 			damage = target.calcStat(Stats.MAGIC_CRIT_VULN, damage, attacker, skill);
 		}
 
-		// Custom - apply damage modifiers for PvP
-		if (attacker.getActingPlayer() != null && target.getActingPlayer() != null)
-			damage *= damageMultiplier(attacker.getActingPlayer(), target.getActingPlayer());
+		// Custom - apply damage modifiers
+		if (attacker.getActingPlayer() != null)
+		{
+			if (target.getActingPlayer() != null)
+				damage *= pvpDamageMultiplier(attacker.getActingPlayer(), target.getActingPlayer());
+			else if (target instanceof L2Attackable)
+				damage *= pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)target);
+		}
 		
 		// Weapon random damage
 		damage *= attacker.getRandomDamageMultiplier();
@@ -3458,7 +3471,12 @@ public final class Formulas
 		return false;
 	}
 	
-	public static double damageMultiplier(L2PcInstance attacker, L2PcInstance target)
+	public static double pveDamageMultiplier(L2PcInstance attacker, L2Attackable target)
+	{
+		return 1.0;
+	}
+	
+	public static double pvpDamageMultiplier(L2PcInstance attacker, L2PcInstance target)
 	{
 		if (!Config.isServer(Config.TENKAI))
 			return 1.0;
