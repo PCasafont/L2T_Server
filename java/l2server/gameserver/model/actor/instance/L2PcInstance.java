@@ -6003,7 +6003,7 @@ public class L2PcInstance extends L2Playable
 			_cubics.clear();
 		}
 		
-		if (_fusionSkill != null || _continuousDebuffTarget != null)
+		if (_fusionSkill != null || _continuousDebuffTargets != null)
 			abortCast();
 		
 		for (L2Character character : getKnownList().getKnownCharacters())
@@ -12818,7 +12818,7 @@ public class L2PcInstance extends L2Playable
 		
 		try
 		{
-			if (_fusionSkill != null || _continuousDebuffTarget != null)
+			if (_fusionSkill != null || _continuousDebuffTargets != null)
 				abortCast();
 			
 			for (L2Character character : getKnownList().getKnownCharacters())

@@ -1966,7 +1966,7 @@ public abstract class L2Character extends L2Object
 			}
 			
 			if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF)
-				 setContinuousDebuffTarget(target);
+				 setContinuousDebuffTargets(targets);
 			
 			if (skill.getSkillType() == L2SkillType.FUSION)
 				startFusionSkill(target, skill);
@@ -2458,7 +2458,7 @@ public abstract class L2Character extends L2Object
 		}
 		try
 		{
-			if (_fusionSkill != null || _continuousDebuffTarget != null)
+			if (_fusionSkill != null || _continuousDebuffTargets != null)
 				abortCast();
 			
 			for (L2Character character : getKnownList().getKnownCharacters())
@@ -4398,7 +4398,7 @@ public abstract class L2Character extends L2Object
 			if (getFusionSkill() != null)
 				getFusionSkill().onCastAbort();
 			
-			if (getContinuousDebuffTarget() != null)
+			if (getContinuousDebuffTargets() != null)
 				abortContinuousDebuff(getLastSkillCast());
 			
 			L2Abnormal mog = getFirstEffect(L2AbnormalType.SIGNET_GROUND);
@@ -7433,30 +7433,37 @@ public abstract class L2Character extends L2Object
 		_fusionSkill = fb;
 	}
 	
-	protected L2Character _continuousDebuffTarget = null;
+	protected L2Object[] _continuousDebuffTargets = null;
 	
-	public L2Character getContinuousDebuffTarget()
+	public L2Object[] getContinuousDebuffTargets()
 	{
-		return _continuousDebuffTarget;
+		return _continuousDebuffTargets;
 	}
 	
-	public void setContinuousDebuffTarget(L2Character target)
+	public void setContinuousDebuffTargets(L2Object[] targets)
 	{
-		_continuousDebuffTarget = target;
+		_continuousDebuffTargets = targets;
 	}
 	
 	public void abortContinuousDebuff(L2Skill skill)
 	{
-		if (_continuousDebuffTarget == null || skill == null)
+		if (_continuousDebuffTargets == null || skill == null)
 			return;
 		
-		for (L2Abnormal abnormal : _continuousDebuffTarget.getAllEffects())
+		for (L2Object obj : _continuousDebuffTargets)
 		{
-			if (abnormal.getSkill() == skill)
-				abnormal.exit();
+			if (!(obj instanceof L2Character))
+				continue;
+			
+			L2Character target = (L2Character)obj;
+			for (L2Abnormal abnormal : target.getAllEffects())
+			{
+				if (abnormal.getSkill() == skill)
+					abnormal.exit();
+			}
 		}
 		
-		_continuousDebuffTarget = null;
+		_continuousDebuffTargets = null;
 	}
 	
 	public byte getAttackElement()

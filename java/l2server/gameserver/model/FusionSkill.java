@@ -79,7 +79,6 @@ public final class FusionSkill
 	public void onCastAbort()
 	{
 		_caster.setFusionSkill(null);
-		_caster.setContinuousDebuffTarget(null);
 		L2Abnormal effect = _target.getFirstEffect(_fusionId);
 		if (effect != null)
 		{
