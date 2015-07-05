@@ -14,19 +14,10 @@
  */
 package l2server.gameserver.stats;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
 
 import l2server.Config;
-import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.util.Util;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
 
 /**
  * 
@@ -185,115 +176,6 @@ public enum BaseStats
 				LUCbonus[i] = Math.pow(1.05, i - 20);
 				CHAbonus[i] = Math.pow(1.002, i - 40);
 			}
-		}
-
-		try
-		{
-			Map<Integer, float[]> hpz = new HashMap<Integer, float[]>();
-			Map<Integer, float[]> mpz = new HashMap<Integer, float[]>();
-			Map<Integer, float[]> cpz = new HashMap<Integer, float[]>();
-			File dir = new File("C:\\Users\\Pere\\Desktop\\class_data");
-			for (File file : dir.listFiles())
-			{
-				if (!file.getName().contains("xml") || !file.exists())
-					continue;
-				
-				XmlDocument doc = new XmlDocument(file);
-				for (XmlNode node : doc.getFirstChild().getChildren())
-				{
-					if (!node.getName().equals("class_data"))
-						continue;
-	
-					for (XmlNode dataNode : node.getChildren())
-					{
-						if (!dataNode.getName().equals("hp_mp_cp_data"))
-							continue;
-	
-						float[] hp = new float[99];
-						float[] cp = new float[99];
-						float[] mp = new float[99];
-						for (XmlNode hpcpmpNode : dataNode.getChildren())
-						{
-							if (!hpcpmpNode.getName().equals("hp_mp_cp"))
-								continue;
-	
-							hp[hpcpmpNode.getInt("lvl") - 1] = hpcpmpNode.getFloat("hp");
-							mp[hpcpmpNode.getInt("lvl") - 1] = hpcpmpNode.getFloat("mp");
-							cp[hpcpmpNode.getInt("lvl") - 1] = hpcpmpNode.getFloat("cp");
-						}
-	
-						hpz.put(node.getInt("class_id"), hp);
-						mpz.put(node.getInt("class_id"), mp);
-						cpz.put(node.getInt("class_id"), cp);
-					}
-				}
-			}
-			
-			List<List<Integer>> equivalencies = new ArrayList<List<Integer>>();
-			for (int classId : hpz.keySet())
-			{
-				boolean found = false;
-				for (List<Integer> equivalents : equivalencies)
-				{
-					int eqClass = equivalents.get(0);
-					boolean equals = true;
-					for (int lvl = 0; lvl < 99; lvl++)
-					{
-						if (hpz.get(classId)[lvl] != hpz.get(eqClass)[lvl]
-								|| mpz.get(classId)[lvl] != mpz.get(eqClass)[lvl]
-								|| cpz.get(classId)[lvl] != cpz.get(eqClass)[lvl])
-						{
-							equals = false;
-							break;
-						}
-					}
-					
-					if (equals)
-					{
-						found = true;
-						equivalents.add(classId);
-						break;
-					}
-				}
-				
-				if (!found)
-				{
-					List<Integer> equivalents = new ArrayList<Integer>();
-					equivalents.add(classId);
-					equivalencies.add(equivalents);
-				}
-			}
-			
-			String xmlContent = "<list>\r\n";
-			for (List<Integer> equivalents : equivalencies)
-			{
-				int classId = equivalents.get(0);
-				String classContent = "\t<class id=\"";
-				for (int eqClass : equivalents)
-					classContent += eqClass + ",";
-				
-				classContent = classContent.substring(0, classContent.length() - 1);
-				classContent += "\"> <!-- ";
-				for (int eqClass : equivalents)
-					classContent += PlayerClassTable.getInstance().getClassById(eqClass).getName() + ", ";
-				
-				classContent = classContent.substring(0, classContent.length() - 2) + " -->\r\n";
-				for (int lvl = 1; lvl <= 99; lvl++)
-					classContent += "\t\t<statData level=\"" + lvl + "\" hp=\"" + hpz.get(classId)[lvl - 1] + "\" mp=\"" + mpz.get(classId)[lvl - 1] + "\" cp=\"" + cpz.get(classId)[lvl - 1] + "\" />\r\n";
-				for (int lvl = 100; lvl <= 120; lvl++)
-					classContent += "\t\t<statData level=\"" + lvl
-							+ "\" hp=\"" + String.format("%.1f", (hpz.get(classId)[98] + (hpz.get(classId)[98] - hpz.get(classId)[97]) * (lvl - 99)))
-							+ "\" mp=\"" + String.format("%.2f", (mpz.get(classId)[98] + (mpz.get(classId)[98] - mpz.get(classId)[97]) * (lvl - 99)))
-							+ "\" cp=\"" + String.format("%.2f", (cpz.get(classId)[98] + (cpz.get(classId)[98] - cpz.get(classId)[97]) * (lvl - 99))) + "\" />\r\n";
-				classContent += "\t</class>\r\n";
-				xmlContent += classContent;
-			}
-			xmlContent += "</list>\r\n";
-			Util.writeFile("C:\\Users\\Pere\\Desktop\\ztatz.xml", xmlContent);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
 		}
 	}
 }
