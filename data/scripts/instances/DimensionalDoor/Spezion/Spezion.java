@@ -125,7 +125,7 @@ public class Spezion extends L2AttackableAIScript
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
 						{
 							world.rewardedPlayers.add(pMember);
-							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(7, maxReward), player, true);
+							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), maxReward * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 						}
 						else
 							pMember.sendMessage("Good try, but you already get a reward!");

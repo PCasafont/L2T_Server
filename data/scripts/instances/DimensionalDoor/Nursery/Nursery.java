@@ -225,28 +225,28 @@ public class Nursery extends L2AttackableAIScript
 				{
 					world.status = 3;
 					
-					int shiniCoins = 1;
+					int shinyCoins = 1 * DimensionalDoor.getDimensionalDoorRewardRate();
 					if (world.points >= 1 && world.points <= 800)
-						shiniCoins += Rnd.get(2, 4);
+						shinyCoins += Rnd.get(2 * DimensionalDoor.getDimensionalDoorRewardRate(), 4 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 801 && world.points <= 1600)
-						shiniCoins += Rnd.get(4, 5);
+						shinyCoins += Rnd.get(4 * DimensionalDoor.getDimensionalDoorRewardRate(), 5 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 1601 && world.points <= 2000)
-						shiniCoins += Rnd.get(5, 7);
+						shinyCoins += Rnd.get(5 * DimensionalDoor.getDimensionalDoorRewardRate(), 7 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 2001 && world.points <= 2400)
-						shiniCoins += Rnd.get(7, 9);
+						shinyCoins += Rnd.get(7 * DimensionalDoor.getDimensionalDoorRewardRate(), 9 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 2401 && world.points <= 2800)
-						shiniCoins += Rnd.get(9, 11);
+						shinyCoins += Rnd.get(9 * DimensionalDoor.getDimensionalDoorRewardRate(), 11 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 2801 && world.points <= 3200)
-						shiniCoins += Rnd.get(11, 13);
+						shinyCoins += Rnd.get(11 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 3201 && world.points <= 3600)
-						shiniCoins += Rnd.get(13, 15);
+						shinyCoins += Rnd.get(13 * DimensionalDoor.getDimensionalDoorRewardRate(), 15 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 3601 && world.points <= 4000)
-						shiniCoins += Rnd.get(15, 17);
+						shinyCoins += Rnd.get(15 * DimensionalDoor.getDimensionalDoorRewardRate(), 17 * DimensionalDoor.getDimensionalDoorRewardRate());
 					else if (world.points >= 4001)
-						shiniCoins += Rnd.get(17, 19);
+						shinyCoins += Rnd.get(17 * DimensionalDoor.getDimensionalDoorRewardRate(), 19 * DimensionalDoor.getDimensionalDoorRewardRate());
 					
 					if (world.points > 600)
-						world.instancePlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), shiniCoins, world.instancePlayer, true);
+						world.instancePlayer.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), shinyCoins, world.instancePlayer, true);
 					
 					InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
 					InstanceManager.getInstance().finishInstance(world.instanceId, true);

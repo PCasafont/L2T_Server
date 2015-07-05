@@ -289,7 +289,7 @@ public class ConquerACastle extends L2AttackableAIScript
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
 						{
 							world.rewardedPlayers.add(pMember);
-							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(8, 15), player, true);
+							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(), 15 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 						}
 						else
 							pMember.sendMessage("Good try, but you already get a reward!");

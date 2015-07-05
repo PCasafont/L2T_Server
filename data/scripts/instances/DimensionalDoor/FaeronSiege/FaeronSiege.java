@@ -587,7 +587,7 @@ public class FaeronSiege extends Quest
 						if (InstanceManager.getInstance().canGetUniqueReward(pMember, world._rewardedPlayers))
 						{
 							world._rewardedPlayers.add(pMember);
-							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(70, 80), player, true);
+							pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(70 * DimensionalDoor.getDimensionalDoorRewardRate(), 80 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 						}
 						else
 							pMember.sendMessage("Good try, but you already get a reward!");
