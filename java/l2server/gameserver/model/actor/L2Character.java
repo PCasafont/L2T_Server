@@ -2465,6 +2465,7 @@ public abstract class L2Character extends L2Object
 			{
 				if ((character.getFusionSkill() != null && character.getFusionSkill().getTarget() == this)
 						|| (character.getTarget() == this && character.getLastSkillCast() != null
+								&& character.getLastSkillCast().getTargetType() == SkillTargetType.TARGET_ONE
 								&& (character.getLastSkillCast().getSkillType() == L2SkillType.CONTINUOUS_DEBUFF
 										|| character.getLastSkillCast().getSkillType() == L2SkillType.CONTINUOUS_DRAIN
 										|| character.getLastSkillCast().getSkillType() == L2SkillType.CONTINUOUS_CASTS)))
