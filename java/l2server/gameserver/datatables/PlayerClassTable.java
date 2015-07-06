@@ -89,17 +89,8 @@ public class PlayerClassTable implements Reloadable
 						boolean isMage = classNode.getBool("isMage", false);
 						int raceId = classNode.getInt("raceId", -1);
 						int level = classNode.getInt("level");
-						int baseHp = classNode.getInt("baseHp");
-						int hpAdd = classNode.getInt("hpAdd");
-						int hpMod = classNode.getInt("hpMod");
-						int baseMp = classNode.getInt("baseMp");
-						int mpAdd = classNode.getInt("mpAdd");
-						int mpMod = classNode.getInt("mpMod");
-						int baseCp = classNode.getInt("baseCp");
-						int cpAdd = classNode.getInt("cpAdd");
-						int cpMod = classNode.getInt("cpMod");
 						
-						PlayerClass cl = new PlayerClass(id, name, _classes.get(parentId), awakensTo, isMage, raceId, level, baseHp, hpAdd, hpMod, baseMp, mpAdd, mpMod, baseCp, cpAdd, cpMod);
+						PlayerClass cl = new PlayerClass(id, name, _classes.get(parentId), awakensTo, isMage, raceId, level);
 						
 						if (cl.getParent() != null)
 							cl.getSkills().putAll(cl.getParent().getSkills());

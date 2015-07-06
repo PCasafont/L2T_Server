@@ -46,19 +46,19 @@ public class WarpedSpace extends L2AttackableAIScript
 	{
 		npc.disableCoreAI(true);
 		
-		QarpedSpaceAI ai = new QarpedSpaceAI(npc);
+		WarpedSpaceAI ai = new WarpedSpaceAI(npc);
 		
 		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 1000, 2000));
 		
 		return null;
 	}
 	
-	class QarpedSpaceAI implements Runnable
+	class WarpedSpaceAI implements Runnable
 	{
 		private L2Npc _gravityCore;
 		private ScheduledFuture<?> _schedule = null;
 		
-		protected QarpedSpaceAI(L2Npc npc)
+		protected WarpedSpaceAI(L2Npc npc)
 		{
 			_gravityCore	= npc;
 		}

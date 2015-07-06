@@ -486,7 +486,7 @@ public class Octavis extends L2AttackableAIScript
 						player.addItem(_qn, _octavisCrystal, 1, npc, true);	
 					}
 					else
-						player.sendMessage("Good try, but you already get a reward!");
+						player.sendMessage("Nice attempt, but you already got a reward!");
 				}
 			}
 		}

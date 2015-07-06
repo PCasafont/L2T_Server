@@ -33,14 +33,12 @@ public class L2CharTemplate
 	public int baseLUC;
 	public int baseCHA;
 	public float baseHpMax;
-	public float baseCpMax;
 	public float baseMpMax;
+	public float baseCpMax;
 	
-	/** HP Regen base */
 	public float baseHpReg;
-	
-	/** MP Regen base */
 	public float baseMpReg;
+	public float baseCpReg;
 	
 	public float basePAtk;
 	public float baseMAtk;
@@ -114,6 +112,7 @@ public class L2CharTemplate
 		baseMpMax = set.getFloat("mpMax", 0.0f);
 		baseHpReg = set.getFloat("hpReg", 0.0f);
 		baseMpReg = set.getFloat("mpReg", 0.0f);
+		baseCpReg = set.getFloat("cpReg", 0.0f);
 		basePAtk = set.getFloat("pAtk", 1.0f);
 		baseMAtk = set.getFloat("mAtk", 1.0f);
 		basePDef = set.getFloat("pDef", 1.0f);
@@ -125,9 +124,9 @@ public class L2CharTemplate
 		baseAtkRange = set.getInteger("atkRange", 40);
 		baseShldRate = set.getInteger("shldRate", 0);
 		baseCritRate = set.getInteger("pCritRate", 40);
-		baseMCritRate = set.getInteger("mCritRate", 40); // CT2: The magic critical rate has been increased to 10 times.
+		baseMCritRate = set.getInteger("mCritRate", 50);
 		baseWalkSpd = set.getFloat("walkSpd", 80);
-		baseRunSpd = set.getFloat("runSpd", 120);
+		baseRunSpd = set.getFloat("runSpd", 130);
 		
 		// SpecialStats
 		baseFire = set.getInteger("fire", 0);
@@ -157,5 +156,20 @@ public class L2CharTemplate
 		startY = set.getInteger("startY", 259818);
 		startZ = set.getInteger("startZ", -1203);
 		startRandom = set.getInteger("startRandom", 300);
+	}
+	
+	public float getBaseHpReg(int level)
+	{
+		return baseHpReg;
+	}
+	
+	public float getBaseMpReg(int level)
+	{
+		return baseMpReg;
+	}
+	
+	public float getBaseCpReg(int level)
+	{
+		return baseCpReg;
 	}
 }

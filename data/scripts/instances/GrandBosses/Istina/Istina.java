@@ -676,7 +676,7 @@ public class Istina extends L2AttackableAIScript
 								player.addItem(_qn, _istinaCrystal, 1, npc, true);
 						}
 						else
-							player.sendMessage("Good try, but you already get a reward!");
+							player.sendMessage("Nice attempt, but you already got a reward!");
 					}
 				}	
 			}

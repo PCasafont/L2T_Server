@@ -2543,13 +2543,13 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
-		<set name="skillRadius" val="150" />
+		<set name="skillRadius" val="175" />
 		<for>
-			<abnormal duration="10">
-				<effect type="Debuff" val="0" />
+			<abnormal duration="8">
+				<effect type="SpatialTrap" val="0" />
 				<subPercent stat="pAtkSpd" val="50" />
 				<subPercent stat="mAtkSpd" val="50" />
-				<set stat="runSpd" val="1" />
+				<subPercent stat="runSpd" val="50" />
 			</abnormal>
 		</for>
 	</skill>

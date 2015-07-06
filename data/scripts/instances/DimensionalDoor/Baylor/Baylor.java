@@ -295,10 +295,10 @@ public class Baylor extends L2AttackableAIScript
 							if (InstanceManager.getInstance().canGetUniqueReward(pMember, world.rewardedPlayers))
 							{
 								world.rewardedPlayers.add(pMember);
-								pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(8, 13), player, true);
+								pMember.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(8 * DimensionalDoor.getDimensionalDoorRewardRate(), 13 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 							}
 							else
-								pMember.sendMessage("Good try, but you already get a reward!");
+								pMember.sendMessage("Nice attempt, but you already got a reward!");
 						}	
 					}
 					InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, 6, 30);

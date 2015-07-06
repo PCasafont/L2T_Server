@@ -130,7 +130,7 @@ public class SealOfTheEmperor extends L2AttackableAIScript
 							{
 								world.status ++;
 								
-								attacker.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(3, 8), attacker, true);
+								attacker.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(), 8 * DimensionalDoor.getDimensionalDoorRewardRate()), attacker, true);
 								
 								InstanceManager.getInstance().showVidToInstance(13, world.instanceId);
 								

@@ -113,6 +113,7 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.stats.effects.EffectChanceSkillTrigger;
+import l2server.gameserver.stats.effects.EffectSpatialTrap;
 import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.skills.L2SkillAgathion;
 import l2server.gameserver.stats.skills.L2SkillMount;
@@ -1966,7 +1967,7 @@ public abstract class L2Character extends L2Object
 			}
 			
 			if (skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF)
-				 setContinuousDebuffTarget(target);
+				 setContinuousDebuffTargets(targets);
 			
 			if (skill.getSkillType() == L2SkillType.FUSION)
 				startFusionSkill(target, skill);
@@ -2458,7 +2459,7 @@ public abstract class L2Character extends L2Object
 		}
 		try
 		{
-			if (_fusionSkill != null || _continuousDebuffTarget != null)
+			if (_fusionSkill != null || _continuousDebuffTargets != null)
 				abortCast();
 			
 			for (L2Character character : getKnownList().getKnownCharacters())
@@ -2698,6 +2699,8 @@ public abstract class L2Character extends L2Object
 	public final boolean isStunned() { return isAffected(L2EffectType.STUN.getMask()); }
 	
 	public final boolean isBetrayed() { return isAffected(L2EffectType.BETRAY.getMask()); }
+	
+	public final boolean isInSpatialTrap() { return isAffected(L2EffectType.SPATIAL_TRAP.getMask()); }
 	
 	public final boolean isTeleporting() { return _isTeleporting; }
 	public void setIsTeleporting(boolean value) { _isTeleporting = value; }
@@ -4399,7 +4402,7 @@ public abstract class L2Character extends L2Object
 			if (getFusionSkill() != null)
 				getFusionSkill().onCastAbort();
 			
-			if (getContinuousDebuffTarget() != null)
+			if (getContinuousDebuffTargets() != null)
 				abortContinuousDebuff(getLastSkillCast());
 			
 			L2Abnormal mog = getFirstEffect(L2AbnormalType.SIGNET_GROUND);
@@ -4708,6 +4711,32 @@ public abstract class L2Character extends L2Object
 		float speed = getStat().getMoveSpeed();
 		if (speed <= 0 || isMovementDisabled())
 			return;
+		
+		if (isInSpatialTrap())
+		{
+			// We're expecting the first effect in the array to be the SpatialTrap effect... F. IT.
+			EffectSpatialTrap st = (EffectSpatialTrap) getFirstEffect(L2AbnormalType.SPATIAL_TRAP).getEffects()[0];
+			
+			float vecX = x - st.getTrapX();
+			float vecY = y - st.getTrapY();
+			
+			double dist = Math.sqrt(vecX * vecX + vecY * vecY);
+			
+			vecX /= dist;
+			vecY /= dist;
+			
+			if (dist > 175 * 0.9f)
+			{
+				x = (int) (st.getTrapX() + vecX * 175 * 0.9f);
+				y = (int) (st.getTrapY() + vecY * 175 * 0.9f);
+			}
+		}
+		else if (isTransformed() && this instanceof L2PcInstance
+				&& getFirstEffect(11580) != null || getFirstEffect(11537) != null)
+		{
+			x = getX() + Rnd.get(-250, 250);
+			y = getY() + Rnd.get(-250, 250);
+		}
 		
 		// Get current position of the L2Character
 		final int curX = super.getX();
@@ -7434,30 +7463,37 @@ public abstract class L2Character extends L2Object
 		_fusionSkill = fb;
 	}
 	
-	protected L2Character _continuousDebuffTarget = null;
+	protected L2Object[] _continuousDebuffTargets = null;
 	
-	public L2Character getContinuousDebuffTarget()
+	public L2Object[] getContinuousDebuffTargets()
 	{
-		return _continuousDebuffTarget;
+		return _continuousDebuffTargets;
 	}
 	
-	public void setContinuousDebuffTarget(L2Character target)
+	public void setContinuousDebuffTargets(L2Object[] targets)
 	{
-		_continuousDebuffTarget = target;
+		_continuousDebuffTargets = targets;
 	}
 	
 	public void abortContinuousDebuff(L2Skill skill)
 	{
-		if (_continuousDebuffTarget == null || skill == null)
+		if (_continuousDebuffTargets == null || skill == null)
 			return;
 		
-		for (L2Abnormal abnormal : _continuousDebuffTarget.getAllEffects())
+		for (L2Object obj : _continuousDebuffTargets)
 		{
-			if (abnormal.getSkill() == skill)
-				abnormal.exit();
+			if (!(obj instanceof L2Character))
+				continue;
+			
+			L2Character target = (L2Character)obj;
+			for (L2Abnormal abnormal : target.getAllEffects())
+			{
+				if (abnormal.getSkill() == skill)
+					abnormal.exit();
+			}
 		}
 		
-		_continuousDebuffTarget = null;
+		_continuousDebuffTargets = null;
 	}
 	
 	public byte getAttackElement()

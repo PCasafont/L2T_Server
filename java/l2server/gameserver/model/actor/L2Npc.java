@@ -1516,12 +1516,14 @@ public class L2Npc extends L2Character
 		}
 		try
 		{
-			if (_fusionSkill != null || _continuousDebuffTarget != null)
+			if (_fusionSkill != null || _continuousDebuffTargets != null)
 				abortCast();
 			
 			for (L2Character character : getKnownList().getKnownCharacters())
+			{
 				if (character.getFusionSkill() != null && character.getFusionSkill().getTarget() == this)
 					character.abortCast();
+			}
 		}
 		catch (Exception e)
 		{

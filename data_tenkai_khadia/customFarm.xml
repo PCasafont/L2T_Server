@@ -176,7 +176,7 @@
 		<itemDrop itemId="38573" min="1" max="2" chance="70" /> <!-- Apparition Stone lvl 93 -->
 		<itemDrop itemId="38574" min="1" max="2" chance="60" /> <!-- Apparition Stone lvl 99 -->
 	</customFarm>
-	<customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" atkMultiplier="0.2"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
+	<customFarm farmZone="atelia_fortress" adjustDropsPerMob="23511" atkMultiplier="0.2" defMultiplier="0.5"> <!-- Lvl: 103 | Strength: 50795 | Exp Score: 47 -->
 		<itemDrop itemId="4357" min="69235" max="84258" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="38941" min="1" max="1" chance="80"/> <!-- La Vie En Rose's Jewelry Box -->
 		<itemDrop itemId="36513" min="1" max="1" chance="50" /> <!-- Elcyum Powder -->

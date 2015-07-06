@@ -54,11 +54,11 @@
 		<itemDrop itemId="4357" min="2000000" max="3000000" chance="100" /> <!-- Silver Shilen -->
 	</npc>
 	<!-- Antharas -->
-	<npc id="29068" overrideDrops="true" hpMax="164165721">
+	<npc id="29068" overrideDrops="true" hpMax="504165721">
 		<!-- Epic Items -->
 		<itemDrop itemId="6656" min="5" max="7" chance="100" />	<!-- Antharas' Earring -->
 		<itemDrop itemId="19465" min="20" max="25" chance="100" />	<!-- Bottle of Antharas' Soul -->
-		<itemDrop itemId="36414" min="1" max="2" chance="100" />	<!-- Dragon Claw -->
+		<itemDrop itemId="36414" min="1" max="2" chance="10" />	<!-- Dragon Claw -->
 		<!-- Epic Weapons -->
 		<dropCategory chance="10" >
 			<itemDrop itemId="36425" min="1" max="1" chance="10" />	<!-- Antharas Dual Blunt Weapon (Fragment) -->
@@ -82,11 +82,11 @@
 		<itemDrop itemId="4357" min="50000000" max="80000000" chance="100" /> <!-- Silver Shilen -->
 	</npc>
 	<!-- Valakas -->
-	<npc id="29028" overrideDrops="true" hpMax="841657216">
+	<npc id="29028" overrideDrops="true" hpMax="2541657216">
 		<!-- Epic Items -->
 		<itemDrop itemId="6657" min="5" max="7" chance="100" /> <!-- Valakas' Necklace -->
 		<itemDrop itemId="19466" min="20" max="25" chance="100" /> <!-- Bottle of Valakas' Soul -->
-		<itemDrop itemId="36414" min="1" max="2" chance="100" />	<!-- Dragon Claw -->
+		<itemDrop itemId="36414" min="1" max="2" chance="10" />	<!-- Dragon Claw -->
 		<!-- Epic Weapons -->
 		<dropCategory chance="10" >
 			<itemDrop itemId="36427" min="1" max="1" chance="14" />	<!-- Valakas Shaper (Fragment) -->
@@ -107,10 +107,10 @@
 		<itemDrop itemId="4357" min="50000000" max="80000000" chance="100" /> <!-- Silver Shilen -->
 	</npc>
 	<!-- Lindvior (Open World) -->
-	<npc id="29240" overrideDrops="true" hpMax="164165721">
+	<npc id="29240" overrideDrops="true" hpMax="504165721">
 		<!-- Epic Items -->
 		<itemDrop itemId="36946" min="5" max="7" chance="100" /> <!-- Lindvior's Earring -->
-		<itemDrop itemId="36414" min="1" max="2" chance="100" /> <!-- Dragon Claw -->
+		<itemDrop itemId="36414" min="1" max="2" chance="10" /> <!-- Dragon Claw -->
 		<!-- Epic Boss Weapons -->
 		<dropCategory chance="10" >
 			<itemDrop itemId="36436" min="1" max="1" chance="14" /> <!-- Lindvior Slasher - Fragment -->

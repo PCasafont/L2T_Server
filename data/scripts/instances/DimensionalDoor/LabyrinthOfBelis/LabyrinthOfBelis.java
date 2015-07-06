@@ -500,7 +500,7 @@ public class LabyrinthOfBelis extends L2AttackableAIScript
 					InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
 					InstanceManager.getInstance().finishInstance(world.instanceId, true);
 					
-					player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(3, 6), player, true);
+					player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(), Rnd.get(3 * DimensionalDoor.getDimensionalDoorRewardRate(), 6 * DimensionalDoor.getDimensionalDoorRewardRate()), player, true);
 					break;
 			}
 		}

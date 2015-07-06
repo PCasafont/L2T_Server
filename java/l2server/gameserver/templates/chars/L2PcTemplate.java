@@ -17,6 +17,7 @@ package l2server.gameserver.templates.chars;
 import java.util.ArrayList;
 import java.util.List;
 
+import l2server.gameserver.datatables.PlayerStatDataTable;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
 
@@ -130,5 +131,23 @@ public class L2PcTemplate extends L2CharTemplate
 	public final int getFallHeight()
 	{
 		return 333;
+	}
+	
+	@Override
+	public float getBaseHpReg(int level)
+	{
+		return PlayerStatDataTable.getInstance().getHpRegen(level);
+	}
+	
+	@Override
+	public float getBaseMpReg(int level)
+	{
+		return PlayerStatDataTable.getInstance().getMpRegen(level);
+	}
+	
+	@Override
+	public float getBaseCpReg(int level)
+	{
+		return PlayerStatDataTable.getInstance().getCpRegen(level);
 	}
 }

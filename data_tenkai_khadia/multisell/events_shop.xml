@@ -2,10 +2,10 @@
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
 	<item>
 		<ingredient id="4358" count="1000" /> <!-- Bloody Pa'agrio -->
-		<production id="4357" count="42000" /> <!-- Silver Shilen -->
+		<production id="4357" count="420000" /> <!-- Silver Shilen -->
 	</item>
 	<item>
-		<ingredient id="4358" count="6700" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="670" /> <!-- Bloody Pa'agrio -->
 		<production id="4355" count="10" /> <!-- Blue Eva -->
 	</item>
 	<item>

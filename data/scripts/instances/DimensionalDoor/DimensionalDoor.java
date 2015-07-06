@@ -19,7 +19,7 @@ public class DimensionalDoor extends Quest
 	
 	//Ids
 	private static final int _npcManagerId 		= 80200;
-	private static final int _shiniCoin			= 37559;
+	private static final int _shinyCoin			= 37559;
 	private static final Map<Integer, Integer> _availableSkills = new HashMap<Integer, Integer>();
 	private static final int[][] _availableSkillsIds =
 	{
@@ -66,7 +66,7 @@ public class DimensionalDoor extends Quest
 				int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(rewardId), _maxLevel);
 				if (skillLevelToLearn != -1)
 				{
-					if (!player.destroyItemByItemId(_qn, _shiniCoin, _availableSkills.get(rewardId), npc, true))
+					if (!player.destroyItemByItemId(_qn, _shinyCoin, _availableSkills.get(rewardId), npc, true))
 						return "";
 					
 					L2Skill rewardSkill = SkillTable.getInstance().getInfo(rewardId, skillLevelToLearn);
@@ -102,7 +102,12 @@ public class DimensionalDoor extends Quest
 
 	public static int getDimensionalDoorRewardId()
 	{
-		return _shiniCoin;
+		return _shinyCoin;
+	}
+
+	public static int getDimensionalDoorRewardRate()
+	{
+		return 3;
 	}
 	
 	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel)
