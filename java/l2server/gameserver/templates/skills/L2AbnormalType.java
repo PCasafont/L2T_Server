@@ -46,5 +46,6 @@ public enum L2AbnormalType
 	PULL,
 	POISON,
 	BLEED,
-	LOVE;
+	LOVE,
+	SPATIAL_TRAP;
 }

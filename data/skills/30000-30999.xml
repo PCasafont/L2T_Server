@@ -2545,11 +2545,11 @@
 		<set name="isMagic" val="true" />
 		<set name="skillRadius" val="150" />
 		<for>
-			<abnormal duration="10">
-				<effect type="Debuff" val="0" />
+			<abnormal duration="8">
+				<effect type="SpatialTrap" val="0" />
 				<subPercent stat="pAtkSpd" val="50" />
 				<subPercent stat="mAtkSpd" val="50" />
-				<set stat="runSpd" val="1" />
+				<subPercent stat="runSpd" val="50" />
 			</abnormal>
 		</for>
 	</skill>

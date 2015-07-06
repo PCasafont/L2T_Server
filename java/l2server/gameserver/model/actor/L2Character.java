@@ -113,6 +113,7 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.stats.effects.EffectChanceSkillTrigger;
+import l2server.gameserver.stats.effects.EffectSpatialTrap;
 import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.skills.L2SkillAgathion;
 import l2server.gameserver.stats.skills.L2SkillMount;
@@ -2698,6 +2699,8 @@ public abstract class L2Character extends L2Object
 	
 	public final boolean isBetrayed() { return isAffected(L2EffectType.BETRAY.getMask()); }
 	
+	public final boolean isInSpatialTrap() { return isAffected(L2EffectType.SPATIAL_TRAP.getMask()); }
+	
 	public final boolean isTeleporting() { return _isTeleporting; }
 	public void setIsTeleporting(boolean value) { _isTeleporting = value; }
 	public void setIsInvul(boolean b){_isInvul = b;}
@@ -4707,6 +4710,32 @@ public abstract class L2Character extends L2Object
 		float speed = getStat().getMoveSpeed();
 		if (speed <= 0 || isMovementDisabled())
 			return;
+		
+		if (isInSpatialTrap())
+		{
+			// We're expecting the first effect in the array to be the SpatialTrap effect... F. IT.
+			EffectSpatialTrap st = (EffectSpatialTrap) getFirstEffect(L2AbnormalType.SPATIAL_TRAP).getEffects()[0];
+			
+			float vecX = x - st.getTrapX();
+			float vecY = y - st.getTrapY();
+			
+			double dist = Math.sqrt(vecX * vecX + vecY * vecY);
+			
+			vecX /= dist;
+			vecY /= dist;
+			
+			if (dist > 175 * 0.9f)
+			{
+				x = (int) (st.getTrapX() + vecX * 175 * 0.9f);
+				y = (int) (st.getTrapY() + vecY * 175 * 0.9f);
+			}
+		}
+		else if (isTransformed() && this instanceof L2PcInstance
+				&& getFirstEffect(11580) != null || getFirstEffect(11537) != null)
+		{
+			x = getX() + Rnd.get(-250, 250);
+			y = getY() + Rnd.get(-250, 250);
+		}
 		
 		// Get current position of the L2Character
 		final int curX = super.getX();
