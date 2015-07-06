@@ -63,12 +63,10 @@ import l2server.gameserver.templates.item.L2ArmorType;
 import l2server.gameserver.templates.item.L2WeaponType;
 import l2server.gameserver.templates.skills.L2AbnormalTemplate;
 import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Point3D;
-import l2server.util.Rnd;
 
 /**
  * This class...
@@ -3633,126 +3631,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	{
 		return _isStanceSwitch;
 	}
-
-	public boolean shouldAffectRaidBoss()
-	{
-		if (getEffectTemplates() != null)
-		{	
-			for (L2AbnormalTemplate abn : getEffectTemplates())
-			{
-				if (abn == null)
-					continue;
-				
-				for (L2EffectTemplate eff : abn.effects)
-				{
-					if (eff == null)
-						continue;
-					
-					if ((eff.funcName.equalsIgnoreCase("Buff") && getTargetType() != SkillTargetType.TARGET_CLAN_MEMBER) ||
-							eff.funcName.equalsIgnoreCase("AggroReduce") ||
-							eff.funcName.equalsIgnoreCase("fear") ||
-							eff.funcName.equalsIgnoreCase("Drag") ||
-							eff.funcName.equalsIgnoreCase("MagicDrag") ||
-							eff.funcName.equalsIgnoreCase("ThrowUp") ||
-							eff.funcName.equalsIgnoreCase("stun") ||
-							eff.funcName.equalsIgnoreCase("root") ||
-							eff.funcName.equalsIgnoreCase("lifthold") ||
-							eff.funcName.equalsIgnoreCase("sleep") ||
-							eff.funcName.equalsIgnoreCase("KnockBack") ||
-							eff.funcName.equalsIgnoreCase("KnockDown") ||
-							eff.funcName.contains("Mute") || //PysicalMute,
-							eff.funcName.contains("Silence") || //SilenceMagicPhysical
-							eff.funcName.equalsIgnoreCase("Petrification") ||
-							eff.funcName.equalsIgnoreCase("Paralyze") ||
-							eff.funcName.equalsIgnoreCase("Love"))
-						return false;
-				}
-				
-				//Allow randomly the overpowered buffs
-				for (String stackType : abn.stackType)
-				{
-					if (stackType.equalsIgnoreCase("airCrush"))
-						return false;
-					
-					if (stackType.equalsIgnoreCase("shadow_blade") ||
-							stackType.equalsIgnoreCase("crippling_attack") ||
-							stackType.equalsIgnoreCase("defense_down_chaos_symphony") ||
-							stackType.equalsIgnoreCase("real_target") ||
-							stackType.equalsIgnoreCase("dark_curse"))
-						return Rnd.get(100) < 60;
-				}
-			}
-		}
-		
-		if (_skillType == L2SkillType.BUFF && getTargetType() != SkillTargetType.TARGET_CLAN_MEMBER)
-			return false;
-		
-		return true;
-	}
-	
-	public boolean shouldAffectRaidMinion()
-	{
-		if (getEffectTemplates() != null)
-		{	
-			for (L2AbnormalTemplate abn : getEffectTemplates())
-			{
-				if (abn == null)
-					continue;
-				
-				for (L2EffectTemplate eff : abn.effects)
-				{
-					if (eff == null)
-						continue;
-					
-					if (eff.funcName.equalsIgnoreCase("Buff") && getTargetType() != SkillTargetType.TARGET_CLAN_MEMBER)
-						return false;
-					
-					if (eff.funcName.equalsIgnoreCase("fear") || 
-							eff.funcName.contains("Silence") ||
-							eff.funcName.contains("Mute") ||
-							eff.funcName.equalsIgnoreCase("AggroReduce") ||
-							eff.funcName.equalsIgnoreCase("lifthold"))
-						return false;
-					
-					if (eff.funcName.equalsIgnoreCase("KnockBack") ||
-							eff.funcName.equalsIgnoreCase("KnockDown") ||
-							eff.funcName.equalsIgnoreCase("ThrowUp") ||
-							eff.funcName.equalsIgnoreCase("Drag") ||
-							eff.funcName.equalsIgnoreCase("MagicDrag") ||
-							eff.funcName.equalsIgnoreCase("Love"))
-						return Rnd.get(100) > 70;
-						
-					if (eff.funcName.equalsIgnoreCase("Paralyze") ||
-							eff.funcName.equalsIgnoreCase("Petrification") ||
-							eff.funcName.equalsIgnoreCase("root") ||
-							eff.funcName.equalsIgnoreCase("sleep") ||
-							eff.funcName.equalsIgnoreCase("stun"))
-						return Rnd.get(100) > 85;
-
-				}
-				
-				//Allow randomly the overpowered buffs
-				for (String stackType : abn.stackType)
-				{
-					if (stackType.equalsIgnoreCase("airCrush"))
-						return false;
-					
-					if (stackType.equalsIgnoreCase("shadow_blade") ||
-							stackType.equalsIgnoreCase("crippling_attack") ||
-							stackType.equalsIgnoreCase("defense_down_chaos_symphony") ||
-							stackType.equalsIgnoreCase("real_target") ||
-							stackType.equalsIgnoreCase("dark_curse"))
-						return Rnd.get(100) < 80;
-				}
-			}
-		}
-		
-		if (_skillType == L2SkillType.BUFF && getTargetType() != SkillTargetType.TARGET_CLAN_MEMBER)
-			return false;
-		
-		return true;
-	}
-
 	
 	public String getFirstEffectStack()
 	{

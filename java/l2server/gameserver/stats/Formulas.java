@@ -2691,15 +2691,6 @@ public final class Formulas
 				case KNOCK_DOWN:
 					return false;
 			}
-			
-			// FIXME GTFO ASAP
-			if (target.isMinion())
-			{
-				if (!skill.shouldAffectRaidMinion())
-					return false;
-			}	
-			else if (!skill.shouldAffectRaidBoss())
-				return false;
 		}
 		
 		// Consider stats' influence
