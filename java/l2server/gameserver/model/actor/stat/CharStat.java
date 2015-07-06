@@ -434,14 +434,18 @@ public class CharStat
 			return 1;
 		
 		// Get the base MAtk of the L2Character
-		double defence = _activeChar.getTemplate().baseMDef;
+		double defense = _activeChar.getTemplate().baseMDef;
 		
 		// Calculate modifier for Raid Bosses
 		if (_activeChar.isRaid())
-			defence *= Config.RAID_MDEFENCE_MULTIPLIER;
+			defense *= Config.RAID_MDEFENCE_MULTIPLIER;
+		
+		double finalDef = calcStat(Stats.MAGIC_DEFENCE, defense, target, skill);
+		if (finalDef < defense * 0.5)
+			finalDef = defense * 0.5;
 		
 		// Calculate modifiers Magic Attack
-		return (int) calcStat(Stats.MAGIC_DEFENCE, defence, target, skill);
+		return (int)finalDef;
 	}
 	
 	/** Return the MEN of the L2Character (base+modifier). */
@@ -651,7 +655,17 @@ public class CharStat
 				&& ((L2PcInstance)_activeChar).getEvent().isType(EventType.StalkedSalkers))
 			return 100;
 		
-		return (int) calcStat(Stats.POWER_DEFENCE, (_activeChar.isRaid()) ? _activeChar.getTemplate().basePDef * Config.RAID_PDEFENCE_MULTIPLIER : _activeChar.getTemplate().basePDef, target, null);
+		double defense = _activeChar.getTemplate().basePDef;
+		// Calculate modifier for Raid Bosses
+		if (_activeChar.isRaid())
+			defense *= Config.RAID_MDEFENCE_MULTIPLIER;
+		
+		double finalDef = calcStat(Stats.POWER_DEFENCE, defense, target, null);
+		if (finalDef < defense * 0.5)
+			finalDef = defense * 0.5;
+		
+		// Calculate modifiers Magic Attack
+		return (int)finalDef;
 	}
 	
 	/** Return the Physical Attack range (base+modifier) of the L2Character. */
