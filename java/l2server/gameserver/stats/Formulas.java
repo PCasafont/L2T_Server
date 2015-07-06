@@ -2696,31 +2696,6 @@ public final class Formulas
 		// Consider stats' influence
 		double statMod = calcSkillStatModifier(skill, attacker, target);
 		
-		// Calculate reduction/boost depending on m.atk-m.def-relation for magical skills
-		double mAtkMod = 1;
-		if (skill.isMagic())
-		{
-			int ssModifier = 0;
-			
-			mAtkMod = target.getMDef(target, skill);
-			if (shld == SHIELD_DEFENSE_SUCCEED)
-				mAtkMod += target.getShldDef();
-			
-			// Add Bonus for Sps/SS
-			/*if (bss)
-				ssModifier = 4;
-			else if (sps)
-				ssModifier = 2;
-			else*/
-				ssModifier = 1;
-			
-			mAtkMod = Math.sqrt(13.5 * Math.sqrt(ssModifier * attacker.getMAtk(target, skill)) / mAtkMod);
-			if (mAtkMod < 0.7)
-				mAtkMod = 0.7;
-			else if (mAtkMod > 1.4)
-				mAtkMod = 1.4;
-		}
-		
 		// Resists and proficiency boosts (epics etc.)
 		double resModifier = calcEffectTypeResistance(target, effect.getType());
 		double profModifier = calcEffectTypeProficiency(attacker, target, effect.getType());
@@ -2740,8 +2715,8 @@ public final class Formulas
 		//Log.info(vulnModifier + " " + profModifier + " " + resMod + " " + statMod + " " + eleMod + " " + lvlMod);
 		
 		// Finally, the calculation of the land rate in ONE customizable formula, to take some confusion out of this mess
-		// Factors to consider: power, statMod, resMod, eleMod, lvlMod, MatkMod
-		rate = (int) ((landRate + statMod + eleMod + lvlMod) * resMod * mAtkMod);
+		// Factors to consider: power, statMod, resMod, eleMod, lvlMod
+		rate = (int)((landRate + statMod + eleMod + lvlMod) * resMod);
 		
 		if (rate > skill.getMaxChance())
 			rate = skill.getMaxChance();
