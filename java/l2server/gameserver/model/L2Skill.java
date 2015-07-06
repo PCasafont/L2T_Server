@@ -53,7 +53,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.conditions.Condition;
 import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.funcs.FuncTemplate;
@@ -3171,18 +3170,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		if (effected instanceof L2DoorInstance || effected instanceof L2SiegeFlagInstance)
 			return _emptyEffectSet;
 		
-		//Control the debuffs and forbid the buffs that shouldn't affect a raid boss.
-		if (effected.isRaid() && !effected.isMinion() && effected != effector)
-		{
-			if (effected.isMinion())
-			{
-				if (!shouldAffectRaidMinion())
-					return _emptyEffectSet;
-			}	
-			else if (!shouldAffectRaidBoss())
-				return _emptyEffectSet;
-		}
-		
 		if (effector != effected && !ignoreImmunity())
 		{
 			if (effected instanceof L2PcInstance && ((L2PcInstance)effected).getFaceoffTarget() != null
@@ -3199,15 +3186,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 					if (!((L2PcInstance)effector).getAccessLevel().canGiveDamage())
 						return _emptyEffectSet;
 				}
-
-				if (effected.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, effected, null) > 0.0)
-				{
-					effected.stopEffectsOnDebuffBlock();
-					return _emptyEffectSet;
-				}
 			}
-			else if (effected.calcStat(Stats.BUFF_IMMUNITY, 0.0, effected, null) > 0.0)
-				return _emptyEffectSet;
 		}
 		
 		ArrayList<L2Abnormal> effects = new ArrayList<L2Abnormal>(_effectTemplates.length);
@@ -3286,12 +3265,6 @@ public abstract class L2Skill implements IChanceSkillTrigger
 				if (effector.getOwner().isGM() &&
 						!effector.getOwner().getAccessLevel().canGiveDamage())
 				{
-					return _emptyEffectSet;
-				}
-				
-				if (effected.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, effected, null) > 0)
-				{
-					effected.stopEffectsOnDebuffBlock();
 					return _emptyEffectSet;
 				}
 			}
@@ -3661,7 +3634,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return _isStanceSwitch;
 	}
 
-	private boolean shouldAffectRaidBoss()
+	public boolean shouldAffectRaidBoss()
 	{
 		if (getEffectTemplates() != null)
 		{	
@@ -3717,7 +3690,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return true;
 	}
 	
-	private boolean shouldAffectRaidMinion()
+	public boolean shouldAffectRaidMinion()
 	{
 		if (getEffectTemplates() != null)
 		{	

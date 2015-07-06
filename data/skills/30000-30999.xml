@@ -2543,7 +2543,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
-		<set name="skillRadius" val="150" />
+		<set name="skillRadius" val="175" />
 		<for>
 			<abnormal duration="8">
 				<effect type="SpatialTrap" val="0" />

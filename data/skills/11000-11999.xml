@@ -13114,7 +13114,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
 		<for>
-			<abnormal duration="#duration" stackLvl="1" stackType="battle_rhapsody_dance">
+			<abnormal duration="#duration" stackLvl="1" stackType="ultimate_enchanter">
 				<addPercent stat="pAtk" val="#increase" />
 				<addPercent stat="mAtk" val="#increase" />
 				<addPercent stat="pAtkSpd" val="#increase" />

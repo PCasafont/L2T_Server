@@ -2317,34 +2317,6 @@ public final class Formulas
 		return calcShldUse(attacker, target, null, true);
 	}
 	
-	public static boolean calcMagicAffected(L2Character actor, L2Character target, L2Skill skill)
-	{
-		// TODO: CHECK/FIX THIS FORMULA UP!!
-		L2SkillType type = skill.getSkillType();
-		double defence = 0;
-		if (skill.isActive() && skill.isOffensive() && !skill.isNeutral())
-			defence = target.getMDef(actor, skill);
-		
-		double attack = 2 * actor.getMAtk(target, skill) * (1.0 - calcSkillResistance(actor, target, skill) / 100);
-		double d = (attack - defence)/(attack + defence);
-		if (target.isRaid())
-		{
-			switch (type)
-			{
-				case DEBUFF:
-				case AGGDEBUFF:
-				case CONTINUOUS_DEBUFF:
-					if (d > 0 && Rnd.get(1000) == 1)
-						return true;
-					else
-						return false;
-			}
-		}
-		
-		d += 0.5 * Rnd.nextGaussian();
-		return d > 0;
-	}
-	
 	public static double calcSkillResistance(L2Character attacker, L2Character target, L2Skill skill)
 	{
 		double multiplier = 100;	// initialize...
@@ -2607,26 +2579,10 @@ public final class Formulas
 	
 	public static double calcSkillStatModifier(L2Skill skill, L2Character attacker, L2Character target)
 	{
-		double attackBonus;
-		double resistBonus;
 		if (skill.isMagic())
-		{
-			attackBonus = BaseStats.WIT.calcBonus(attacker);
-			resistBonus = BaseStats.MEN.calcBonus(target);
-		}
+			return BaseStats.MEN.calcBonus(attacker) * 10;
 		else
-		{
-			attackBonus = BaseStats.DEX.calcBonus(attacker);
-			resistBonus = BaseStats.CON.calcBonus(target) * 0.7;
-		}
-		
-		return (attackBonus / resistBonus);// * 1.5;
-		
-		/*final BaseStats saveVs = skill.getSaveVs();
-		if (saveVs == null)
-			return 1;
-		
-		return saveVs.calcBonus(target);*/
+			return BaseStats.CON.calcBonus(attacker) * 10;
 	}
 	
 	public static int calcLvlDependModifier(L2Character attacker, L2Character target, L2Skill skill)
@@ -2681,8 +2637,17 @@ public final class Formulas
 	
 	public static boolean calcEffectSuccess(L2Character attacker, L2Character target, L2Abnormal effect, L2Skill skill, byte shld, double ssMul)
 	{
+		if (target.calcStat(Stats.BUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
+			return false;
+		
 		if (!skill.isOffensive())
 			return true;
+		
+		if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
+		{
+			target.stopEffectsOnDebuffBlock();
+			return false;
+		}
 		
 		int rate = 0;
 		
@@ -2693,42 +2658,55 @@ public final class Formulas
 		else if (attacker instanceof L2TrapInstance)
 			attacker = ((L2TrapInstance)attacker).getOwner();
 		
-		/**
-		 * LasTravel
-		 * - Filter the debuffs on the mobs defined as inmune
-		 */
-		if (target instanceof L2Attackable)
-		{
-			if (((L2Attackable)target).getTemplate().isDebuffImmune)
-				return false;
-		}
+		// Filter the debuffs on the mobs defined as inmune
+		if (target instanceof L2Attackable && ((L2Attackable)target).getTemplate().isDebuffImmune)
+			return false;
+		
+		// Get power of the skill
+		int landRate = (int) effect.getLandRate();
+		if (landRate < 0)
+			return true;
 
 		// Special case for resist ignoring skills
 		if (skill.ignoreResists())
-		{
-			return (Rnd.get(100) < effect.getLandRate());
-		}
+			return Rnd.get(100) < landRate;
 		
 		// Perfect shield block can protect from debuff
 		if (shld == SHIELD_DEFENSE_PERFECT_BLOCK) // perfect block
-		{
 			return false;
-		}
 		
-		// Get power of the skill
-		int power = (int) effect.getLandRate();
-		// Decrease base rate for olympiad games to make matches not too debuff dependent
-		/*if ((attacker instanceof L2PcInstance && ((L2PcInstance)attacker).isInOlympiadMode())
-			|| (attacker instanceof L2SummonInstance && ((L2SummonInstance)attacker).isInOlympiadMode()))
+		if (target.isRaid() || (target instanceof L2Npc && !(target instanceof L2Attackable)))
 		{
-			power /= 2;
-		}*/
+			switch (effect.getType())
+			{
+				case CONFUSION:
+				case HOLD:
+				case STUN:
+				case SILENCE:
+				case FEAR:
+				case PARALYZE:
+				case SLEEP:
+				case AERIAL_YOKE:
+				case KNOCK_BACK:
+				case KNOCK_DOWN:
+					return false;
+			}
+			
+			// FIXME GTFO ASAP
+			if (target.isMinion())
+			{
+				if (!skill.shouldAffectRaidMinion())
+					return false;
+			}	
+			else if (!skill.shouldAffectRaidBoss())
+				return false;
+		}
 		
 		// Consider stats' influence
 		double statMod = calcSkillStatModifier(skill, attacker, target);
 		
 		// Calculate reduction/boost depending on m.atk-m.def-relation for magical skills
-		/*double mAtkMod = 1.;
+		double mAtkMod = 1;
 		if (skill.isMagic())
 		{
 			int ssModifier = 0;
@@ -2738,21 +2716,29 @@ public final class Formulas
 				mAtkMod += target.getShldDef();
 			
 			// Add Bonus for Sps/SS
-			if (bss)
+			/*if (bss)
 				ssModifier = 4;
 			else if (sps)
 				ssModifier = 2;
-			else
+			else*/
 				ssModifier = 1;
 			
-			mAtkMod = 20 * Math.sqrt(ssModifier * attacker.getMAtk(target, skill)) / mAtkMod;
-		}*/
+			mAtkMod = Math.sqrt(13.5 * Math.sqrt(ssModifier * attacker.getMAtk(target, skill)) / mAtkMod);
+			if (mAtkMod < 0.7)
+				mAtkMod = 0.7;
+			else if (mAtkMod > 1.4)
+				mAtkMod = 1.4;
+		}
 		
 		// Resists and proficiency boosts (epics etc.)
 		double resModifier = calcEffectTypeResistance(target, effect.getType());
 		double profModifier = calcEffectTypeProficiency(attacker, target, effect.getType());
 		//double resMod = (vulnModifier / 100.0) * (profModifier / 100.0);
 		double resMod = profModifier / resModifier;
+		if (resMod > 1.9)
+			resMod = 1.9;
+		else if (resMod < 0.1)
+			resMod = 0.1;
 		
 		// Bonus for skills with element
 		int eleMod = calcElementModifier(attacker, target, skill);
@@ -2763,21 +2749,13 @@ public final class Formulas
 		//Log.info(vulnModifier + " " + profModifier + " " + resMod + " " + statMod + " " + eleMod + " " + lvlMod);
 		
 		// Finally, the calculation of the land rate in ONE customizable formula, to take some confusion out of this mess
-		// Factors to consider: power, statMod, resMod, eleMod, lvlMod
-		rate = (int) ((power * statMod + eleMod + lvlMod) * resMod);
-
-		/*if (skill.isMagic())	// And eventually the influence of m.atk/m.def relation between attacker and target
-		{
-			if (mAtkMod < 1)
-				rate *= Math.max(mAtkMod, 0.8) * 0.6;
-			else
-				rate *= Math.min(mAtkMod, 1.5) * 0.6;	// This implicitly reduces the land rate of all magical debuffs
-		}*/
+		// Factors to consider: power, statMod, resMod, eleMod, lvlMod, MatkMod
+		rate = (int) ((landRate + statMod + eleMod + lvlMod) * resMod * mAtkMod);
 		
 		if (rate > skill.getMaxChance())
 			rate = skill.getMaxChance();
-		else if (rate < 1)
-			rate = 1;
+		else if (rate < skill.getMinChance())
+			rate = skill.getMinChance();
 		
 		if (attacker instanceof L2TrapInstance && ((L2TrapInstance)attacker).getOwner() != null && ((L2TrapInstance)attacker).getOwner().isLandRates())
 		{
@@ -2898,7 +2876,7 @@ public final class Formulas
 		
 		// Finally, the calculation of the land rate in ONE customizable formula, to take some confusion out of this mess
 		// Factors to consider: power, statMod, resMod, eleMod, lvlMod
-		rate = (int) ((power * statMod + eleMod + lvlMod) * resMod);
+		rate = (int) ((power + statMod + eleMod + lvlMod) * resMod);
 		
 		/*if (skill.isMagic())	// And eventually the influence of m.atk/m.def relation between attacker and target
 		{
@@ -2984,7 +2962,7 @@ public final class Formulas
 		
 		int value = (int) skill.getPower(isPvP, isPvE);
 		double statModifier = calcSkillStatModifier(skill, attacker.getOwner(), target);
-		int rate = (int) (value * statModifier);
+		int rate = (int) (value + statModifier);
 		
 		// Add Matk/Mdef Bonus
 		double mAtkModifier = 0;
@@ -3054,12 +3032,13 @@ public final class Formulas
 		// general magic resist
 		final double resModifier = target.calcStat(Stats.MAGIC_SUCCESS_RES, 1, null, skill);
 		final double failureModifier = attacker.calcStat(Stats.MAGIC_FAILURE_RATE, 1, target, skill);
-		int rate = 100 - Math.round((float)(lvlModifier * targetModifier * resModifier * failureModifier));
 		
+		int rate = 100 - Math.round((float)(lvlModifier * targetModifier * resModifier * failureModifier));
 		if (rate > skill.getMaxChance())
 			rate = skill.getMaxChance();
 		else if (rate < skill.getMinChance())
 			rate = skill.getMinChance();
+		
 		return Rnd.get(100) < rate;
 	}
 	
