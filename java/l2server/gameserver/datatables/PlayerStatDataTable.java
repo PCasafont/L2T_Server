@@ -60,27 +60,25 @@ public class PlayerStatDataTable
 	public void parseData()
 	{
 		_regenData.clear();
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "regenData.xml");
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");
 		XmlDocument doc = new XmlDocument(file);
-		
 		for (XmlNode n : doc.getFirstChild().getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("regen"))
-			{
-				int level = n.getInt("level");
-				float hp = n.getFloat("hp");
-				float mp = n.getFloat("mp");
-				float cp = n.getFloat("cp");
-				_regenData.put(level, new PlayerStatData(hp, mp, cp));
-			}
+			if (!n.getName().equalsIgnoreCase("regen"))
+				continue;
+			
+			int level = n.getInt("level");
+			float hp = n.getFloat("hp");
+			float mp = n.getFloat("mp");
+			float cp = n.getFloat("cp");
+			_regenData.put(level, new PlayerStatData(hp, mp, cp));
 		}
 		
 		Log.info("PlayerStatData: Loaded regen data for " + _regenData.size() + " levels.");
 
 		_classMaxData.clear();
-		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "classStats.xml");
+		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
 		doc = new XmlDocument(file);
-		
 		for (XmlNode n : doc.getFirstChild().getChildren())
 		{
 			if (!n.getName().equalsIgnoreCase("class"))

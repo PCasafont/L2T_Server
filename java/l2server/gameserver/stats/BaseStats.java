@@ -14,10 +14,13 @@
  */
 package l2server.gameserver.stats;
 
+import java.io.File;
 import java.util.NoSuchElementException;
 
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
 
 /**
  * 
@@ -35,7 +38,7 @@ public enum BaseStats
 	LUC(new LUC()),
 	CHA(new CHA());
 	
-	public static final int MAX_STAT_VALUE = 300;
+	public static final int MAX_STAT_VALUE = 200;
 	
 	private static final double[] STRbonus = new double[MAX_STAT_VALUE];
 	private static final double[] INTbonus = new double[MAX_STAT_VALUE];
@@ -87,7 +90,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return STRbonus[actor.getSTR()];
+			return STRbonus[actor.getSTR() - 1];
 		}
 	}
 	
@@ -95,7 +98,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return INTbonus[actor.getINT()];
+			return INTbonus[actor.getINT() - 1];
 		}
 	}
 	
@@ -103,7 +106,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return DEXbonus[actor.getDEX()];
+			return DEXbonus[actor.getDEX() - 1];
 		}
 	}
 	
@@ -111,7 +114,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return WITbonus[actor.getWIT()];
+			return WITbonus[actor.getWIT() - 1];
 		}
 	}
 	
@@ -119,7 +122,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return CONbonus[actor.getCON()];
+			return CONbonus[actor.getCON() - 1];
 		}
 	}
 	
@@ -127,7 +130,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return MENbonus[actor.getMEN()];
+			return MENbonus[actor.getMEN() - 1];
 		}
 	}
 	
@@ -135,7 +138,7 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return LUCbonus[actor.getLUC()];
+			return LUCbonus[actor.getLUC() - 1];
 		}
 	}
 	
@@ -143,38 +146,51 @@ public enum BaseStats
 	{
 		public final double calcBonus(L2Character actor)
 		{
-			return CHAbonus[actor.getCHA()];
+			return CHAbonus[actor.getCHA() - 1];
 		}
 	}
 	
 	static
 	{
-		if (Config.IS_CLASSIC)
+		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/statBonus.xml");
+		XmlDocument doc = new XmlDocument(file);
+		for (XmlNode n : doc.getFirstChild().getChildren())
 		{
-			for (int i = 0; i < MAX_STAT_VALUE; i++)
+			if (!n.getName().equalsIgnoreCase("stat"))
+				continue;
+
+			for (XmlNode bonusNode : n.getChildren())
 			{
-				STRbonus[i] = Math.pow(1.036, i - 34.845);
-				INTbonus[i] = Math.pow(1.02, i - 31.375);
-				CONbonus[i] = Math.pow(1.03, i - 27.632);
-				MENbonus[i] = Math.pow(1.01, i + 0.06);
-				DEXbonus[i] = Math.pow(1.009, i - 19.36);
-				WITbonus[i] = Math.pow(1.05, i - 20);
-				LUCbonus[i] = 1.0;
-				CHAbonus[i] = 1.0;
-			}
-		}
-		else
-		{
-			for (int i = 0; i < MAX_STAT_VALUE; i++)
-			{
-				STRbonus[i] = Math.pow(1.013, i * 1.036 - 68);
-				INTbonus[i] = Math.pow(1.01, i * 1.005 - 55.4);
-				CONbonus[i] = Math.pow(1.012, i * 1.01 - 37.3);
-				MENbonus[i] = Math.pow(1.004, i);
-				DEXbonus[i] = Math.pow(1.007, i * 0.62 - 12.2);
-				WITbonus[i] = Math.pow(1.0096, i * 1.193 - 80.9) * 1.28;
-				LUCbonus[i] = Math.pow(1.05, i - 20);
-				CHAbonus[i] = Math.pow(1.002, i - 40);
+				if (!bonusNode.getName().equalsIgnoreCase("bonus"))
+					continue;
+				
+				switch (n.getString("name"))
+				{
+					case "STR":
+						STRbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "INT":
+						INTbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "CON":
+						CONbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "MEN":
+						MENbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "DEX":
+						DEXbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "WIT":
+						WITbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "LUC":
+						LUCbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+					case "CHA":
+						CHAbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
+						break;
+				}
 			}
 		}
 	}
