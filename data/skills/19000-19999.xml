@@ -2682,7 +2682,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="excludedFromCheck" val="true" />
 		<for>
-			<abnormal duration="3600" stackLvl="1" stackType="preserve_abnormal">
+			<abnormal duration="3600" stackLvl="2" stackType="preserve_abnormal">
 				<effect type="NoblesseBless" val="0" />
 			</abnormal>
 		</for>
