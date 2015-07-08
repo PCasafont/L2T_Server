@@ -3,13 +3,13 @@ package handlers.admincommandhandlers;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.util.GMAudit;
-import l2server.util.StringUtil;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.util.GMAudit;
+import l2tserver.util.StringUtil;
 
 
 public class AdminInstanceZone implements IAdminCommandHandler

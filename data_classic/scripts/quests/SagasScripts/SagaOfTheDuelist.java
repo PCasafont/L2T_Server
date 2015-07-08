@@ -14,9 +14,9 @@
  */
 package quests.SagasScripts;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.QuestState;
 
 /**
  *

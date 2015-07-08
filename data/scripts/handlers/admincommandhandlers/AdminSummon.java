@@ -16,10 +16,10 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import l2server.gameserver.datatables.AdminCommandAccessRights;
-import l2server.gameserver.handler.AdminCommandHandler;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.datatables.AdminCommandAccessRights;
+import l2tserver.gameserver.handler.AdminCommandHandler;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 
 
 /**
@@ -35,7 +35,7 @@ public class AdminSummon implements IAdminCommandHandler
 		"admin_summon"
 	};
 	/**
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{
@@ -44,7 +44,7 @@ public class AdminSummon implements IAdminCommandHandler
 	}
 	
 	/**
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{

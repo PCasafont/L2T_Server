@@ -17,15 +17,15 @@ package handlers.admincommandhandlers;
 import java.util.Collection;
 import java.util.StringTokenizer;
 
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.CursedWeaponsManager;
-import l2server.gameserver.model.CursedWeapon;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.util.StringUtil;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.instancemanager.CursedWeaponsManager;
+import l2tserver.gameserver.model.CursedWeapon;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.util.StringUtil;
 
 
 /**

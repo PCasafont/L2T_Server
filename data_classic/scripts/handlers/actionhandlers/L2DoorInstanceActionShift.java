@@ -14,15 +14,15 @@
  */
 package handlers.actionhandlers;
 
-import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.StaticObject;
+import l2tserver.gameserver.handler.IActionHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Object.InstanceType;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2DoorInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.StaticObject;
 
 public class L2DoorInstanceActionShift implements IActionHandler
 {

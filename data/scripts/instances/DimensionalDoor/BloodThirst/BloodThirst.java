@@ -1,20 +1,20 @@
 package instances.DimensionalDoor.BloodThirst;
 
 import instances.DimensionalDoor.DimensionalDoor;
-import l2server.Config;
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2NpcBufferInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.entity.Instance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
-import l2server.util.Rnd;
+import l2tserver.Config;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.datatables.SpawnTable;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.instancemanager.InstanceManager.InstanceWorld;
+import l2tserver.gameserver.model.L2Spawn;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2NpcBufferInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.entity.Instance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.log.Log;
+import l2tserver.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
 
 /**

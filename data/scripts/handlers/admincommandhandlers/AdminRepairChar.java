@@ -19,9 +19,9 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import l2server.L2DatabaseFactory;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.L2DatabaseFactory;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 
 
 /**

@@ -1,10 +1,10 @@
 # Made by Emperorc
 # Update 17-01-08 by t0rm3nt0r
 import sys
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.gameserver.network.serverpackets      import SocialAction
+from l2tserver.gameserver.model.quest import State
+from l2tserver.gameserver.model.quest import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver.gameserver.network.serverpackets      import SocialAction
 
 qn = "62_PathoftheTrooper"
 

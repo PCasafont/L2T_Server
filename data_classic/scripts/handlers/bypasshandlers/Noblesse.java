@@ -14,13 +14,13 @@
  */
 package handlers.bypasshandlers;
 
-import l2server.Config;
-import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2tserver.Config;
+import l2tserver.gameserver.handler.IBypassHandler;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.network.serverpackets.ActionFailed;
+import l2tserver.gameserver.network.serverpackets.CreatureSay;
 
 public class Noblesse implements IBypassHandler
 {

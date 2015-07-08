@@ -14,20 +14,20 @@
  */
 package handlers.skillhandlers;
 
-import l2server.Config;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2ExtractableProductItem;
-import l2server.gameserver.model.L2ExtractableSkill;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.gameserver.util.Util;
-import l2server.util.Rnd;
+import l2tserver.Config;
+import l2tserver.gameserver.datatables.ItemTable;
+import l2tserver.gameserver.handler.ISkillHandler;
+import l2tserver.gameserver.model.L2ExtractableProductItem;
+import l2tserver.gameserver.model.L2ExtractableSkill;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2tserver.gameserver.util.Util;
+import l2tserver.util.Rnd;
 
 /**
  * @author Zoey76, based on previous version.

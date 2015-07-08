@@ -17,21 +17,21 @@ package handlers.admincommandhandlers;
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
-import l2server.gameserver.datatables.ClanTable;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.ClanHallAuctionManager;
-import l2server.gameserver.instancemanager.ClanHallManager;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.entity.Castle;
-import l2server.gameserver.model.entity.ClanHall;
-import l2server.gameserver.model.zone.type.L2ClanHallZone;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.util.StringUtil;
+import l2tserver.gameserver.datatables.ClanTable;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.instancemanager.CastleManager;
+import l2tserver.gameserver.instancemanager.ClanHallAuctionManager;
+import l2tserver.gameserver.instancemanager.ClanHallManager;
+import l2tserver.gameserver.model.L2Clan;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.entity.Castle;
+import l2tserver.gameserver.model.entity.ClanHall;
+import l2tserver.gameserver.model.zone.type.L2ClanHallZone;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.util.StringUtil;
 
 
 /**

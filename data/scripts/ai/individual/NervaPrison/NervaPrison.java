@@ -20,15 +20,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.instancemanager.ZoneManager;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.L2Playable;
+import l2tserver.gameserver.model.actor.instance.L2DoorInstance;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.zone.L2ZoneType;
 import ai.group_template.L2AttackableAIScript;
 
 /**

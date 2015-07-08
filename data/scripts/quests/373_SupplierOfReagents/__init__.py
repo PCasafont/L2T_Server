@@ -3,10 +3,10 @@
 # Visit http://www.l2jdp.com/forum/ for more details.
 
 import sys
-from l2server import Config
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver import Config
+from l2tserver.gameserver.model.quest import State
+from l2tserver.gameserver.model.quest import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
 #Quest info
 QUEST_NUMBER,QUEST_NAME,QUEST_DESCRIPTION = 373,"SupplierOfReagents","Supplier of Reagents"
 qn = "373_SupplierOfReagents"

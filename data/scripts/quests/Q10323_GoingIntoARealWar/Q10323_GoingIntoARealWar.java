@@ -17,21 +17,21 @@ package quests.Q10323_GoingIntoARealWar;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.L2NpcWalkerAI;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2NpcWalkerNode;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.GlobalQuest;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.quest.State;
-import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.network.serverpackets.TutorialShowHtml;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.ai.L2NpcWalkerAI;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.model.L2NpcWalkerNode;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.GlobalQuest;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.quest.State;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.gameserver.network.serverpackets.NpcSay;
+import l2tserver.gameserver.network.serverpackets.TutorialShowHtml;
 
 /**
  * @author Pere

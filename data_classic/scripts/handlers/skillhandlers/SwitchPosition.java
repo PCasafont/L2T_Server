@@ -14,14 +14,14 @@
  */
 package handlers.skillhandlers;
 
-import l2server.gameserver.GeoData;
-import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
-import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.gameserver.util.Util;
+import l2tserver.gameserver.GeoData;
+import l2tserver.gameserver.handler.ISkillHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.network.serverpackets.ValidateLocation;
+import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2tserver.gameserver.util.Util;
 
 /**
  * @author Pere
@@ -37,7 +37,7 @@ public class SwitchPosition implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2tserver.gameserver.handler.ISkillHandler#useSkill(l2tserver.gameserver.model.actor.L2Character, l2tserver.gameserver.model.L2Skill, l2tserver.gameserver.model.L2Object[])
 	 */
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
@@ -62,7 +62,7 @@ public class SwitchPosition implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

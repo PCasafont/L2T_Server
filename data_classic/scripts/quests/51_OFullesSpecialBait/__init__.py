@@ -2,10 +2,10 @@
 # with little cleanups by DrLecter.
 # Visit http://www.l2jdp.com/trac if you find a bug.
 import sys
-from l2server import Config
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver import Config
+from l2tserver.gameserver.model.quest import State
+from l2tserver.gameserver.model.quest import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "51_OFullesSpecialBait"
 

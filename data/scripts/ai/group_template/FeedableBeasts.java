@@ -17,21 +17,21 @@ package ai.group_template;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2TamedBeastInstance;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.util.Util;
-import l2server.util.Rnd;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.datatables.NpcTable;
+import l2tserver.gameserver.idfactory.IdFactory;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Attackable;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2TamedBeastInstance;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.network.serverpackets.NpcSay;
+import l2tserver.gameserver.network.serverpackets.SocialAction;
+import l2tserver.gameserver.templates.chars.L2NpcTemplate;
+import l2tserver.gameserver.util.Util;
+import l2tserver.util.Rnd;
 
 /**
  * Growth-capable mobs: Polymorphing upon successful feeding.

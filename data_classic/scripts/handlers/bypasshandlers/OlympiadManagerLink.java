@@ -18,26 +18,26 @@ import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 
-import l2server.Config;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2OlympiadManagerInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.model.olympiad.Olympiad;
-import l2server.gameserver.model.olympiad.OlympiadManager;
-import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExHeroList;
-import l2server.gameserver.network.serverpackets.ExOlympiadInfoList;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.Config;
+import l2tserver.gameserver.datatables.SkillTable;
+import l2tserver.gameserver.handler.IBypassHandler;
+import l2tserver.gameserver.model.L2ItemInstance;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2OlympiadManagerInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2PetInstance;
+import l2tserver.gameserver.model.actor.instance.L2SummonInstance;
+import l2tserver.gameserver.model.olympiad.Olympiad;
+import l2tserver.gameserver.model.olympiad.OlympiadManager;
+import l2tserver.gameserver.model.olympiad.OlympiadNobleInfo;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.ExHeroList;
+import l2tserver.gameserver.network.serverpackets.ExOlympiadInfoList;
+import l2tserver.gameserver.network.serverpackets.InventoryUpdate;
+import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * 

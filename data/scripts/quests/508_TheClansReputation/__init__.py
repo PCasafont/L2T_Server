@@ -12,12 +12,12 @@
 #                                                                   #
 #####################################################################
 import sys
-from l2server.gameserver.model.quest        			import State
-from l2server.gameserver.model.quest        			import QuestState
-from l2server.gameserver.model.quest.jython 			import QuestJython as JQuest
-from l2server.gameserver.network.serverpackets      	import PledgeShowInfoUpdate
-from l2server.gameserver.network.serverpackets      	import SystemMessage
-from l2server.util 									import Rnd
+from l2tserver.gameserver.model.quest        			import State
+from l2tserver.gameserver.model.quest        			import QuestState
+from l2tserver.gameserver.model.quest.jython 			import QuestJython as JQuest
+from l2tserver.gameserver.network.serverpackets      	import PledgeShowInfoUpdate
+from l2tserver.gameserver.network.serverpackets      	import SystemMessage
+from l2tserver.util 									import Rnd
 
 qn="508_TheClansReputation"
 qd="The Clans Reputation"

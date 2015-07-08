@@ -2,12 +2,12 @@
 import sys
 
 from java.lang import System
-from l2server import Config
-from l2server.gameserver.model.quest import State
-from l2server.gameserver.model.quest import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.gameserver.network.serverpackets import NpcSay
-from l2server.util import Rnd
+from l2tserver import Config
+from l2tserver.gameserver.model.quest import State
+from l2tserver.gameserver.model.quest import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver.gameserver.network.serverpackets import NpcSay
+from l2tserver.util import Rnd
 
 qn = "610_MagicalPowerOfWaterPart2"
 

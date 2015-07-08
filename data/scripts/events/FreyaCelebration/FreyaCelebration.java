@@ -14,20 +14,20 @@
  */
 package events.FreyaCelebration;
 
-import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.quest.State;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.util.Util;
-import l2server.util.Rnd;
+import l2tserver.gameserver.instancemanager.QuestManager;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.quest.State;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.network.serverpackets.CreatureSay;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.util.Util;
+import l2tserver.util.Rnd;
 
 /**
  ** @author Gnacik

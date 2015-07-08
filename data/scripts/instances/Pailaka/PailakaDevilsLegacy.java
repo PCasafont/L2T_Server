@@ -3,27 +3,27 @@ package instances.Pailaka;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.entity.Instance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.quest.State;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.util.Rnd;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.datatables.SkillTable;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.instancemanager.InstanceManager.InstanceWorld;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Attackable;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.L2Playable;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.entity.Instance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.quest.State;
+import l2tserver.gameserver.model.zone.L2ZoneType;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.util.Rnd;
 
 public class PailakaDevilsLegacy extends Quest
 {

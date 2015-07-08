@@ -4,9 +4,9 @@
 
 import sys
 
-from l2server.gameserver.model.quest        import State
-from l2server.gameserver.model.quest        import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver.gameserver.model.quest        import State
+from l2tserver.gameserver.model.quest        import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "9000_clan"
 NPC=[30026,30031,30037,30066,30070,30109,30115,30120,30154,30174, \

@@ -19,17 +19,17 @@ import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 import javolution.util.FastMap;
-import l2server.gameserver.datatables.ClanTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.GMViewPledgeInfo;
-import l2server.gameserver.network.serverpackets.PledgeSkillList;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.datatables.ClanTable;
+import l2tserver.gameserver.datatables.SkillTable;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.L2Clan;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.GMViewPledgeInfo;
+import l2tserver.gameserver.network.serverpackets.PledgeSkillList;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 
 /**

@@ -18,18 +18,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.network.serverpackets.ExSendUIEvent;
-import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.util.Rnd;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.datatables.SpawnTable;
+import l2tserver.gameserver.instancemanager.ZoneManager;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.zone.L2ZoneType;
+import l2tserver.gameserver.network.serverpackets.ExSendUIEvent;
+import l2tserver.gameserver.network.serverpackets.ExSendUIEventRemove;
+import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
 
 /**

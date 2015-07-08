@@ -19,16 +19,16 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import javolution.text.TextBuilder;
-import l2server.Config;
-import l2server.gameserver.Announcements;
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.taskmanager.AutoAnnounceTaskManager;
-import l2server.gameserver.taskmanager.AutoAnnounceTaskManager.AutoAnnouncement;
-import l2server.util.StringUtil;
+import l2tserver.Config;
+import l2tserver.gameserver.Announcements;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.taskmanager.AutoAnnounceTaskManager;
+import l2tserver.gameserver.taskmanager.AutoAnnounceTaskManager.AutoAnnouncement;
+import l2tserver.util.StringUtil;
 
 
 /**

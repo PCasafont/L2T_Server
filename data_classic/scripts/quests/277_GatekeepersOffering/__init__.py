@@ -1,9 +1,9 @@
 # Made by Mr. Have fun! Version 0.2
 # Fixed by Pela Version 0.3 - Enough credits, but DrLecter was here :D
 import sys 
-from l2server.gameserver.model.quest import State 
-from l2server.gameserver.model.quest import QuestState 
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest 
+from l2tserver.gameserver.model.quest import State 
+from l2tserver.gameserver.model.quest import QuestState 
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest 
 
 qn = "277_GatekeepersOffering"
 

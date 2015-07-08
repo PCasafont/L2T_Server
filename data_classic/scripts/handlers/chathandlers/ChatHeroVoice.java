@@ -16,15 +16,15 @@ package handlers.chathandlers;
 
 import java.util.Collection;
 
-import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.gui.ConsoleTab;
-import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
-import l2server.gameserver.handler.IChatHandler;
-import l2server.gameserver.instancemanager.DiscussionManager;
-import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2tserver.gameserver.events.instanced.EventsManager;
+import l2tserver.gameserver.gui.ConsoleTab;
+import l2tserver.gameserver.gui.ConsoleTab.ConsoleFilter;
+import l2tserver.gameserver.handler.IChatHandler;
+import l2tserver.gameserver.instancemanager.DiscussionManager;
+import l2tserver.gameserver.model.BlockList;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.CreatureSay;
 
 
 /**
@@ -41,7 +41,7 @@ public class ChatHeroVoice implements IChatHandler
 	
 	/**
 	 * Handle chat type 'hero voice'
-	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2tserver.gameserver.handler.IChatHandler#handleChat(int, l2tserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
@@ -89,7 +89,7 @@ public class ChatHeroVoice implements IChatHandler
 	
 	/**
 	 * Returns the chat types registered to this handler
-	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
+	 * @see l2tserver.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	public int[] getChatTypeList()
 	{

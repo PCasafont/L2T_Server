@@ -16,16 +16,16 @@ package ai.group_template;
 
 import java.util.Collection;
 
-import l2server.gameserver.GeoData;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2tserver.gameserver.GeoData;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.actor.L2Attackable;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.network.serverpackets.CreatureSay;
 
 public class GiantScouts extends L2AttackableAIScript
 {

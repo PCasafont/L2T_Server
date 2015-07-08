@@ -261,16 +261,16 @@ import handlers.voicedcommandhandlers.CustomVoiced;
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Sell;
 import handlers.voicedcommandhandlers.Wedding;
-import l2server.Config;
-import l2server.gameserver.handler.ActionHandler;
-import l2server.gameserver.handler.AdminCommandHandler;
-import l2server.gameserver.handler.BypassHandler;
-import l2server.gameserver.handler.ChatHandler;
-import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.handler.UserCommandHandler;
-import l2server.gameserver.handler.VoicedCommandHandler;
-import l2server.log.Log;
+import l2tserver.Config;
+import l2tserver.gameserver.handler.ActionHandler;
+import l2tserver.gameserver.handler.AdminCommandHandler;
+import l2tserver.gameserver.handler.BypassHandler;
+import l2tserver.gameserver.handler.ChatHandler;
+import l2tserver.gameserver.handler.ItemHandler;
+import l2tserver.gameserver.handler.SkillHandler;
+import l2tserver.gameserver.handler.UserCommandHandler;
+import l2tserver.gameserver.handler.VoicedCommandHandler;
+import l2tserver.log.Log;
 
 /**
  *

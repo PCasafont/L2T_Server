@@ -26,14 +26,14 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import l2server.Config;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.Experience;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.Config;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.actor.L2Playable;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.base.Experience;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 
 public class AdminLevel implements IAdminCommandHandler
@@ -46,7 +46,7 @@ public class AdminLevel implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
@@ -115,7 +115,7 @@ public class AdminLevel implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{

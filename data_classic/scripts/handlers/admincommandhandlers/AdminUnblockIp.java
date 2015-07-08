@@ -16,8 +16,8 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 
 
 /**
@@ -40,7 +40,7 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
