@@ -85,11 +85,11 @@ public class L2SkillContinuousCasts extends L2Skill
 		for (L2Object targetObj : targets)
 		{
 			if (!(targetObj instanceof L2Character))
-				break;
+				continue;
 			
 			L2Character target = (L2Character)targetObj;
 			if (target.isDead())
-				break;
+				continue;
 			
 			int level = _skillLvl;
 			if (level == 0)
@@ -113,11 +113,11 @@ public class L2SkillContinuousCasts extends L2Skill
 			
 			L2Skill skillToCast = SkillTable.getInstance().getInfo(_skillId, level);
 			if (!skillToCast.checkCondition(activeChar, target, false))
-				break;
+				continue;
 			
 			L2Object[] subTargets = skillToCast.getTargetList(activeChar, false, target);
 			if (subTargets.length == 0)
-				break;
+				continue;
 			
 			L2Character firstTarget = (L2Character)subTargets[0];
 			ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(skillToCast.getSkillType());

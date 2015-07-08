@@ -15,7 +15,6 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.GmListTable;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -212,12 +211,12 @@ public final class RequestDropItem extends L2GameClientPacket
 					+ " x: " + activeChar.getX() + " y: " + activeChar.getY() + " z: " + activeChar.getZ() + ")");
 		}
 		
-		if (dropedItem != null && dropedItem.getItemId() == 57 && dropedItem.getCount() >= 1000000)
+		/*if (dropedItem != null && dropedItem.getItemId() == 57 && dropedItem.getCount() >= 1000000)
 		{
 			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + _x + "," + _y + "," + _z + ")";
 			Log.warning(msg);
 			GmListTable.broadcastMessageToGMs(msg);
-		}
+		}*/
 	}
 	
 	/* (non-Javadoc)

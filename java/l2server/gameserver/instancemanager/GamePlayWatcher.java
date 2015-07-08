@@ -142,7 +142,7 @@ public class GamePlayWatcher
 								(int)(System.currentTimeMillis() / 100), // Yaw
 								Rnd.get(15, 25), // Pitch
 								2000, // Time
-								30000, // Duration
+								5000, // Duration
 								0, // Turn
 								0, // Rise
 								0, // Cinematic-like

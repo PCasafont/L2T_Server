@@ -79,7 +79,6 @@ public class Survival extends EventInstance
 			html = html.substring(0, html.length()-2) + ".";
 		}
 		
-		System.out.println(alive);
 		if (alive <= 1)
 			stopFight();
 		

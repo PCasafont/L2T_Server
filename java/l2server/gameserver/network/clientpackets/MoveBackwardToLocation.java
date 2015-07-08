@@ -19,12 +19,14 @@ import java.nio.BufferUnderflowException;
 import l2server.Config;
 import l2server.gameserver.TaskPriority;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExFlyMove;
 import l2server.gameserver.network.serverpackets.ExFlyMoveBroadcast;
+import l2server.gameserver.network.serverpackets.SiegeAttackerList;
 import l2server.gameserver.network.serverpackets.StopMove;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.util.Util;
@@ -94,6 +96,9 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			activeChar.sendPacket(new StopMove(activeChar));
 			return;
 		}
+		
+		if (activeChar.getName().equalsIgnoreCase("javi") || activeChar.getName().equalsIgnoreCase("pere"))
+			activeChar.sendPacket(new SiegeAttackerList(CastleManager.getInstance().getCastleById(1)));
 		
 		// Correcting targetZ from floor level to head level (?)
 		// Client is giving floor level as targetZ but that floor level doesn't
