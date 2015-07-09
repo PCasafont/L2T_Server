@@ -528,6 +528,9 @@ public class L2MobSummonInstance extends L2SummonInstance
 	@Override
 	public void updateAndBroadcastStatus(int val)
 	{
+		if (!isVisible())
+			return;
+		
 		getOwner().sendPacket(new PetInfo(this,val));
 		getOwner().sendPacket(new PetStatusUpdate(this));
 		if (isVisible())

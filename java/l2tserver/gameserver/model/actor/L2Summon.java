@@ -222,6 +222,9 @@ public abstract class L2Summon extends L2Playable
 	@Override
 	public void updateAbnormalEffect()
 	{
+		if (!isVisible())
+			return;
+		
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		//synchronized (getKnownList().getKnownPlayers())
 		{
@@ -446,8 +449,6 @@ public abstract class L2Summon extends L2Playable
 		{
 			getAI().stopFollow();
 			
-			owner.sendPacket(new PetDelete(getSummonType(), getObjectId()));
-			
 			L2Party party;
 			if ((party = owner.getParty()) != null)
 				party.broadcastToPartyMembers(owner, new ExPartyPetWindowDelete(this));
@@ -500,6 +501,8 @@ public abstract class L2Summon extends L2Playable
 				owner.setActiveSummon(selected);
 				owner.sendPacket(new PetStatusShow(selected));
 			}
+			
+			owner.sendPacket(new PetDelete(getSummonType(), getObjectId()));
 		}
 	}
 	
@@ -922,7 +925,7 @@ public abstract class L2Summon extends L2Playable
 	
 	public void updateAndBroadcastStatus(int val)
 	{
-		if (getOwner() == null)
+		if (getOwner() == null || !isVisible())
 			return;
 		
 		getOwner().sendPacket(new PetInfo(this,val));
