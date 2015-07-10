@@ -191,7 +191,7 @@ public class CharStatus
 		
 		StatusUpdateDisplay display = StatusUpdateDisplay.NONE;
 		if (isDOT)
-			display = StatusUpdateDisplay.NORMAL;
+			display = StatusUpdateDisplay.DOT;
 		if (value > 0) // Reduce Hp if any, and Hp can't be negative
 			setCurrentHp(Math.max(getCurrentHp() - value, 0), true, attacker, display);
 		
