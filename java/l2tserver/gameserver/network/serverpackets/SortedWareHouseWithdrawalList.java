@@ -34,7 +34,7 @@ import l2tserver.log.Log;
  * @version $Revision: 1.3.2.1.2.5 $ $Date: 2005/03/29 23:15:10 $
  */
 
-public class SortedWareHouseWithdrawalList extends L2GameServerPacket
+public class SortedWareHouseWithdrawalList extends L2ItemListPacket
 {
 	public static final int PRIVATE = 1;
 	public static final int CLAN = 2;
@@ -625,39 +625,17 @@ public class SortedWareHouseWithdrawalList extends L2GameServerPacket
 		writeH(_whType);
 		writeQ(_playerAdena);
 		writeH(_objects.size());
-		writeD(0x00); // GoD ???
+		writeH(0x00); // GoD ???
+		writeD(0x00); // TODO: Amount of already deposited items
 		
 		for (L2WarehouseItem item : _objects)
 		{
+			writeItem(item);
+			
 			writeD(item.getObjectId());
-			writeD(item.getItemId());
-			writeD(item.getLocationSlot());
-			writeQ(item.getCount());
-			writeH(item.getItem().getType2());
-			writeH(0x00); // Can't be equipped in WH
-			writeQ(item.getItem().getBodyPart());
-			writeH(item.getEnchantLevel());
-			if (item.isAugmented())
-				writeQ(item.getAugmentationId());
-			else
-				writeQ(0x00);
-			writeD(item.getMana());
-			writeD(item.getTime());
-			writeH(0x01); // GoD ???
-			writeH(item.getAttackElementType());
-			writeH(item.getAttackElementPower());
-			for (byte i = 0; i < 6; i++)
-			{
-				writeH(item.getElementDefAttr(i));
-			}
-			// Enchant Effects
-			writeH(0x00);
-			writeH(0x00);
-			writeH(0x00);
 			
 			writeD(0x00); // GoD ???
-			
-			writeD(item.getObjectId());
+			writeD(0x00); // GoD ???
 		}
 	}
 	

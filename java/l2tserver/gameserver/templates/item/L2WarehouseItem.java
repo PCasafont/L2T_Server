@@ -15,6 +15,7 @@
 package l2tserver.gameserver.templates.item;
 
 import l2tserver.gameserver.model.L2ItemInstance;
+import l2tserver.gameserver.network.serverpackets.L2ItemListPacket.ItemInstanceInfo;
 
 /**
  * This class contains L2ItemInstance<BR>
@@ -24,7 +25,7 @@ import l2tserver.gameserver.model.L2ItemInstance;
  * <LI>L2Weapon</LI>
  * @version $Revision: 1.7.2.2.2.5 $ $Date: 2005/04/06 18:25:18 $
  */
-public class L2WarehouseItem
+public class L2WarehouseItem implements ItemInstanceInfo
 {
 	private L2Item _item;
 	private int _object;
@@ -39,13 +40,16 @@ public class L2WarehouseItem
 	private int _customType2;
 	private int _mana;
 	
-	private int _elemAtkType = -2;
+	private byte _elemAtkType = -2;
 	private int _elemAtkPower = 0;
 	private int[] _elemDefAttr =
 	{
 			0, 0, 0, 0, 0, 0
 	};
+	private boolean _elemEnchanted = false;
 	private int _time;
+	
+	private int _appearance;
 	
 	public L2WarehouseItem(L2ItemInstance item)
 	{
@@ -68,10 +72,16 @@ public class L2WarehouseItem
 		_mana = item.getMana();
 		_time = item.getRemainingTime();
 		
-		_elemAtkType = item.getAttackElementType();
-		_elemAtkPower = item.getAttackElementPower();
+		if (_elemAtkPower > 0)
+			_elemEnchanted = true;
 		for (byte i = 0; i < 6; i++)
+		{
 			_elemDefAttr[i] = item.getElementDefAttr(i);
+			if (_elemDefAttr[i] > 0)
+				_elemEnchanted = true;
+		}
+		
+		_appearance = item.getAppearance();
 	}
 	
 	/**
@@ -223,7 +233,7 @@ public class L2WarehouseItem
 		return _isAugmented;
 	}
 	
-	public long getAugmentationId()
+	public long getAugmentationBonus()
 	{
 		return _augmentationId;
 	}
@@ -253,7 +263,7 @@ public class L2WarehouseItem
 		return _mana;
 	}
 	
-	public int getAttackElementType()
+	public byte getAttackElementType()
 	{
 		return _elemAtkType;
 	}
@@ -268,7 +278,12 @@ public class L2WarehouseItem
 		return _elemDefAttr[i];
 	}
 	
-	public int getTime()
+	public boolean isElementEnchanted()
+	{
+		return _elemEnchanted;
+	}
+	
+	public int getRemainingTime()
 	{
 		return _time;
 	}
@@ -280,5 +295,15 @@ public class L2WarehouseItem
 	public String toString()
 	{
 		return _item.toString();
+	}
+	
+	public boolean isEquipped()
+	{
+		return false;
+	}
+	
+	public int getAppearance()
+	{
+		return _appearance;
 	}
 }
