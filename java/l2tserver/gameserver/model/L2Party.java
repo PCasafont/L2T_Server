@@ -644,7 +644,7 @@ public class L2Party
 		if (item == null)
 			return;
 		
-		switch (item.getItemId())
+		/*switch (item.getItemId())
 		{
 			case 57: // Adena
 			case 5569: // Water Rune
@@ -655,11 +655,16 @@ public class L2Party
 			case 5574: // Fire Mantra
 				distributeCurrency(player, item.getItemId(), item.getCount(), target);
 				return;
+		}*/
+		if (item.getCount() > 1)
+		{
+			distributeCurrency(player, item.getItemId(), item.getCount(), target);
+			return;
 		}
 		
 		L2PcInstance looter = getActualLooter(player, item.getItemId(), spoil, target);
 		
-		looter.addItem(spoil?"Sweep":"Party", item.getItemId(), item.getCount(), player, true);
+		looter.addItem(spoil ? "Sweep" : "Party", item.getItemId(), item.getCount(), player, true);
 		
 		// Send messages to other aprty members about reward
 		if (item.getCount() > 1)
@@ -690,6 +695,7 @@ public class L2Party
 		// Get all the party members
 		List<L2PcInstance> membersList = getPartyMembers();
 		
+		boolean rewardPlayer = false;
 		// Check the number of party members that must be rewarded
 		// (The party member must be in range to receive its reward)
 		List<L2PcInstance> toReward = new ArrayList<L2PcInstance>();
@@ -699,6 +705,8 @@ public class L2Party
 				continue;
 			
 			toReward.add(member);
+			if (member == player)
+				rewardPlayer = true;
 		}
 		
 		// Avoid null exceptions, if any
@@ -709,6 +717,13 @@ public class L2Party
 		// Shuffle the list a bit
 		for (int i = 0; i < toRewardCount; i++)
 			toReward.add(Rnd.get(toRewardCount), toReward.remove(Rnd.get(toRewardCount)));
+		
+		// Make the finder the first one
+		if (rewardPlayer)
+		{
+			toReward.remove(player);
+			toReward.add(0, player);
+		}
 		
 		// Now we can actually distribute the adena reward
 		// (Total adena splitted by the number of party members that are in range and must be rewarded)
