@@ -576,12 +576,6 @@ public class L2MobSummonInstance extends L2SummonInstance
 	}
 	
 	@Override
-	public int getWeapon()
-	{
-		return getTemplate().RHand;
-	}
-	
-	@Override
 	public void setOwner(L2PcInstance newOwner)
 	{
 		_owner = newOwner;

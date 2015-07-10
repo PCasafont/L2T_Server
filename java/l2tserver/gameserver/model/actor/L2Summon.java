@@ -1090,7 +1090,7 @@ public abstract class L2Summon extends L2Playable
 	
 	public int getWeapon()
 	{
-		return 0;
+		return getTemplate().RHand;
 	}
 	
 	public int getArmor()
