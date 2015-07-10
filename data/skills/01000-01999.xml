@@ -11669,7 +11669,7 @@
 		<set name="aggroPoints" val="669" />
 		<for>
 			<abnormal duration="1200" stackLvl="1" stackType="servitor_share">
-				<effect type="Buff" val="0" />
+				<effect type="ServitorShare" val="0" />
 				<add stat="ownerPAtk" val="50" />
 				<add stat="ownerPDef" val="50" />
 				<add stat="ownerMAtk" val="25" />

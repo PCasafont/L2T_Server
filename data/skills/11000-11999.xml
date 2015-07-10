@@ -7267,7 +7267,7 @@
 		<set name="reuseDelay" val="60000" />
 		<for>
 			<abnormal duration="1800" stackLvl="1" stackType="servitor_share">
-				<effect type="Buff" val="0" />
+				<effect type="ServitorShare" val="0" />
 				<add stat="ownerPAtk" val="#pAtk" />
 				<add stat="ownerPDef" val="#pDef" />
 				<add stat="ownerMDef" val="#mDef" />
