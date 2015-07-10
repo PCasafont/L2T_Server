@@ -6107,7 +6107,9 @@
 			<addPercent stat="mAtkSpd" val="23" />
 			<add stat="mCritRate" val="6" />
 			<addPercent stat="pAtk" val="105" />
-			<add stat="pAtk" val="#pAtk" />
+			<add stat="pAtk" val="#pAtk">
+				<using kind="Big Blunt,Dual Blunt" />
+			</add>
 			<add stat="accCombat" val="4">
 				<using kind="Big Blunt,Dual Blunt" />
 			</add>
