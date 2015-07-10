@@ -38,7 +38,6 @@ import l2tserver.gameserver.stats.Stats;
 import l2tserver.gameserver.stats.funcs.Func;
 import l2tserver.gameserver.templates.item.L2WeaponType;
 import l2tserver.gameserver.templates.skills.L2SkillType;
-import l2tserver.util.Rnd;
 
 
 /**
@@ -237,9 +236,6 @@ public class Blow implements ISkillHandler
 				}
 				
 				target.reduceCurrentHp(damage, activeChar, skill);
-				
-				if (target.isStunned() && Rnd.get(100) < 75)
-					target.stopStunning(true);
 				
 				// vengeance reflected damage
 				if ((reflect & Formulas.SKILL_REFLECT_VENGEANCE) != 0)

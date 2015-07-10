@@ -179,9 +179,6 @@ public class Mdam implements ISkillHandler
 							((L2Summon)activeChar).getOwner().sendMessage("Target reflected to your summon " + reflectedDamage + " damage.");
 					}
 					
-					if (target.isStunned() && Rnd.get(100) < (mcrit ? 75 : 10))
-						target.stopStunning(true);
-					
 					// vengeance reflected damage
 					// DS: because only skill using vengeanceMdam is Shield Deflect Magic
 					// and for this skill no damage should pass to target, just hardcode it for now
