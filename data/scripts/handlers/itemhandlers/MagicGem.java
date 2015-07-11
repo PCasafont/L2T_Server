@@ -19,15 +19,15 @@
 
 package handlers.itemhandlers;
 
-import l2server.Config;
-import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.taskmanager.AttackStanceTaskManager;
+import l2tserver.Config;
+import l2tserver.gameserver.handler.IItemHandler;
+import l2tserver.gameserver.instancemanager.GrandBossManager;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.model.L2ItemInstance;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Playable;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class MagicGem implements IItemHandler
 {

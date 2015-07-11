@@ -14,18 +14,18 @@
  */
 package ai.zones;
 
-import l2server.gameserver.Announcements;
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2PeaceZone;
-import l2server.gameserver.model.zone.type.L2SiegeZone;
-import l2server.gameserver.network.serverpackets.EventTrigger;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.gameserver.Announcements;
+import l2tserver.gameserver.datatables.SpawnTable;
+import l2tserver.gameserver.instancemanager.ZoneManager;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.zone.L2ZoneType;
+import l2tserver.gameserver.model.zone.type.L2PeaceZone;
+import l2tserver.gameserver.model.zone.type.L2SiegeZone;
+import l2tserver.gameserver.network.serverpackets.EventTrigger;
+import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  * @author LasTravel

@@ -19,11 +19,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Item;
+import l2tserver.gameserver.datatables.ItemTable;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.templates.item.L2Item;
 
 
 /**

@@ -14,8 +14,8 @@
  */
 package vehicles.SoIController;
 
-import l2server.gameserver.model.Location;
-import l2server.gameserver.model.VehiclePathPoint;
+import l2tserver.gameserver.model.Location;
+import l2tserver.gameserver.model.VehiclePathPoint;
 import vehicles.AirShipController;
 
 public class SoIController extends AirShipController

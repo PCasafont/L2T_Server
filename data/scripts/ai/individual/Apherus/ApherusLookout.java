@@ -14,8 +14,8 @@
  */
 package ai.individual.Apherus;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import ai.group_template.L2AttackableAIScript;
 
 /**

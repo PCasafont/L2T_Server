@@ -14,11 +14,11 @@
  */
 package handlers.admincommandhandlers;
 
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class AdminDebug implements IAdminCommandHandler
 {

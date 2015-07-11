@@ -14,23 +14,23 @@
  */
 package quests.Q10327_IntruderWhoWantsTheBookOfGiants;
 
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.GlobalQuest;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.quest.State;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.util.Rnd;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.model.L2CharPosition;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2GuardInstance;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.GlobalQuest;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.quest.State;
+import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.util.Rnd;
 
 /**
  * @author Pere

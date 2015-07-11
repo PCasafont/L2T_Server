@@ -14,24 +14,24 @@
  */
 package handlers.actionhandlers;
 
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.events.HiddenChests;
-import l2server.gameserver.events.instanced.EventInstance.EventState;
-import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.instancemanager.GMEventManager;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
-import l2server.util.Rnd;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.events.HiddenChests;
+import l2tserver.gameserver.events.instanced.EventInstance.EventState;
+import l2tserver.gameserver.handler.IActionHandler;
+import l2tserver.gameserver.instancemanager.GMEventManager;
+import l2tserver.gameserver.model.L2Abnormal;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Object.InstanceType;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
+import l2tserver.gameserver.network.serverpackets.ActionFailed;
+import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
+import l2tserver.gameserver.network.serverpackets.StatusUpdate;
+import l2tserver.gameserver.network.serverpackets.ValidateLocation;
+import l2tserver.util.Rnd;
 
 public class L2NpcAction implements IActionHandler
 {

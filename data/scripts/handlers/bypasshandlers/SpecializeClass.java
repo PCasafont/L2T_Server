@@ -17,17 +17,17 @@ package handlers.bypasshandlers;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.datatables.PlayerClassTable;
-import l2server.gameserver.datatables.SkillTreeTable;
-import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.PlayerClass;
-import l2server.gameserver.model.olympiad.Olympiad;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.datatables.PlayerClassTable;
+import l2tserver.gameserver.datatables.SkillTreeTable;
+import l2tserver.gameserver.handler.IBypassHandler;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.base.PlayerClass;
+import l2tserver.gameserver.model.olympiad.Olympiad;
+import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class SpecializeClass implements IBypassHandler
 {

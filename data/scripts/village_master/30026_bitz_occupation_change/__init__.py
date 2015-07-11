@@ -5,9 +5,9 @@
 # Updated by DrLecter on 19.06.2007
 
 import sys
-from l2server.gameserver.model.quest        import State
-from l2server.gameserver.model.quest        import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver.gameserver.model.quest        import State
+from l2tserver.gameserver.model.quest        import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn="30026_bitz_occupation_change"
 GRAND_MASTER_BITZ = 30026

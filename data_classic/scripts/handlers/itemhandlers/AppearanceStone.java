@@ -14,12 +14,12 @@
  */
 package handlers.itemhandlers;
 
-import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.ExShowItemAppearanceWindow;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.gameserver.handler.IItemHandler;
+import l2tserver.gameserver.model.L2ItemInstance;
+import l2tserver.gameserver.model.actor.L2Playable;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.ExShowItemAppearanceWindow;
+import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
 
 public class AppearanceStone implements IItemHandler
 {

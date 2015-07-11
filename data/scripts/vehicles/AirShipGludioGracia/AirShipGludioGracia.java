@@ -14,19 +14,19 @@
  */
 package vehicles.AirShipGludioGracia;
 
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.instancemanager.AirShipManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.Location;
-import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2AirShipInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.NpcSay;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.instancemanager.AirShipManager;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.Location;
+import l2tserver.gameserver.model.VehiclePathPoint;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2AirShipInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.network.serverpackets.NpcSay;
 
 /**
  * 

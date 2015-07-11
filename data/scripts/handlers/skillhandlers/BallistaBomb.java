@@ -14,14 +14,14 @@
  */
 package handlers.skillhandlers;
 
-import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2FortBallistaInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.util.Rnd;
+import l2tserver.gameserver.handler.ISkillHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2FortBallistaInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2tserver.util.Rnd;
 
 public class BallistaBomb implements ISkillHandler
 {
@@ -53,7 +53,7 @@ public class BallistaBomb implements ISkillHandler
 	}
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

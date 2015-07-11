@@ -17,13 +17,13 @@ package quests.Q691_MatrasSuspiciousRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2server.Config;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.quest.State;
-import l2server.util.Rnd;
+import l2tserver.Config;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.quest.State;
+import l2tserver.util.Rnd;
 
 /**
  * @author GKR

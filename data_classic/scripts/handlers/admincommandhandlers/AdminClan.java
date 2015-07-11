@@ -17,19 +17,19 @@ package handlers.admincommandhandlers;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.ClanHallManager;
-import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.SiegeManager;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.instancemanager.CastleManager;
+import l2tserver.gameserver.instancemanager.ClanHallManager;
+import l2tserver.gameserver.instancemanager.FortManager;
+import l2tserver.gameserver.instancemanager.SiegeManager;
+import l2tserver.gameserver.model.L2Clan;
+import l2tserver.gameserver.model.L2ClanMember;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author ThE_PuNiSHeR a.k.a UnAfraid

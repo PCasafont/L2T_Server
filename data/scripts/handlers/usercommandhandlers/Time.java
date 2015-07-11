@@ -16,12 +16,12 @@ package handlers.usercommandhandlers;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import l2server.Config;
-import l2server.gameserver.TimeController;
-import l2server.gameserver.handler.IUserCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.Config;
+import l2tserver.gameserver.TimeController;
+import l2tserver.gameserver.handler.IUserCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 public class Time implements IUserCommandHandler
 {
@@ -34,7 +34,7 @@ public class Time implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2tserver.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2tserver.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
@@ -70,7 +70,7 @@ public class Time implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
+	 * @see l2tserver.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	public int[] getUserCommandList()
 	{

@@ -14,8 +14,8 @@
  */
 package custom.SubClassCertification;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
 
 /**
  * 

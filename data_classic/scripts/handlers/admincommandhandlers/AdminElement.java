@@ -18,15 +18,15 @@
  */
 package handlers.admincommandhandlers;
 
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.itemcontainer.Inventory;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.Elementals;
+import l2tserver.gameserver.model.L2ItemInstance;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.itemcontainer.Inventory;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.InventoryUpdate;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * This class handles following admin commands: - delete = deletes target

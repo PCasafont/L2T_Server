@@ -14,18 +14,18 @@
  */
 package ai.fantasy_isle;
 
-import l2server.Config;
-import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
-import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
-import l2server.gameserver.network.serverpackets.ExCubeGameRequestReady;
-import l2server.gameserver.network.serverpackets.ExCubeGameTeamList;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import l2tserver.Config;
+import l2tserver.gameserver.instancemanager.HandysBlockCheckerManager;
+import l2tserver.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
+import l2tserver.gameserver.network.serverpackets.ExCubeGameRequestReady;
+import l2tserver.gameserver.network.serverpackets.ExCubeGameTeamList;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.log.Log;
 
 /**
  * @authors BiggBoss, Gigiikun

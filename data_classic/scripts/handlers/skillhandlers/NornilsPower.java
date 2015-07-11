@@ -14,17 +14,17 @@
  */
 package handlers.skillhandlers;
 
-import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2tserver.gameserver.handler.ISkillHandler;
+import l2tserver.gameserver.instancemanager.InstanceManager;
+import l2tserver.gameserver.instancemanager.InstanceManager.InstanceWorld;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2DoorInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.templates.skills.L2SkillType;
 
 public class NornilsPower implements ISkillHandler
 {

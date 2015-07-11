@@ -16,25 +16,25 @@ package ai.individual.Summons;
 
 import java.util.concurrent.ScheduledFuture;
 
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Attackable.AggroInfo;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2BabyPetInstance;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectType;
-import l2server.log.Log;
-import l2server.util.Rnd;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.datatables.SkillTable;
+import l2tserver.gameserver.model.L2CharPosition;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Attackable;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.L2Attackable.AggroInfo;
+import l2tserver.gameserver.model.actor.instance.L2BabyPetInstance;
+import l2tserver.gameserver.model.actor.instance.L2GuardInstance;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2PetInstance;
+import l2tserver.gameserver.model.actor.instance.L2SummonInstance;
+import l2tserver.gameserver.templates.skills.L2AbnormalType;
+import l2tserver.gameserver.templates.skills.L2EffectType;
+import l2tserver.log.Log;
+import l2tserver.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
 
 /**

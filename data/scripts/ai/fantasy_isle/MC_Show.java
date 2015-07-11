@@ -18,18 +18,18 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2server.Config;
-import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.TimeController;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.log.Log;
+import l2tserver.Config;
+import l2tserver.gameserver.ThreadPoolManager;
+import l2tserver.gameserver.TimeController;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.model.L2CharPosition;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.network.serverpackets.NpcSay;
+import l2tserver.gameserver.network.serverpackets.PlaySound;
+import l2tserver.gameserver.network.serverpackets.SocialAction;
+import l2tserver.log.Log;
 
 
 /**

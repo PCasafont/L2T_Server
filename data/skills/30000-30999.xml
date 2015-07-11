@@ -1658,7 +1658,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dual Fist" />
 		<for>
-			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="#stackLvl" stackType="pd_down">
+			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="#stackLvl" stackType="lateral_hit">
 				<subPercent stat="pDef" val="#pDef" />
 			</abnormal>
 		</for>

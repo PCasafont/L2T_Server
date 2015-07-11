@@ -19,24 +19,24 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Attackable.AbsorberInfo;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.quest.State;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
-import l2server.util.Rnd;
-import l2server.util.xml.XmlDocument;
-import l2server.util.xml.XmlNode;
+import l2tserver.Config;
+import l2tserver.gameserver.model.L2ItemInstance;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Skill;
+import l2tserver.gameserver.model.actor.L2Attackable;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.L2Attackable.AbsorberInfo;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.quest.State;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.InventoryUpdate;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.log.Log;
+import l2tserver.util.Rnd;
+import l2tserver.util.xml.XmlDocument;
+import l2tserver.util.xml.XmlNode;
 
 public class Q350_EnhanceYourWeapon extends Quest
 {

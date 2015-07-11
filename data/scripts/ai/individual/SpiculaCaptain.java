@@ -14,9 +14,9 @@
  */
 package ai.individual;
 
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2tserver.gameserver.datatables.SpawnTable;
+import l2tserver.gameserver.model.L2Spawn;
+import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
 import ai.group_template.L2AttackableAIScript;
 
 /**

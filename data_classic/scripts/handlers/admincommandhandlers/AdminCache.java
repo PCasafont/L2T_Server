@@ -16,11 +16,11 @@ package handlers.admincommandhandlers;
 
 import java.io.File;
 
-import l2server.Config;
-import l2server.gameserver.cache.CrestCache;
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.Config;
+import l2tserver.gameserver.cache.CrestCache;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 
 
 /**

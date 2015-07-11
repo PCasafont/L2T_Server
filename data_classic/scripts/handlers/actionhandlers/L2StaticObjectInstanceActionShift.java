@@ -14,15 +14,15 @@
  */
 package handlers.actionhandlers;
 
-import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.StaticObject;
-import l2server.util.StringUtil;
+import l2tserver.gameserver.handler.IActionHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Object.InstanceType;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.StaticObject;
+import l2tserver.util.StringUtil;
 
 public class L2StaticObjectInstanceActionShift implements IActionHandler
 {

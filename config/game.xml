@@ -2469,9 +2469,9 @@
 		Shows Withdraw Window sorted by ItemType (Armor/Weapon/Spellbook....)
 		-
 	-->
-	<config name="EnableWarehouseSortingClan" var="L2JMOD_ENABLE_WAREHOUSESORTING_CLAN" default="False" />
-	
 	<config name="EnableWarehouseSortingPrivate" var="L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE" default="False" />
+	
+	<config name="EnableWarehouseSortingClan" var="L2JMOD_ENABLE_WAREHOUSESORTING_CLAN" default="False" />
 	
 	<!-- Min/Max amount of players allowed in each team. -->
 	<config name="InstancedEventMinPlayersInTeams" var="INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS" default="1" />

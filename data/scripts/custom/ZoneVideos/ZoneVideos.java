@@ -14,13 +14,13 @@
  */
 package custom.ZoneVideos;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.Race;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.network.serverpackets.ExShowUsmPacket;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.base.Race;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.model.zone.L2ZoneType;
+import l2tserver.gameserver.network.serverpackets.ExShowUsmPacket;
 
 public class ZoneVideos extends Quest
 {

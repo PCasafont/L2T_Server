@@ -14,21 +14,21 @@
  */
 package handlers.actionhandlers;
 
-import l2server.Config;
-import l2server.gameserver.GeoData;
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.PetStatusShow;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2tserver.Config;
+import l2tserver.gameserver.GeoData;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.handler.IActionHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Object.InstanceType;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2PetInstance;
+import l2tserver.gameserver.network.SystemMessageId;
+import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
+import l2tserver.gameserver.network.serverpackets.PetStatusShow;
+import l2tserver.gameserver.network.serverpackets.StatusUpdate;
+import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2PetInstanceAction implements IActionHandler
 {

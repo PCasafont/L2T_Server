@@ -14,24 +14,24 @@
  */
 package handlers.bypasshandlers;
 
-import l2server.Config;
-import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.datatables.ClanTable;
-import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.base.Race;
-import l2server.gameserver.model.itemcontainer.Inventory;
-import l2server.gameserver.model.itemcontainer.PcInventory;
-import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.PartySmallWindowAll;
-import l2server.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
-import l2server.gameserver.util.Util;
+import l2tserver.Config;
+import l2tserver.gameserver.datatables.CharNameTable;
+import l2tserver.gameserver.datatables.ClanTable;
+import l2tserver.gameserver.handler.IBypassHandler;
+import l2tserver.gameserver.instancemanager.QuestManager;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.base.Race;
+import l2tserver.gameserver.model.itemcontainer.Inventory;
+import l2tserver.gameserver.model.itemcontainer.PcInventory;
+import l2tserver.gameserver.model.quest.Quest;
+import l2tserver.gameserver.model.quest.QuestState;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.network.serverpackets.CreatureSay;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.network.serverpackets.PartySmallWindowAll;
+import l2tserver.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
+import l2tserver.gameserver.util.Util;
 
 public class CustomBypass implements IBypassHandler
 {

@@ -14,16 +14,16 @@
  */
 package handlers.actionhandlers;
 
-import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.ai.CtrlIntention;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.handler.IActionHandler;
+import l2tserver.gameserver.model.L2Object;
+import l2tserver.gameserver.model.L2Object.InstanceType;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class L2StaticObjectInstanceAction implements IActionHandler
 {

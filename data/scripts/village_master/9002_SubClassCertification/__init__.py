@@ -3,13 +3,13 @@
 
 import sys
 
-from l2server.gameserver.datatables import CharTemplateTable
-from l2server.gameserver.model.base         import Race
-from l2server.gameserver.model.quest        import State
-from l2server.gameserver.model.quest        import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
-from l2server.gameserver.network            import SystemMessageId
-from l2server.gameserver.network.serverpackets import SystemMessage
+from l2tserver.gameserver.datatables import CharTemplateTable
+from l2tserver.gameserver.model.base         import Race
+from l2tserver.gameserver.model.quest        import State
+from l2tserver.gameserver.model.quest        import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver.gameserver.network            import SystemMessageId
+from l2tserver.gameserver.network.serverpackets import SystemMessage
 
 qn = "9002_SubClassCertification"
 NPC=[30026,30031,30037,30066,30070,30109,30115,30120,30154,30174,30175,30176,30187, \

@@ -33,7 +33,7 @@
 	<npc id="29014" overrideDrops="true" hpMax="11592000">
 		<!-- Epic Items -->
 		<itemDrop itemId="6661" min="5" max="7" chance="100" /> <!-- Orfen's Earring -->
-		<itemDrop itemId="36253" min="1" max="3" chance="100" /> <!-- Bottle of Orfen's Soul -->
+		<itemDrop itemId="36253" min="1" max="2" chance="100" /> <!-- Bottle of Orfen's Soul -->
 		<itemDrop itemId="36514" min="2" max="3" chance="100.0" />	<!-- Elcyum Crystal -->
 		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
 		<itemDrop itemId="57" min="110000" max="150000" chance="100" /> <!-- Adena -->
@@ -46,7 +46,7 @@
 	<!-- Baium -->
 	<npc id="29020" overrideDrops="true" hpMax="12700800">
 		<!-- Epic Items -->
-		<itemDrop itemId="37520" min="1" max="3" chance="100" /> <!-- Bottle of Baium's Soul -->
+		<itemDrop itemId="37520" min="1" max="2" chance="100" /> <!-- Bottle of Baium's Soul -->
 		<itemDrop itemId="6658" min="5" max="7" chance="100" /> <!-- Baium's Ring -->
 		<itemDrop itemId="8620" min="5" max="15" chance="100" /> <!-- Ancient Book: Divine Inspiration (Manuscript) -->
 		<itemDrop itemId="36514" min="2" max="3" chance="100.0" />	<!-- Elcyum Crystal -->
@@ -57,7 +57,7 @@
 	<npc id="29068" overrideDrops="true" hpMax="504165721">
 		<!-- Epic Items -->
 		<itemDrop itemId="6656" min="5" max="7" chance="100" />	<!-- Antharas' Earring -->
-		<itemDrop itemId="19465" min="20" max="25" chance="100" />	<!-- Bottle of Antharas' Soul -->
+		<itemDrop itemId="19465" min="10" max="15" chance="100" />	<!-- Bottle of Antharas' Soul -->
 		<itemDrop itemId="36414" min="1" max="2" chance="10" />	<!-- Dragon Claw -->
 		<!-- Epic Weapons -->
 		<dropCategory chance="10" >
@@ -85,7 +85,7 @@
 	<npc id="29028" overrideDrops="true" hpMax="2541657216">
 		<!-- Epic Items -->
 		<itemDrop itemId="6657" min="5" max="7" chance="100" /> <!-- Valakas' Necklace -->
-		<itemDrop itemId="19466" min="20" max="25" chance="100" /> <!-- Bottle of Valakas' Soul -->
+		<itemDrop itemId="19466" min="10" max="15" chance="100" /> <!-- Bottle of Valakas' Soul -->
 		<itemDrop itemId="36414" min="1" max="2" chance="10" />	<!-- Dragon Claw -->
 		<!-- Epic Weapons -->
 		<dropCategory chance="10" >
@@ -109,7 +109,7 @@
 	<!-- Lindvior (Open World) -->
 	<npc id="29240" overrideDrops="true" hpMax="504165721">
 		<!-- Epic Items -->
-		<itemDrop itemId="36946" min="5" max="7" chance="100" /> <!-- Lindvior's Earring -->
+		<itemDrop itemId="36946" min="1" max="2" chance="100" /> <!-- Lindvior's Earring -->
 		<itemDrop itemId="36414" min="1" max="2" chance="10" /> <!-- Dragon Claw -->
 		<!-- Epic Boss Weapons -->
 		<dropCategory chance="10" >

@@ -11,15 +11,15 @@
 	</item>
 	<item>
 		<ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
-		<production id="4357" count="50000" /> <!-- Silver Shilen -->
+		<production id="4357" count="1000000" /> <!-- Silver Shilen -->
 	</item>
 	<item>
-		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
-		<production id="19448" count="3" />	<!-- Blessed Scroll: Enchant Armor (R-grade) -->
+		<ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
+		<production id="4358" count="200" /> <!-- Bloody Pa'agrio -->
 	</item>
 	<item>
-		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
-		<production id="19447" count="1" />	<!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+		<ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
+		<production id="4355" count="15" /> <!-- Blue Eva -->
 	</item>
 	<item>
 		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->

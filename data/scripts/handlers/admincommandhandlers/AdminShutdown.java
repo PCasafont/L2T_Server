@@ -17,13 +17,13 @@ package handlers.admincommandhandlers;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import l2server.Config;
-import l2server.gameserver.Shutdown;
-import l2server.gameserver.TimeController;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.Config;
+import l2tserver.gameserver.Shutdown;
+import l2tserver.gameserver.TimeController;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
 
 /**

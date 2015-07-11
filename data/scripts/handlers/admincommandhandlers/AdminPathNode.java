@@ -16,11 +16,11 @@ package handlers.admincommandhandlers;
 
 import java.util.List;
 
-import l2server.Config;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.pathfinding.AbstractNodeLoc;
-import l2server.gameserver.pathfinding.PathFinding;
+import l2tserver.Config;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.pathfinding.AbstractNodeLoc;
+import l2tserver.gameserver.pathfinding.PathFinding;
 
 
 public class AdminPathNode implements IAdminCommandHandler

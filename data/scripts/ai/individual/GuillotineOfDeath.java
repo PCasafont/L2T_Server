@@ -14,13 +14,13 @@
  */
 package ai.individual;
 
-import l2server.gameserver.instancemanager.BossManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
-import l2server.gameserver.network.serverpackets.ExShowUsmPacket;
-import l2server.log.Log;
-import l2server.util.Rnd;
+import l2tserver.gameserver.instancemanager.BossManager;
+import l2tserver.gameserver.model.actor.L2Npc;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2tserver.gameserver.network.serverpackets.ExShowUsmPacket;
+import l2tserver.log.Log;
+import l2tserver.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
 
 /**

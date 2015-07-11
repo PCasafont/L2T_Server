@@ -14,10 +14,10 @@
  */
 package handlers.admincommandhandlers;
 
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * This class handles following admin commands:

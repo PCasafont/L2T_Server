@@ -4,9 +4,9 @@
 
 import sys
 
-from l2server.gameserver.model.quest        import State
-from l2server.gameserver.model.quest        import QuestState
-from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2tserver.gameserver.model.quest        import State
+from l2tserver.gameserver.model.quest        import QuestState
+from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "9001_alliance"
 NPC=[30026,30031,30037,30066,30070,30109,30115,30120,30154,30174, \
      30175,30176,30187,30191,30195,30288,30289,30290,30297,30358, \

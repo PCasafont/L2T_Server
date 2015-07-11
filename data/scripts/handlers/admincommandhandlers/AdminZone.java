@@ -26,19 +26,19 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.datatables.MapRegionTable;
-import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.L2WorldRegion;
-import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.util.StringUtil;
+import l2tserver.gameserver.cache.HtmCache;
+import l2tserver.gameserver.datatables.MapRegionTable;
+import l2tserver.gameserver.handler.IAdminCommandHandler;
+import l2tserver.gameserver.instancemanager.GrandBossManager;
+import l2tserver.gameserver.instancemanager.ZoneManager;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.L2WorldRegion;
+import l2tserver.gameserver.model.Location;
+import l2tserver.gameserver.model.actor.L2Character;
+import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.zone.L2ZoneType;
+import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2tserver.util.StringUtil;
 
 /**
  * Small typo fix by Zoey76 24/02/2011
@@ -55,7 +55,7 @@ public class AdminZone implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@SuppressWarnings("deprecation")
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
@@ -177,7 +177,7 @@ public class AdminZone implements IAdminCommandHandler
 	}
 	/**
 	 * 
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{
