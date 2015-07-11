@@ -13366,7 +13366,7 @@
 		<table name="#mpConsume"> 53 48 50 52 54 56 57 57 62 71 77 </table>
 		<table name="#heal"> 172 173 173 174 174 155 175 176 184 192 200 </table>
 		<table name="#gainHp"> 10 13 16 19 22 25 28 30 30 30 30 </table>
-		<set name="target" val="TARGET_ONE" />
+		<set name="target" val="TARGET_PARTY_MEMBER" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
