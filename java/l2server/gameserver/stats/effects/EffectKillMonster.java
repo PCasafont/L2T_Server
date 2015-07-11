@@ -14,14 +14,7 @@
  */
 package l2server.gameserver.stats.effects;
 
-import java.util.Map.Entry;
-
-import l2server.gameserver.model.L2CommandChannel;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Attackable.AggroInfo;
-import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
@@ -48,46 +41,7 @@ public class EffectKillMonster extends L2Effect
 		if (player == null)
 			return false;
 		
-		L2Party playerParty = player.getParty();
-		L2CommandChannel playerCommand = playerParty != null ? playerParty.getCommandChannel() : null;
-		
-		boolean shouldFlag = false;
-		if (getEffected() instanceof L2Attackable)
-		{
-			L2Attackable mob = (L2Attackable)getEffected();
-			if (mob != null)
-			{
-				AggroInfo maxDam = null;
-				for (Entry<L2Character, AggroInfo> i : mob.getAggroList().entrySet())
-				{
-					if (i == null || i.getValue() == null || i.getValue().getAttacker() == null)
-						continue;
-					
-					L2PcInstance attacker = i.getValue().getAttacker().getActingPlayer();
-					if (attacker == null)
-						continue;
-					
-					L2Party attackerParty = attacker.getParty();
-					L2CommandChannel attackerCommand = attackerParty != null ? attackerParty.getCommandChannel() : null;
-					
-					if (playerParty != null && attackerParty != null && 
-							((playerParty.getPartyLeaderOID() == attackerParty.getPartyLeaderOID()) || 
-									(playerCommand != null && attackerCommand != null && playerCommand.getMembers().contains(attacker))))
-						continue;
-					
-					if (maxDam == null || i.getValue().getDamage() > maxDam.getDamage())
-						maxDam = i.getValue();
-				}
-				
-				if (maxDam != null && maxDam.getAttacker() != player)
-					shouldFlag = true;
-			}
-		}
-		
 		getEffected().reduceCurrentHp(getEffected().getMaxHp() + 1, getEffector(), null);
-		
-		if (shouldFlag)
-			player.updatePvPStatus();
 		return true;
 	}
 	

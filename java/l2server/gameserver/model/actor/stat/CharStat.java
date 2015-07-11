@@ -1004,6 +1004,6 @@ public class CharStat
 
 	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill)
 	{
-		return target.calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
+		return calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
 	}
 }

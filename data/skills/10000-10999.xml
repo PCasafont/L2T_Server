@@ -3096,6 +3096,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
+		<set name="staticHitTime" val="true" />
 	</skill>
 	<!-- Inflicts a powerful blow on target. -->
 	<skill id="10250" levels="1" name="Heavy Hit">
@@ -3107,6 +3108,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="staticHitTime" val="true" />
 	</skill>
 	<!-- 
 		Level 1: P. Atk. + 30%, additional P. Atk. + 1689, Atk. Spd + 25%, P. Accuracy + 8 when a sword, blunt, or spear is equipped. Increases the number of possible targets during a spear attack. STR + 2. Depending on your STR, the Cooldown resets or the duration increases by 2 times.
@@ -6048,6 +6050,7 @@
 		<set name="effectRange" val="400" />
 		<set name="nextActionAttack" val="true" />
 		<set name="overHit" val="true" />
+		<set name="staticHitTime" val="true" />
 	</skill>
 	<!-- Inflicts a powerful blow on target. -->
 	<skill id="10500" levels="1" name="Heavy Hit">
@@ -6063,6 +6066,7 @@
 		<set name="flyType" val="CHARGE" />
 		<set name="skillRadius" val="200"/>
 		<set name="nextActionAttack" val="true"/>
+		<set name="staticHitTime" val="true" />
 	</skill>
 	<!-- 
 		Level 1: P. Atk. + 739, Atk. Spd. + 25%, Accuracy + 8, and vital spot attack success rate + 5%. STR +2. Depending on your STR, Cooldown can be reset or abnormal status duration increases + 2 times.

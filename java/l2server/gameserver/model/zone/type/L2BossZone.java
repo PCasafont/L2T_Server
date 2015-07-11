@@ -85,7 +85,8 @@ public class L2BossZone extends L2ZoneType
 		
 		private void stopKickTask()
 		{
-			_kickTask.cancel(false);
+			if (_kickTask != null)
+				_kickTask.cancel(false);
 		}
 		
 		private class KickTask implements Runnable

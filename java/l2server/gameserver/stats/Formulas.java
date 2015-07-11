@@ -3323,6 +3323,55 @@ public final class Formulas
 		if (target.getInstanceId() == 0)
 			multiplier *= 3.0f;
 		
+		if (target.isRaid())
+			return multiplier;
+		
+		PlayerClass attackerClass = attacker.getCurrentClass();
+		if (attackerClass.getParent() != null
+				&& attackerClass.getParent().getAwakeningClassId() > 0)
+		{
+			int awakening = attackerClass.getParent().getAwakeningClassId();
+			@SuppressWarnings("unused")
+			L2Weapon weapon = attacker.getActiveWeaponItem();
+			switch (awakening)
+			{
+				case 139: // Sigel Knight
+					multiplier *= 3;
+					break;
+				case 140: // Tyrr Warrior
+					//multiplier *= 0.9;
+					break;
+				case 141: //Othell Rogue
+					//multiplier *= 0.9;
+					break;
+				case 142: //Yul Archer
+					multiplier *= 1.4;
+					break;
+				case 143: //Feoh Wizard
+					multiplier *= 1.7;
+					break;
+				case 144: // Iss Enchanter
+					multiplier *= 2.1;
+					break;
+				case 145: // Wynn Summoner
+					multiplier *= 1.6;
+					break;
+				case 146: // Aeore Healer
+					multiplier *= 3.0;
+					break;
+			}
+		}
+		
+		switch (attackerClass.getId())
+		{
+			case 188: // Eviscerator
+				//multiplier *= 0.8;
+				break;
+			case 189: // Sayha's Seer
+				multiplier *= 1.8;
+				break;
+		}
+		
 		return multiplier;
 	}
 	
@@ -3341,24 +3390,43 @@ public final class Formulas
 			L2Weapon weapon = attacker.getActiveWeaponItem();
 			switch (awakening)
 			{
-				case 140:
-					//multiplier *= 0.9;
+				case 139: // Sigel Knight
+					multiplier *= 2.5;
 					break;
-				case 141:
+				case 140: // Tyrr Warrior
+					multiplier *= 1.3;
+					break;
+				case 141: //Othell Rogue
 					//if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER))
-						//multiplier *= 1.9;	//Othell Rogue
+					//multiplier *= 1.9;
 					break;
-				case 142:	//Yul Archer
-					//multiplier *= 1.1;
+				case 142: //Yul Archer
+					//multiplier *= 1.4;
 					break;
-				case 143:
-					//multiplier *= 0.97;	//Feoh Wizard
+				case 143: //Feoh Wizard
+					multiplier *= 1.5;
+					break;
+				case 144: // Iss Enchanter
+					multiplier *= 1.8;
+					break;
+				case 145: // Wynn Summoner
+					multiplier *= 1.5;
+					break;
+				case 146: // Aeore Healer
+					multiplier *= 2.1;
 					break;
 			}
 		}
 		
-		//if (attackerClass.getId() == 189) // Sayha's Seer
-		//	multiplier *= 0.97;
+		switch (attackerClass.getId())
+		{
+			case 188: // Eviscerator
+				//multiplier *= 0.8;
+				break;
+			case 189: // Sayha's Seer
+				multiplier *= 1.4;
+				break;
+		}
 		
 		PlayerClass targetClass = target.getCurrentClass();
 		if (targetClass.getParent() != null
@@ -3367,19 +3435,41 @@ public final class Formulas
 			int awakening = targetClass.getParent().getAwakeningClassId();
 			switch (awakening)
 			{
-				case 139:
-					//multiplier *= 0.8;
+				case 139: // Sigel Knight
+					//multiplier *= 2.5;
 					break;
-				case 140:
-					//multiplier *= 1.05;
+				case 140: // Tyrr Warrior
+					//multiplier *= 1.3;
 					break;
-				case 144:
-					//multiplier *= 0.9;
+				case 141: //Othell Rogue
+					//multiplier *= 1.9;
 					break;
-				case 145:
-					//multiplier *= 0.8;
+				case 142: //Yul Archer
+					//multiplier *= 1.4;
+					break;
+				case 143: //Feoh Wizard
+					//multiplier *= 1.5;
+					break;
+				case 144: // Iss Enchanter
+					//multiplier *= 1.8;
+					break;
+				case 145: // Wynn Summoner
+					multiplier *= 0.7;
+					break;
+				case 146: // Aeore Healer
+					//multiplier *= 2.1;
 					break;
 			}
+		}
+		
+		switch (attackerClass.getId())
+		{
+			case 188: // Eviscerator
+				//multiplier *= 0.8;
+				break;
+			case 189: // Sayha's Seer
+				//multiplier *= 1.4;
+				break;
 		}
 		
 		//	multiplier *= 0.9;

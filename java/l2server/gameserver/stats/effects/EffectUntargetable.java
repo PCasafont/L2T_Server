@@ -104,6 +104,6 @@ public class EffectUntargetable extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		return false;
+		return true;
 	}
 }
