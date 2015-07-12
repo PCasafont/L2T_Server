@@ -8415,8 +8415,6 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
-		<set name="magicLvl" val="75" />
-		<set name="lvlDepend" val="2" />
 		<set name="castRange" val="1000" />
 		<set name="effectRange" val="1500" />
 		<set name="isDebuff" val="true" />
