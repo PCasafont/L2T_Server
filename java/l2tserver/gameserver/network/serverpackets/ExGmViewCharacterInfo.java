@@ -66,9 +66,9 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		for (char c : player.getName().toCharArray())
 			buffer.putShort((short)c);
 		buffer.put((byte)(player.isGM()? 1 : 0));
-		buffer.put((byte)player.getRace().ordinal());
+		buffer.put((byte)player.getVisibleTemplate().race.ordinal());
 		buffer.put((byte)(player.getAppearance().getSex()? 1 : 0));
-		buffer.putInt(player.getBaseTemplate().startingClassId);
+		buffer.putInt(player.getVisibleTemplate().startingClassId);
 		buffer.putInt(player.getCurrentClass() != null ? player.getCurrentClass().getId() : 0);
 		buffer.put((byte)player.getLevel());
 		

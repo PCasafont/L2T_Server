@@ -1,0 +1,1 @@
+ALTER TABLE `characters` ADD `race_app` TINYINT NOT NULL DEFAULT -1;

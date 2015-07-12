@@ -79,6 +79,7 @@ public final class Config
 	public static int REMOVE_CLAN_PENALTY_FROM_CLAN_PRICE;
 	public static int REMOVE_CLAN_PENALTY_FROM_PLAYER_PRICE;
 	public static int CHANGE_SEX_PRICE;
+	public static int CHANGE_RACE_PRICE;
 	public static int INCREASE_CLAN_LEVEL_PRICE;
 	public static int CHANGE_CHAR_NAME_PRICE;
 	public static int CHANGE_CLAN_NAME_PRICE;

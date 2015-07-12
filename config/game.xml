@@ -2922,6 +2922,7 @@
 	<config name="RemoveClanPenaltyFromClanPrice" var="REMOVE_CLAN_PENALTY_FROM_CLAN_PRICE" default="5" />
 	<config name="RemoveClanPenaltyFromPlayerPrice" var="REMOVE_CLAN_PENALTY_FROM_PLAYER_PRICE" default="1" />
 	<config name="ChangeSexPrice" var="CHANGE_SEX_PRICE" default="10" />
+	<config name="ChangeRacePrice" var="CHANGE_RACE_PRICE" default="10" />
 	<config name="IncreaseClanLevelPrice" var="INCREASE_CLAN_LEVEL_PRICE" default="10" />
 	<config name="ChangeCharNamePrice" var="CHANGE_CHAR_NAME_PRICE" default="10" />
 	<config name="ChangeClanNamePrice" var="CHANGE_CLAN_NAME_PRICE" default="20" />

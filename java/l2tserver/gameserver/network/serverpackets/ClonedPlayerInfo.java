@@ -99,10 +99,10 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeD(0);
 		writeD(_objId);
 		writeS(_activeChar.getAppearance().getVisibleName());
-		writeH(_activeChar.getRace().ordinal());
+		writeH(_activeChar.getVisibleTemplate().race.ordinal());
 		writeC(_activeChar.getAppearance().getSex() ? 1 : 0);
 
-		writeD(_activeChar.getBaseTemplate().startingClassId);
+		writeD(_activeChar.getVisibleTemplate().startingClassId);
 		
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_UNDER));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));

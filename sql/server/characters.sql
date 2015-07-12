@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `bookmarkslot` SMALLINT UNSIGNED NOT NULL DEFAULT 0,
   `createTime` bigint(13) UNSIGNED NOT NULL DEFAULT 0,
   `show_hat` TINYINT UNSIGNED NOT NULL DEFAULT 1,
+  `race_app` TINYINT NOT NULL DEFAULT -1,
   PRIMARY KEY (`charId`),
   KEY `clanid` (`clanid`)
 );

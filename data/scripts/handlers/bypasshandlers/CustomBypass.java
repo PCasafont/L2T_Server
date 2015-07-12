@@ -16,6 +16,7 @@ package handlers.bypasshandlers;
 
 import l2tserver.Config;
 import l2tserver.gameserver.datatables.CharNameTable;
+import l2tserver.gameserver.datatables.CharTemplateTable;
 import l2tserver.gameserver.datatables.ClanTable;
 import l2tserver.gameserver.datatables.ItemTable;
 import l2tserver.gameserver.datatables.PledgeSkillTree;
@@ -36,6 +37,7 @@ import l2tserver.gameserver.network.serverpackets.CreatureSay;
 import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2tserver.gameserver.network.serverpackets.PartySmallWindowAll;
 import l2tserver.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
+import l2tserver.gameserver.templates.chars.L2PcTemplate;
 import l2tserver.gameserver.util.Util;
 
 public class CustomBypass implements IBypassHandler
@@ -44,6 +46,7 @@ public class CustomBypass implements IBypassHandler
 	{
 		"titlecolor",
 		"changesex",
+		"changerace",
 		"changeclanname",
 		"changecharname",
 		"namecolor",
@@ -129,19 +132,57 @@ public class CustomBypass implements IBypassHandler
 		}
 		else if (command.equalsIgnoreCase("changesex"))
 		{
-			if (player.getRace() == Race.Kamael || player.getRace() == Race.Ertheia)
+			if ((player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85) || player.getRace() == Race.Ertheia)
 			{
-				player.sendMessage("Special Services: Sorry but I can't change your class sex!");
+				player.sendMessage("Special Services: Sorry, but I can't change your sex!");
 				return false;
 			}
 			
 			if (!player.destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID, Config.CHANGE_SEX_PRICE, player, true))
+			{
+				player.sendMessage("Special Services: You don't have enough coins!");
 				return false;
+			}
 			
 			player.getAppearance().setSex(player.getAppearance().getSex() ? false : true);
 			player.broadcastUserInfo();
 			
 			player.sendMessage("Special Services: You changed your sex successfully!");
+		}
+		else if (command.startsWith("changerace"))
+		{
+			int templateId = Integer.parseInt(command.split(" ")[1]);
+			if (templateId < 0)
+			{
+				player.setRaceAppearance(templateId);
+				player.broadcastUserInfo();
+				player.sendMessage("Special Services: Your race appearance has been restored.");
+				return true;
+			}
+			
+			if ((player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85) || player.getRace() == Race.Ertheia)
+			{
+				player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
+				return false;
+			}
+
+			L2PcTemplate temp = CharTemplateTable.getInstance().getTemplate(templateId);
+			if (temp == null || (temp.race == Race.Dwarf && temp.isMage) || (temp.race == Race.Ertheia && !player.getAppearance().getSex()))
+			{
+				player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
+				return false;
+			}
+			
+			if (!player.destroyItemByItemId("SpecialServices", Config.DONATION_COIN_ID, Config.CHANGE_RACE_PRICE, player, true))
+			{
+				player.sendMessage("Special Services: You don't have enough coins!");
+				return false;
+			}
+			
+			player.setRaceAppearance(templateId);
+			player.broadcastUserInfo();
+			
+			player.sendMessage("Special Services: You changed your race appearance successfully!");
 		}
 		else if (command.startsWith("changeclanname") || command.startsWith("changecharname"))
 		{

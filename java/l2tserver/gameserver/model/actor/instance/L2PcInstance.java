@@ -349,8 +349,8 @@ public class L2PcInstance extends L2Playable
 	
 	// Character Character SQL String Definitions:
 	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,pvpkills,pkkills,clanid,templateId,classid,deletetime,cancraft,title,title_color,accesslevel,online,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,createTime) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,pvpkills=?,pkkills=?,clanid=?,templateId=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,punish_level=?,punish_timer=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,varka_ketra_ally=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,show_hat=? WHERE charId=?";
-	private static final String RESTORE_CHARACTER = "SELECT account_name, charId, char_name, level, curHp, curCp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, expBeforeDeath, sp, reputation, fame, pvpkills, pkkills, clanid, templateId, classid, deletetime, cancraft, title, title_color, accesslevel, online, char_slot, lastAccess, clan_privs, wantspeace, base_class, onlinetime, punish_level, punish_timer, newbie, nobless, power_grade, subpledge, lvl_joined_academy, apprentice, sponsor, varka_ketra_ally,clan_join_expiry_time,clan_create_expiry_time,bookmarkslot,createTime,show_hat FROM characters WHERE charId=?";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,pvpkills=?,pkkills=?,clanid=?,templateId=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,punish_level=?,punish_timer=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,varka_ketra_ally=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,show_hat=?,race_app=? WHERE charId=?";
+	private static final String RESTORE_CHARACTER = "SELECT account_name, charId, char_name, level, curHp, curCp, curMp, face, hairStyle, hairColor, sex, heading, x, y, z, exp, expBeforeDeath, sp, reputation, fame, pvpkills, pkkills, clanid, templateId, classid, deletetime, cancraft, title, title_color, accesslevel, online, char_slot, lastAccess, clan_privs, wantspeace, base_class, onlinetime, punish_level, punish_timer, newbie, nobless, power_grade, subpledge, lvl_joined_academy, apprentice, sponsor, varka_ketra_ally,clan_join_expiry_time,clan_create_expiry_time,bookmarkslot,createTime,show_hat,race_app FROM characters WHERE charId=?";
 	
 	// Character Teleport Bookmark:
 	private static final String INSERT_TP_BOOKMARK = "INSERT INTO character_tpbookmark (charId,Id,x,y,z,icon,tag,name) values (?,?,?,?,?,?,?,?)";
@@ -1465,6 +1465,26 @@ public class L2PcInstance extends L2Playable
 	public final L2PcTemplate getBaseTemplate()
 	{
 		return CharTemplateTable.getInstance().getTemplate(_templateId);
+	}
+	
+	private int _raceAppearance;
+	
+	public final L2PcTemplate getVisibleTemplate()
+	{
+		if (_raceAppearance < 0)
+			return getBaseTemplate();
+		
+		return CharTemplateTable.getInstance().getTemplate(_raceAppearance);
+	}
+	
+	public final void setRaceAppearance(int app)
+	{
+		_raceAppearance = app;
+	}
+	
+	public final int getRaceAppearance()
+	{
+		return _raceAppearance;
 	}
 	
 	/** Return the L2PcTemplate link to the L2PcInstance. */
@@ -7836,8 +7856,11 @@ public class L2PcInstance extends L2Playable
 				//character creation Time
 				player.setCreateTime(rset.getLong("createTime"));
 				
-				// Pet that had summoned before logging out
+				// Showing hat or not?
 				player.setShowHat(rset.getBoolean("show_hat"));
+				
+				// Race appearance
+				player.setRaceAppearance(rset.getInt("race_app"));
 				
 				// Add the L2PcInstance object in _allObjects
 				//L2World.getInstance().storeObject(player);
@@ -8333,7 +8356,8 @@ public class L2PcInstance extends L2Playable
 			statement.setString(47, getName());
 			statement.setInt(48, getBookMarkSlot());
 			statement.setInt(49, isShowingHat() ? 1 : 0);
-			statement.setInt(50, getObjectId());
+			statement.setInt(50, getRaceAppearance());
+			statement.setInt(51, getObjectId());
 			
 			statement.execute();
 			statement.close();
@@ -15641,17 +15665,17 @@ public class L2PcInstance extends L2Playable
 	public double getCollisionRadius()
 	{
 		if (getAppearance().getSex())
-			return getBaseTemplate().fCollisionRadiusFemale;
+			return getVisibleTemplate().fCollisionRadiusFemale;
 		else
-			return getBaseTemplate().fCollisionRadius;
+			return getVisibleTemplate().fCollisionRadius;
 	}
 	
 	public double getCollisionHeight()
 	{
 		if (getAppearance().getSex())
-			return getBaseTemplate().fCollisionHeightFemale;
+			return getVisibleTemplate().fCollisionHeightFemale;
 		else
-			return getBaseTemplate().fCollisionHeight;
+			return getVisibleTemplate().fCollisionHeight;
 	}
 	
 	public final int getClientX()
@@ -18299,7 +18323,7 @@ public class L2PcInstance extends L2Playable
 	
 	public boolean getConfigValue(String config)
 	{
-		if(_playerConfigs.containsKey(config))
+		if (_playerConfigs.containsKey(config))
 			return _playerConfigs.get(config);
 		
 		return false;
