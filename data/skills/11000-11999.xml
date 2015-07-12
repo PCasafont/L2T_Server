@@ -6108,10 +6108,10 @@
 			<add stat="mCritRate" val="6" />
 			<addPercent stat="pAtk" val="105" />
 			<add stat="pAtk" val="#pAtk">
-				<using kind="Big Blunt,Dual Blunt" />
+				<using kind="Big Blunt" />
 			</add>
 			<add stat="accCombat" val="4">
-				<using kind="Big Blunt,Dual Blunt" />
+				<using kind="Big Blunt" />
 			</add>
 			<baseAdd stat="INT" val="2" />
 			<set stat="skillMastery" val="1" />
