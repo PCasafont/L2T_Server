@@ -3332,7 +3332,7 @@ public final class Formulas
 					multiplier *= 2.1;
 					break;
 				case 145: // Wynn Summoner
-					multiplier *= 1.6;
+					multiplier *= 1.5;
 					break;
 				case 146: // Aeore Healer
 					multiplier *= 3.0;

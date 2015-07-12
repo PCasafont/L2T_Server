@@ -82,13 +82,6 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 			return;
 		}
 		
-		if (Config.isServer(Config.TENKAI))
-		{
-			player.sendMessage("Clan war stop option temporarily disabled.");
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
 		ClanWar war = ClanWarManager.getInstance().getWar(clan, playerClan);
 		if (war != null)
 			war.stop();

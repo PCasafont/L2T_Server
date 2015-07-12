@@ -14,7 +14,6 @@
  */
 package l2tserver.gameserver.network.clientpackets;
 
-import l2tserver.Config;
 import l2tserver.gameserver.datatables.ClanTable;
 import l2tserver.gameserver.model.L2Clan;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
@@ -61,13 +60,6 @@ public final class RequestSurrenderPledgeWar extends L2GameClientPacket
 		if (!_clan.isAtWarWith(clan.getClanId()))
 		{
 			_activeChar.sendMessage("You aren't at war with this clan.");
-			_activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (Config.isServer(Config.TENKAI))
-		{
-			_activeChar.sendMessage("Clan war surrender option temporarily disabled.");
 			_activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

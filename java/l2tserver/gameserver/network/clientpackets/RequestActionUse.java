@@ -217,7 +217,7 @@ public final class RequestActionUse extends L2GameClientPacket
 						
 						if (summon.isAttackingDisabled())
 						{
-							if (summon.getAttackEndTime() > TimeController.getGameTicks())
+							if (summon.getAttackEndTime() > TimeController.getGameTicks() && summon.getTarget() == target)
 								summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 							else
 								continue;
@@ -248,7 +248,6 @@ public final class RequestActionUse extends L2GameClientPacket
 							continue;
 						}
 						
-						summon.setTarget(target);
 						if (target.isAutoAttackable(activeChar) || _ctrlPressed)
 						{
 							if (target instanceof L2DoorInstance)

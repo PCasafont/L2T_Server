@@ -266,6 +266,10 @@ public class PcStatus extends PlayableStatus
 			}
 		}
 		
+		StatusUpdateDisplay display = StatusUpdateDisplay.NONE;
+		if (isDOT)
+			display = StatusUpdateDisplay.DOT;
+		
 		if (value > 0)
 		{
 			value = getCurrentHp() - value;
@@ -287,7 +291,8 @@ public class PcStatus extends PlayableStatus
 				else
 					value = 1;
 			}
-			setCurrentHp(value, true, attacker, StatusUpdateDisplay.NONE);
+			
+			setCurrentHp(value, true, attacker, display);
 		}
 		
 		if (getActiveChar().getCurrentHp() < 0.5)

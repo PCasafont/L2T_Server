@@ -340,6 +340,7 @@ public class L2DoorInstance extends L2Character
 		
 		if (getIsAttackableDoor())
 			return true;
+		
 		if (!getIsShowHp())
 			return false;
 		

@@ -22,6 +22,14 @@
 		<production id="4355" count="15" /> <!-- Blue Eva -->
 	</item>
 	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="19448" count="3" />	<!-- Blessed Scroll: Enchant Armor (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->
+		<production id="19447" count="1" />	<!-- Blessed Scroll: Enchant Weapon (R-grade) -->
+	</item>
+	<item>
 		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
 		<production id="23257" count="1" />	<!-- XP Rune III (Lv. 1-100+) 200% - 1-hour -->
 	</item>

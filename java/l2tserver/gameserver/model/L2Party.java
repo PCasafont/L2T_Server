@@ -596,7 +596,7 @@ public class L2Party
 	 */
 	public void distributeItem(L2PcInstance player, L2ItemInstance item)
 	{
-		switch (item.getItemId())
+		/*switch (item.getItemId())
 		{
 			case 57: // Adena
 			case 4355: // Blue Eva
@@ -611,6 +611,12 @@ public class L2Party
 				distributeCurrency(player, item.getItemId(), item.getCount(), player);
 				ItemTable.getInstance().destroyItem("Party", item, player, null);
 				return;
+		}*/
+		if (item.getCount() > 1)
+		{
+			distributeCurrency(player, item.getItemId(), item.getCount(), player);
+			ItemTable.getInstance().destroyItem("Party", item, player, null);
+			return;
 		}
 		
 		L2PcInstance target = getActualLooter(player, item.getItemId(), false, player);
