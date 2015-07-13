@@ -1796,19 +1796,19 @@
 	</item>
 	<!-- Equipping this disables armor. Hair accessories, weapons, and magic armor remain equipped. Male only. -->
 	<item id="36343" type="Armor" name="Male Swimsuit No. 1 - Event" icon="icon.london_olympic_bikini" defaultAction="equip"
-			bodypart="none" immediateEffect="1" weight="1000">
+			bodypart="alldress" immediateEffect="1" weight="1000">
 	</item>
 	<!-- Equipping this disables armor. Hair accessories, weapons, and magic armor remain equipped. Male only. -->
 	<item id="36344" type="Armor" name="Male Swimsuit No. 2 - Event" icon="icon.london_olympic_bikini" defaultAction="equip"
-			bodypart="none" immediateEffect="1" weight="1000">
+			bodypart="alldress" immediateEffect="1" weight="1000">
 	</item>
 	<!-- Equipping this disables armor. Hair accessories, weapons, and magic armor remain equipped. Female only. -->
 	<item id="36345" type="Armor" name="Female Swimsuit No. 1 - Event" icon="icon.london_olympic_bikini" defaultAction="equip"
-			bodypart="none" immediateEffect="1" weight="1000">
+			bodypart="alldress" immediateEffect="1" weight="1000">
 	</item>
 	<!-- Equipping this disables armor. Hair accessories, weapons, and magic armor remain equipped. Female only. -->
 	<item id="36346" type="Armor" name="Female Swimsuit No. 2 - Event" icon="icon.london_olympic_bikini" defaultAction="equip"
-			bodypart="none" immediateEffect="1" weight="1000">
+			bodypart="alldress" immediateEffect="1" weight="1000">
 	</item>
 	<!-- Increases acquired XP and SP by 30% for 30 min. -->
 	<item id="36347" type="EtcItem" name="Scroll: Energy of Glory - Event" icon="icon.etc_london_olympic_scroll_i01" immediateEffect="1"
