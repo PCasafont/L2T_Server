@@ -185,6 +185,22 @@
 		<production id="39571" count="1"/> <!-- Talisman - Wind: Debuff Resistance -->
 	</item>
 	<item>
+		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
+		<production id="23833" count="1"/> <!-- Talisman - Abundance - War -->
+	</item>
+	<item>
+		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
+		<production id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
+	</item>
+	<item>
+		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
+		<production id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->
+	</item>
+	<item>
+		<ingredient id="4355" count="150"/> <!-- Blue Eva -->
+		<production id="23836" count="1"/> <!-- Talisman - Abundance - Physique -->
+	</item>
+	<item>
 		<ingredient id="23833" count="1"/> <!-- Talisman - Abundance - War -->
 		<ingredient id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
 		<ingredient id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->

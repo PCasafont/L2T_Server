@@ -73,22 +73,6 @@
 		<production id="39641" count="1" /> <!-- Venir's Talisman - Stage 8 -->
 	</item>
 	<item>
-		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-		<production id="23833" count="1"/> <!-- Talisman - Abundance - War -->
-	</item>
-	<item>
-		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-		<production id="23834" count="1"/> <!-- Talisman - Abundance - Tactics -->
-	</item>
-	<item>
-		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-		<production id="23835" count="1"/> <!-- Talisman - Abundance - Morale -->
-	</item>
-	<item>
-		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-		<production id="23836" count="1"/> <!-- Talisman - Abundance - Physique -->
-	</item>
-	<item>
 		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
 		<production count="1" id="39747" /> <!-- Dimensional Bracelet - Stage 1 - Basic -->
 	</item>
