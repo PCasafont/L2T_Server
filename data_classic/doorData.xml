@@ -19194,7 +19194,7 @@
         <set name="nodeZ" val="-3253"/>
         <set name="default_status" val="close"/>
     </door>
-    <door id="24210004">
+    <door id="25140004">
         <set name="name" val="valakas_door_01"/>
         <set name="open_method" val="0"/>
         <set name="close_time" val="3600"/>
@@ -19210,7 +19210,7 @@
         <set name="node4" val="190892,-115430"/>
         <set name="nodeZ" val="-1619"/>
     </door>
-    <door id="24210005">
+    <door id="25140005">
         <set name="name" val="valakas_door_02"/>
         <set name="open_method" val="0"/>
         <set name="close_time" val="3600"/>
@@ -19226,7 +19226,7 @@
         <set name="node4" val="189380,-108508"/>
         <set name="nodeZ" val="-1056"/>
     </door>
-    <door id="24210006">
+    <door id="25140006">
         <set name="name" val="valakas_door_03"/>
         <set name="open_method" val="0"/>
         <set name="close_time" val="3600"/>
