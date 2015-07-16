@@ -85,23 +85,23 @@
 		<production id="46336" count="1" /> <!-- Shadow Dualsword -->
 	</item>
 	<item>
-		<ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
 		<production id="22402" count="1" /> <!-- Weapon Appearance Stone (R-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
 		<production id="22403" count="1" /> <!-- Weapon Appearance Stone (S-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
 		<production id="22404" count="1" /> <!-- Weapon Appearance Stone (A-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
 		<production id="22405" count="1" /> <!-- Weapon Appearance Stone (B-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
 		<production id="22406" count="1" /> <!-- Weapon Appearance Stone (C-grade) -->
 	</item>
 	<item>
@@ -109,27 +109,27 @@
 		<production id="22407" count="1" /> <!-- Weapon Appearance Stone (D-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="4000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
 		<production id="22682" count="1" /> <!-- Armor Appearance Stone (R-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="4000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
 		<production id="22683" count="1" /> <!-- Armor Appearance Stone (S-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="4000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
 		<production id="22684" count="1" /> <!-- Armor Appearance Stone (A-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="4000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
 		<production id="22685" count="1" /> <!-- Armor Appearance Stone (B-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="4000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
 		<production id="22686" count="1" /> <!-- Armor Appearance Stone (C-grade) -->
 	</item>
 	<item>
-		<ingredient id="4358" count="4000" /> <!-- Bloody Pa'agrio -->
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
 		<production id="22687" count="1" /> <!-- Armor Appearance Stone (D-grade) -->
 	</item>
 	<item>
