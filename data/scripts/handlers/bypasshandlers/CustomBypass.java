@@ -154,10 +154,22 @@ public class CustomBypass implements IBypassHandler
 			int templateId = Integer.parseInt(command.split(" ")[1]);
 			if (templateId < 0)
 			{
+				if (player.getRaceAppearance() < 0)
+				{
+					player.sendMessage("Special Services: You don't have any race appearance to restore!");
+					return false;
+				}
+				
 				player.setRaceAppearance(templateId);
 				player.broadcastUserInfo();
 				player.sendMessage("Special Services: Your race appearance has been restored.");
 				return true;
+			}
+
+			if (player.getRaceAppearance() == templateId)
+			{
+				player.sendMessage("Special Services: You already have this race appearance!");
+				return false;
 			}
 			
 			if ((player.getRace() == Race.Kamael && player.getCurrentClass().getLevel() < 85) || player.getRace() == Race.Ertheia)

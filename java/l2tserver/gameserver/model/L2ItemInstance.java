@@ -422,7 +422,8 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 			return;
 		}
 		long old = getCount();
-		long max = getItemId() == ADENA_ID ? MAX_ADENA : Integer.MAX_VALUE;
+		//long max = getItemId() == ADENA_ID ? MAX_ADENA : Integer.MAX_VALUE;
+		long max = MAX_ADENA;
 		
 		if ( count > 0 && getCount() > max - count)
 			setCount(max);

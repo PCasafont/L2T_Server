@@ -500,7 +500,7 @@ public class Trasken extends L2AttackableAIScript
 					world.Trasken.setIsMortal(true);
 					world.Trasken.setIsInvul(false);
 					
-					System.out.println(getName() + " heart killer is: " + (player == null ? "NULL" : player.getName()));
+					//System.out.println(getName() + " heart killer is: " + (player == null ? "NULL" : player.getName()));
 					
 					((L2Attackable)world.Trasken).addDamageHate(player, 99999, 99999);
 					
