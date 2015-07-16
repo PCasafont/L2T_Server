@@ -16,6 +16,7 @@ package l2tserver.gameserver.stats.effects;
 
 import l2tserver.gameserver.ai.CtrlIntention;
 import l2tserver.gameserver.events.instanced.EventInstance.EventType;
+import l2tserver.gameserver.model.L2Abnormal;
 import l2tserver.gameserver.model.L2Effect;
 import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
@@ -105,9 +106,17 @@ public class EffectHide extends L2Effect
 	@Override
 	public void onExit()
 	{
+		// Avoid other abnormals like this one to be removed
+		for (L2Abnormal abnormal : getEffected().getAllEffects())
+		{
+			if (abnormal.getSkill().getId() != getSkill().getId()
+					&& abnormal.getType() == getAbnormalType())
+				return;
+		}
+		
 		if (getEffected() instanceof L2PcInstance)
 		{
-			L2PcInstance activeChar = ((L2PcInstance) getEffected());
+			L2PcInstance activeChar = ((L2PcInstance)getEffected());
 			if (!activeChar.inObserverMode())
 				activeChar.getAppearance().setVisible();
 			activeChar.stopVisualEffect(VisualEffect.STEALTH);

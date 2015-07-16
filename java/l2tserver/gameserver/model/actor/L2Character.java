@@ -2068,7 +2068,7 @@ public abstract class L2Character extends L2Object
 				{
 					x = getX() + (int)(x1 * radius);
 					y = getY() + (int)(y1 * radius);
-					z = getZ();
+					z = getZ() + 100;
 				}
 				
 				if (Config.GEODATA > 0)
