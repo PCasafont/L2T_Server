@@ -3382,7 +3382,7 @@ public final class Formulas
 					//multiplier *= 1.4;
 					break;
 				case 143: //Feoh Wizard
-					multiplier *= 1.5;
+					multiplier *= 1.3;
 					break;
 				case 144: // Iss Enchanter
 					multiplier *= 1.8;
@@ -3391,7 +3391,7 @@ public final class Formulas
 					multiplier *= 1.5;
 					break;
 				case 146: // Aeore Healer
-					multiplier *= 2.1;
+					multiplier *= 1.7;
 					break;
 			}
 		}

@@ -1467,7 +1467,7 @@ public class L2PcInstance extends L2Playable
 		return CharTemplateTable.getInstance().getTemplate(_templateId);
 	}
 	
-	private int _raceAppearance;
+	private int _raceAppearance = -1;
 	
 	public final L2PcTemplate getVisibleTemplate()
 	{
