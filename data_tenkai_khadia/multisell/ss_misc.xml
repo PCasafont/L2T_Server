@@ -45,6 +45,11 @@
 		<ingredient id="4357" count="150000" />
 		<production id="38941" count="1" />
 	</item>
+	<!-- Ruler's Authority -->
+	<item>
+		<ingredient id="4357" count="10000000000" />
+		<production id="35564" count="1" />
+	</item>
 	<!-- Formal Wear -->
 	<item>
 		<ingredient id="4357" count="50000" /> <!-- Silver Shilen -->
