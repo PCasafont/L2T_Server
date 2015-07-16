@@ -153,7 +153,7 @@ public class EventConfig
 		{
 			25.0, // TvT
 			13.0, // Capture the Flag
-			5.0, // VIP TvT
+			0.0, // VIP TvT
 			9.0, // Survival
 			11.0, // Death Match
 			4.0, // King of the Hill
