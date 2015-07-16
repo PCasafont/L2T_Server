@@ -480,12 +480,9 @@ public class CharStat
 		if (_activeChar instanceof L2GuardInstance && ((L2GuardInstance)_activeChar).getOwner() != null)
 			return ((L2GuardInstance)_activeChar).getOwner().getWalkSpeed();
 		
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance)_activeChar).isInEvent()
-				&& ((L2PcInstance)_activeChar).getEvent().isType(EventType.StalkedSalkers))
-			return 150;
-		
 		if (_activeChar.isRunning())
 			return getRunSpeed();
+		
 		return getWalkSpeed();
 	}
 	
@@ -702,11 +699,14 @@ public class CharStat
 		
 		if (_activeChar instanceof L2GuardInstance && ((L2GuardInstance)_activeChar).getOwner() != null)
 			return ((L2GuardInstance)_activeChar).getOwner().getRunSpeed();
-					
+		
+		if (_activeChar instanceof L2PcInstance && ((L2PcInstance)_activeChar).isInEvent()
+				&& ((L2PcInstance)_activeChar).getEvent().isType(EventType.StalkedSalkers))
+			return 180;
+		
 		// err we should be adding TO the persons run speed
 		// not making it a constant
 		double baseRunSpd = _activeChar.getTemplate().baseRunSpd;
-		
 		if (baseRunSpd == 0)
 			return 0;
 		
