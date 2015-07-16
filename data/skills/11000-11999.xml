@@ -6435,7 +6435,7 @@
 		<for>
 			<abnormal count="10" duration="1" landRate="#landRate" stackLvl="8" stackType="mark_trick">
 				<effect type="MDamOverTime" val="#DOT" />
-				<add stat="skillFailureRate" val="25" />
+				<effect type="AbortCast" val="0" />
 			</abnormal>
 		</for>
 	</skill>

@@ -6503,13 +6503,6 @@ public abstract class L2Character extends L2Object
 			return;
 		}
 		
-		if (calcStat(Stats.SKILL_FAILURE_RATE, 0.0, null, skill) > Rnd.get(100) && isCastingNow() && skill.getHitTime() > 200 && getLastSkillCast() != null && getLastSkillCast().isMagic())
-		{
-			abortCast();
-			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTING_INTERRUPTED));
-			return;
-		}
-		
 		if (getFusionSkill() != null || mut.skill.getSkillType() == L2SkillType.CONTINUOUS_DEBUFF
 				|| mut.skill.getSkillType() == L2SkillType.CONTINUOUS_DRAIN
 				|| mut.skill.getSkillType() == L2SkillType.CONTINUOUS_CASTS)

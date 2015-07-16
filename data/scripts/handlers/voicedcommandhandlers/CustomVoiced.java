@@ -279,7 +279,6 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("Reflected Res", 100 - player.calcStat(Stats.REFLECT_VULN, 100, null, null), 0, true, "%");
 		html += getStatHtm("M. MP Consume Rate", player.calcStat(Stats.MAGICAL_MP_CONSUME_RATE, 100, null, null), 0, false, "%");
 		html += getStatHtm("P. MP Consume Rate", player.calcStat(Stats.PHYSICAL_MP_CONSUME_RATE, 100, null, null), 0, false, "%");
-		html += getStatHtm("Interrupt Cast", player.calcStat(Stats.SKILL_FAILURE_RATE, 0, null, null), 0, false, "%");
 		html += getStatHtm("P. Skill Evasion Rate", player.calcStat(Stats.P_SKILL_EVASION, 100, null, null) - 100, 0, false, "%");
 		html += getStatHtm("M. Skill Evasion Rate", player.calcStat(Stats.M_SKILL_EVASION, 0, null, null), 0, false, "%");
 		html += getStatHtm("PvP P. Dmg", player.calcStat(Stats.PVP_PHYSICAL_DMG, 100, null, null) - 100, 0, true, "%");

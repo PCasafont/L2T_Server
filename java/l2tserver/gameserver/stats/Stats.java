@@ -304,7 +304,6 @@ public enum Stats
 	
 	// Skill mastery
 	SKILL_MASTERY("skillMastery"),
-	SKILL_FAILURE_RATE("skillFailureRate"),
 	
 	//Extra global chats
 	GLOBAL_CHAT("globalChat"),
