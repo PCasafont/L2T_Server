@@ -432,9 +432,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo
 		if (getCount() < 0)
 			setCount(0);
 		
-		if (getOwnerId() == 0 && getCount() > 0)
-			Log.warning("LULOLS");
-		
 		_storedInDb = false;
 		
 		if (Config.LOG_ITEMS && process != null && !process.contains("Consume"))
