@@ -187,10 +187,12 @@
 		<itemDrop itemId="4355" min="1" max="1" chance="40" /> <!-- Blue Eva -->
 		<itemDrop itemId="38574" min="1" max="1" chance="10" /> <!-- Apparition Stone lvl 99 -->
 	</customFarm>
-	<customFarm farmZone="primeval_custom_altar" adjustDropsPerMob="25942"> <!-- Lvl: 105 | Strength: 3633365 | Exp Score: 41 -->
+	<customFarm farmZone="primeval_custom_altar" adjustDropsPerMob="25942" atkMultiplier="0.2" defMultiplier="0.5"> <!-- Lvl: 105 | Strength: 3633365 | Exp Score: 41 -->
 		<itemDrop itemId="4357" min="10672986" max="14295638" chance="100"/> <!-- Silver Shilen -->
 		<itemDrop itemId="36514" min="2" max="3" chance="85" /> <!-- Elcyum Crystal -->
-		<itemDrop itemId="4355" min="45" max="75" chance="100" /> <!-- Blue Eva -->
-		<itemDrop itemId="46150" min="1" max="2" chance="70" /> <!-- Superior Giant's Codex Chapter 1 -->
+		<itemDrop itemId="4355" min="105" max="160" chance="100" /> <!-- Blue Eva -->
+		<itemDrop itemId="46151" min="1" max="2" chance="80" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+		<itemDrop itemId="46154" min="1" max="1" chance="50" /> <!-- Superior Giant's Codex Chapter 2 -->
+		<itemDrop itemId="46155" min="1" max="2" chance="20" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
 	</customFarm>
 </list>
