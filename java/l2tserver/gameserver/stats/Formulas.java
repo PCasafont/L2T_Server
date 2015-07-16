@@ -17,7 +17,6 @@ package l2tserver.gameserver.stats;
 import java.util.logging.Level;
 
 import l2tserver.Config;
-import l2tserver.gameserver.datatables.PlayerClassTable;
 import l2tserver.gameserver.datatables.SkillTable;
 import l2tserver.gameserver.instancemanager.CastleManager;
 import l2tserver.gameserver.instancemanager.ClanHallManager;
@@ -1283,7 +1282,7 @@ public final class Formulas
 		}
 		
 		double atk = attacker.calcStat(Stats.CRITICAL_ATTACK, attacker.getPAtk(target), target, skill);
-		double power =  skill.getPower(target instanceof L2Playable, target instanceof L2Attackable);
+		double power = skill.getPower(target instanceof L2Playable, target instanceof L2Attackable);
 		
 		if (skill.getId() == 10510 && target.getFirstEffect("bleeding") != null) //Chain Blow
 			power *= 1.20;
@@ -1293,14 +1292,11 @@ public final class Formulas
 			ssMul *= skill.getSSBoost() / L2ItemInstance.CHARGED_SOULSHOT;
 		double pvpBonus = 1;
 		
-		if ((attacker instanceof L2Playable) && (target instanceof L2Playable))
+		if (attacker instanceof L2Playable && target instanceof L2Playable)
 		{
-			//pvpBonus = attacker.calcStat(Stats.PVP_PHYS_SKILL_DMG, pvpBonus, null, null);
-			// Def bonusses in PvP fight
-			//defence = target.calcStat(Stats.PVP_PHYS_SKILL_DEF, defence, null, null);
-			// Dmg bonusses in PvP fight
+			// Dmg bonuses in PvP fight
 			pvpBonus *= attacker.getPvPPhysicalSkillDamage(target);
-			// Def bonusses in PvP fight
+			// Def bonuses in PvP fight
 			defence *= target.getPvPPhysicalSkillDefense(attacker);
 		}
 			
@@ -1354,7 +1350,7 @@ public final class Formulas
 				damage *= pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)target);
 		}
 		
-		if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
+		/*if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
 		{
 			Log.info("Blow: " + skill.getName());
 			Log.info("\tChar: " + attacker.getName());
@@ -1383,7 +1379,7 @@ public final class Formulas
 					continue;
 				Log.info("\t\t" + eff.getSkill().getName());
 			}
-		}
+		}*/
 
 		return damage < 1 ? 1. : damage;
 	}
@@ -3364,7 +3360,6 @@ public final class Formulas
 				&& attackerClass.getParent().getAwakeningClassId() > 0)
 		{
 			int awakening = attackerClass.getParent().getAwakeningClassId();
-			@SuppressWarnings("unused")
 			L2Weapon weapon = attacker.getActiveWeaponItem();
 			switch (awakening)
 			{
@@ -3374,15 +3369,15 @@ public final class Formulas
 				case 140: // Tyrr Warrior
 					multiplier *= 1.3;
 					break;
-				case 141: //Othell Rogue
-					//if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER))
-					//multiplier *= 1.9;
+				case 141: // Othell Rogue
+					if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER))
+						multiplier *= 1.3;
 					break;
-				case 142: //Yul Archer
+				case 142: // Yul Archer
 					//multiplier *= 1.4;
 					break;
-				case 143: //Feoh Wizard
-					multiplier *= 1.3;
+				case 143: // Feoh Wizard
+					multiplier *= 1.1;
 					break;
 				case 144: // Iss Enchanter
 					multiplier *= 1.8;
@@ -3419,13 +3414,13 @@ public final class Formulas
 				case 140: // Tyrr Warrior
 					//multiplier *= 1.3;
 					break;
-				case 141: //Othell Rogue
+				case 141: // Othell Rogue
 					//multiplier *= 1.9;
 					break;
-				case 142: //Yul Archer
+				case 142: // Yul Archer
 					//multiplier *= 1.4;
 					break;
-				case 143: //Feoh Wizard
+				case 143: // Feoh Wizard
 					//multiplier *= 1.5;
 					break;
 				case 144: // Iss Enchanter
@@ -3450,7 +3445,7 @@ public final class Formulas
 				break;
 		}
 		
-		//	multiplier *= 0.9;
+		multiplier *= 0.8;
 		
 		return multiplier;
 	}
