@@ -1,16 +1,15 @@
 ﻿<list>
-	<currency position="1" itemId="57"/> <!-- Adena -->
-	<currency position="2" itemId="4357"/> <!-- Silver Shilen -->
-	<currency position="3" itemId="4037"/> <!-- Coin of Luck -->
-	<auction id="1" itemId="39572" count="1" repeatTime="40" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Talisman - Insanity -->
-	<auction id="2" itemId="38854,38859,38874,38879,38884,38889,38894,38899" count="1" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- LvL 5 Brooches -->
-	<auction id="101" itemId="19463" count="1" repeatTime="80" randomRepeatTime="20" initialCurrencyId="57" initialPrice="1" initialDuration="72" /> <!-- Blessed Antharas' Earring -->
-	<auction id="102" itemId="19464" count="1" repeatTime="80" randomRepeatTime="20" initialCurrencyId="57" initialPrice="1" initialDuration="72" /> <!-- Blessed Valakas' Necklace -->
-	<auction id="103" itemId="36946" count="1" repeatTime="80" randomRepeatTime="20" initialCurrencyId="57" initialPrice="1" initialDuration="72" /> <!-- Lindvior's Earring -->
-	<auction id="104" itemId="36254" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="57" initialPrice="1" initialDuration="36" /> <!-- Queen Ant's Soul Ring -->
-	<auction id="105" itemId="37521" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="57" initialPrice="1" initialDuration="36" /> <!-- Baium's Soul Ring -->
-	<auction id="106" itemId="36255" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="57" initialPrice="1" initialDuration="36" /> <!-- Orfen's Soul Earring -->
-	<auction id="107" itemId="37522" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="57" initialPrice="1" initialDuration="36" /> <!-- Frintezza's Soul Necklace -->
-	<auction id="108" itemId="39657" count="1" repeatTime="40" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Venir's Talisman - Stage 24 -->
-	<auction id="109" itemId="37717" count="1" repeatTime="40" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Talisman - Seven Signs -->
+	<currency position="1" itemId="4357"/> <!-- Silver Shilen -->
+	<currency position="2" itemId="4037"/> <!-- Coin of Luck -->
+	<auction id="1" itemId="39572" count="1" repeatTime="25" randomRepeatTime="5" initialCurrencyId="4357" initialPrice="1" initialDuration="24" /> <!-- Talisman - Insanity -->
+	<auction id="2" itemId="38854,38859,38874,38879,38884,38889,38894,38899" count="1" repeatTime="15" randomRepeatTime="3" initialCurrencyId="4357" initialPrice="1" initialDuration="12" /> <!-- LvL 5 Brooches -->
+	<auction id="101" itemId="19463" count="1" repeatTime="80" randomRepeatTime="20" initialCurrencyId="4357" initialPrice="1" initialDuration="72" /> <!-- Blessed Antharas' Earring -->
+	<auction id="102" itemId="19464" count="1" repeatTime="80" randomRepeatTime="20" initialCurrencyId="4357" initialPrice="1" initialDuration="72" /> <!-- Blessed Valakas' Necklace -->
+	<auction id="103" itemId="36946" count="1" repeatTime="80" randomRepeatTime="20" initialCurrencyId="4357" initialPrice="1" initialDuration="72" /> <!-- Lindvior's Earring -->
+	<auction id="104" itemId="36254" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Queen Ant's Soul Ring -->
+	<auction id="105" itemId="37521" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Baium's Soul Ring -->
+	<auction id="106" itemId="36255" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Orfen's Soul Earring -->
+	<auction id="107" itemId="37522" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Frintezza's Soul Necklace -->
+	<!-- <auction id="108" itemId="39657" count="1" repeatTime="40" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Venir's Talisman - Stage 24 -->
+	<auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Talisman - Seven Signs -->
 </list>
