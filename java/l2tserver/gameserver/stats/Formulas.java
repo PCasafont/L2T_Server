@@ -1290,8 +1290,8 @@ public final class Formulas
 		double damage = 0;
 		if (skill.getSSBoost() > 0)
 			ssMul *= skill.getSSBoost() / L2ItemInstance.CHARGED_SOULSHOT;
-		double pvpBonus = 1;
 		
+		double pvpBonus = 1;
 		if (attacker instanceof L2Playable && target instanceof L2Playable)
 		{
 			// Dmg bonuses in PvP fight
@@ -3240,9 +3240,7 @@ public final class Formulas
 			blowChance *= 1.5; //50% better chance from side
 		}
 		
-		double blowRate = activeChar.calcStat(Stats.BLOW_RATE, blowChance * (1.0 + (activeChar.getDEX()) / 400.0), target, null);
-		if (blowRate > 2 && target instanceof L2Attackable && ((L2Attackable)target).getLevel() > 100)
-			blowRate /= 2;
+		double blowRate = activeChar.calcStat(Stats.BLOW_RATE, blowChance * (1.0 + (activeChar.getDEX()) / 100.0), target, null);
 		return blowRate > Rnd.get(100);
 	}
 	
