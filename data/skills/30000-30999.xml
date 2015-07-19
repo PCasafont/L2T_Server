@@ -2100,7 +2100,7 @@
 		<set name="flyCourse" val="270" />
 		<set name="flyRadius" val="40" />
 		<for>
-			<abnormal duration="5" landRate="80" stackLvl="1" stackType="right_sidestep">
+			<abnormal duration="5" landRate="80" stackLvl="1" stackType="pd_down">
 				<addPercent stat="dualFistWpnVuln" val="#power" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
 			</abnormal>
