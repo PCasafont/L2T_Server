@@ -616,7 +616,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_isHeroSkill = HeroSkillTable.isHeroSkill(_id);
 		_isGMSkill = GMSkillTable.isGMSkill(_id);
 		
-		_baseCritRate = set.getInteger("baseCritRate", (_skillType == L2SkillType.PDAM  || _skillType == L2SkillType.BLOW) ? 0 : -1);
+		_baseCritRate = set.getInteger("baseCritRate", 0);
 		_lethalEffect1 = set.getInteger("lethal1",0);
 		_lethalEffect2 = set.getInteger("lethal2",0);
 		

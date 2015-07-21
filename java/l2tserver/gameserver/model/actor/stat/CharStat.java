@@ -402,11 +402,18 @@ public class CharStat
 			//Radiant Heal Panic Heal Brilliant Heal have 100% critical when the target have this stat
 			if (calcStat(Stats.HEAL_CRIT_RATE, 1, target, skill) > 1 && skill.getSkillType() == L2SkillType.OVERHEAL && skill.getId() >= 11755 && skill.getId() <= 11757)
 				return 1550;
+			
 			mrate = target.calcStat(Stats.MCRITICAL_RECV_RATE, mrate, _activeChar, skill);
-		}	
+		}
+		
 		int maxCritical = (int)Math.round(calcStat(Stats.MAX_MAGIC_CRITICAL_RATE, Config.MAX_MCRIT_RATE, target, skill));
 		if (mrate > maxCritical)
 			mrate = maxCritical;
+		
+		// For magical skills, critical rate is an additional percentage of chance
+		if (skill != null && skill.getBaseCritRate() > 0)
+			mrate *= 1.0f + skill.getBaseCritRate() / 100.0f;
+		
 		return (int) mrate;
 	}
 	

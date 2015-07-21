@@ -204,42 +204,13 @@
 	-->
 	<skill id="11011" levels="11" name="Elemental Spike">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -254,6 +225,7 @@
 		<set name="sharedReuse" val="11011" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isStanceSwitch" val="true" />
@@ -273,42 +245,13 @@
 	-->
 	<skill id="11012" levels="11" name="Elemental Spike (Fire)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -323,6 +266,7 @@
 		<set name="sharedReuse" val="11011" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
@@ -348,42 +292,13 @@
 	-->
 	<skill id="11013" levels="11" name="Elemental Spike (Water)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -398,6 +313,7 @@
 		<set name="sharedReuse" val="11011" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
@@ -423,42 +339,13 @@
 	-->
 	<skill id="11014" levels="11" name="Elemental Spike (Wind)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -473,6 +360,7 @@
 		<set name="sharedReuse" val="11011" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
@@ -498,42 +386,13 @@
 	-->
 	<skill id="11015" levels="11" name="Elemental Spike (Earth)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -548,6 +407,7 @@
 		<set name="sharedReuse" val="11011" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
@@ -573,42 +433,13 @@
 	-->
 	<skill id="11016" levels="11" name="Elemental Spike (4 Elements)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -623,6 +454,7 @@
 		<set name="sharedReuse" val="11011" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isElemental" val="true" />
@@ -647,42 +479,13 @@
 	-->
 	<skill id="11017" levels="11" name="Elemental Crash">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -697,6 +500,7 @@
 		<set name="sharedReuse" val="11017" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isStanceSwitch" val="true" />
@@ -716,42 +520,13 @@
 	-->
 	<skill id="11018" levels="11" name="Elemental Crash (Fire)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -766,6 +541,7 @@
 		<set name="sharedReuse" val="11017" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
@@ -791,42 +567,13 @@
 	-->
 	<skill id="11019" levels="11" name="Elemental Crash (Water)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -841,6 +588,7 @@
 		<set name="sharedReuse" val="11017" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
@@ -866,42 +614,13 @@
 	-->
 	<skill id="11020" levels="11" name="Elemental Crash (Wind)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -916,6 +635,7 @@
 		<set name="sharedReuse" val="11017" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
@@ -941,42 +661,13 @@
 	-->
 	<skill id="11021" levels="11" name="Elemental Crash (Earth)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -991,6 +682,7 @@
 		<set name="sharedReuse" val="11017" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
@@ -1016,42 +708,13 @@
 	-->
 	<skill id="11022" levels="11" name="Elemental Crash (4 Elements)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 55 57 60 62 65 67 70 73 76 79 </table>
 		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1066,6 +729,7 @@
 		<set name="sharedReuse" val="11017" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isElemental" val="true" />
@@ -1090,42 +754,13 @@
 	-->
 	<skill id="11023" levels="11" name="Elemental Destruction">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 125 130 135 140 146 151 157 163 169 175 181 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1140,6 +775,7 @@
 		<set name="sharedReuse" val="11023" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isStanceSwitch" val="true" />
@@ -1159,42 +795,13 @@
 	-->
 	<skill id="11024" levels="11" name="Elemental Destruction (Fire)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 125 130 135 140 146 151 157 163 169 175 181 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1209,6 +816,7 @@
 		<set name="sharedReuse" val="11023" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
@@ -1234,42 +842,13 @@
 	-->
 	<skill id="11025" levels="11" name="Elemental Destruction (Water)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 125 130 135 140 146 151 157 163 169 175 181 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1284,6 +863,7 @@
 		<set name="sharedReuse" val="11023" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
@@ -1309,42 +889,13 @@
 	-->
 	<skill id="11026" levels="11" name="Elemental Destruction (Wind)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 125 130 135 140 146 151 157 163 169 175 181 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1359,6 +910,7 @@
 		<set name="sharedReuse" val="11023" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
@@ -1384,42 +936,13 @@
 	-->
 	<skill id="11027" levels="11" name="Elemental Destruction (Earth)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 125 130 135 140 146 151 157 163 169 175 181 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1434,6 +957,7 @@
 		<set name="sharedReuse" val="11023" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
@@ -1459,42 +983,13 @@
 	-->
 	<skill id="11028" levels="11" name="Elemental Destruction (4 Elements)">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 125 130 135 140 146 151 157 163 169 175 181 </table>
 		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1509,6 +1004,7 @@
 		<set name="sharedReuse" val="11023" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isElemental" val="true" />
@@ -1562,42 +1058,13 @@
 	-->
 	<skill id="11030" levels="4" name="Death Lord">
 		<enchantRoute id="1" level="3,4" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4" enabled="false" />
+		<enchantRoute id="2" level="3,4" /> <!-- Wild -->
 		<table name="#mpConsume"> 68 72 84 88 </table>
 		<table name="#power"> 25 50 75 100 
 			<enchantRoute id="1" level="3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="CONTINUOUS_DRAIN" />
@@ -1609,6 +1076,7 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="absorbPart" val="100" />
 		<set name="absorbTime" val="10" />
 	</skill>
@@ -1667,42 +1135,13 @@
 	-->
 	<skill id="11034" levels="8" name="Elemental Blast">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -1718,6 +1157,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isStanceSwitch" val="true" />
@@ -1734,42 +1174,13 @@
 	-->
 	<skill id="11035" levels="8" name="Elemental Blast (Fire)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -1785,6 +1196,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
@@ -1802,42 +1214,13 @@
 	-->
 	<skill id="11036" levels="8" name="Elemental Blast (Water)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -1853,6 +1236,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
@@ -1870,42 +1254,13 @@
 	-->
 	<skill id="11037" levels="8" name="Elemental Blast (Wind)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -1921,6 +1276,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
@@ -1938,42 +1294,13 @@
 	-->
 	<skill id="11038" levels="8" name="Elemental Blast (Earth)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -1989,6 +1316,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
@@ -2006,42 +1334,13 @@
 	-->
 	<skill id="11039" levels="8" name="Elemental Blast (4 Elements)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 213 216 228 234 246 255 264 276 </table>
 		<table name="#power"> 210 213 219 226 231 238 243 250 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2057,6 +1356,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isElemental" val="true" />
@@ -2073,42 +1373,13 @@
 	-->
 	<skill id="11040" levels="8" name="Elemental Storm">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2124,6 +1395,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isStanceSwitch" val="true" />
@@ -2140,42 +1412,13 @@
 	-->
 	<skill id="11041" levels="8" name="Elemental Storm (Fire)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2191,6 +1434,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
@@ -2208,42 +1452,13 @@
 	-->
 	<skill id="11042" levels="8" name="Elemental Storm (Water)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2259,6 +1474,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
@@ -2276,42 +1492,13 @@
 	-->
 	<skill id="11043" levels="8" name="Elemental Storm (Wind)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2327,6 +1514,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
@@ -2344,42 +1532,13 @@
 	-->
 	<skill id="11044" levels="8" name="Elemental Storm (Earth)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2395,6 +1554,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
@@ -2412,42 +1572,13 @@
 	-->
 	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
 		<enchantRoute id="1" level="7,8" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8" enabled="false" />
+		<enchantRoute id="2" level="7,8" /> <!-- Wild -->
 		<table name="#mpConsume"> 264 276 288 300 315 324 336 351 </table>
 		<table name="#power"> 262 270 277 285 292 299 307 315 
 			<enchantRoute id="1" level="7,8" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -2463,6 +1594,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="saveVs" val="MEN" />
 		<set name="isElemental" val="true" />
@@ -4081,44 +3213,15 @@
 	-->
 	<skill id="11106" levels="7" name="Elemental Burst">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#duration"> 15 20 25 30 30 30 30 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4132,6 +3235,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="negateId" val="11101" />
 		<set name="isStanceSwitch" val="true" />
 		<for>
@@ -4155,44 +3259,15 @@
 	-->
 	<skill id="11107" levels="7" name="Elemental Burst: Fire">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#duration"> 15 20 25 30 30 30 30 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4206,6 +3281,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11101" />
@@ -4230,44 +3306,15 @@
 	-->
 	<skill id="11108" levels="7" name="Elemental Burst: Water">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#duration"> 15 20 25 30 30 30 30 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4281,6 +3328,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11102" />
@@ -4305,44 +3353,15 @@
 	-->
 	<skill id="11109" levels="7" name="Elemental Burst: Wind">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#duration"> 15 20 25 30 30 30 30 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4356,6 +3375,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11103" />
@@ -4380,44 +3400,15 @@
 	-->
 	<skill id="11110" levels="7" name="Elemental Burst: Earth">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#duration"> 15 20 25 30 30 30 30 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4431,6 +3422,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11104" />
@@ -4455,44 +3447,15 @@
 	-->
 	<skill id="11111" levels="7" name="Elemental Burst: 4 Attributes">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#duration"> 15 20 25 30 30 30 30 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4506,6 +3469,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11105" />
 		<for>
@@ -4529,42 +3493,13 @@
 	-->
 	<skill id="11112" levels="7" name="Elemental Burst">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -4578,6 +3513,7 @@
 		<set name="sharedReuse" val="11112" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="negateId" val="11101" />
 		<set name="isStanceSwitch" val="true" />
 		<for>
@@ -4600,42 +3536,13 @@
 	-->
 	<skill id="11113" levels="7" name="Elemental Burst: Fire">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -4649,6 +3556,7 @@
 		<set name="sharedReuse" val="11112" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11101" />
@@ -4672,42 +3580,13 @@
 	-->
 	<skill id="11114" levels="7" name="Elemental Burst: Water">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -4721,6 +3600,7 @@
 		<set name="sharedReuse" val="11112" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11102" />
@@ -4744,42 +3624,13 @@
 	-->
 	<skill id="11115" levels="7" name="Elemental Burst: Wind">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -4793,6 +3644,7 @@
 		<set name="sharedReuse" val="11112" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11103" />
@@ -4816,42 +3668,13 @@
 	-->
 	<skill id="11116" levels="7" name="Elemental Burst: Earth">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -4865,6 +3688,7 @@
 		<set name="sharedReuse" val="11112" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11104" />
@@ -4888,42 +3712,13 @@
 	-->
 	<skill id="11117" levels="7" name="Elemental Burst: 4 Attributes">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -4937,6 +3732,7 @@
 		<set name="sharedReuse" val="11112" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11105" />
 		<for>
@@ -4959,42 +3755,13 @@
 	-->
 	<skill id="11118" levels="7" name="Elemental Burst">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -5008,6 +3775,7 @@
 		<set name="sharedReuse" val="11118" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="negateId" val="11101" />
 		<set name="isStanceSwitch" val="true" />
 		<for>
@@ -5030,42 +3798,13 @@
 	-->
 	<skill id="11119" levels="7" name="Elemental Burst: Fire">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -5079,6 +3818,7 @@
 		<set name="sharedReuse" val="11118" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11101" />
@@ -5102,42 +3842,13 @@
 	-->
 	<skill id="11120" levels="7" name="Elemental Burst: Water">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -5151,6 +3862,7 @@
 		<set name="sharedReuse" val="11118" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11102" />
@@ -5174,42 +3886,13 @@
 	-->
 	<skill id="11121" levels="7" name="Elemental Burst: Wind">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -5223,6 +3906,7 @@
 		<set name="sharedReuse" val="11118" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11103" />
@@ -5246,42 +3930,13 @@
 	-->
 	<skill id="11122" levels="7" name="Elemental Burst: Earth">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -5295,6 +3950,7 @@
 		<set name="sharedReuse" val="11118" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11104" />
@@ -5318,42 +3974,13 @@
 	-->
 	<skill id="11123" levels="7" name="Elemental Burst: 4 Attributes">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -5367,6 +3994,7 @@
 		<set name="sharedReuse" val="11118" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="elementPower" val="20" />
 		<set name="negateId" val="11105" />
 		<for>
@@ -6952,39 +5580,7 @@
 	-->
 	<skill id="11263" levels="10" name="Invoke">
 		<enchantRoute id="1" level="6,7,8,9,10" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="6,7,8,9,10" enabled="false" />
+		<enchantRoute id="2" level="6,7,8,9,10" /> <!-- Wild -->
 		<enchantRoute id="3" level="6,7,8,9,10" /> <!-- Distance -->
 		<table name="#power"> 147 151 156 160 164 168 172 198 204 210 
 			<enchantRoute id="1" level="6,7,8,9,10" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
@@ -6995,6 +5591,9 @@
 		</table>
 		<table name="#effectRange"> 1100 
 			<enchantRoute id="3" level="6,7,8,9,10"> 1110 1120 1130 1140 1150 1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="6,7,8,9,10"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -7008,6 +5607,7 @@
 		<set name="castRange" val="#castRange" />
 		<set name="effectRange" val="#effectRange" />
 		<set name="skillRadius" val="200" />
+		<set name="baseCritRate" val="#baseCritRate" />
 	</skill>
 	<!-- 
 		Level 1: Consume HP to recover 200 MP. Dispels debuffs and escapes immobility.
@@ -8114,43 +6714,14 @@
 	-->
 	<skill id="11298" levels="11" name="Mark of Fire">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#power"> 168 170 175 180 185 189 194 199 222 228 234 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#mpConsume"> 63 65 68 70 73 76 79 82 85 88 91 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -8162,6 +6733,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 	</skill>
 	<!-- Balances you and your servitor's HP. -->
 	<skill id="11299" levels="1" name="Servitor Balance Life">
@@ -9349,42 +7921,13 @@
 	-->
 	<skill id="11350" levels="7" name="Arcane Rage">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 60 67 70 73 76 79 </table>
 		<table name="#power"> 188 202 215 227 242 248 254 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -9397,6 +7940,7 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<for>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11351" triggeredLevel="0" type="ChanceSkillTrigger" val="0" />
@@ -9450,42 +7994,13 @@
 	-->
 	<skill id="11353" levels="7" name="Elemental Rage">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 60 67 70 73 76 79 </table>
 		<table name="#power"> 188 202 215 227 242 248 254 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -9498,6 +8013,7 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<for>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11354" triggeredLevel="0" type="ChanceSkillTrigger" val="0" />
@@ -9551,42 +8067,13 @@
 	-->
 	<skill id="11356" levels="7" name="Spectral Rage">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Wild -->
 		<table name="#mpConsume"> 53 60 67 70 73 76 79 </table>
 		<table name="#power"> 188 202 215 227 242 248 254 
 			<enchantRoute id="1" level="3,4,5,6,7" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -9599,6 +8086,7 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<for>
 			<abnormal noicon="1" self="1">
 				<effect activationChance="100" chanceType="ON_START" triggeredId="11357" triggeredLevel="0" type="ChanceSkillTrigger" val="0" />
@@ -11029,39 +9517,7 @@
 	-->
 	<skill id="11511" levels="11" name="Death Strike">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Focus -->
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
 		<table name="#mpConsume"> 73 74 76 79 82 84 87 90 93 96 99 </table>
 		<table name="#power"> 21642 22507 24237 25967 27697 29427 31157 32887 40673 42657 44641 
@@ -11069,6 +9525,9 @@
 		</table>
 		<table name="#ignoredDefPercent"> 0.0 
 			<enchantRoute id="3" level="7,8,9,10,11"> 1.0 1.6 2.2 2.8 3.4 4.0 4.6 5.2 5.8 6.4 7.0 7.6 8.2 8.8 9.4 10.0 10.6 11.2 11.8 12.4 13.0 13.6 14.2 14.8 15.4 16.0 16.6 17.2 17.8 18.4 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 15.0 
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -11081,7 +9540,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="SSBoost" val="2.0" />
-		<set name="baseCritRate" val="15" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Sword,Dual Sword,Blunt,Dual Blunt,Big Sword,Big Blunt" />
@@ -12204,45 +10663,16 @@
 	<skill id="11546" levels="4" name="Chaos Symphony">
 		<enchantRoute id="1" level="1,2,3,4" /> <!-- Power -->
 		<enchantRoute id="2" level="1,2,3,4" /> <!-- Chance -->
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="3" level="1,2,3,4" enabled="false" />
+		<enchantRoute id="3" level="1,2,3,4" /> <!-- Focus -->
 		<table name="#power"> 38826 44708 4688 49068 
 			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#mpConsume"> 1767 1775 1783 1791 </table>
 		<table name="#landRate"> 80 
 			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 15.0 
+			<enchantRoute id="3" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="PDAM" />
@@ -12255,7 +10685,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 		<set name="SSBoost" val="2.0" />
-		<set name="baseCritRate" val="15" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="overHit" val="true" />
 		<set name="nextActionAttack" val="true" />
 		<set name="isDebuff" val="true" />
@@ -14299,42 +12729,13 @@
 	-->
 	<skill id="11755" levels="11" name="Radiant Heal">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 138 138 141 143 146 148 151 153 155 157 160 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="OVERHEAL" />
@@ -14347,6 +12748,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="aggroPoints" val="#power" />
 		<for>
 			<abnormal duration="1" noicon="1">
@@ -14370,42 +12772,13 @@
 	-->
 	<skill id="11756" levels="11" name="Panic Heal">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 207 208 212 216 218 222 226 230 233 235 239 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 1749 1763 1777 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="OVERHEAL" />
@@ -14418,6 +12791,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="aggroPoints" val="#power" />
 	</skill>
 	<!-- 
@@ -14435,42 +12809,13 @@
 	-->
 	<skill id="11757" levels="11" name="Brilliant Heal">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 277 281 286 290 295 300 305 310 314 319 323 </table>
 		<table name="#power"> 1191 1200 1210 1220 1230 1240 1250 1261 1406 1418 1430 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_PARTY" />
 		<set name="skillType" val="OVERHEAL" />
@@ -14482,6 +12827,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="skillRadius" val="1000" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="aggroPoints" val="#power" />
 	</skill>
 	<!-- Renders the selected party member invincible for 10 seconds. -->
@@ -14941,42 +13287,13 @@
 	-->
 	<skill id="11766" levels="11" name="Dark Blast">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 70 72 76 78 82 85 88 92 95 97 101 </table>
 		<table name="#power"> 153 158 163 167 171 176 180 185 203 209 215 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -14989,6 +13306,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="5" />
 		<set name="elementPower" val="20" />
 	</skill>
@@ -15007,42 +13325,13 @@
 	-->
 	<skill id="11767" levels="11" name="Mass Dark Veil">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 423 432 450 468 487 506 526 547 561 579 597 </table>
 		<table name="#power"> 117 119 123 126 129 133 136 139 149 151 157 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
@@ -15056,6 +13345,7 @@
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 		<set name="skillRadius" val="200" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="element" val="5" />
 		<set name="elementPower" val="20" />
 		<for>
@@ -16063,45 +14353,16 @@
 	<skill id="11814" levels="11" name="Dark Force">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
 		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Chance -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="3" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 87 91 95 98 102 107 111 116 118 122 127 </table>
 		<table name="#power"> 124 127 129 133 137 141 144 148 178 182 186 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#landRate"> 70 
 			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="3" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -16114,6 +14375,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<for>
 			<abnormal duration="1" landRate="#landRate" stackLvl="1" stackType="knock_back">
 				<effect type="KnockBack" val="0" />
@@ -16159,42 +14421,13 @@
 	-->
 	<skill id="11817" levels="11" name="Dark Rain">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 282 288 300 312 325 337 351 365 373 386 398 </table>
 		<table name="#power"> 102 104 107 110 113 116 119 122 162 166 170 
 			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="MDAM" />
@@ -16206,6 +14439,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="6700" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<for>
 			<abnormal effectType="DEBUFF" noicon="1">
 				<effect type="AggroReduce" val="0" />
