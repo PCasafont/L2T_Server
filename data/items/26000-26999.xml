@@ -900,26 +900,51 @@
 	<item id="26224" type="Weapon" name="Steel Demon's Staff (60-day)" icon="icon.weapon_demons_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="1" crystalType="none" weight="990"
 			soulshots="2" mpConsume="2">
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
 	<item id="26225" type="Weapon" name="Steel Spirit's Staff (60-day)" icon="icon.weapon_sprites_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="1" crystalType="none" weight="960"
 			soulshots="3" mpConsume="2">
+		<set stat="pAtk" val="170" />
+		<set stat="mAtk" val="134" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
 	<item id="26226" type="Weapon" name="Steel Dasparion's Staff (60-day)" icon="icon.weapon_dasparions_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="1" crystalType="none" weight="920"
 			soulshots="4" mpConsume="2">
+		<set stat="pAtk" val="207" />
+		<set stat="mAtk" val="157" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
 	<item id="26227" type="Weapon" name="Steel Imperial Staff (60-day)" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="1" crystalType="none" weight="910"
 			soulshots="5" mpConsume="2">
+		<set stat="pAtk" val="274" />
+		<set stat="mAtk" val="193" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Cannot enchant, augment, or enchant with a soul crystal. 60-day. -->
 	<item id="26228" type="Weapon" name="Steel Dynasty Staff (60-day)" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="1" crystalType="none" weight="1080"
 			soulshots="5" mpConsume="2">
+		<set stat="pAtk" val="325" />
+		<set stat="mAtk" val="222" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Double-click to receive C-grade equipment items necessary for Ertheia wizard-type characters. Can be used by characters Lv. 40 - 84. -->
 	<item id="26229" type="EtcItem" name="Fated Support Box: Ertheia Wizard (C-grade)" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
@@ -999,10 +1024,14 @@
 	<!-- Cloak of Light for those who have proven themselves as testers in Lineage II. P. Def. + 50, M. Def. + 40, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
 	<item id="26249" type="Weapon" name="Cloak of Light for the Chosen" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- Cloak of Darkness for those who have proven themselves as testers in Lineage II. P. Def. + 50, M. Def. + 40, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
 	<item id="26250" type="Weapon" name="Cloak of Darkness for the Chosen" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- Mask for players who came from the Lilith server. Uses 2 hair accessory slots. -->
 	<item id="26251" type="Armor" name="Lilith Server Mask" icon="" defaultAction="equip" bodypart="hairall" material="steel"
@@ -1029,65 +1058,135 @@
 	<!-- Halloween weapon. -->
 	<item id="26256" type="Weapon" name="Halloween Shaper" icon="" defaultAction="equip" weaponType="dagger" bodypart="rhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="685" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26257" type="Weapon" name="Halloween Cutter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26258" type="Weapon" name="Halloween Slasher" icon="" defaultAction="equip" weaponType="bigsword" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26259" type="Weapon" name="Halloween Avenger" icon="" defaultAction="equip" weaponType="blunt" bodypart="rhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26260" type="Weapon" name="Halloween Fighter" icon="" defaultAction="equip" weaponType="dualfist" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26261" type="Weapon" name="Halloween Stormer" icon="" defaultAction="equip" weaponType="pole" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26262" type="Weapon" name="Halloween Thrower" icon="" defaultAction="equip" weaponType="bow" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="1481" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26263" type="Weapon" name="Halloween Shooter" icon="" defaultAction="equip" weaponType="crossbow" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="1333" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26264" type="Weapon" name="Halloween Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="486" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26265" type="Weapon" name="Halloween Caster" icon="" defaultAction="equip" weaponType="blunt" bodypart="rhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="486" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26266" type="Weapon" name="Halloween Retributer" icon="" defaultAction="equip" weaponType="bigblunt" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="733" />
+		<set stat="mAtk" val="535" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26267" type="Weapon" name="Halloween Dualsword" icon="" defaultAction="equip" weaponType="dual" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26268" type="Weapon" name="Halloween Dual Dagger" icon="" defaultAction="equip" weaponType="dualdagger" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26269" type="Weapon" name="Halloween Dual Blunt Weapon" icon="" defaultAction="equip" weaponType="dualblunt" bodypart="lrhand"
 			material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween shield. -->
 	<item id="26270" type="Armor" name="Halloween Shield" icon="" defaultAction="equip" bodypart="lhand" material="steel" weight="0">
+		<set stat="sDef" val="546" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Halloween sigil. -->
 	<item id="26271" type="Armor" name="Halloween Sigil" icon="" defaultAction="equip" armorType="sigil" bodypart="lhand" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Mysterious potion that changes the appearance into that of a Halloween weapon and outfit for 1 hour. -->
 	<item id="26272" type="Weapon" name="Mysterious Halloween Potion" icon="" bodypart="none" crystalType="none" material="steel"
@@ -1106,53 +1205,123 @@
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26275" type="Weapon" name="Halloween Shaper" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="685" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26276" type="Weapon" name="Halloween Cutter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26277" type="Weapon" name="Halloween Slasher" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26278" type="Weapon" name="Halloween Avenger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26279" type="Weapon" name="Halloween Fighter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26280" type="Weapon" name="Halloween Stormer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26281" type="Weapon" name="Halloween Thrower" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="1481" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26282" type="Weapon" name="Halloween Shooter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="1333" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26283" type="Weapon" name="Halloween Buster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="486" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26284" type="Weapon" name="Halloween Caster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="486" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26285" type="Weapon" name="Halloween Retributer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="733" />
+		<set stat="mAtk" val="535" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26286" type="Weapon" name="Halloween Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26287" type="Weapon" name="Halloween Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Halloween weapon. -->
 	<item id="26288" type="Weapon" name="Halloween Dual Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Halloween shield. -->
 	<item id="26289" type="Weapon" name="Halloween Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="sDef" val="546" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Halloween sigil. -->
 	<item id="26290" type="Weapon" name="Halloween Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Use Kaliel's Energy to enchant a Talisman - Desire into a Talisman - Insanity. The Talisman - Desire will remain intact even if it fails. -->
 	<item id="26291" type="Weapon" name="Kaliel's Energy - Longing" icon="" bodypart="none" crystalType="none" material="steel"
@@ -1247,6 +1416,10 @@
 	<!-- Weapon worth 1000 Adena. Shadow item. -->
 	<item id="26312" type="Weapon" name="Offering Test Ingredient  2" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="78" />
+		<set stat="mAtk" val="39" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Stackable item worth 1000 Adena. Timed item. -->
 	<item id="26313" type="Weapon" name="Offering Test Ingredient  3" icon="" bodypart="none" crystalType="none" material="steel"
@@ -1297,6 +1470,7 @@
 	</item>
 	<!-- Santa's warm cloak. -->
 	<item id="26325" type="Weapon" name="Santa Cloak" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="20" />
 	</item>
 	<!-- Lineage II baseball uniform. When equipped, armor is removed and cannot be used. Hair accessories, weapons, and magic armor are not removed. -->
 	<item id="26326" type="Armor" name="Lineage II Baseball Uniform" icon="" bodypart="alldress" crystalType="none" material="steel"

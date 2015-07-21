@@ -310,6 +310,10 @@
 	<!-- A basic for appearance modification. -->
 	<item id="40057" type="Weapon" name="Magic Broom" icon="icon.ert_custom_staff_a" defaultAction="equip" weaponType="bigblunt"
 			bodypart="lrhand" immediateEffect="1" crystalType="d" weight="101" soulshots="1" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- A basic for appearance modification. -->
 	<item id="40058" type="Weapon" name="Cat Staff" icon="icon.ert_custom_staff_b" defaultAction="equip" weaponType="blunt"
@@ -317,6 +321,10 @@
 		<cond msgId="1518">
 			<player races="Ertheia" />
 		</cond>
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- A fake gem being sold in the Material Realm as a gem of the the Wind Spirit Realm. -->
 	<item id="40059" type="EtcItem" name="Counterfeit Atelia" icon="icon.etc_ertheia_astatine_fake" immediateEffect="1" crystalType="c"
@@ -328,6 +336,11 @@
 	</item>
 	<item id="40061" type="Weapon" name="Apprentice's Staff" icon="icon.weapon_willow_staff_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="6" />
+		<set stat="mAtk" val="8" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Recipe for crafting a pendant. Requires Create Item Lv. 14. 100% success rate. Can obtain a pendant with stats if successful. Tyrr Maestros only. -->
 	<item id="40062" type="EtcItem" name="Recipe: Pendant (100%)" icon="icon.etc_recipe_gold_i00" immediateEffect="1" crystalType="c"
@@ -1073,6 +1086,7 @@
 	<!-- Dark Assassin Suit. Equipping this disables armor. Hair accessories, weapons, and magic armor remain equipped. -->
 	<item id="40240" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Double-click to obtain a Freya's Frozen Scroll. Cannot be used in the Olympiad. -->
 	<item id="40241" type="EtcItem" name="Freya's Frozen Lamp - Event" icon="icon.freya_lamp" immediateEffect="1" crystalType="c"
@@ -1085,42 +1099,62 @@
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40243" type="Armor" name="Greater Abelius Cloak (20-day) - Sigel Knight" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40244" type="Armor" name="Greater Sapyros Cloak (20-day) - Tyrr Warrior" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40245" type="Armor" name="Greater Ashagen Cloak (20-day) - Othell Rogue" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40246" type="Armor" name="Greater Cranigg Cloak (20-day) - Yul Archer" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40247" type="Armor" name="Greater Soltkreig Cloak (20-day) - Feoh Wizard" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40248" type="Armor" name="Greater Naviarope Cloak (20-day) - Wynn Summoner" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40249" type="Armor" name="Greater Leister Cloak (20-day) - Iss Enchanter" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40250" type="Armor" name="Greater Lakcis Cloak (20-day) - Aeore Healer" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40251" type="Armor" name="Greater Sayha Cloak (20-day) - Eviscerator" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- M. Def. + 40, STR/INT/CON/MEN + 1. 20-day. -->
 	<item id="40252" type="Armor" name="Greater Sayha Cloak (20-day) - Sayha's Seer" icon="icon.vesper_cloack_i00" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="1" crystalType="r" weight="220" enchantEnabled="1">
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 	</item>
 	<!-- Stun Resistance + 5%, and damage received in PvP - 3%. Cannot be used in the Olympiad or Ceremony of Chaos. Does not stack with other Potions of Protection. -->
 	<item id="40253" type="EtcItem" name="Potion of Protection: Stun - Top-grade" icon="icon.etc_hot_spring_glass_bottle_i00"
@@ -1298,6 +1332,11 @@
 	-->
 	<item id="40291" type="Weapon" name="Steel Demon's Staff - Magic Chaos" icon="icon.weapon_demons_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="990" soulshots="2" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Cannot augment.
@@ -1306,6 +1345,11 @@
 	-->
 	<item id="40292" type="Weapon" name="Steel Spirit's Staff - Magic Mental Shield" icon="icon.weapon_sprites_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="960" soulshots="3" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="170" />
+		<set stat="mAtk" val="134" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Cannot augment.
@@ -1314,6 +1358,11 @@
 	-->
 	<item id="40293" type="Weapon" name="Steel Dasparion's Staff - Acumen" icon="icon.weapon_dasparions_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="920" soulshots="4" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="207" />
+		<set stat="mAtk" val="157" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Cannot augment.
@@ -1322,6 +1371,11 @@
 	-->
 	<item id="40294" type="Weapon" name="Steel Imperial Staff - Empower" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="274" />
+		<set stat="mAtk" val="193" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Cannot augment.
@@ -1330,6 +1384,11 @@
 	-->
 	<item id="40295" type="Weapon" name="Steel Dynasty Staff - Acumen" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="325" />
+		<set stat="mAtk" val="222" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Changes the appearance of a one-handed blunt weapon into that of a Turikki's Blunt Weapon. An appearance-modified item has no change in abilities. Double-click to use. -->
 	<item id="40296" type="EtcItem" name="Monster Weapon Appearance Stone: Turikki's Blunt Weapon" icon="icon.shape_shifting_blunt_i00"
@@ -1342,10 +1401,18 @@
 	<!-- Monster weapon. -->
 	<item id="40298" type="Weapon" name="Turikki's Blunt Weapon" icon="BranchSys3.Icon.g_beam_dualblunt" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="250" soulshots="1" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="125" />
+		<set stat="mAtk" val="186" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Monster weapon. -->
 	<item id="40299" type="Weapon" name="Tiger Bow" icon="icon.pailaka_invader_bow_wp_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" immediateEffect="1" weight="181" soulshots="1" spiritshots="2" mpConsume="6">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Restores 3500 HP. If HP is full, CP is restored. No duration. Cannot be used in the Olympiad. -->
 	<item id="40300" type="EtcItem" name="Freya's Recovery Potion" icon="icon.freya_potion" immediateEffect="1" crystalType="c"
@@ -1398,6 +1465,7 @@
 	<!-- Light and cozy cloak. -->
 	<item id="40312" type="Armor" name="Santa's Cloak" icon="BranchSys3.icon.g_christmas_cloak" defaultAction="equip" bodypart="none"
 			immediateEffect="1" weight="220">
+		<baseAdd stat="pDef" val="20" />
 	</item>
 	<!-- Proof of your successful search for Santa alongside Tree Fairy, Stocking Fairy, and Snowman Fairy. Take this to Noelle for a reward. -->
 	<item id="40313" type="EtcItem" name="Santa's Mark" icon="BranchSys.icon.br_xmas_present_fun_i00" immediateEffect="1" crystalType="c"
@@ -1482,6 +1550,11 @@
 	<item id="40332" type="Weapon" name="Mother Tree's Branch of Fortune - 90-day" icon="icon.weapon_worldtrees_branch_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="900" soulshots="4" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="226" />
+		<set stat="mAtk" val="167" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1490,6 +1563,11 @@
 	<item id="40333" type="Weapon" name="Foundation Staff of Evil Spirits of Fortune - 90-day" icon="icon.weapon_staff_of_evil_sprit_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="930" soulshots="3" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="189" />
+		<set stat="mAtk" val="145" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1497,9 +1575,19 @@
 	-->
 	<item id="40334" type="Weapon" name="Inferno Staff of Fortune - 90-day" icon="icon.weapon_inferno_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1000" soulshots="2" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="135" />
+		<set stat="mAtk" val="111" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="40335" type="Weapon" name="Atuba Mace of Fortune - 90-day" icon="icon.weapon_atuba_mace_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1010" soulshots="1" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="79" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1507,6 +1595,11 @@
 	-->
 	<item id="40336" type="Weapon" name="Imperial Staff of Fortune - 90-day" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="274" />
+		<set stat="mAtk" val="193" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1514,6 +1607,11 @@
 	-->
 	<item id="40337" type="Weapon" name="Dynasty Staff of Fortune - 90-day" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="325" />
+		<set stat="mAtk" val="222" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Item set for Ertheia Fighter classes. Disappears after 90 days if unused. -->
 	<item id="40338" type="EtcItem" name="Ertheia Fighter Equipment Set - 90-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
@@ -1542,6 +1640,11 @@
 	<item id="40343" type="Weapon" name="Mother Tree's Branch of Fortune - 30-day" icon="icon.weapon_worldtrees_branch_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="900" soulshots="4" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="226" />
+		<set stat="mAtk" val="167" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1550,6 +1653,11 @@
 	<item id="40344" type="Weapon" name="Foundation Staff of Evil Spirits of Fortune - 30-day" icon="icon.weapon_staff_of_evil_sprit_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="930" soulshots="3" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="189" />
+		<set stat="mAtk" val="145" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1557,9 +1665,19 @@
 	-->
 	<item id="40345" type="Weapon" name="Inferno Staff of Fortune - 30-day" icon="icon.weapon_inferno_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1000" soulshots="2" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="135" />
+		<set stat="mAtk" val="111" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="40346" type="Weapon" name="Atuba Mace of Fortune - 30-day" icon="icon.weapon_atuba_mace_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1010" soulshots="1" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="79" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1567,6 +1685,11 @@
 	-->
 	<item id="40347" type="Weapon" name="Imperial Staff of Fortune - 30-day" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="274" />
+		<set stat="mAtk" val="193" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1574,6 +1697,11 @@
 	-->
 	<item id="40348" type="Weapon" name="Dynasty Staff of Fortune - 30-day" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="325" />
+		<set stat="mAtk" val="222" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Item set for Ertheia Fighter classes. Disappears after 30 days if unused. -->
 	<item id="40349" type="EtcItem" name="Ertheia Fighter Equipment Set - 30-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
@@ -1598,6 +1726,11 @@
 	<item id="40353" type="Weapon" name="Mother Tree's Branch of Fortune - 10-day" icon="icon.weapon_worldtrees_branch_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="900" soulshots="4" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="226" />
+		<set stat="mAtk" val="167" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1606,6 +1739,11 @@
 	<item id="40354" type="Weapon" name="Foundation Staff of Evil Spirits of Fortune - 10-day" icon="icon.weapon_staff_of_evil_sprit_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="930" soulshots="3" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="189" />
+		<set stat="mAtk" val="145" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1613,9 +1751,19 @@
 	-->
 	<item id="40355" type="Weapon" name="Inferno Staff of Fortune - 10-day" icon="icon.weapon_inferno_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1000" soulshots="2" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="135" />
+		<set stat="mAtk" val="111" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="40356" type="Weapon" name="Atuba Mace of Fortune - 10-day" icon="icon.weapon_atuba_mace_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1010" soulshots="1" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="79" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1623,6 +1771,11 @@
 	-->
 	<item id="40357" type="Weapon" name="Imperial Staff of Fortune - 10-day" icon="icon.weapon_imperial_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="910" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="274" />
+		<set stat="mAtk" val="193" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -1630,6 +1783,11 @@
 	-->
 	<item id="40358" type="Weapon" name="Dynasty Staff of Fortune - 10-day" icon="icon.weapon_dynasty_twohand_staff_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="5" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="325" />
+		<set stat="mAtk" val="222" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Item set for Ertheia Fighter classes. Disappears after 10 days if unused. -->
 	<item id="40359" type="EtcItem" name="Ertheia Fighter Equipment Set - 10-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"

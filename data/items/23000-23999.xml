@@ -4154,68 +4154,134 @@
 	<!-- Russia's weapon crafting contest finalist. One-handed sword type. Weapon Appearance Basic. -->
 	<item id="23913" type="Weapon" name="Tears One-handed Sword" icon="BranchSys3.iconWeapon.g_tears_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="144" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dagger type. Weapon Appearance Basic. -->
 	<item id="23914" type="Weapon" name="Tears Dagger" icon="BranchSys3.iconWeapon.g_tears_dagger_i00" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="106" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="80" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Two-handed sword type. Weapon Appearance Basic. -->
 	<item id="23915" type="Weapon" name="Tears Two-handed Sword" icon="BranchSys3.iconWeapon.g_tears_twohand_sword_i00" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="209" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Fist weapon type. Weapon Appearance Basic. -->
 	<item id="23916" type="Weapon" name="Tears Fist Weapon" icon="BranchSys3.iconWeapon.g_tears_dualfist_i00" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="152" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Spear type. Weapon Appearance Basic. -->
 	<item id="23917" type="Weapon" name="Tears Spear" icon="BranchSys3.iconWeapon.g_tears_pole_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="205" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Bow type. Weapon Appearance Basic. -->
 	<item id="23918" type="Weapon" name="Tears Bow" icon="BranchSys3.iconWeapon.g_tears_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="181" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="191" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Crossbow type. Weapon Appearance Basic. -->
 	<item id="23919" type="Weapon" name="Tears Crossbow" icon="BranchSys3.iconWeapon.g_tears_twohand_crossbow_i00" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="181" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="117" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. One-handed blunt weapon type. Weapon Appearance Basic. -->
 	<item id="23920" type="Weapon" name="Tears One-handed Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_blunt_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="172" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. One-handed magic sword type. Weapon Appearance Basic. -->
 	<item id="23921" type="Weapon" name="Tears Magic Sword" icon="BranchSys3.iconWeapon.g_tears_magic_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="101" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="79" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. One-handed magic blunt weapon type. Weapon Appearance Basic. -->
 	<item id="23922" type="Weapon" name="Tears One-handed Magic Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_blunt_i00"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="172" soulshots="0"
 			spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Two-handed magic blunt weapon type. Weapon Appearance Basic. -->
 	<item id="23923" type="Weapon" name="Tears Two-handed Magic Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_twohand_blunt_i00"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="101" soulshots="0"
 			spiritshots="0">
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dualsword type. Weapon Appearance Basic. -->
 	<item id="23924" type="Weapon" name="Tears Dualsword" icon="BranchSys3.iconWeapon.g_tears_dual_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="247" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="51" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dual Dagger type. Weapon Appearance Basic. -->
 	<item id="23925" type="Weapon" name="Tears Dual Dagger" icon="BranchSys3.iconWeapon.g_tears_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="205" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="181" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dual Blunt Weapon type. Weapon Appearance Basic. -->
 	<item id="23926" type="Weapon" name="Tears Dual Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="250" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="125" />
+		<set stat="mAtk" val="186" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Shield type. Weapon Appearance Basic. -->
 	<item id="23927" type="Armor" name="Tears Shield" icon="BranchSys3.iconWeapon.g_tears_shield_i00" defaultAction="equip"
 			armorType="none" bodypart="lhand" immediateEffect="1" weight="200">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Sigil type. Weapon Appearance Basic. -->
 	<item id="23928" type="Armor" name="Tears Sigil" icon="BranchSys3.iconWeapon.g_tears_sigil_i00" defaultAction="equip" armorType="sigil"
 			bodypart="lhand" immediateEffect="1" weight="100">
+		<set stat="sDef" val="47" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Changes the appearance of a one-handed sword to that of a Tears One-handed Sword. 7-day. -->
 	<item id="23929" type="EtcItem" name="Tears One-handed Sword Appearance Stone - 7-day" icon="BranchSys3.Icon.g_shape_shifting_sword"

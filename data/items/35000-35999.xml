@@ -9,6 +9,7 @@
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 		<add stat="darkPower" val="450" />
+		<baseAdd stat="accCombat" val="8" />
 		<skill id="8879" level="1" /> <!-- Tauti's Special Ability: Axe -->
 		<skill id="9459" level="1" /> <!-- Tauti's Wrath -->
 		<crystallizeReward id="36163" count="2" chance="87.674" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
@@ -20,11 +21,12 @@
 	<item id="35001" type="Weapon" name="Tauti's Dual Axe" icon="icon.weapon_tauti_dual_axe_i01" defaultAction="equip" weaponType="dualblunt"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1700" soulshots="1"
 			spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
-		<set stat="pAtk" val="766" />
+		<set stat="pAtk" val="776" />
 		<set stat="mAtk" val="278" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="325" />
 		<add stat="darkPower" val="450" />
+		<baseAdd stat="accCombat" val="8" />
 		<skill id="8880" level="1" /> <!-- Tauti's Special Ability: Two-handed Axe -->
 		<skill id="9459" level="1" /> <!-- Tauti's Wrath -->
 		<crystallizeReward id="36163" count="2" chance="87.674" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->

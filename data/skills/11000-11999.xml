@@ -8064,10 +8064,6 @@
 		<table name="#pAtk"> 60 65 70 70 </table>
 		<table name="#pDef"> 50 53 53 60 </table>
 		<table name="#mDef"> 30 35 35 50 </table>
-		<table name="#maxHpMp"> 15 </table>
-		<table name="#atkSpd"> 10 </table>
-		<table name="#pCritRate"> 30 </table>
-		<table name="#pCritDamage"> 15 </table>
 		<table name="#coolTime"> 200 0 0 0 </table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -8083,12 +8079,12 @@
 				<add stat="ownerPAtk" val="#pAtk" />
 				<add stat="ownerPDef" val="#pDef" />
 				<add stat="ownerMDef" val="#mDef" />
-				<add stat="ownerMaxHp" val="#maxHpMp" />
-				<add stat="ownerMaxMp" val="#maxHpMp" />
-				<add stat="ownerPAtkSpd" val="#atkSpd" />
-				<add stat="ownerMAtkSpd" val="#atkSpd" />
-				<add stat="ownerCrit" val="#pCritRate" />
-				<add stat="ownerCritDmg" val="#pCritDamage" />
+				<add stat="ownerMaxHp" val="15" />
+				<add stat="ownerMaxMp" val="15" />
+				<add stat="ownerPAtkSpd" val="10" />
+				<add stat="ownerMAtkSpd" val="10" />
+				<add stat="ownerCrit" val="30" />
+				<add stat="ownerCritDmg" val="15" />
 			</abnormal>
 		</for>
 	</skill>

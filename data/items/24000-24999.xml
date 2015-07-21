@@ -2269,6 +2269,7 @@
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
 	<item id="24133" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
 	<item id="24134" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -4176,26 +4177,32 @@
 	<!-- MP + 37, Bleed Resistance + 40%, Bleed Attack Rate + 40%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Resistance + 30%, Stun/Mental Attack Rate + 30% , MP Consumption decrease, Earth Resistance increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
 	<item id="24359" type="Armor" name="Antharas' Earring - 3-day" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="94" />
 	</item>
 	<!-- MP + 50, Sleep Resistance + 40% , Sleep Attack Rate + 40%, HP + 445, Cooldown decrease, P./M. Atk. increase, Wild Magic Effect, Damage Shield Effect, Fire Resistance increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
 	<item id="24360" type="Armor" name="Valakas' Necklace - 3-day" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="95" />
 	</item>
 	<!-- MP + 31, Bleed Resistance + 30%, Bleed Attack Rate + 30%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Resistance + 20% , Stun/Mental Attack Rate + 20%. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
 	<item id="24361" type="Armor" name="Zaken's Earring - 3-day" icon="icon.accessory_earring_of_zaken_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="71" />
 	</item>
 	<!-- MP + 21, Poison Resistance + 30%, Poison Attack Rate + 30% , Accuracy increase, Critical Damage increase, Hold Resistance + 20% , Hold Attack Rate + 20%. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. -->
 	<item id="24362" type="Armor" name="Queen Ant's Ring - 3-day" icon="icon.accessory_ring_of_queen_ant_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="1" crystalType="b" weight="150">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- MP + 21, Poison Resistance + 40% , Poison Attack Rate + 40% , Accuracy increase, Critical Damage increase, Hold Resistance + 30%, Hold Attack Rate + 30%, P. Atk. increase, and Casting Spd. increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. -->
 	<item id="24363" type="Armor" name="Baium's Ring - 3-day" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
 	<item id="24364" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
 	<item id="24365" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"

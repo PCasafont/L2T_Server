@@ -20,6 +20,10 @@
 	<!-- Use this and its active skill Pew Pew to defeat Alien Researchers! Deleted after event. -->
 	<item id="45374" type="Weapon" name="Laser Gun - Event" icon="icon.invasion_gun" defaultAction="equip" weaponType="crossbow"
 			bodypart="lrhand" immediateEffect="1" crystalType="d" weight="100" soulshots="0" spiritshots="0" mpConsume="12">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="303" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Random basic stat + 6 for 30 min. Cannot be stacked with Fish Stew or other Alien Nano Supplements. -->
 	<item id="45375" type="EtcItem" name="Alien Nano Supplement - Event" icon="icon.ev_invasion_buff_box" immediateEffect="1"
@@ -44,10 +48,18 @@
 	<!-- Looks like the energy pack is nearly drained, but it can use a Knock Back skill! 1-hour. -->
 	<item id="45380" type="Weapon" name="Depleted Plasma Gun - 1-hour" icon="icon.invasion_gun" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" immediateEffect="1" weight="100" soulshots="0" spiritshots="0" mpConsume="12">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="303" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Be careful, this one is set to the highest power! Use this and you can also use the Spirit Hit skill. 1-hour. -->
 	<item id="45381" type="Weapon" name="Charged Plasma Gun - 1-hour" icon="icon.invasion_gun" defaultAction="equip" weaponType="crossbowk"
 			bodypart="lrhand" immediateEffect="1" weight="100" soulshots="0" spiritshots="0" mpConsume="12">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="303" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Magical-looking hat. Uses 2 hair accessory slots. -->
 	<item id="45382" type="Armor" name="Top Hat - 15-day" icon="icon.accessory_magicial_cap_i00" defaultAction="equip" bodypart="hairall"
@@ -247,6 +259,7 @@
 	<!-- MP + 21, Poison Resistance + 40%, Poison Atk. Rate + 40%, Hold Resistance + 30%, Hold Atk. Rate + 30%, increases Accuracy, P. Critical Damage, Atk. Spd. and Casting Spd. Equipping two gives the effect of one. 30-day. -->
 	<item id="45437" type="Armor" name="Baium's Ring - 30-day" icon="icon.bm_ring_of_baium" defaultAction="equip" bodypart="rfinger;lfinger"
 			immediateEffect="1" crystalCount="1" crystalType="s" weight="150" enchantEnabled="1">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- Wrapped Pack containing a Baium's Ring (30-day). -->
 	<item id="45438" type="EtcItem" name="Baium's Ring Pack (30-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00" immediateEffect="1"
@@ -467,6 +480,10 @@
 	<!-- A 30-day fishing rod. Consumes 1 Fishing Shot. -->
 	<item id="45492" type="Weapon" name="Normal Fishing Rod - 30-day" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Open to get a 30-day fishing rod. -->
 	<item id="45493" type="Weapon" name="Fishing Rod Pack (30-day)" defaultAction="equip" weaponType="sword" bodypart="rhand"
@@ -475,6 +492,10 @@
 	<!-- A sturdy fishing rod. Consumes 1 Fishing Shot. -->
 	<item id="45494" type="Weapon" name="Sturdy Fishing Rod" defaultAction="equip" weaponType="sword" bodypart="rhand" immediateEffect="1"
 			weight="0" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Bait for fishing. Use to catch fresh fish. -->
 	<item id="45495" type="Weapon" name="Normal Bait" defaultAction="equip" weaponType="sword" bodypart="rhand" immediateEffect="1"
@@ -1156,102 +1177,127 @@
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
 	<item id="45585" type="Weapon" name="Special Water Resistance Necklace" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
 	<item id="45586" type="Weapon" name="Special Fire Resistance Necklace" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
 	<item id="45587" type="Weapon" name="Special Holy Resistance Necklace" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
 	<item id="45588" type="Weapon" name="Special Dark Resistance Necklace" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
 	<item id="45589" type="Weapon" name="Special Wind Resistance Necklace" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Necklace purchased with a Mark of Battle. MP + 65, Max CP + 10%, and M. Skill Cooldown - 5%. -->
 	<item id="45590" type="Weapon" name="Special Earth Resistance Necklace" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="174" />
 	</item>
 	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45591" type="Weapon" name="Special Earth Resistance Ring" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45592" type="Weapon" name="Special Water Resistance Ring" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45593" type="Weapon" name="Special Fire Resistance Ring" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45594" type="Weapon" name="Special Holy Resistance Ring" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45595" type="Weapon" name="Special Dark Resistance Ring" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Ring purchased with a Mark of Battle. MP + 33, Max CP + 10%, P./M. Critical Damage + 5%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45596" type="Weapon" name="Special Wind Resistance Ring" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Stun Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45597" type="Weapon" name="Special Resistance Earring - Stun" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Hold Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45598" type="Weapon" name="Special Resistance Earring - Hold" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Bleed Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45599" type="Weapon" name="Special Resistance Earring - Bleed" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Paralysis Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45600" type="Weapon" name="Special Resistance Earring - Paralyze" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Mental Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45601" type="Weapon" name="Special Resistance Earring - Mental Attack" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Sleep Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45602" type="Weapon" name="Special Resistance Earring - Sleep" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Poison Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45603" type="Weapon" name="Special Resistance Earring - Poison" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Knock Back/Knock Down Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45604" type="Weapon" name="Special Resistance Earring - Knock Back/Knock Down" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Earring purchased with a Mark of Battle. MP + 49, CP + 10%, Aerial Yoke Attack/Resistance + 40%, and Vampiric Rage Effect by + 3%. Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45605" type="Weapon" name="Special Resistance Earring - Aerial Yoke" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="130" />
 	</item>
 	<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVE Damage + 6%. -->
 	<item id="45606" type="Weapon" name="Special Magic Ornament Eternal Belt - PVE Attack" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVE Damage - 7%. -->
 	<item id="45607" type="Weapon" name="Special Magic Ornament Eternal Belt - PVE Defense" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVP Damage + 6%. -->
 	<item id="45608" type="Weapon" name="Special Magic Ornament Eternal Belt - PVP Attack" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Belt purchased with a Mark of Battle. Weight + 12800, Inventory Slots + 18, PVP Damage - 7%. -->
 	<item id="45609" type="Weapon" name="Special Magic Ornament Eternal Belt - PVP Defense" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Artificial crystal created with Atelia. Take it to Merlot to get a Dimensional Coin. -->
 	<item id="45610" type="EtcItem" name="Atelia Energy Crystal" icon="icon.etc_ertheia_astatine" immediateEffect="1" crystalType="c"
@@ -1392,6 +1438,8 @@
 	<!-- An ornamental silver knife received from the Blacksmith of Mammon in order to test your qualifications. Not valuable as a weapon. Enchant this and take it to the Blacksmith of Mammon to be recognized for your qualifications. -->
 	<item id="45645" type="Weapon" name="Lady's Ornamental Silver Knife" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!-- An unidentified mysterious egg. Double-click to find out what it is. Will be deleted once the event ends. -->
 	<item id="45646" type="EtcItem" name="Mysterious Egg - Event" icon="icon.egg_white" immediateEffect="1" weight="10" isStackable="true">
@@ -1438,63 +1486,86 @@
 	</item>
 	<item id="45657" type="Weapon" name="Dynasty Breastplate of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="226" />
 	</item>
 	<item id="45658" type="Weapon" name="Dynasty Gaiters of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<item id="45659" type="Weapon" name="Dynasty Gauntlets of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="61" />
 	</item>
 	<item id="45660" type="Weapon" name="Dynasty Boots of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="61" />
 	</item>
 	<item id="45661" type="Weapon" name="Dynasty Helmet of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="92" />
 	</item>
 	<item id="45662" type="Weapon" name="Dynasty Shield of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="sDef" val="321" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45663" type="Weapon" name="Dynasty Leather Armor of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="170" />
 	</item>
 	<item id="45664" type="Weapon" name="Dynasty Leather Leggings of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="106" />
 	</item>
 	<item id="45665" type="Weapon" name="Dynasty Leather Helmet of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="92" />
 	</item>
 	<item id="45666" type="Weapon" name="Dynasty Leather Gloves of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="61" />
 	</item>
 	<item id="45667" type="Weapon" name="Dynasty Leather Boots of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="61" />
 	</item>
 	<item id="45668" type="Weapon" name="Dynasty Tunic of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="113" />
 	</item>
 	<item id="45669" type="Weapon" name="Dynasty Stockings of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="71" />
 	</item>
 	<item id="45670" type="Weapon" name="Dynasty Circlet of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="92" />
 	</item>
 	<item id="45671" type="Weapon" name="Dynasty Gloves of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="61" />
 	</item>
 	<item id="45672" type="Weapon" name="Dynasty Shoes of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="61" />
 	</item>
 	<item id="45673" type="Weapon" name="Dynasty Sigil of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="15" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45674" type="Weapon" name="Dynasty Earring of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="79" />
 	</item>
 	<item id="45675" type="Weapon" name="Dynasty Necklace of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="106" />
 	</item>
 	<item id="45676" type="Weapon" name="Dynasty Ring of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="60" />
 	</item>
 	<!-- Get a + 6 Twilight Attack Type Heavy set. Expires after 14 days if not used. -->
 	<item id="45677" type="EtcItem" name="Twilight Attack Type Heavy Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
@@ -1522,110 +1593,160 @@
 	</item>
 	<item id="45683" type="Weapon" name="Twilight Helmet - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="128" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="45684" type="Weapon" name="Twilight Breastplate - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="341" />
 	</item>
 	<item id="45685" type="Weapon" name="Twilight Gaiters - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="213" />
 	</item>
 	<item id="45686" type="Weapon" name="Twilight Gauntlets - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45687" type="Weapon" name="Twilight Boots - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="45688" type="Weapon" name="Twilight Shield - 14-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="sDef" val="466" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45689" type="Weapon" name="Twilight Helmet - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="128" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="45690" type="Weapon" name="Twilight Breastplate - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="341" />
 	</item>
 	<item id="45691" type="Weapon" name="Twilight Gaiters - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="213" />
 	</item>
 	<item id="45692" type="Weapon" name="Twilight Gauntlets - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45693" type="Weapon" name="Twilight Boots - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="45694" type="Weapon" name="Twilight Shield - 14-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="sDef" val="466" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45695" type="Weapon" name="Twilight Leather Helmet - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="128" />
 	</item>
 	<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45696" type="Weapon" name="Twilight Leather Armor - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="272" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="45697" type="Weapon" name="Twilight Leather Leggings - Assassin Type / Light (14-day)" icon="" bodypart="none"
 			crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="170" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="45698" type="Weapon" name="Twilight Leather Gloves - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45699" type="Weapon" name="Twilight Leather Boots - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45700" type="Weapon" name="Twilight Leather Helmet - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="128" />
 	</item>
 	<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45701" type="Weapon" name="Twilight Leather Armor - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="272" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="45702" type="Weapon" name="Twilight Leather Leggings - Enchant Type / Light (14-day)" icon="" bodypart="none"
 			crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="170" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="45703" type="Weapon" name="Twilight Leather Gloves - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45704" type="Weapon" name="Twilight Leather Boots - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45705" type="Weapon" name="Twilight Circlet - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="128" />
 	</item>
 	<!-- Increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45706" type="Weapon" name="Twilight Tunic - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="187" />
+		<baseAdd stat="mDef" val="41" />
 	</item>
 	<item id="45707" type="Weapon" name="Twilight Stockings - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="117" />
+		<baseAdd stat="mDef" val="27" />
 	</item>
 	<item id="45708" type="Weapon" name="Twilight Gloves - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45709" type="Weapon" name="Twilight Shoes - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45710" type="Weapon" name="Twilight Sigel - 14-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="42" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45711" type="Weapon" name="Twilight Circlet - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="128" />
 	</item>
 	<!-- Increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45712" type="Weapon" name="Twilight Tunic - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="187" />
+		<baseAdd stat="mDef" val="41" />
 	</item>
 	<item id="45713" type="Weapon" name="Twilight Stockings - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="117" />
+		<baseAdd stat="mDef" val="27" />
 	</item>
 	<item id="45714" type="Weapon" name="Twilight Gloves - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<item id="45715" type="Weapon" name="Twilight Shoes - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="85" />
 	</item>
 	<!-- Give it to Pippi or Kokko to get a timed weapon, bolt, or arrow. Will be deleted once the event ends. -->
 	<item id="45716" type="EtcItem" name="Returning Warrior's Support Goods Coupon - Event" icon="icon.etc_lottery_card_i00"
@@ -1657,113 +1778,165 @@
 	</item>
 	<item id="45723" type="Weapon" name="Eternal Helmet - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="45724" type="Weapon" name="Eternal Breastplate - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="45725" type="Weapon" name="Eternal Gaiters - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="250" />
 	</item>
 	<item id="45726" type="Weapon" name="Eternal Gauntlets - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45727" type="Weapon" name="Eternal Boots - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="45728" type="Weapon" name="Eternal Shield - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="sDef" val="546" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45729" type="Weapon" name="Eternal Helmet - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="45730" type="Weapon" name="Eternal Breastplate - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<item id="45731" type="Weapon" name="Eternal Gaiters - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="250" />
 	</item>
 	<item id="45732" type="Weapon" name="Eternal Gauntlets - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45733" type="Weapon" name="Eternal Boots - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="45734" type="Weapon" name="Eternal Shield - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="sDef" val="546" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45735" type="Weapon" name="Eternal Leather Helmet - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45736" type="Weapon" name="Eternal Leather Armor - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="320" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="45737" type="Weapon" name="Eternal Leather Leggings - Assassin Type / Light (14-day)" icon="" bodypart="none"
 			crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="200" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="45738" type="Weapon" name="Eternal Leather Gloves - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45739" type="Weapon" name="Eternal Leather Boots - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45740" type="Weapon" name="Eternal Leather Helmet - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45741" type="Weapon" name="Eternal Leather Armor - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="320" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="45742" type="Weapon" name="Eternal Leather Leggings - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="200" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="45743" type="Weapon" name="Eternal Leather Gloves - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45744" type="Weapon" name="Eternal Leather Boots - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45745" type="Weapon" name="Eternal Circlet - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45746" type="Weapon" name="Eternal Tunic - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="220" />
+		<baseAdd stat="mDef" val="49" />
 	</item>
 	<item id="45747" type="Weapon" name="Eternal Stockings - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="137" />
+		<baseAdd stat="mDef" val="33" />
 	</item>
 	<item id="45748" type="Weapon" name="Eternal Gloves - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45749" type="Weapon" name="Eternal Shoes - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45750" type="Weapon" name="Eternal Sigil - 14-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="50" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45751" type="Weapon" name="Eternal Circlet - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- Increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45752" type="Weapon" name="Eternal Tunic - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="220" />
+		<baseAdd stat="mDef" val="49" />
 	</item>
 	<item id="45753" type="Weapon" name="Eternal Stockings - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="137" />
+		<baseAdd stat="mDef" val="33" />
 	</item>
 	<item id="45754" type="Weapon" name="Eternal Gloves - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45755" type="Weapon" name="Eternal Shoes - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="100" />
 	</item>
 	<item id="45756" type="Weapon" name="Eternal Sigil - 14-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="50" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Get a + 6 Seraph Attack Type Heavy set. Expires after 30 days if not used. -->
 	<item id="45757" type="EtcItem" name="Seraph Attack Type Heavy Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
@@ -1791,149 +1964,242 @@
 	</item>
 	<item id="45763" type="Weapon" name="Seraph Helmet - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="45764" type="Weapon" name="Seraph Breastplate - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="377" />
 	</item>
 	<item id="45765" type="Weapon" name="Seraph Gaiters - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="235" />
 	</item>
 	<item id="45766" type="Weapon" name="Seraph Gauntlets - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45767" type="Weapon" name="Seraph Boots - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="45768" type="Weapon" name="Seraph Shield - Attack Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="sDef" val="515" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45769" type="Weapon" name="Seraph Helmet - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="45770" type="Weapon" name="Seraph Breastplate - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="377" />
 	</item>
 	<item id="45771" type="Weapon" name="Seraph Gaiters - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="235" />
 	</item>
 	<item id="45772" type="Weapon" name="Seraph Gauntlets - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45773" type="Weapon" name="Seraph Boots - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="45774" type="Weapon" name="Seraph Shield - Defense Type / Heavy (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="sDef" val="515" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45775" type="Weapon" name="Seraph Leather Helmet - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45776" type="Weapon" name="Seraph Leather Armor - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="301" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="45777" type="Weapon" name="Seraph Leather Leggings - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="188" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="45778" type="Weapon" name="Seraph Leather Gloves - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45779" type="Weapon" name="Seraph Leather Boots - Assassin Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45780" type="Weapon" name="Seraph Leather Helmet - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<!-- Increases Evasion, Speed, and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45781" type="Weapon" name="Seraph Leather Armor - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="301" />
+		<baseAdd stat="rEvas" val="5" />
+		<baseAdd stat="mEvasRate" val="5" />
 	</item>
 	<item id="45782" type="Weapon" name="Seraph Leather Leggings - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="188" />
+		<baseAdd stat="rEvas" val="3" />
+		<baseAdd stat="mEvasRate" val="3" />
 	</item>
 	<item id="45783" type="Weapon" name="Seraph Leather Gloves - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45784" type="Weapon" name="Seraph Leather Boots - Enchant Type / Light (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45785" type="Weapon" name="Seraph Circlet - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<!-- Increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45786" type="Weapon" name="Seraph Tunic - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="207" />
+		<baseAdd stat="mDef" val="47" />
 	</item>
 	<item id="45787" type="Weapon" name="Seraph Stockings - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="129" />
+		<baseAdd stat="mDef" val="31" />
 	</item>
 	<item id="45788" type="Weapon" name="Seraph Gloves - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45789" type="Weapon" name="Seraph Shoes - Magic Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45790" type="Weapon" name="Seraph Sigil - 14-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="47" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="45791" type="Weapon" name="Seraph Circlet - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="141" />
 	</item>
 	<!-- Increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit when enchanted to + 4. -->
 	<item id="45792" type="Weapon" name="Seraph Tunic - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="207" />
+		<baseAdd stat="mDef" val="47" />
 	</item>
 	<item id="45793" type="Weapon" name="Seraph Stockings - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="129" />
+		<baseAdd stat="mDef" val="31" />
 	</item>
 	<item id="45794" type="Weapon" name="Seraph Gloves - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45795" type="Weapon" name="Seraph Shoes - Recovery Type / Robe (14-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="94" />
 	</item>
 	<item id="45796" type="Weapon" name="Seraph Sigil_not used - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="47" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Casting Spd. + 15%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45797" type="Weapon" name="Dynasty Phantom of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="267" />
+		<set stat="mAtk" val="202" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Critical + 116. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45798" type="Weapon" name="Dynasty Knife of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="291" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Critical + 116. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45799" type="Weapon" name="Dynasty Bow of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="654" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Max HP + 25%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45800" type="Weapon" name="Dynasty Hammer of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="333" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Critical + 111. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45801" type="Weapon" name="Dynasty Blade of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="333" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Critical + 111. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45802" type="Weapon" name="Dynasty Two Hand Sword of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="405" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Critical + 106. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45803" type="Weapon" name="Dynasty Bagh-Nakh of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="405" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Critical + 109, Max HP + 10%. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45804" type="Weapon" name="Dynasty Dualsword of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="405" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Critical attack has a 48% chance for Stun. Increases damage inflicted during PvP. Can be assigned an attribute. -->
 	<item id="45805" type="Weapon" name="Dynasty Halberd of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="333" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Kamael-exclusive Weapon
@@ -1941,6 +2207,11 @@
 	-->
 	<item id="45806" type="Weapon" name="Dynasty Ancient Sword of Fortune - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="361" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="350" />
+		<baseAdd stat="accCombat" val="2" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Kamael-exclusive Weapon
@@ -1949,6 +2220,11 @@
 	-->
 	<item id="45807" type="Weapon" name="Dynasty Rapier of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="302" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="406" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!--
 		Kamael-exclusive Weapon
@@ -1956,6 +2232,11 @@
 	-->
 	<item id="45808" type="Weapon" name="Dynasty Crossbow of Fortune - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="401" />
+		<set stat="mAtk" val="151" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Wrapped Pack containing 1 Soulshot (Grade C~R). Will be deleted once the event ends. -->
 	<item id="45809" type="EtcItem" name="Returning Warrior's Soulshot Pack - Event" icon="icon.etc_box_of_adventure_2_i00"
@@ -2030,6 +2311,11 @@
 	-->
 	<item id="45823" type="Weapon" name="Apocalypse Shaper - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="441" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2037,6 +2323,10 @@
 	-->
 	<item id="45824" type="Weapon" name="Apocalypse Cutter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="504" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2044,6 +2334,10 @@
 	-->
 	<item id="45825" type="Weapon" name="Apocalypse Slasher - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="613" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2051,6 +2345,11 @@
 	-->
 	<item id="45826" type="Weapon" name="Apocalypse Avenger - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="504" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2058,6 +2357,11 @@
 	-->
 	<item id="45827" type="Weapon" name="Apocalypse Fighter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="613" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2065,6 +2369,11 @@
 	-->
 	<item id="45828" type="Weapon" name="Apocalypse Stormer - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="504" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2072,6 +2381,11 @@
 	-->
 	<item id="45829" type="Weapon" name="Apocalypse Thrower - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="992" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2079,6 +2393,11 @@
 	-->
 	<item id="45830" type="Weapon" name="Apocalypse Shooter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="894" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2086,6 +2405,10 @@
 	-->
 	<item id="45831" type="Weapon" name="Apocalypse Buster - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="403" />
+		<set stat="mAtk" val="293" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2093,6 +2416,11 @@
 	-->
 	<item id="45832" type="Weapon" name="Apocalypse Caster - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="403" />
+		<set stat="mAtk" val="293" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2100,6 +2428,12 @@
 	-->
 	<item id="45833" type="Weapon" name="Apocalypse Retributer - Acumen (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="491" />
+		<set stat="mAtk" val="322" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2107,6 +2441,10 @@
 	-->
 	<item id="45834" type="Weapon" name="Apocalypse Dualsword - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="613" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2114,6 +2452,11 @@
 	-->
 	<item id="45835" type="Weapon" name="Apocalypse Dual Dagger - Focus (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="504" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2121,6 +2464,11 @@
 	-->
 	<item id="45836" type="Weapon" name="Apocalypse Dual Blunt Weapon - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="613" />
+		<set stat="mAtk" val="219" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Item obtained from defeating Harpe in the Garden of Spirits. You can feel the spirit's sadness. Take it to Magister Belas. -->
 	<item id="45837" type="EtcItem" name="Sad Energy" icon="icon.etc_crystal_ball_blue_i00" immediateEffect="1" crystalType="c"
@@ -2174,6 +2522,11 @@
 	-->
 	<item id="45851" type="Weapon" name="Specter Shaper - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="511" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2181,6 +2534,10 @@
 	-->
 	<item id="45852" type="Weapon" name="Specter Cutter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="584" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2188,6 +2545,10 @@
 	-->
 	<item id="45853" type="Weapon" name="Specter Slasher - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="711" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2195,6 +2556,11 @@
 	-->
 	<item id="45854" type="Weapon" name="Specter Avenger - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="584" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2202,6 +2568,11 @@
 	-->
 	<item id="45855" type="Weapon" name="Specter Fighter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="711" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2209,6 +2580,11 @@
 	-->
 	<item id="45856" type="Weapon" name="Specter Stormer - Damage Up (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="584" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2216,6 +2592,11 @@
 	-->
 	<item id="45857" type="Weapon" name="Specter Thrower - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="1151" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2223,6 +2604,11 @@
 	-->
 	<item id="45858" type="Weapon" name="Specter Shooter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="1036" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2230,6 +2616,10 @@
 	-->
 	<item id="45859" type="Weapon" name="Specter Buster - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="467" />
+		<set stat="mAtk" val="339" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2237,6 +2627,11 @@
 	-->
 	<item id="45860" type="Weapon" name="Specter Caster - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="467" />
+		<set stat="mAtk" val="339" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2244,6 +2639,12 @@
 	-->
 	<item id="45861" type="Weapon" name="Specter Retributer - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="569" />
+		<set stat="mAtk" val="373" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2251,6 +2652,10 @@
 	-->
 	<item id="45862" type="Weapon" name="Specter Dualsword - Damage Up (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="711" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2258,6 +2663,11 @@
 	-->
 	<item id="45863" type="Weapon" name="Specter Dual Dagger - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="584" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2265,6 +2675,11 @@
 	-->
 	<item id="45864" type="Weapon" name="Specter Dual Blunt Weapon - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="711" />
+		<set stat="mAtk" val="254" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- A coin that can be used to enjoy the various attractions in the Talkity Talk Talk Truope Festival. Will be deleted once the event ends. -->
 	<item id="45865" type="EtcItem" name="Festival Coin - Event" icon="icon.ev_festival_coin" immediateEffect="1" crystalType="c"
@@ -2331,6 +2746,11 @@
 	-->
 	<item id="45879" type="Weapon" name="Amaranthine Shaper - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="558" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2338,6 +2758,10 @@
 	-->
 	<item id="45880" type="Weapon" name="Amaranthine Cutter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="638" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2345,6 +2769,10 @@
 	-->
 	<item id="45881" type="Weapon" name="Amaranthine Slasher - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="777" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2352,6 +2780,11 @@
 	-->
 	<item id="45882" type="Weapon" name="Amaranthine Avenger - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="638" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2359,6 +2792,11 @@
 	-->
 	<item id="45883" type="Weapon" name="Amaranthine Fighter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="777" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2366,6 +2804,11 @@
 	-->
 	<item id="45884" type="Weapon" name="Amaranthine Stormer - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="638" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2373,6 +2816,11 @@
 	-->
 	<item id="45885" type="Weapon" name="Amaranthine Thrower - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="1257" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2380,6 +2828,11 @@
 	-->
 	<item id="45886" type="Weapon" name="Amaranthine Shooter - Focus (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="1132" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2387,6 +2840,10 @@
 	-->
 	<item id="45887" type="Weapon" name="Amaranthine Buster - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="511" />
+		<set stat="mAtk" val="371" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2394,6 +2851,11 @@
 	-->
 	<item id="45888" type="Weapon" name="Amaranthine Caster - Acumen (7-day)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="511" />
+		<set stat="mAtk" val="371" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2401,6 +2863,12 @@
 	-->
 	<item id="45889" type="Weapon" name="Amaranthine Retributer - Acumen (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="622" />
+		<set stat="mAtk" val="408" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2408,6 +2876,10 @@
 	-->
 	<item id="45890" type="Weapon" name="Amaranthine Dualsword - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="777" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2415,6 +2887,11 @@
 	-->
 	<item id="45891" type="Weapon" name="Amaranthine Dual Dagger - Focus (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="638" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>
@@ -2422,6 +2899,11 @@
 	-->
 	<item id="45892" type="Weapon" name="Amaranthine Dual Blunet Weapon - Damage Up (7-day)" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="777" />
+		<set stat="mAtk" val="278" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Double-click to get a Magic Armor Set (R-grade). Expires after 30 days if not used. -->
 	<item id="45893" type="EtcItem" name="Magic Armor Set (R-grade) Pack - 30-day" icon="icon.etc_treasure_box_i04" immediateEffect="1"
@@ -2430,26 +2912,32 @@
 	<!-- MP + 62, Sleep Resistance + 40%, Sleep Atk. Rate + 40%, HP + 445, Skill Cooldown decreases, P./M. Atk. Increases, Wild Magic Effect, Damage Shield Effect, and Fire Resistance increases. -->
 	<item id="45894" type="Weapon" name="Filled Necklace (Valakas Energy) - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="125" />
 	</item>
 	<!-- MP + 62, Sleep/Paralysis/Stun Resistance + 15%, Sleep/Paralysis/Stun Atk. Rate + 15%, Poison/Bleed Resistance + 25%, Poison/Bleed Atk. Rate + 25%, Skill Cooldown decreases, Damage Shield Effect and Dark Resistance increases. -->
 	<item id="45895" type="Weapon" name="Filled Necklace (Frintezza Energy) - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="95" />
 	</item>
 	<!-- MP + 46, Sleep Resistance + 40%, Bleed Atk. Rate + 40%, Heal Amount increases, Vampiric Rage Effect, Stun/Mental Attak Resistance + 30%, Stun/Mental Atk. Rate + 30%,  MP Consumption decreases, and Earth Resistance increases.  Only one effect is applied even when wearing two earrings with the same effect. -->
 	<item id="45896" type="Weapon" name="Filled Earring (Antharas Energy) - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="94" />
 	</item>
 	<!-- MP + 46, Bleed Resistance + 30%, Bleed Atk. Rate + 30%, Heal Amount increases, Vampiric Rage Effect, Stun/Mental Resistance + 20%, Stun/Mental Atk. Rate + 20%. Only one effect is applied even when wearing two earrings with the same effect. If worn with Blessed Zaken's Earring, only that earring's effects will be applied. -->
 	<item id="45897" type="Weapon" name="Filled Earring (Zaken Energy) - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="71" />
 	</item>
 	<!-- MP +31, Poison Resistance + 40%, Poison Atk. Rate + 40%, Accuracy increases, P. Critical Damage increases, Hold Resistance + 30%, Hold Atk. Rate + 30%, P./M. Atk. increases. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45898" type="Weapon" name="Filled Ring (Baium Energy) - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- MP +31, Poison Resistance + 30%, Poison Atk. Rate + 30%, Accuracy increases, P. Critical Damage increases, Hold Resistance + 20%, Hold Atk. Rate + 20%. Only one effect is applied even when wearing two rings with the same effect. -->
 	<item id="45899" type="Weapon" name="Filled Ring (Queen Ant Energy) - 30-day" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- Kokko's egg. Double-click to find out what it is. Will be deleted once the event ends. -->
 	<item id="45900" type="EtcItem" name="Kokko's Egg" icon="icon.egg_white" immediateEffect="1" crystalType="c" weight="10"
@@ -2467,15 +2955,19 @@
 	</item>
 	<!-- Speed + 7, STR + 1, INT +1 when equipped. -->
 	<item id="45904" type="Weapon" name="Pippi's Shirt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="38" />
 	</item>
 	<!-- Speed + 7, STR/INT/CON/MEN + 1 when equipped. -->
 	<item id="45905" type="Weapon" name="Kokko's Shirt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="38" />
 	</item>
 	<!-- Weight + 12800, Inventory Slots + 12. -->
 	<item id="45906" type="Weapon" name="Pippi's Belt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Weight + 12800, Inventory Slots + 18. -->
 	<item id="45907" type="Weapon" name="Kokko's Belt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Double-click to get a + 3/4/6/9/11 enchanted Apocalypse Shaper Focus. -->
 	<item id="45908" type="EtcItem" name="Apocalypse Shaper Pack" icon="icon.ev_charge_box" immediateEffect="1" isStackable="true">

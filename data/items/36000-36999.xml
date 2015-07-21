@@ -2382,7 +2382,7 @@
 	<item id="36440" type="Weapon" name="Lindvior Dual Dagger - Fragment" icon="icon.weapon_lind_dual_dagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
 			isEnchantable="false" isAttributable="false" isOlyRestricted="true" canBeUsedAsApp="false">
-		<set stat="pAtk" val="1039" />
+		<set stat="pAtk" val="1188" />
 		<set stat="mAtk" val="517" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
@@ -2731,7 +2731,7 @@
 	<item id="36464" type="Weapon" name="Lindvior Dual Dagger - Standard" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
 			isEnchantable="false" isAttributable="false" isOlyRestricted="true" canBeUsedAsApp="false">
-		<set stat="pAtk" val="1877" />
+		<set stat="pAtk" val="2146" />
 		<set stat="mAtk" val="935" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
@@ -3152,7 +3152,7 @@
 	<item id="36488" type="Weapon" name="Lindvior Dual Dagger - High-grade" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
 			isEnchantable="false" isAttributable="false" isOlyRestricted="true" canBeUsedAsApp="false">
-		<set stat="pAtk" val="2177" />
+		<set stat="pAtk" val="2488" />
 		<set stat="mAtk" val="1084" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />
@@ -3574,7 +3574,7 @@
 	<item id="36512" type="Weapon" name="Lindvior Dual Dagger - Top-grade" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2050" soulshots="1" spiritshots="1"
 			isEnchantable="false" isAttributable="false" isOlyRestricted="true" canBeUsedAsApp="false">
-		<set stat="pAtk" val="2523" />
+		<set stat="pAtk" val="2884" />
 		<set stat="mAtk" val="1257" />
 		<set stat="rCrit" val="12" />
 		<baseSub stat="accCombat" val="3.75" />

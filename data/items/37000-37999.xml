@@ -4219,7 +4219,8 @@
 	<!-- A cloak that symbolizes the Exalted status. STR/DEX/CON/INT/WIT/MEN/LUC/CHA +1. -->
 	<item id="37763" type="Armor" name="Exalted Cloak" icon="icon.cloak_noblesse2_i00" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="220">
-		<baseAdd stat="pDef" val="20" />
+		<baseAdd stat="pDef" val="50" />
+		<baseAdd stat="mDef" val="40" />
 		<skill id="13771" level="1" /> <!-- Exalted Cloak -->
 	</item>
 	<!-- Restores 2000 CP. -->
