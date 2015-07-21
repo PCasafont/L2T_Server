@@ -15,7 +15,7 @@
 package ai.individual;
 
 import l2tserver.Config;
-import l2tserver.gameserver.events.DMGManager;
+import l2tserver.gameserver.events.DamageManager;
 import l2tserver.gameserver.model.actor.L2Npc;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import ai.group_template.L2AttackableAIScript;
@@ -56,7 +56,7 @@ public class DamageDealer extends L2AttackableAIScript
 				return "";
 			}
 			
-			DMGManager.getInstance().giveDamage(attacker, damage);
+			DamageManager.getInstance().giveDamage(attacker, damage);
 		}
 		
 		return super.onAttack(npc, attacker, damage, isPet);

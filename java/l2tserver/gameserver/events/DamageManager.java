@@ -26,10 +26,9 @@ import l2tserver.log.Log;
 /**
  * @author LasTravel
  */
-
-public class DMGManager
+public class DamageManager
 {
-	private static Map<Integer, dmginfo> dmgIinfo = new HashMap<Integer, dmginfo>();
+	private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<Integer, DamageInfo>();
 	protected static ScheduledFuture<?>	_saveTask;
 	
 	public String getRankingInfo()
@@ -37,7 +36,7 @@ public class DMGManager
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table bgcolor=999999 width=750><tr><td></td><td FIXWIDTH=200>Class</td><td FIXWIDTH=250>Actual Record</td><td FIXWIDTH=250>Actual Owner</td></tr></table>");
 		
-		for (Entry<Integer, dmginfo> info : dmgIinfo.entrySet())
+		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
 		{
 			String className = PlayerClassTable.getInstance().getClassNameById(info.getKey());
 			int actualrecord = info.getValue().getCurrentDamage();
@@ -52,7 +51,7 @@ public class DMGManager
 		return sb.toString();
 	}
 	
-	private class dmginfo
+	private class DamageInfo
 	{
 		private int _classId;
 		private int _newDamage;
@@ -60,7 +59,7 @@ public class DMGManager
 		private int _playerId;
 		private String _hwId;
 		
-		private dmginfo(int classid, int newdmg, String newname, int playerid, String hwId)
+		private DamageInfo(int classid, int newdmg, String newname, int playerid, String hwId)
 		{
 			_classId = classid;
 			_newDamage = newdmg;
@@ -118,7 +117,7 @@ public class DMGManager
 		if (pl == null)
 			return;
 		
-		dmginfo info = dmgIinfo.get(pl.getClassId());
+		DamageInfo info = dmgIinfo.get(pl.getClassId());
 		if (info == null)
 			return;
 		
@@ -130,7 +129,7 @@ public class DMGManager
 		{
 			if (playerMatch(pl.getHWID(), pl.getClassId()))
 			{
-				pl.sendMessage("You already have other record, only it's allowed one per person");
+				pl.sendMessage("You already have another record, only one per person is allowed");
 				return;
 			}
 			info.setNewData(dmg, pl);
@@ -139,7 +138,7 @@ public class DMGManager
 	
 	private boolean playerMatch(String hwId, int playerClassId)
 	{
-		for (Entry<Integer, dmginfo> info : dmgIinfo.entrySet())
+		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
 		{
 			if (info.getValue().gethwId().equalsIgnoreCase(hwId))
 				return info.getValue().getClassId() != playerClassId;
@@ -156,7 +155,7 @@ public class DMGManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 		
 			PreparedStatement statement = null;
-			for (Entry<Integer, dmginfo> info : dmgIinfo.entrySet())
+			for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
 			{
 				if (info == null)
 					continue;
@@ -187,12 +186,12 @@ public class DMGManager
 		
 		// Give Rewards (Memory)
 		List<Integer> rewardedCharIds = new ArrayList<Integer>();
-		for (Entry<Integer, dmginfo> damageInfo : dmgIinfo.entrySet())
+		for (Entry<Integer, DamageInfo> damageInfo : dmgIinfo.entrySet())
 		{
 			if (damageInfo == null)
 				continue;
 			
-			dmginfo info = damageInfo.getValue();
+			DamageInfo info = damageInfo.getValue();
 			if (info == null)
 				continue;
 			
@@ -219,7 +218,7 @@ public class DMGManager
 		truncateTable();
 		
 		// Restart info from memory
-		for (Entry<Integer, dmginfo> info : dmgIinfo.entrySet())
+		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
 		{
 			if (info.getValue().getCurrentDamage() > 0)
 				info.getValue().reset();
@@ -263,7 +262,7 @@ public class DMGManager
 			ResultSet rs = statement.executeQuery();
 			while (rs.next())
 			{
-				dmginfo info = new dmginfo(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"), rs.getInt("playerid"), rs.getString("hwId"));
+				DamageInfo info = new DamageInfo(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"), rs.getInt("playerid"), rs.getString("hwId"));
 				dmgIinfo.put(info.getClassId(), info);
 			}
 			statement.close();
@@ -286,12 +285,12 @@ public class DMGManager
 		}, 3600000, 3600000);
 	}
 	
-	private DMGManager()
+	private DamageManager()
 	{
 		load();
 	}
 	
-	public static final DMGManager getInstance()
+	public static final DamageManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}
@@ -299,6 +298,6 @@ public class DMGManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DMGManager _instance = new DMGManager();
+		protected static final DamageManager _instance = new DamageManager();
 	}
 }

@@ -21,7 +21,7 @@ import l2tserver.Config;
 import l2tserver.L2DatabaseFactory;
 import l2tserver.gameserver.datatables.ClanTable;
 import l2tserver.gameserver.datatables.OfflineTradersTable;
-import l2tserver.gameserver.events.DMGManager;
+import l2tserver.gameserver.events.DamageManager;
 import l2tserver.gameserver.events.LotterySystem;
 import l2tserver.gameserver.instancemanager.CastleManorManager;
 import l2tserver.gameserver.instancemanager.CursedWeaponsManager;
@@ -346,7 +346,7 @@ public class Shutdown extends Thread
 		}
 		
 		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)			
-			DMGManager.getInstance().saveData();
+			DamageManager.getInstance().saveData();
 		
 		if (Config.ENABLE_CUSTOM_LOTTERY)
 			LotterySystem.getInstance().saveData();
