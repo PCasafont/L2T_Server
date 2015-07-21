@@ -3935,7 +3935,7 @@
 		<set name="canBeUsedWhenDisabled" val="true" />
 		<for>
 			<cond addName="1" msgId="113">
-				<player hp="#coundhp" />
+				<player hp="#condhp" />
 			</cond>
 			<abnormal duration="#duration" stackLvl="1" stackType="invincibility" visualEffect="invincible">
 				<effect type="Invincible" val="0" />

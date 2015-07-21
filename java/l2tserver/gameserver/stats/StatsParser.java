@@ -634,7 +634,7 @@ public abstract class StatsParser
 		{
 			if (a.getKey().equalsIgnoreCase("hp"))
 			{
-				int hp = Integer.decode(getValue(a.getValue()));
+				int hp = Math.round(Float.parseFloat(getValue(a.getValue())));
 				cond = joinAnd(cond, new ConditionTargetHp(hp));
 			}
 			else if (a.getKey().equalsIgnoreCase("aggro"))

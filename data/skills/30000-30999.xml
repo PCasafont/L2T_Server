@@ -508,9 +508,12 @@
 			Recovers HP by 5315.
 			Recovers HP by 5405.
 		-->
-		<enchantRoute id="2" level="1,2" enabled="false" />
+		<enchantRoute id="2" level="1,2" />
 		<table name="#count"> 10 
 			<enchantRoute id="1" level="1,2"> 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 </enchantRoute>
+		</table>
+		<table name="#heal"> 185 
+			<enchantRoute id="2" level="1,2"> 194 207 221 234 248 261 275 288 302  315 329 342 356 369 383 396 410 423 437 450 459 468 477 486 496 504 514 522 531 541 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -526,13 +529,11 @@
 		<set name="removedOnAction" val="true" />
 		<for>
 			<abnormal count="#count" duration="1" stackLvl="1" stackType="windy_refuge" visualEffect="windyRefuge">
-				<effect type="HealOverTime" val="185" />
+				<effect type="HealOverTime" val="#heal" />
 				<effect type="ManaHealOverTime" val="84" />
+				<effect type="CancelDebuff" val="0" />
 				<effect type="Hide" val="0" />
 				<effect type="Root" val="0" />
-			</abnormal>
-			<abnormal noicon="1">
-				<effect type="CancelDebuff" val="0" />
 			</abnormal>
 		</for>
 	</skill>
