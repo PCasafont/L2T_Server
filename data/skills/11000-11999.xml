@@ -9290,39 +9290,7 @@
 			Increases Skill Range by 300.
 		-->
 		<enchantRoute id="2" level="5,6,7,8,9" enabled="false" />
-		<!-- TODO: Penalty:
-			Eases the Distance Requirement by 3.
-			Eases the Distance Requirement by 6.
-			Eases the Distance Requirement by 9.
-			Eases the Distance Requirement by 12.
-			Eases the Distance Requirement by 15.
-			Eases the Distance Requirement by 18.
-			Eases the Distance Requirement by 21.
-			Eases the Distance Requirement by 24.
-			Eases the Distance Requirement by 27.
-			Eases the Distance Requirement by 30.
-			Eases the Distance Requirement by 33.
-			Eases the Distance Requirement by 36.
-			Eases the Distance Requirement by 39.
-			Eases the Distance Requirement by 42.
-			Eases the Distance Requirement by 45.
-			Eases the Distance Requirement by 48.
-			Eases the Distance Requirement by 51.
-			Eases the Distance Requirement by 54.
-			Eases the Distance Requirement by 57.
-			Eases the Distance Requirement by 60.
-			Eases the Distance Requirement by 63.
-			Eases the Distance Requirement by 66.
-			Eases the Distance Requirement by 69.
-			Eases the Distance Requirement by 72.
-			Eases the Distance Requirement by 75.
-			Eases the Distance Requirement by 78.
-			Eases the Distance Requirement by 81.
-			Eases the Distance Requirement by 84.
-			Eases the Distance Requirement by 87.
-			Eases the Distance Requirement by 90.
-		-->
-		<enchantRoute id="3" level="5,6,7,8,9" />
+		<enchantRoute id="3" level="5,6,7,8,9" /> <!-- Penalty -->
 		<table name="#mpConsume"> 38 39 41 43 45 47 49 51 53 </table>
 		<table name="#castRange"> 600 
 			<enchantRoute id="2" level="5,6,7,8,9"> 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800 </enchantRoute>

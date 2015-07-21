@@ -3462,39 +3462,7 @@
 	<skill id="10267" levels="9" name="Hurricane Rush">
 		<enchantRoute id="1" level="5,6,7,8,9" /> <!-- Chance -->
 		<enchantRoute id="2" level="5,6,7,8,9" /> <!-- Distance -->
-		<!-- TODO: Penalty:
-			Eases the Distance Requirement by 3.
-			Eases the Distance Requirement by 6.
-			Eases the Distance Requirement by 9.
-			Eases the Distance Requirement by 12.
-			Eases the Distance Requirement by 15.
-			Eases the Distance Requirement by 18.
-			Eases the Distance Requirement by 21.
-			Eases the Distance Requirement by 24.
-			Eases the Distance Requirement by 27.
-			Eases the Distance Requirement by 30.
-			Eases the Distance Requirement by 33.
-			Eases the Distance Requirement by 36.
-			Eases the Distance Requirement by 39.
-			Eases the Distance Requirement by 42.
-			Eases the Distance Requirement by 45.
-			Eases the Distance Requirement by 48.
-			Eases the Distance Requirement by 51.
-			Eases the Distance Requirement by 54.
-			Eases the Distance Requirement by 57.
-			Eases the Distance Requirement by 60.
-			Eases the Distance Requirement by 63.
-			Eases the Distance Requirement by 66.
-			Eases the Distance Requirement by 69.
-			Eases the Distance Requirement by 72.
-			Eases the Distance Requirement by 75.
-			Eases the Distance Requirement by 78.
-			Eases the Distance Requirement by 81.
-			Eases the Distance Requirement by 84.
-			Eases the Distance Requirement by 87.
-			Eases the Distance Requirement by 90.
-		-->
-		<enchantRoute id="3" level="5,6,7,8,9" />
+		<enchantRoute id="3" level="5,6,7,8,9" /> <!-- Penalty -->
 		<table name="#mpConsume"> 38 39 41 43 44 47 50 53 56 </table>
 		<table name="#castRange"> 600 
 			<enchantRoute id="2" level="5,6,7,8,9"> 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800 </enchantRoute>
@@ -3565,39 +3533,7 @@
 	<skill id="10269" levels="10" name="Jump Attack">
 		<enchantRoute id="1" level="6,7,8,9,10" /> <!-- Chance -->
 		<enchantRoute id="2" level="6,7,8,9,10" /> <!-- Distance -->
-		<!-- TODO: Penalty:
-			Eases the Distance Requirement by 3.
-			Eases the Distance Requirement by 6.
-			Eases the Distance Requirement by 9.
-			Eases the Distance Requirement by 12.
-			Eases the Distance Requirement by 15.
-			Eases the Distance Requirement by 18.
-			Eases the Distance Requirement by 21.
-			Eases the Distance Requirement by 24.
-			Eases the Distance Requirement by 27.
-			Eases the Distance Requirement by 30.
-			Eases the Distance Requirement by 33.
-			Eases the Distance Requirement by 36.
-			Eases the Distance Requirement by 39.
-			Eases the Distance Requirement by 42.
-			Eases the Distance Requirement by 45.
-			Eases the Distance Requirement by 48.
-			Eases the Distance Requirement by 51.
-			Eases the Distance Requirement by 54.
-			Eases the Distance Requirement by 57.
-			Eases the Distance Requirement by 60.
-			Eases the Distance Requirement by 63.
-			Eases the Distance Requirement by 66.
-			Eases the Distance Requirement by 69.
-			Eases the Distance Requirement by 72.
-			Eases the Distance Requirement by 75.
-			Eases the Distance Requirement by 78.
-			Eases the Distance Requirement by 81.
-			Eases the Distance Requirement by 84.
-			Eases the Distance Requirement by 87.
-			Eases the Distance Requirement by 90.
-		-->
-		<enchantRoute id="3" level="6,7,8,9,10" />
+		<enchantRoute id="3" level="6,7,8,9,10" /> <!-- Penalty -->
 		<table name="#mpConsume"> 111 114 118 122 126 130 134 138 142 146 </table>
 		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15539 16297 17055 </table>
 		<table name="#castRange"> 600 
@@ -3761,9 +3697,7 @@
 	<!-- You have reached your physical limit. Increases debuff resistance, Speed, P. Atk., Accuracy, P. Def., Atk. Spd., and Critical Damage. When target is killed, recovers HP by 20%. When HP falls below 60%, increases P. Atk. by 10% and Critical Rate by 100. When HP falls below 30%, increases P. Atk. by 30% and Critical Rate by an additional 300. Can be used when HP is below 70%. -->
 	<skill id="10274" levels="4" name="Berserker">
 		<enchantRoute id="1" level="3,4" /> <!-- Time -->
-		<!-- TODO: Penalty: Eases the HP Use Requirement.
-		-->
-		<enchantRoute id="2" level="3,4" />
+		<enchantRoute id="2" level="3,4" /> <!-- Penalty -->
 		<enchantRoute id="4" level="3,4" /> <!-- Chance Stun -->
 		<table name="#mpConsume"> 38 41 45 47 </table>
 		<table name="#duration"> 60 
@@ -3980,9 +3914,7 @@
 	<!-- Removes all debuffs and for 10 seconds, becomes invincible against normal attacks, skills, and debuffs. Spd. + 30%. Available when HP is 70% or lower. -->
 	<skill id="10279" levels="1" name="Giant Barrier">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
-		<!-- TODO: Penalty: Eases the HP Use Requirement.
-		-->
-		<enchantRoute id="2" level="1" />
+		<enchantRoute id="2" level="1" /> <!-- Penalty -->
 		<enchantRoute id="4" level="1" /> <!-- Chance Stun -->
 		<table name="#duration"> 10 
 			<enchantRoute id="1" level="1"> 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 </enchantRoute>
@@ -4003,7 +3935,7 @@
 		<set name="canBeUsedWhenDisabled" val="true" />
 		<for>
 			<cond addName="1" msgId="113">
-				<player hp="70" />
+				<player hp="#coundhp" />
 			</cond>
 			<abnormal duration="#duration" stackLvl="1" stackType="invincibility" visualEffect="invincible">
 				<effect type="Invincible" val="0" />
@@ -4596,13 +4528,11 @@
 		Level 6: Attacks target with 77290 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword.
 	-->
 	<skill id="10300" levels="6" name="Last Attack">
-		<!-- TODO: Penalty: Eases the HP Use Requirement.
-		-->
-		<enchantRoute id="1" level="2,3,4,5,6" />
+		<enchantRoute id="1" level="2,3,4,5,6" /> <!-- Penalty -->
 		<table name="#mpConsume"> 276 297 315 333 351 369 </table>
 		<table name="#power"> 52746 59601 65085 69414 73352 77290 </table>
 		<table name="#condhp"> 10 
-			<enchantRoute id="2" level="3,4" type="ADD"> 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 </enchantRoute>
+			<enchantRoute id="1" level="3,4" type="ADD"> 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
