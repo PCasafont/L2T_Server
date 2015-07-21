@@ -624,7 +624,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_isDance = set.getBool("isDance",false);
 		_nextDanceCost = set.getInteger("nextDanceCost", 0);
 		_sSBoost = set.getFloat("SSBoost", 0.f);
-		_aggroPoints = set.getInteger("aggroPoints", 0);
+		_aggroPoints = Math.round(set.getFloat("aggroPoints", 0));
 		_ignoredDefPercent = set.getFloat("ignoredDefPercent", 0.0f);
 		_canBeUsedWhenDisabled = set.getBool("canBeUsedWhenDisabled", false);
 		
