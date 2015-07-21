@@ -3725,6 +3725,10 @@
 	<item id="21754" type="Weapon" name="Pencil Corps' Magic Pencil" icon="BranchSys2.icon.g_pencil_of_servermaster" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="1" immediateEffect="1" weight="100" soulshots="2" spiritshots="2"
 			isTradable="false" isDropable="false" isSellable="false">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Scholar's hat showing knowledge. Gold tassel is attached. -->
 	<item id="21755" type="Armor" name="Manor Scholar's Hat" icon="BranchSys2.icon.g_graduation_cap_gold" defaultAction="equip"
