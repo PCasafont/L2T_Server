@@ -476,44 +476,12 @@
 	<!-- Cancels all debuffs and recovers HP/MP for 10 sec. inside a refuge of wind. Cannot move. -->
 	<skill id="30010" levels="2" name="Windy Refuge">
 		<enchantRoute id="1" level="1,2" /> <!-- Time -->
-		<!-- TODO: Major:
-			Recovers HP by 1936.
-			Recovers HP by 2072.
-			Recovers HP by 2207.
-			Recovers HP by 2342.
-			Recovers HP by 2477.
-			Recovers HP by 2612.
-			Recovers HP by 2747.
-			Recovers HP by 2882.
-			Recovers HP by 3017.
-			Recovers HP by 3152.
-			Recovers HP by 3288.
-			Recovers HP by 3423.
-			Recovers HP by 3558.
-			Recovers HP by 3693.
-			Recovers HP by 3828.
-			Recovers HP by 3964.
-			Recovers HP by 4099.
-			Recovers HP by 4234.
-			Recovers HP by 4369.
-			Recovers HP by 4504.
-			Recovers HP by 4594.
-			Recovers HP by 4684.
-			Recovers HP by 4774.
-			Recovers HP by 4864.
-			Recovers HP by 4955.
-			Recovers HP by 5044.
-			Recovers HP by 5135.
-			Recovers HP by 5224.
-			Recovers HP by 5315.
-			Recovers HP by 5405.
-		-->
-		<enchantRoute id="2" level="1,2" />
+		<enchantRoute id="2" level="1,2" /> <!-- Major -->
 		<table name="#count"> 10 
 			<enchantRoute id="1" level="1,2"> 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 </enchantRoute>
 		</table>
 		<table name="#heal"> 185 
-			<enchantRoute id="2" level="1,2"> 194 207 221 234 248 261 275 288 302  315 329 342 356 369 383 396 410 423 437 450 459 468 477 486 496 504 514 522 531 541 </enchantRoute>
+			<enchantRoute id="2" level="1,2"> 194 207 221 234 248 261 275 288 302 315 329 342 356 369 383 396 410 423 437 450 459 468 477 486 496 504 514 522 531 541 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />

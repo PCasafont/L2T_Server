@@ -4279,41 +4279,12 @@
 	<!-- Shouts loudly to invoke the power of the Puma. For 5 minutes, increases your P. Accuracy by 10 and Atk. Spd. by 20%, and decreases Critical Damage received by 40%. -->
 	<skill id="10293" levels="1" name="Feral Puma Cry">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="2" level="1" enabled="false" />
+		<enchantRoute id="2" level="1" /> <!-- Counter -->
 		<table name="#duration"> 300 
 			<enchantRoute id="1" level="1"> 315 330 345 360 375 390 405 420 435 450 465 480 495 510 525 540 555 570 585 600 615 630 645 660 675 690 705 720 735 750 </enchantRoute>
+		</table>
+		<table name="#critVuln"> 40 
+			<enchantRoute id="2" level="1" type="ADD"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -4326,7 +4297,7 @@
 				<effect type="Buff" val="0" />
 				<add stat="accCombat" val="10" />
 				<addPercent stat="pAtkSpd" val="20" />
-				<subPercent stat="critVuln" val="40" />
+				<subPercent stat="critVuln" val="#critVuln" />
 			</abnormal>
 		</for>
 	</skill>
