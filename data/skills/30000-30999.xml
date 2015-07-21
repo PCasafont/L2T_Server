@@ -71,13 +71,15 @@
 			Increases Skill Success Rate by 29%.
 			Increases Skill Success Rate by 30%.
 		-->
-		<enchantRoute id="2" level="24,25,26,27,28" enabled="false" />
+		<enchantRoute id="2" level="24,25,26,27,28" />
 		<enchantRoute id="3" level="24,25,26,27,28" /> <!-- Wild -->
 		<table name="#mpConsume"> 3 8 10 13 16 18 20 21 23 25 27 29 30 31 32 32 33 33 33 34 34 34 34 34 35 36 37 38 </table>
 		<table name="#power"> 6 14 19 25 32 36 41 46 50 55 60 64 69 72 75 77 79 171 179 187 195 203 211 219 227 231 235 239 
 			<enchantRoute id="1" level="24,25,26,27,28" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#chance"> 0 0 0 0 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 </table>
+		<table name="#chance"> 0 0 0 0 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<table name="#baseCritRate"> 0 
 			<enchantRoute id="3" level="24,25,26,27,28"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
@@ -289,7 +291,7 @@
 					<player active_effect_id="30009" />
 				</or>
 			</cond>
-			<abnormal duration="5" stackLvl="1" visualEffect="windyTrap">
+			<abnormal duration="5" landRate="70" stackLvl="1" visualEffect="windyTrap">
 				<effect type="Root" val="0" />
 			</abnormal>
 		</for>
@@ -1103,8 +1105,8 @@
 		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<for>
-			<abnormal duration="1" noicon="1">
-				<effect activationChance="100" chanceType="ON_EXIT" triggeredId="30030" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
+			<abnormal landRate="70" noicon="1">
+				<effect activationChance="100" chanceType="ON_START" triggeredId="30030" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 			</abnormal>
 		</for>
 	</skill>
@@ -1115,7 +1117,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<for>
-			<abnormal count="5" duration="1" landRate="60" stackLvl="1" stackType="storm_captivity" visualEffect="stormRoot">
+			<abnormal count="5" duration="1" stackLvl="1" stackType="storm_captivity" visualEffect="stormRoot">
 				<effect type="DamOverTime" val="200" />
 				<effect type="Root" val="0" />
 			</abnormal>

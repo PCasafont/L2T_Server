@@ -388,8 +388,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_clanRepConsume = set.getInteger("clanRepConsume", 0);
 		_afterEffectId = set.getInteger("afterEffectId", 0);
 		_afterEffectLvl = set.getInteger("afterEffectLvl", 1);
-		_castRange = set.getInteger("castRange", -1);
-		_effectRange = set.getInteger("effectRange", -1);
+		_castRange = (int)set.getFloat("castRange", -1);
+		_effectRange = (int)set.getFloat("effectRange", -1);
 		_abnormalLvl = set.getInteger("abnormalLvl", -1);
 		_effectAbnormalLvl = set.getInteger("effectAbnormalLvl", -1); // support for a separate effect abnormal lvl, e.g. poison inside a different skill
 		_attribute = set.getString("attribute","");

@@ -2083,7 +2083,7 @@
 		<set name="staticHitTime" val="true" />
 		<set name="saveVs" val="MEN" />
 		<for>
-			<abnormal comboId="365" count="9" duration="1" stackLvl="1" stackType="lift_hold">
+			<abnormal comboId="365" count="9" landRate="70" duration="1" stackLvl="1" stackType="lift_hold">
 				<effect type="LiftHold" val="0" />
 				<effect type="DamOverTime" val="100" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
@@ -6160,7 +6160,7 @@
 		<set name="staticHitTime" val="true" />
 		<set name="saveVs" val="MEN" />
 		<for>
-			<abnormal comboId="365" duration="10" stackLvl="1" stackType="lift_hold">
+			<abnormal comboId="365" landRate="70" duration="10" stackLvl="1" stackType="lift_hold">
 				<effect type="LiftHold" val="0" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
 			</abnormal>
