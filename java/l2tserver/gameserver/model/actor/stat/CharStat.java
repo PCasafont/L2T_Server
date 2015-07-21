@@ -217,9 +217,6 @@ public class CharStat
 		else
 			criticalHit = (int)calcStat(Stats.CRITICAL_RATE_SIDE, criticalHit, target, skill);
 		
-		if (target != null)
-			criticalHit = (int)(criticalHit / target.calcStat(Stats.CRIT_DAMAGE_EVASION, 1, _activeChar, skill));
-		
 		criticalHit /= 10;
 
 		// Set a cap of Critical Hit at 500

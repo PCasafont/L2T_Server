@@ -105,7 +105,8 @@ public class Pdam implements ISkillHandler
 			boolean crit = false;
 			if (skill.getBaseCritRate() > 0)
 			{
-				double critRate = skill.getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar) * activeChar.calcStat(Stats.PCRITICAL_RATE, 1.0, target, skill);
+				double critRate = skill.getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar);
+				critRate = activeChar.calcStat(Stats.PCRITICAL_RATE, critRate, target, skill);
 				if (skill.getMaxChargeConsume() > 0)
 					critRate = activeChar.calcStat(Stats.MOMENTUM_CRIT_RATE, critRate, target, skill);
 				
