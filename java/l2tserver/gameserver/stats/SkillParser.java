@@ -43,6 +43,7 @@ public final class SkillParser extends StatsParser
 {
 	private static enum SkillEnchantBonusType
 	{
+		SET,
 		ADD,
 		ADD_PERCENT
 	}
@@ -99,8 +100,13 @@ public final class SkillParser extends StatsParser
 							table = routeTable.data;
 							level = _currentEnchantLevel;
 							
-							// Special calculation
-							if (routeTable.type == SkillEnchantBonusType.ADD_PERCENT)
+							// Operations
+							if (routeTable.type == SkillEnchantBonusType.ADD)
+							{
+								float value = Float.parseFloat(table[level - 1]);
+								return String.valueOf(Float.parseFloat(_tables.get(name)[_currentLevel - 1]) + value);
+							}
+							else if (routeTable.type == SkillEnchantBonusType.ADD_PERCENT)
 							{
 								float multiplier = 1.0f + Float.parseFloat(table[level - 1]) / 100.0f;
 								return String.valueOf(Float.parseFloat(_tables.get(name)[_currentLevel - 1]) * multiplier);
@@ -165,7 +171,7 @@ public final class SkillParser extends StatsParser
 				while (data.hasMoreTokens())
 					array.add(data.nextToken());
 				
-				SkillEnchantBonusType type = SkillEnchantBonusType.valueOf(node.getString("type", "ADD"));
+				SkillEnchantBonusType type = SkillEnchantBonusType.valueOf(node.getString("type", "SET"));
 				String[] enchRoute = node.getString("id").split(",");
 				String[] enchLvl = node.getString("level").split(",");
 				
