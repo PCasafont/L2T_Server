@@ -2613,42 +2613,13 @@
 	-->
 	<skill id="10102" levels="6" name="Shadow Slash">
 		<enchantRoute id="1" level="2,3,4,5,6" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-			Increases Skill Success Rate by 21%.
-			Increases Skill Success Rate by 22%.
-			Increases Skill Success Rate by 23%.
-			Increases Skill Success Rate by 24%.
-			Increases Skill Success Rate by 25%.
-			Increases Skill Success Rate by 26%.
-			Increases Skill Success Rate by 27%.
-			Increases Skill Success Rate by 28%.
-			Increases Skill Success Rate by 29%.
-			Increases Skill Success Rate by 30%.
-		-->
-		<enchantRoute id="2" level="2,3,4,5,6" enabled="false" />
+		<enchantRoute id="2" level="2,3,4,5,6" /> <!-- Chance -->
 		<table name="#mpConsume"> 185 191 197 203 209 215 </table>
 		<table name="#power"> 33505 34353 35201 36897 38593 40289 
 			<enchantRoute id="1" level="2,3,4,5,6" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#landRate"> 70 
+			<enchantRoute id="2" level="2,3,4,5,6" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_FRONT_AREA" />
 		<set name="skillType" val="PDAM" />
@@ -2666,7 +2637,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="weaponsAllowed" val="Shield" />
 		<for>
-			<abnormal comboId="367" landRate="70" duration="1" stackLvl="1" stackType="knock_down">
+			<abnormal comboId="367" duration="1" landRate="#landRate" stackLvl="1" stackType="knock_down">
 				<effect type="KnockDown" val="0" />
 			</abnormal>
 		</for>
@@ -2681,44 +2652,13 @@
 	-->
 	<skill id="10103" levels="6" name="Mass Freezing Strike">
 		<enchantRoute id="1" level="3,4,5,6" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-			Increases Skill Success Rate by 21%.
-			Increases Skill Success Rate by 22%.
-			Increases Skill Success Rate by 23%.
-			Increases Skill Success Rate by 24%.
-			Increases Skill Success Rate by 25%.
-			Increases Skill Success Rate by 26%.
-			Increases Skill Success Rate by 27%.
-			Increases Skill Success Rate by 28%.
-			Increases Skill Success Rate by 29%.
-			Increases Skill Success Rate by 30%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6" /> <!-- Chance -->
 		<table name="#power"> 18151 18641 19131 20111 21091 22071 
 			<enchantRoute id="1" level="3,4,5,6" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
-		<table name="#mpConsume"> 185 191 197 199 201 203 
-			<enchantRoute id="2" level="4"> 197 </enchantRoute>
+		<table name="#mpConsume"> 185 191 197 199 201 203 </table>
+		<table name="#landRate"> 70 
+			<enchantRoute id="2" level="3,4,5,6" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="PDAM" />
@@ -2735,7 +2675,7 @@
 		<set name="skillRadius" val="200" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<abnormal duration="10" landRate="70">
+			<abnormal duration="10" landRate="#landRate">
 				<effect type="Debuff" val="0" />
 				<sub stat="runSpd" val="100" />
 			</abnormal>
