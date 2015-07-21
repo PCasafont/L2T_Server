@@ -6453,7 +6453,7 @@
 	</item>
 	<!-- The cloak of an Olympiad Hero. STR/DEX/CON/INT/WIT/MEN + 3 when equipped. Decreases PvP Damage by 15%. -->
 	<item id="30372" type="Armor" name="Hero's Cloak" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back" immediateEffect="1"
-			crystalType="r" weight="220" isHeroItem="true" isTradable="false" isDropable="false" isSellable="false">
+			crystalType="r" weight="220" isTradable="false" isDropable="false" isSellable="false" isHeroItem="true">
 		<cond msgId="1518">
 			<player isHero="true" />
 		</cond>

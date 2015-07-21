@@ -1350,8 +1350,8 @@
 	-->
 	<item id="26338" type="Armor" name="Talisman - Abundance Lv. 1 (High-grade)" icon="" defaultAction="equip" bodypart="deco1"
 			immediateEffect="1" weight="150">
-		<skill id="21364" level="9" />
-		<skill id="21477" level="1" />
+		<skill id="21364" level="9" /> <!-- Talisman - Abundance -->
+		<skill id="21477" level="1" /> <!-- Power of Abundance - Lv. 1 -->
 	</item>
 	<!--
 		HP/MP/CP + 531, P. Def. + 1051, M. Def. + 609, P. Evasion/M. Evasion + 8, Attribute Resistance + 17, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 16%, M. Atk. + 16%, Skill Power + 16%, Skill Critical Rate + 16%. Duration 1 minute. Cooldown 10 minutes.)
@@ -1359,8 +1359,8 @@
 	-->
 	<item id="26339" type="Armor" name="Talisman - Abundance Lv. 2 (High-grade)" icon="" defaultAction="equip" bodypart="deco1"
 			immediateEffect="1" weight="150">
-		<skill id="21364" level="10" />
-		<skill id="21477" level="2" />
+		<skill id="21364" level="10" /> <!-- Talisman - Abundance -->
+		<skill id="21477" level="2" /> <!-- Power of Abundance - Lv. 2 -->
 	</item>
 	<!--
 		Max HP/MP/CP + 563, P. Def. + 1184, M. Def. + 706, P. Evasion/M. Evasion + 9, Attribute Resistance + 20, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 17%, M. Atk. + 17%, Skill Power + 17%, Skill Critical Rate + 17%. Duration 1 minute. Cooldown 10 minutes.)
@@ -1368,8 +1368,8 @@
 	-->
 	<item id="26340" type="Armor" name="Talisman - Abundance Lv. 3 (High-grade)" icon="" defaultAction="equip" bodypart="deco1"
 			immediateEffect="1" weight="150">
-		<skill id="21364" level="11" />
-		<skill id="21477" level="3" />
+		<skill id="21364" level="11" /> <!-- Talisman - Abundance -->
+		<skill id="21477" level="3" /> <!-- Power of Abundance - Lv. 3 -->
 	</item>
 	<!--
 		HP/MP/CP + 591, P. Def. + 1307, M. Def. + 799, P. Evasion/M. Evasion + 10, Attribute Resistance + 25,  Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 20%, M. Atk. + 20%, Skill Power + 20%, Skill Critical Rate + 20%. Duration 1 minute. Cooldown 10 minutes.)
@@ -1377,8 +1377,8 @@
 	-->
 	<item id="26341" type="Armor" name="Talisman - Abundance Lv. 4 (High-grade)" icon="" defaultAction="equip" bodypart="deco1"
 			immediateEffect="1" weight="150">
-		<skill id="21364" level="12" />
-		<skill id="21477" level="4" />
+		<skill id="21364" level="12" /> <!-- Talisman - Abundance -->
+		<skill id="21477" level="4" /> <!-- Power of Abundance - Lv. 4 -->
 	</item>
 	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 1. Requires Create Item - Skill Lv. 14. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
 	<item id="26342" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 1 (High-grade)" icon="" defaultAction="recipe" etcitemType="recipe"

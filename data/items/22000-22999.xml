@@ -3,32 +3,32 @@
 	<!-- Has a chance to contain an Ancient Scroll: Enchant Weapon or a Scroll: Enchant Weapon with 10 % improved success rate. -->
 	<item id="22000" type="EtcItem" name="Small Fortuna Box" icon="br_cashtex.item.br_cash_lucky_box_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
-		<skill id="26000" level="1" />
+		<skill id="26000" level="1" /> <!-- Small Fortuna Box -->
 	</item>
 	<!-- Has a chance to contain a high-grade Ancient Scroll: Enchant Weapon or a Scroll: Enchant Weapon with 10 % improved success rate. -->
 	<item id="22001" type="EtcItem" name="Medium Fortune Box" icon="br_cashtex.item.br_cash_lucky_box_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
-		<skill id="26001" level="1" />
+		<skill id="26001" level="1" /> <!-- Medium Fortuna Box -->
 	</item>
 	<!-- A Heavenly Scroll: Enchant Weapon and a high -grade Ancient Scroll: Enchant Weapon can be acquired at a constant rate. -->
 	<item id="22002" type="EtcItem" name="Large Fortuna Box" icon="br_cashtex.item.br_cash_lucky_box_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
-		<skill id="26002" level="1" />
+		<skill id="26002" level="1" /> <!-- Large Fortuna Box -->
 	</item>
 	<!-- Ancient Scroll: Enchant Armor and Scroll: Enchant Armor with 10 % improved success rate can be acquired at a constant rate. -->
 	<item id="22003" type="EtcItem" name="Small Fortuna Cube" icon="br_cashtex.item.br_cash_lucky_cube_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
-		<skill id="26003" level="1" />
+		<skill id="26003" level="1" /> <!-- Small Fortuna Cube -->
 	</item>
 	<!-- High -grade Ancient Scroll: Enchant Armor and Scroll: Enchant Armor with 10 % improved success rate can be acquired at a constant rate. -->
 	<item id="22004" type="EtcItem" name="Medium Fortuna Cube" icon="br_cashtex.item.br_cash_lucky_cube_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
-		<skill id="26004" level="1" />
+		<skill id="26004" level="1" /> <!-- Medium Fortuna Cube -->
 	</item>
 	<!-- A Heavenly Scroll: Enchant Armor and a high -grade Ancient Scroll: Enchant Armor can be acquired at a constant rate. -->
 	<item id="22005" type="EtcItem" name="Large Fortuna Cube" icon="br_cashtex.item.br_cash_lucky_cube_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true">
-		<skill id="26005" level="1" />
+		<skill id="26005" level="1" /> <!-- Large Fortuna Cube -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -37,7 +37,7 @@
 	<item id="22006" type="EtcItem" name="Scroll: Enchant Weapon (D-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_wp_d_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26006" level="1" />
+		<skill id="26006" level="1" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -46,7 +46,7 @@
 	<item id="22007" type="EtcItem" name="Scroll: Enchant Weapon (C-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_wp_c_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26007" level="1" />
+		<skill id="26007" level="1" /> <!-- Scroll: Enchant Weapon (C-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -55,7 +55,7 @@
 	<item id="22008" type="EtcItem" name="Scroll: Enchant Weapon (B-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_wp_b_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26008" level="1" />
+		<skill id="26008" level="1" /> <!-- Scroll: Enchant Weapon (B-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -64,7 +64,7 @@
 	<item id="22009" type="EtcItem" name="Scroll: Enchant Weapon (A-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_wp_a_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26009" level="1" />
+		<skill id="26009" level="1" /> <!-- Scroll: Enchant Weapon (A-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -73,7 +73,7 @@
 	<item id="22010" type="EtcItem" name="Scroll: Enchant Armor (D-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_am_d_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26010" level="1" />
+		<skill id="26010" level="1" /> <!-- Scroll: Enchant Armor (D-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -82,7 +82,7 @@
 	<item id="22011" type="EtcItem" name="Scroll: Enchant Armor (C-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_am_c_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26011" level="1" />
+		<skill id="26011" level="1" /> <!-- Scroll: Enchant Armor (C-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -91,7 +91,7 @@
 	<item id="22012" type="EtcItem" name="Scroll: Enchant Armor (B-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_am_b_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26012" level="1" />
+		<skill id="26012" level="1" /> <!-- Scroll: Enchant Armor (B-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -100,7 +100,7 @@
 	<item id="22013" type="EtcItem" name="Scroll: Enchant Armor (A-grade)" icon="br_cashtex.item.br_cash_scrl_of_ench_am_a_i00"
 			defaultAction="skill_reduce" etcitemType="scrl_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26013" level="1" />
+		<skill id="26013" level="1" /> <!-- Scroll: Enchant Armor (A-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -110,7 +110,7 @@
 	<item id="22014" type="EtcItem" name="Ancient Scroll: Enchant Weapon (B-grade)" icon="br_cashtex.item.br_cash_cry_of_ench_wp_b_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26014" level="1" />
+		<skill id="26014" level="1" /> <!-- Ancient Scroll: Enchant Weapon (B-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -120,7 +120,7 @@
 	<item id="22015" type="EtcItem" name="Ancient Scroll: Enchant Weapon (A-grade)" icon="br_cashtex.item.br_cash_cry_of_ench_wp_a_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26015" level="1" />
+		<skill id="26015" level="1" /> <!-- Ancient Scroll: Enchant Weapon (A-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -130,7 +130,7 @@
 	<item id="22016" type="EtcItem" name="Ancient Scroll: Enchant Armor (B-grade)" icon="br_cashtex.item.br_cash_cry_of_ench_am_b_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26016" level="1" />
+		<skill id="26016" level="1" /> <!-- Ancient Scroll: Enchant Armor (B-grade) -->
 	</item>
 	<!--
 		10 % increases in enchant success rate. 
@@ -140,7 +140,7 @@
 	<item id="22017" type="EtcItem" name="Ancient Scroll: Enchant Armor (A-grade)" icon="br_cashtex.item.br_cash_cry_of_ench_am_a_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26017" level="1" />
+		<skill id="26017" level="1" /> <!-- Ancient Scroll: Enchant Armor (A-grade) -->
 	</item>
 	<!--
 		Enchant success rate is 100%. 
@@ -149,7 +149,7 @@
 	<item id="22018" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (B-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_b_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26018" level="1" />
+		<skill id="26018" level="1" /> <!-- Divine Scroll: Enchant Weapon (B-grade) -->
 	</item>
 	<!--
 		Enchant success rate is 100%. 
@@ -158,7 +158,7 @@
 	<item id="22019" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (A-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_a_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26019" level="1" />
+		<skill id="26019" level="1" /> <!-- Divine Scroll: Enchant Weapon (A-grade) -->
 	</item>
 	<!--
 		Enchant success rate is 100%. 
@@ -167,7 +167,7 @@
 	<item id="22020" type="EtcItem" name="Heavenly Scroll: Enchant Armor (B-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_am_b_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26020" level="1" />
+		<skill id="26020" level="1" /> <!-- Divine Scroll: Enchant Armor (B-grade) -->
 	</item>
 	<!--
 		Enchant success rate is 100%. 
@@ -176,268 +176,268 @@
 	<item id="22021" type="EtcItem" name="Heavenly Scroll: Enchant Armor (A-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_am_a_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="EnchantScrolls">
-		<skill id="26021" level="1" />
+		<skill id="26021" level="1" /> <!-- Divine Scroll: Enchant Armor (A-grade) -->
 	</item>
 	<!-- Magic potion which increases Atk. Spd. by 33%. It is very light. -->
 	<item id="22022" type="EtcItem" name="Greater Haste Potion" icon="br_cashtex.item.br_cash_adv_swift_attack_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="4" reuseDelay="500" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26022" level="1" />
+		<skill id="26022" level="1" /> <!-- Greater Haste Potion -->
 	</item>
 	<!-- Magic potion which increases Speed by 33. It is very light. -->
 	<item id="22023" type="EtcItem" name="Greater Wind Walk Potion" icon="br_cashtex.item.br_cash_adv_quick_step_potion_i00"
 			defaultAction="skill_reduce" etcitemType="potion" immediateEffect="1" weight="4" reuseDelay="500" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26023" level="1" />
+		<skill id="26023" level="1" /> <!-- Greater Wind Walk Potion -->
 	</item>
 	<!-- Magic potion that instantly restores HP by 435. Instant effect with no duration. Very light. Cannot be used when HP is full. -->
 	<item id="22024" type="EtcItem" name="Quick Healing Potion" icon="br_cashtex.item.br_cash_quick_healing_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="36" reuseDelay="500" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26024" level="1" />
+		<skill id="26024" level="1" /> <!-- Quick Healing Potion -->
 	</item>
 	<!-- Magic potion which quickly recovers HP. Lasts for 15 seconds. Very light. -->
 	<item id="22025" type="EtcItem" name="Major Healing Potion" icon="br_cashtex.item.br_cash_greater_healing_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="1" reuseDelay="10000" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26025" level="1" />
+		<skill id="26025" level="1" /> <!-- Major Healing Potion -->
 	</item>
 	<!-- Magic potion which slowly recovers HP. It lasts for 15 seconds. It is very light. -->
 	<item id="22026" type="EtcItem" name="Major Healing Potion" icon="br_cashtex.item.br_cash_healing_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="1" reuseDelay="10000" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26026" level="1" />
+		<skill id="26026" level="1" /> <!-- Major Healing Potion -->
 	</item>
 	<!-- It recovers CP. Any character between levels 20 and 39 can use it only for oneself. Cooldown is very short. -->
 	<item id="22027" type="EtcItem" name="Elixir of CP (D-grade)" icon="br_cashtex.item.br_cash_elixir_of_combative_d_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="d" weight="5" sharedReuseGroup="7" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26027" level="2" />
+		<skill id="26027" level="2" /> <!-- Elixir of CP (D-grade) -->
 	</item>
 	<!-- It recovers CP. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown is very short. -->
 	<item id="22028" type="EtcItem" name="Elixir of CP (C-grade)" icon="br_cashtex.item.br_cash_elixir_of_combative_c_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="c" weight="5" sharedReuseGroup="7" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26027" level="3" />
+		<skill id="26027" level="3" /> <!-- Elixir of CP (C-grade) -->
 	</item>
 	<!-- It recovers CP. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown is very short. -->
 	<item id="22029" type="EtcItem" name="Elixir of CP (B-grade)" icon="br_cashtex.item.br_cash_elixir_of_combative_b_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="b" weight="5" sharedReuseGroup="7" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26027" level="4" />
+		<skill id="26027" level="4" /> <!-- Elixir of CP (B-grade) -->
 	</item>
 	<!-- It recovers CP. Any character between levels 61 and 75 can use it only for oneself. Cooldown is very short. -->
 	<item id="22030" type="EtcItem" name="Elixir of CP (A-grade)" icon="br_cashtex.item.br_cash_elixir_of_combative_a_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="a" weight="5" sharedReuseGroup="7" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26027" level="5" />
+		<skill id="26027" level="5" /> <!-- Elixir of CP (A-grade) -->
 	</item>
 	<!-- It recovers CP. Can only be used by characters level 76 - 84 upon themselves. Cooldown is very short. -->
 	<item id="22031" type="EtcItem" name="Elixir of CP (S-grade)" icon="br_cashtex.item.br_cash_elixir_of_combative_s_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="s" weight="5" sharedReuseGroup="7" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26027" level="6" />
+		<skill id="26027" level="6" /> <!-- Elixir of CP (S-grade) -->
 	</item>
 	<!-- It recovers HP. Any character between levels 20 and 39 can use it only for oneself. Cooldown is very short. -->
 	<item id="22032" type="EtcItem" name="Elixir of Life (D-grade)" icon="br_cashtex.item.br_cash_elixir_of_life_d_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="d" weight="5" sharedReuseGroup="2" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26028" level="2" />
+		<skill id="26028" level="2" /> <!-- Elixir of Life (D-grade) -->
 	</item>
 	<!-- It recovers HP. Any character level 40 or above and level 51 or below can use it only for oneself. Cooldown is very short. -->
 	<item id="22033" type="EtcItem" name="Elixir of Life (C-grade)" icon="br_cashtex.item.br_cash_elixir_of_life_c_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="c" weight="5" sharedReuseGroup="3" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26028" level="3" />
+		<skill id="26028" level="3" /> <!-- Elixir of Life (C-grade) -->
 	</item>
 	<!-- It recovers HP. Any character level 52 or above and level 60 or below can use it only for oneself. Cooldown is very short. -->
 	<item id="22034" type="EtcItem" name="Elixir of Life (B-grade)" icon="br_cashtex.item.br_cash_elixir_of_life_b_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="b" weight="5" sharedReuseGroup="4" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26028" level="4" />
+		<skill id="26028" level="4" /> <!-- Elixir of Life (B-grade) -->
 	</item>
 	<!-- It recovers HP. Any character between levels 61 and 75 can use it only for oneself. Cooldown is very short. -->
 	<item id="22035" type="EtcItem" name="Elixir of Life (A-grade)" icon="br_cashtex.item.br_cash_elixir_of_life_a_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="a" weight="5" sharedReuseGroup="5" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26028" level="5" />
+		<skill id="26028" level="5" /> <!-- Elixir of Life (A-grade) -->
 	</item>
 	<!-- It recovers HP. Can only be used by characters level 76 - 84 upon themselves. Cooldown is very short. -->
 	<item id="22036" type="EtcItem" name="Elixir of Life (S-grade)" icon="br_cashtex.item.br_cash_elixir_of_life_s_i00" defaultAction="skill_reduce"
 			etcitemType="elixir" immediateEffect="1" crystalType="s" weight="5" sharedReuseGroup="6" reuseDelay="60000" isTradable="false"
 			isDropable="false" isSellable="false" isStackable="true" isPremium="true" isOlyRestricted="true" handler="Elixir">
-		<skill id="26028" level="6" />
+		<skill id="26028" level="6" /> <!-- Elixir of Life (S-grade) -->
 	</item>
 	<!-- It recovers CP by 50. Cooldown is very short. -->
 	<item id="22037" type="EtcItem" name="CP Potion" icon="br_cashtex.item.br_cash_cp_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="25" reuseDelay="100" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26029" level="1" />
+		<skill id="26029" level="1" /> <!-- CP Potion -->
 	</item>
 	<!-- Magic potion which instantly recovers MP by 60. It is very light. -->
 	<item id="22038" type="EtcItem" name="Mana Potion" icon="br_cashtex.item.br_cash_mana_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="36" reuseDelay="500" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="26030" level="1" />
+		<skill id="26030" level="1" /> <!-- Mana Potion -->
 	</item>
 	<!-- Increases Speed by 33 for 60 min. -->
 	<item id="22039" type="EtcItem" name="Scroll: Wind Walk" icon="br_cashtex.item.br_cash_scroll_of_wind_walk_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26031" level="1" />
+		<skill id="26031" level="1" /> <!-- Scroll: Wind Walk -->
 	</item>
 	<!-- Increases Atk. Spd. by 33% for 60 min. -->
 	<item id="22040" type="EtcItem" name="Scroll: Haste" icon="br_cashtex.item.br_cash_scroll_of_haste_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26032" level="1" />
+		<skill id="26032" level="1" /> <!-- Scroll: Haste -->
 	</item>
 	<!-- P. Atk. + 15% for 60 min. -->
 	<item id="22041" type="EtcItem" name="Scroll: Might" icon="br_cashtex.item.br_cash_scroll_of_might_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26033" level="1" />
+		<skill id="26033" level="1" /> <!-- Scroll: Might -->
 	</item>
 	<!-- P. Def. + 15% for 60 min. -->
 	<item id="22042" type="EtcItem" name="Scroll: Shield" icon="br_cashtex.item.br_cash_scroll_of_shield_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26034" level="1" />
+		<skill id="26034" level="1" /> <!-- Scroll: Shield -->
 	</item>
 	<!-- Increases the power of Critical Attacks by 35% for 60 min. -->
 	<item id="22043" type="EtcItem" name="Scroll: Death Whisper" icon="br_cashtex.item.br_cash_scroll_of_death_whisper_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26035" level="1" />
+		<skill id="26035" level="1" /> <!-- Scroll: Death Whisper -->
 	</item>
 	<!-- Increases Accuracy by about 4. -->
 	<item id="22044" type="EtcItem" name="Scroll: Guidance" icon="br_cashtex.item.br_cash_scroll_of_guidance_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26036" level="1" />
+		<skill id="26036" level="1" /> <!-- Scroll: Guidance -->
 	</item>
 	<!-- M. Atk. + 75%. -->
 	<item id="22045" type="EtcItem" name="Scroll: Empower" icon="br_cashtex.item.br_cash_scroll_of_empower_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26037" level="1" />
+		<skill id="26037" level="1" /> <!-- Scroll: Empower -->
 	</item>
 	<!-- Increases Casting Spd. by 30% for 60 min. -->
 	<item id="22046" type="EtcItem" name="Scroll: Greater Acumen" icon="br_cashtex.item.br_cash_scroll_of_greater_acumen_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26038" level="1" />
+		<skill id="26038" level="1" /> <!-- Scroll: Greater Acumen -->
 	</item>
 	<!-- Chance of recovering 9% of the standard melee damage inflicted on the enemy as HP. -->
 	<item id="22047" type="EtcItem" name="Scroll: Vampiric Rage" icon="br_cashtex.item.br_cash_scroll_of_vampiric_rage_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26039" level="1" />
+		<skill id="26039" level="1" /> <!-- Scroll: Vampiric Rage -->
 	</item>
 	<!-- Increases Max HP by 35%. -->
 	<item id="22048" type="EtcItem" name="Scroll: Blessed Body" icon="br_cashtex.item.br_cash_scroll_of_bless_the_body_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26040" level="1" />
+		<skill id="26040" level="1" /> <!-- Scroll: Blessed Body -->
 	</item>
 	<!-- Decreases a party member's P. Def. by 8%, M. Def. by 16%, and Evasion by 4. P. Atk. + 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
 	<item id="22049" type="EtcItem" name="Scroll: Berserker Spirit" icon="br_cashtex.item.br_cash_scroll_of_berserker_spirit_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26041" level="1" />
+		<skill id="26041" level="1" /> <!-- Scroll: Berserker Spirit -->
 	</item>
 	<!-- M. Def. + 30%. -->
 	<item id="22050" type="EtcItem" name="Scroll: Magic Barrier" icon="br_cashtex.item.br_cash_scroll_of_magic_barrier_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26042" level="1" />
+		<skill id="26042" level="1" /> <!-- Scroll: Magic Barrier -->
 	</item>
 	<!-- Increases Max MP by 35%. -->
 	<item id="22051" type="EtcItem" name="Scroll: Blessed Soul" icon="br_cashtex.item.br_cash_scroll_of_bless_the_soul_i00"
 			defaultAction="skill_reduce" etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26043" level="1" />
+		<skill id="26043" level="1" /> <!-- Scroll: Blessed Soul -->
 	</item>
 	<!-- Decreases physical skill MP consumption by 20%, magic skill's MP consumption by 10%, and song/dance skill's MP consumption by 20%. -->
 	<item id="22052" type="EtcItem" name="Scroll: Clarity" icon="br_cashtex.item.br_cash_scroll_of_clarity_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26044" level="1" />
+		<skill id="26044" level="1" /> <!-- Scroll: Clarity -->
 	</item>
 	<!-- Increases the rate of causing exceptional magic damage by 2. -->
 	<item id="22053" type="EtcItem" name="Scroll: Wild Magic" icon="br_cashtex.item.br_cash_scroll_of_wild_magic_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26045" level="1" />
+		<skill id="26045" level="1" /> <!-- Scroll: Wild Magic -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22054" type="EtcItem" name="XP Rune III (Lv. 1-100+) - 24-hour" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
 			etcitemType="rune_select" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isPremium="true" time="1440">
-		<skill id="26046" level="1" />
+		<skill id="26046" level="1" /> <!-- XP Rune III (Lv. 1-100+) 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22055" type="EtcItem" name="XP Rune III (Lv. 1-100+) - 168-hour" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
 			etcitemType="rune_select" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isPremium="true" time="10080">
-		<skill id="26046" level="1" />
+		<skill id="26046" level="1" /> <!-- XP Rune III (Lv. 1-100+) 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22056" type="EtcItem" name="XP Rune III (Lv. 1-100+) - 336-hour" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
 			etcitemType="rune_select" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isPremium="true" time="20160">
-		<skill id="26046" level="1" />
+		<skill id="26046" level="1" /> <!-- XP Rune III (Lv. 1-100+) 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired XP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22057" type="EtcItem" name="XP Rune III (Lv. 1-100+) - 720-hour" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
 			etcitemType="rune_select" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false"
 			isPremium="true" time="43200">
-		<skill id="26046" level="1" />
+		<skill id="26046" level="1" /> <!-- XP Rune III (Lv. 1-100+) 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22058" type="EtcItem" name="SP Rune - 24-hour" icon="br_cashtex.item.br_cash_rune_of_sp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="1440">
-		<skill id="26046" level="1" />
+		<skill id="26046" level="1" /> <!-- XP Rune III (Lv. 1-100+) 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22059" type="EtcItem" name="SP Rune - 168-hour" icon="br_cashtex.item.br_cash_rune_of_sp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="10080">
-		<skill id="26047" level="1" />
+		<skill id="26047" level="1" /> <!-- SP Rune 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22060" type="EtcItem" name="SP Rune - 336-hour" icon="br_cashtex.item.br_cash_rune_of_sp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="20160">
-		<skill id="26047" level="1" />
+		<skill id="26047" level="1" /> <!-- SP Rune 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It increases acquired SP by 10%. It applies up to a maximum of 50%. The remaining time decreases even when not playing. -->
 	<item id="22061" type="EtcItem" name="SP Rune - 720-hour" icon="br_cashtex.item.br_cash_rune_of_sp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="43200">
-		<skill id="26047" level="1" />
+		<skill id="26047" level="1" /> <!-- SP Rune 10% -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
 	<item id="22062" type="EtcItem" name="Rune of Crystal - 24-hour" icon="br_cashtex.item.br_cash_rune_of_rp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="1440">
-		<skill id="26048" level="1" />
+		<skill id="26048" level="1" /> <!-- Rune of Crystal (Lv. 1) -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
 	<item id="22063" type="EtcItem" name="Rune of Crystal - 168-hour" icon="br_cashtex.item.br_cash_rune_of_rp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="10080">
-		<skill id="26048" level="1" />
+		<skill id="26048" level="1" /> <!-- Rune of Crystal (Lv. 1) -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
 	<item id="22064" type="EtcItem" name="Rune of Crystal - 336-hour" icon="br_cashtex.item.br_cash_rune_of_rp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="20160">
-		<skill id="26048" level="1" />
+		<skill id="26048" level="1" /> <!-- Rune of Crystal (Lv. 1) -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. It decreases a penalty and level for one's equipment grade. It applies up to level 5. The remaining time decreases even when not playing. -->
 	<item id="22065" type="EtcItem" name="Rune of Crystal - 720-hour" icon="br_cashtex.item.br_cash_rune_of_rp_i00" etcitemType="rune_select"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="43200">
-		<skill id="26048" level="1" />
+		<skill id="26048" level="1" /> <!-- Rune of Crystal (Lv. 1) -->
 	</item>
 	<!-- Ancient characters which bestow a mysterious ability if stored in the inventory. Increases the weight limit by 20%. The remaining time decreases even when not playing. -->
 	<item id="22066" type="EtcItem" name="Rune of Feather - 24-hour" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isPremium="true" time="1440">
-		<skill id="26049" level="1" />
+		<skill id="26049" level="1" /> <!-- Rune of Feather -->
 	</item>
 	<!-- Arrow made of bone that was sharpened at the tip. Can be used with a D-grade bow. It is very light. -->
 	<item id="22067" type="EtcItem" name="Bone Arrow" icon="br_cashtex.item.br_cash_bone_arrow_i00" defaultAction="equip" etcitemType="arrow"
@@ -468,403 +468,403 @@
 	<item id="22072" type="EtcItem" name="Blessed Spiritshot (D-grade)" icon="br_cashtex.item.br_cash_blessed_spiritshot_d_i00"
 			defaultAction="spiritshot" immediateEffect="1" crystalType="d" weight="1" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="BlessedSpiritShot">
-		<skill id="26050" level="1" />
+		<skill id="26050" level="1" /> <!-- Blessed Spiritshot (D-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a C-grade weapon. -->
 	<item id="22073" type="EtcItem" name="Blessed Spiritshot (C-grade)" icon="br_cashtex.item.br_cash_blessed_spiritshot_c_i00"
 			defaultAction="spiritshot" immediateEffect="1" crystalType="c" weight="1" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="BlessedSpiritShot">
-		<skill id="26051" level="1" />
+		<skill id="26051" level="1" /> <!-- Blessed Spiritshot (C-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with a B-grade weapon. -->
 	<item id="22074" type="EtcItem" name="Blessed Spiritshot (B-grade)" icon="br_cashtex.item.br_cash_blessed_spiritshot_b_i00"
 			defaultAction="spiritshot" immediateEffect="1" crystalType="b" weight="1" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="BlessedSpiritShot">
-		<skill id="26052" level="1" />
+		<skill id="26052" level="1" /> <!-- Blessed Spiritshot (B-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an A-grade weapon. -->
 	<item id="22075" type="EtcItem" name="Blessed Spiritshot (A-grade)" icon="br_cashtex.item.br_cash_blessed_spiritshot_a_i00"
 			defaultAction="spiritshot" immediateEffect="1" crystalType="a" weight="1" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="BlessedSpiritShot">
-		<skill id="26053" level="1" />
+		<skill id="26053" level="1" /> <!-- Blessed Spiritshot (A-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. significantly. Can be used with an S-grade weapon. -->
 	<item id="22076" type="EtcItem" name="Blessed Spiritshot (S-grade)" icon="br_cashtex.item.br_cash_blessed_spiritshot_s_i00"
 			defaultAction="spiritshot" immediateEffect="1" crystalType="s" weight="1" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false" isStackable="true" isPremium="true" handler="BlessedSpiritShot">
-		<skill id="26054" level="1" />
+		<skill id="26054" level="1" /> <!-- Blessed Spiritshot (S-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a D-grade weapon. -->
 	<item id="22077" type="EtcItem" name="Spiritshot (D-grade)" icon="br_cashtex.item.br_cash_spiritshot_d_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="d" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SpiritShot">
-		<skill id="26055" level="1" />
+		<skill id="26055" level="1" /> <!-- Spiritshot (D-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a C-grade weapon. -->
 	<item id="22078" type="EtcItem" name="Spiritshot (C-grade)" icon="br_cashtex.item.br_cash_spiritshot_c_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="c" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SpiritShot">
-		<skill id="26056" level="1" />
+		<skill id="26056" level="1" /> <!-- Spiritshot (C-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with a B-grade weapon. -->
 	<item id="22079" type="EtcItem" name="Spiritshot (B-grade)" icon="br_cashtex.item.br_cash_spiritshot_b_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="b" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SpiritShot">
-		<skill id="26057" level="1" />
+		<skill id="26057" level="1" /> <!-- Spiritshot (B-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an A-grade weapon. -->
 	<item id="22080" type="EtcItem" name="Spiritshot (A-grade)" icon="br_cashtex.item.br_cash_spiritshot_a_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="a" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SpiritShot">
-		<skill id="26058" level="1" />
+		<skill id="26058" level="1" /> <!-- Spiritshot (A-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an S-grade weapon. -->
 	<item id="22081" type="EtcItem" name="Spiritshot (S-grade)" icon="br_cashtex.item.br_cash_spiritshot_s_i00" defaultAction="spiritshot"
 			immediateEffect="1" crystalType="s" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SpiritShot">
-		<skill id="26059" level="1" />
+		<skill id="26059" level="1" /> <!-- Spiritshot (S-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a D-grade weapon. -->
 	<item id="22082" type="EtcItem" name="Soulshot (D-grade)" icon="br_cashtex.item.br_cash_soulshot_d_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="d" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SoulShots">
-		<skill id="26060" level="1" />
+		<skill id="26060" level="1" /> <!-- Soulshot (D-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a C-grade weapon. -->
 	<item id="22083" type="EtcItem" name="Soulshot (C-grade)" icon="br_cashtex.item.br_cash_soulshot_c_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="c" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SoulShots">
-		<skill id="26061" level="1" />
+		<skill id="26061" level="1" /> <!-- Soulshot (C-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with a B-grade weapon. -->
 	<item id="22084" type="EtcItem" name="Soulshot (B-grade)" icon="br_cashtex.item.br_cash_soulshot_b_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="b" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SoulShots">
-		<skill id="26062" level="1" />
+		<skill id="26062" level="1" /> <!-- Soulshot (B-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an A-grade weapon. -->
 	<item id="22085" type="EtcItem" name="Soulshot (A-grade)" icon="br_cashtex.item.br_cash_soulshot_a_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="a" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SoulShots">
-		<skill id="26063" level="1" />
+		<skill id="26063" level="1" /> <!-- Soulshot (A-grade) -->
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its P. Atk. significantly. Can be used with an S-grade weapon. -->
 	<item id="22086" type="EtcItem" name="Soulshot (S-grade)" icon="br_cashtex.item.br_cash_soulshot_s_i00" defaultAction="soulshot"
 			immediateEffect="1" crystalType="s" weight="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="SoulShots">
-		<skill id="26064" level="1" />
+		<skill id="26064" level="1" /> <!-- Soulshot (S-grade) -->
 	</item>
 	<!-- If used, every type of magic scroll for warriors can be acquired. -->
 	<item id="22087" type="EtcItem" name="Fighter's Scroll Bundle" icon="br_cashtex.item.br_cash_fighter_buff_set_i00" defaultAction="capsule"
 			immediateEffect="1" weight="100" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26065" level="1" />
+		<skill id="26065" level="1" /> <!-- Fighter's Scroll Bundle -->
 	</item>
 	<!-- If used, every type of magic scroll for wizards can be acquired. -->
 	<item id="22088" type="EtcItem" name="Mage's Scroll Bundle" icon="br_cashtex.item.br_cash_mage_buff_set_i00" defaultAction="capsule"
 			immediateEffect="1" weight="100" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			isOlyRestricted="true" handler="ItemSkills">
-		<skill id="26066" level="1" />
+		<skill id="26066" level="1" /> <!-- Mage's Scroll Bundle -->
 	</item>
 	<!-- If used, ten thousand bone arrows are acquired. -->
 	<item id="22089" type="EtcItem" name="Bone Quiver" icon="br_cashtex.item.br_cash_quiver_of_bone_arrows_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="d" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26067" level="1" />
+		<skill id="26067" level="1" /> <!-- Bone Quiver -->
 	</item>
 	<!-- If used, ten thousand steel arrows are acquired. -->
 	<item id="22090" type="EtcItem" name="Steel Quiver" icon="br_cashtex.item.br_cash_quiver_of_fine_steel_arrows_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="c" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26067" level="2" />
+		<skill id="26067" level="2" /> <!-- Steel Quiver -->
 	</item>
 	<!-- If used, ten thousand silver arrows are acquired. -->
 	<item id="22091" type="EtcItem" name="Silver Quiver" icon="br_cashtex.item.br_cash_quiver_of_silver_arrows_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="b" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26067" level="3" />
+		<skill id="26067" level="3" /> <!-- Silver Quiver -->
 	</item>
 	<!-- If used, ten thousand Mithril arrows are acquired. -->
 	<item id="22092" type="EtcItem" name="Mithril Quiver" icon="br_cashtex.item.br_cash_quiver_of_mithril_arrows_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="a" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26067" level="4" />
+		<skill id="26067" level="4" /> <!-- Mithril Quiver -->
 	</item>
 	<!-- If used, ten thousand arrows of light are acquired. -->
 	<item id="22093" type="EtcItem" name="Quiver of Light" icon="br_cashtex.item.br_cash_quiver_of_shining_arrows_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="s" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26067" level="5" />
+		<skill id="26067" level="5" /> <!-- Quiver of Light -->
 	</item>
 	<!-- If used, five thousand Blessed Spiritshots in D-grade are acquired. -->
 	<item id="22094" type="EtcItem" name="Blessed Spiritshot Pack (D-grade)" icon="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_d_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="d" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="1" />
+		<skill id="26068" level="1" /> <!-- Blessed Spiritshot Pack (D-grade) -->
 	</item>
 	<!-- If used, five thousand Blessed Spiritshots in C-grade are acquired. -->
 	<item id="22095" type="EtcItem" name="Blessed Spiritshot Pack (C-grade)" icon="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_c_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="c" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="2" />
+		<skill id="26068" level="2" /> <!-- Blessed Spiritshot Pack (C-grade) -->
 	</item>
 	<!-- If used, five thousand Blessed Spiritshots in B-grade are acquired. -->
 	<item id="22096" type="EtcItem" name="Blessed Spiritshot Pack (B-grade)" icon="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_b_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="b" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="3" />
+		<skill id="26068" level="3" /> <!-- Blessed Spiritshot Pack (B-grade) -->
 	</item>
 	<!-- If used, five thousand Blessed Spiritshots in A-grade are acquired. -->
 	<item id="22097" type="EtcItem" name="Blessed Spiritshot Pack (A-grade)" icon="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_a_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="a" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="4" />
+		<skill id="26068" level="4" /> <!-- Blessed Spiritshot Pack (A-grade) -->
 	</item>
 	<!-- If used, five thousand Blessed Spiritshots in S-grade are acquired. -->
 	<item id="22098" type="EtcItem" name="Blessed Spiritshot Pack (S-grade)" icon="br_cashtex.item.br_cash_pack_of_blessed_spiritshot_s_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="s" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="5" />
+		<skill id="26068" level="5" /> <!-- Blessed Spiritshot Pack (S-grade) -->
 	</item>
 	<!-- If used, five thousand Spiritshots in D-grade are acquired. -->
 	<item id="22099" type="EtcItem" name="Spiritshot Pack (D-grade)" icon="br_cashtex.item.br_cash_pack_of_spiritshot_d_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="d" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="1" />
+		<skill id="26069" level="1" /> <!-- Spiritshot Pack (D-grade) -->
 	</item>
 	<!-- If used, five thousand Spiritshots in C-grade are acquired. -->
 	<item id="22100" type="EtcItem" name="Spiritshot Pack (C-grade)" icon="br_cashtex.item.br_cash_pack_of_spiritshot_c_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="c" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="2" />
+		<skill id="26069" level="2" /> <!-- Spiritshot Pack (C-grade) -->
 	</item>
 	<!-- If used, five thousand Spiritshots in B-grade are acquired. -->
 	<item id="22101" type="EtcItem" name="Spiritshot Pack (B-grade)" icon="br_cashtex.item.br_cash_pack_of_spiritshot_b_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="b" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="3" />
+		<skill id="26069" level="3" /> <!-- Spiritshot Pack (B-grade) -->
 	</item>
 	<!-- If used, five thousand Spiritshots in A-grade are acquired. -->
 	<item id="22102" type="EtcItem" name="Spiritshot Pack (A-grade)" icon="br_cashtex.item.br_cash_pack_of_spiritshot_a_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="a" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="4" />
+		<skill id="26069" level="4" /> <!-- Spiritshot Pack (A-grade) -->
 	</item>
 	<!-- If used, five thousand Spiritshots in S-grade are acquired. -->
 	<item id="22103" type="EtcItem" name="Spiritshot Pack (S-grade)" icon="br_cashtex.item.br_cash_pack_of_spiritshot_s_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="s" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="5" />
+		<skill id="26069" level="5" /> <!-- Spiritshot Pack (S-grade) -->
 	</item>
 	<!-- If used, five thousand Soulshots in D-grade are acquired. -->
 	<item id="22104" type="EtcItem" name="Soulshot Pack (D-grade)" icon="br_cashtex.item.br_cash_pack_of_soulshot_d_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="d" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="1" />
+		<skill id="26070" level="1" /> <!-- Soulshot Pack (D-grade) -->
 	</item>
 	<!-- If used, five thousand Soulshots in C-grade are acquired. -->
 	<item id="22105" type="EtcItem" name="Soulshot Pack (C-grade)" icon="br_cashtex.item.br_cash_pack_of_soulshot_c_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="c" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="2" />
+		<skill id="26070" level="2" /> <!-- Soulshot Pack (C-grade) -->
 	</item>
 	<!-- If used, five thousand Soulshots in B-grade are acquired. -->
 	<item id="22106" type="EtcItem" name="Soulshot Pack (B-grade)" icon="br_cashtex.item.br_cash_pack_of_soulshot_b_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="b" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="3" />
+		<skill id="26070" level="3" /> <!-- Soulshot Pack (B-grade) -->
 	</item>
 	<!-- If used, five thousand Soulshots in A-grade are acquired. -->
 	<item id="22107" type="EtcItem" name="Soulshot Pack (A-grade)" icon="br_cashtex.item.br_cash_pack_of_soulshot_a_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="a" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="4" />
+		<skill id="26070" level="4" /> <!-- Soulshot Pack (A-grade) -->
 	</item>
 	<!-- If used, five thousand Soulshots in S-grade are acquired. -->
 	<item id="22108" type="EtcItem" name="Soulshot Pack (S-grade)" icon="br_cashtex.item.br_cash_pack_of_soulshot_s_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="s" weight="500" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="5" />
+		<skill id="26070" level="5" /> <!-- Soulshot Pack (S-grade) -->
 	</item>
 	<!-- If used, ten thousand Blessed Spiritshots in D-grade are acquired. -->
 	<item id="22109" type="EtcItem" name="Blessed Spiritshot Large Pack (D-grade)" icon="br_cashtex.item.br_cash_large_pack_of_blessed_spiritshot_d_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="d" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="6" />
+		<skill id="26068" level="6" /> <!-- Blessed Spiritshot Large Pack (D-grade) -->
 	</item>
 	<!-- If used, ten thousand Blessed Spiritshots in C-grade are acquired. -->
 	<item id="22110" type="EtcItem" name="Blessed Spiritshot Large Pack (C-grade)" icon="br_cashtex.item.br_cash_large_pack_of_blessed_spiritshot_c_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="c" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="7" />
+		<skill id="26068" level="7" /> <!-- Blessed Spiritshot Large Pack (C-grade) -->
 	</item>
 	<!-- If used, ten thousand Blessed Spiritshots in B-grade are acquired. -->
 	<item id="22111" type="EtcItem" name="Blessed Spiritshot Large Pack (B-grade)" icon="br_cashtex.item.br_cash_large_pack_of_blessed_spiritshot_b_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="b" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="8" />
+		<skill id="26068" level="8" /> <!-- Blessed Spiritshot Large Pack (B-grade) -->
 	</item>
 	<!-- If used, ten thousand Blessed Spiritshots in A-grade are acquired. -->
 	<item id="22112" type="EtcItem" name="Blessed Spiritshot Large Pack (A-grade)" icon="br_cashtex.item.br_cash_large_pack_of_blessed_spiritshot_a_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="a" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="9" />
+		<skill id="26068" level="9" /> <!-- Blessed Spiritshot Large Pack (A-grade) -->
 	</item>
 	<!-- If used, ten thousand Blessed Spiritshots in S-grade are acquired. -->
 	<item id="22113" type="EtcItem" name="Blessed Spiritshot Large Pack (S-grade)" icon="br_cashtex.item.br_cash_large_pack_of_blessed_spiritshot_s_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="s" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26068" level="10" />
+		<skill id="26068" level="10" /> <!-- Blessed Spiritshot Large Pack (S-grade) -->
 	</item>
 	<!-- If used, ten thousand Spiritshots in D-grade are acquired. -->
 	<item id="22114" type="EtcItem" name="Spiritshot Large Pack (D-grade)" icon="br_cashtex.item.br_cash_large_pack_of_spiritshot_d_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="d" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="6" />
+		<skill id="26069" level="6" /> <!-- Spiritshot Large Pack (D-grade) -->
 	</item>
 	<!-- If used, ten thousand Spiritshots in C-grade are acquired. -->
 	<item id="22115" type="EtcItem" name="Spiritshot Large Pack (C-grade)" icon="br_cashtex.item.br_cash_large_pack_of_spiritshot_c_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="c" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="7" />
+		<skill id="26069" level="7" /> <!-- Spiritshot Large Pack (C-grade) -->
 	</item>
 	<!-- If used, ten thousand Spiritshots in B-grade are acquired. -->
 	<item id="22116" type="EtcItem" name="Spiritshot Large Pack (B-grade)" icon="br_cashtex.item.br_cash_large_pack_of_spiritshot_b_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="b" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="8" />
+		<skill id="26069" level="8" /> <!-- Spiritshot Large Pack (B-grade) -->
 	</item>
 	<!-- If used, ten thousand Spiritshots in A-grade are acquired. -->
 	<item id="22117" type="EtcItem" name="Spiritshot Large Pack (A-grade)" icon="br_cashtex.item.br_cash_large_pack_of_spiritshot_a_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="a" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="9" />
+		<skill id="26069" level="9" /> <!-- Spiritshot Large Pack (A-grade) -->
 	</item>
 	<!-- If used, ten thousand Spiritshots in S-grade are acquired. -->
 	<item id="22118" type="EtcItem" name="Spiritshot Large Pack (S-grade)" icon="br_cashtex.item.br_cash_large_pack_of_spiritshot_s_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="s" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26069" level="10" />
+		<skill id="26069" level="10" /> <!-- Spiritshot Large Pack (S-grade) -->
 	</item>
 	<!-- If used, ten thousand Soulshots in D-grade are acquired. -->
 	<item id="22119" type="EtcItem" name="Soulshot Large Pack (D-grade)" icon="br_cashtex.item.br_cash_large_pack_of_soulshot_d_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="d" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="6" />
+		<skill id="26070" level="6" /> <!-- Soulshot Large Pack (D-grade) -->
 	</item>
 	<!-- If used, ten thousand Soulshots in C-grade are acquired. -->
 	<item id="22120" type="EtcItem" name="Soulshot Large Pack (C-grade)" icon="br_cashtex.item.br_cash_large_pack_of_soulshot_c_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="c" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="7" />
+		<skill id="26070" level="7" /> <!-- Soulshot Large Pack (C-grade) -->
 	</item>
 	<!-- If used, ten thousand Soulshots in B-grade are acquired. -->
 	<item id="22121" type="EtcItem" name="Soulshot Large Pack (B-grade)" icon="br_cashtex.item.br_cash_large_pack_of_soulshot_b_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="b" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="8" />
+		<skill id="26070" level="8" /> <!-- Soulshot Large Pack (B-grade) -->
 	</item>
 	<!-- If used, ten thousand Soulshots in A-grade are acquired. -->
 	<item id="22122" type="EtcItem" name="Soulshot Large Pack (A-grade)" icon="br_cashtex.item.br_cash_large_pack_of_soulshot_a_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="a" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="9" />
+		<skill id="26070" level="9" /> <!-- Soulshot Large Pack (A-grade) -->
 	</item>
 	<!-- If used, ten thousand Soulshots in S-grade are acquired. -->
 	<item id="22123" type="EtcItem" name="Soulshot Large Pack (S-grade)" icon="br_cashtex.item.br_cash_large_pack_of_soulshot_s_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="s" weight="1000" isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26070" level="10" />
+		<skill id="26070" level="10" /> <!-- Soulshot Large Pack (S-grade) -->
 	</item>
 	<!-- If used, a daisy hairpin is acquired. Females only. -->
 	<item id="22124" type="EtcItem" name="Wrapped Daisy Hairpin" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="1" />
+		<skill id="26071" level="1" /> <!-- Wrapped Daisy Hairpin -->
 	</item>
 	<!-- If used, a forget-me-not hairpin is acquired. Females only. -->
 	<item id="22125" type="EtcItem" name="Wrapped Forget-me-not Hairpin" icon="br_cashtex.item.br_cash_wrapped_accessary_i00"
 			defaultAction="capsule" immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26071" level="2" />
+		<skill id="26071" level="2" /> <!-- Wrapped Forget-me-not Hairpin -->
 	</item>
 	<!-- If used, an outlaw's eyepatch is acquired. -->
 	<item id="22126" type="EtcItem" name="Wrapped Outlaw's Eyepatch" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="3" />
+		<skill id="26071" level="3" /> <!-- Wrapped Outlaw's Eyepatch -->
 	</item>
 	<!-- If used, an pirate's eyepatch is acquired. -->
 	<item id="22127" type="EtcItem" name="Wrapped Pirate's Eyepatch" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="4" />
+		<skill id="26071" level="4" /> <!-- Wrapped Pirate's Eyepatch -->
 	</item>
 	<!-- If used, a monocle is acquired. -->
 	<item id="22128" type="EtcItem" name="Wrapped Monocle" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="5" />
+		<skill id="26071" level="5" /> <!-- Wrapped Monocle -->
 	</item>
 	<!-- If used, a Red Mask of Victory is acquired. -->
 	<item id="22129" type="EtcItem" name="Wrapped Red Mask of Victory" icon="br_cashtex.item.br_cash_wrapped_accessary_i00"
 			defaultAction="capsule" immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26071" level="6" />
+		<skill id="26071" level="6" /> <!-- Wrapped Red Mask of Victory -->
 	</item>
 	<!-- If used, a Red Horn of Victory is acquired. -->
 	<item id="22130" type="EtcItem" name="Wrapped Red Horn of Victory" icon="br_cashtex.item.br_cash_wrapped_accessary_i00"
 			defaultAction="capsule" immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26071" level="7" />
+		<skill id="26071" level="7" /> <!-- Wrapped Red Horn of Victory -->
 	</item>
 	<!-- If used, a party mask is acquired. -->
 	<item id="22131" type="EtcItem" name="Wrapped Party Mask" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="8" />
+		<skill id="26071" level="8" /> <!-- Wrapped Party Mask -->
 	</item>
 	<!-- If used, a red party mask is acquired. -->
 	<item id="22132" type="EtcItem" name="Wrapped Red Party Mask" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="9" />
+		<skill id="26071" level="9" /> <!-- Wrapped Red Party Mask -->
 	</item>
 	<!-- If used, a Cat Ear is acquired. -->
 	<item id="22133" type="EtcItem" name="Wrapped Cat Ear" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="10" />
+		<skill id="26071" level="10" /> <!-- Wrapped Cat Ear -->
 	</item>
 	<!-- If used, a Lady's Hairpin is acquired. Females only. -->
 	<item id="22134" type="EtcItem" name="Wrapped Lady's Hairpin" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="11" />
+		<skill id="26071" level="11" /> <!-- Wrapped Lady's Hairpin -->
 	</item>
 	<!-- If used, a Raccoon Ear is acquired. -->
 	<item id="22135" type="EtcItem" name="Wrapped Raccoon Ear" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="12" />
+		<skill id="26071" level="12" /> <!-- Wrapped Raccoon Ear -->
 	</item>
 	<!-- If used, a Rabbit Ears is acquired. -->
 	<item id="22136" type="EtcItem" name="Wrapped Rabbit Ears" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="13" />
+		<skill id="26071" level="13" /> <!-- Wrapped Rabbit Ears -->
 	</item>
 	<!-- If used, Little Angel Wings can be acquired. -->
 	<item id="22137" type="EtcItem" name="Wrapped Little Angel Wings" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="14" />
+		<skill id="26071" level="14" /> <!-- Wrapped Little Angel Wings -->
 	</item>
 	<!-- If used, a Fairy Antennae is acquired. -->
 	<item id="22138" type="EtcItem" name="Wrapped Fairy Antennae" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="15" />
+		<skill id="26071" level="15" /> <!-- Wrapped Fairy Antennae -->
 	</item>
 	<!-- If used, a Chapeau is acquired. -->
 	<item id="22139" type="EtcItem" name="Wrapped Chapeau" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="16" />
+		<skill id="26071" level="16" /> <!-- Wrapped Chapeau -->
 	</item>
 	<!-- If used, artisan's goggles are acquired. -->
 	<item id="22140" type="EtcItem" name="Wrapped Artisan's Goggles" icon="br_cashtex.item.br_cash_wrapped_accessary_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26071" level="17" />
+		<skill id="26071" level="17" /> <!-- Wrapped Artisan's Goggles -->
 	</item>
 	<!-- If used, a pet coupon for buffalo is acquired. Exchange it with a buffalo from a pet manager is available. -->
 	<item id="22141" type="EtcItem" name="Wrapped Pet Coupon - Buffalo" icon="br_cashtex.item.br_cash_wrapped_pet_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26072" level="1" />
+		<skill id="26072" level="1" /> <!-- Wrapped Pet Coupon - Buffalo -->
 	</item>
 	<!-- If used, a pet coupon for cougar is acquired. Exchange it with a cougar from a pet manager is available. -->
 	<item id="22142" type="EtcItem" name="Wrapped Pet Coupon - Cougar" icon="br_cashtex.item.br_cash_wrapped_pet_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26072" level="2" />
+		<skill id="26072" level="2" /> <!-- Wrapped Pet Coupon - Cougar -->
 	</item>
 	<!-- If used, a pet coupon for kookaburra is acquired. Exchange it with a kookaburra from a pet manager is available. -->
 	<item id="22143" type="EtcItem" name="Wrapped Pet Coupon - kookaburra" icon="br_cashtex.item.br_cash_wrapped_pet_i00" defaultAction="capsule"
 			immediateEffect="1" weight="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true"
 			handler="ItemSkills">
-		<skill id="26072" level="3" />
+		<skill id="26072" level="3" /> <!-- Wrapped Pet Coupon - Kookaburra -->
 	</item>
 	<!-- Bolt made of bone that was sharpened at the tip. Can be used with a D-grade Crossbow. It is very light. -->
 	<item id="22144" type="EtcItem" name="Bone Bolt" icon="br_cashtex.item.br_cash_bone_bolt_i00" defaultAction="equip" etcitemType="bolt"
@@ -895,31 +895,31 @@
 	<item id="22149" type="EtcItem" name="Bone Bolt Container" icon="br_cashtex.item.br_cash_quiver_of_bone_bolts_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="d" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26073" level="1" />
+		<skill id="26073" level="1" /> <!-- Bone Bolt Container -->
 	</item>
 	<!-- If used, ten thousand steel bolts are acquired. -->
 	<item id="22150" type="EtcItem" name="Steel Bolt Container" icon="br_cashtex.item.br_cash_quiver_of_fine_steel_bolts_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="c" weight="1000" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26073" level="2" />
+		<skill id="26073" level="2" /> <!-- Steel Bolt Container -->
 	</item>
 	<!-- If used, ten thousand silver bolts are acquired. -->
 	<item id="22151" type="EtcItem" name="Silver Bolt Container" icon="br_cashtex.item.br_cash_quiver_of_silver_bolts_i00" defaultAction="capsule"
 			immediateEffect="1" crystalType="b" weight="1000" isTradable="false" isDropable="false" isSellable="false" isStackable="true"
 			isPremium="true" handler="ItemSkills">
-		<skill id="26073" level="3" />
+		<skill id="26073" level="3" /> <!-- Silver Bolt Container -->
 	</item>
 	<!-- If used, ten thousand Mithril bolts are acquired. -->
 	<item id="22152" type="EtcItem" name="Mithril Bolt Container" icon="br_cashtex.item.br_cash_quiver_of_mithril_bolts_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="a" weight="1000" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26073" level="4" />
+		<skill id="26073" level="4" /> <!-- Mithril Bolt Container -->
 	</item>
 	<!-- If used, ten thousand bolts of light are acquired. -->
 	<item id="22153" type="EtcItem" name="Bolt of Light Container" icon="br_cashtex.item.br_cash_quiver_of_shining_bolts_i00"
 			defaultAction="capsule" immediateEffect="1" crystalType="s" weight="1000" isTradable="false" isDropable="false" isSellable="false"
 			isStackable="true" isPremium="true" handler="ItemSkills">
-		<skill id="26073" level="5" />
+		<skill id="26073" level="5" /> <!-- Bolt of Light Container -->
 	</item>
 	<!-- Monster wolf shaped hat. Blessed Escape skill can be used. Use 2 hair accessory slots. -->
 	<item id="22154" type="Armor" name="Shadow Item: Wolf Hat - Blessed Escape" icon="icon.accessory_wolf_cap_i00" defaultAction="equip"
@@ -1136,7 +1136,7 @@
 	<!-- Can mount a Rocking Horse when equipped. -->
 	<item id="22193" type="Armor" name="Mount - Rocking Horse" icon="branchsys2.icon.g_wooen_house" defaultAction="equip" bodypart="lbracelet"
 			immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" unequipSkill="619-1">
-		<skill id="21258" level="1" />
+		<skill id="21258" level="1" /> <!-- Ride Rocking Horse -->
 	</item>
 	<!-- When Double-clicked, a random 1st Place prize is granted. -->
 	<item id="22194" type="EtcItem" name="1st Place Treasure Sack" icon="icon.etc_treasure_sack_1_i00" immediateEffect="1" isTradable="false"
@@ -1878,7 +1878,7 @@
 	<item id="22356" type="Armor" name="Mount - Tame Princess Ant" icon="BranchSys3.Icon.g_ant_princess_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			unequipSkill="619-1">
-		<skill id="21270" level="1" />
+		<skill id="21270" level="1" /> <!-- Ride Tame Princess Ant -->
 	</item>
 	<!-- Wrapped Pack containing Mount - Tame Princess Ant (7-day). -->
 	<item id="22357" type="EtcItem" name="Mount - Tame Princess Ant Pack (7-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
@@ -1915,7 +1915,7 @@
 	<!-- Can ride a Black Bear when equipped. -->
 	<item id="22364" type="Armor" name="Mount - Black Bear" icon="BranchSys3.Icon.g_black_bear_i00" defaultAction="equip" bodypart="lbracelet"
 			immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" unequipSkill="619-1">
-		<skill id="21271" level="1" />
+		<skill id="21271" level="1" /> <!-- Ride Black Bear -->
 	</item>
 	<!-- Powerful-looking fist weapon in the shape of Black Bear claws. 7-day. Very low P. Atk. -->
 	<item id="22365" type="Weapon" name="Black Bear Claw - 7-day" icon="BranchSys3.Icon.g_hands_of_blackbear" weaponType="dualfist"
@@ -2013,7 +2013,7 @@
 	<item id="22384" type="Armor" name="Halloween Broomstick Mount - Event" icon="BranchSys3.Icon.g_halloween_flying_broom_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" unequipSkill="619-1">
-		<skill id="21272" level="1" />
+		<skill id="21272" level="1" /> <!-- Ride Halloween Witch's Broomstick -->
 	</item>
 	<!-- Cookie that can be obtained on Halloween. Speed increases by 33 for 60 min. -->
 	<item id="22385" type="EtcItem" name="Halloween Cookie - Event" icon="BranchSys3.Icon.ev_halloween_cookie" immediateEffect="1"
@@ -2431,15 +2431,15 @@
 	<item id="22479" type="Armor" name="Santa Girl's Cloak - 30-day (Event)" icon="BranchSys3.icon.g_christmas_cloak" defaultAction="equip"
 			bodypart="back" immediateEffect="1" weight="220" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="20" />
-		<skill id="21275" level="5" />
-		<skill id="21276" level="5" />
+		<skill id="21275" level="5" /> <!-- Cloak Inventory Slot Add -->
+		<skill id="21276" level="5" /> <!-- Add Cloak Weight Gauge -->
 	</item>
 	<!-- Warm and festive winter cloak to celebrate the holidays. You can keep it forever! -->
 	<item id="22480" type="Armor" name="Santa Girl's Cloak - Event" icon="BranchSys3.icon.g_christmas_cloak" defaultAction="equip"
 			bodypart="back" immediateEffect="1" weight="220" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="pDef" val="20" />
-		<skill id="21275" level="5" />
-		<skill id="21276" level="5" />
+		<skill id="21275" level="5" /> <!-- Cloak Inventory Slot Add -->
+		<skill id="21276" level="5" /> <!-- Add Cloak Weight Gauge -->
 	</item>
 	<!-- Activates 2 talisman slots when equipped. 1 day. -->
 	<item id="22481" type="Armor" name="Improved Bronze Bracelet - 1-day" icon="icon.etc_rbracelet_b_i01" defaultAction="equip"
@@ -3804,12 +3804,12 @@
 	<!-- When stored in the inventory, item acquisition through hunting + 30%. -->
 	<item id="22751" type="EtcItem" name="Drop Rate Rune 30% (3-hour)" icon="BranchSys3.lcon.g_rune_itemdrop_up" etcitemType="rune"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false" time="180">
-		<skill id="22587" level="1" />
+		<skill id="22587" level="1" /> <!-- Drop Rate Rune -->
 	</item>
 	<!-- When stored in the inventory, item acquisition through hunting + 30%. -->
 	<item id="22752" type="EtcItem" name="Drop Rate Rune 30% (5-hour)" icon="BranchSys3.lcon.g_rune_itemdrop_up" etcitemType="rune"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false" time="300">
-		<skill id="22587" level="1" />
+		<skill id="22587" level="1" /> <!-- Drop Rate Rune -->
 	</item>
 	<!-- When stored in the inventory, item acquisition through hunting + 30%. -->
 	<item id="22753" type="EtcItem" name="Drop Rate Rune 30% (7-day)" icon="BranchSys3.lcon.g_rune_itemdrop_up" immediateEffect="1"
@@ -4916,7 +4916,7 @@
 	<!-- Can ride a unicorn when equipped. -->
 	<item id="22887" type="Armor" name="Mount - Unicorn" icon="BranchSys3.lcon.g_pi_transformation_unicorn" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false" unequipSkill="619-1">
-		<skill id="21286" level="1" />
+		<skill id="21286" level="1" /> <!-- Ride Unicorn -->
 	</item>
 	<!--
 		Dimensional Item

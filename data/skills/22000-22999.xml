@@ -1233,18 +1233,18 @@
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
-			<addPercent stat="maxHp" val="10" >
+			<addPercent stat="maxHp" val="10">
 				<player olympiad="false" />
 			</addPercent>
-			<subPercent stat="mReuse" val="20" >
+			<subPercent stat="mReuse" val="20">
 				<player olympiad="false" />
 			</subPercent>
-			<subPercent stat="pReuse" val="20" >
+			<subPercent stat="pReuse" val="20">
 				<player olympiad="false" />
 			</subPercent>
 			<add stat="reflectDam" val="3">
 				<player olympiad="false" />
-			</add>	
+			</add>
 		</for>
 	</skill>
 	<skill id="22092" levels="1" name="Small Scroll Chest">
@@ -4973,7 +4973,7 @@
 		<set name="triggeredId" val="22701" />
 		<set name="triggeredLevel" val="1" />
 		<for>
-			<baseAdd stat="STR" val="7" >
+			<baseAdd stat="STR" val="7">
 				<player olympiad="false" />
 			</baseAdd>
 		</for>
@@ -5003,7 +5003,7 @@
 		<set name="triggeredId" val="22703" />
 		<set name="triggeredLevel" val="1" />
 		<for>
-			<baseAdd stat="CON" val="7" >
+			<baseAdd stat="CON" val="7">
 				<player olympiad="false" />
 			</baseAdd>
 		</for>
@@ -5018,7 +5018,7 @@
 		<set name="triggeredId" val="22704" />
 		<set name="triggeredLevel" val="1" />
 		<for>
-			<baseAdd stat="STR" val="7" >
+			<baseAdd stat="STR" val="7">
 				<player olympiad="false" />
 			</baseAdd>
 		</for>
@@ -5033,7 +5033,7 @@
 		<set name="triggeredId" val="22705" />
 		<set name="triggeredLevel" val="1" />
 		<for>
-			<baseAdd stat="DEX" val="7" >
+			<baseAdd stat="DEX" val="7">
 				<player olympiad="false" />
 			</baseAdd>
 		</for>
@@ -5048,7 +5048,7 @@
 		<set name="triggeredId" val="22706" />
 		<set name="triggeredLevel" val="1" />
 		<for>
-			<baseAdd stat="INT" val="7" >
+			<baseAdd stat="INT" val="7">
 				<player olympiad="false" />
 			</baseAdd>
 		</for>

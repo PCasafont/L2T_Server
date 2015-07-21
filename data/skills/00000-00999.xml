@@ -328,6 +328,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="40,41,42,43,44" enabled="false" />
 		<enchantRoute id="3" level="40,41,42,43,44" /> <!-- Break -->
@@ -1327,6 +1337,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="40,41,42,43,44" enabled="false" />
 		<enchantRoute id="3" level="40,41,42,43,44" /> <!-- Break -->
@@ -1579,6 +1599,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="3" level="45,46,47,48,49" enabled="false" />
 		<table name="#mpConsume"> 52 53 55 55 57 59 60 62 64 66 67 69 71 72 73 75 77 78 80 82 84 85 87 88 90 91 93 94 96 97 99 100 102 103 106 108 110 112 114 116 118 120 122 124 129 133 137 141 145 </table>
@@ -2057,6 +2087,16 @@
 			Recovers MP by 1165.
 			Recovers MP by 1202.
 			Recovers MP by 1240.
+			Recovers MP by 1264.
+			Recovers MP by 1289.
+			Recovers MP by 1314.
+			Recovers MP by 1339.
+			Recovers MP by 1363.
+			Recovers MP by 1389.
+			Recovers MP by 1413.
+			Recovers MP by 1438.
+			Recovers MP by 1463.
+			Recovers MP by 1488.
 		-->
 		<enchantRoute id="2" level="33,34,35,36,37" enabled="false" />
 		<!-- TODO: Honor:
@@ -2080,6 +2120,16 @@
 			Recovers CP by 5293.
 			Recovers CP by 5462.
 			Recovers CP by 5631.
+			Recovers CP by 5743.
+			Recovers CP by 5856.
+			Recovers CP by 5968.
+			Recovers CP by 6081.
+			Recovers CP by 6194.
+			Recovers CP by 6306.
+			Recovers CP by 6419.
+			Recovers CP by 6531.
+			Recovers CP by 6644.
+			Recovers CP by 6757.
 		-->
 		<enchantRoute id="3" level="33,34,35,36,37" enabled="false" />
 		<table name="#hpConsume"> 300 345 390 435 480 525 570 615 660 705 750 795 840 885 930 975 1020 1068 1110 1155 1200 1245 1290 1335 1380 1425 1470 1515 1560 1605 1650 1695 1740 1785 1830 1875 1920 </table>
@@ -3470,6 +3520,16 @@
 			Recovers HP by 4234.
 			Recovers HP by 4369.
 			Recovers HP by 4504.
+			Recovers HP by 4594.
+			Recovers HP by 4684.
+			Recovers HP by 4774.
+			Recovers HP by 4864.
+			Recovers HP by 4955.
+			Recovers HP by 5044.
+			Recovers HP by 5135.
+			Recovers HP by 5224.
+			Recovers HP by 5315.
+			Recovers HP by 5405.
 		-->
 		<enchantRoute id="2" level="8,9" enabled="false" />
 		<table name="#mpConsume"> 16 19 24 26 28 30 35 40 45 </table>
@@ -3939,6 +3999,16 @@
 			Recovers HP by 4234.
 			Recovers HP by 4369.
 			Recovers HP by 4504.
+			Recovers HP by 4594.
+			Recovers HP by 4684.
+			Recovers HP by 4774.
+			Recovers HP by 4864.
+			Recovers HP by 4955.
+			Recovers HP by 5044.
+			Recovers HP by 5135.
+			Recovers HP by 5224.
+			Recovers HP by 5315.
+			Recovers HP by 5405.
 		-->
 		<enchantRoute id="2" level="8,9" enabled="false" />
 		<enchantRoute id="4" level="8,9" /> <!-- Chance Stun -->
@@ -6078,6 +6148,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="30,31,32,33,34" enabled="false" />
 		<enchantRoute id="3" level="30,31,32,33,34" /> <!-- Break -->
@@ -8133,29 +8213,7 @@
 	-->
 	<skill id="345" levels="15" name="Sonic Rage">
 		<enchantRoute id="1" level="11,12,13,14,15" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-		-->
-		<enchantRoute id="2" level="11,12,13,14,15" enabled="false" />
+		<enchantRoute id="2" level="11,12,13,14,15" /> <!-- Chance -->
 		<enchantRoute id="3" level="11,12,13,14,15" /> <!-- Slow -->
 		<table name="#power"> 0 205 215 225 551 565 598 630 662 693 725 757 812 844 876 
 			<enchantRoute id="1" level="11"> 732 740 747 754 761 769 776 783 790 798 805 812 819 827 834 841 848 856 863 870 877 885 892 899 906 914 921 928 935 943 </enchantRoute>
@@ -8167,6 +8225,9 @@
 		<table name="#mpConsume"> 50 55 56 57 58 59 61 63 65 67 69 71 73 75 77 </table>
 		<table name="#subRunSpd"> 0 
 			<enchantRoute id="3" level="11,12,13,14,15"> 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 </enchantRoute>
+		</table>
+		<table name="#landRate"> 90 
+			<enchantRoute id="2" level="11,12,13,14,15"> 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -8185,7 +8246,7 @@
 		<set name="numCharges" val="1" />
 		<set name="nextActionAttackMob" val="true" />
 		<for>
-			<abnormal duration="20" effectType="DEBUFF" landRate="90" stackLvl="3" stackType="pd_down">
+			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="3" stackType="pd_down">
 				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="30" />
 				<sub stat="runSpd" val="#subRunSpd" />
@@ -8211,29 +8272,7 @@
 	-->
 	<skill id="346" levels="15" name="Raging Force">
 		<enchantRoute id="1" level="11,12,13,14,15" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-		-->
-		<enchantRoute id="2" level="11,12,13,14,15" enabled="false" />
+		<enchantRoute id="2" level="11,12,13,14,15" /> <!-- Chance -->
 		<enchantRoute id="3" level="11,12,13,14,15" /> <!-- Slow -->
 		<table name="#power"> 0 205 215 225 551 565 598 630 662 693 725 757 812 844 876 
 			<enchantRoute id="1" level="11"> 732 740 747 754 761 769 776 783 790 798 805 812 819 827 834 841 848 856 863 870 877 885 892 899 906 914 921 928 935 943 </enchantRoute>
@@ -8245,6 +8284,9 @@
 		<table name="#mpConsume"> 50 55 56 57 58 59 61 63 65 67 69 71 73 75 77 </table>
 		<table name="#subRunSpd"> 0 
 			<enchantRoute id="3" level="11,12,13,14,15"> 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 </enchantRoute>
+		</table>
+		<table name="#landRate"> 90 
+			<enchantRoute id="2" level="11,12,13,14,15"> 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -8262,7 +8304,7 @@
 		<set name="maxCharges" val="15" />
 		<set name="numCharges" val="1" />
 		<for>
-			<abnormal duration="20" effectType="DEBUFF" landRate="90" stackLvl="3" stackType="pd_down">
+			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="3" stackType="pd_down">
 				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="30" />
 				<sub stat="runSpd" val="#subRunSpd" />
@@ -9494,6 +9536,16 @@
 			Decreases M. Def. by 7.8%.
 			Decreases M. Def. by 8.2%.
 			Decreases M. Def. by 8.6%.
+			Decreases M. Def. by 9%.
+			Decreases M. Def. by 9.4%.
+			Decreases M. Def. by 9.8%.
+			Decreases M. Def. by 10.2%.
+			Decreases M. Def. by 10.6%.
+			Decreases M. Def. by 11%.
+			Decreases M. Def. by 11.4%.
+			Decreases M. Def. by 11.8%.
+			Decreases M. Def. by 12.2%.
+			Decreases M. Def. by 12.6%.
 		-->
 		<enchantRoute id="3" level="13,14,15,16,17" enabled="false" />
 		<table name="#mpConsume"> 40 43 46 49 51 52 53 54 55 57 59 61 63 65 67 69 71 </table>
@@ -9761,6 +9813,16 @@
 			Recovers MP by 1165.
 			Recovers MP by 1202.
 			Recovers MP by 1240.
+			Recovers MP by 1264.
+			Recovers MP by 1289.
+			Recovers MP by 1314.
+			Recovers MP by 1339.
+			Recovers MP by 1363.
+			Recovers MP by 1389.
+			Recovers MP by 1413.
+			Recovers MP by 1438.
+			Recovers MP by 1463.
+			Recovers MP by 1488.
 		-->
 		<enchantRoute id="2" level="7,8" enabled="false" />
 		<table name="#mpConsume"> 27 31 34 37 40 43 46 49 </table>
@@ -18435,6 +18497,16 @@
 			Decreases M. Def. by 7.8%.
 			Decreases M. Def. by 8.2%.
 			Decreases M. Def. by 8.6%.
+			Decreases M. Def. by 9%.
+			Decreases M. Def. by 9.4%.
+			Decreases M. Def. by 9.8%.
+			Decreases M. Def. by 10.2%.
+			Decreases M. Def. by 10.6%.
+			Decreases M. Def. by 11%.
+			Decreases M. Def. by 11.4%.
+			Decreases M. Def. by 11.8%.
+			Decreases M. Def. by 12.2%.
+			Decreases M. Def. by 12.6%.
 		-->
 		<enchantRoute id="3" level="4,5,6,7,8" enabled="false" />
 		<table name="#power"> 4040 11557 13553 15150 16747 17896 18622 19348 </table>

@@ -2636,7 +2636,7 @@
 	<item id="45945" type="EtcItem" name="Battle Quick Healing Potion" icon="icon.etc_potion_gold_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="10" price="10000" reuseDelay="500" isStackable="true" isOlyRestricted="true"
 			handler="ItemSkills" useCondition="{{uc_transmode_exclude;{tt_flying}}}">
-		<skill id="22212" level="1" />
+		<skill id="22212" level="1" /> <!-- Superior Quick Healing Potion -->
 	</item>
 	<!-- Double-click to get a + 4 enchanted Sirra's Blade of Fortune. -->
 	<item id="45946" type="EtcItem" name="Sirra's Blade of Fortune Capsule - Event" icon="icon.weapon_sirr_blade_i01" immediateEffect="1"

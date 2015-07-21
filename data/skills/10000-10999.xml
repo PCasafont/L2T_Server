@@ -473,6 +473,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -694,6 +704,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1,2" enabled="false" />
 		<table name="#mpConsume"> 60 65 </table>
@@ -883,6 +903,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="1,2,3,4,5" enabled="false" />
 		<enchantRoute id="3" level="1,2,3,4,5" /> <!-- Break -->
@@ -2241,6 +2271,16 @@
 			Recovers HP by 4234.
 			Recovers HP by 4369.
 			Recovers HP by 4504.
+			Recovers HP by 4594.
+			Recovers HP by 4684.
+			Recovers HP by 4774.
+			Recovers HP by 4864.
+			Recovers HP by 4955.
+			Recovers HP by 5044.
+			Recovers HP by 5135.
+			Recovers HP by 5224.
+			Recovers HP by 5315.
+			Recovers HP by 5405.
 		-->
 		<enchantRoute id="1" level="1" enabled="false" />
 		<!-- TODO: Recharge:
@@ -2264,6 +2304,16 @@
 			Recovers MP by 1165.
 			Recovers MP by 1202.
 			Recovers MP by 1240.
+			Recovers MP by 1264.
+			Recovers MP by 1289.
+			Recovers MP by 1314.
+			Recovers MP by 1339.
+			Recovers MP by 1363.
+			Recovers MP by 1389.
+			Recovers MP by 1413.
+			Recovers MP by 1438.
+			Recovers MP by 1463.
+			Recovers MP by 1488.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<!-- TODO: Honor:
@@ -2287,6 +2337,16 @@
 			Recovers CP by 5293.
 			Recovers CP by 5462.
 			Recovers CP by 5631.
+			Recovers CP by 5743.
+			Recovers CP by 5856.
+			Recovers CP by 5968.
+			Recovers CP by 6081.
+			Recovers CP by 6194.
+			Recovers CP by 6306.
+			Recovers CP by 6419.
+			Recovers CP by 6531.
+			Recovers CP by 6644.
+			Recovers CP by 6757.
 		-->
 		<enchantRoute id="3" level="1" enabled="false" />
 		<set name="target" val="TARGET_SELF" />
@@ -2438,6 +2498,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="2,3,4,5,6" enabled="false" />
 		<enchantRoute id="3" level="2,3,4,5,6" /> <!-- Break -->
@@ -2502,6 +2572,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<table name="#dResSpeedAtkSpd"> 10 20 25 30 </table>
@@ -2571,6 +2651,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<table name="#pAtk"> 5 7 10 15 </table>
@@ -2642,6 +2732,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<table name="#PMDef"> 50 70 100 120 </table>
@@ -2716,6 +2816,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<table name="#pSkillPower"> 5 7 10 15 </table>
@@ -2789,6 +2899,16 @@
 			Increases Skill Success Rate by 18%.
 			Increases Skill Success Rate by 19%.
 			Increases Skill Success Rate by 20%.
+			Increases Skill Success Rate by 21%.
+			Increases Skill Success Rate by 22%.
+			Increases Skill Success Rate by 23%.
+			Increases Skill Success Rate by 24%.
+			Increases Skill Success Rate by 25%.
+			Increases Skill Success Rate by 26%.
+			Increases Skill Success Rate by 27%.
+			Increases Skill Success Rate by 28%.
+			Increases Skill Success Rate by 29%.
+			Increases Skill Success Rate by 30%.
 		-->
 		<enchantRoute id="2" level="2,3,4,5,6" enabled="false" />
 		<table name="#mpConsume"> 185 191 197 203 209 215 </table>
@@ -2851,6 +2971,16 @@
 			Increases Skill Success Rate by 18%.
 			Increases Skill Success Rate by 19%.
 			Increases Skill Success Rate by 20%.
+			Increases Skill Success Rate by 21%.
+			Increases Skill Success Rate by 22%.
+			Increases Skill Success Rate by 23%.
+			Increases Skill Success Rate by 24%.
+			Increases Skill Success Rate by 25%.
+			Increases Skill Success Rate by 26%.
+			Increases Skill Success Rate by 27%.
+			Increases Skill Success Rate by 28%.
+			Increases Skill Success Rate by 29%.
+			Increases Skill Success Rate by 30%.
 		-->
 		<enchantRoute id="2" level="3,4,5,6" enabled="false" />
 		<table name="#power"> 18151 18641 19131 20111 21091 22071 
@@ -3416,6 +3546,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -3664,6 +3804,16 @@
 			Eases the Distance Requirement by 54.
 			Eases the Distance Requirement by 57.
 			Eases the Distance Requirement by 60.
+			Eases the Distance Requirement by 63.
+			Eases the Distance Requirement by 66.
+			Eases the Distance Requirement by 69.
+			Eases the Distance Requirement by 72.
+			Eases the Distance Requirement by 75.
+			Eases the Distance Requirement by 78.
+			Eases the Distance Requirement by 81.
+			Eases the Distance Requirement by 84.
+			Eases the Distance Requirement by 87.
+			Eases the Distance Requirement by 90.
 		-->
 		<enchantRoute id="3" level="5,6,7,8,9" enabled="false" />
 		<table name="#mpConsume"> 38 39 41 43 44 47 50 53 56 </table>
@@ -3754,6 +3904,16 @@
 			Eases the Distance Requirement by 54.
 			Eases the Distance Requirement by 57.
 			Eases the Distance Requirement by 60.
+			Eases the Distance Requirement by 63.
+			Eases the Distance Requirement by 66.
+			Eases the Distance Requirement by 69.
+			Eases the Distance Requirement by 72.
+			Eases the Distance Requirement by 75.
+			Eases the Distance Requirement by 78.
+			Eases the Distance Requirement by 81.
+			Eases the Distance Requirement by 84.
+			Eases the Distance Requirement by 87.
+			Eases the Distance Requirement by 90.
 		-->
 		<enchantRoute id="3" level="6,7,8,9,10" enabled="false" />
 		<table name="#mpConsume"> 111 114 118 122 126 130 134 138 142 146 </table>
@@ -3820,6 +3980,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<enchantRoute id="3" level="1" /> <!-- Might -->
@@ -4014,6 +4184,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="1,2,3,4" enabled="false" />
 		<enchantRoute id="3" level="1,2,3,4" /> <!-- Break -->
@@ -4067,6 +4247,16 @@
 			Recovers HP by 4234.
 			Recovers HP by 4369.
 			Recovers HP by 4504.
+			Recovers HP by 4594.
+			Recovers HP by 4684.
+			Recovers HP by 4774.
+			Recovers HP by 4864.
+			Recovers HP by 4955.
+			Recovers HP by 5044.
+			Recovers HP by 5135.
+			Recovers HP by 5224.
+			Recovers HP by 5315.
+			Recovers HP by 5405.
 		-->
 		<enchantRoute id="1" level="1" enabled="false" />
 		<!-- TODO: Honor:
@@ -4090,6 +4280,16 @@
 			Recovers CP by 5293.
 			Recovers CP by 5462.
 			Recovers CP by 5631.
+			Recovers CP by 5743.
+			Recovers CP by 5856.
+			Recovers CP by 5968.
+			Recovers CP by 6081.
+			Recovers CP by 6194.
+			Recovers CP by 6306.
+			Recovers CP by 6419.
+			Recovers CP by 6531.
+			Recovers CP by 6644.
+			Recovers CP by 6757.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<set name="target" val="TARGET_SELF" />
@@ -4224,6 +4424,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="1,2,3,4,5" enabled="false" />
 		<enchantRoute id="3" level="1,2,3,4,5" /> <!-- Break -->
@@ -4395,6 +4605,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -4460,6 +4680,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<enchantRoute id="3" level="3,4" /> <!-- Magic Shield -->
@@ -4547,6 +4777,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -4590,6 +4830,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -4637,6 +4887,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -4681,6 +4941,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -4725,6 +4995,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -4821,6 +5101,16 @@
 			Recovers MP by 1165.
 			Recovers MP by 1202.
 			Recovers MP by 1240.
+			Recovers MP by 1264.
+			Recovers MP by 1289.
+			Recovers MP by 1314.
+			Recovers MP by 1339.
+			Recovers MP by 1363.
+			Recovers MP by 1389.
+			Recovers MP by 1413.
+			Recovers MP by 1438.
+			Recovers MP by 1463.
+			Recovers MP by 1488.
 		-->
 		<enchantRoute id="1" level="1" enabled="false" />
 		<!-- TODO: Honor:
@@ -4844,6 +5134,16 @@
 			Recovers CP by 5293.
 			Recovers CP by 5462.
 			Recovers CP by 5631.
+			Recovers CP by 5743.
+			Recovers CP by 5856.
+			Recovers CP by 5968.
+			Recovers CP by 6081.
+			Recovers CP by 6194.
+			Recovers CP by 6306.
+			Recovers CP by 6419.
+			Recovers CP by 6531.
+			Recovers CP by 6644.
+			Recovers CP by 6757.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<set name="target" val="TARGET_SELF" />
@@ -5055,6 +5355,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -5296,6 +5606,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
 		<enchantRoute id="3" level="3,4,5,6,7" /> <!-- Break -->
@@ -5452,6 +5772,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<table name="#duration"> 300 
@@ -5519,6 +5849,16 @@
 			Increases Skill Success Rate by 18%.
 			Increases Skill Success Rate by 19%.
 			Increases Skill Success Rate by 20%.
+			Increases Skill Success Rate by 21%.
+			Increases Skill Success Rate by 22%.
+			Increases Skill Success Rate by 23%.
+			Increases Skill Success Rate by 24%.
+			Increases Skill Success Rate by 25%.
+			Increases Skill Success Rate by 26%.
+			Increases Skill Success Rate by 27%.
+			Increases Skill Success Rate by 28%.
+			Increases Skill Success Rate by 29%.
+			Increases Skill Success Rate by 30%.
 		-->
 		<enchantRoute id="1" level="2,3,4,5,6" enabled="false" />
 		<table name="#mpConsume"> 149 151 154 157 160 163 </table>
@@ -5582,6 +5922,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
 		<enchantRoute id="3" level="3,4,5,6,7" /> <!-- Break -->
@@ -5684,6 +6034,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="3" level="3,4,5,6,7" enabled="false" />
 		<table name="#mpConsume"> 92 96 101 105 109 113 117 </table>
@@ -5753,6 +6113,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<enchantRoute id="3" level="1" /> <!-- Magic Shield -->
@@ -5807,6 +6177,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<enchantRoute id="3" level="1" /> <!-- Magic Shield -->
@@ -5860,6 +6240,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<enchantRoute id="3" level="1" /> <!-- Magic Shield -->
@@ -5879,7 +6269,7 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
 		<for>
-			<abnormal duration="#duration" visualEffect="swordFury" stackLvl="1" stackType="boost">
+			<abnormal duration="#duration" stackLvl="1" stackType="boost" visualEffect="swordFury">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="30">
 					<using kind="Big Sword, Big Blunt" />
@@ -5915,6 +6305,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="1" enabled="false" />
 		<enchantRoute id="3" level="1" /> <!-- Magic Shield -->
@@ -6048,8 +6448,8 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="nextActionAttack" val="true" />
 		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<!-- Inflicts a powerful blow on target. -->
@@ -6063,9 +6463,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="skillRadius" val="200" />
+		<set name="nextActionAttack" val="true" />
 		<set name="flyType" val="CHARGE" />
-		<set name="skillRadius" val="200"/>
-		<set name="nextActionAttack" val="true"/>
 		<set name="staticHitTime" val="true" />
 	</skill>
 	<!-- 
@@ -6289,6 +6689,16 @@
 			Increases PvP Skill Power by 23%.
 			Increases PvP Skill Power by 24%.
 			Increases PvP Skill Power by 25%.
+			Increases PvP Skill Power by 26%.
+			Increases PvP Skill Power by 27%.
+			Increases PvP Skill Power by 28%.
+			Increases PvP Skill Power by 29%.
+			Increases PvP Skill Power by 30%.
+			Increases PvP Skill Power by 31%.
+			Increases PvP Skill Power by 32%.
+			Increases PvP Skill Power by 33%.
+			Increases PvP Skill Power by 34%.
+			Increases PvP Skill Power by 35%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<table name="#mpConsume"> 59 60 62 64 66 68 71 73 75 77 79 </table>
@@ -6359,6 +6769,16 @@
 			Increases PvP Skill Power by 23%.
 			Increases PvP Skill Power by 24%.
 			Increases PvP Skill Power by 25%.
+			Increases PvP Skill Power by 26%.
+			Increases PvP Skill Power by 27%.
+			Increases PvP Skill Power by 28%.
+			Increases PvP Skill Power by 29%.
+			Increases PvP Skill Power by 30%.
+			Increases PvP Skill Power by 31%.
+			Increases PvP Skill Power by 32%.
+			Increases PvP Skill Power by 33%.
+			Increases PvP Skill Power by 34%.
+			Increases PvP Skill Power by 35%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<table name="#mpConsume"> 67 68 70 73 75 77 80 82 84 86 88 </table>
@@ -6431,6 +6851,16 @@
 			Increases PvP Skill Power by 23%.
 			Increases PvP Skill Power by 24%.
 			Increases PvP Skill Power by 25%.
+			Increases PvP Skill Power by 26%.
+			Increases PvP Skill Power by 27%.
+			Increases PvP Skill Power by 28%.
+			Increases PvP Skill Power by 29%.
+			Increases PvP Skill Power by 30%.
+			Increases PvP Skill Power by 31%.
+			Increases PvP Skill Power by 32%.
+			Increases PvP Skill Power by 33%.
+			Increases PvP Skill Power by 34%.
+			Increases PvP Skill Power by 35%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<table name="#mpConsume"> 71 73 75 78 80 83 86 88 90 92 94 </table>
@@ -6493,6 +6923,16 @@
 			Increases PvP Skill Power by 23%.
 			Increases PvP Skill Power by 24%.
 			Increases PvP Skill Power by 25%.
+			Increases PvP Skill Power by 26%.
+			Increases PvP Skill Power by 27%.
+			Increases PvP Skill Power by 28%.
+			Increases PvP Skill Power by 29%.
+			Increases PvP Skill Power by 30%.
+			Increases PvP Skill Power by 31%.
+			Increases PvP Skill Power by 32%.
+			Increases PvP Skill Power by 33%.
+			Increases PvP Skill Power by 34%.
+			Increases PvP Skill Power by 35%.
 		-->
 		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
 		<table name="#power"> 26320 30840 35360 38976 41506 43360 45214 
@@ -6557,6 +6997,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -6684,7 +7134,7 @@
 		<enchantRoute id="1" level="5,6,7,8,9" /> <!-- Chance -->
 		<enchantRoute id="2" level="5,6,7,8,9" /> <!-- Distance -->
 		<table name="#mpConsume"> 38 39 41 43 45 47 49 51 53 </table>
-		<table name="#landRate"> 30
+		<table name="#landRate"> 30 
 			<enchantRoute id="1" level="5,6,7,8,9"> 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 </enchantRoute>
 		</table>
 		<table name="#castRange"> 600 
@@ -6769,6 +7219,16 @@
 		<enchantRoute id="1" level="3,4" /> <!-- Time -->
 		<enchantRoute id="2" level="3,4" /> <!-- Might -->
 		<!-- TODO: ìœˆë“œ ì›Œí�¬:
+			Increases Speed by 1.
+			Increases Speed by 2.
+			Increases Speed by 3.
+			Increases Speed by 4.
+			Increases Speed by 5.
+			Increases Speed by 6.
+			Increases Speed by 7.
+			Increases Speed by 8.
+			Increases Speed by 9.
+			Increases Speed by 10.
 			Increases Speed by 1.
 			Increases Speed by 2.
 			Increases Speed by 3.
@@ -8062,6 +8522,16 @@
 			Increases Skill Power by 18%.
 			Increases Skill Power by 19%.
 			Increases Skill Power by 20%.
+			Increases Skill Power by 21%.
+			Increases Skill Power by 22%.
+			Increases Skill Power by 23%.
+			Increases Skill Power by 24%.
+			Increases Skill Power by 25%.
+			Increases Skill Power by 26%.
+			Increases Skill Power by 27%.
+			Increases Skill Power by 28%.
+			Increases Skill Power by 29%.
+			Increases Skill Power by 30%.
 		-->
 		<enchantRoute id="1" level="3,4,5,6,7" enabled="false" />
 		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Break -->
@@ -8525,6 +8995,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -8640,6 +9120,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -8707,6 +9197,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -8811,6 +9311,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="3" level="4,5,6,7,8,9" enabled="false" />
 		<table name="#mpConsume"> 98 103 108 114 119 124 129 134 139 </table>
@@ -8885,6 +9395,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="3" level="7,8,9,10,11" enabled="false" />
 		<table name="#mpConsume"> 102 106 109 113 116 120 124 127 130 133 136 </table>
@@ -8958,6 +9478,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -9026,6 +9556,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Break -->
@@ -9129,6 +9669,16 @@
 			Recovers HP by 4234.
 			Recovers HP by 4369.
 			Recovers HP by 4504.
+			Recovers HP by 4594.
+			Recovers HP by 4684.
+			Recovers HP by 4774.
+			Recovers HP by 4864.
+			Recovers HP by 4955.
+			Recovers HP by 5044.
+			Recovers HP by 5135.
+			Recovers HP by 5224.
+			Recovers HP by 5315.
+			Recovers HP by 5405.
 		-->
 		<enchantRoute id="1" level="2,3,4,5,6" enabled="false" />
 		<!-- TODO: Honor:
@@ -9152,6 +9702,16 @@
 			Recovers CP by 5293.
 			Recovers CP by 5462.
 			Recovers CP by 5631.
+			Recovers CP by 5743.
+			Recovers CP by 5856.
+			Recovers CP by 5968.
+			Recovers CP by 6081.
+			Recovers CP by 6194.
+			Recovers CP by 6306.
+			Recovers CP by 6419.
+			Recovers CP by 6531.
+			Recovers CP by 6644.
+			Recovers CP by 6757.
 		-->
 		<enchantRoute id="2" level="2,3,4,5,6" enabled="false" />
 		<table name="#mpConsume"> 60 66 72 78 84 90 </table>
@@ -9323,6 +9883,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="3" level="5,6,7,8,9" enabled="false" />
 		<table name="#mpConsume"> 94 96 101 106 111 116 121 126 131 </table>
@@ -9388,6 +9958,16 @@
 			Increases P. Skill Critical Rate by 18%.
 			Increases P. Skill Critical Rate by 19%.
 			Increases P. Skill Critical Rate by 20%.
+			Increases P. Skill Critical Rate by 21%.
+			Increases P. Skill Critical Rate by 22%.
+			Increases P. Skill Critical Rate by 23%.
+			Increases P. Skill Critical Rate by 24%.
+			Increases P. Skill Critical Rate by 25%.
+			Increases P. Skill Critical Rate by 26%.
+			Increases P. Skill Critical Rate by 27%.
+			Increases P. Skill Critical Rate by 28%.
+			Increases P. Skill Critical Rate by 29%.
+			Increases P. Skill Critical Rate by 30%.
 		-->
 		<enchantRoute id="2" level="1,2,3,4" enabled="false" />
 		<enchantRoute id="3" level="1,2,3,4" /> <!-- Break -->
@@ -9648,7 +10228,7 @@
 			<abnormal stackLvl="1" stackType="flash">
 				<effect type="RemoveTarget" val="0" />
 			</abnormal>
-			<abnormal duration="5" stackLvl="1" stackType="flash" self="1">
+			<abnormal duration="5" self="1" stackLvl="1" stackType="flash">
 				<effect type="Untargetable" val="0" />
 				<add stat="runSpd" val="50" />
 				<addPercent stat="pAtk" val="#addPercentPAtk" />
@@ -10013,6 +10593,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
@@ -10124,6 +10714,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
@@ -10225,6 +10825,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->
@@ -10326,6 +10936,16 @@
 			Decreases P. Critical Damage by 9.5%.
 			Decreases P. Critical Damage by 10%.
 			Decreases P. Critical Damage by 10.5%.
+			Decreases P. Critical Damage by 11%.
+			Decreases P. Critical Damage by 11.5%.
+			Decreases P. Critical Damage by 12%.
+			Decreases P. Critical Damage by 12.5%.
+			Decreases P. Critical Damage by 13%.
+			Decreases P. Critical Damage by 13.5%.
+			Decreases P. Critical Damage by 14%.
+			Decreases P. Critical Damage by 14.5%.
+			Decreases P. Critical Damage by 15%.
+			Decreases P. Critical Damage by 15.5%.
 		-->
 		<enchantRoute id="2" level="3,4" enabled="false" />
 		<enchantRoute id="3" level="3,4" /> <!-- Wind -->

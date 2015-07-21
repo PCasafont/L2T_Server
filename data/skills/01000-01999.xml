@@ -39,6 +39,16 @@
 			Increases P. Atk. by 3.
 			Increases P. Atk. by 3.
 			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
 		-->
 		<enchantRoute id="1" level="15" enabled="false" />
 		<table name="#pAtk"> 2 3 4 5 5 5 5 5 7 10 12 14 16 18 20 </table>
@@ -4697,6 +4707,16 @@
 			Transfers 62% of received damage to a servitor. Consumes MP proportionately to your level. | + 18 Power: Increases amount of Damage transferred to servitor by 1%.
 			Transfers 63% of received damage to a servitor. Consumes MP proportionately to your level. | + 19 Power: Increases amount of Damage transferred to servitor by 1%.
 			Transfers 63% of received damage to a servitor. Consumes MP proportionately to your level. | + 20 Power: Increases amount of Damage transferred to servitor.
+			Transfers 64% of received damage to a servitor. Consumes MP proportionately to your level. | + 21 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 64% of received damage to a servitor. Consumes MP proportionately to your level. | + 22 Power: Increases amount of Damage transferred to servitor.
+			Transfers 65% of received damage to a servitor. Consumes MP proportionately to your level. | + 23 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 66% of received damage to a servitor. Consumes MP proportionately to your level. | + 24 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 66% of received damage to a servitor. Consumes MP proportionately to your level. | + 25 Power: Increases amount of Damage transferred to servitor.
+			Transfers 67% of received damage to a servitor. Consumes MP proportionately to your level. | + 26 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 68% of received damage to a servitor. Consumes MP proportionately to your level. | + 27 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 68% of received damage to a servitor. Consumes MP proportionately to your level. | + 28 Power: Increases amount of Damage transferred to servitor.
+			Transfers 69% of received damage to a servitor. Consumes MP proportionately to your level. | + 29 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 70% of received damage to a servitor. Consumes MP proportionately to your level. | + 30 Power: Increases amount of Damage transferred to servitor by 1%.
 		-->
 		<enchantRoute id="1" level="9,10" enabled="false" />
 		<table name="#power"> 10 20 30 40 50 54 58 62 66 70 </table>
@@ -9503,6 +9523,16 @@
 			Decreases M. Def. by 7.8%.
 			Decreases M. Def. by 8.2%.
 			Decreases M. Def. by 8.6%.
+			Decreases M. Def. by 9%.
+			Decreases M. Def. by 9.4%.
+			Decreases M. Def. by 9.8%.
+			Decreases M. Def. by 10.2%.
+			Decreases M. Def. by 10.6%.
+			Decreases M. Def. by 11%.
+			Decreases M. Def. by 11.4%.
+			Decreases M. Def. by 11.8%.
+			Decreases M. Def. by 12.2%.
+			Decreases M. Def. by 12.6%.
 		-->
 		<enchantRoute id="3" level="6,7,8,9,10" enabled="false" />
 		<table name="#mpConsume"> 100 130 170 252 278 306 332 358 384 410 </table>

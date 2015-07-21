@@ -3573,17 +3573,7 @@
 	</skill>
 	<!-- 
 		Level 1: P. Atk. + 154, M. Atk. + 181, P./ M. Evasion + 4.
-		Level 2: Attribute Resistance + 10, Debuff Resistance + 10%.
-		Level 3: P./ M. Critical Rate + 8%, and Received Critical Damage - 10%, Received Skill Damage in PvP - 10%.
-		Level 4: Max HP/MP/CP + 325, HP/MP/CP Recovery Rate + 5.
-		Level 5: P. Atk. + 231, M. Atk. + 271, P./ M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, P./ M. Critical Rate + 13%, and Received Critical Damage - 15%, Received Skill Damage in PvP - 15%. Also, received damage in PvP decreases.
-		Level 6: P. Atk. + 231, M. Atk. + 271, P./ M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, Max HP/MP/CP + 490, HP/MP/CP Recovery Rate + 7.
-		Level 7: P. Atk. + 231, M. Atk. + 271, P./ M. Evasion + 7, P./ M. Critical Rate + 13%, Max HP/MP/CP + 490, HP/MP/CP Recovery Rate + 7, and Received Critical Damage - 15%, Received Skill Damage in PvP - 15%.
-		Level 8: Attribute Resistance + 15, Debuff Resistance + 13%, P./ M. Critical Rate + 13%, Max HP/MP/CP + 490, HP/MP/CP Recovery Rate + 7, and Received Critical Damage - 15%, Received Skill Damage in PvP - 15%.
-		Level 9: Max HP/MP/CP + 510, P. Def. + 971, M. Def. + 552, P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped.
-		Level 10: HP/MP/CP + 531, P. Def. + 1051, M. Def. + 609, P. Evasion/M. Evasion + 8, Attribute Resistance + 17, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped.
-		Level 11: Max HP/MP/CP + 563, P. Def. + 1184, M. Def. + 706, P. Evasion/M. Evasion + 9, Attribute Resistance + 20, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped.
-		Level 12: HP/MP/CP + 591, P. Def. + 1307, M. Def. + 799, P. Evasion/M. Evasion + 10, Attribute Resistance + 25,  Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped.
+		Level 2: 
 	-->
 	<skill id="21364" levels="12" name="Talisman - Abundance">
 		<table name="#pAtk"> 154 0 0 0 231 231 231 0 0 0 0 0 </table>
