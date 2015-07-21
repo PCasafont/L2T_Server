@@ -35,24 +35,25 @@ public class CustomVoiced implements IVoicedCommandHandler
 {
 	private static final String[] VOICED_COMMANDS =
 	{
-		"itemid",			// shows item ID of an item
-		"event",			// shows information about the event
-		"noexp",			// ignores XP/SP gain when hunting
-		"time",				// shows server current time (clock)
-		"vote",				// to vote in a poll created by an admin
-		"remember",			// allows the player to remember 3rd class skills
-		"landrates",		// shows chance of landing skills inflicted and received
-		"myhiddenstats",	// opens the hidden stats information window
-		"refusebuff",		// cannot receive buffs until restart or re-type of the command
-		"blockrequests",	// blocks all kind of requests, party, trade, clan etc
-		"blockpms",			// blocks the incoming pms
-		"refusekillinfo",	// blocks the kill info pop up
-		"disablearmorglow",	// disable the armor enchant glow
+		"itemid",				// shows item ID of an item
+		"event",				// shows information about the event
+		"noexp",				// ignores XP/SP gain when hunting
+		"time",					// shows server current time (clock)
+		"vote",					// to vote in a poll created by an admin
+		"remember",				// allows the player to remember 3rd class skills
+		"landrates",			// shows chance of landing skills inflicted and received
+		"myhiddenstats",		// opens the hidden stats information window
+		"refusebuff",			// cannot receive buffs until restart or re-type of the command
+		"blockrequests",		// blocks all kind of requests, party, trade, clan etc
+		"blockpms",				// blocks the incoming pms
+		"refusekillinfo",		// blocks the kill info pop up
+		"disableweaponglow",	// disable the armor enchant glow
+		"disablearmorglow",		// disable the armor enchant glow
 		"disablenicknamewings",	// disable the nickname wings
-		"stabs",			// shows stab angle
-		"unrec",			// deletes recommendations
-		"treasure",			// opens the hidden chests event information window
-		"clones",			// opens the clones event information window
+		"stabs",				// shows stab angle
+		"unrec",				// deletes recommendations
+		"treasure",				// opens the hidden chests event information window
+		"clones",				// opens the clones event information window
 		"offlinebuffer"
 	};
 	
@@ -121,6 +122,14 @@ public class CustomVoiced implements IVoicedCommandHandler
 				player.sendMessage("Now you won't receive any kill info pop-up window!");
 			else
 				player.sendMessage("Refuse Kill Info turned OFF");
+		}
+		else if (command.equalsIgnoreCase("disableweaponglow"))
+		{
+			player.setIsArmorGlowDisabled(!player.getIsArmorGlowDisabled());
+			if (player.getIsArmorGlowDisabled())
+				player.sendMessage("Now you won't see your own Weapon Enchant Glow!");
+			else
+				player.sendMessage("Disabled Weapon Enchant glow turned OFF");
 		}
 		else if (command.equalsIgnoreCase("disablearmorglow"))
 		{
