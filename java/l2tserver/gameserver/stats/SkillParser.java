@@ -41,13 +41,30 @@ import l2tserver.util.xml.XmlNode;
  */
 public final class SkillParser extends StatsParser
 {
+	private static enum SkillEnchantBonusType
+	{
+		ADD,
+		ADD_PERCENT
+	}
+	
+	private static final class SkillEnchantBonusData
+	{
+		public SkillEnchantBonusType type;
+		public String[] data;
+		public SkillEnchantBonusData(SkillEnchantBonusType t, String[] d)
+		{
+			type = t;
+			data = d;
+		}
+	}
+	
 	private StatsSet[] _sets;
 	Map<Integer, Map<Integer, StatsSet[]>> _enchantSets = new HashMap<Integer, Map<Integer, StatsSet[]>>();
 	private int _currentLevel;
 	private int _currentEnchantRoute;
 	private int _currentEnchantLevel;
 	protected Map<String, String[]> _tables = new HashMap<String, String[]>();
-	Map<String, Map<Integer, Map<Integer, String[]>>> _enchantTables = new HashMap<String, Map<Integer, Map<Integer, String[]>>>();
+	Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> _enchantTables = new HashMap<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>>();
 	
 	private Map<Integer, L2Skill> _skills = new HashMap<Integer, L2Skill>();
 	
@@ -70,17 +87,24 @@ public final class SkillParser extends StatsParser
 			int level = 0;
 			if (_currentEnchantRoute > 0)
 			{
-				Map<Integer, Map<Integer, String[]>> nameMap = _enchantTables.get(name);
+				Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = _enchantTables.get(name);
 				if (nameMap != null)
 				{
-					Map<Integer, String[]> routeMap = nameMap.get(_currentEnchantRoute);
+					Map<Integer, SkillEnchantBonusData> routeMap = nameMap.get(_currentEnchantRoute);
 					if (routeMap != null)
 					{
-						String[] routeTable = routeMap.get(_currentLevel);
+						SkillEnchantBonusData routeTable = routeMap.get(_currentLevel);
 						if (routeTable != null)
 						{
-							table = routeTable;
+							table = routeTable.data;
 							level = _currentEnchantLevel;
+							
+							// Special calculation
+							if (routeTable.type == SkillEnchantBonusType.ADD_PERCENT)
+							{
+								float multiplier = 1.0f + Float.parseFloat(table[level - 1]) / 100.0f;
+								return String.valueOf(Float.parseFloat(_tables.get(name)[_currentLevel - 1]) * multiplier);
+							}
 						}
 					}
 				}
@@ -130,7 +154,7 @@ public final class SkillParser extends StatsParser
 		
 		if (!n.getChildren().isEmpty())
 		{
-			Map<Integer, Map<Integer, String[]>> nameMap = new HashMap<Integer, Map<Integer, String[]>>();
+			Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = new HashMap<Integer, Map<Integer, SkillEnchantBonusData>>();
 			for (XmlNode node : n.getChildren())
 			{
 				if (!node.getName().equalsIgnoreCase("enchantRoute"))
@@ -141,17 +165,18 @@ public final class SkillParser extends StatsParser
 				while (data.hasMoreTokens())
 					array.add(data.nextToken());
 				
+				SkillEnchantBonusType type = SkillEnchantBonusType.valueOf(node.getString("type", "ADD"));
 				String[] enchRoute = node.getString("id").split(",");
 				String[] enchLvl = node.getString("level").split(",");
 				
 				for (String rt : enchRoute)
 				{
-					Map<Integer, String[]> routeMap = new HashMap<Integer, String[]>();
+					Map<Integer, SkillEnchantBonusData> routeMap = new HashMap<Integer, SkillEnchantBonusData>();
 					int route = Integer.parseInt(rt);
 					for (String lv : enchLvl)
 					{
 						int lvl = Integer.parseInt(lv);
-						routeMap.put(lvl, array.toArray(new String[array.size()]));
+						routeMap.put(lvl, new SkillEnchantBonusData(type, array.toArray(new String[array.size()])));
 					}
 					
 					if (nameMap.containsKey(route))
