@@ -1605,39 +1605,7 @@
 	-->
 	<skill id="11046" levels="2" name="Wizard Spirit">
 		<enchantRoute id="1" level="1,2" /> <!-- Time -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="2" level="1,2" enabled="false" />
+		<enchantRoute id="2" level="1,2" /> <!-- Counter -->
 		<!-- TODO: Chance: Increases Success Rate.
 		-->
 		<enchantRoute id="4" level="1,2" enabled="false" />
@@ -1646,6 +1614,9 @@
 		<table name="#mCrit"> 50 60 </table>
 		<table name="#duration"> 30 
 			<enchantRoute id="1" level="1,2"> 31 32 33 34 35 36 37 38 39 40 40 41 41 42 42 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="2" level="1,2"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -1664,6 +1635,7 @@
 				<add stat="rEvas" val="2" />
 				<add stat="mEvasRate" val="2" />
 				<subPercent stat="MagicalMpConsumeRate" val="#mCrit" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>
@@ -9350,7 +9322,7 @@
 			Eases the Distance Requirement by 87.
 			Eases the Distance Requirement by 90.
 		-->
-		<enchantRoute id="3" level="5,6,7,8,9" enabled="false" />
+		<enchantRoute id="3" level="5,6,7,8,9" />
 		<table name="#mpConsume"> 38 39 41 43 45 47 49 51 53 </table>
 		<table name="#castRange"> 600 
 			<enchantRoute id="2" level="5,6,7,8,9"> 610 620 630 640 650 660 670 680 690 700 710 720 730 740 750 760 770 780 790 800 </enchantRoute>
@@ -9360,6 +9332,9 @@
 		</table>
 		<table name="#landRate"> 80 
 			<enchantRoute id="1" level="5,6,7,8,9" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#mindistance"> 200 
+			<enchantRoute id="3" level="5,6,7,8,9" type="SUB"> 3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DEBUFF" />
@@ -9380,7 +9355,7 @@
 		<for>
 			<cond addName="1" msgId="113">
 				<and>
-					<target mindistance="200" />
+					<target mindistance="#mindistance" />
 				</and>
 			</cond>
 			<cond>
@@ -10127,44 +10102,15 @@
 	<skill id="11533" levels="1" name="Blood Requiem">
 		<enchantRoute id="1" level="1" /> <!-- Might -->
 		<enchantRoute id="2" level="1" /> <!-- Empower -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="3" level="1" enabled="false" />
+		<enchantRoute id="3" level="1" /> <!-- Counter -->
 		<table name="#addPercentPAtk"> 0 
 			<enchantRoute id="1" level="1"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<table name="#addPercentMAtk"> 0 
 			<enchantRoute id="2" level="1"> 1 1.6 2.2 2.8 3.4 4 4.6 5.2 5.8 6.4 7 7.6 8.2 8.8 9.4 10 10.6 11.2 11.8 12.4 13 13.6 14.2 14.8 15.4 16 16.6 17.2 17.8 18.4 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="3" level="1"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_PARTY" />
 		<set name="skillType" val="BUFF" />
@@ -10183,6 +10129,7 @@
 				<add stat="absorbDam" val="80" />
 				<addPercent stat="pAtk" val="#addPercentPAtk" />
 				<addPercent stat="mAtk" val="#addPercentMAtk" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>
@@ -10197,39 +10144,7 @@
 	<skill id="11534" levels="6" name="Angel's Touch">
 		<enchantRoute id="1" level="4,5,6" /> <!-- Shield -->
 		<enchantRoute id="2" level="4,5,6" /> <!-- Magic Shield -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="3" level="4,5,6" enabled="false" />
+		<enchantRoute id="3" level="4,5,6" /> <!-- Counter -->
 		<table name="#mpConsume"> 70 75 80 85 90 95 </table>
 		<table name="#abnormalTime"> 7 9 11 13 15 17 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 5 5 </table>
@@ -10238,6 +10153,9 @@
 		</table>
 		<table name="#addPercentMDef"> 0 
 			<enchantRoute id="2" level="4,5,6"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 5 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="3" level="4,5,6"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_PARTY_MEMBER" />
 		<set name="skillType" val="BUFF" />
@@ -10255,6 +10173,7 @@
 				<set stat="debuffImmunity" val="1" />
 				<addPercent stat="pDef" val="#addPercentPDef" />
 				<addPercent stat="mDef" val="#addPercentMDef" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>
@@ -12046,41 +11965,12 @@
 	<!-- For 30 min., P. Def. + 5%, Attribute Def. + 20, Resistance to bows/crossbows + 10%, and Debuff Resistance + 10%. -->
 	<skill id="11605" levels="1" name="Shield Song">
 		<enchantRoute id="1" level="1" /> <!-- Time -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="2" level="1" enabled="false" />
+		<enchantRoute id="2" level="1" /> <!-- Counter -->
 		<table name="#duration"> 1800 
 			<enchantRoute id="1" level="1"> 1890 1980 2070 2160 2250 2340 2430 2520 2610 2700 2790 2880 2970 3060 3150 3240 3330 3420 3510 3600 3690 3780 3870 3960 4050 4140 4230 4320 4410 4500 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="2" level="1"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -12104,47 +11994,19 @@
 				<subPercent stat="bowWpnVuln" val="10" />
 				<subPercent stat="crossbowWpnVuln" val="10" />
 				<addPercent stat="debuffRes" val="10" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>
 	<!-- For 30 min., P. Atk. + 5%, Atk. Spd. + 5%, P. Critical Rate + 10, and Speed + 10. -->
 	<skill id="11606" levels="1" name="Dance of Might">
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="2" level="1" enabled="false" />
+		<enchantRoute id="2" level="1" /> <!-- Counter -->
 		<enchantRoute id="1" level="1" /> <!-- Time -->
 		<table name="#duration"> 1800 
 			<enchantRoute id="1" level="1"> 1890 1980 2070 2160 2250 2340 2430 2520 2610 2700 2790 2880 2970 3060 3150 3240 3330 3420 3510 3600 3690 3780 3870 3960 4050 4140 4230 4320 4410 4500 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="2" level="1"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -12162,6 +12024,7 @@
 				<addPercent stat="pAtkSpd" val="5" />
 				<add stat="rCrit" val="10" />
 				<add stat="runSpd" val="10" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>
@@ -13498,44 +13361,15 @@
 	-->
 	<skill id="11772" levels="7" name="Giant's Favor">
 		<enchantRoute id="1" level="3,4,5,6,7" /> <!-- Time -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="2" level="3,4,5,6,7" enabled="false" />
+		<enchantRoute id="2" level="3,4,5,6,7" /> <!-- Counter -->
 		<table name="#mpConsume"> 17 18 21 22 24 25 27 </table>
 		<table name="#pmdef"> 1000 1500 2000 2500 4000 4500 5000 </table>
 		<table name="#bonus"> 1000 1500 2000 2500 2500 2500 2500 </table>
 		<table name="#duration"> 30 
 			<enchantRoute id="1" level="3,4,5,6,7"> 31 32 33 34 35 36 37 38 39 40 40 41 41 42 42 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="2" level="3,4,5,6,7"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -13550,6 +13384,7 @@
 				<add stat="pDef" val="#pmdef" />
 				<add stat="mDef" val="#pmdef" />
 				<add stat="giveHp" val="#bonus" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>

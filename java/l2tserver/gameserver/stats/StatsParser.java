@@ -364,7 +364,7 @@ public abstract class StatsParser
 			}
 			else if (a.getKey().equalsIgnoreCase("hp"))
 			{
-				int hp = Integer.decode(getValue(a.getValue()));
+				int hp = (int)Float.parseFloat(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerHp(hp));
 			}
 			else if (a.getKey().equalsIgnoreCase("mp"))
@@ -703,8 +703,8 @@ public abstract class StatsParser
 			}
 			else if (a.getKey().equalsIgnoreCase("mindistance"))
 			{
-				int distance = Integer.decode(getValue(a.getValue()));
-				cond = joinAnd(cond, new ConditionMinDistance(distance*distance));
+				float distance = Float.parseFloat(getValue(a.getValue()));
+				cond = joinAnd(cond, new ConditionMinDistance(Math.round(distance * distance)));
 			}
 			// used for npc race
 			else if ("race_id".equalsIgnoreCase(a.getKey()))

@@ -45,6 +45,7 @@ public final class SkillParser extends StatsParser
 	{
 		SET,
 		ADD,
+		SUB,
 		ADD_PERCENT
 	}
 	
@@ -101,7 +102,7 @@ public final class SkillParser extends StatsParser
 							level = _currentEnchantLevel;
 							
 							// Operations
-							if (routeTable.type == SkillEnchantBonusType.ADD)
+							if (routeTable.type != SkillEnchantBonusType.SET)
 							{
 								float value = Float.parseFloat(table[level - 1]);
 								String[] mainTable = _tables.get(name);
@@ -109,17 +110,15 @@ public final class SkillParser extends StatsParser
 								if (mainLevel > mainTable.length)
 									mainLevel = 1;
 								
-								return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) + value);
-							}
-							else if (routeTable.type == SkillEnchantBonusType.ADD_PERCENT)
-							{
-								float multiplier = 1.0f + Float.parseFloat(table[level - 1]) / 100.0f;
-								String[] mainTable = _tables.get(name);
-								int mainLevel = _currentLevel;
-								if (mainLevel > mainTable.length)
-									mainLevel = 1;
-								
-								return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * multiplier);
+								switch (routeTable.type)
+								{
+									case ADD:
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) + value);
+									case SUB:
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) - value);
+									case ADD_PERCENT:
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
+								}
 							}
 						}
 					}
