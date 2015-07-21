@@ -129,10 +129,6 @@
 		<production id="22681" count="1" /> <!-- Emerald Weapon Appearance Stone: Sigil -->
 	</item>
 	<item>
-		<ingredient id="4037" count="5" /> <!-- Coin of Luck -->
-		<production id="22708" count="1" /> <!-- Hair Accessory Appearance Stone -->
-	</item>
-	<item>
 		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
 		<production id="23200" count="1" /> <!-- Traditional Taiwanese Costume Appearance Stone Pack -->
 	</item>
