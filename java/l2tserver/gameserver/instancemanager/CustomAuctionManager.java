@@ -479,7 +479,7 @@ public class CustomAuctionManager implements Reloadable
 			if (!currentAuctionInfo.getTemplate().getAcceptAllCoins())
 				options += _currencies.get(currentAuctionInfo.getTemplate().getInitialCurrencyId()).getName()+";";
 			else
-			{	
+			{
 				int currentPos = _currencies.get(currentAuctionInfo.getCurrentCurrency()).getPosition();
 				for (Entry<Integer, CurrencyInfo> b : _currencies.entrySet())
 				{
