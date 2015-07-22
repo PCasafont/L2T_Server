@@ -586,12 +586,12 @@ public class EnterWorld extends L2GameClientPacket
 				activeChar.addItem("Deck", 938, 1, activeChar, true);
 			
 			// Give Swimsuit if not in the inventory
-			int swimsuit1Id = activeChar.getAppearance().getSex() ? 36345 : 36343;
+			/*int swimsuit1Id = activeChar.getAppearance().getSex() ? 36345 : 36343;
 			int swimsuit2Id = activeChar.getAppearance().getSex() ? 36346 : 36344;
 			if (activeChar.getInventory().getItemByItemId(swimsuit1Id) == null)
 				activeChar.addItem("Pool Party Event", swimsuit1Id, 1, activeChar, true);
 			if (activeChar.getInventory().getItemByItemId(swimsuit2Id) == null)
-				activeChar.addItem("Pool Party Event", swimsuit2Id, 1, activeChar, true);
+				activeChar.addItem("Pool Party Event", swimsuit2Id, 1, activeChar, true);*/
 		}
 		
 		if (Config.isServer(Config.TENKAI) || Config.IS_CLASSIC)
