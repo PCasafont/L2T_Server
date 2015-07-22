@@ -16,13 +16,14 @@ package l2tserver.gameserver.model.zone.type;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
 
 import l2tserver.gameserver.ThreadPoolManager;
 import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.model.L2Skill;
 import l2tserver.gameserver.model.L2Object.InstanceType;
+import l2tserver.gameserver.model.L2Skill;
 import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import l2tserver.gameserver.model.zone.L2ZoneType;
@@ -248,7 +249,8 @@ public class L2EffectZone extends L2ZoneType
 						{
 							synchronized (_skills)
 							{
-								for (Entry<Integer, Integer> e : _skills.entrySet())
+								Map<Integer, Integer> toIterate = new HashMap<Integer, Integer>(_skills);
+								for (Entry<Integer, Integer> e : toIterate.entrySet())
 								{
 									L2Skill skill = getSkill(e.getKey(), e.getValue());
 									if (_bypassConditions || skill.checkCondition(temp, temp, false))

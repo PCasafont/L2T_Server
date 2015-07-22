@@ -255,7 +255,7 @@ public class VoteNpc extends Quest
 			
 			String accountValue = loadGlobalQuestVar(player.getAccountName());
 			String externalIpValue = loadGlobalQuestVar(player.getExternalIP());
-			String hwIdValue = loadGlobalQuestVar(player.getHWID());
+			String hwIdValue = loadGlobalQuestVar(player.getHWID().substring(0, 10));
 			
 			if (!accountValue.equalsIgnoreCase(""))
 				accountReuse = Long.parseLong(accountValue);
@@ -284,7 +284,7 @@ public class VoteNpc extends Quest
 						String varReuse = Long.toString(System.currentTimeMillis() + (12 * 3600000));
 						saveGlobalQuestVar(player.getAccountName(), varReuse);
 						saveGlobalQuestVar(player.getExternalIP(), varReuse);
-						saveGlobalQuestVar(player.getHWID(), varReuse);
+						saveGlobalQuestVar(player.getHWID().substring(0, 10), varReuse);
 					}
 	
 					if (reward.isItem())
