@@ -9374,45 +9374,16 @@
 	<skill id="404" levels="17" name="Mass Shackling">
 		<enchantRoute id="1" level="13,14,15,16,17" /> <!-- Chance -->
 		<enchantRoute id="2" level="13,14,15,16,17" /> <!-- Hex -->
-		<!-- TODO: Mind:
-			Decreases M. Def. by 1%.
-			Decreases M. Def. by 1.4%.
-			Decreases M. Def. by 1.8%.
-			Decreases M. Def. by 2.2%.
-			Decreases M. Def. by 2.6%.
-			Decreases M. Def. by 3%.
-			Decreases M. Def. by 3.4%.
-			Decreases M. Def. by 3.8%.
-			Decreases M. Def. by 4.2%.
-			Decreases M. Def. by 4.6%.
-			Decreases M. Def. by 5%.
-			Decreases M. Def. by 5.4%.
-			Decreases M. Def. by 5.8%.
-			Decreases M. Def. by 6.2%.
-			Decreases M. Def. by 6.6%.
-			Decreases M. Def. by 7%.
-			Decreases M. Def. by 7.4%.
-			Decreases M. Def. by 7.8%.
-			Decreases M. Def. by 8.2%.
-			Decreases M. Def. by 8.6%.
-			Decreases M. Def. by 9%.
-			Decreases M. Def. by 9.4%.
-			Decreases M. Def. by 9.8%.
-			Decreases M. Def. by 10.2%.
-			Decreases M. Def. by 10.6%.
-			Decreases M. Def. by 11%.
-			Decreases M. Def. by 11.4%.
-			Decreases M. Def. by 11.8%.
-			Decreases M. Def. by 12.2%.
-			Decreases M. Def. by 12.6%.
-		-->
-		<enchantRoute id="3" level="13,14,15,16,17" enabled="false" />
+		<enchantRoute id="3" level="13,14,15,16,17" /> <!-- Mind -->
 		<table name="#mpConsume"> 40 43 46 49 51 52 53 54 55 57 59 61 63 65 67 69 71 </table>
 		<table name="#landRate"> 40 
 			<enchantRoute id="1" level="13,14,15,16,17" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="13,14,15,16,17"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+		</table>
+		<table name="#subPercentMDef"> 0 
+			<enchantRoute id="3" level="13,14,15,16,17"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="DEBUFF" />
@@ -9429,6 +9400,7 @@
 			<abnormal duration="10" landRate="#landRate" stackLvl="1" stackType="root_physically">
 				<effect type="Root" val="0" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
+				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
@@ -18331,39 +18303,7 @@
 	<skill id="793" levels="8" name="Rush Impact">
 		<enchantRoute id="1" level="4,5,6,7,8" /> <!-- Chance -->
 		<enchantRoute id="2" level="4,5,6,7,8" /> <!-- Hex -->
-		<!-- TODO: Mind:
-			Decreases M. Def. by 1%.
-			Decreases M. Def. by 1.4%.
-			Decreases M. Def. by 1.8%.
-			Decreases M. Def. by 2.2%.
-			Decreases M. Def. by 2.6%.
-			Decreases M. Def. by 3%.
-			Decreases M. Def. by 3.4%.
-			Decreases M. Def. by 3.8%.
-			Decreases M. Def. by 4.2%.
-			Decreases M. Def. by 4.6%.
-			Decreases M. Def. by 5%.
-			Decreases M. Def. by 5.4%.
-			Decreases M. Def. by 5.8%.
-			Decreases M. Def. by 6.2%.
-			Decreases M. Def. by 6.6%.
-			Decreases M. Def. by 7%.
-			Decreases M. Def. by 7.4%.
-			Decreases M. Def. by 7.8%.
-			Decreases M. Def. by 8.2%.
-			Decreases M. Def. by 8.6%.
-			Decreases M. Def. by 9%.
-			Decreases M. Def. by 9.4%.
-			Decreases M. Def. by 9.8%.
-			Decreases M. Def. by 10.2%.
-			Decreases M. Def. by 10.6%.
-			Decreases M. Def. by 11%.
-			Decreases M. Def. by 11.4%.
-			Decreases M. Def. by 11.8%.
-			Decreases M. Def. by 12.2%.
-			Decreases M. Def. by 12.6%.
-		-->
-		<enchantRoute id="3" level="4,5,6,7,8" enabled="false" />
+		<enchantRoute id="3" level="4,5,6,7,8" /> <!-- Mind -->
 		<table name="#power"> 4040 11557 13553 15150 16747 17896 18622 19348 </table>
 		<table name="#landRate"> 20 25 30 35 40 45 50 55 
 			<enchantRoute id="1" level="4,5,6,7,8" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
@@ -18371,6 +18311,9 @@
 		<table name="#mpConsume"> 83 92 98 104 110 116 122 128 </table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="4,5,6,7,8"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+		</table>
+		<table name="#subPercentMDef"> 0 
+			<enchantRoute id="3" level="4,5,6,7,8"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_FRONT_AREA" />
 		<set name="skillType" val="PDAM" />
@@ -18396,6 +18339,7 @@
 			<abnormal duration="5" effectType="STUN" landRate="#landRate" stackLvl="1" stackType="stun" visualEffect="stun">
 				<effect type="Stun" val="0" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
+				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
