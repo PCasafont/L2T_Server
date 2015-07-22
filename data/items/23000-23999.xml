@@ -1271,7 +1271,7 @@
 	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 200%. The remaining time decreases even when not playing. -->
 	<item id="23257" type="EtcItem" name="XP Rune III (Lv. 1-100+) 200% - 1-hour" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
 			etcitemType="rune" immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false" time="60">
-		<skill id="26046" level="7" />
+		<skill id="26046" level="7" /> <!-- XP Rune III (Lv. 1-100+) 200% -->
 	</item>
 	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired XP by 200%. The remaining time decreases even when not playing. -->
 	<item id="23258" type="EtcItem" name="XP Rune III (Lv. 1-100+) 200% - 7-day" icon="br_cashtex.item.br_cash_rune_of_exp_i00"
@@ -1300,7 +1300,7 @@
 	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 200%. The remaining time decreases even when not playing. -->
 	<item id="23264" type="EtcItem" name="SP Rune 200% - 1-hour" icon="br_cashtex.item.br_cash_rune_of_sp_i00" etcitemType="rune"
 			immediateEffect="1" weight="0" isTradable="false" isDropable="false" isSellable="false" time="60">
-		<skill id="26047" level="7" />
+		<skill id="26047" level="7" /> <!-- SP Rune 200% -->
 	</item>
 	<!-- Ancient charm endowed with mysterious symbols. When stored in the inventory, increases acquired SP by 200%. The remaining time decreases even when not playing. -->
 	<item id="23265" type="EtcItem" name="SP Rune 200% - 7-day" icon="br_cashtex.item.br_cash_rune_of_sp_i00" immediateEffect="1"
@@ -1313,7 +1313,7 @@
 	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
 	<item id="23267" type="EtcItem" name="Eva's Rune - 1-hour" icon="BranchSys.icon.br_rune_of_eva_i00" etcitemType="rune" immediateEffect="1"
 			weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isOlyRestricted="true" time="60">
-		<skill id="22091" level="1" />
+		<skill id="22091" level="1" /> <!-- Eva's Rune -->
 	</item>
 	<!-- Ancient charm endowed with mysterious symbols. When held in your inventory, grants the user Eva's Rune passive skill. The remaining time decreases even when not playing. -->
 	<item id="23268" type="EtcItem" name="Eva's Rune - 7-day" icon="BranchSys.icon.br_rune_of_eva_i00" immediateEffect="1" weight="0">
@@ -1555,37 +1555,37 @@
 	<item id="23325" type="EtcItem" name="Harp's Sealed Rune of Power" icon="BranchSys3.icon1.g_rune_of_half_power" etcitemType="rune"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isOlyRestricted="true"
 			time="60">
-		<skill id="22695" level="1" />
+		<skill id="22695" level="1" /> <!-- Harp's Sealed Rune of Power -->
 	</item>
 	<!-- If stored in the inventory, INT + 7 permanently, and has a 10% chance of decreasing all enemies' M. Def. by 20% for 10 sec. within 400 grids during a magic attack. -->
 	<item id="23326" type="EtcItem" name="Harp's Sealed Rune of Magic" icon="BranchSys3.icon1.g_rune_of_half_magic" etcitemType="rune"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isOlyRestricted="true"
 			time="60">
-		<skill id="22696" level="1" />
+		<skill id="22696" level="1" /> <!-- Harp's Sealed Rune of Magic -->
 	</item>
 	<!-- If stored in the inventory, CON + 7 permanently, and has a 5% chance of becoming invincible for 5 sec. when attacked. -->
 	<item id="23327" type="EtcItem" name="Flynt's Sealed Rune of Will" icon="BranchSys3.icon1.g_rune_of_flint_will" etcitemType="rune"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isOlyRestricted="true"
 			time="60">
-		<skill id="22697" level="1" />
+		<skill id="22697" level="1" /> <!-- Flynt's Sealed Rune of Will -->
 	</item>
 	<!-- If stored in the inventory, STR + 7 permanently, and has a 5% chance of inflicting 20% additional damage when using a skill attack. -->
 	<item id="23328" type="EtcItem" name="Flynt's Sealed Rune of Destruction" icon="BranchSys3.icon1.g_rune_of_flint_destroy"
 			etcitemType="rune" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isOlyRestricted="true" time="60">
-		<skill id="22698" level="1" />
+		<skill id="22698" level="1" /> <!-- Flynt's Sealed Rune of Destruction -->
 	</item>
 	<!-- If stored in the inventory, DEX + 7 permanently, and has a 5% chance of increasing Critical Rate and Critical Damage by 20% for 10 sec. -->
 	<item id="23329" type="EtcItem" name="Dr. Destroy's Sealed Rune of Skill" icon="BranchSys3.icon1.g_rune_of_destroy_tech"
 			etcitemType="rune" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isOlyRestricted="true" time="60">
-		<skill id="22699" level="1" />
+		<skill id="22699" level="1" /> <!-- Dr. Destroy's Sealed Rune of Skill -->
 	</item>
 	<!-- If stored in the inventory, INT + 7 permanently, and has a 10% chance of not consuming MP for healing skills. -->
 	<item id="23330" type="EtcItem" name="Dr. Destroy's Sealed Rune of Wisdom" icon="BranchSys3.icon1.g_rune_of_destroy_wisdom"
 			etcitemType="rune" immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isOlyRestricted="true" time="60">
-		<skill id="22700" level="1" />
+		<skill id="22700" level="1" /> <!-- Dr. Destroy's Sealed Rune of Wisdom -->
 	</item>
 	<!-- Maintains Vitality for 30 min. Cooldown is 60 min. Vitality item with limited usage. -->
 	<item id="23331" type="EtcItem" name="Vitality Maintaining Potion (30-minute)" icon="icon.etc_lesser_potion_scarlet_i00"
@@ -1819,7 +1819,7 @@
 		<add stat="fireRes" val="15" />
 		<add stat="earthRes" val="15" />
 		<add stat="windRes" val="15" />
-		<skill id="21328" level="1" />
+		<skill id="21328" level="1" /> <!-- Adenian Underwear: Speed -->
 	</item>
 	<!--
 		Adenian Collection
@@ -1835,7 +1835,7 @@
 		<add stat="fireRes" val="15" />
 		<add stat="earthRes" val="15" />
 		<add stat="windRes" val="15" />
-		<skill id="21329" level="1" />
+		<skill id="21329" level="1" /> <!-- Adenian Underwear: Speed -->
 	</item>
 	<!--
 		Adenian Collection
@@ -1851,7 +1851,7 @@
 		<add stat="fireRes" val="15" />
 		<add stat="earthRes" val="15" />
 		<add stat="windRes" val="15" />
-		<skill id="21330" level="1" />
+		<skill id="21330" level="1" /> <!-- Adenian Underwear: Speed -->
 	</item>
 	<!--
 		Adenian Collection
@@ -1867,7 +1867,7 @@
 		<add stat="fireRes" val="15" />
 		<add stat="earthRes" val="15" />
 		<add stat="windRes" val="15" />
-		<skill id="21331" level="1" />
+		<skill id="21331" level="1" /> <!-- Adenian Underwear: Speed -->
 	</item>
 	<!--
 		Adenian Collection
@@ -1883,7 +1883,7 @@
 		<add stat="fireRes" val="15" />
 		<add stat="earthRes" val="15" />
 		<add stat="windRes" val="15" />
-		<skill id="21332" level="1" />
+		<skill id="21332" level="1" /> <!-- Adenian Underwear: Speed -->
 	</item>
 	<!-- Life Stone for Adenian Underwear. Can use through the town blacksmith. -->
 	<item id="23385" type="EtcItem" name="Life Stone: Adenian Underwear" icon="BranchSys3.icon1.g_life_dust_general_adenia"
@@ -3759,7 +3759,7 @@
 	-->
 	<item id="23833" type="Armor" name="Talisman - Abundance - War" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="1" />
+		<skill id="21364" level="1" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		Attribute Resistance + 10 and Debuff Resistance + 10%.
@@ -3767,7 +3767,7 @@
 	-->
 	<item id="23834" type="Armor" name="Talisman - Abundance - Tactics" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="2" />
+		<skill id="21364" level="2" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		P./M. Critical Rate + 8%, Received Critical Damage - 10%, and PvP skill power - 10%.
@@ -3775,7 +3775,7 @@
 	-->
 	<item id="23835" type="Armor" name="Talisman - Abundance - Morale" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="3" />
+		<skill id="21364" level="3" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		Max HP/MP/CP + 325 and HP/MP/CP Recovery Rate + 5.
@@ -3783,7 +3783,7 @@
 	-->
 	<item id="23836" type="Armor" name="Talisman - Abundance - Physique" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="4" />
+		<skill id="21364" level="4" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		P. Atk. + 231, M. Atk. 271, P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, P./M. Critical Rate + 13%. Received Critical Damage - 15%, and skill damage during PvP - 15%. Additionally, skill damage received during PvP is decreased.
@@ -3791,7 +3791,7 @@
 	-->
 	<item id="23837" type="Armor" name="Talisman - Hunter - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="5" />
+		<skill id="21364" level="5" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		P. Atk. + 231, M. Atk. + 271 P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, Max HP, MP, and CP + 490, and HP, MP, and CP Recovery + 7.
@@ -3799,7 +3799,7 @@
 	-->
 	<item id="23838" type="Armor" name="Talisman - Slaughterer - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="6" />
+		<skill id="21364" level="6" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		P. Atk. + 231, M. Atk. + 271, P. Evasion/M. Evasion + 7, P./M. Critical Rate + 13%, Max HP, MP, and CP + 490, HP, MP, and CP Recovery + 7. Received Critical Damage - 15%, and skill damage during PvP - 15%.
@@ -3807,7 +3807,7 @@
 	-->
 	<item id="23839" type="Armor" name="Talisman - Conquerer - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="7" />
+		<skill id="21364" level="7" /> <!-- Talisman - Abundance -->
 	</item>
 	<!--
 		Attribute Resistance + 15, Debuff Resistance + 13%, P./M. Critical Rate + 13%, Max HP, MP, and CP + 490, HP, MP, and CP Recovery + 7. Received Critical Damage - 15%, and skill damage during PvP - 15%.
@@ -3815,7 +3815,7 @@
 	-->
 	<item id="23840" type="Armor" name="Talisman - Outlaw - Abundance" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
 			bodypart="deco1" immediateEffect="1" weight="150">
-		<skill id="21364" level="8" />
+		<skill id="21364" level="8" /> <!-- Talisman - Abundance -->
 	</item>
 	<!-- Has a chance of obtaining either Talisman - Abundance: War, Blessed Scroll: Enchant Weapon/ Armor (R-grade), Lucky Enchant Stone: Weapon/ Armor (R-grade), Scroll: Enchant Weapon/ Armor (R-grade), Elcyum Powder, Divine Protection Elixir, Pa'agrio's Warm Breeze Pack (1-hour), XP Rune I (Lv. 1-85) 100% Pack (1-hour), Prestige Rune 100% Pack, or XP Rune II (Lv. 1-95) 100% Pack (1-hour). -->
 	<item id="23841" type="EtcItem" name="Abundance Gift Box - War" icon="icon.etc_pi_gift_box_i03" weight="0">
@@ -3866,13 +3866,13 @@
 			isSellable="false">
 	</item>
 	<!-- Transparent armor that shows your underwear. Your cloak also becomes invisible. -->
-	<item id="23852" type="Armor" name="Transparent Armor" icon="icon.armor_t2000_ul_i00" defaultAction="equip"
-			armorType="none" bodypart="alldress" immediateEffect="1" weight="0">
+	<item id="23852" type="Armor" name="Transparent Armor" icon="icon.armor_t2000_ul_i00" defaultAction="equip" armorType="none"
+			bodypart="alldress" immediateEffect="1" weight="0">
 	</item>
 	<!-- Transparent armor appearance stone. Makes armor invisible so that Adenian Underwear and Tattoos are visible. Your cloak also becomes invisible. -->
 	<item id="23853" type="EtcItem" name="Transparent Armor Appearance Stone" icon="BranchSys3.icon1.g_scrl_change_chest" weight="0"
 			isStackable="true" handler="AppearanceStone" standardItem="23852">
-	</item> 
+	</item>
 	<!-- Wrapped Pack containing XP Rune II (Lv. 1-95) 100% (3-hour). -->
 	<item id="23854" type="EtcItem" name="XP Rune II (Lv. 1-95) 100% Pack (3-hour)" icon="icon.etc_pi_gift_box_i04" weight="0">
 	</item>
@@ -4099,7 +4099,7 @@
 	<!-- Equip to summon the Anakim Agathion. -->
 	<item id="23900" type="Armor" name="Agathion - Anakim" icon="BranchSys3.lcon.g_ring_of_uthanka" defaultAction="equip" bodypart="lbracelet"
 			immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" unequipSkill="3267-1">
-		<skill id="21388" level="1" />
+		<skill id="21388" level="1" /> <!-- Release Agathion's Seal - Anakim -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 	</item>
 	<!-- Bring this to the village symbol maker to imprint a 7-day magic symbol that boosts stats (Dark Resistance + 120 when fighting normal monsters). All classes. -->
@@ -4154,68 +4154,134 @@
 	<!-- Russia's weapon crafting contest finalist. One-handed sword type. Weapon Appearance Basic. -->
 	<item id="23913" type="Weapon" name="Tears One-handed Sword" icon="BranchSys3.iconWeapon.g_tears_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" weight="144" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dagger type. Weapon Appearance Basic. -->
 	<item id="23914" type="Weapon" name="Tears Dagger" icon="BranchSys3.iconWeapon.g_tears_dagger_i00" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" weight="106" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="80" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Two-handed sword type. Weapon Appearance Basic. -->
 	<item id="23915" type="Weapon" name="Tears Two-handed Sword" icon="BranchSys3.iconWeapon.g_tears_twohand_sword_i00" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="209" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Fist weapon type. Weapon Appearance Basic. -->
 	<item id="23916" type="Weapon" name="Tears Fist Weapon" icon="BranchSys3.iconWeapon.g_tears_dualfist_i00" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="152" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Spear type. Weapon Appearance Basic. -->
 	<item id="23917" type="Weapon" name="Tears Spear" icon="BranchSys3.iconWeapon.g_tears_pole_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="205" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Bow type. Weapon Appearance Basic. -->
 	<item id="23918" type="Weapon" name="Tears Bow" icon="BranchSys3.iconWeapon.g_tears_bow_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" weight="181" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="191" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Crossbow type. Weapon Appearance Basic. -->
 	<item id="23919" type="Weapon" name="Tears Crossbow" icon="BranchSys3.iconWeapon.g_tears_twohand_crossbow_i00" defaultAction="equip"
 			weaponType="crossbowk" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="181" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="117" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. One-handed blunt weapon type. Weapon Appearance Basic. -->
 	<item id="23920" type="Weapon" name="Tears One-handed Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_blunt_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="172" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. One-handed magic sword type. Weapon Appearance Basic. -->
 	<item id="23921" type="Weapon" name="Tears Magic Sword" icon="BranchSys3.iconWeapon.g_tears_magic_sword_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="101" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="79" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. One-handed magic blunt weapon type. Weapon Appearance Basic. -->
 	<item id="23922" type="Weapon" name="Tears One-handed Magic Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_blunt_i00"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" weight="172" soulshots="0"
 			spiritshots="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Two-handed magic blunt weapon type. Weapon Appearance Basic. -->
 	<item id="23923" type="Weapon" name="Tears Two-handed Magic Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_magic_twohand_blunt_i00"
 			defaultAction="equip" weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="101" soulshots="0"
 			spiritshots="0">
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dualsword type. Weapon Appearance Basic. -->
 	<item id="23924" type="Weapon" name="Tears Dualsword" icon="BranchSys3.iconWeapon.g_tears_dual_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="247" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="51" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dual Dagger type. Weapon Appearance Basic. -->
 	<item id="23925" type="Weapon" name="Tears Dual Dagger" icon="BranchSys3.iconWeapon.g_tears_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="205" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="181" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Dual Blunt Weapon type. Weapon Appearance Basic. -->
 	<item id="23926" type="Weapon" name="Tears Dual Blunt Weapon" icon="BranchSys3.iconWeapon.g_tears_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="250" soulshots="0" spiritshots="0">
+		<set stat="pAtk" val="125" />
+		<set stat="mAtk" val="186" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Shield type. Weapon Appearance Basic. -->
 	<item id="23927" type="Armor" name="Tears Shield" icon="BranchSys3.iconWeapon.g_tears_shield_i00" defaultAction="equip"
 			armorType="none" bodypart="lhand" immediateEffect="1" weight="200">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<!-- Russia's weapon crafting contest finalist. Sigil type. Weapon Appearance Basic. -->
 	<item id="23928" type="Armor" name="Tears Sigil" icon="BranchSys3.iconWeapon.g_tears_sigil_i00" defaultAction="equip" armorType="sigil"
 			bodypart="lhand" immediateEffect="1" weight="100">
+		<set stat="sDef" val="47" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<!-- Changes the appearance of a one-handed sword to that of a Tears One-handed Sword. 7-day. -->
 	<item id="23929" type="EtcItem" name="Tears One-handed Sword Appearance Stone - 7-day" icon="BranchSys3.Icon.g_shape_shifting_sword"
@@ -4448,8 +4514,8 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26118" level="1" /> <!-- Healing Light -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4464,9 +4530,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="2" />
-		<skill id="26117" level="1" />
-		<skill id="26116" level="1" />
+		<skill id="26118" level="2" /> <!-- Healing Light -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4481,9 +4547,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="3" />
-		<skill id="26117" level="2" />
-		<skill id="26116" level="1" />
+		<skill id="26118" level="3" /> <!-- Healing Light -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4498,9 +4564,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="4" />
-		<skill id="26117" level="2" />
-		<skill id="26116" level="2" />
+		<skill id="26118" level="4" /> <!-- Healing Light -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4515,9 +4581,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="5" />
-		<skill id="26117" level="3" />
-		<skill id="26116" level="2" />
+		<skill id="26118" level="5" /> <!-- Healing Light -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4532,9 +4598,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="6" />
-		<skill id="26117" level="3" />
-		<skill id="26116" level="3" />
+		<skill id="26118" level="6" /> <!-- Healing Light -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4549,9 +4615,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="7" />
-		<skill id="26117" level="4" />
-		<skill id="26116" level="3" />
+		<skill id="26118" level="7" /> <!-- Healing Light -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4566,9 +4632,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="8" />
-		<skill id="26117" level="4" />
-		<skill id="26116" level="4" />
+		<skill id="26118" level="8" /> <!-- Healing Light -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4583,9 +4649,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="9" />
-		<skill id="26117" level="5" />
-		<skill id="26116" level="4" />
+		<skill id="26118" level="9" /> <!-- Healing Light -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4600,9 +4666,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="10" />
-		<skill id="26117" level="5" />
-		<skill id="26116" level="5" />
+		<skill id="26118" level="10" /> <!-- Healing Light -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Virgo when equipped.
@@ -4617,8 +4683,8 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="11" />
-		<skill id="26117" level="6" />
-		<skill id="26116" level="5" />
+		<skill id="26118" level="11" /> <!-- Healing Light -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 </list>

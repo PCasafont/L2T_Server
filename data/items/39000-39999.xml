@@ -2445,6 +2445,11 @@
 	-->
 	<item id="39602" type="Weapon" name="Dimensional Antharas Shaper" icon="icon.weapon_antaras_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="3">
+		<set stat="pAtk" val="2523" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2458,6 +2463,10 @@
 	-->
 	<item id="39603" type="Weapon" name="Dimensional Antharas Slasher" icon="icon.weapon_antaras_twohand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="3509" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2471,6 +2480,11 @@
 	-->
 	<item id="39604" type="Weapon" name="Dimensional Antharas Thrower" icon="icon.weapon_antaras_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="6">
+		<set stat="pAtk" val="5678" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2484,6 +2498,10 @@
 	-->
 	<item id="39605" type="Weapon" name="Dimensional Antharas Buster" icon="icon.weapon_antaras_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="2307" />
+		<set stat="mAtk" val="1676" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2497,6 +2515,10 @@
 	-->
 	<item id="39606" type="Weapon" name="Dimensional Antharas Cutter" icon="icon.weapon_antaras_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="2884" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2510,6 +2532,11 @@
 	-->
 	<item id="39607" type="Weapon" name="Dimensional Antharas Stormer" icon="icon.weapon_antaras_spear_i01" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" immediateEffect="1" weight="2010" soulshots="0" spiritshots="0" mpConsume="4">
+		<set stat="pAtk" val="2884" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2523,6 +2550,11 @@
 	-->
 	<item id="39608" type="Weapon" name="Dimensional Antharas Fighter" icon="icon.weapon_antaras_fist_i01" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" immediateEffect="1" weight="1550" soulshots="0" spiritshots="0" mpConsume="5">
+		<set stat="pAtk" val="3509" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2536,6 +2568,11 @@
 	-->
 	<item id="39609" type="Weapon" name="Dimensional Antharas Avenger" icon="icon.weapon_antaras_onehand_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="2884" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2549,6 +2586,11 @@
 	-->
 	<item id="39610" type="Weapon" name="Dimensional Antharas Dual Blunt" icon="icon.weapon_antaras_dual_blunt_i01" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0" mpConsume="18">
+		<set stat="pAtk" val="3509" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2562,6 +2604,10 @@
 	-->
 	<item id="39611" type="Weapon" name="Dimensional Antharas Dualsword" icon="icon.weapon_antaras_dual_sword_i01" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="8">
+		<set stat="pAtk" val="3509" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2575,6 +2621,11 @@
 	-->
 	<item id="39612" type="Weapon" name="Dimensional Valakas Shaper" icon="icon.weapon_valrakas_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="3">
+		<set stat="pAtk" val="2523" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2588,6 +2639,10 @@
 	-->
 	<item id="39613" type="Weapon" name="Dimensional Valakas Cutter" icon="icon.weapon_valrakas_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="2884" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2601,6 +2656,10 @@
 	-->
 	<item id="39614" type="Weapon" name="Dimensional Valakas Slasher" icon="icon.weapon_valrakas_twohand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="3509" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2614,6 +2673,11 @@
 	-->
 	<item id="39615" type="Weapon" name="Dimensional Valakas Thrower" icon="icon.weapon_valrakas_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="6">
+		<set stat="pAtk" val="5678" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2627,6 +2691,10 @@
 	-->
 	<item id="39616" type="Weapon" name="Dimensional Valakas Buster" icon="icon.weapon_valrakas_onehand_magic_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="2307" />
+		<set stat="mAtk" val="1676" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2640,6 +2708,11 @@
 	-->
 	<item id="39617" type="Weapon" name="Dimensional Valakas Caster" icon="icon.weapon_valrakas_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="2307" />
+		<set stat="mAtk" val="1676" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2654,6 +2727,12 @@
 	<item id="39621" type="Weapon" name="Dimensional Valakas Retributer" icon="icon.weapon_valrakas_twohand_magic_blunt_i01"
 			defaultAction="equip" weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1080" soulshots="0" spiritshots="0"
 			mpConsume="2">
+		<set stat="pAtk" val="2809" />
+		<set stat="mAtk" val="1843" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2667,6 +2746,11 @@
 	-->
 	<item id="39622" type="Weapon" name="Dimensional Lindvior Shaper" icon="icon.weapon_lind_dagger_i01" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="3">
+		<set stat="pAtk" val="2523" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2680,6 +2764,11 @@
 	-->
 	<item id="39623" type="Weapon" name="Dimensional Lindvior Thrower" icon="icon.weapon_lind_bow_i01" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="6">
+		<set stat="pAtk" val="5678" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2693,6 +2782,10 @@
 	-->
 	<item id="39624" type="Weapon" name="Dimensional Lindvior Slasher" icon="icon.weapon_lind_twohand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1740" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="3509" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2706,6 +2799,10 @@
 	-->
 	<item id="39625" type="Weapon" name="Dimensional Lindvior Caster" icon="icon.weapon_lind_onehand_magic_blunt_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="2">
+		<set stat="pAtk" val="2307" />
+		<set stat="mAtk" val="1676" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2719,6 +2816,10 @@
 	-->
 	<item id="39626" type="Weapon" name="Dimensional Lindvior Cutter" icon="icon.weapon_lind_onehand_sword_i01" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" immediateEffect="1" weight="1520" soulshots="0" spiritshots="0" mpConsume="1">
+		<set stat="pAtk" val="2884" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2732,6 +2833,11 @@
 	-->
 	<item id="39627" type="Weapon" name="Dimensional Lindvior Shooter" icon="icon.weapon_lind_crossbow_i01" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" immediateEffect="1" weight="1580" soulshots="0" spiritshots="0" mpConsume="17">
+		<set stat="pAtk" val="5113" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Top-grade Dragon Weapon.
@@ -2745,6 +2851,11 @@
 	-->
 	<item id="39628" type="Weapon" name="Dimensional Lindvior Dual Dagger" icon="icon.weapon_lind_dual_dagger_i01" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" immediateEffect="1" weight="2050" soulshots="0" spiritshots="0" mpConsume="15">
+		<set stat="pAtk" val="2884" />
+		<set stat="mAtk" val="1257" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Use to obtain 400000 XP. Go to Pelu the Grocer in Faeron Village to combine to 2 Stage 1 Pockets. Under Lv. 85 only. -->
 	<item id="39629" type="EtcItem" name="Fortune Pocket - Stage 1" icon="icon.etc_lucky_pocket_i00" immediateEffect="1" crystalType="c"
@@ -3095,6 +3206,7 @@
 	<!-- Made by Shadai, who was inspired by Moon Voice Irene. Activates 5 Jewel Slots. -->
 	<item id="39710" type="Armor" name="Irene's Brooch" icon="icon.etc_bm_brooch_lavianrose_i02" defaultAction="equip" bodypart="gloves"
 			immediateEffect="1" weight="10">
+		<baseAdd stat="mDef" val="87" />
 	</item>
 	<!-- Found from the magical creatures of Cruma Tower Underground Lv. 3. It emits a mysterious light. -->
 	<item id="39711" type="EtcItem" name="Shining Mysterious Fragment" icon="icon.r95_soul_stone_i01" immediateEffect="1" crystalType="c"
@@ -3126,14 +3238,29 @@
 		<cond msgId="1518">
 			<player races="Ertheia" />
 		</cond>
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Monster weapon. -->
 	<item id="39718" type="Weapon" name="Boxing Glove" icon="icon.box_glove" defaultAction="equip" weaponType="dualfist" bodypart="lrhand"
 			immediateEffect="1" weight="152" soulshots="1" spiritshots="0" mpConsume="5">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- Monster weapon. -->
 	<item id="39719" type="Weapon" name="Monster Only: Crook's Staff" icon="icon.wp_fishing4" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" immediateEffect="1" weight="205" soulshots="1" spiritshots="0" mpConsume="4">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- For 15 sec., LUC + 5. -->
 	<item id="39720" type="EtcItem" name="Maphr's Luck Potion" icon="icon.etc_instant_lucky_potion_i00" immediateEffect="1"

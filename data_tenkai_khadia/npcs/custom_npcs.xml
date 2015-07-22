@@ -219,7 +219,7 @@
 			pAtkSpd="358" mAtkSpd="427" pCritRate="40" mCritRate="40" walkSpd="180" runSpd="180" rHand="7897" collisionRadius="10"
 			collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80215" templateId="33151" name="Rumiese" title="Officer" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="9.63" mpMax="2044"
+	<npc id="80215" templateId="33151" name="Menila" title="Vote Manager" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="9.63" mpMax="2044"
 			mpReg="6.99" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 			mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="50" runSpd="50" collisionRadius="12" collisionHeight="23" fireRes="160"
 			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">

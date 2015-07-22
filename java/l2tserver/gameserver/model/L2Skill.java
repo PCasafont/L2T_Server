@@ -311,7 +311,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final boolean _isHeroSkill; // If true the skill is a Hero Skill
 	private final boolean _isGMSkill;	// True if skill is GM skill
 	
-	private final int _baseCritRate;  // percent of success for skill critical hit (especially for PDAM & BLOW - they're not affected by rCrit values or buffs). Default loads -1 for all other skills but 0 to PDAM & BLOW
+	private final float _baseCritRate;  // percent of success for skill critical hit (especially for PDAM & BLOW - they're not affected by rCrit values or buffs). Default loads -1 for all other skills but 0 to PDAM & BLOW
 	private final int _lethalEffect1;	 // percent of success for lethal 1st effect (hit cp to 1 or if mob hp to 50%) (only for PDAM skills)
 	private final int _lethalEffect2;	 // percent of success for lethal 2nd effect (hit cp,hp to 1 or if mob hp to 1) (only for PDAM skills)
 	private final boolean _directHpDmg;  // If true then dmg is being make directly
@@ -388,8 +388,8 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_clanRepConsume = set.getInteger("clanRepConsume", 0);
 		_afterEffectId = set.getInteger("afterEffectId", 0);
 		_afterEffectLvl = set.getInteger("afterEffectLvl", 1);
-		_castRange = set.getInteger("castRange", -1);
-		_effectRange = set.getInteger("effectRange", -1);
+		_castRange = (int)set.getFloat("castRange", -1);
+		_effectRange = (int)set.getFloat("effectRange", -1);
 		_abnormalLvl = set.getInteger("abnormalLvl", -1);
 		_effectAbnormalLvl = set.getInteger("effectAbnormalLvl", -1); // support for a separate effect abnormal lvl, e.g. poison inside a different skill
 		_attribute = set.getString("attribute","");
@@ -616,7 +616,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_isHeroSkill = HeroSkillTable.isHeroSkill(_id);
 		_isGMSkill = GMSkillTable.isGMSkill(_id);
 		
-		_baseCritRate = set.getInteger("baseCritRate", (_skillType == L2SkillType.PDAM  || _skillType == L2SkillType.BLOW) ? 0 : -1);
+		_baseCritRate = set.getFloat("baseCritRate", 0);
 		_lethalEffect1 = set.getInteger("lethal1",0);
 		_lethalEffect2 = set.getInteger("lethal2",0);
 		
@@ -624,7 +624,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_isDance = set.getBool("isDance",false);
 		_nextDanceCost = set.getInteger("nextDanceCost", 0);
 		_sSBoost = set.getFloat("SSBoost", 0.f);
-		_aggroPoints = set.getInteger("aggroPoints", 0);
+		_aggroPoints = Math.round(set.getFloat("aggroPoints", 0));
 		_ignoredDefPercent = set.getFloat("ignoredDefPercent", 0.0f);
 		_canBeUsedWhenDisabled = set.getBool("canBeUsedWhenDisabled", false);
 		
@@ -1353,7 +1353,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		return _transformDuration;
 	}
 	
-	public final int getBaseCritRate()
+	public final float getBaseCritRate()
 	{
 		return _baseCritRate;
 	}

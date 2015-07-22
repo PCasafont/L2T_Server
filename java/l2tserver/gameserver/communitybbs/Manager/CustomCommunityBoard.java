@@ -24,7 +24,7 @@ import l2tserver.gameserver.cache.HtmCache;
 import l2tserver.gameserver.datatables.ClanTable;
 import l2tserver.gameserver.datatables.NpcTable;
 import l2tserver.gameserver.datatables.NpcTable.DropChances;
-import l2tserver.gameserver.events.DMGManager;
+import l2tserver.gameserver.events.DamageManager;
 import l2tserver.gameserver.events.LotterySystem;
 import l2tserver.gameserver.events.instanced.EventsManager;
 import l2tserver.gameserver.handler.IVoicedCommandHandler;
@@ -954,6 +954,7 @@ public class CustomCommunityBoard
 		String isRefusalKillInfo = pl.getIsRefusalKillInfo() ? "Disable" : "Enable";
 		String isLandRates = pl.isLandRates() ? "Disable" : "Enable";
 		String isStabs = pl.isShowingStabs() ? "Disable" : "Enable";
+		String isWeaponGlowDisabled = pl.getIsWeaponGlowDisabled() ? "Disable" : "Enable";
 		String isArmorGlowDisabled = pl.getIsArmorGlowDisabled() ? "Disable" : "Enable";
 		String isNickNameWingsDisabled = pl.isNickNameWingsDisabled() ? "Disable" : "Enable";
 		
@@ -964,6 +965,7 @@ public class CustomCommunityBoard
 		a = a.replace("%refuseKillInfo%", "<button value=" + isRefusalKillInfo + " width=90 height=24 action=\"bypass_bbscustom;action;voice;refusekillinfo;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%landRates%", "<button value=" + isLandRates + " width=90 height=24 action=\"bypass_bbscustom;action;voice;landrates;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		a = a.replace("%stabs%", "<button value=" + isStabs + " width=90 height=24 action=\"bypass_bbscustom;action;voice;stabs;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%disableWeaponGlow%", "<button value=" + isWeaponGlowDisabled + " width=90 height=24 action=\"bypass _bbscustom;action;voice;disableweaponglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");	
 		a = a.replace("%disableArmorGlow%", "<button value=" + isArmorGlowDisabled + " width=90 height=24 action=\"bypass _bbscustom;action;voice;disablearmorglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");	
 		a = a.replace("%disableWings%", "<button value=" + isNickNameWingsDisabled + " width=90 height=24 action=\"bypass _bbscustom;action;voice;disablenicknamewings\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");	
 		return a;
@@ -1109,7 +1111,7 @@ public class CustomCommunityBoard
 	private String getRankingInfo(String rankingType, L2PcInstance player)
 	{
 		if (rankingType.equalsIgnoreCase("damageDealer"))
-			return DMGManager.getInstance().getRankingInfo();
+			return DamageManager.getInstance().getRankingInfo();
 		else if (rankingType.equalsIgnoreCase("main"))
 			return "<table width=750><tr><td FIXWIDTH=750></td></tr></table>";
 		

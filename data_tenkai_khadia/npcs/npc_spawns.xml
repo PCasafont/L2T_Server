@@ -32,4 +32,8 @@
 	<npc id="33920">
 		<spawn x="6788" y="-19187" z="-3724" heading="11175" respawn="0" />
 	</npc>
+	<!-- Vote NPC -->
+	<npc id="80215">
+		<spawn x="83285" y="149323" z="-3405" heading="49095" respawn="0" />
+	</npc>
 </list>

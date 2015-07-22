@@ -39,6 +39,16 @@
 			Increases P. Atk. by 3.
 			Increases P. Atk. by 3.
 			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
+			Increases P. Atk. by 3.
 		-->
 		<enchantRoute id="1" level="15" enabled="false" />
 		<table name="#pAtk"> 2 3 4 5 5 5 5 5 7 10 12 14 16 18 20 </table>
@@ -4182,7 +4192,7 @@
 		<table name="#hitTime"> 3000 2800 2600 2400 2200 2000 1800 1600 1400 1200 1400 1400 1200 </table>
 		<table name="#magicLvl"> 40 52 64 72 76 80 85 90 95 99 99 99 99 </table>
 		<table name="#landRate"> 100 
-			<enchantRoute id="1" level="9,10,11,12,13"> 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 </enchantRoute>
+			<enchantRoute id="1" level="9,10,11,12,13" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="9,10,11,12,13"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -4697,6 +4707,16 @@
 			Transfers 62% of received damage to a servitor. Consumes MP proportionately to your level. | + 18 Power: Increases amount of Damage transferred to servitor by 1%.
 			Transfers 63% of received damage to a servitor. Consumes MP proportionately to your level. | + 19 Power: Increases amount of Damage transferred to servitor by 1%.
 			Transfers 63% of received damage to a servitor. Consumes MP proportionately to your level. | + 20 Power: Increases amount of Damage transferred to servitor.
+			Transfers 64% of received damage to a servitor. Consumes MP proportionately to your level. | + 21 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 64% of received damage to a servitor. Consumes MP proportionately to your level. | + 22 Power: Increases amount of Damage transferred to servitor.
+			Transfers 65% of received damage to a servitor. Consumes MP proportionately to your level. | + 23 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 66% of received damage to a servitor. Consumes MP proportionately to your level. | + 24 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 66% of received damage to a servitor. Consumes MP proportionately to your level. | + 25 Power: Increases amount of Damage transferred to servitor.
+			Transfers 67% of received damage to a servitor. Consumes MP proportionately to your level. | + 26 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 68% of received damage to a servitor. Consumes MP proportionately to your level. | + 27 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 68% of received damage to a servitor. Consumes MP proportionately to your level. | + 28 Power: Increases amount of Damage transferred to servitor.
+			Transfers 69% of received damage to a servitor. Consumes MP proportionately to your level. | + 29 Power: Increases amount of Damage transferred to servitor by 1%.
+			Transfers 70% of received damage to a servitor. Consumes MP proportionately to your level. | + 30 Power: Increases amount of Damage transferred to servitor by 1%.
 		-->
 		<enchantRoute id="1" level="9,10" enabled="false" />
 		<table name="#power"> 10 20 30 40 50 54 58 62 66 70 </table>
@@ -4741,11 +4761,7 @@
 		<enchantRoute id="2" level="20,21,22,23,24" /> <!-- Time -->
 		<table name="#mpConsume"> 39 44 48 52 54 55 58 60 62 64 65 67 69 71 73 75 77 79 82 84 86 88 90 92 </table>
 		<table name="#power"> 47 52 57 63 66 68 71 74 77 79 82 84 87 93 96 99 102 105 108 112 115 119 121 123 
-			<enchantRoute id="1" level="20"> 113 114 114 114 115 115 116 116 116 117 117 118 118 119 119 119 120 120 121 121 122 122 122 123 123 124 124 124 125 125 </enchantRoute>
-			<enchantRoute id="1" level="21"> 116 117 117 118 118 118 119 119 120 120 121 121 121 122 122 123 123 124 124 124 125 125 126 126 127 127 127 128 128 129 </enchantRoute>
-			<enchantRoute id="1" level="22"> 120 121 121 122 122 122 123 123 124 124 125 125 126 126 126 127 127 128 128 129 129 129 130 130 131 131 132 132 133 133 </enchantRoute>
-			<enchantRoute id="1" level="23"> 122 123 123 124 124 124 125 125 126 126 127 127 128 128 129 129 129 130 130 131 131 132 132 133 133 133 134 134 135 135 </enchantRoute>
-			<enchantRoute id="1" level="24"> 124 125 125 126 126 126 127 127 128 128 129 129 130 130 131 131 132 132 132 133 133 134 134 135 135 136 136 137 137 138 </enchantRoute>
+			<enchantRoute id="1" level="20,21,22,23,24" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#mDef"> 15 15 15 15 15 20 20 20 20 30 30 30 30 40 40 40 40 50 50 50 50 50 50 50 </table>
 		<table name="#elemWeakness"> 10 10 10 10 10 20 20 20 20 30 30 30 30 40 40 40 40 50 50 50 50 50 50 50 </table>
@@ -9482,36 +9498,17 @@
 	<skill id="1462" levels="10" name="Seal of Blockade">
 		<enchantRoute id="1" level="6,7,8,9,10" /> <!-- Chance -->
 		<enchantRoute id="2" level="6,7,8,9,10" /> <!-- Hex -->
-		<!-- TODO: Mind:
-			Decreases M. Def. by 1%.
-			Decreases M. Def. by 1.4%.
-			Decreases M. Def. by 1.8%.
-			Decreases M. Def. by 2.2%.
-			Decreases M. Def. by 2.6%.
-			Decreases M. Def. by 3%.
-			Decreases M. Def. by 3.4%.
-			Decreases M. Def. by 3.8%.
-			Decreases M. Def. by 4.2%.
-			Decreases M. Def. by 4.6%.
-			Decreases M. Def. by 5%.
-			Decreases M. Def. by 5.4%.
-			Decreases M. Def. by 5.8%.
-			Decreases M. Def. by 6.2%.
-			Decreases M. Def. by 6.6%.
-			Decreases M. Def. by 7%.
-			Decreases M. Def. by 7.4%.
-			Decreases M. Def. by 7.8%.
-			Decreases M. Def. by 8.2%.
-			Decreases M. Def. by 8.6%.
-		-->
-		<enchantRoute id="3" level="6,7,8,9,10" enabled="false" />
+		<enchantRoute id="3" level="6,7,8,9,10" /> <!-- Mind -->
 		<table name="#mpConsume"> 100 130 170 252 278 306 332 358 384 410 </table>
 		<table name="#hitTime"> 4000 3700 3400 3100 2800 2500 2200 2500 2500 2200 </table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="1" level="6,7,8,9,10"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="1" level="6,7,8,9,10" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="6,7,8,9,10"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+		</table>
+		<table name="#subPercentMDef"> 0 
+			<enchantRoute id="3" level="6,7,8,9,10"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_PVP_AREA" />
 		<set name="skillType" val="DEBUFF" />
@@ -9532,6 +9529,7 @@
 			<abnormal duration="10" effectType="SILENCE" landRate="#landRate" stackLvl="1" stackType="normal_attack_block">
 				<effect type="PhysicalAttackMute" val="0" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
+				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
@@ -10512,7 +10510,7 @@
 		<table name="#limit"> 80 70 60 50 40 30 40 30 </table>
 		<table name="#mpConsume"> 90 130 252 278 306 332 358 384 410 </table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="1" level="5,6,7,8,9"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="1" level="5,6,7,8,9" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="5,6,7,8,9"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>

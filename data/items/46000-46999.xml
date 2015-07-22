@@ -276,7 +276,8 @@
 		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
 	-->
 	<item id="46062" type="Weapon" name="Kelbim Bow" icon="" weaponType="bow" bodypart="lrhand" crystalType="r" material="steel"
-			weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false" reuseDelay="1500">
+			weight="0" soulshots="1" spiritshots="1" reuseDelay="1500" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
 		<set stat="pAtk" val="1457" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="12" />
@@ -290,7 +291,8 @@
 		Enchantment, Soul Crystal Enhancement, Augmentation, Crystallization, Appearance Change, Attribute Assignment not allowed.
 	-->
 	<item id="46063" type="Weapon" name="Kelbim Crossbow" icon="" weaponType="crossbow" bodypart="lrhand" crystalType="r" material="steel"
-			weight="0" soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false" reuseDelay="400">
+			weight="0" soulshots="1" spiritshots="1" reuseDelay="400" isEnchantable="false" isAttributable="false" isAugmentable="false"
+			canBeUsedAsApp="false">
 		<set stat="pAtk" val="1312" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="12" />
@@ -560,7 +562,13 @@
 	<item id="46130" type="EtcItem" name="Spirit Evil Thought Piece" icon="icon.etc_ertheia_prophecy_device_piece" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<item id="46131" type="Weapon" name="Kelbim Exclusive Weapon" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	<!-- Exclusive weapon of Kelbim. -->
+	<item id="46131" type="Weapon" name="Kelbim Exclusive Weapon" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
+		<set stat="pAtk" val="5" />
+		<set stat="mAtk" val="5" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!-- Seal that proves that one is a member of the Blackbird Clan. The seal proves that one is a member of the clan or is someone trusted by the clan. -->
 	<item id="46132" type="EtcItem" name="Blackbird Seal" icon="icon.etc_piece_holy_light" immediateEffect="1" isStackable="true">
@@ -739,13 +747,17 @@
 	<item id="46178" type="EtcItem" name="Heavenly Cocktail" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
-	<item id="46179" type="Weapon" name="Male Swimwear No.1" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	<!-- Swimwear for male characters. -->
+	<item id="46179" type="Weapon" name="Male Swimwear No.1" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
-	<item id="46180" type="Weapon" name="Male Swimwear No.2" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	<!-- Swimwear for male characters. -->
+	<item id="46180" type="Weapon" name="Male Swimwear No.2" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
-	<item id="46181" type="Weapon" name="Bikini No.1" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	<!-- Bikini for female characters. -->
+	<item id="46181" type="Weapon" name="Bikini No.1" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
-	<item id="46182" type="Weapon" name="Bikini No.2" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	<!-- Bikini for female characters. -->
+	<item id="46182" type="Weapon" name="Bikini No.2" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- A gift from Alegria for your character's birthday. Double-click to get 10 Happy Birthday Potions and a Birthday Hat. -->
 	<item id="46183" type="EtcItem" name="Joyful Birthday Pack" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
@@ -755,10 +767,26 @@
 	<item id="46184" type="EtcItem" name="Happy Birthday Potion" icon="icon.etc_potion_blue_i00" immediateEffect="1" crystalType="c"
 			weight="80" isStackable="true">
 	</item>
-	<item id="46185" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="" weight="0" material="steel" bodypart="none"
+	<!--
+		Summons Anakim Holy Barrier, which is comprised of 5 Anakims.
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/Water/Earth/Wind/Dark/Holy Atk. and Def. each increases by 30. 
+		3. Anakim Blessing : Acquired XP and SP + 3%.
+	-->
+	<item id="46185" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
 	</item>
-	<item id="46186" type="Weapon" name="Agathion - Anakim Holy Barrier" icon="" weight="0" material="steel" bodypart="none"
+	<!--
+		Summons Anakim Holy Barrier, which is comprised of 5 Anakims.
+		
+		<Item Skill>
+		1. Balanced Power: STR/INT/CON/DEX/WIT/MEN increases by 1.
+		2. Attribute Enchant: Fire/Water/Earth/Wind/Dark/Holy Atk. and Def. each increases by 30. 
+		3. Anakim Blessing : Acquired XP and SP + 3%.
+	-->
+	<item id="46186" type="Weapon" name="Agathion - Anakim Holy Barrier - 30-day" icon="" bodypart="none" material="steel" weight="0"
 			crystal_type="none">
 	</item>
 	<!-- Wrapped Pack containing Agathion - Anakim Holy Barrier (30-day). -->
@@ -781,15 +809,18 @@
 	<item id="46191" type="EtcItem" name="Vampiric Style Appearance Stone Pack" icon="icon.event_high_oriental_park_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
-	<item id="46192" type="Weapon" name="Vampiric Outfit" icon="" weight="0" material="steel" bodypart="none" crystal_type="none">
+	<!-- Vampiric outfit. -->
+	<item id="46192" type="Weapon" name="Vampiric Outfit" icon="" bodypart="none" material="steel" weight="0" crystal_type="none">
 	</item>
 	<!-- Magic shirt for P. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a P. Def. effect is given. -->
 	<item id="46193" type="Weapon" name="Reflect Attack T-shirt" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- Magic shirt for M. Def. Can be enchanted to +10 using Elemental Shirt Enchant Scrolls. When enchanted to +4 or more, passive and stats are increased. When enchanted to +5 or more, a M. Def. effect is given. -->
 	<item id="46194" type="Weapon" name="Reflect Magic T-shirt" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="28" />
 	</item>
 	<!-- Double-click to get 1 Shiny Elemental Shirt and 10 Elemental Shirt Enchant Scrolls. -->
 	<item id="46195" type="Weapon" name="Shiny Elemental T-shirt Pack" icon="" bodypart="none" crystalType="none" material="steel"
@@ -826,34 +857,100 @@
 	<item id="46203" type="Weapon" name="Halloween Outfit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
 	</item>
 	<item id="46204" type="Weapon" name="Halloween Shaper" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="685" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46205" type="Weapon" name="Halloween Cutter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46206" type="Weapon" name="Halloween Slasher" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46207" type="Weapon" name="Halloween Avenger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46208" type="Weapon" name="Halloween Fighter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46209" type="Weapon" name="Halloween Stormer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46210" type="Weapon" name="Halloween Thrower" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="1481" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46211" type="Weapon" name="Halloween Shooter" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="1333" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46212" type="Weapon" name="Halloween Buster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="486" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46213" type="Weapon" name="Halloween Caster" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="602" />
+		<set stat="mAtk" val="486" />
+		<set stat="pAtkSpd" val="379" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46214" type="Weapon" name="Halloween Retributer" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="733" />
+		<set stat="mAtk" val="535" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46215" type="Weapon" name="Halloween Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46216" type="Weapon" name="Halloween Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="752" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46217" type="Weapon" name="Halloween Dual Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="916" />
+		<set stat="mAtk" val="414" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!-- A Magic Number Cube that will allow you to participate in the Market Eleven giveaway. Use it on Eleveny, which is summoned at 11 AM and 11 PM in order to participate in the giveaway. Will be deleted once the event ends. -->
 	<item id="46218" type="EtcItem" name="Magic Number Cube - Event" icon="icon.etc_11th_event_group" immediateEffect="1" weight="1"
@@ -972,12 +1069,20 @@
 			crystalType="c" isStackable="true">
 	</item>
 	<item id="46247" type="Weapon" name="Halloween Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="sDef" val="546" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="46248" type="Weapon" name="Halloween Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="150" />
 	</item>
 	<!-- 11th anniversary's dual candle sword. -->
 	<item id="46249" type="Weapon" name="Dual Candle Sword - Event" icon="" weaponType="dual" bodypart="lrhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="8" />
+		<set stat="mAtk" val="6" />
+		<set stat="pAtkSpd" val="200" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Keep this in your inventory to gain XP/SP + 11% when hunting. All levels. Will be deleted once the event ends. -->
 	<item id="46250" type="EtcItem" name="Blessed Venezia Rune" icon="icon.skill19226" immediateEffect="1" isStackable="true">
@@ -1019,12 +1124,15 @@
 	<!-- Dark Knight suit. -->
 	<item id="46260" type="Armor" name="Dark Knight Suit" icon="" defaultAction="equip" bodypart="alldress" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Ninja outfit. -->
 	<item id="46261" type="Weapon" name="Ninja Outfit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Metal suit. -->
 	<item id="46262" type="Weapon" name="Metal Suit" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Double-click to get 1 Freya's Frozen Scroll and 1 Freya's Art of Seduction. Has a chance of obtaining one of the following items: Freya's Wish Box, Sirra's Wish Box, or a Snowman's Wish Box. -->
 	<item id="46263" type="EtcItem" name="Freya's Wish Stick" icon="icon.bm_freya_wand" immediateEffect="1" crystalType="c"
@@ -1120,6 +1228,10 @@
 	<!-- Fishing rod purchased from Santa Claus. Changes appearance to that into that of Santa Claus. Consumes 1 Fishing Shot. Will be deleted after the event. -->
 	<item id="46286" type="Weapon" name="Christmas Fishing Rod" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
 	</item>
 	<!-- Fish that has swallowed one of Santa Claus' gift box. Double-click to get Santa's Small Gift Box. Will be deleted after the event. -->
 	<item id="46287" type="EtcItem" name="Fish Gift Box" icon="icon.fish_swallowing_gift_i00" immediateEffect="1" crystalType="c"
@@ -1248,6 +1360,11 @@
 	-->
 	<item id="46317" type="Weapon" name="Shadow Shaper" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="443" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1256,6 +1373,10 @@
 	-->
 	<item id="46318" type="Weapon" name="Shadow Cutter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="526" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1264,6 +1385,10 @@
 	-->
 	<item id="46319" type="Weapon" name="Shadow Slasher" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="646" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1272,6 +1397,11 @@
 	-->
 	<item id="46320" type="Weapon" name="Shadow Fighter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="646" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1280,6 +1410,11 @@
 	-->
 	<item id="46321" type="Weapon" name="Shadow Stormer" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="526" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1288,6 +1423,11 @@
 	-->
 	<item id="46322" type="Weapon" name="Shadow Thrower" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="1031" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1296,6 +1436,11 @@
 	-->
 	<item id="46323" type="Weapon" name="Shadow Shooter" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="1012" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1304,6 +1449,10 @@
 	-->
 	<item id="46324" type="Weapon" name="Shadow Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="none"
 			material="steel" weight="0">
+		<set stat="pAtk" val="394" />
+		<set stat="mAtk" val="272" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1312,6 +1461,12 @@
 	-->
 	<item id="46325" type="Weapon" name="Shadow Retributer" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="486" />
+		<set stat="mAtk" val="310" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<baseAdd stat="accMagic" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1320,6 +1475,10 @@
 	-->
 	<item id="46326" type="Weapon" name="Shadow Dualsword" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand"
 			crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="646" />
+		<set stat="mAtk" val="176" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
@@ -1459,6 +1618,7 @@
 		<set stat="rCrit" val="6" />
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accMagic" val="8" />
 		<skill id="13846" level="12" /> <!-- Shadow Retributer -->
 		<skill id="13847" level="1" /> <!-- PvE Damage Increase -->
 	</item>
@@ -1484,34 +1644,42 @@
 	<!-- Sigel Knight Transformation appearance. -->
 	<item id="46338" type="Weapon" name="Sigel Knight Transformation Appearance" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Tyrr Warrior Transformation appearance. -->
 	<item id="46339" type="Weapon" name="Tyrr Warrior Transformation Appearance" icon="" bodypart="alldress" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Othell Rogue Transformation appearance. -->
 	<item id="46340" type="Weapon" name="Othell Rogue Transformation Appearance" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Yul Archer Transformation appearance. -->
 	<item id="46341" type="Weapon" name="Yul Archer Transformation Appearance" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Feoh Wizard Transformation appearance. -->
 	<item id="46342" type="Weapon" name="Feoh Wizard Transformation Appearance" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Iss Enchanter Transformation appearance. -->
 	<item id="46343" type="Weapon" name="Iss Enchanter Transformation Appearance" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Wynn Summoner Transformation appearance. -->
 	<item id="46344" type="Weapon" name="Wynn Summoner Transformation Appearance" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Aeore Healer Transformation appearance. -->
 	<item id="46345" type="Weapon" name="Aeore Healer Transformation Appearance" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!--
 		Can summon Virgo.
@@ -1738,44 +1906,111 @@
 	</item>
 	<item id="46377" type="Weapon" name="Frozen One-handed Sword" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46378" type="Weapon" name="Frozen Dagger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="80" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46379" type="Weapon" name="Frozen Two-handed Sword" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46380" type="Weapon" name="Frozen Fist Weapon" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="112" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseAdd stat="accCombat" val="8" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46381" type="Weapon" name="Frozen Spear" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="325" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46382" type="Weapon" name="Frozen Bow" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="191" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="293" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46383" type="Weapon" name="Frozen Crossbow" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="117" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="303" />
+		<baseSub stat="accCombat" val="1.5" />
+		<set stat="rCrit" val="10" />
 	</item>
 	<item id="46384" type="Weapon" name="Frozen One-handed Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46385" type="Weapon" name="Frozen Two-handed Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="90" />
+		<set stat="mAtk" val="79" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46386" type="Weapon" name="Frozen One-handed Magic Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="92" />
+		<set stat="mAtk" val="54" />
+		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46387" type="Weapon" name="Frozen Two-handed Magic Blunt Weapon" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<set stat="pAtk" val="152" />
+		<set stat="mAtk" val="122" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46388" type="Weapon" name="Frozen Dualsword" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="51" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="6" />
 	</item>
 	<item id="46389" type="Weapon" name="Frozen Dual Dagger" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="107" />
+		<set stat="mAtk" val="181" />
+		<set stat="pAtkSpd" val="433" />
+		<baseSub stat="accCombat" val="3.75" />
+		<set stat="rCrit" val="12" />
 	</item>
 	<item id="46390" type="Weapon" name="Frozen Dual Blunt" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="pAtk" val="125" />
+		<set stat="mAtk" val="186" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<item id="46391" type="Weapon" name="Frozen Shield" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<baseAdd stat="pDef" val="25" />
 	</item>
 	<item id="46392" type="Weapon" name="Frozen Sigil" icon="" bodypart="none" crystalType="none" material="steel" weight="0">
+		<set stat="sDef" val="47" />
+		<set stat="rShld" val="20" />
+		<baseSub stat="rEvas" val="8" />
 	</item>
 	<item id="46393" type="Weapon" name="NPC Ashen Shadow Revolutionary Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46394" type="Weapon" name="NPC Ashen Shadow Revolutionary Mask" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
@@ -1786,27 +2021,35 @@
 	</item>
 	<item id="46396" type="Weapon" name="NPC Sigel Knight Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46397" type="Weapon" name="NPC Tyrr Warrior Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46398" type="Weapon" name="NPC Othell Rogue Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46399" type="Weapon" name="NPC Yul Archer Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46400" type="Weapon" name="NPC Feoh Wizard Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46401" type="Weapon" name="NPC Iss Enchanter Transformation Cloak" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46402" type="Weapon" name="NPC Wynn Summoner Transformation Cloak" icon="" bodypart="none" crystalType="none"
 			material="steel" weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<item id="46403" type="Weapon" name="NPC Aeore Healer Transformation Cloak" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
+		<baseAdd stat="pDef" val="7" />
 	</item>
 	<!-- Use it during your battle against Burnstein inside the Command Post, and one of the 5 Aden Vanguard members will appear randomly to support you. 30-minute. Can only be used inside the Command Post. -->
 	<item id="46404" type="EtcItem" name="Emergency Whistle - Aden Vanguard" icon="icon.etc_dragon_flute_i00" immediateEffect="1"

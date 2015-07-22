@@ -13,9 +13,9 @@
 		<skill id="17622" level="1" /> <!-- Agathion Cute Trick - Virgo -->
 		<skill id="17610" level="1" /> <!-- Release Agathion's Seal - Virgo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26118" level="12" />
-		<skill id="26117" level="6" />
-		<skill id="26116" level="6" />
+		<skill id="26118" level="12" /> <!-- Healing Light -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -29,8 +29,8 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26119" level="1" /> <!-- Skipping Kid -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -45,9 +45,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26119" level="2" /> <!-- Skipping Kid -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -62,9 +62,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26119" level="3" /> <!-- Skipping Kid -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -79,9 +79,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26119" level="4" /> <!-- Skipping Kid -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -96,9 +96,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26119" level="5" /> <!-- Skipping Kid -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -113,9 +113,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26119" level="6" /> <!-- Skipping Kid -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -130,9 +130,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26119" level="7" /> <!-- Skipping Kid -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -147,9 +147,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26119" level="8" /> <!-- Skipping Kid -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -164,9 +164,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26119" level="9" /> <!-- Skipping Kid -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -181,9 +181,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26119" level="10" /> <!-- Skipping Kid -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -198,9 +198,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26119" level="11" /> <!-- Skipping Kid -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Capricorn when equipped.
@@ -215,9 +215,9 @@
 		<skill id="17623" level="1" /> <!-- Agathion Cute Trick - Capricorn -->
 		<skill id="17611" level="1" /> <!-- Release Agathion's Seal - Capricorn -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26119" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26119" level="12" /> <!-- Skipping Kid -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -231,8 +231,8 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26120" level="1" /> <!-- Scale of Life -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -247,9 +247,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26120" level="2" /> <!-- Scale of Life -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -264,9 +264,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26120" level="3" /> <!-- Scale of Life -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -281,9 +281,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26120" level="4" /> <!-- Scale of Life -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -298,9 +298,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26120" level="5" /> <!-- Scale of Life -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -315,9 +315,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26120" level="6" /> <!-- Scale of Life -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -332,9 +332,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26120" level="7" /> <!-- Scale of Life -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -349,9 +349,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26120" level="8" /> <!-- Scale of Life -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -366,9 +366,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26120" level="9" /> <!-- Scale of Life -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -383,9 +383,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26120" level="10" /> <!-- Scale of Life -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -400,9 +400,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26120" level="11" /> <!-- Scale of Life -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Libra when equipped.
@@ -417,9 +417,9 @@
 		<skill id="17624" level="1" /> <!-- Agathion Cute Trick - Libra -->
 		<skill id="17612" level="1" /> <!-- Release Agathion's Seal - Libra -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26120" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26120" level="12" /> <!-- Scale of Life -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -433,8 +433,8 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26121" level="1" /> <!-- Rocky Camouflage -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -449,9 +449,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26121" level="2" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -466,9 +466,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26121" level="3" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -483,9 +483,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26121" level="4" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -500,9 +500,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26121" level="5" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -517,9 +517,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26121" level="6" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -534,9 +534,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26121" level="7" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -551,9 +551,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26121" level="8" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -568,9 +568,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26121" level="9" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -585,9 +585,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26121" level="10" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -602,9 +602,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26121" level="11" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aries when equipped.
@@ -619,9 +619,9 @@
 		<skill id="17625" level="1" /> <!-- Agathion Cute Trick - Aries -->
 		<skill id="17613" level="1" /> <!-- Release Agathion's Seal - Aries -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26121" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26121" level="12" /> <!-- Rocky Camouflage -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -636,8 +636,8 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26122" level="1" /> <!-- Mad Cow -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -653,9 +653,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26122" level="2" /> <!-- Mad Cow -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -671,9 +671,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26122" level="3" /> <!-- Mad Cow -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -689,9 +689,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26122" level="4" /> <!-- Mad Cow -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -707,9 +707,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26122" level="5" /> <!-- Mad Cow -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -725,9 +725,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26122" level="6" /> <!-- Mad Cow -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -743,9 +743,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26122" level="7" /> <!-- Mad Cow -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -761,9 +761,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26122" level="8" /> <!-- Mad Cow -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -779,9 +779,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26122" level="9" /> <!-- Mad Cow -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -797,9 +797,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26122" level="10" /> <!-- Mad Cow -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -815,9 +815,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26122" level="11" /> <!-- Mad Cow -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Taurus when equipped.
@@ -833,9 +833,9 @@
 		<skill id="17626" level="1" /> <!-- Agathion Cute Trick - Taurus -->
 		<skill id="17614" level="1" /> <!-- Release Agathion's Seal - Taurus -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26122" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26122" level="12" /> <!-- Mad Cow -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -849,8 +849,8 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26123" level="1" /> <!-- Maiden's Prayer -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -865,9 +865,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26123" level="2" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -882,9 +882,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26123" level="3" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -899,9 +899,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26123" level="4" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -916,9 +916,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26123" level="5" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -933,9 +933,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26123" level="6" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -950,9 +950,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26123" level="7" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -967,9 +967,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26123" level="8" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -984,9 +984,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26123" level="9" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -1001,9 +1001,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26123" level="10" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -1018,9 +1018,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26123" level="11" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Leo when equipped.
@@ -1035,9 +1035,9 @@
 		<skill id="17627" level="1" /> <!-- Agathion Cute Trick - Leo -->
 		<skill id="17615" level="1" /> <!-- Release Agathion's Seal - Leo -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26123" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26123" level="12" /> <!-- Maiden's Prayer -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1051,8 +1051,8 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26124" level="1" /> <!-- Bountiful Resurrection -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1067,9 +1067,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26124" level="2" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1084,9 +1084,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26124" level="3" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1101,9 +1101,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26124" level="4" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1118,9 +1118,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26124" level="5" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1135,9 +1135,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26124" level="6" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1152,9 +1152,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26124" level="7" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1169,9 +1169,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26124" level="8" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1186,9 +1186,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26124" level="9" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1204,9 +1204,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26124" level="10" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1222,9 +1222,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26124" level="11" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Gemini when equipped.
@@ -1240,9 +1240,9 @@
 		<skill id="17628" level="1" /> <!-- Agathion Cute Trick - Gemini -->
 		<skill id="17616" level="1" /> <!-- Release Agathion's Seal - Gemini -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26124" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26124" level="12" /> <!-- Bountiful Resurrection -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1256,8 +1256,8 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26125" level="1" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1272,9 +1272,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26125" level="2" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1289,9 +1289,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26125" level="3" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1306,9 +1306,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26125" level="4" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1323,9 +1323,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26125" level="5" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1340,9 +1340,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26125" level="6" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1357,9 +1357,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26125" level="7" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1374,9 +1374,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26125" level="8" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1391,9 +1391,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26125" level="9" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1408,9 +1408,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26125" level="10" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1425,9 +1425,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26125" level="11" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Scorpio when equipped.
@@ -1442,9 +1442,9 @@
 		<skill id="17629" level="1" /> <!-- Agathion Cute Trick - Scorpio -->
 		<skill id="17617" level="1" /> <!-- Release Agathion's Seal - Scorpio -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26125" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26125" level="12" /> <!-- Scorpion's Mass Exile -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1458,8 +1458,8 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26126" level="1" /> <!-- Mass Binding Flood -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1474,9 +1474,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26126" level="2" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1491,9 +1491,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26126" level="3" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1508,9 +1508,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26126" level="4" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1525,9 +1525,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26126" level="5" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1542,9 +1542,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26126" level="6" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1559,9 +1559,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26126" level="7" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1576,9 +1576,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26126" level="8" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1593,9 +1593,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26126" level="9" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1610,9 +1610,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26126" level="10" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1627,9 +1627,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26126" level="11" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Aquarius when equipped.
@@ -1644,9 +1644,9 @@
 		<skill id="17630" level="1" /> <!-- Agathion Cute Trick - Aquarius -->
 		<skill id="17618" level="1" /> <!-- Release Agathion's Seal - Aquarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26126" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26126" level="12" /> <!-- Mass Binding Flood -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1660,8 +1660,8 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26127" level="1" /> <!-- Slippery Scale -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1676,9 +1676,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26127" level="2" /> <!-- Slippery Scale -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1693,9 +1693,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26127" level="3" /> <!-- Slippery Scale -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1710,9 +1710,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26127" level="4" /> <!-- Slippery Scale -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1727,9 +1727,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26127" level="5" /> <!-- Slippery Scale -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1744,9 +1744,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26127" level="6" /> <!-- Slippery Scale -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1761,9 +1761,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26127" level="7" /> <!-- Slippery Scale -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1778,9 +1778,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26127" level="8" /> <!-- Slippery Scale -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1795,9 +1795,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26127" level="9" /> <!-- Slippery Scale -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1812,9 +1812,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26127" level="10" /> <!-- Slippery Scale -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1829,9 +1829,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26127" level="11" /> <!-- Slippery Scale -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Pisces when equipped.
@@ -1846,9 +1846,9 @@
 		<skill id="17631" level="1" /> <!-- Agathion Cute Trick - Pisces -->
 		<skill id="17619" level="1" /> <!-- Release Agathion's Seal - Pisces -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26127" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26127" level="12" /> <!-- Slippery Scale -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1862,8 +1862,8 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26128" level="1" /> <!-- Archer's Call -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1878,9 +1878,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26128" level="2" /> <!-- Archer's Call -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1895,9 +1895,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26128" level="3" /> <!-- Archer's Call -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1912,9 +1912,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26128" level="4" /> <!-- Archer's Call -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1929,9 +1929,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26128" level="5" /> <!-- Archer's Call -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1946,9 +1946,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26128" level="6" /> <!-- Archer's Call -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1963,9 +1963,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26128" level="7" /> <!-- Archer's Call -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1980,9 +1980,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26128" level="8" /> <!-- Archer's Call -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -1997,9 +1997,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26128" level="9" /> <!-- Archer's Call -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -2014,9 +2014,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26128" level="10" /> <!-- Archer's Call -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -2031,9 +2031,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26128" level="11" /> <!-- Archer's Call -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Sagittarius when equipped.
@@ -2048,9 +2048,9 @@
 		<skill id="17632" level="1" /> <!-- Agathion Cute Trick - Sagittarius -->
 		<skill id="17620" level="1" /> <!-- Release Agathion's Seal - Sagittarius -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26128" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26128" level="12" /> <!-- Archer's Call -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2065,8 +2065,8 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26129" level="1" /> <!-- Exoskeletal Shield -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2082,9 +2082,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="2" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="1" />
+		<skill id="26129" level="2" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="1" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2100,9 +2100,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="3" />
-		<skill id="26116" level="1" />
-		<skill id="26117" level="2" />
+		<skill id="26129" level="3" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="1" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2118,9 +2118,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="4" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="2" />
+		<skill id="26129" level="4" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="2" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2136,9 +2136,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="5" />
-		<skill id="26116" level="2" />
-		<skill id="26117" level="3" />
+		<skill id="26129" level="5" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="2" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2154,9 +2154,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="6" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="3" />
+		<skill id="26129" level="6" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="3" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2172,9 +2172,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="7" />
-		<skill id="26116" level="3" />
-		<skill id="26117" level="4" />
+		<skill id="26129" level="7" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="3" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2190,9 +2190,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="8" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="4" />
+		<skill id="26129" level="8" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="4" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2208,9 +2208,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="9" />
-		<skill id="26116" level="4" />
-		<skill id="26117" level="5" />
+		<skill id="26129" level="9" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="4" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2226,9 +2226,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="10" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="5" />
+		<skill id="26129" level="10" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="5" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2244,9 +2244,9 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="11" />
-		<skill id="26116" level="5" />
-		<skill id="26117" level="6" />
+		<skill id="26129" level="11" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="5" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!--
 		Can summon Cancer when equipped.
@@ -2262,13 +2262,14 @@
 		<skill id="17633" level="1" /> <!-- Agathion Cute Trick - Cancer -->
 		<skill id="17621" level="1" /> <!-- Release Agathion's Seal - Cancer -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="26129" level="12" />
-		<skill id="26116" level="6" />
-		<skill id="26117" level="6" />
+		<skill id="26129" level="12" /> <!-- Exoskeletal Shield -->
+		<skill id="26116" level="6" /> <!-- Zodiac Agathion Stat Boost -->
+		<skill id="26117" level="6" /> <!-- Zodiac Agathion Attribute Enchant -->
 	</item>
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
 	<item id="24133" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1" weight="0">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
 	<item id="24134" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -4176,26 +4177,32 @@
 	<!-- MP + 37, Bleed Resistance + 40%, Bleed Attack Rate + 40%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Resistance + 30%, Stun/Mental Attack Rate + 30% , MP Consumption decrease, Earth Resistance increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
 	<item id="24359" type="Armor" name="Antharas' Earring - 3-day" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="94" />
 	</item>
 	<!-- MP + 50, Sleep Resistance + 40% , Sleep Attack Rate + 40%, HP + 445, Cooldown decrease, P./M. Atk. increase, Wild Magic Effect, Damage Shield Effect, Fire Resistance increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
 	<item id="24360" type="Armor" name="Valakas' Necklace - 3-day" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="95" />
 	</item>
 	<!-- MP + 31, Bleed Resistance + 30%, Bleed Attack Rate + 30%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Resistance + 20% , Stun/Mental Attack Rate + 20%. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. Can be stored in the private warehouse. -->
 	<item id="24361" type="Armor" name="Zaken's Earring - 3-day" icon="icon.accessory_earring_of_zaken_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="71" />
 	</item>
 	<!-- MP + 21, Poison Resistance + 30%, Poison Attack Rate + 30% , Accuracy increase, Critical Damage increase, Hold Resistance + 20% , Hold Attack Rate + 20%. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. -->
 	<item id="24362" type="Armor" name="Queen Ant's Ring - 3-day" icon="icon.accessory_ring_of_queen_ant_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="1" crystalType="b" weight="150">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- MP + 21, Poison Resistance + 40% , Poison Attack Rate + 40% , Accuracy increase, Critical Damage increase, Hold Resistance + 30%, Hold Attack Rate + 30%, P. Atk. increase, and Casting Spd. increase. Equipping 2 will give the effect of 1. Cannot be used in the Olympiad. -->
 	<item id="24363" type="Armor" name="Baium's Ring - 3-day" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="1" crystalType="s" weight="150">
+		<baseAdd stat="mDef" val="48" />
 	</item>
 	<!-- When equipped, armor is unequipped and cannot be used. Hair accessories, weapons, and magic armor remain equipped. -->
 	<item id="24364" type="Armor" name="Dark Assassin Suit" icon="icon.dark_assassin" defaultAction="equip" bodypart="alldress"
 			immediateEffect="1">
+		<baseAdd stat="pDef" val="400" />
 	</item>
 	<!-- Changes the appearance of your appearance into that of a Dark Assassin Suit. Can use Dark Assassin's Move after appearance modification. Tops and one-pieces only. Modified armor can be restored to their original appearance with a Restoration Stone. -->
 	<item id="24365" type="EtcItem" name="Appearance Stone: Dark Assassin Suit" icon="BranchSys3.icon1.g_scrl_change_chest"
@@ -4212,90 +4219,90 @@
 	<!-- 10-min. When possessed, XP gain + 1%. -->
 	<item id="24368" type="EtcItem" name="Sayha's Rune: Growth - Stage 1" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="1" />
+		<skill id="26217" level="1" /> <!-- Sayha's Rune: Growth -->
 	</item>
 	<!-- 10-min. When possessed, XP gain + 3%. -->
 	<item id="24369" type="EtcItem" name="Sayha's Rune: Growth - Stage 2" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="2" />
+		<skill id="26217" level="2" /> <!-- Sayha's Rune: Growth -->
 	</item>
 	<!-- 10-min. When possessed, XP gain + 6%. -->
 	<item id="24370" type="EtcItem" name="Sayha's Rune: Growth - Stage 3" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="3" />
+		<skill id="26217" level="3" /> <!-- Sayha's Rune: Growth -->
 	</item>
 	<!-- 10-min. When possessed, XP gain + 10%. -->
 	<item id="24371" type="EtcItem" name="Sayha's Rune: Growth - Stage 4" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="4" />
+		<skill id="26217" level="4" /> <!-- Sayha's Rune: Growth -->
 	</item>
 	<!-- 10-min. When possessed, SP gain + 1%. -->
 	<item id="24372" type="EtcItem" name="Sayha's Rune: Skill - Stage 1" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26218" level="1" />
+		<skill id="26218" level="1" /> <!-- Sayha's Rune: Skill -->
 	</item>
 	<!-- 10-min. When possessed, SP gain + 3%. -->
 	<item id="24373" type="EtcItem" name="Sayha's Rune: Skill - Stage 2" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
-		<skill id="26218" level="2" />
+		<skill id="26218" level="2" /> <!-- Sayha's Rune: Skill -->
 	</item>
 	<!-- 10-min. When possessed, SP gain + 6%. -->
 	<item id="24374" type="EtcItem" name="Sayha's Rune: Skill - Stage 3" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26218" level="3" />
+		<skill id="26218" level="3" /> <!-- Sayha's Rune: Skill -->
 	</item>
 	<!-- 10-min. When possessed, SP gain + 10%. -->
 	<item id="24375" type="EtcItem" name="Sayha's Rune: Skill - Stage 4" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
 			etcitemType="rune" immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26218" level="4" />
+		<skill id="26218" level="4" /> <!-- Sayha's Rune: Skill -->
 	</item>
 	<!-- 10-min. When possessed, drop rate during hunting + 1%. -->
 	<item id="24376" type="EtcItem" name="Sayha's Rune: Luck - Stage 1" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26219" level="1" />
+		<skill id="26219" level="1" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, drop rate during hunting + 3%. -->
 	<item id="24377" type="EtcItem" name="Sayha's Rune: Luck - Stage 2" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26219" level="2" />
+		<skill id="26219" level="2" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, drop rate during hunting + 6%. -->
 	<item id="24378" type="EtcItem" name="Sayha's Rune: Luck - Stage 3" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26219" level="3" />
+		<skill id="26219" level="3" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, drop rate during hunting + 10%. -->
 	<item id="24379" type="EtcItem" name="Sayha's Rune: Luck - Stage 4" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26219" level="3" />
+		<skill id="26219" level="3" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, XP/SP/Drop Rate + 1%. -->
 	<item id="24380" type="EtcItem" name="Sayha's Rune - Stage 1" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="1" />
-		<skill id="26218" level="1" />
-		<skill id="26219" level="1" />
+		<skill id="26217" level="1" /> <!-- Sayha's Rune: Growth -->
+		<skill id="26218" level="1" /> <!-- Sayha's Rune: Skill -->
+		<skill id="26219" level="1" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, XP/SP/Drop Rate + 3%. -->
 	<item id="24381" type="EtcItem" name="Sayha's Rune - Stage 2" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="2" />
-		<skill id="26218" level="2" />
-		<skill id="26219" level="2" />
+		<skill id="26217" level="2" /> <!-- Sayha's Rune: Growth -->
+		<skill id="26218" level="2" /> <!-- Sayha's Rune: Skill -->
+		<skill id="26219" level="2" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, XP/SP/Drop Rate + 6%. -->
 	<item id="24382" type="EtcItem" name="Sayha's Rune - Stage 3" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="3" />
-		<skill id="26218" level="3" />
-		<skill id="26219" level="3" />
+		<skill id="26217" level="3" /> <!-- Sayha's Rune: Growth -->
+		<skill id="26218" level="3" /> <!-- Sayha's Rune: Skill -->
+		<skill id="26219" level="3" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- 10-min. When possessed, XP/SP/Drop Rate + 10%. -->
 	<item id="24383" type="EtcItem" name="Sayha's Rune - Stage 4" icon="br_cashtex.item.br_cash_rune_of_feather_i00" etcitemType="rune"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false">
-		<skill id="26217" level="4" />
-		<skill id="26218" level="4" />
-		<skill id="26219" level="4" />
+		<skill id="26217" level="4" /> <!-- Sayha's Rune: Growth -->
+		<skill id="26218" level="4" /> <!-- Sayha's Rune: Skill -->
+		<skill id="26219" level="4" /> <!-- Sayha's Rune: Luck -->
 	</item>
 	<!-- Wrapped Pack containing Sayha's Rune: Growth Stage 1. -->
 	<item id="24384" type="EtcItem" name="Sayha's Rune: Growth Pack Stage 1" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1"

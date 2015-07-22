@@ -71,7 +71,7 @@
 			defaultAction="equip" bodypart="hairall" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isOlyRestricted="true">
 		<enchant stat="mDef" val="0" />
-		<skill id="21211" level="1" />
+		<skill id="21211" level="1" /> <!-- Blessing of Victory -->
 	</item>
 	<!-- Mark that wishes for victory by the Korean team. -->
 	<item id="21012" type="Armor" name="Mark of Victory - Korea" icon="BranchSys2.icon.br_worldcup_face_deco_i00" defaultAction="equip"
@@ -213,53 +213,53 @@
 	<item id="21030" type="EtcItem" name="Hardin's Divine Protection" icon="BranchSys2.icon.br_protection_hadin_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="1" sharedReuseGroup="103" reuseDelay="900000" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22170" level="1" />
+		<skill id="22170" level="1" /> <!-- Hardin's Divine Protection -->
 	</item>
 	<!-- Potion that gives you Hardin's Blessing. Maximizes M. Def. for 10 sec. upon use. Cooldown is 15 min. -->
 	<item id="21031" type="EtcItem" name="Hardin's Blessing" icon="BranchSys2.icon.br_bless_of    hadin_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="1" sharedReuseGroup="103" reuseDelay="900000" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22171" level="1" />
+		<skill id="22171" level="1" /> <!-- Hardin's Blessing -->
 	</item>
 	<!-- Silpheed's power grants you Speed + 300 for 15 sec. -->
 	<item id="21032" type="EtcItem" name="Silpheed's Wing" icon="BranchSys2.icon.br_wing_of_sylphide_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
 			isPremium="true" isOlyRestricted="true">
-		<skill id="22172" level="1" />
+		<skill id="22172" level="1" /> <!-- Silpeed's Wing -->
 	</item>
 	<!-- Silpheed's power grants Speed + 300 to you and nearby allies for 15 sec. -->
 	<item id="21033" type="EtcItem" name="Silpheed's Blessing" icon="BranchSys2.icon.br_bless_of_sylphide_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
 			isPremium="true" isOlyRestricted="true">
-		<skill id="22173" level="1" />
+		<skill id="22173" level="1" /> <!-- Silpeed's Blessing -->
 	</item>
 	<!-- Scroll containing the power of Evain. Temporarily recovers HP of yourself and friendly nearby targets by 500. Cooldown 30 min. -->
 	<item id="21034" type="EtcItem" name="Evain's Recovery Scroll" icon="BranchSys2.icon.br_scroll_of_yibein_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" weight="10" reuseDelay="1800000" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22174" level="1" />
+		<skill id="22174" level="1" /> <!-- Evain's Recovery Scroll -->
 	</item>
 	<!-- Good luck charm containing the power of life. When held in the inventory, it automatically restores 500 HP when HP falls below 30%. -->
 	<item id="21035" type="EtcItem" name="Good/Bad of Life" etcitemType="rune" immediateEffect="1" weight="120" isTradable="false"
 			isDropable="false" isSellable="false" isDepositable="false" isPremium="true" isOlyRestricted="true">
-		<skill id="22175" level="1" />
+		<skill id="22175" level="1" /> <!-- Good/Bad of Life -->
 	</item>
 	<!-- Good luck charm containing the power of magic. When held in the inventory, it automatically restores 500 MP when MP falls below 10%. -->
 	<item id="21036" type="EtcItem" name="State of the Mind" etcitemType="rune" immediateEffect="1" weight="120" isTradable="false"
 			isDropable="false" isSellable="false" isDepositable="false" isPremium="true" isOlyRestricted="true">
-		<skill id="22176" level="1" />
+		<skill id="22176" level="1" /> <!-- State of the Mind -->
 	</item>
 	<!-- Potion containing the power of an ancient warrior. It recovers CP by 300. -->
 	<item id="21037" type="EtcItem" name="Warrior's Quick CP Potion" icon="BranchSys2.icon.br_breath_of_hero_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="1" sharedReuseGroup="104" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22177" level="1" />
+		<skill id="22177" level="1" /> <!-- Warrior's Quick CP Potion -->
 	</item>
 	<!-- Potion containing the soul of a hero. Temporarily recovers HP by 500 and MP by 200. 60 seconds cooldown. -->
 	<item id="21038" type="EtcItem" name="Hero's Potion" icon="BranchSys2.icon.br_hero_potion_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="1" sharedReuseGroup="105" reuseDelay="60000" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22178" level="1" />
+		<skill id="22178" level="1" /> <!-- Hero's Potion -->
 	</item>
 	<!-- Restores 100 HP per second for 15 seconds. -->
 	<item id="21039" type="EtcItem" name="Superior Healing Potion" icon="icon.etc_reagent_white_i00" defaultAction="skill_reduce"
@@ -277,14 +277,14 @@
 	<item id="21041" type="EtcItem" name="Fortuna of Chaos" icon="BranchSys2.icon.br_fortuna_box_chaos_i00" defaultAction="capsule"
 			immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
 			isPremium="true">
-		<skill id="22179" level="1" />
+		<skill id="22179" level="1" /> <!-- Fortuna of Chaos -->
 	</item>
 	<!-- Hat displaying the flag of Taiwan. Looks good for cheering. Uses 2 hair accessory slots. Cooldown is 12 hour. -->
 	<item id="21042" type="Armor" name="Flag Hat - 7-day" icon="BranchSys2.icon.br_flag_cap_i00" defaultAction="equip" bodypart="hairall"
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true"
 			isOlyRestricted="true" time="10080">
 		<enchant stat="mDef" val="0" />
-		<skill id="21221" level="1" />
+		<skill id="21221" level="1" /> <!-- Blessed Resurrection -->
 	</item>
 	<!-- Hat displaying the flag of Taiwan. Looks good for cheering. Uses 2 hair accessory slots. -->
 	<item id="21043" type="Armor" name="Flag Hat" icon="BranchSys2.icon.br_flag_cap_i00" defaultAction="equip" bodypart="hairall"
@@ -308,145 +308,145 @@
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21212" level="1" />
-		<skill id="23216" level="1" />
-		<skill id="23217" level="1" />
+		<skill id="21212" level="1" /> <!-- Release Agathion's Seal - Granny Tiger -->
+		<skill id="23216" level="1" /> <!-- Granny Tiger Agathion Cute Trick -->
+		<skill id="23217" level="1" /> <!-- Granny Tiger Agathion Special Skill: Fundamentals -->
 	</item>
 	<!-- Bracelet that summons a granny tiger. -->
 	<item id="21047" type="Armor" name="Agathion - Granny Tiger" icon="BranchSys2.icon.br_aga_tiger_grandma_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21212" level="1" />
-		<skill id="23216" level="1" />
+		<skill id="21212" level="1" /> <!-- Release Agathion's Seal - Granny Tiger -->
+		<skill id="23216" level="1" /> <!-- Granny Tiger Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons a flower fairy spirit. Cooldown is 1 hour. -->
 	<item id="21048" type="Armor" name="Agathion - Flower Fairy Spirit" icon="BranchSys2.icon.br_aga_flower_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21213" level="1" />
-		<skill id="23218" level="1" />
-		<skill id="23219" level="1" />
+		<skill id="21213" level="1" /> <!-- Release Agathion's Seal - Flower Fairy Spirit -->
+		<skill id="23218" level="1" /> <!-- Flower Fairy Spirit Agathion Cute Trick -->
+		<skill id="23219" level="1" /> <!-- Flower Fairy Spirit Agathion Special Skill: Fairy's Blessing -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Orodriel. Cooldown is 2 hour. -->
 	<item id="21049" type="Armor" name="Agathion - Cheerleader Orodriel - 7-day" icon="BranchSys2.icon.br_aga_cheer_FElf_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21214" level="1" />
-		<skill id="23220" level="1" />
-		<skill id="23221" level="1" />
+		<skill id="21214" level="1" /> <!-- Release Agathion's Seal - Cheerleader Orodriel -->
+		<skill id="23220" level="1" /> <!-- Cheerleader Orodriel Agathion Cute Trick -->
+		<skill id="23221" level="1" /> <!-- Cheerleader Orodriel Agathion Special Skill: Joy of Cheering -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Orodriel. -->
 	<item id="21050" type="Armor" name="Agathion - Cheerleader Orodriel" icon="BranchSys2.icon.br_aga_cheer_FElf_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21214" level="1" />
-		<skill id="23220" level="1" />
+		<skill id="21214" level="1" /> <!-- Release Agathion's Seal - Cheerleader Orodriel -->
+		<skill id="23220" level="1" /> <!-- Cheerleader Orodriel Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Lanya. Cooldown is 2 hour. -->
 	<item id="21051" type="Armor" name="Agathion - Cheerleader Lanya - 7-day" icon="BranchSys2.icon.br_aga_cheer_FFighter_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21215" level="1" />
-		<skill id="23222" level="1" />
-		<skill id="23223" level="1" />
+		<skill id="21215" level="1" /> <!-- Release Agathion's Seal - Cheerleader Lanya -->
+		<skill id="23222" level="1" /> <!-- Cheerleader Lanya Agathion Cute Trick -->
+		<skill id="23223" level="1" /> <!-- Cheerleader Lanya Agathion Special Skill: Joy of Cheering -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Lanya. -->
 	<item id="21052" type="Armor" name="Agathion - Cheerleader Lanya" icon="BranchSys2.icon.br_aga_cheer_FFighter_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21215" level="1" />
-		<skill id="23222" level="1" />
+		<skill id="21215" level="1" /> <!-- Release Agathion's Seal - Cheerleader Lanya -->
+		<skill id="23222" level="1" /> <!-- Cheerleader Lanya Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Naonin. Cooldown is 2 hour. -->
 	<item id="21053" type="Armor" name="Agathion - Cheerleader Naonin - 7-day" icon="BranchSys2.icon.br_aga_cheer_FKamael_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21216" level="1" />
-		<skill id="23224" level="1" />
-		<skill id="23225" level="1" />
+		<skill id="21216" level="1" /> <!-- Release Agathion's Seal - Cheerleader Naonin -->
+		<skill id="23224" level="1" /> <!-- Cheerleader Naonin Agathion Cute Trick -->
+		<skill id="23225" level="1" /> <!-- Cheerleader Naonin Agathion Special Skill: Joy of Cheering -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Naonin. -->
 	<item id="21054" type="Armor" name="Agathion - Cheerleader Naonin" icon="BranchSys2.icon.br_aga_cheer_FKamael_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21216" level="1" />
-		<skill id="23224" level="1" />
+		<skill id="21216" level="1" /> <!-- Release Agathion's Seal - Cheerleader Naonin -->
+		<skill id="23224" level="1" /> <!-- Cheerleader Naonin Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Mortia. Cooldown is 2 hour. -->
 	<item id="21055" type="Armor" name="Agathion - Cheerleader Mortia - 7-day" icon="BranchSys2.icon.br_aga_cheer_FDarkelf_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21217" level="1" />
-		<skill id="23226" level="1" />
-		<skill id="23227" level="1" />
+		<skill id="21217" level="1" /> <!-- Release Agathion's Seal - Cheerleader Mortia -->
+		<skill id="23226" level="1" /> <!-- Cheerleader Mortia Agathion Cute Trick -->
+		<skill id="23227" level="1" /> <!-- Cheerleader Mortia Agathion Special Skill: Joy of Cheering -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Mortia. -->
 	<item id="21056" type="Armor" name="Agathion - Cheerleader Mortia" icon="BranchSys2.icon.br_aga_cheer_FDarkelf_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21217" level="1" />
-		<skill id="23226" level="1" />
+		<skill id="21217" level="1" /> <!-- Release Agathion's Seal - Cheerleader Mortia -->
+		<skill id="23226" level="1" /> <!-- Cheerleader Mortia Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Kaurin. Cooldown is 2 hour. -->
 	<item id="21057" type="Armor" name="Agathion - Cheerleader Kaurin - 7-day" icon="BranchSys2.icon.br_aga_cheer_FOrc_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21218" level="1" />
-		<skill id="23228" level="1" />
-		<skill id="23229" level="1" />
+		<skill id="21218" level="1" /> <!-- Release Agathion's Seal - Cheerleader Kaurin -->
+		<skill id="23228" level="1" /> <!-- Cheerleader Kaurin Agathion Cute Trick -->
+		<skill id="23229" level="1" /> <!-- Cheerleader Kaurin Agathion Special Skill: Joy of Cheering -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Kaurin. -->
 	<item id="21058" type="Armor" name="Agathion - Cheerleader Kaurin" icon="BranchSys2.icon.br_aga_cheer_FOrc_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21218" level="1" />
-		<skill id="23228" level="1" />
+		<skill id="21218" level="1" /> <!-- Release Agathion's Seal - Cheerleader Kaurin -->
+		<skill id="23228" level="1" /> <!-- Cheerleader Kaurin Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Meruril. Cooldown is 2 hour. -->
 	<item id="21059" type="Armor" name="Agathion - Cheerleader Meruril - 7-day" icon="BranchSys2.icon.br_aga_cheer_FDwarf_i00"
 			defaultAction="equip" bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21219" level="1" />
-		<skill id="23230" level="1" />
-		<skill id="23231" level="1" />
+		<skill id="21219" level="1" /> <!-- Release Agathion's Seal - Cheerleader Meruril -->
+		<skill id="23230" level="1" /> <!-- Cheerleader Meruril Agathion Cute Trick -->
+		<skill id="23231" level="1" /> <!-- Cheerleader Meruril Agathion Special Skill: Joy of Cheering -->
 	</item>
 	<!-- Bracelet that summons a cheerleader Meruril. -->
 	<item id="21060" type="Armor" name="Agathion - Cheerleader Meruril" icon="BranchSys2.icon.br_aga_cheer_FDwarf_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21219" level="1" />
-		<skill id="23230" level="1" />
+		<skill id="21219" level="1" /> <!-- Release Agathion's Seal - Cheerleader Meruril -->
+		<skill id="23230" level="1" /> <!-- Cheerleader Meruril Agathion Cute Trick -->
 	</item>
 	<!-- Bracelet that summons Handy from Fantasy Isle. Cooldown is 2 hour. -->
 	<item id="21061" type="Armor" name="Agathion - Handy - 7-day" icon="BranchSys2.icon.br_aga_block_mother_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1" time="10080">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21220" level="1" />
-		<skill id="23232" level="1" />
-		<skill id="23233" level="1" />
+		<skill id="21220" level="1" /> <!-- Release Agathion's Seal - Handy -->
+		<skill id="23232" level="1" /> <!-- Handy Agathion Cute Trick -->
+		<skill id="23233" level="1" /> <!-- Handy Agathion Special Skill: Halloween's Blessing -->
 	</item>
 	<!-- Bracelet that summons Handy from Fantasy Isle. -->
 	<item id="21062" type="Armor" name="Agathion - Handy" icon="BranchSys2.icon.br_aga_block_mother_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			isPremium="true" isOlyRestricted="true" unequipSkill="3267-1">
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
-		<skill id="21220" level="1" />
-		<skill id="23232" level="1" />
+		<skill id="21220" level="1" /> <!-- Release Agathion's Seal - Handy -->
+		<skill id="23232" level="1" /> <!-- Handy Agathion Cute Trick -->
 	</item>
 	<!-- Wrapped Pack containing Flag Hat (7-day). -->
 	<item id="21063" type="EtcItem" name="Flag Hat Pack (7-day)" icon="BranchSys.icon.br_four_leaf_clover_box_i00" defaultAction="peel"
@@ -577,7 +577,7 @@
 	<item id="21084" type="EtcItem" name="XP Rune III (Lv. 1-100+) 30%" icon="br_cashtex.item.br_cash_rune_of_exp_i00" etcitemType="rune"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true"
 			time="1440">
-		<skill id="22039" level="1" />
+		<skill id="22039" level="1" /> <!-- XP Rune III (Lv. 1-100+) 30% -->
 	</item>
 	<!-- Wrapped Pack containing XP Rune III (Lv. 1-100+) 30% 1 hour. -->
 	<item id="21085" type="EtcItem" name="XP Rune III (Lv. 1-100+) 30% Pack (1-hour)" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
@@ -588,7 +588,7 @@
 	<!-- Ancient characters which bestow a mysterious ability if it is possessed in the inventory. It increases acquired SP by 30%. The remaining period decreases even while logged off. -->
 	<item id="21086" type="EtcItem" name="SP Rune 30%" icon="br_cashtex.item.br_cash_rune_of_sp_i00" etcitemType="rune" immediateEffect="1"
 			weight="120" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true" time="1440">
-		<skill id="22040" level="1" />
+		<skill id="22040" level="1" /> <!-- SP Rune 30% -->
 	</item>
 	<!-- Wrapped Pack containing SP Rune 30% 1 hour. -->
 	<item id="21087" type="EtcItem" name="SP Rune 30% Pack (1-hour)" icon="BranchSys.icon.br_four_leaf_clover_box_i00" defaultAction="peel"
@@ -600,7 +600,7 @@
 	<item id="21088" type="Armor" name="Mount - Jet BikeÂ " icon="BranchSys2.icon.br_z_bike_i00" defaultAction="equip" bodypart="lbracelet"
 			immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true"
 			isOlyRestricted="true" unequipSkill="619-1">
-		<skill id="21171" level="1" />
+		<skill id="21171" level="1" /> <!-- Ride Jet Bike -->
 	</item>
 	<!-- Wrapped Pack containing Jet Bike. -->
 	<item id="21089" type="EtcItem" name="Jet Bike Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" defaultAction="peel"
@@ -629,27 +629,27 @@
 	<item id="21093" type="EtcItem" name="Sweet Fruit Cocktail" icon="BranchSys.icon.br_fruit_cocktail_i00" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="3000" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22056" level="1" />
-		<skill id="22057" level="1" />
-		<skill id="22064" level="1" />
-		<skill id="22058" level="1" />
-		<skill id="22059" level="1" />
-		<skill id="22060" level="1" />
-		<skill id="22061" level="1" />
-		<skill id="22065" level="1" />
+		<skill id="22056" level="1" /> <!-- Wind Walk -->
+		<skill id="22057" level="1" /> <!-- Haste -->
+		<skill id="22064" level="1" /> <!-- Vampiric Rage -->
+		<skill id="22058" level="1" /> <!-- Might -->
+		<skill id="22059" level="1" /> <!-- Shield -->
+		<skill id="22060" level="1" /> <!-- Death Whisper -->
+		<skill id="22061" level="1" /> <!-- Guidance -->
+		<skill id="22065" level="1" /> <!-- Blessed Body -->
 	</item>
 	<!-- Cocktail drink that's flavored with many rare types of fruit. When consumed, for 1 hour, one can feel Berserker Spirit, Magic Barrier, Blessed Soul, Empower, Greater Acumen, Clarity, Blessed Body, and Wild Magic. -->
 	<item id="21094" type="EtcItem" name="Fresh Fruit Cocktail" icon="BranchSys.icon.br_fruit_cocktail_i01" defaultAction="skill_reduce"
 			etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="3000" isTradable="false" isDropable="false" isSellable="false"
 			isDepositable="false" isStackable="true" isPremium="true" isOlyRestricted="true">
-		<skill id="22066" level="1" />
-		<skill id="22067" level="1" />
-		<skill id="22068" level="1" />
-		<skill id="22062" level="1" />
-		<skill id="22063" level="1" />
-		<skill id="22069" level="1" />
-		<skill id="22065" level="1" />
-		<skill id="22070" level="1" />
+		<skill id="22066" level="1" /> <!-- Berserker Spirit -->
+		<skill id="22067" level="1" /> <!-- Magic Barrier -->
+		<skill id="22068" level="1" /> <!-- Blessed Soul -->
+		<skill id="22062" level="1" /> <!-- Empower -->
+		<skill id="22063" level="1" /> <!-- Greater Acumen -->
+		<skill id="22069" level="1" /> <!-- Clarity -->
+		<skill id="22065" level="1" /> <!-- Blessed Body -->
+		<skill id="22070" level="1" /> <!-- Wild Magic -->
 	</item>
 	<!-- Wrapped Pack containing Circlet of Ice. -->
 	<item id="21095" type="EtcItem" name="Circlet of Ice Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" defaultAction="peel"
@@ -975,8 +975,8 @@
 	<!-- Bracelet that summons Zaken's Spirit Sword, which is made up of Zaken's 6 swords. -->
 	<item id="21165" type="Armor" name="Agathion - Zaken's Spirit Swords" icon="BranchSys2.Icon.br_aga_zaken_i00" defaultAction="equip"
 			bodypart="lbracelet" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false" unequipSkill="3267-1">
-		<skill id="23236" level="1" />
-		<skill id="21234" level="1" />
+		<skill id="23236" level="1" /> <!-- Agathion Cute Trick - Zaken's Spirit Swords -->
+		<skill id="21234" level="1" /> <!-- Release Agathion's Seal - Zaken's Spirit Swords -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 	</item>
 	<!-- Can summon Zaken's Spirit Swords when equipped. Cooldown is 2 hours. 7-day. -->
@@ -3725,6 +3725,10 @@
 	<item id="21754" type="Weapon" name="Pencil Corps' Magic Pencil" icon="BranchSys2.icon.g_pencil_of_servermaster" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="1" immediateEffect="1" weight="100" soulshots="2" spiritshots="2"
 			isTradable="false" isDropable="false" isSellable="false">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<set stat="pAtkSpd" val="325" />
+		<set stat="rCrit" val="8" />
 	</item>
 	<!-- Scholar's hat showing knowledge. Gold tassel is attached. -->
 	<item id="21755" type="Armor" name="Manor Scholar's Hat" icon="BranchSys2.icon.g_graduation_cap_gold" defaultAction="equip"

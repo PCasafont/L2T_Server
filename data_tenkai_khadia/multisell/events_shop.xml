@@ -133,6 +133,10 @@
 		<production id="22687" count="1" /> <!-- Armor Appearance Stone (D-grade) -->
 	</item>
 	<item>
+		<ingredient id="4358" count="45000" /> <!-- Bloody Pa'agrio -->
+		<production id="22708" count="1" /> <!-- Hair Accessory Appearance Stone -->
+	</item>
+	<item>
 		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
 		<production id="22414" count="1" /> <!-- Weapon Restoration Stone (R-grade) -->
 	</item>

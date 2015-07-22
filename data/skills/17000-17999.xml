@@ -2182,7 +2182,10 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
-	<!-- Restores 1000 CP. -->
+	<!-- 
+		Level 1: Restores 1000 CP.
+		Level 2: 
+	-->
 	<skill id="17324" levels="2" name="Superior CP Potion">
 		<table name="#power"> 1000 2000 </table>
 		<set name="target" val="TARGET_SELF" />
@@ -4598,7 +4601,7 @@
 				<and>
 					<player olympiad="false" />
 					<not>
-						<target hp="50"/>
+						<target hp="50" />
 					</not>
 				</and>
 			</cond>

@@ -17,7 +17,7 @@ package l2tserver.gameserver.taskmanager.tasks;
 import java.util.Calendar;
 
 import l2tserver.Config;
-import l2tserver.gameserver.events.DMGManager;
+import l2tserver.gameserver.events.DamageManager;
 import l2tserver.gameserver.events.LotterySystem;
 import l2tserver.gameserver.taskmanager.Task;
 import l2tserver.gameserver.taskmanager.TaskManager;
@@ -46,7 +46,7 @@ public class TaskCustomTasks extends Task
 			if (Config.ENABLE_CUSTOM_LOTTERY)
 				LotterySystem.getInstance().giveRewardsAndReset();
 			if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-				DMGManager.getInstance().giveRewardsAndReset();
+				DamageManager.getInstance().giveRewardsAndReset();
 		}
 	}
 	

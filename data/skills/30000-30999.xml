@@ -39,81 +39,18 @@
 	-->
 	<skill id="30001" levels="28" name="Hydro Attack">
 		<enchantRoute id="1" level="24,25,26,27,28" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-			Increases Skill Success Rate by 21%.
-			Increases Skill Success Rate by 22%.
-			Increases Skill Success Rate by 23%.
-			Increases Skill Success Rate by 24%.
-			Increases Skill Success Rate by 25%.
-			Increases Skill Success Rate by 26%.
-			Increases Skill Success Rate by 27%.
-			Increases Skill Success Rate by 28%.
-			Increases Skill Success Rate by 29%.
-			Increases Skill Success Rate by 30%.
-		-->
-		<enchantRoute id="2" level="24,25,26,27,28" enabled="false" />
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="3" level="24,25,26,27,28" enabled="false" />
+		<enchantRoute id="2" level="24,25,26,27,28" /> <!-- Chance -->
+		<enchantRoute id="3" level="24,25,26,27,28" /> <!-- Wild -->
 		<table name="#mpConsume"> 3 8 10 13 16 18 20 21 23 25 27 29 30 31 32 32 33 33 33 34 34 34 34 34 35 36 37 38 </table>
 		<table name="#power"> 6 14 19 25 32 36 41 46 50 55 60 64 69 72 75 77 79 171 179 187 195 203 211 219 227 231 235 239 
-			<enchantRoute id="1" level="24"> 221 222 223 224 225 225 226 227 228 229 230 230 231 232 233 233 234 235 236 237 238 238 239 240 241 242 242 243 244 245 </enchantRoute>
-			<enchantRoute id="1" level="25"> 229 230 231 232 233 233 234 235 236 237 238 239 239 240 241 242 243 244 244 245 246 247 248 249 250 250 251 252 253 254 </enchantRoute>
-			<enchantRoute id="1" level="26"> 233 234 235 236 237 237 239 239 240 241 242 243 244 245 245 246 247 248 249 250 251 251 252 253 254 255 256 257 257 258 </enchantRoute>
-			<enchantRoute id="1" level="27"> 237 238 239 240 241 242 243 243 244 245 246 247 248 249 250 251 251 252 253 254 255 256 257 258 259 259 260 261 262 263 </enchantRoute>
-			<enchantRoute id="1" level="28"> 241 242 243 244 245 246 247 248 249 250 250 251 252 253 254 255 256 257 257 258 259 260 261 262 263 264 265 266 266 267 </enchantRoute>
+			<enchantRoute id="1" level="24,25,26,27,28" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#chance"> 0 0 0 0 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 </table>
+		<table name="#chance"> 0 0 0 0 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 70 
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="3" level="24,25,26,27,28"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -124,6 +61,7 @@
 		<set name="coolTime" val="500" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<for>
 			<abnormal noicon="1">
@@ -169,48 +107,15 @@
 	-->
 	<skill id="30003" levels="20" name="Hydro Flare">
 		<enchantRoute id="1" level="16,17,18,19,20" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="16,17,18,19,20" enabled="false" />
+		<enchantRoute id="2" level="16,17,18,19,20" /> <!-- Wild -->
 		<table name="#mpConsume"> 47 51 54 58 60 62 64 65 66 67 67 68 68 68 69 69 70 71 72 73 </table>
 		<table name="#power"> 110 120 130 140 150 157 162 167 172 501 515 543 571 599 627 655 683 711 725 739 
-			<enchantRoute id="1" level="16"> 662 664 667 669 672 673 677 679 681 684 686 688 691 694 696 698 701 703 705 708 711 713 715 718 721 722 725 728 730 732 </enchantRoute>
-			<enchantRoute id="1" level="17"> 690 693 695 698 701 702 706 708 710 713 716 718 721 723 725 728 731 734 736 738 741 743 746 749 751 753 756 759 761 764 </enchantRoute>
-			<enchantRoute id="1" level="18"> 718 721 724 727 729 731 734 737 739 742 745 747 750 753 755 758 761 764 766 769 771 774 776 779 782 784 787 790 792 795 </enchantRoute>
-			<enchantRoute id="1" level="19"> 732 735 738 741 744 745 749 751 754 757 760 762 765 768 770 773 776 779 781 784 787 789 792 795 798 800 803 805 808 811 </enchantRoute>
-			<enchantRoute id="1" level="20"> 746 749 752 755 758 760 763 766 769 772 774 777 780 783 785 788 791 794 796 799 802 804 807 810 813 815 818 821 823 826 </enchantRoute>
+			<enchantRoute id="1" level="16,17,18,19,20" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#chance"> 0 0 0 0 0 0 0 0 0 10 10 10 10 10 10 10 10 10 10 10 </table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="16,17,18,19,20"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -221,6 +126,7 @@
 		<set name="coolTime" val="500" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<set name="negateAbnormals" val="storm_sign" />
 		<for>
@@ -265,79 +171,17 @@
 	-->
 	<skill id="30004" levels="25" name="Hydro Strike">
 		<enchantRoute id="1" level="21,22,23,24,25" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-			Increases Skill Success Rate by 21%.
-			Increases Skill Success Rate by 22%.
-			Increases Skill Success Rate by 23%.
-			Increases Skill Success Rate by 24%.
-			Increases Skill Success Rate by 25%.
-			Increases Skill Success Rate by 26%.
-			Increases Skill Success Rate by 27%.
-			Increases Skill Success Rate by 28%.
-			Increases Skill Success Rate by 29%.
-			Increases Skill Success Rate by 30%.
-		-->
-		<enchantRoute id="2" level="21,22,23,24,25" enabled="false" />
-		<!-- TODO: Mind:
-			Decreases M. Def. by 1%.
-			Decreases M. Def. by 1.4%.
-			Decreases M. Def. by 1.8%.
-			Decreases M. Def. by 2.2%.
-			Decreases M. Def. by 2.6%.
-			Decreases M. Def. by 3%.
-			Decreases M. Def. by 3.4%.
-			Decreases M. Def. by 3.8%.
-			Decreases M. Def. by 4.2%.
-			Decreases M. Def. by 4.6%.
-			Decreases M. Def. by 5%.
-			Decreases M. Def. by 5.4%.
-			Decreases M. Def. by 5.8%.
-			Decreases M. Def. by 6.2%.
-			Decreases M. Def. by 6.6%.
-			Decreases M. Def. by 7%.
-			Decreases M. Def. by 7.4%.
-			Decreases M. Def. by 7.8%.
-			Decreases M. Def. by 8.2%.
-			Decreases M. Def. by 8.6%.
-			Decreases M. Def. by 9%.
-			Decreases M. Def. by 9.4%.
-			Decreases M. Def. by 9.8%.
-			Decreases M. Def. by 10.2%.
-			Decreases M. Def. by 10.6%.
-			Decreases M. Def. by 11%.
-			Decreases M. Def. by 11.4%.
-			Decreases M. Def. by 11.8%.
-			Decreases M. Def. by 12.2%.
-			Decreases M. Def. by 12.6%.
-		-->
-		<enchantRoute id="3" level="21,22,23,24,25" enabled="false" />
+		<enchantRoute id="2" level="21,22,23,24,25" /> <!-- Chance -->
+		<enchantRoute id="3" level="21,22,23,24,25" /> <!-- Mind -->
 		<table name="#mpConsume"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 71 72 73 </table>
 		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 140 145 149 154 420 442 464 486 508 530 552 574 584 594 604 
-			<enchantRoute id="1" level="21"> 558 560 562 564 566 567 570 572 574 576 578 580 582 585 586 588 591 593 595 597 599 601 603 605 607 609 611 613 615 617 </enchantRoute>
-			<enchantRoute id="1" level="22"> 580 582 584 587 589 590 593 595 597 599 602 603 606 608 610 612 614 616 618 620 623 625 627 629 631 633 635 638 639 642 </enchantRoute>
-			<enchantRoute id="1" level="23"> 590 592 595 597 599 600 603 605 607 610 612 614 616 618 620 623 625 627 629 631 634 635 638 640 642 644 646 649 651 653 </enchantRoute>
-			<enchantRoute id="1" level="24"> 600 602 605 607 609 611 614 615 618 620 623 624 627 629 631 633 636 638 640 642 644 646 649 651 653 655 658 660 662 664 </enchantRoute>
-			<enchantRoute id="1" level="25"> 610 612 615 617 620 621 624 626 628 631 633 635 637 640 641 644 646 649 651 653 655 657 660 662 664 666 669 671 673 675 </enchantRoute>
+			<enchantRoute id="1" level="21,22,23,24,25" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#landRate"> 70 
+			<enchantRoute id="2" level="21,22,23,24,25" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#subPercentMDef"> 0 
+			<enchantRoute id="3" level="21,22,23,24,25"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -357,8 +201,9 @@
 					<player active_effect_id="30009" />
 				</or>
 			</cond>
-			<abnormal duration="5" stackLvl="1" visualEffect="windyTrap">
+			<abnormal duration="5" landRate="#landRate" stackLvl="1" visualEffect="windyTrap">
 				<effect type="Root" val="0" />
+				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
@@ -391,49 +236,16 @@
 	<skill id="30006" levels="11" name="Storm Rage">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
 		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Chance -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="3" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Wild -->
 		<table name="#mpConsume"> 134 135 136 137 138 138 139 141 143 145 147 </table>
 		<table name="#power"> 255 269 283 297 311 325 339 353 359 365 371 
-			<enchantRoute id="1" level="7"> 342 344 345 346 348 348 350 351 353 354 355 356 358 359 360 361 363 364 365 366 368 369 370 372 373 374 375 377 378 379 </enchantRoute>
-			<enchantRoute id="1" level="8"> 357 358 359 361 362 363 365 366 367 369 370 371 372 374 375 376 378 379 380 382 383 384 385 387 388 389 391 392 393 395 </enchantRoute>
-			<enchantRoute id="1" level="9"> 363 364 365 367 368 369 371 372 373 375 376 377 379 380 381 383 384 386 387 388 390 391 392 393 395 396 397 399 400 401 </enchantRoute>
-			<enchantRoute id="1" level="10"> 369 370 372 373 374 375 377 378 380 381 383 384 385 387 388 389 391 392 393 395 396 397 399 400 402 403 404 406 407 408 </enchantRoute>
-			<enchantRoute id="1" level="11"> 375 376 378 379 381 381 383 384 386 387 389 390 391 393 394 395 397 398 400 401 403 404 405 407 408 409 411 412 413 415 </enchantRoute>
+			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#landRate"> 60 
-			<enchantRoute id="2" level="7,8,9,10,11"> 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 </enchantRoute>
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="3" level="7,8,9,10,11"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="MDAM" />
@@ -445,6 +257,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="skillRadius" val="150" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<for>
 			<abnormal duration="3" landRate="#landRate" stackLvl="1" stackType="knock_back">
@@ -471,46 +284,13 @@
 	-->
 	<skill id="30007" levels="15" name="Hydro Drain">
 		<enchantRoute id="1" level="11,12,13,14,15" /> <!-- Power -->
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="11,12,13,14,15" enabled="false" />
+		<enchantRoute id="2" level="11,12,13,14,15" /> <!-- Wild -->
 		<table name="#mpConsume"> 63 64 65 66 67 67 68 68 68 69 69 70 71 72 73 </table>
 		<table name="#power"> 123 127 130 134 386 396 416 436 456 476 496 516 536 546 556 
-			<enchantRoute id="1" level="11"> 501 503 505 507 509 510 512 514 516 518 520 521 523 525 527 529 531 533 534 536 538 540 542 544 546 547 549 551 553 555 </enchantRoute>
-			<enchantRoute id="1" level="12"> 521 523 525 527 529 530 533 535 537 539 541 542 544 546 548 550 552 554 556 558 560 561 563 566 568 569 571 573 575 577 </enchantRoute>
-			<enchantRoute id="1" level="13"> 541 544 546 548 550 551 554 555 557 560 562 563 565 568 569 571 574 576 577 579 582 583 585 587 590 591 593 595 597 599 </enchantRoute>
-			<enchantRoute id="1" level="14"> 551 554 556 558 560 561 564 566 568 570 572 574 576 578 580 582 584 586 588 590 592 594 596 598 601 602 604 607 608 610 </enchantRoute>
-			<enchantRoute id="1" level="15"> 562 564 566 568 570 572 574 576 578 580 583 584 587 589 590 593 595 597 599 601 603 605 607 609 612 613 615 618 619 622 </enchantRoute>
+			<enchantRoute id="1" level="11,12,13,14,15" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="2" level="11,12,13,14,15"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -522,6 +302,7 @@
 		<set name="coolTime" val="500" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<set name="negateAbnormals" val="storm_sign" />
 		<for>
@@ -608,41 +389,12 @@
 	<!-- Cancels all debuffs and recovers HP/MP for 10 sec. inside a refuge of wind. Cannot move. -->
 	<skill id="30010" levels="2" name="Windy Refuge">
 		<enchantRoute id="1" level="1,2" /> <!-- Time -->
-		<!-- TODO: Major:
-			Recovers HP by 1936.
-			Recovers HP by 2072.
-			Recovers HP by 2207.
-			Recovers HP by 2342.
-			Recovers HP by 2477.
-			Recovers HP by 2612.
-			Recovers HP by 2747.
-			Recovers HP by 2882.
-			Recovers HP by 3017.
-			Recovers HP by 3152.
-			Recovers HP by 3288.
-			Recovers HP by 3423.
-			Recovers HP by 3558.
-			Recovers HP by 3693.
-			Recovers HP by 3828.
-			Recovers HP by 3964.
-			Recovers HP by 4099.
-			Recovers HP by 4234.
-			Recovers HP by 4369.
-			Recovers HP by 4504.
-			Recovers HP by 4594.
-			Recovers HP by 4684.
-			Recovers HP by 4774.
-			Recovers HP by 4864.
-			Recovers HP by 4955.
-			Recovers HP by 5044.
-			Recovers HP by 5135.
-			Recovers HP by 5224.
-			Recovers HP by 5315.
-			Recovers HP by 5405.
-		-->
-		<enchantRoute id="2" level="1,2" enabled="false" />
+		<enchantRoute id="2" level="1,2" /> <!-- Major -->
 		<table name="#count"> 10 
 			<enchantRoute id="1" level="1,2"> 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 </enchantRoute>
+		</table>
+		<table name="#heal"> 185 
+			<enchantRoute id="2" level="1,2"> 194 207 221 234 248 261 275 288 302 315 329 342 356 369 383 396 410 423 437 450 459 468 477 486 496 504 514 522 531 541 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -658,13 +410,11 @@
 		<set name="removedOnAction" val="true" />
 		<for>
 			<abnormal count="#count" duration="1" stackLvl="1" stackType="windy_refuge" visualEffect="windyRefuge">
-				<effect type="HealOverTime" val="185" />
+				<effect type="HealOverTime" val="#heal" />
 				<effect type="ManaHealOverTime" val="84" />
+				<effect type="CancelDebuff" val="0" />
 				<effect type="Hide" val="0" />
 				<effect type="Root" val="0" />
-			</abnormal>
-			<abnormal noicon="1">
-				<effect type="CancelDebuff" val="0" />
 			</abnormal>
 		</for>
 	</skill>
@@ -703,40 +453,11 @@
 			Increases Skill Success Rate by 30%.
 		-->
 		<enchantRoute id="1" level="11,12,13,14,15" enabled="false" />
-		<!-- TODO: Mind:
-			Decreases M. Def. by 1%.
-			Decreases M. Def. by 1.4%.
-			Decreases M. Def. by 1.8%.
-			Decreases M. Def. by 2.2%.
-			Decreases M. Def. by 2.6%.
-			Decreases M. Def. by 3%.
-			Decreases M. Def. by 3.4%.
-			Decreases M. Def. by 3.8%.
-			Decreases M. Def. by 4.2%.
-			Decreases M. Def. by 4.6%.
-			Decreases M. Def. by 5%.
-			Decreases M. Def. by 5.4%.
-			Decreases M. Def. by 5.8%.
-			Decreases M. Def. by 6.2%.
-			Decreases M. Def. by 6.6%.
-			Decreases M. Def. by 7%.
-			Decreases M. Def. by 7.4%.
-			Decreases M. Def. by 7.8%.
-			Decreases M. Def. by 8.2%.
-			Decreases M. Def. by 8.6%.
-			Decreases M. Def. by 9%.
-			Decreases M. Def. by 9.4%.
-			Decreases M. Def. by 9.8%.
-			Decreases M. Def. by 10.2%.
-			Decreases M. Def. by 10.6%.
-			Decreases M. Def. by 11%.
-			Decreases M. Def. by 11.4%.
-			Decreases M. Def. by 11.8%.
-			Decreases M. Def. by 12.2%.
-			Decreases M. Def. by 12.6%.
-		-->
-		<enchantRoute id="2" level="11,12,13,14,15" enabled="false" />
+		<enchantRoute id="2" level="11,12,13,14,15" /> <!-- Mind -->
 		<table name="#mpConsume"> 31 31 32 32 33 33 34 34 34 34 34 35 36 37 38 </table>
+		<table name="#subPercentMDef"> 0 
+			<enchantRoute id="2" level="11,12,13,14,15"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -751,6 +472,7 @@
 		<for>
 			<abnormal>
 				<effect chanceType="ON_START" triggeredId="30002" triggeredLevel="3" type="ChanceSkillTrigger" val="0" />
+				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
@@ -787,11 +509,7 @@
 		<enchantRoute id="3" level="21,22,23,24,25" /> <!-- Distance -->
 		<table name="#mpConsume"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 71 72 73 </table>
 		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 535 545 555 
-			<enchantRoute id="1" level="21"> 506 508 510 512 514 515 518 519 521 523 525 527 529 531 532 534 536 538 540 542 544 545 547 549 551 553 555 557 558 560 </enchantRoute>
-			<enchantRoute id="1" level="22"> 527 529 531 533 536 537 539 541 543 545 547 549 551 553 554 556 559 561 562 564 566 568 570 572 574 576 578 580 582 584 </enchantRoute>
-			<enchantRoute id="1" level="23"> 540 542 545 547 549 550 553 554 556 559 561 562 564 567 568 570 572 575 576 578 580 582 584 586 589 590 592 594 596 598 </enchantRoute>
-			<enchantRoute id="1" level="24"> 550 553 555 557 559 560 563 565 567 569 571 573 575 577 579 581 583 585 587 589 591 593 595 597 600 601 603 605 607 609 </enchantRoute>
-			<enchantRoute id="1" level="25"> 561 563 565 567 569 571 573 575 577 579 582 583 586 588 589 592 594 596 598 600 602 604 606 608 611 612 614 617 618 620 </enchantRoute>
+			<enchantRoute id="1" level="21,22,23,24,25" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#castRange"> 900 
 			<enchantRoute id="3" level="21,22,23,24,25"> 910 920 930 940 950 960 970 980 990 1000 1010 1020 1030 1040 1050 1060 1070 1080 1090 1100 </enchantRoute>
@@ -800,7 +518,7 @@
 			<enchantRoute id="3" level="21,22,23,24,25"> 1410 1420 1430 1440 1450 1460 1470 1480 1490 1500 1510 1520 1530 1540 1550 1560 1570 1580 1590 1600 </enchantRoute>
 		</table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="2" level="21,22,23,24,25"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="2" level="21,22,23,24,25" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -854,53 +572,20 @@
 	<!-- Sends a breeze that pushes target toward you. Requires a sword / blunt weapon. -->
 	<skill id="30014" levels="15" name="Compelling Wind">
 		<enchantRoute id="1" level="11,12,13,14,15" /> <!-- Chance -->
-		<!-- TODO: Mind:
-			Decreases M. Def. by 1%.
-			Decreases M. Def. by 1.4%.
-			Decreases M. Def. by 1.8%.
-			Decreases M. Def. by 2.2%.
-			Decreases M. Def. by 2.6%.
-			Decreases M. Def. by 3%.
-			Decreases M. Def. by 3.4%.
-			Decreases M. Def. by 3.8%.
-			Decreases M. Def. by 4.2%.
-			Decreases M. Def. by 4.6%.
-			Decreases M. Def. by 5%.
-			Decreases M. Def. by 5.4%.
-			Decreases M. Def. by 5.8%.
-			Decreases M. Def. by 6.2%.
-			Decreases M. Def. by 6.6%.
-			Decreases M. Def. by 7%.
-			Decreases M. Def. by 7.4%.
-			Decreases M. Def. by 7.8%.
-			Decreases M. Def. by 8.2%.
-			Decreases M. Def. by 8.6%.
-			Decreases M. Def. by 9%.
-			Decreases M. Def. by 9.4%.
-			Decreases M. Def. by 9.8%.
-			Decreases M. Def. by 10.2%.
-			Decreases M. Def. by 10.6%.
-			Decreases M. Def. by 11%.
-			Decreases M. Def. by 11.4%.
-			Decreases M. Def. by 11.8%.
-			Decreases M. Def. by 12.2%.
-			Decreases M. Def. by 12.6%.
-		-->
-		<enchantRoute id="2" level="11,12,13,14,15" enabled="false" />
+		<enchantRoute id="2" level="11,12,13,14,15" /> <!-- Mind -->
 		<enchantRoute id="3" level="11,12,13,14,15" /> <!-- Distance -->
 		<table name="#mpConsume"> 31 31 32 32 33 33 34 34 34 34 34 35 36 37 38 </table>
 		<table name="#landRate"> 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 
-			<enchantRoute id="1" level="11"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
-			<enchantRoute id="1" level="12"> 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 </enchantRoute>
-			<enchantRoute id="1" level="13"> 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 </enchantRoute>
-			<enchantRoute id="1" level="14"> 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 </enchantRoute>
-			<enchantRoute id="1" level="15"> 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 </enchantRoute>
+			<enchantRoute id="1" level="11,12,13,14,15" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#castRange"> 900 
 			<enchantRoute id="3" level="11,12,13,14,15"> 910 920 930 940 950 960 970 980 990 1000 1010 1020 1030 1040 1050 1060 1070 1080 1090 1100 </enchantRoute>
 		</table>
 		<table name="#effectRange"> 1400 
 			<enchantRoute id="3" level="11,12,13,14,15"> 1410 1420 1430 1440 1450 1460 1470 1480 1490 1500 1510 1520 1530 1540 1550 1560 1570 1580 1590 1600 </enchantRoute>
+		</table>
+		<table name="#subPercentMDef"> 0 
+			<enchantRoute id="2" level="11,12,13,14,15"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DEBUFF" />
@@ -921,6 +606,7 @@
 			<abnormal duration="5" landRate="#landRate" stackLvl="1" stackType="love" visualEffect="targetHeart">
 				<effect type="Love" val="0" />
 				<subPercent stat="runSpd" val="50" />
+				<subPercent stat="mDef" val="#subPercentMDef" />
 			</abnormal>
 		</for>
 	</skill>
@@ -1066,14 +752,10 @@
 		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Chance -->
 		<table name="#mpConsume"> 670 677 682 687 690 694 699 705 711 717 723 </table>
 		<table name="#power"> 533 561 589 617 645 673 701 729 743 757 771 
-			<enchantRoute id="1" level="7"> 708 711 714 716 719 721 724 726 729 732 735 737 740 742 744 747 750 753 755 758 761 763 765 768 771 773 776 779 781 784 </enchantRoute>
-			<enchantRoute id="1" level="8"> 736 739 742 745 748 749 753 755 758 761 764 766 769 772 774 777 780 783 785 788 791 793 796 799 802 804 807 810 812 815 </enchantRoute>
-			<enchantRoute id="1" level="9"> 750 753 756 759 762 764 768 770 773 776 779 781 784 787 789 792 795 798 800 803 806 808 811 814 817 820 823 825 828 831 </enchantRoute>
-			<enchantRoute id="1" level="10"> 765 768 771 774 777 778 782 784 787 790 793 796 799 802 804 807 810 813 815 818 821 824 827 830 833 835 838 841 843 846 </enchantRoute>
-			<enchantRoute id="1" level="11"> 779 782 785 788 791 793 796 799 802 805 808 810 813 816 819 822 825 828 830 833 837 839 842 845 848 850 853 857 859 862 </enchantRoute>
+			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="2" level="7,8,9,10,11"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -1225,77 +907,16 @@
 	-->
 	<skill id="30029" levels="4" name="Divine Storm">
 		<enchantRoute id="1" level="1,2,3,4" /> <!-- Power -->
-		<!-- TODO: Chance:
-			Increases Skill Success Rate by 1%.
-			Increases Skill Success Rate by 2%.
-			Increases Skill Success Rate by 3%.
-			Increases Skill Success Rate by 4%.
-			Increases Skill Success Rate by 5%.
-			Increases Skill Success Rate by 6%.
-			Increases Skill Success Rate by 7%.
-			Increases Skill Success Rate by 8%.
-			Increases Skill Success Rate by 9%.
-			Increases Skill Success Rate by 10%.
-			Increases Skill Success Rate by 11%.
-			Increases Skill Success Rate by 12%.
-			Increases Skill Success Rate by 13%.
-			Increases Skill Success Rate by 14%.
-			Increases Skill Success Rate by 15%.
-			Increases Skill Success Rate by 16%.
-			Increases Skill Success Rate by 17%.
-			Increases Skill Success Rate by 18%.
-			Increases Skill Success Rate by 19%.
-			Increases Skill Success Rate by 20%.
-			Increases Skill Success Rate by 21%.
-			Increases Skill Success Rate by 22%.
-			Increases Skill Success Rate by 23%.
-			Increases Skill Success Rate by 24%.
-			Increases Skill Success Rate by 25%.
-			Increases Skill Success Rate by 26%.
-			Increases Skill Success Rate by 27%.
-			Increases Skill Success Rate by 28%.
-			Increases Skill Success Rate by 29%.
-			Increases Skill Success Rate by 30%.
-		-->
-		<enchantRoute id="2" level="1,2,3,4" enabled="false" />
-		<!-- TODO: Wild:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="3" level="1,2,3,4" enabled="false" />
+		<enchantRoute id="2" level="1,2,3,4" /> <!-- Chance -->
+		<enchantRoute id="3" level="1,2,3,4" /> <!-- Wild -->
 		<table name="#power"> 448 465 473 481 
-			<enchantRoute id="1" level="1"> 452 454 456 458 460 461 463 464 466 468 470 471 473 474 476 478 479 481 482 484 486 487 489 491 493 494 496 498 499 501 </enchantRoute>
-			<enchantRoute id="1" level="2"> 470 472 473 475 477 478 480 482 484 485 487 489 491 492 494 496 498 499 501 503 505 506 508 510 512 513 515 517 518 520 </enchantRoute>
-			<enchantRoute id="1" level="3"> 478 480 482 483 485 486 489 490 492 494 496 497 499 501 502 504 506 508 509 511 513 515 517 518 520 522 524 526 527 529 </enchantRoute>
-			<enchantRoute id="1" level="4"> 486 488 490 492 494 494 497 498 500 502 504 506 507 509 511 513 515 517 518 520 522 523 525 527 529 531 532 534 536 538 </enchantRoute>
+			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0 
+			<enchantRoute id="3" level="1,2,3,4"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#landRate"> 70 
+			<enchantRoute id="2" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="MDAM" />
@@ -1307,10 +928,11 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="skillRadius" val="200" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Sword,Big Sword,Blunt,Big Blunt" />
 		<for>
-			<abnormal duration="1" noicon="1">
-				<effect activationChance="100" chanceType="ON_EXIT" triggeredId="30030" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
+			<abnormal landRate="#landRate" noicon="1">
+				<effect activationChance="100" chanceType="ON_START" triggeredId="30030" triggeredLevel="1" type="ChanceSkillTrigger" val="0" />
 			</abnormal>
 		</for>
 	</skill>
@@ -1321,7 +943,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="isMagic" val="true" />
 		<for>
-			<abnormal count="5" duration="1" landRate="60" stackLvl="1" stackType="storm_captivity" visualEffect="stormRoot">
+			<abnormal count="5" duration="1" stackLvl="1" stackType="storm_captivity" visualEffect="stormRoot">
 				<effect type="DamOverTime" val="200" />
 				<effect type="Root" val="0" />
 			</abnormal>
@@ -1598,51 +1220,18 @@
 	<skill id="30500" levels="28" name="Lateral Hit">
 		<enchantRoute id="1" level="24,25,26,27,28" /> <!-- Power -->
 		<enchantRoute id="2" level="24,25,26,27,28" /> <!-- Chance -->
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="3" level="24,25,26,27,28" enabled="false" />
+		<enchantRoute id="3" level="24,25,26,27,28" /> <!-- Focus -->
 		<table name="#mpConsume"> 8 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#power"> 22 77 141 221 669 856 1073 1323 1602 1913 2256 2629 3034 3879 4149 4434 4733 18990 20811 23098 25950 29500 33928 39478 46478 47996 49514 51032 
-			<enchantRoute id="1" level="24"> 39873 40268 40662 41057 41452 41847 42241 42636 43031 43426 43821 44215 44610 45005 45400 45794 46189 46584 46979 47374 47768 48163 48558 48953 49348 49742 50137 50532 50927 51321 </enchantRoute>
-			<enchantRoute id="1" level="25"> 46943 47408 47872 48337 48802 49267 49731 50196 50661 51126 51591 52055 52520 52985 53450 53914 54379 54844 55309 55774 56238 56703 57168 57633 58098 58562 59027 59492 59957 60421 </enchantRoute>
-			<enchantRoute id="1" level="26"> 48476 48956 49436 49916 50396 50876 51356 51836 52316 52796 53276 53756 54235 54715 55195 55675 56155 56635 57115 57595 58075 58555 59035 59515 59995 60475 60955 61435 61915 62395 </enchantRoute>
-			<enchantRoute id="1" level="27"> 50009 50504 50999 51495 51990 52485 52980 53475 53970 54465 54961 55456 55951 56446 56941 57436 57931 58427 58922 59417 59912 60407 60902 61397 61893 62388 62883 63378 63873 64368 </enchantRoute>
-			<enchantRoute id="1" level="28"> 51542 52053 52563 53073 53584 54094 54604 55115 55625 56135 56646 57156 57666 58176 58687 59197 59707 60218 60728 61238 61749 62259 62769 63280 63790 64300 64811 65321 65831 66342 </enchantRoute>
+			<enchantRoute id="1" level="24,25,26,27,28" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#stackLvl"> 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 3 3 3 3 3 3 3 3 3 3 </table>
 		<table name="#pDef"> 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 30 30 30 30 30 30 30 30 30 30 30 </table>
 		<table name="#landRate"> 70 
-			<enchantRoute id="2" level="24,25,26,27,28"> 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 </enchantRoute>
+			<enchantRoute id="2" level="24,25,26,27,28" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 15.0 
+			<enchantRoute id="3" level="24,25,26,27,28" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -1654,7 +1243,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="baseCritRate" val="15" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dual Fist" />
 		<for>
@@ -1694,46 +1283,13 @@
 	-->
 	<skill id="30501" levels="27" name="Backspin Blow">
 		<enchantRoute id="1" level="23,24,25,26,27" /> <!-- Power -->
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="23,24,25,26,27" enabled="false" />
+		<enchantRoute id="2" level="23,24,25,26,27" /> <!-- Focus -->
 		<table name="#mpConsume"> 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#power"> 129 235 369 1116 1428 1789 2205 2671 3189 3760 4383 5058 6466 6916 7390 7888 28134 30832 34221 38446 43706 50268 58492 68865 71115 73365 75615 
-			<enchantRoute id="1" level="23"> 59077 59662 60247 60832 61417 62002 62586 63171 63756 64341 64926 65511 66096 66681 67266 67851 68436 69021 69605 70190 70775 71360 71945 72530 73115 73700 74285 74870 75455 76040 </enchantRoute>
-			<enchantRoute id="1" level="24"> 69554 70242 70931 71620 72308 72997 73686 74374 75063 75752 76440 77129 77817 78506 79195 79883 80572 81261 81949 82638 83327 84015 84704 85393 86081 86770 87459 88147 88836 89525 </enchantRoute>
-			<enchantRoute id="1" level="25"> 71826 72537 73248 73960 74671 75382 76093 76804 77515 78227 78938 79649 80360 81071 81782 82493 83205 83916 84627 85338 86049 86760 87471 88183 88894 89605 90316 91027 91738 92450 </enchantRoute>
-			<enchantRoute id="1" level="26"> 74099 74832 75566 76300 77033 77767 78501 79234 79968 80702 81435 82169 82902 83636 84370 85103 85837 86571 87304 88038 88772 89505 90239 90973 91706 92440 93174 93907 94641 95375 </enchantRoute>
-			<enchantRoute id="1" level="27"> 76371 77127 77883 78640 79396 80152 80908 81664 82420 83177 83933 84689 85445 86201 86957 87713 88470 89226 89982 90738 91494 92250 93006 93763 94519 95275 96031 96787 97543 98300 </enchantRoute>
+			<enchantRoute id="1" level="23,24,25,26,27" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 5.0 
+			<enchantRoute id="2" level="23,24,25,26,27" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -1745,7 +1301,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="baseCritRate" val="5" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dual Fist" />
 		<set name="ignoredDefPercent" val="30" />
@@ -1756,7 +1312,7 @@
 		<enchantRoute id="2" level="20,21,22,23,24" /> <!-- Hex -->
 		<table name="#mpConsume"> 34 37 41 45 49 54 57 61 65 68 70 71 72 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="1" level="20,21,22,23,24"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="1" level="20,21,22,23,24" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="20,21,22,23,24"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -1794,46 +1350,13 @@
 	-->
 	<skill id="30503" levels="11" name="Spinning Kick">
 		<enchantRoute id="1" level="7,8,9,10,11" /> <!-- Power -->
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="7,8,9,10,11" enabled="false" />
+		<enchantRoute id="2" level="7,8,9,10,11" /> <!-- Focus -->
 		<table name="#mpConsume"> 81 81 82 83 83 83 84 84 84 84 84 </table>
 		<table name="#power"> 35167 36755 40540 45273 51165 58056 67683 79217 88893 91705 94517 
-			<enchantRoute id="1" level="7"> 68360 69037 69713 70390 71067 71744 72421 73098 73774 74451 75128 75805 76482 77159 77835 78512 79189 79866 80543 81220 81896 82573 83250 83927 84604 85281 85957 86634 87311 87988 </enchantRoute>
-			<enchantRoute id="1" level="8"> 80009 80801 81594 82386 83178 83970 84762 85554 86347 87139 87931 88723 89515 90307 91100 91892 92684 93476 94268 95060 95853 96645 97437 98229 99021 99813 100606 101398 102190 102982 </enchantRoute>
-			<enchantRoute id="1" level="9"> 89782 90671 91560 92449 93338 94227 95116 96004 96893 97782 98671 99560 100449 101338 102227 103116 104005 104894 105783 106672 107561 108449 109338 110227 111116 112005 112894 113783 114672 115561 </enchantRoute>
-			<enchantRoute id="1" level="10"> 92622 93539 94456 95373 96290 97207 98124 99041 99958 100876 101793 102710 103627 104544 105461 106378 107295 108212 109129 110046 110963 111880 112797 113714 114631 115548 116465 117382 118299 119217 </enchantRoute>
-			<enchantRoute id="1" level="11"> 95462 96407 97353 98298 99243 100188 101133 102078 103024 103969 104914 105859 106804 107749 108695 109640 110585 111530 112475 113420 114366 115311 116256 117201 118146 119091 120037 120982 121927 122872 </enchantRoute>
+			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0.0 
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -1845,6 +1368,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="60" />
 		<set name="effectRange" val="400" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="nextActionAttack" val="true" />
 		<set name="ignoreShld" val="true" />
 		<set name="weaponsAllowed" val="Dual Fist" />
@@ -1869,46 +1393,13 @@
 	-->
 	<skill id="30504" levels="16" name="Gravity Hit">
 		<enchantRoute id="1" level="12,13,14,15,16" /> <!-- Power -->
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="2" level="12,13,14,15,16" enabled="false" />
+		<enchantRoute id="2" level="12,13,14,15,16" /> <!-- Focus -->
 		<table name="#mpConsume"> 75 77 78 79 80 81 82 82 83 83 84 84 85 86 87 88 </table>
 		<table name="#power"> 10417 11147 11917 12727 13577 35167 38540 42776 48058 54633 62836 73116 86081 88893 91705 94517 
-			<enchantRoute id="1" level="12"> 73847 74578 75309 76041 76772 77503 78234 78965 79696 80428 81159 81890 82621 83352 84083 84815 85546 86277 87008 87739 88470 89202 89933 90664 91395 92126 92857 93588 94320 95051 </enchantRoute>
-			<enchantRoute id="1" level="13"> 86942 87803 88663 89524 90385 91246 92107 92967 93828 94689 95550 96411 97272 98132 98993 99854 100715 101576 102436 103297 104158 105019 105880 106740 107601 108462 109323 110184 111044 111905 </enchantRoute>
-			<enchantRoute id="1" level="14"> 89782 90671 91560 92449 93338 94227 95116 96004 96893 97782 98671 99560 100449 101338 102227 103116 104005 104894 105783 106672 107561 108449 109338 110227 111116 112005 112894 113783 114672 115561 </enchantRoute>
-			<enchantRoute id="1" level="15"> 92622 93539 94456 95373 96290 97207 98124 99041 99958 100876 101793 102710 103627 104544 105461 106378 107295 108212 109129 110046 110963 111880 112797 113714 114631 115548 116465 117382 118299 119217 </enchantRoute>
-			<enchantRoute id="1" level="16"> 95462 96407 97353 98298 99243 100188 101133 102078 103024 103969 104914 105859 106804 107749 108695 109640 110585 111530 112475 113420 114366 115311 116256 117201 118146 119091 120037 120982 121927 122872 </enchantRoute>
+			<enchantRoute id="1" level="12,13,14,15,16" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 15.0 
+			<enchantRoute id="2" level="12,13,14,15,16" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -1920,7 +1411,7 @@
 		<set name="reuseDelay" val="9000" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="baseCritRate" val="15" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="nextActionAttack" val="true" />
 		<set name="weaponsAllowed" val="Dual Fist" />
 		<set name="ignoredDefPercent" val="50" />
@@ -1943,14 +1434,10 @@
 		<enchantRoute id="3" level="6,7,8,9,10" /> <!-- Hex -->
 		<table name="#mpConsume"> 149 150 151 151 152 153 155 157 159 161 </table>
 		<table name="#power"> 17266 19164 21530 24475 28150 32755 38563 39823 41083 42343 
-			<enchantRoute id="1" level="6"> 33083 33410 33738 34065 34393 34720 35048 35375 35703 36031 36358 36686 37013 37341 37668 37996 38323 38651 38978 39306 39634 39961 40289 40616 40944 41271 41599 41926 42254 42582 </enchantRoute>
-			<enchantRoute id="1" level="7"> 38949 39334 39720 40106 40491 40877 41262 41648 42034 42419 42805 43191 43576 43962 44347 44733 45119 45504 45890 46276 46661 47047 47432 47818 48204 48589 48975 49361 49746 50132 </enchantRoute>
-			<enchantRoute id="1" level="8"> 40221 40619 41018 41416 41814 42212 42611 43009 43407 43805 44204 44602 45000 45398 45796 46195 46593 46991 47389 47788 48186 48584 48982 49381 49779 50177 50575 50973 51372 51770 </enchantRoute>
-			<enchantRoute id="1" level="9"> 41494 41905 42315 42726 43137 43548 43959 44370 44780 45191 45602 46013 46424 46835 47245 47656 48067 48478 48889 49300 49710 50121 50532 50943 51354 51765 52175 52586 52997 53408 </enchantRoute>
-			<enchantRoute id="1" level="10"> 42766 43190 43613 44037 44460 44884 45307 45730 46154 46577 47001 47424 47848 48271 48694 49118 49541 49965 50388 50812 51235 51658 52082 52505 52929 53352 53776 54199 54622 55046 </enchantRoute>
+			<enchantRoute id="1" level="6,7,8,9,10" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#landRate"> 60 
-			<enchantRoute id="2" level="6,7,8,9,10"> 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 </enchantRoute>
+			<enchantRoute id="2" level="6,7,8,9,10" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="3" level="6,7,8,9,10"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -1996,14 +1483,10 @@
 		<enchantRoute id="3" level="10,11,12,13,14" /> <!-- Hex -->
 		<table name="#mpConsume"> 141 143 146 147 149 150 151 151 152 153 155 157 159 161 </table>
 		<table name="#power"> 5164 5518 5890 19693 21581 23953 26909 30589 35181 40936 48195 49769 51343 52917 
-			<enchantRoute id="1" level="10"> 41345 41755 42164 42573 42983 43392 43802 44211 44620 45030 45439 45848 46258 46667 47076 47486 47895 48304 48714 49123 49533 49942 50351 50761 51170 51579 51989 52398 52807 53217 </enchantRoute>
-			<enchantRoute id="1" level="11"> 48677 49159 49641 50123 50605 51087 51569 52051 52533 53015 53496 53978 54460 54942 55424 55906 56388 56870 57352 57834 58316 58798 59280 59762 60244 60726 61208 61690 62172 62654 </enchantRoute>
-			<enchantRoute id="1" level="12"> 50267 50764 51262 51760 52257 52755 53253 53751 54248 54746 55244 55741 56239 56737 57234 57732 58230 58727 59225 59723 60220 60718 61216 61714 62211 62709 63207 63704 64202 64700 </enchantRoute>
-			<enchantRoute id="1" level="13"> 51856 52370 52883 53397 53910 54424 54937 55450 55964 56477 56991 57504 58018 58531 59044 59558 60071 60585 61098 61612 62125 62638 63152 63665 64179 64692 65206 65719 66232 66746 </enchantRoute>
-			<enchantRoute id="1" level="14"> 53446 53975 54505 55034 55563 56092 56621 57150 57680 58209 58738 59267 59796 60325 60855 61384 61913 62442 62971 63500 64030 64559 65088 65617 66146 66675 67205 67734 68263 68792 </enchantRoute>
+			<enchantRoute id="1" level="10,11,12,13,14" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#landRate"> 70 
-			<enchantRoute id="2" level="10,11,12,13,14"> 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 </enchantRoute>
+			<enchantRoute id="2" level="10,11,12,13,14" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="3" level="10,11,12,13,14"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -2041,7 +1524,7 @@
 			<enchantRoute id="1" level="20,21,22,23,24"> 810 820 830 840 850 860 870 880 890 900 910 920 930 940 950 960 970 980 990 1000 </enchantRoute>
 		</table>
 		<table name="#landRate"> 50 
-			<enchantRoute id="2" level="20,21,22,23,24"> 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 </enchantRoute>
+			<enchantRoute id="2" level="20,21,22,23,24" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DEBUFF" />
@@ -2203,42 +1686,13 @@
 	-->
 	<skill id="30512" levels="3" name="Distortion">
 		<enchantRoute id="1" level="1,2,3" /> <!-- Time -->
-		<!-- TODO: Counter:
-			Decreases P. Critical Damage by 1%.
-			Decreases P. Critical Damage by 1.5%.
-			Decreases P. Critical Damage by 2%.
-			Decreases P. Critical Damage by 2.5%.
-			Decreases P. Critical Damage by 3%.
-			Decreases P. Critical Damage by 3.5%.
-			Decreases P. Critical Damage by 4%.
-			Decreases P. Critical Damage by 4.5%.
-			Decreases P. Critical Damage by 5%.
-			Decreases P. Critical Damage by 5.5%.
-			Decreases P. Critical Damage by 6%.
-			Decreases P. Critical Damage by 6.5%.
-			Decreases P. Critical Damage by 7%.
-			Decreases P. Critical Damage by 7.5%.
-			Decreases P. Critical Damage by 8%.
-			Decreases P. Critical Damage by 8.5%.
-			Decreases P. Critical Damage by 9%.
-			Decreases P. Critical Damage by 9.5%.
-			Decreases P. Critical Damage by 10%.
-			Decreases P. Critical Damage by 10.5%.
-			Decreases P. Critical Damage by 11%.
-			Decreases P. Critical Damage by 11.5%.
-			Decreases P. Critical Damage by 12%.
-			Decreases P. Critical Damage by 12.5%.
-			Decreases P. Critical Damage by 13%.
-			Decreases P. Critical Damage by 13.5%.
-			Decreases P. Critical Damage by 14%.
-			Decreases P. Critical Damage by 14.5%.
-			Decreases P. Critical Damage by 15%.
-			Decreases P. Critical Damage by 15.5%.
-		-->
-		<enchantRoute id="2" level="1,2,3" enabled="false" />
+		<enchantRoute id="2" level="1,2,3" /> <!-- Counter -->
 		<table name="#pAtk"> 5 10 15 </table>
 		<table name="#duration"> 60 
 			<enchantRoute id="1" level="1,2,3"> 61 62 63 64 65 66 67 68 69 70 70 71 71 72 72 73 73 74 74 75 75 76 76 77 77 78 78 79 79 80 </enchantRoute>
+		</table>
+		<table name="#subPercentCritVuln"> 0 
+			<enchantRoute id="2" level="1,2,3"> 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 14.5 15 15.5 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2255,6 +1709,7 @@
 				<addPercent stat="pAtk" val="#pAtk" />
 				<addPercent stat="pCritDmg" val="#pAtk" />
 				<addPercent stat="physicalSkillPower" val="#pAtk" />
+				<subPercent stat="critVuln" val="#subPercentCritVuln" />
 			</abnormal>
 		</for>
 	</skill>
@@ -2342,7 +1797,7 @@
 		<table name="#mpConsume"> 73 74 75 75 75 76 76 77 78 79 80 </table>
 		<table name="#runSpd"> 5 10 15 20 25 30 35 40 45 50 55 </table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="1" level="7,8,9,10,11"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="2" level="7,8,9,10,11"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -2382,14 +1837,10 @@
 		<enchantRoute id="3" level="7,8,9,10,11" /> <!-- Hex -->
 		<table name="#mpConsume"> 1479 1487 1500 1510 1516 1523 1532 1544 1556 1568 1580 </table>
 		<table name="#power"> 19693 20582 22701 25350 28648 32757 37894 44352 49769 51343 52917 
-			<enchantRoute id="1" level="7"> 38273 38652 39031 39410 39789 40168 40547 40926 41304 41683 42062 42441 42820 43199 43578 43957 44336 44715 45094 45473 45852 46231 46610 46989 47368 47746 48125 48504 48883 49262 </enchantRoute>
-			<enchantRoute id="1" level="8"> 44796 45239 45683 46126 46570 47013 47457 47900 48344 48787 49231 49674 50118 50561 51005 51448 51892 52335 52779 53222 53666 54109 54553 54996 55440 55884 56327 56771 57214 57658 </enchantRoute>
-			<enchantRoute id="1" level="9"> 50267 50764 51262 51760 52257 52755 53253 53751 54248 54746 55244 55741 56239 56737 57234 57732 58230 58727 59225 59723 60220 60718 61216 61714 62211 62709 63207 63704 64202 64700 </enchantRoute>
-			<enchantRoute id="1" level="10"> 51856 52370 52883 53397 53910 54424 54937 55450 55964 56477 56991 57504 58018 58531 59044 59558 60071 60585 61098 61612 62125 62638 63152 63665 64179 64692 65206 65719 66232 66746 </enchantRoute>
-			<enchantRoute id="1" level="11"> 53446 53975 54505 55034 55563 56092 56621 57150 57680 58209 58738 59267 59796 60325 60855 61384 61913 62442 62971 63500 64030 64559 65088 65617 66146 66675 67205 67734 68263 68792 </enchantRoute>
+			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#landRate"> 70 
-			<enchantRoute id="2" level="7,8,9,10,11"> 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 </enchantRoute>
+			<enchantRoute id="2" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="3" level="7,8,9,10,11"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -2567,7 +2018,7 @@
 			<enchantRoute id="2" level="11,12,13,14,15"> 1110 1120 1130 1140 1150 1160 1170 1180 1190 1200 1210 1220 1230 1240 1250 1260 1270 1280 1290 1300 </enchantRoute>
 		</table>
 		<table name="#landRate"> 70 
-			<enchantRoute id="1" level="11,12,13,14,15"> 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 </enchantRoute>
+			<enchantRoute id="1" level="11,12,13,14,15" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="3" level="11,12,13,14,15"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -2830,7 +2281,7 @@
 			<enchantRoute id="2" level="7,8,9,10,11"> 810 820 830 840 850 860 870 880 890 900 910 920 930 940 950 960 970 980 990 1000 </enchantRoute>
 		</table>
 		<table name="#landRate"> 80 
-			<enchantRoute id="1" level="7,8,9,10,11"> 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 </enchantRoute>
+			<enchantRoute id="1" level="7,8,9,10,11" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<table name="#subPercentPDef"> 0 
 			<enchantRoute id="3" level="7,8,9,10,11"> 1 1.4 1.8 2.2 2.6 3 3.4 3.8 4.2 4.6 5 5.4 5.8 6.2 6.6 7 7.4 7.8 8.2 8.6 9 9.4 9.8 10.2 10.6 11 11.4 11.8 12.2 12.6 </enchantRoute>
@@ -2864,39 +2315,7 @@
 		Level 4: Throws a powerful punch to a fallen target with 102392 Power added to P. Atk. Ignores 50% of target's P. Def. Fist weapon must be equipped.
 	-->
 	<skill id="30547" levels="4" name="Stamp Punch">
-		<!-- TODO: Focus:
-			Increases P. Skill Critical Rate by 1%.
-			Increases P. Skill Critical Rate by 2%.
-			Increases P. Skill Critical Rate by 3%.
-			Increases P. Skill Critical Rate by 4%.
-			Increases P. Skill Critical Rate by 5%.
-			Increases P. Skill Critical Rate by 6%.
-			Increases P. Skill Critical Rate by 7%.
-			Increases P. Skill Critical Rate by 8%.
-			Increases P. Skill Critical Rate by 9%.
-			Increases P. Skill Critical Rate by 10%.
-			Increases P. Skill Critical Rate by 11%.
-			Increases P. Skill Critical Rate by 12%.
-			Increases P. Skill Critical Rate by 13%.
-			Increases P. Skill Critical Rate by 14%.
-			Increases P. Skill Critical Rate by 15%.
-			Increases P. Skill Critical Rate by 16%.
-			Increases P. Skill Critical Rate by 17%.
-			Increases P. Skill Critical Rate by 18%.
-			Increases P. Skill Critical Rate by 19%.
-			Increases P. Skill Critical Rate by 20%.
-			Increases P. Skill Critical Rate by 21%.
-			Increases P. Skill Critical Rate by 22%.
-			Increases P. Skill Critical Rate by 23%.
-			Increases P. Skill Critical Rate by 24%.
-			Increases P. Skill Critical Rate by 25%.
-			Increases P. Skill Critical Rate by 26%.
-			Increases P. Skill Critical Rate by 27%.
-			Increases P. Skill Critical Rate by 28%.
-			Increases P. Skill Critical Rate by 29%.
-			Increases P. Skill Critical Rate by 30%.
-		-->
-		<enchantRoute id="1" level="1,2,3,4" enabled="false" />
+		<enchantRoute id="1" level="1,2,3,4" /> <!-- Focus -->
 		<enchantRoute id="2" level="1,2,3,4" /> <!-- Distance -->
 		<table name="#power"> 91570 95080 98736 102392 </table>
 		<table name="#castRange"> 80 
@@ -2904,6 +2323,9 @@
 		</table>
 		<table name="#effectRange"> 400 
 			<enchantRoute id="2" level="1,2,3,4"> 410 420 430 440 450 460 650 660 670 680 690 700 710 720 730 740 750 760 770 780 </enchantRoute>
+		</table>
+		<table name="#baseCritRate"> 0.0 
+			<enchantRoute id="1" level="1,2,3,4" type="ADD_PERCENT"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="PDAM" />
@@ -2915,6 +2337,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="castRange" val="#castRange" />
 		<set name="effectRange" val="#effectRange" />
+		<set name="baseCritRate" val="#baseCritRate" />
 		<set name="weaponsAllowed" val="Dual Fist" />
 		<set name="ignoredDefPercent" val="50" />
 		<for>

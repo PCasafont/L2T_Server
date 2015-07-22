@@ -10486,21 +10486,20 @@ public class L2PcInstance extends L2Playable
 	 */
 	public int getEnchantEffect()
 	{
-		L2ItemInstance wpn = getActiveWeaponInstance();
-		
-		if (wpn == null)
+		if (getIsWeaponGlowDisabled())
 			return 0;
 		
-		//LasTravel: Note: In official client hero weapons show enchant effect, but hero weapons can't be enchanted, so we will return always 0 as enchant effect on hero weapons
-		if (wpn.isHeroItem())
+		L2ItemInstance wpn = getActiveWeaponInstance();
+		if (wpn == null)
 			return 0;
 		
 		if (Config.isServer(Config.TENKAI))
 		{
 			int effect = Math.min(12, wpn.getEnchantLevel());
-			int[] tarziphEffect = {0, 1, 2, 3, 4, 6, 9, 11, 13, 14, 15, 16, 17};
-			return tarziphEffect[effect];
+			int[] effectArray = {0, 1, 2, 3, 4, 6, 9, 11, 13, 14, 15, 16, 17};
+			return effectArray[effect];
 		}
+		
 		return Math.min(127, wpn.getEnchantLevel());
 	}
 	
@@ -18282,6 +18281,17 @@ public class L2PcInstance extends L2Playable
 	public boolean getIsOfflineBuffer()
 	{
 		return getConfigValue("isOfflineBuffer");
+	}
+	
+	public boolean getIsWeaponGlowDisabled()
+	{
+		return getConfigValue("isWeaponGlowDisabled");
+	}
+	
+	public void setIsWeaponGlowDisabled(boolean b)
+	{
+		setConfigValue("isWeaponGlowDisabled", b);
+		broadcastUserInfo();
 	}
 	
 	public boolean getIsArmorGlowDisabled()

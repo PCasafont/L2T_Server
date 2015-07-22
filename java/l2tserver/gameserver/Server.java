@@ -81,7 +81,7 @@ import l2tserver.gameserver.datatables.SubPledgeSkillTree;
 import l2tserver.gameserver.datatables.SummonItemsData;
 import l2tserver.gameserver.datatables.TeleportLocationTable;
 import l2tserver.gameserver.datatables.UITable;
-import l2tserver.gameserver.events.DMGManager;
+import l2tserver.gameserver.events.DamageManager;
 import l2tserver.gameserver.events.HiddenChests;
 import l2tserver.gameserver.events.LotterySystem;
 import l2tserver.gameserver.events.RankingKillInfo;
@@ -433,7 +433,7 @@ public class Server
 			CustomOfflineBuffersManager.getInstance();
 		
 		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-			DMGManager.getInstance();
+			DamageManager.getInstance();
 		
 		if (Config.ENABLE_CUSTOM_AUCTIONS)
 			CustomAuctionManager.getInstance();

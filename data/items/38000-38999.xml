@@ -259,7 +259,8 @@
 	</item>
 	<item id="38079" type="EtcItem" name="Territory Card: Imperial Tomb" icon="icon.card2_event_tomb" weight="0" isStackable="true">
 	</item>
-	<item id="38080" type="EtcItem" name="Territory Card: Seed of Annihilation" icon="icon.card2_event_annihilation" weight="0" isStackable="true">
+	<item id="38080" type="EtcItem" name="Territory Card: Seed of Annihilation" icon="icon.card2_event_annihilation" weight="0"
+			isStackable="true">
 	</item>
 	<item id="38081" type="EtcItem" name="Territory Card: Ketra Orc Outpost" icon="icon.card2_event_orcbase" weight="0" isStackable="true">
 	</item>

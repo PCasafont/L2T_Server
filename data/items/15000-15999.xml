@@ -3775,6 +3775,7 @@
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />
 		<set stat="pAtkSpd" val="379" />
+		<set stat="rCrit" val="8" />
 		<skill id="8246" level="1" /> <!-- Transform Pumpkin Ghost -->
 	</item>
 	<!-- Gives a chance to acquire one of the following transformation scrolls: Onyx Beast, Doom Wraith, and Grail Apostle. -->

@@ -556,13 +556,11 @@ public class Octavis extends L2AttackableAIScript
 					
 					if (world.octavisLions.getCurrentHp() < world.octavisLions.getMaxHp() * 0.50)
 					{
-						if (npc.isInvul())
-							npc.setIsInvul(false);
+						npc.setIsInvul(false);
 					}
 					else
 					{
-						if (!npc.isInvul())
-							npc.setIsInvul(true);
+						npc.setIsInvul(true);
 					}
 				}	
 			}

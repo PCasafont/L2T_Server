@@ -8823,8 +8823,8 @@
 		<capsuledItem id="14675" min="1" max="1" chance="100.0" /> <!-- Agathion - Neolithica -->
 	</item>
 	<!-- Money used by magic lab animals. Take it to a magic lab to be rewarded. -->
-	<item id="14720" type="EtcItem" name="Event - Apiga" icon="icon.etc_pig_adena_i01" isDropable="false" isStackable="true" isTradable="false"
-			isSellable="false">
+	<item id="14720" type="EtcItem" name="Event - Apiga" icon="icon.etc_pig_adena_i01" isTradable="false" isDropable="false"
+			isSellable="false" isStackable="true">
 	</item>
 	<!-- Rare form of money used by magic lab animals. If you take it to a magic lab you can be rewarded. -->
 	<item id="14721" type="EtcItem" name="Event - Golden Apiga" icon="icon.etc_pig_adena_i00" isDropable="false" isStackable="true">

@@ -1307,9 +1307,9 @@ public final class Formulas
 		// SSBoost > 0 have different calculation
 		double multiplier = element * pvpBonus;
 		if (skill.getSSBoost() > 0)
-			damage += 70. * (atk + power) * ssMul * multiplier / defence;
+			damage += 77. * (atk * 1.8 + power) * ssMul * multiplier / defence;
 		else
-			damage += 70. * ((atk * ssMul) + power) * multiplier / defence;
+			damage += 77. * ((atk * 1.8 * ssMul) + power) * multiplier / defence;
 		
 		if (isInFrontOf(target, attacker))
 			damage = attacker.calcStat(Stats.CRITICAL_DMG_FRONT, damage, target, skill);
@@ -1455,15 +1455,10 @@ public final class Formulas
 			
 			float ssboost = skill.getSSBoost();
 			
-			if (ssboost <= 0)
-				damage += skillpower;
-			else if (ssboost > 0)
-			{
-				if (ssMul > L2ItemInstance.CHARGED_NONE)
-					skillpower *= ssboost * ssMul / L2ItemInstance.CHARGED_SOULSHOT;
-				
-				damage += skillpower;
-			}
+			if (ssboost > 0 && ssMul > L2ItemInstance.CHARGED_NONE)
+				skillpower *= ssboost * ssMul / L2ItemInstance.CHARGED_SOULSHOT;
+			
+			damage += skillpower + damage * 0.8;
 		}
 		
 		// defence modifier depending of the attacker weapon
@@ -1987,14 +1982,10 @@ public final class Formulas
 	/** Returns true in case of critical hit */
 	public static final boolean calcCrit(double rate, L2Character target)
 	{
-		final boolean success = rate > Rnd.get(1000);
+		if (target != null)
+			rate /= target.calcStat(Stats.CRIT_DAMAGE_EVASION, 1, null, null);
 		
-		// support for critical damage evasion
-		if (success)
-		{
-			if (target == null)
-				return true; // no effect
-		}
+		final boolean success = rate > Rnd.get(1000);
 		return success;
 	}
 	

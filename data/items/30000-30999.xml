@@ -6453,7 +6453,7 @@
 	</item>
 	<!-- The cloak of an Olympiad Hero. STR/DEX/CON/INT/WIT/MEN + 3 when equipped. Decreases PvP Damage by 15%. -->
 	<item id="30372" type="Armor" name="Hero's Cloak" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back" immediateEffect="1"
-			crystalType="r" weight="220" isHeroItem="true" isTradable="false" isDropable="false" isSellable="false">
+			crystalType="r" weight="220" isTradable="false" isDropable="false" isSellable="false" isHeroItem="true">
 		<cond msgId="1518">
 			<player isHero="true" />
 		</cond>
@@ -6464,8 +6464,8 @@
 	<!-- Glorious Cloak of an Olympiad Hero. STR/DEX/CON/INT/WIT/MEN + 2 when equipped. Decreases PvP Damage by 5%. -->
 	<item id="30373" type="Armor" name="Glorious Cloak" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back"
 			immediateEffect="1" crystalType="r" weight="220">
-		<baseAdd stat="mDef" val="50" />
-		<baseAdd stat="pDef" val="60" />
+		<baseAdd stat="mDef" val="40" />
+		<baseAdd stat="pDef" val="50" />
 		<skill id="13137" level="1" /> <!-- Glorious Cloak -->
 	</item>
 	<!-- Box filled with M. Atk. It contains a useful item. -->
