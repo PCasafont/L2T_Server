@@ -10135,42 +10135,6 @@
 		Level 8: Max CP + 16% and Max HP + 8%. When equipped with heavy armor, received P./M. Critical Damage - 35%.
 	-->
 	<skill id="430" levels="8" name="Master of Combat">
-		<!-- TODO: Power:
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 81. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 1 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 82. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 2 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 83. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 3 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 84. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 4 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 85. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 5 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 86. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 6 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 87. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 7 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 88. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 8 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 89. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 9 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 90. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 10 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 91. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 11 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 92. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 12 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 93. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 13 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 94. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 14 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 95. When using a dualsword/fist weapon, increases P. Atk. by 80. | + 15 Power: Increases P. Atk. of sword/blunt weapon/polearm by 1.
-		-->
-		<enchantRoute id="1" level="8" enabled="false" />
-		<!-- TODO: Power:
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 81. | + 1 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 82. | + 2 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 83. | + 3 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 84. | + 4 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 85. | + 5 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 86. | + 6 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 87. | + 7 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 88. | + 8 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 89. | + 9 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 90. | + 10 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 91. | + 11 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 92. | + 12 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 93. | + 13 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 94. | + 14 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-			Increases Max CP by 5%. When using a sword/blunt weapon/spear, increases P. Atk. by 80. When using a dualsword/fist weapon, increases P. Atk. by 95. | + 15 Power: Increases P. Atk. of dualsword or fist weapon by 1.
-		-->
-		<enchantRoute id="2" level="8" enabled="false" />
 		<table name="#maxCp"> 2 4 6 8 10 12 14 16 </table>
 		<table name="#maxHp"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#critVuln"> 0 5 10 15 20 25 30 35 </table>
