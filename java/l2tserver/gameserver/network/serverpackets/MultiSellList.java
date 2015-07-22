@@ -24,10 +24,13 @@
  */
 package l2tserver.gameserver.network.serverpackets;
 
+import l2tserver.gameserver.datatables.ItemTable;
 import l2tserver.gameserver.datatables.MultiSell;
 import l2tserver.gameserver.model.multisell.Entry;
 import l2tserver.gameserver.model.multisell.Ingredient;
 import l2tserver.gameserver.model.multisell.ListContainer;
+import l2tserver.gameserver.network.clientpackets.Say2;
+import l2tserver.gameserver.templates.item.L2Item;
 
 /**
  * This class ...
@@ -102,6 +105,7 @@ public final class MultiSellList extends L2GameServerPacket
 					writeQ(0);
 					writeH(-1);
 				}
+				
 				writeQ(ing.getItemCount());
 				if (ing.getItemInfo() != null)
 				{
@@ -130,6 +134,16 @@ public final class MultiSellList extends L2GameServerPacket
 				writeD(ing.getItemId());
 				writeH(ing.getTemplate() != null ? ing.getTemplate().getType2() : -1);
 				writeQ(ing.getItemCount());
+				
+				if (ing.getItemCount() > Integer.MAX_VALUE)
+				{
+					L2Item productItem = ItemTable.getInstance().getTemplate(ent.getProducts().get(0).getItemId());
+					L2Item ingItem = ItemTable.getInstance().getTemplate(ing.getItemId());
+					getWriteClient().sendPacket(new CreatureSay(0, Say2.TELL,
+							"Store", "WARNING: The " + productItem.getName() + "'s necessary " +
+							ingItem.getName() + " quantity is " + ing.getItemCount()));
+				}
+				
 				if (ing.getItemInfo() != null)
 				{
 					writeH(ing.getItemInfo().getEnchantLevel()); // enchant level

@@ -1100,7 +1100,7 @@ public class L2Attackable extends L2Npc
 			
 			amount = getHating(mostHated);
 			
-			if (amount <= 0)
+			if (amount <= 0 && getAI() instanceof L2AttackableAI)
 			{
 				((L2AttackableAI)getAI()).setGlobalAggro(-25);
 				clearAggroList();

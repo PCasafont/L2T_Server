@@ -85,6 +85,9 @@ public class L2NpcActionShift implements IActionHandler
 			
 			NpcHtmlMessage html = new NpcHtmlMessage(0);
 			html.setFile(activeChar.getHtmlPrefix(), "admin/npcinfo.htm");
+
+			System.out.println(targetNpc.getPDef(null));
+			System.out.println(targetNpc.getTemplate().basePDef);
 			
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
 			html.replace("%class%", target.getClass().getSimpleName());

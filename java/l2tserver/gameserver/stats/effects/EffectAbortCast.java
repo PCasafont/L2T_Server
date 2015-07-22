@@ -60,6 +60,6 @@ public class EffectAbortCast extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		return false;
+		return true;
 	}
 }

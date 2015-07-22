@@ -1120,7 +1120,8 @@ public final class QuestState
 			// Otherwise, delete variables for quest and update database (quest CANNOT be created again => not repeatable)
 			if (_vars != null)
 			{
-				for (String var : _vars.keySet())
+				Map<String, String> toIterate = new HashMap<String, String>(_vars);
+				for (String var : toIterate.keySet())
 					unset(var);
 			}
 			

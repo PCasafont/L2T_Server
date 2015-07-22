@@ -1137,7 +1137,7 @@ public class L2PetInstance extends L2Summon
 	public void setName(String name)
 	{
 		L2ItemInstance controlItem = getControlItem();
-		if (getControlItem().getCustomType2() == (name == null ? 1 : 0 ))
+		if (controlItem != null && controlItem.getCustomType2() == (name == null ? 1 : 0 ))
 		{
 			// name not set yet
 			controlItem.setCustomType2(name != null ? 1 : 0 );
