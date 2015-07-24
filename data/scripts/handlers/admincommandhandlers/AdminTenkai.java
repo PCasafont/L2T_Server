@@ -47,7 +47,6 @@ import l2tserver.gameserver.network.SystemMessageId;
 import l2tserver.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2tserver.gameserver.network.serverpackets.SkillCoolTime;
 import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.network.serverpackets.TestPacket;
 import l2tserver.gameserver.templates.chars.L2NpcTemplate;
 import l2tserver.gameserver.util.Util;
 import l2tserver.log.Log;
@@ -173,7 +172,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_packet"))
 		{
-			StringTokenizer st = new StringTokenizer(command, " ");
+			/*StringTokenizer st = new StringTokenizer(command, " ");
 			String token = st.nextToken();
 			int type;
 			int[] args = new int[50];
@@ -213,9 +212,9 @@ public class AdminTenkai implements IAdminCommandHandler
 				else
 					args[i] = Integer.valueOf(token);
 				i++;
-			}
-			TestPacket tp = new TestPacket(type, args, i);
-			activeChar.sendPacket(tp);
+			}*/
+			//TestPacket tp = new TestPacket(type, args, i);
+			//activeChar.sendPacket(tp);
 		}
 		else if (command.startsWith("admin_refresh_skills"))
 		{

@@ -1,36 +1,36 @@
 package l2tserver.gameserver.network.serverpackets;
 
-import l2tserver.log.Log;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 /**
  * @author Pere
  */
 public class TestPacket extends L2GameServerPacket
 {
-	//private int _type;
-	private int[] _args;
-	private int _argsLenght;
+	private ByteBuffer _buffer = ByteBuffer.allocate(10000).order(ByteOrder.LITTLE_ENDIAN);
 	
-	public TestPacket(int type, int[] args, int argsLenght)
+	public void writeChar(int x)
 	{
-		//_type = type;
-		_args = args;
-		_argsLenght = argsLenght;
-		Log.info("TestPacket:");
+		_buffer.put((byte)x);
+	}
+	
+	public void writeShort(int x)
+	{
+		_buffer.putShort((short)x);
+	}
+	
+	public void writeInt(int x)
+	{
+		_buffer.putInt(x);
 	}
 	
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0xce);
-		Log.info("WriteC(0xce)");
-		//writeH(_type);
-		//Log.info("WriteH(0x" + Integer.toHexString(_type) + ")");
-		for (int i = 0; i < _argsLenght; i++)
-		{
-			writeD(_args[i]);
-			Log.info("WriteD(0x" + Integer.toHexString(_args[i]) + ")");
-		}
+		_buffer.flip();
+		while (_buffer.position() < _buffer.limit())
+			writeC(_buffer.get());
 	}
 	
 	/* (non-Javadoc)
@@ -39,12 +39,6 @@ public class TestPacket extends L2GameServerPacket
 	@Override
 	public String getType()
 	{
-		String type = "WriteC(0xce)\n"/* +
-				"WriteH(" + _type + ")"*/;
-		for (int i = 0; i < _argsLenght; i++)
-		{
-			type += "WriteD(" + _args[i] + ")\n";
-		}
-		return type;
+		return "TestPacket";
 	}
 }

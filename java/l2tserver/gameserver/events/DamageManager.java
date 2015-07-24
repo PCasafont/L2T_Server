@@ -121,21 +121,22 @@ public class DamageManager
 		if (info == null)
 			return;
 		
-		String hwId = pl.getHWID();
+		/*String hwId = pl.getHWID();
 		if (hwId == null || hwId.equalsIgnoreCase(""))
-			return;
+			return;*/
 		
 		if (dmg > info.getCurrentDamage())
 		{
-			if (playerMatch(pl.getHWID(), pl.getClassId()))
+			/*if (playerMatch(pl.getHWID(), pl.getClassId()))
 			{
 				pl.sendMessage("You already have another record, only one per person is allowed");
 				return;
-			}
+			}*/
 			info.setNewData(dmg, pl);
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private boolean playerMatch(String hwId, int playerClassId)
 	{
 		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
