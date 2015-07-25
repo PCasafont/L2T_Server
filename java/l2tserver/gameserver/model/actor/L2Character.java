@@ -7423,7 +7423,11 @@ public abstract class L2Character extends L2Object
 	 */
 	public int getMaxBuffCount()
 	{
-		return Config.BUFFS_MAX_AMOUNT + Math.max(0, getSkillLevelHash(L2Skill.SKILL_DIVINE_INSPIRATION) + Math.max(0, getSkillLevelHash(L2Skill.SKILL_DIVINE_EXPANSION)));	//TODO MOVE TO STAT?
+		int maxBuffs = Config.BUFFS_MAX_AMOUNT + Math.max(0, getSkillLevelHash(L2Skill.SKILL_DIVINE_INSPIRATION) + Math.max(0, getSkillLevelHash(L2Skill.SKILL_DIVINE_EXPANSION)));	//TODO MOVE TO STAT?
+		if (this instanceof L2Summon)
+			maxBuffs += 8;
+		
+		return maxBuffs;
 	}
 	
 	/**
