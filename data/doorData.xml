@@ -19212,7 +19212,7 @@
         <set name="nodeZ" val="-3253"/>
         <set name="default_status" val="close"/>
     </door>
-    <door id="24210004">
+    <door id="25140004">
         <set name="name" val="valakas_door_01"/>
         <set name="open_method" val="0"/>
         <set name="close_time" val="3600"/>
@@ -19221,14 +19221,14 @@
         <set name="hp_showable" val="0"/>
         <set name="pDef" val="644"/>
         <set name="mDef" val="518"/>
-        <set name="pos" val="190917;-115528;-1519"/>
-        <set name="node1" val="190891,-115626"/>
-        <set name="node2" val="190943,-115626"/>
-        <set name="node3" val="190944,-115430"/>
+        <set name="pos" val="190918;-115529;-1529"/>
+        <set name="node1" val="190891,-115627"/>
+        <set name="node2" val="190944,-115628"/>
+        <set name="node3" val="190945,-115430"/>
         <set name="node4" val="190892,-115430"/>
-        <set name="nodeZ" val="-1619"/>
+        <set name="nodeZ" val="-1630"/>
     </door>
-    <door id="24210005">
+    <door id="25140005">
         <set name="name" val="valakas_door_02"/>
         <set name="open_method" val="0"/>
         <set name="close_time" val="3600"/>
@@ -19237,14 +19237,14 @@
         <set name="hp_showable" val="0"/>
         <set name="pDef" val="644"/>
         <set name="mDef" val="518"/>
-        <set name="pos" val="189479;-108511;-952"/>
-        <set name="node1" val="189570,-108551"/>
-        <set name="node2" val="189579,-108510"/>
+        <set name="pos" val="189480;-108511;-964"/>
+        <set name="node1" val="189571,-108551"/>
+        <set name="node2" val="189580,-108510"/>
         <set name="node3" val="189388,-108473"/>
-        <set name="node4" val="189380,-108508"/>
-        <set name="nodeZ" val="-1056"/>
+        <set name="node4" val="189380,-108507"/>
+        <set name="nodeZ" val="-1068"/>
     </door>
-    <door id="24210006">
+    <door id="25140006">
         <set name="name" val="valakas_door_03"/>
         <set name="open_method" val="0"/>
         <set name="close_time" val="3600"/>
@@ -19253,12 +19253,12 @@
         <set name="hp_showable" val="0"/>
         <set name="pDef" val="644"/>
         <set name="mDef" val="518"/>
-        <set name="pos" val="191458;-108107;-955"/>
-        <set name="node1" val="191357,-108119"/>
-        <set name="node2" val="191369,-108153"/>
-        <set name="node3" val="191557,-108095"/>
-        <set name="node4" val="191548,-108058"/>
-        <set name="nodeZ" val="-1058"/>
+        <set name="pos" val="191458;-108107;-962"/>
+        <set name="node1" val="191357,-108120"/>
+        <set name="node2" val="191369,-108154"/>
+        <set name="node3" val="191558,-108095"/>
+        <set name="node4" val="191549,-108058"/>
+        <set name="nodeZ" val="-1066"/>
     </door>
     <door id="24220001">
         <set name="name" val="cyratal_cave_a_e"/>
