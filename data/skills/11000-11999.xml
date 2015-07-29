@@ -8742,25 +8742,25 @@
 		<set name="chanceType" val="ON_HIT" />
 		<for>
 			<cond>
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</cond>
 			<addPercent stat="pAtk" val="30">
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</addPercent>
 			<add stat="pAtk" val="#pAtk">
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</add>
 			<addPercent stat="pAtkSpd" val="30">
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</addPercent>
 			<addPercent stat="pCritDmg" val="15">
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</addPercent>
 			<addPercent stat="pvePhysDmg" val="20">
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</addPercent>
 			<set stat="skillMastery" val="1">
-				<using kind="Dual Sword,Dual Blunt,Big Sword,Big Blunt" />
+				<using kind="Dual Sword,Dual Blunt" />
 			</set>
 		</for>
 	</skill>
