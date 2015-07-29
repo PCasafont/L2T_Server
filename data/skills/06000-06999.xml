@@ -1057,7 +1057,7 @@
 				<addPercent stat="mAtk" val="15" />
 				<add stat="rCrit" val="50" />
 				<addPercent stat="pCritDmg" val="15" />
-				<add stat="mCritRate" val="2" />
+				<add stat="mCritRate" val="20" />
 			</abnormal>
 		</for>
 	</skill>

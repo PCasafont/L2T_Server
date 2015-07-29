@@ -2142,7 +2142,7 @@
 				<effect type="Buff" val="0" />
 				<addPercent stat="maxMp" val="20" />
 				<addPercent stat="regHp" val="20" />
-				<add stat="mCritRate" val="2" />
+				<add stat="mCritRate" val="20" />
 				<addPercent stat="pCritDmg" val="20" />
 				<addPercent stat="pAtk" val="10" />
 				<addPercent stat="pDef" val="20" />

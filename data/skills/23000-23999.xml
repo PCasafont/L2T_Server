@@ -880,7 +880,7 @@
 			</cond>
 			<abnormal duration="300" stackLvl="26" stackType="magic_critical_up">
 				<effect type="Buff" val="0" />
-				<addPercentBase stat="mCritRate" val="2" />
+				<addPercentBase stat="mCritRate" val="100" />
 			</abnormal>
 		</for>
 	</skill>

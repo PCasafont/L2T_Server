@@ -1806,7 +1806,7 @@
 			<abnormal duration="600" stackLvl="1" stackType="br_event_buf1">
 				<effect type="Buff" val="0" />
 				<add stat="rCrit" val="15" />
-				<add stat="mCritRate" val="2" />
+				<add stat="mCritRate" val="20" />
 				<add stat="runSpd" val="10" />
 				<add stat="absorbDam" val="5" />
 			</abnormal>

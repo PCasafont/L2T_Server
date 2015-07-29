@@ -8100,7 +8100,7 @@
 			<add stat="maxHp" val="445" />
 			<addPercent stat="pAtk" val="4" />
 			<addPercent stat="mAtk" val="8" />
-			<add stat="mCritRate" val="2" />
+			<add stat="mCritRate" val="20" />
 			<subPercent stat="pReuse" val="10" />
 			<subPercent stat="mReuse" val="10" />
 			<add stat="reflectDam" val="5" />
