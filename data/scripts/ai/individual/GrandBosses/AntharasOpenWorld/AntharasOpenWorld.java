@@ -140,7 +140,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript
 				if (enterPlayer == null)
 					continue;
 				
-				_bossZone.allowPlayerEntry(enterPlayer, 30);
+				_bossZone.allowPlayerEntry(enterPlayer, 7200);
 				
 				enterPlayer.teleToLocation(179700 + Rnd.get(700), 113800 + Rnd.get(2100), -7709);
 			}

@@ -171,9 +171,9 @@ public class Lilith extends L2AttackableAIScript
 					continue;
 				
 				if (npcId == _lilithCubic)
-					_bossZone.allowPlayerEntry(enterPlayer, 30);
+					_bossZone.allowPlayerEntry(enterPlayer, 7200);
 				else
-					_preLilithZone.allowPlayerEntry(enterPlayer, 30);
+					_preLilithZone.allowPlayerEntry(enterPlayer, 7200);
 				
 				enterPlayer.teleToLocation(enterLoc, true);
 			}

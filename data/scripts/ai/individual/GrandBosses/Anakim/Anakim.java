@@ -174,9 +174,9 @@ public class Anakim extends L2AttackableAIScript
 					continue;
 				
 				if (npcId == _anakimCubic)
-					_bossZone.allowPlayerEntry(enterPlayer, 30);
+					_bossZone.allowPlayerEntry(enterPlayer, 7200);
 				else
-					_preAnakimZone.allowPlayerEntry(enterPlayer, 30);
+					_preAnakimZone.allowPlayerEntry(enterPlayer, 7200);
 				
 				enterPlayer.teleToLocation(enterLoc, true);
 			}

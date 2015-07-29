@@ -210,7 +210,7 @@ public class Lindvior extends L2AttackableAIScript
 				if (enterPlayer == null)
 					continue;
 				
-				_bossZone.allowPlayerEntry(enterPlayer, 30);
+				_bossZone.allowPlayerEntry(enterPlayer, 7200);
 				
 				enterPlayer.sendPacket(new EventTrigger(_redTowerEffect, true));
 				enterPlayer.teleToLocation(_enterCords, true);

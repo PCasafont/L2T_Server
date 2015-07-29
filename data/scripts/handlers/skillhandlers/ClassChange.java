@@ -96,10 +96,6 @@ public class ClassChange implements ISkillHandler
 		
 		player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SUBCLASS_TRANSFER_COMPLETED)); // Transfer completed.
 		player.sendPacket(new ExSubjobInfo(player));
-		
-		// Delete the cloak of glory if the player has it
-		if (player.getInventory().getItemByItemId(30373) != null)
-			player.destroyItemByItemId("Class Change", 30373, 1, player, true);
 	}
 	
 	/**

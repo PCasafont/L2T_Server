@@ -144,7 +144,7 @@ public class Baium extends L2AttackableAIScript
 				if (enterPlayer == null)
 					continue;
 				
-				_bossZone.allowPlayerEntry(enterPlayer, 30);
+				_bossZone.allowPlayerEntry(enterPlayer, 7200);
 				
 				enterPlayer.teleToLocation(113100, 14500, 10077, true);
 			}

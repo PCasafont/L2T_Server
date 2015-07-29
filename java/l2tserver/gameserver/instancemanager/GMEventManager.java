@@ -71,7 +71,6 @@ import l2tserver.util.xml.XmlNode;
 
 public class GMEventManager
 {
-	private static final int INIA = 269657610;
 	private static final int _bufferNpcId 	= 8508;
 	private static final int _dummyArenaSignNpcId = 35608;
 	private static final int _rewardCoinId 	= 14720;
@@ -85,7 +84,7 @@ public class GMEventManager
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table width=750 border=0>");
 		
-		if (player.isGM() || player.getObjectId() == INIA)
+		if (player.isGM())
 		{
 			if (_currentEvent == null || !_currentEvent.isStarted())
 			{
@@ -477,7 +476,7 @@ public class GMEventManager
 		st.nextToken();
 		st.nextToken();
 		
-		if (player.isGM() || player.getObjectId() == INIA)
+		if (player.isGM())
 		{
 			switch(String.valueOf(st.nextToken()))
 			{
@@ -1674,7 +1673,7 @@ public class GMEventManager
 		if (player == null)
 			return true;
 		
-		if (_currentEvent != null && _currentEvent.isStarted() && !player.isGM() && player.getObjectId() != INIA)
+		if (_currentEvent != null && _currentEvent.isStarted() && !player.isGM())
 		{
 			if (zone instanceof L2ArenaZone &&  _currentEvent.getArenaZones().contains(zone))
 			{

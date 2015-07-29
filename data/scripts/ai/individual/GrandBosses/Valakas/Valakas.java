@@ -207,7 +207,7 @@ public class Valakas extends L2AttackableAIScript
 				if (enterPlayer == null)
 					continue;
 				
-				_bossZone.allowPlayerEntry(enterPlayer, 30);
+				_bossZone.allowPlayerEntry(enterPlayer, 7200);
 				enterPlayer.teleToLocation(204328 + Rnd.get(600), -111874 + Rnd.get(600), 70);
 			}
 		}
