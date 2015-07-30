@@ -1927,7 +1927,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="1000" />
 		<for>
-			<abnormal duration="1" noicon="1" stackLvl="1" stackType="steel_mind">
+			<abnormal duration="5" noicon="1" stackLvl="1" stackType="heavy_punch">
 				<effect type="Buff" val="0" />
 				<addPercent stat="normalAtkDmg" val="400" />
 			</abnormal>

@@ -13123,8 +13123,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<for>
-			<abnormal landRate="70">
-				<effect type="Debuff" val="0" />
+			<abnormal>
 				<effect type="Reset" val="0" />
 			</abnormal>
 		</for>
