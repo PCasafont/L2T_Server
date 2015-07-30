@@ -15709,10 +15709,10 @@
 			waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="balanced" skillChance="15" soulshots="1"
 			spiritshots="1">
 	</npc>
-	<npc id="14927" name="Death Gate" level="99" type="L2Npc" atkRange="40" hpMax="49955" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="14927" name="Death Gate" level="99" type="L2Monster" atkRange="40" hpMax="49955" hpReg="0.0" mpMax="3066" mpReg="0.0"
 			STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
-			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="57" collisionHeight="67.5" targetable="false"
-			showName="false" fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced"
+			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="57" collisionHeight="67.5"
+			fireRes="260" waterRes="260" windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced"
 			skillChance="15" canMove="false" soulshots="1" spiritshots="1">
 		<skill id="11291" level="1" /> <!-- Gate Vortex -->
 		<skill id="11289" level="1" /> <!-- Gate Root -->
