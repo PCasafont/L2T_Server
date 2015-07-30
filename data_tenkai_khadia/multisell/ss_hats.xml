@@ -953,4 +953,12 @@
 		<ingredient id="4357" count="500000" />
 		<production id="23446" count="1" />
 	</item>
+	<item>
+		<ingredient id="4357" count="1000000" />
+		<production id="15441" count="1" />
+	</item>
+	<item>
+		<ingredient id="4357" count="1000000" />
+		<production id="21893" count="1" />
+	</item>
 </list>
