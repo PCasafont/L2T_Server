@@ -1053,17 +1053,15 @@ public class L2Npc extends L2Character
 	{
 		// Get the weapon identifier equiped in the right hand of the L2NpcInstance
 		int weaponId = getTemplate().RHand;
-		
 		if (weaponId < 1)
 			return null;
 		
 		// Get the weapon item equiped in the right hand of the L2NpcInstance
 		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().RHand);
-		
 		if (!(item instanceof L2Weapon))
 			return null;
 		
-		return (L2Weapon) item;
+		return (L2Weapon)item;
 	}
 	
 	/**

@@ -16859,7 +16859,6 @@ public class L2PcInstance extends L2Playable
 			summon.setCurrentMp(summon.getMaxMp());
 			summon.setHeading(getHeading());
 			summon.setRunning();
-			_npcTemplate.RHand = 9;
 			addSummon(summon);
 			
 			summon.spawnMe(getX()+50, getY()+100, getZ());
