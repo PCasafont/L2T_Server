@@ -217,7 +217,6 @@
 		<set name="weaponsAllowed" val="Shield" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="shield_charge">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="10" />
 				<sub stat="rEvas" val="2" />
 				<addPercent stat="critVuln" val="10" />
@@ -500,7 +499,6 @@
 		<set name="ignoreResists" val="true" />
 		<for>
 			<abnormal duration="5" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="chain_galaxy">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="gainHp" val="90" />
 				<subPercent stat="pDef" val="#subPercentPDef" />
 			</abnormal>
@@ -3168,7 +3166,6 @@
 		<set name="nextActionAttackMob" val="true" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="3" stackType="pd_down">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="30" />
 				<sub stat="runSpd" val="#subRunSpd" />
 			</abnormal>
@@ -3576,7 +3573,6 @@
 		<set name="ignoreResists" val="true" />
 		<for>
 			<abnormal duration="10" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="pd_down">
-				<effect type="Debuff" val="0" />
 				<addPercent stat="pAtk" val="10" />
 				<addPercent stat="pAtkSpd" val="10" />
 				<subPercent stat="pDef" val="30" />

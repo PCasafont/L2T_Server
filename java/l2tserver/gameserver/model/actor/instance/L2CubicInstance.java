@@ -223,38 +223,38 @@ public class L2CubicInstance
 				break;
 			case KNIGHT_CUBIC:
 				//_skills.add(SkillTable.getInstance().getInfo(10055, 1));
-				_skills.add(SkillTable.getInstance().getInfo(10056, (mAtk / 100) % 10));
+				_skills.add(SkillTable.getInstance().getInfo(10056, level));
 				//_skills.add(SkillTable.getInstance().getInfo(10057, 1));
 				doAction();
 				break;
 			case AVENGING_CUBIC:
-				_skills.add(SkillTable.getInstance().getInfo(11292, (mAtk / 100) % 10));
-				_skills.add(SkillTable.getInstance().getInfo(11293, (mAtk / 100) % 10));
-				_skills.add(SkillTable.getInstance().getInfo(11294, (mAtk / 100) % 10));
-				doAction();
-				break;
-			case BUFF_CUBIC:
-				_skills.add(SkillTable.getInstance().getInfo(10082, (mAtk / 100) % 10));
-				doAction();
-				break;
-			case GUARDIAN_CUBIC:
-				_skills.add(SkillTable.getInstance().getInfo(10093, (mAtk / 100) % 10));
-				doAction();
-				break;
-			case MIND_CUBIC:
-				_skills.add(SkillTable.getInstance().getInfo(10084, (mAtk / 100) % 10));
-				doAction();
-				break;
-			case HEX_CUBIC:
-				_skills.add(SkillTable.getInstance().getInfo(10086, (mAtk / 100) % 10));
-				doAction();
-				break;
-			case PHANTOM_CUBIC:
-				_skills.add(SkillTable.getInstance().getInfo(10085, (mAtk / 100) % 10));
+				_skills.add(SkillTable.getInstance().getInfo(11292, Math.min(level, 8)));
+				_skills.add(SkillTable.getInstance().getInfo(11293, Math.min(level, 8)));
+				_skills.add(SkillTable.getInstance().getInfo(11294, level));
 				doAction();
 				break;
 			case FAIRY_OF_LIFE:
-				_skills.add(SkillTable.getInstance().getInfo(11807, (mAtk / 100) % 10));
+				_skills.add(SkillTable.getInstance().getInfo(11807, level));
+				doAction();
+				break;
+			case BUFF_CUBIC:
+				_skills.add(SkillTable.getInstance().getInfo(10082, level));
+				doAction();
+				break;
+			case MIND_CUBIC:
+				_skills.add(SkillTable.getInstance().getInfo(10084, level));
+				doAction();
+				break;
+			case PHANTOM_CUBIC:
+				_skills.add(SkillTable.getInstance().getInfo(10085, level));
+				doAction();
+				break;
+			case HEX_CUBIC:
+				_skills.add(SkillTable.getInstance().getInfo(10086, level));
+				doAction();
+				break;
+			case GUARDIAN_CUBIC:
+				_skills.add(SkillTable.getInstance().getInfo(10093, level));
 				doAction();
 				break;
 		}

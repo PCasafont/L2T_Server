@@ -2825,8 +2825,7 @@
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
 		<for>
-			<abnormal landRate="70">
-				<effect type="Debuff" val="0" />
+			<abnormal>
 				<effect type="Reset" val="0" />
 			</abnormal>
 		</for>
@@ -9010,7 +9009,6 @@
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="crippling_attack">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="40" />
 				<subPercent stat="mDef" val="40" />
 				<sub stat="rEvas" val="15" />
@@ -9065,7 +9063,6 @@
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="shadow_blade">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pAtk" val="40" />
 				<subPercent stat="mAtk" val="40" />
 			</abnormal>
@@ -9164,7 +9161,6 @@
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="crippling_attack">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pDef" val="40" />
 				<subPercent stat="mDef" val="40" />
 				<sub stat="rEvas" val="15" />
@@ -9220,7 +9216,6 @@
 		<set name="ignoredDefPercent" val="#ignoredDefPercent" />
 		<for>
 			<abnormal duration="20" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="shadow_blade">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pAtk" val="40" />
 				<subPercent stat="mAtk" val="40" />
 			</abnormal>
@@ -10146,7 +10141,6 @@
 		<set name="saveVs" val="CON" />
 		<for>
 			<abnormal duration="10" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="defense_down_chaos_symphony">
-				<effect type="Debuff" val="0" />
 				<subPercent stat="pAtk" val="50" />
 				<subPercent stat="pDef" val="50" />
 				<subPercent stat="mAtk" val="50" />
@@ -10837,7 +10831,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="saveVs" val="MEN" />
 		<for>
-			<abnormal duration="10" effectType="DEBUFF" landRate="#landRate" stackLvl="1" stackType="silence_all">
+			<abnormal duration="10" landRate="#landRate" stackLvl="1" stackType="silence_all">
 				<effect type="SilenceMagicPhysical" val="0" />
 			</abnormal>
 		</for>
@@ -10877,7 +10871,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="saveVs" val="MEN" />
 		<for>
-			<abnormal duration="10" effectType="DEBUFF" landRate="#power" stackLvl="1" stackType="medusa">
+			<abnormal duration="10" landRate="#power" stackLvl="1" stackType="medusa">
 				<effect type="Petrification" val="0" />
 			</abnormal>
 		</for>
@@ -12718,7 +12712,7 @@
 		<set name="element" val="5" />
 		<set name="elementPower" val="20" />
 		<for>
-			<abnormal effectType="DEBUFF" noicon="1">
+			<abnormal noicon="1">
 				<effect type="AggroReduce" val="0" />
 			</abnormal>
 		</for>

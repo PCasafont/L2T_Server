@@ -31,6 +31,7 @@ public enum L2AbnormalType
 	SILENCE,
 	FEAR,
 	PARALYZE,
+	PETRIFY,
 	BETRAY,
 	MUTATE,
 	DISARM,

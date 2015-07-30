@@ -35,19 +35,19 @@ public class EffectPetrification extends L2Effect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.PARALYZE;
+		return L2EffectType.PETRIFY;
 	}
 
 	@Override
 	public long getEffectMask()
 	{
-		return L2EffectType.PARALYZE.getMask() | L2EffectType.INVINCIBLE.getMask();
+		return L2EffectType.PETRIFY.getMask() | L2EffectType.INVINCIBLE.getMask();
 	}
 
 	@Override
 	public L2AbnormalType getAbnormalType()
 	{
-		return L2AbnormalType.PARALYZE;
+		return L2AbnormalType.PETRIFY;
 	}
 	
 	/**
