@@ -21,6 +21,7 @@ import l2tserver.gameserver.network.serverpackets.ExItemAppearanceResult;
 import l2tserver.gameserver.network.serverpackets.ExPutTemplateResultForItemAppearance;
 import l2tserver.gameserver.network.serverpackets.InventoryUpdate;
 import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2tserver.gameserver.templates.item.L2ArmorType;
 import l2tserver.gameserver.templates.item.L2Item;
 
 /**
@@ -74,10 +75,13 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 				|| target.getItem().getItemGrade() < template.getItem().getItemGrade()
 				|| (type != -1 && target.getItem().getType2() != type)
 				|| target.getItem().getType2() != template.getItem().getType2()
-				|| target.getItem().getItemType() != template.getItem().getItemType()
+				|| (target.getItem().getItemType() != template.getItem().getItemType()
+						&& template.getItem().getItemType() != L2ArmorType.NONE
+						&& template.getItem().getBodyPart() != L2Item.SLOT_ALLDRESS)
 				|| (target.getItem().getBodyPart() != template.getItem().getBodyPart()
 						&& !(template.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR
-						&& target.getItem().getBodyPart() == L2Item.SLOT_CHEST)))
+						&& target.getItem().getBodyPart() == L2Item.SLOT_CHEST)
+						&& template.getItem().getBodyPart() != L2Item.SLOT_ALLDRESS))
 		{
 			sendPacket(new ExPutTemplateResultForItemAppearance(0));
 			return;

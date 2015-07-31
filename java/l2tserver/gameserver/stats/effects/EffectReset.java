@@ -49,18 +49,27 @@ public class EffectReset extends L2Effect
 			if (e == null || !e.getSkill().isOffensive())
 				continue;
 			
-			//LasTravel TEMP: Devil's Sway: Resets the duration of the target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm.
-			if (getSkill().getId() == 11095)	//Devil's Sway
+			// Devil's Sway: Resets the duration of the target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm.
+			if (getSkill().getId() == 11095) //Devil's Sway
 			{
-				if (e.getType() != L2AbnormalType.PARALYZE && e.getType() != L2AbnormalType.SILENCE && e.getType() != L2AbnormalType.SLEEP && e.getType() != L2AbnormalType.FEAR && e.getType() != L2AbnormalType.STUN && e.getType() != L2AbnormalType.DISARM)
-					continue;
+				switch (e.getType())
+				{
+					case PARALYZE:
+					case HOLD:
+					case SILENCE:
+					case SLEEP:
+					case FEAR:
+					case STUN:
+					//case PETRIFY:
+					case DISARM:
+						break;
+					default:
+						continue;
+				}
 			}
-
-			if (getSkill().getId() == 11783)//Reset
-			{
-				if (e.isRemovedOnDamage(true) || e.getType() == L2AbnormalType.AERIAL_YOKE)
-					continue;
-			}
+			
+			//if (e.isRemovedOnDamage(true) || e.getType() == L2AbnormalType.AERIAL_YOKE)
+			//	continue;
 			
 			e.exit();
 			Env env = new Env();

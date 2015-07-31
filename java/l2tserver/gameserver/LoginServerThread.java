@@ -511,6 +511,9 @@ public class LoginServerThread extends Thread
 			client.setAditionalClosePacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_LOGIN_WITH_ACCOUNT));
 			client.closeNow();
 		}
+		
+		// Remove that account from the map, just in case
+		_accountsInGameServer.remove(account);
 	}
 	
 	private void getCharsOnServer(String account)

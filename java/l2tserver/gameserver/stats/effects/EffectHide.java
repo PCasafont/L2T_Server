@@ -70,7 +70,8 @@ public class EffectHide extends L2Effect
 			L2GameServerPacket del = new DeleteObject(activeChar);
 			for (L2Character target : activeChar.getKnownList().getKnownCharacters())
 			{
-				if (target != null && target.getTarget() == activeChar)
+				if (target != null && (target.getTarget() == activeChar
+						|| (target.getAI() != null && target.getAI().getAttackTarget() == activeChar)))
 				{
 					target.setTarget(null);
 					target.abortAttack();
@@ -78,24 +79,36 @@ public class EffectHide extends L2Effect
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
 				
-				if (target instanceof L2PcInstance)
+				boolean inSameParty = false;
+				if (target.getParty() != null)
+					inSameParty = target.getParty() == activeChar.getParty();
+				
+				if (target instanceof L2PcInstance && !target.isGM() && !inSameParty)
 					target.sendPacket(del);
 			}
 			
 			for (L2Character target : activeChar.getStatus().getStatusListener())
 			{
-				if (target != null && target.getTarget() == activeChar)
+				if (target != null && (target.getTarget() == activeChar
+						|| (target.getAI() != null && target.getAI().getAttackTarget() == activeChar)))
 				{
 					target.setTarget(null);
 					target.abortAttack();
 					target.abortCast();
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
+
+				boolean inSameParty = false;
+				if (target.getParty() != null)
+					inSameParty = target.getParty() == activeChar.getParty();
 				
-				if (target instanceof L2PcInstance)
+				if (target instanceof L2PcInstance && !target.isGM() && !inSameParty)
 					target.sendPacket(del);
 			}
+			
+			activeChar.broadcastUserInfo();
 		}
+		
 		return true;
 	}
 	

@@ -17,6 +17,7 @@ package l2tserver.gameserver.stats;
 import java.util.logging.Level;
 
 import l2tserver.Config;
+import l2tserver.gameserver.datatables.PlayerClassTable;
 import l2tserver.gameserver.datatables.SkillTable;
 import l2tserver.gameserver.instancemanager.CastleManager;
 import l2tserver.gameserver.instancemanager.ClanHallManager;
@@ -1307,9 +1308,9 @@ public final class Formulas
 		// SSBoost > 0 have different calculation
 		double multiplier = element * pvpBonus;
 		if (skill.getSSBoost() > 0)
-			damage += 77. * (atk * 1.8 + power) * ssMul * multiplier / defence;
+			damage += 70. * (atk * 1.8 + power) * ssMul * multiplier / defence;
 		else
-			damage += 77. * ((atk * 1.8 * ssMul) + power) * multiplier / defence;
+			damage += 70. * ((atk * 1.8 * ssMul) + power) * multiplier / defence;
 		
 		if (isInFrontOf(target, attacker))
 			damage = attacker.calcStat(Stats.CRITICAL_DMG_FRONT, damage, target, skill);
@@ -1350,9 +1351,10 @@ public final class Formulas
 				damage *= pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)target);
 		}
 		
-		/*if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
+		if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
 		{
 			Log.info("Blow: " + skill.getName());
+			Log.info("\tDamage: " + damage);
 			Log.info("\tChar: " + attacker.getName());
 			Log.info("\tTarget: " + target.getName());
 			Log.info("\tClass: " + PlayerClassTable.getInstance().getClassNameById(((L2PcInstance)attacker).getClassId()));
@@ -1370,7 +1372,6 @@ public final class Formulas
 				Log.info("\tBehind multiplier: " + attacker.calcStat(Stats.CRITICAL_DMG_BEHIND, 1, target, skill));
 			else
 				Log.info("\tSide multiplier: " + attacker.calcStat(Stats.CRITICAL_DMG_SIDE, 1, target, skill));
-			Log.info("\tDamage: " + damage);
 			
 			Log.info("\tDebuffs: ");
 			for (L2Abnormal eff : target.getAllDebuffs())
@@ -1379,7 +1380,7 @@ public final class Formulas
 					continue;
 				Log.info("\t\t" + eff.getSkill().getName());
 			}
-		}*/
+		}
 
 		return damage < 1 ? 1. : damage;
 	}
@@ -3299,7 +3300,7 @@ public final class Formulas
 			switch (awakening)
 			{
 				case 139: // Sigel Knight
-					multiplier *= 3;
+					multiplier *= 2;
 					break;
 				case 140: // Tyrr Warrior
 					//multiplier *= 0.9;
@@ -3343,36 +3344,36 @@ public final class Formulas
 		if (!Config.isServer(Config.TENKAI))
 			return 1.0;
 
-		double multiplier = 1.0;
+		double multiplier = 0.75;
 		PlayerClass attackerClass = attacker.getCurrentClass();
 		if (attackerClass.getParent() != null
 				&& attackerClass.getParent().getAwakeningClassId() > 0)
 		{
 			int awakening = attackerClass.getParent().getAwakeningClassId();
-			L2Weapon weapon = attacker.getActiveWeaponItem();
+			//L2Weapon weapon = attacker.getActiveWeaponItem();
 			switch (awakening)
 			{
 				case 139: // Sigel Knight
-					multiplier *= 2.5;
+					multiplier *= 1.9;
 					break;
 				case 140: // Tyrr Warrior
 					multiplier *= 1.3;
 					break;
 				case 141: // Othell Rogue
-					if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER))
-						multiplier *= 1.3;
+					//if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER))
+					//	multiplier *= 1.3;
 					break;
 				case 142: // Yul Archer
-					//multiplier *= 1.4;
+					multiplier *= 1.2;
 					break;
 				case 143: // Feoh Wizard
-					multiplier *= 1.1;
+					multiplier *= 1.4;
 					break;
 				case 144: // Iss Enchanter
 					multiplier *= 1.8;
 					break;
 				case 145: // Wynn Summoner
-					multiplier *= 1.5;
+					multiplier *= 1.4;
 					break;
 				case 146: // Aeore Healer
 					multiplier *= 1.7;
@@ -3416,7 +3417,7 @@ public final class Formulas
 					//multiplier *= 1.8;
 					break;
 				case 145: // Wynn Summoner
-					multiplier *= 0.7;
+					multiplier *= 0.85;
 					break;
 				case 146: // Aeore Healer
 					//multiplier *= 2.1;
@@ -3433,8 +3434,6 @@ public final class Formulas
 				//multiplier *= 1.4;
 				break;
 		}
-		
-		multiplier *= 0.8;
 		
 		return multiplier;
 	}

@@ -15,7 +15,7 @@
 package l2tserver.gameserver.templates.skills;
 
 /**
- * @author  Pere
+ * @author Pere
  */
 public enum L2AbnormalType
 {

