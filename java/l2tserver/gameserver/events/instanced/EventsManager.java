@@ -211,7 +211,7 @@ public class EventsManager implements Reloadable
 			{
 				// Prepare an instance
 				if (!prepare())
-					Announcements.getInstance().announceToAll("The event could not start because it lacked participants.");
+					Announcements.getInstance().announceToAll("The event could not start because it lacked registered players.");
 
 				_currentConfig = new EventConfig();
 				_minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
@@ -235,7 +235,7 @@ public class EventsManager implements Reloadable
 				{
 					public void run()
 					{
-						Announcements.getInstance().announceToAll("Use the Community Board's (ALT+B) \"Join Events\" menu to participate.");
+						Announcements.getInstance().announceToAll("Use the Community Board's (ALT+B) \"Join Events\" menu to join.");
 					}
 				}, 5000L);
 			}

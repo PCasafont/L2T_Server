@@ -42,7 +42,6 @@ public class HiddenChests
 	public void spawnChests()
 	{
 		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
-		
 		try
 		{
 			int i;
@@ -73,7 +72,17 @@ public class HiddenChests
 				while (!GeoData.getInstance().canSeeTarget(loc.getNpc(), chestSpawn.getNpc()))
 					chestSpawn.getNpc().setXYZ(loc.getNpc().getX() + Rnd.get(300), loc.getNpc().getY() + Rnd.get(300), loc.getNpc().getZ() + 10);
 				
-				//_specialChestSpawns[i].getNpc().setName(tmpl.getName() + " #" + (i + 1));
+				String name = "";
+				for (int j = 0; j < 10; j++)
+				{
+					int rnd = (int)(Math.random() * 36);
+					char c = (char)('0' + rnd);
+					if (rnd >= 10)
+						c = (char)('a' + rnd - 10);
+					name += c;
+				}
+				
+				chestSpawn.getNpc().setName(name);
 				
 				_specialChestTasks[i] = new HiddenChestsTask(i, System.currentTimeMillis() + 3600000L * 5 + Rnd.get(3600000 * 3));
 				ThreadPoolManager.getInstance().executeTask(_specialChestTasks[i]);

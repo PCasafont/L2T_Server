@@ -217,15 +217,15 @@ public class Valakas extends L2AttackableAIScript
 		}
 		else if (npc.getNpcId() == _gatekeepersOfFireDragons[0])
 		{
-			DoorTable.getInstance().getDoor(24210004).openMe();
+			DoorTable.getInstance().getDoor(25140004).openMe();
 		}
 		else if (npc.getNpcId() == _gatekeepersOfFireDragons[1])
 		{
-			DoorTable.getInstance().getDoor(24210005).openMe();
+			DoorTable.getInstance().getDoor(25140005).openMe();
 		}
 		else if (npc.getNpcId() == _gatekeepersOfFireDragons[2])
 		{
-			DoorTable.getInstance().getDoor(24210006).openMe();
+			DoorTable.getInstance().getDoor(25140006).openMe();
 		}
 		else if(npc.getNpcId() == _klein)
 		{
