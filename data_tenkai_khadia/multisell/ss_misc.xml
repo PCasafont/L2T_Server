@@ -11,7 +11,7 @@
 	</item>
 	<item>
 		<ingredient id="4357" count="1350000" /> <!-- Silver Shilen -->
-		<production id="4355" count="1" /> <!-- Blue Eva -->
+		<production id="4355" count="100" /> <!-- Blue Eva -->
 	</item>
 	<item>
 		<ingredient id="4357" count="2500000" /> <!-- Silver Shilen -->

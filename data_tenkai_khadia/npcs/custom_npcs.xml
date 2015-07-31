@@ -4,24 +4,13 @@
 			INT="66" WIT="64" MEN="125" pAtk="81030" mAtk="39927" pDef="6747551" mDef="3096506" pAtkSpd="286" mAtkSpd="548" pCritRate="40"
 			mCritRate="40" walkSpd="1" runSpd="1" collisionRadius="10" collisionHeight="24" showName="false" fireRes="20" waterRes="20"
 			windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" canMove="false">
-		<itemDrop itemId="4357" min="5000" max="10000" chance="100" /> <!-- Silver Shilen -->
-		<itemDrop itemId="35562" min="5" max="6" chance="100" /> <!-- Energy of Destruction -->
-		<itemDrop itemId="35563" min="2" max="4" chance="100" /> <!-- Giant's Energy -->
-		<itemDrop itemId="19446" min="1" max="1" chance="100" /> <!-- Unbind Scroll (R99-grade) -->
-		<itemDrop itemId="36513" min="1" max="2" chance="100" /> <!-- Elcyum Powder -->
-		<itemDrop itemId="30297" min="2" max="5" chance="40" /> <!-- Superior Giant's Codex -->
-		<itemDrop itemId="30298" min="1" max="2" chance="20" /> <!-- Superior Giant's CoDEX - Mastery -->
-		<dropCategory chance="100" >
-			<itemDrop itemId="17527" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Armor (R-grade) -->
-			<itemDrop itemId="17526" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Weapon (R-grade) -->
-		</dropCategory>
-		<dropCategory chance="100" >
-			<itemDrop itemId="9554" min="2" max="4" chance="16.6" /> <!-- Earth Crystal -->
-			<itemDrop itemId="9557" min="2" max="4" chance="16.6" /> <!-- Holy Crystal -->
-			<itemDrop itemId="9556" min="2" max="4" chance="16.6" /> <!-- Dark Crystal -->
-			<itemDrop itemId="9553" min="2" max="4" chance="16.6" /> <!-- Water Crystal -->
-			<itemDrop itemId="9552" min="2" max="4" chance="16.6" /> <!-- Fire Crystal -->
-			<itemDrop itemId="9555" min="2" max="4" chance="17" /> <!-- Wind Crystal -->
+		<itemDrop itemId="4357" min="15000000" max="25000000" chance="100" /> <!-- Silver Shilen -->
+		<itemDrop itemId="30298" min="2" max="3" chance="80" /> <!-- Superior Giant's CoDEX - Mastery -->
+		<itemDrop itemId="46151" min="1" max="2" chance="40" /> <!-- Superior Giant's Codex - Mastery Chapter 1 -->
+		<itemDrop itemId="46155" min="1" max="1" chance="20" /> <!-- Superior Giant's Codex - Mastery Chapter 2 -->
+		<dropCategory chance="15" >
+			<itemDrop itemId="19448" min="1" max="1" chance="60" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
+			<itemDrop itemId="19447" min="1" max="1" chance="40" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
 		</dropCategory>
 	</npc>
 	<npc id="80200" templateId="33691" name="Dimensional Door" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"

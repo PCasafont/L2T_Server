@@ -15,11 +15,11 @@
 	</item>
 	<item>
 		<ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
-		<production id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="4358" count="100" /> <!-- Bloody Pa'agrio -->
 	</item>
 	<item>
 		<ingredient id="4356" count="1" /> <!-- Gold Einhasad -->
-		<production id="4355" count="15" /> <!-- Blue Eva -->
+		<production id="4355" count="300" /> <!-- Blue Eva -->
 	</item>
 	<item>
 		<ingredient id="4037" count="2" /> <!-- Coin of Luck -->

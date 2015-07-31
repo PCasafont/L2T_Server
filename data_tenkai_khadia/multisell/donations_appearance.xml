@@ -137,10 +137,6 @@
 		<production id="23199" count="1" /> <!-- Ninja Outfit Appearance Stone Pack -->
 	</item>
 	<item>
-		<ingredient id="4037" count="15" /> <!-- Coin of Luck -->
-		<production id="22706" count="1" /> <!-- (Test) Formal Wear Appearance Stone -->
-	</item>
-	<item>
 		<ingredient id="4037" count="3" /> <!-- Coin of Luck -->
 		<production id="23503" count="1" /> <!-- Military Top Appearance Stone -->
 	</item>
