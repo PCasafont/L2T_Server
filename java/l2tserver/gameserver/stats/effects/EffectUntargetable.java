@@ -65,18 +65,17 @@ public class EffectUntargetable extends L2Effect
 		{
 			if (target != null && target != getEffected())
 			{
-				if (target.getTarget() == getEffected())
+				if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null
+						&& target.getActingPlayer().getParty() != null
+						&& target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty())
+					continue;
+				
+				if (target.getTarget() == getEffected() || (target.getAI() != null && target.getAI().getAttackTarget() == getEffected()))
 				{
 					target.setTarget(null);
 					target.abortAttack();
 					// It should not abort the cast
 					//target.abortCast();
-					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				}
-				
-				if (target.getAI() != null && target.getAI().getAttackTarget() == getEffected())
-				{
-					target.abortAttack();
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					
 					if (target instanceof L2Attackable)

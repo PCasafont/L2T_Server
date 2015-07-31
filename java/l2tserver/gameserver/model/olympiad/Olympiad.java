@@ -526,7 +526,6 @@ public class Olympiad
 			try
 			{
 				OlympiadNobleInfo nobleInfo = _nobles.get(nobleId);
-				
 				if (nobleInfo == null)
 					continue;
 				
@@ -559,12 +558,17 @@ public class Olympiad
 					statement.setBoolean(8, nobleInfo.isSettled());
 					statement.setInt(9, nobleId);
 				}
+				
 				statement.execute();
 				statement.close();
 			}
 			catch (SQLException e)
 			{
 				Log.log(Level.SEVERE, "Olympiad System: Failed to save noblesse data to database: ", e);
+				
+				OlympiadNobleInfo nobleInfo = _nobles.get(nobleId);
+				if (nobleInfo != null)
+					nobleInfo.setToSave(false);
 			}
 		}
 		

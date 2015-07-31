@@ -21,6 +21,7 @@ package l2tserver.gameserver.taskmanager;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
@@ -119,9 +120,10 @@ public class AttackStanceTaskManager
 				{
 					synchronized (this)
 					{
-						for (L2Character actor : _attackStanceTasks.keySet())
+						for (Entry<L2Character, Long> entry : _attackStanceTasks.entrySet())
 						{
-							if ((current - _attackStanceTasks.get(actor)) > 15000)
+							L2Character actor = entry.getKey();
+							if ((current - entry.getValue()) > 15000)
 							{
 								actor.broadcastPacket(new AutoAttackStop(actor.getObjectId()));
 								if (actor instanceof L2PcInstance)
@@ -129,7 +131,7 @@ public class AttackStanceTaskManager
 									if (((L2PcInstance)actor).getPet() != null)
 										((L2PcInstance)actor).getPet().broadcastPacket(new AutoAttackStop(((L2PcInstance)actor).getPet().getObjectId()));
 									
-									if (((L2PcInstance) actor).getSummons() != null)
+									if (((L2PcInstance)actor).getSummons() != null)
 									{
 										for (L2SummonInstance summon : ((L2PcInstance)actor).getSummons())
 										{

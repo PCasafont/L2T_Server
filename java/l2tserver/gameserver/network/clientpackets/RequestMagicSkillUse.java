@@ -80,32 +80,38 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		
 		// Get the level of the used skill
 		int level = activeChar.getSkillLevelHash(_magicId);
-		if (level <= 0)
+		
+		// Check combo
+		if (activeChar.getTarget() instanceof L2Character)
 		{
-			if (activeChar.getTarget() instanceof L2Character)
+			for (L2Abnormal ab : ((L2Character)activeChar.getTarget()).getAllEffects())
 			{
-				for (L2Abnormal ab : ((L2Character)activeChar.getTarget()).getAllEffects())
+				if (ab.getComboId() != 0)
 				{
-					if (ab.getComboId() != 0)
+					Combo combo = ComboSkillTable.getInstance().getCombo(ab.getComboId());
+					if (combo.skills.containsKey(_magicId))
 					{
-						Combo combo = ComboSkillTable.getInstance().getCombo(ab.getComboId());
-						for (Entry<Integer, Integer> comboSkill : combo.skills.entrySet())
+						_magicId = combo.skills.get(_magicId);
+						level = 1;
+						break;
+					}
+					
+					for (Entry<Integer, Integer> comboSkill : combo.skills.entrySet())
+					{
+						if (comboSkill.getValue() == _magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0)
 						{
-							if (comboSkill.getValue() == _magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0)
-							{
-								level = 1;
-								break;
-							}
+							level = 1;
+							break;
 						}
 					}
 				}
 			}
+		}
 			
-			if (level <= 0)
-			{
-				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				return;
-			}
+		if (level <= 0)
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
 		}
 		
 		// Get the L2Skill template corresponding to the skillID received from the client

@@ -980,10 +980,23 @@ public class CharEffectList
 				if (e != null
 						&& e.getSkill().getId() == newEffect.getSkill().getId()
 						&& e.getType() == newEffect.getType()
-						&& e.getStackLvl() == newEffect.getStackLvl()
-						&& e.getStackType().equals(newEffect.getStackType()))
+						&& e.getStackLvl() == newEffect.getStackLvl())
 				{
-					e.exit(); // exit this
+					boolean sameStackType = e.getStackType().length == newEffect.getStackType().length;
+					if (sameStackType)
+					{
+						for (int i = 0; i < e.getStackType().length; i++)
+						{
+							if (!e.getStackType()[i].equals(newEffect.getStackType()[i]))
+							{
+								sameStackType = false;
+								break;
+							}
+						}
+					}
+					
+					if (sameStackType)
+						e.exit(); // exit this
 				}
 			}
 			
@@ -1110,7 +1123,7 @@ public class CharEffectList
 				_buffs.add(pos, newEffect);
 			}
 		}
-		
+
 		// Check if a stack group is defined for this effect
 		if (newEffect.getStackType().length == 0)
 		{
@@ -1175,6 +1188,7 @@ public class CharEffectList
 								_debuffs.remove(toRemove);
 							else
 								_buffs.remove(toRemove);
+							toRemove.exit();
 						}
 					}
 				}
@@ -1202,7 +1216,7 @@ public class CharEffectList
 					effectsToAdd.add(effectToAdd);
 			}
 		}
-
+		
 		for (L2Abnormal a : effectsToRemove)
 		{
 			// Remove all Func objects corresponding to this stacked effect from the Calculator set of the L2Character

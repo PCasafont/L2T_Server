@@ -10,6 +10,6 @@
 	<auction id="105" itemId="37521" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Baium's Soul Ring -->
 	<auction id="106" itemId="36255" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Orfen's Soul Earring -->
 	<auction id="107" itemId="37522" count="1" repeatTime="36" randomRepeatTime="12" initialCurrencyId="4357" initialPrice="1" initialDuration="36" /> <!-- Frintezza's Soul Necklace -->
-	<!-- <auction id="108" itemId="39657" count="1" repeatTime="40" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Venir's Talisman - Stage 24 -->
-	<auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> <!-- Talisman - Seven Signs -->
+	<!-- <auction id="108" itemId="39657" count="1" repeatTime="40" randomRepeatTime="10" initialCurrencyId="57" initialPrice="1" initialDuration="48" /> --> <!-- Venir's Talisman - Stage 24 -->
+	<auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="10" initialCurrencyId="4357" initialPrice="1" initialDuration="48" /> <!-- Talisman - Seven Signs -->
 </list>

@@ -118,12 +118,22 @@ public class OfflineAdminCommandsManager
 				PreparedStatement statement = con.prepareStatement("SELECT author, accessLevel, command, date FROM offline_admin_commands WHERE executed = 0 ORDER BY date ASC");
 				ResultSet rset = statement.executeQuery();
 				
+				boolean someExecuted = false;
 				while (rset.next())
 				{
 					executeCommand(rset.getString("author"), rset.getInt("accessLevel"), rset.getString("command"), rset.getInt("date"));
+					someExecuted = true;
 				}
+				
 				rset.close();
 				statement.close();
+				
+				if (someExecuted)
+				{
+					statement = con.prepareStatement("UPDATE offline_admin_commands SET executed = 1");
+					statement.execute();
+					statement.close();
+				}
 			}
 			catch (Exception e)
 			{

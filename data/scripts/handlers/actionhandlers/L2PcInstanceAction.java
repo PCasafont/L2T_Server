@@ -91,13 +91,11 @@ public class L2PcInstanceAction implements IActionHandler
 			return false;
 		}
 		
-		if (activeChar != target)
+		if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance)target).getParty())
+				&& ((L2PcInstance)target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
 		{
-			if (((L2PcInstance)target).isAffected(L2EffectType.UNTARGETABLE.getMask()))
-			{
-				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				return false;
-			}
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
 		}
 		
 		if (activeChar.getInstanceId() != activeChar.getObjectId())
@@ -112,7 +110,7 @@ public class L2PcInstanceAction implements IActionHandler
 			// Send a Server->Client packet MyTargetSelected to the activeChar
 			// The color to display in the select window is White
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-			if (target instanceof L2Character && target.getObjectId() != activeChar.getObjectId())
+			if (target instanceof L2Character)
 				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character)target));
 			if (activeChar != target) activeChar.sendPacket(new ValidateLocation((L2Character)target));
 		}

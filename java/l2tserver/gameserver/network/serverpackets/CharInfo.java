@@ -174,24 +174,16 @@ public class CharInfo extends L2GameServerPacket
 				writeC(_activeChar.isAlikeDead() ? 1 : 0);
 				
 				if (gmSeeInvis)
-				{
 					writeC(0);
-				}
 				else
-				{
 					writeC(_invisible? 1 : 0); // invisible ?? 0=false  1=true   2=summoned (only works if model has a summon animation)
-				}
 				
 				writeS(_activeChar.getAppearance().getVisibleName());
 				
-				if (gmSeeInvis)
-				{
+				if (gmSeeInvis || _activeChar.getAppearance().getInvisible())
 					writeS("Invisible");
-				}
 				else
-				{
 					writeS(_activeChar.getAppearance().getVisibleTitle());
-				}
 				
 				writeD(0);
 				writeD(0);
@@ -328,7 +320,7 @@ public class CharInfo extends L2GameServerPacket
 			writeD(_activeChar.getAppearance().getHairColor());
 			writeD(_activeChar.getAppearance().getFace());
 			
-			if (gmSeeInvis)
+			if (gmSeeInvis || _activeChar.getAppearance().getInvisible())
 				writeS("Invisible");
 			else
 				writeS(_activeChar.getAppearance().getVisibleTitle());

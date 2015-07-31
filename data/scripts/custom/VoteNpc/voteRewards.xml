@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list>
+	<!-- Temp -->
+	<reward itemId="46156" amount="5" description="To change your enchant routes." />
 	<!-- Runes -->
 	<reward itemId="21084" description="Increases acquired XP by 30%. 24hours time-limited item." />
 	<reward itemId="21086" description="It increases acquired SP by 30%. 24hours time-limited item." />

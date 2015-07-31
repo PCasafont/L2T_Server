@@ -4967,7 +4967,7 @@ public class L2PcInstance extends L2Playable
 		if (!(mov instanceof CharInfo))
 			sendPacket(mov);
 		
-		mov.setInvisible(getAppearance().getInvisible());
+		boolean invisible = getAppearance().getInvisible();
 		
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		//synchronized (getKnownList().getKnownPlayers())
@@ -4976,10 +4976,16 @@ public class L2PcInstance extends L2Playable
 			{
 				if (player == null)
 					continue;
+
+				boolean invisiblePacket = invisible;
+				int relation = getRelation(player);
+				if ((relation & RelationChanged.RELATION_HAS_PARTY) != 0)
+					invisiblePacket = false;
+				
+				mov.setInvisible(invisiblePacket);
 				player.sendPacket(mov);
 				if (mov instanceof CharInfo)
 				{
-					int relation = getRelation(player);
 					Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
 					if (oldrelation != null && oldrelation != relation)
 					{
@@ -5000,7 +5006,7 @@ public class L2PcInstance extends L2Playable
 		if (!(mov instanceof CharInfo))
 			sendPacket(mov);
 		
-		mov.setInvisible(getAppearance().getInvisible());
+		boolean invisible = getAppearance().getInvisible();
 		
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		//synchronized (getKnownList().getKnownPlayers())
@@ -5012,10 +5018,15 @@ public class L2PcInstance extends L2Playable
 				
 				if (isInsideRadius(player, radiusInKnownlist, false, false))
 				{
+					boolean invisiblePacket = invisible;
+					int relation = getRelation(player);
+					if ((relation & RelationChanged.RELATION_HAS_PARTY) != 0)
+						invisiblePacket = false;
+					
+					mov.setInvisible(invisiblePacket);
 					player.sendPacket(mov);
 					if (mov instanceof CharInfo)
 					{
-						int relation = getRelation(player);
 						Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
 						if (oldrelation != null && oldrelation != relation)
 						{
@@ -7460,7 +7471,7 @@ public class L2PcInstance extends L2Playable
 	{
 		if (level == AccessLevels._masterAccessLevelNum)
 		{
-			Log.warning( "Master access level set for character " + getName() + "! Just a warning to be careful ;)" );
+			//Log.warning( "Master access level set for character " + getName() + "! Just a warning to be careful ;)" );
 			_accessLevel = AccessLevels._masterAccessLevel;
 		}
 		else if (level == AccessLevels._userAccessLevelNum)
@@ -15279,13 +15290,18 @@ public class L2PcInstance extends L2Playable
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{
+		int relation1 = getRelation(activeChar);
+		int relation2 = activeChar.getRelation(this);
+		
+		if (getAppearance().getInvisible() && !activeChar.isGM()
+				&& (relation1 & RelationChanged.RELATION_HAS_PARTY) == 0)
+			return;
+		
 		if (isInBoat())
 		{
 			getPosition().setWorldPosition(getBoat().getPosition().getWorldPosition());
 			
 			activeChar.sendPacket(new CharInfo(this));
-			int relation1 = getRelation(activeChar);
-			int relation2 = activeChar.getRelation(this);
 			Integer oldrelation = getKnownList().getKnownRelations().get(activeChar.getObjectId());
 			if (oldrelation != null && oldrelation != relation1)
 			{
@@ -15311,8 +15327,6 @@ public class L2PcInstance extends L2Playable
 			getPosition().setWorldPosition(getAirShip().getPosition().getWorldPosition());
 			
 			activeChar.sendPacket(new CharInfo(this));
-			int relation1 = getRelation(activeChar);
-			int relation2 = activeChar.getRelation(this);
 			Integer oldrelation = getKnownList().getKnownRelations().get(activeChar.getObjectId());
 			if (oldrelation != null && oldrelation != relation1)
 			{
@@ -15336,8 +15350,6 @@ public class L2PcInstance extends L2Playable
 		else
 		{
 			activeChar.sendPacket(new CharInfo(this));
-			int relation1 = getRelation(activeChar);
-			int relation2 = activeChar.getRelation(this);
 			Integer oldrelation = getKnownList().getKnownRelations().get(activeChar.getObjectId());
 			if (oldrelation != null && oldrelation != relation1)
 			{
@@ -17479,6 +17491,7 @@ public class L2PcInstance extends L2Playable
 		{
 			if (player == null)
 				continue;
+			
 			player.sendPacket(fmb);
 		}
 	}

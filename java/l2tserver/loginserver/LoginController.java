@@ -574,9 +574,7 @@ public class LoginController
 		
 		// player disconnected meanwhile
 		if (address == null || user == null)
-		{
 			return false;
-		}
 		
 		Connection con = null;
 		try

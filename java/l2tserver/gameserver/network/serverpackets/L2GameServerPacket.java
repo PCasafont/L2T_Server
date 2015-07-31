@@ -26,7 +26,6 @@ import l2tserver.network.SendablePacket;
  */
 public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 {
-	
 	protected boolean _invisible = false;
 	
 	/**

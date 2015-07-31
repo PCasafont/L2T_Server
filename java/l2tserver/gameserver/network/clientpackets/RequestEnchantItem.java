@@ -168,9 +168,10 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			}
 			
 			//LUC second chance
+			rnd = Rnd.get(10000);
 			if (!success && ((item.getEnchantLevel() < 10 && rnd < activeChar.getLUC()) || (item.getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2)))
 			{
-				System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " " + activeChar.getLUC()));
+				//System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " (Luck: " + activeChar.getLUC() + ")"));
 				success = true;
 				
 				//LUC animation

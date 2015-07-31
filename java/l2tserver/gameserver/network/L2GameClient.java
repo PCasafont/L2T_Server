@@ -783,7 +783,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	
 	class DisconnectTask implements Runnable
 	{
-		
 		/**
 		 * @see java.lang.Runnable#run()
 		 */
@@ -813,13 +812,14 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 						if (player.getOfflineStartTime() == 0)
 							player.setOfflineStartTime(System.currentTimeMillis());
 							
-						//LasTravel, try to reduce the graphical lag from offline shops
+						// Try to reduce the graphical lag from offline shops
 						if (player.getSummons() != null)
 						{
 							for (L2SummonInstance summon : player.getSummons())
 							{
 								if (summon == null)
 									continue;
+								
 								summon.unSummon(player);
 							}
 						}

@@ -54,7 +54,6 @@ public class SwitchPosition implements ISkillHandler
 				activeChar.setXYZ(target.getX(), target.getY(), target.getZ());
 				target.setXYZ(x, y, z);
 				activeChar.broadcastPacket(new ValidateLocation(activeChar));
-				activeChar.sendPacket(new ValidateLocation(activeChar));
 				target.broadcastPacket(new ValidateLocation(target));
 				activeChar.revalidateZone(true);
 				return;

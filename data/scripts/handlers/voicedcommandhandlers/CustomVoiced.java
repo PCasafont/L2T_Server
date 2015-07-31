@@ -125,8 +125,8 @@ public class CustomVoiced implements IVoicedCommandHandler
 		}
 		else if (command.equalsIgnoreCase("disableweaponglow"))
 		{
-			player.setIsArmorGlowDisabled(!player.getIsArmorGlowDisabled());
-			if (player.getIsArmorGlowDisabled())
+			player.setIsWeaponGlowDisabled(!player.getIsWeaponGlowDisabled());
+			if (player.getIsWeaponGlowDisabled())
 				player.sendMessage("Now you won't see your own Weapon Enchant Glow!");
 			else
 				player.sendMessage("Disabled Weapon Enchant glow turned OFF");

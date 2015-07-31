@@ -659,7 +659,7 @@ public class CharStat
 		double defense = _activeChar.getTemplate().basePDef;
 		// Calculate modifier for Raid Bosses
 		if (_activeChar.isRaid())
-			defense *= Config.RAID_MDEFENCE_MULTIPLIER;
+			defense *= Config.RAID_PDEFENCE_MULTIPLIER;
 		
 		double finalDef = calcStat(Stats.POWER_DEFENCE, defense, target, null);
 		if (finalDef < defense * 0.5)
