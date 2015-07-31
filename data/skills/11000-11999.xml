@@ -4967,7 +4967,9 @@
 			<add stat="mAtk" val="#mAtk" />
 			<addPercent stat="mAtkSpd" val="23" />
 			<add stat="mCritRate" val="6" />
-			<addPercent stat="pAtk" val="105" />
+			<addPercent stat="pAtk" val="105"
+				<using kind="Big Blunt" />
+			</add>
 			<add stat="pAtk" val="#pAtk">
 				<using kind="Big Blunt" />
 			</add>
