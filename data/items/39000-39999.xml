@@ -2997,10 +2997,10 @@
 			bodypart="deco1" immediateEffect="1" weight="150">
 		<skill id="18024" level="24" /> <!-- Venir's Talisman -->
 	</item>
-	<!-- You can bestow LUC + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow LUC + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="39658" type="EtcItem" name="LUC Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow CHA + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow CHA + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="39659" type="EtcItem" name="CHA Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- LUC + 3. -->

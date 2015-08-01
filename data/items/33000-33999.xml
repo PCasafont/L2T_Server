@@ -2784,11 +2784,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou of Destiny (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="33212" type="Weapon" name="Ã‰clair Bijou of Destiny (Fire) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="33212" type="Weapon" name="Éclair Bijou of Destiny (Fire) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130" soulshots="1"
 			spiritshots="1">
 		<set stat="pAtk" val="228" />
@@ -3014,11 +3014,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou of Destiny (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou of Destiny (Water) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="33227" type="Weapon" name="Ã‰clair Bijou of Destiny (Water) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="33227" type="Weapon" name="Éclair Bijou of Destiny (Water) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130" soulshots="1"
 			spiritshots="1">
 		<set stat="pAtk" val="228" />
@@ -3244,11 +3244,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou of Destiny (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou of Destiny (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="33242" type="Weapon" name="Ã‰clair Bijou of Destiny (Wind) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="33242" type="Weapon" name="Éclair Bijou of Destiny (Wind) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130" soulshots="1"
 			spiritshots="1">
 		<set stat="pAtk" val="228" />
@@ -3474,11 +3474,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou of Destiny (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou of Destiny (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="33257" type="Weapon" name="Ã‰clair Bijou of Destiny (Earth) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="33257" type="Weapon" name="Éclair Bijou of Destiny (Earth) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130" soulshots="1"
 			spiritshots="1">
 		<set stat="pAtk" val="228" />
@@ -3704,11 +3704,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou of Destiny (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou of Destiny (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="33272" type="Weapon" name="Ã‰clair Bijou of Destiny (Holy) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="33272" type="Weapon" name="Éclair Bijou of Destiny (Holy) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130" soulshots="1"
 			spiritshots="1">
 		<set stat="pAtk" val="228" />
@@ -3934,11 +3934,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou of Destiny (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou of Destiny (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="33287" type="Weapon" name="Ã‰clair Bijou of Destiny (Dark) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="33287" type="Weapon" name="Éclair Bijou of Destiny (Dark) - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130" soulshots="1"
 			spiritshots="1">
 		<set stat="pAtk" val="228" />
@@ -6005,7 +6005,7 @@
 	<item id="33464" type="EtcItem" name="Destiny Scroll: Enchant Armor (S-grade)" icon="icon.etc_scroll_of_enchant_armor_i05"
 			immediateEffect="1" weight="10">
 	</item>
-	<!-- What is inside the box? If you are lucky, you may obtain 1 out of 3 types of Superior Giant's Codexesâ€¦ or it could be completely empty. -->
+	<!-- What is inside the box? If you are lucky, you may obtain 1 out of 3 types of Superior Giant's Codexes… or it could be completely empty. -->
 	<item id="33465" type="EtcItem" name="Lesser Giant's Fortune Box" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			weight="10" isTradable="false" isDropable="false" isSellable="false" isStackable="true" isPremium="true" handler="ExtractableItems">
 		<capsuledItem id="30297" min="1" max="1" chance="25.0" /> <!-- Superior Giant's Codex -->
@@ -8536,7 +8536,7 @@
 	<item id="33874" type="EtcItem" name="Holy Stone (+ 150) - Event" icon="icon.etc_holy_stone_i00" immediateEffect="1" weight="1"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<!-- Bestows one of the following functions:Â Guidance, Haste, or Focus. When enchanted to + 4, physical Critical Damage increases. -->
+	<!-- Bestows one of the following functions: Guidance, Haste, or Focus. When enchanted to + 4, physical Critical Damage increases. -->
 	<item id="33875" type="Weapon" name="Requiem Shaper - Event" icon="icon.weapon_aspeda_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="1520" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8548,7 +8548,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Haste, Focus, or Health. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
+	<!-- Bestows one of the following functions: Haste, Focus, or Health. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
 	<item id="33876" type="Weapon" name="Requiem Cutter - Event" icon="icon.weapon_estia_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="1520" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8559,7 +8559,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Focus, Damage Up, or Haste. When enchanted to + 4, P. Atk. additionally increases. -->
+	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. When enchanted to + 4, P. Atk. additionally increases. -->
 	<item id="33877" type="Weapon" name="Requiem Slasher - Event" icon="icon.weapon_polion_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="1740" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8570,7 +8570,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Haste, Critical Damage, or Focus. When enchanted to + 4, physical Critical Damage increases. -->
+	<!-- Bestows one of the following functions: Haste, Critical Damage, or Focus. When enchanted to + 4, physical Critical Damage increases. -->
 	<item id="33878" type="Weapon" name="Requiem Avenger - Event" icon="icon.weapon_batista_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="1740" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8582,7 +8582,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Focus, Damage Up, or Haste. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
+	<!-- Bestows one of the following functions: Focus, Damage Up, or Haste. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
 	<item id="33879" type="Weapon" name="Requiem Fighter - Event" icon="icon.weapon_fantasma_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="1550" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8594,7 +8594,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â HP Drain, Guidance, or Damage Up. When enchanted to + 4, Multi-attack additionally increases. -->
+	<!-- Bestows one of the following functions: HP Drain, Guidance, or Damage Up. When enchanted to + 4, Multi-attack additionally increases. -->
 	<item id="33880" type="Weapon" name="Requiem Stormer - Event" icon="icon.weapon_soryu_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="2010" soulshots="1" spiritshots="1"
 			enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
@@ -8606,7 +8606,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Damage Up, Focus, or Long Blow. When enchanted to + 4, P. Skill Power increases. -->
+	<!-- Bestows one of the following functions: Damage Up, Focus, or Long Blow. When enchanted to + 4, P. Skill Power increases. -->
 	<item id="33881" type="Weapon" name="Requiem Thrower - Event" icon="icon.weapon_grabathus_i00" defaultAction="equip" weaponType="bow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="1520" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8618,7 +8618,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Focus, Critical Slow, or Haste. When enchanted to + 4, Atk. Spd. Increases. -->
+	<!-- Bestows one of the following functions: Focus, Critical Slow, or Haste. When enchanted to + 4, Atk. Spd. Increases. -->
 	<item id="33882" type="Weapon" name="Requiem Shooter - Event" icon="icon.weapon_shyayaka_i00" defaultAction="equip" weaponType="crossbow"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalType="r" weight="1580" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8630,7 +8630,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Acumen, Magic Hold, or Mana Up. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
+	<!-- Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
 	<item id="33883" type="Weapon" name="Requiem Buster - Event" icon="icon.weapon_kaynon_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="1520" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true">
@@ -8641,7 +8641,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Empower, Acumen, or Magic Hold. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
+	<!-- Bestows one of the following functions: Empower, Acumen, or Magic Hold. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
 	<item id="33884" type="Weapon" name="Requiem Caster - Event" icon="icon.weapon_anatrian_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="1080" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true">
@@ -8653,7 +8653,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â MP Regeneration, Acumen, or Empower. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
+	<!-- Bestows one of the following functions: MP Regeneration, Acumen, or Empower. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
 	<item id="33885" type="Weapon" name="Requiem Retributer - Event" icon="icon.weapon_grangkaz_i00" defaultAction="equip" weaponType="blunt"
 			bodypart="rhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="1080" soulshots="1" spiritshots="1" enchantEnabled="1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -8666,7 +8666,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Haste, Damage Up, or Health. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
+	<!-- Bestows one of the following functions: Haste, Damage Up, or Health. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
 	<item id="33886" type="Weapon" name="Requiem Dualsword - Event" icon="icon.weapon_r_dualsword_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="1520" soulshots="1"
 			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
@@ -8677,7 +8677,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Damage Up, Focus, or Guidance. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
+	<!-- Bestows one of the following functions: Damage Up, Focus, or Guidance. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
 	<item id="33887" type="Weapon" name="Requiem Dual Dagger - Event" icon="icon.weapon_r_dualdagger_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalType="r" weight="2050" soulshots="1"
 			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">
@@ -8689,7 +8689,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Bestows one of the following functions:Â Focus, Guidance, or Damage Up. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
+	<!-- Bestows one of the following functions: Focus, Guidance, or Damage Up. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
 	<item id="33888" type="Weapon" name="Requiem Dual Blunt Weapon - Event" icon="icon.weapon_r_dualblunt_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalType="r" weight="1740" soulshots="1"
 			spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false">

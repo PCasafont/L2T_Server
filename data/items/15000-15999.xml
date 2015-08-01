@@ -659,7 +659,7 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!-- Kamael-exclusive Weapon. Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance that party members including yourself will get increased P. Atk., M. Atk., healing power received, and decreased Skill MP consumption during a Critical Attack. -->
-	<item id="15072" type="Weapon" name="Ã‰clair Bijou of Fortune - 30-day" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="15072" type="Weapon" name="Éclair Bijou of Fortune - 30-day" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalType="a" weight="1300" soulshots="1" spiritshots="1" enchant4Skill="3426-1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" time="43200">
@@ -707,7 +707,7 @@
 		<skill id="3036" level="4" /> <!-- Special Ability: Haste -->
 	</item>
 	<!-- Kamael-exclusive Weapon. Has a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. -->
-	<item id="15075" type="Weapon" name="Grand Ã‰pÃ©e of Fortune - 30-day" icon="icon.weapon_rapier_i00" defaultAction="equip"
+	<item id="15075" type="Weapon" name="Grand Épée of Fortune - 30-day" icon="icon.weapon_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalType="d" weight="1440" soulshots="3" spiritshots="3" enchant4Skill="3426-1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" time="43200">
@@ -1639,7 +1639,7 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!-- Kamael-exclusive Weapon. Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. -->
-	<item id="15186" type="Weapon" name="Ã‰clair Bijou of Fortune - 10-day" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="15186" type="Weapon" name="Éclair Bijou of Fortune - 10-day" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalType="a" weight="1300" soulshots="1" spiritshots="1" enchant4Skill="3426-1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" time="14400">
@@ -1687,7 +1687,7 @@
 		<skill id="3036" level="4" /> <!-- Special Ability: Haste -->
 	</item>
 	<!-- Kamael-exclusive Weapon. Has a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. -->
-	<item id="15189" type="Weapon" name="Grand Ã‰pÃ©e of Fortune - 10-day" icon="icon.weapon_rapier_i00" defaultAction="equip"
+	<item id="15189" type="Weapon" name="Grand Épée of Fortune - 10-day" icon="icon.weapon_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalType="d" weight="1440" soulshots="3" spiritshots="3" enchant4Skill="3426-1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" time="14400">
@@ -2294,10 +2294,10 @@
 	<item id="15244" type="EtcItem" name="Rapier of Fortune Set - 10-day" icon="icon.etc_equip_item_box_i03" defaultAction="peel"
 			immediateEffect="1" reuseDelay="3000" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			time="14400">
-		<capsuledItem id="15186" min="1" max="1" chance="100.0" /> <!-- Ã‰clair Bijou of Fortune -->
+		<capsuledItem id="15186" min="1" max="1" chance="100.0" /> <!-- Éclair Bijou of Fortune -->
 		<capsuledItem id="15187" min="1" max="1" chance="100.0" /> <!-- Colichemarde of Fortune -->
 		<capsuledItem id="15188" min="1" max="1" chance="100.0" /> <!-- Admiral's Estoc of Fortune -->
-		<capsuledItem id="15189" min="1" max="1" chance="100.0" /> <!-- Grand Ã‰pÃ©e of Fortune -->
+		<capsuledItem id="15189" min="1" max="1" chance="100.0" /> <!-- Grand Épée of Fortune -->
 	</item>
 	<!-- When used, you acquire 4 crossbows at A~D-grade s. Expires after 10 days if not used. -->
 	<item id="15245" type="EtcItem" name="Crossbow of Fortune Set - 10-day" icon="icon.etc_equip_item_box_i03" defaultAction="peel"
@@ -2522,10 +2522,10 @@
 	<item id="15268" type="EtcItem" name="Short Sword of Fortune Set - 30-day" icon="icon.etc_equip_item_box_i03" defaultAction="peel"
 			immediateEffect="1" reuseDelay="3000" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			time="43200">
-		<capsuledItem id="15072" min="1" max="1" chance="100.0" /> <!-- Ã‰clair Bijou of Fortune -->
+		<capsuledItem id="15072" min="1" max="1" chance="100.0" /> <!-- Éclair Bijou of Fortune -->
 		<capsuledItem id="15073" min="1" max="1" chance="100.0" /> <!-- Colichemarde of Fortune -->
 		<capsuledItem id="15074" min="1" max="1" chance="100.0" /> <!-- Admiral's Estoc of Fortune -->
-		<capsuledItem id="15075" min="1" max="1" chance="100.0" /> <!-- Grand Ã‰pÃ©e of Fortune -->
+		<capsuledItem id="15075" min="1" max="1" chance="100.0" /> <!-- Grand Épée of Fortune -->
 	</item>
 	<!-- When used, you acquire a Grade S~D crossbow. Expires after 30 days if not used. -->
 	<item id="15269" type="EtcItem" name="Crossbow of Fortune Set - 30-day" icon="icon.etc_equip_item_box_i03" defaultAction="peel"
@@ -3282,7 +3282,7 @@
 		<skill id="8359" level="1" /> <!-- Notifier -->
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 	</item>
-	<!-- Proof of Time and Space to prove one's identityâ€�. -->
+	<!-- Proof of Time and Space to prove one's identity. -->
 	<item id="15352" type="EtcItem" name="Proof of Time and Space" icon="icon.etc_sign_i00" immediateEffect="1" weight="5" isTradable="false"
 			isDropable="false" isDestroyable="false" isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
 	</item>
@@ -3367,22 +3367,22 @@
 			isDepositable="false" isStackable="true">
 		<skill id="9028" level="1" /> <!-- Lucky Cool Pack -->
 	</item>
-	<!-- L2 Big Watermelon Event - Double-click to make a Young Watermelon appear. -->
+	<!-- Double-click to make a Growing Watermelon appear. -->
 	<item id="15366" type="EtcItem" name="Watermelon seed" icon="icon.event_honey_watermelon_seed_i00" defaultAction="skill_reduce"
 			isDepositable="false" isStackable="true" isOlyRestricted="true">
 		<skill id="9029" level="1" /> <!-- Watermelon Seed -->
 	</item>
-	<!-- L2 Big Watermelon Event - Double-click to make a Young Honey Watermelon appear. -->
+	<!-- Double-click to make a Growing Honey Watermelon appear. -->
 	<item id="15367" type="EtcItem" name="Honey Watermelon Seed" icon="icon.event_watermelon_seed_i00" defaultAction="skill_reduce"
 			isDepositable="false" isStackable="true" isOlyRestricted="true">
 		<skill id="9030" level="1" /> <!-- Honey Watermelon Seed -->
 	</item>
-	<!-- L2 Big Watermelon Event - Double-click to make a Young Watermelon appear. -->
+	<!-- Double-click to make a Growing Watermelon appear. -->
 	<item id="15368" type="EtcItem" name="Copied Watermelon Seed" icon="icon.event_honey_watermelon_seed_i00" defaultAction="skill_reduce"
 			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
 		<skill id="9031" level="1" /> <!-- Copied Watermelon Seed -->
 	</item>
-	<!-- L2 Big Watermelon Event - Double-click to make a Young Honey Watermelon appear. -->
+	<!-- Double-click to make a Growing Honey Watermelon appear. -->
 	<item id="15369" type="EtcItem" name="Copied Honey Watermelon Seed" icon="icon.event_watermelon_seed_i00" defaultAction="skill_reduce"
 			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
 		<skill id="9032" level="1" /> <!-- Copied Honey Watermelon Seed -->
@@ -4115,11 +4115,11 @@
 	<item id="15490" type="EtcItem" name="Maguen Collection Box" icon="icon.etc_marguene_collection_box_i00" immediateEffect="1"
 			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
 	</item>
-	<!-- Its contents are a mystery.Â The only way to find out what is inside is to open it. -->
+	<!-- Its contents are a mystery. The only way to find out what is inside is to open it. -->
 	<item id="15491" type="EtcItem" name="Elite Maguen Collection Box" icon="icon.etc_elite_marguene_collection_box_i00" immediateEffect="1"
 			isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isOlyRestricted="true">
 	</item>
-	<!-- Sel Mahum salmon porridge. Smells better than expectedâ€¦ but not by much. -->
+	<!-- Sel Mahum salmon porridge. Smells better than expected… but not by much. -->
 	<item id="15492" type="EtcItem" name="Sel Mahum Salmon Porridge" icon="icon.etc_salmon_soup_i00" defaultAction="skill_reduce"
 			immediateEffect="1" weight="5" price="1" sharedReuseGroup="6" reuseDelay="300000" isSellable="false" isDepositable="false"
 			isStackable="true" isOlyRestricted="true">
@@ -4296,7 +4296,7 @@
 	<item id="15532" type="EtcItem" name="Veal" icon="icon.etc_meat_i00" immediateEffect="1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true" isOlyRestricted="true">
 	</item>
-	<!-- White gem produce by animals. Looking at it reminds you of a time long ago. I wonder what my old friends are doing nowâ€¦ -->
+	<!-- White gem produce by animals. Looking at it reminds you of a time long ago. I wonder what my old friends are doing now… -->
 	<item id="15533" type="EtcItem" name="Jewel of Innocence" icon="icon.etc_crystal_ball_white_i00" immediateEffect="1" isTradable="false"
 			isDropable="false" isSellable="false" isDepositable="false" isStackable="true" isQuestitem="true" isOlyRestricted="true">
 	</item>

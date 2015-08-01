@@ -296,13 +296,13 @@
 		<skill id="3267" level="1" /> <!-- Seal Agathion -->
 		<skill id="5959" level="1" /> <!-- Agathion Cute Trick - Teddy Girl -->
 	</item>
-	<!-- Item that allows you to summon a Toy Knight. Hunger gauge lasts 5 hours. Cannot feed pet to refill hunger gauge.Â  -->
+	<!-- Item that allows you to summon a Toy Knight. Hunger gauge lasts 5 hours. Cannot feed pet to refill hunger gauge.  -->
 	<item id="14061" type="EtcItem" name="Toy Knight Summon Whistle" icon="icon.pet_controler_i01" defaultAction="skill_maintain"
 			etcitemType="pet_collar" weight="10" isTradable="false" isDropable="false" isDestroyable="false" isSellable="false"
 			isOlyRestricted="true" handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
 		<skill id="2046" level="1" /> <!-- Summon Pet -->
 	</item>
-	<!-- Item that allows you to summon a Spirit Shaman. Hunger gauge lasts 5 hours.Â  -->
+	<!-- Item that allows you to summon a Spirit Shaman. Hunger gauge lasts 5 hours.  -->
 	<item id="14062" type="EtcItem" name="Spirit Shaman Summon Whistle" icon="icon.pet_controler_i01" defaultAction="skill_maintain"
 			etcitemType="pet_collar" weight="10" isTradable="false" isDropable="false" isDestroyable="false" isSellable="false"
 			isOlyRestricted="true" handler="SummonItems" useCondition="{{uc_transmode_exclude;{tt_flying;tt_pure_stat}}}">
@@ -3006,7 +3006,7 @@
 		<set stat="mCritRate" val="8" />
 		<set stat="pAtkSpd" val="325" />
 	</item>
-	<item id="14339" type="EtcItem" name="Ã‰clair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
+	<item id="14339" type="EtcItem" name="Éclair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalType="a" weight="1300"
 			price="26968400" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3426-1">
 		<cond msgId="1518">
@@ -7639,7 +7639,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Kamael-exclusive Weapon: Ashton Family's Sword conversion. Enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. Soul Crystal Enhancement and Augmentation not allowed. -->
-	<item id="14579" type="Weapon" name="Ã‰pÃ©e of Ashton Family" icon="icon.weapon_leavatein_i00" defaultAction="equip" weaponType="rapier"
+	<item id="14579" type="Weapon" name="Épée of Ashton Family" icon="icon.weapon_leavatein_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalType="s" weight="975"
 			changeWeaponId="14562" soulshots="1" spiritshots="1" elementEnabled="1" enchantEnabled="1" isTradable="false" isDropable="false"
 			isSellable="false">
@@ -7873,7 +7873,7 @@
 		<enchant stat="mDef" val="0" />
 		<skill id="8387" level="1" /> <!-- Protection Ring - Schuttgart -->
 	</item>
-	<!-- Item that allows you to summon a Toy Knight. Hunger gauge lasts 5 hours. Cannot feed pet to refill hunger gauge.Â  -->
+	<!-- Item that allows you to summon a Toy Knight. Hunger gauge lasts 5 hours. Cannot feed pet to refill hunger gauge.  -->
 	<item id="14601" type="Armor" name="Ancient Cloak - Kamaels Only" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back"
 			immediateEffect="1" crystalType="s80" weight="220" isTradable="false" isDropable="false" isSellable="false">
 		<cond msgId="2453">
@@ -7884,7 +7884,7 @@
 		</cond>
 		<baseAdd stat="pDef" val="20" />
 	</item>
-	<!-- Item that allows you to summon a Spirit Shaman. Hunger gauge lasts 5 hours.Â  -->
+	<!-- Item that allows you to summon a Spirit Shaman. Hunger gauge lasts 5 hours.  -->
 	<item id="14602" type="Armor" name="Ancient Cloak" icon="icon.vesper_cloack_i00" defaultAction="equip" bodypart="back" immediateEffect="1"
 			crystalType="s80" weight="220" isTradable="false" isDropable="false" isSellable="false">
 		<cond msgId="2453">
@@ -8217,7 +8217,7 @@
 		<skill id="3047" level="1" /> <!-- Special Ability: Acumen -->
 	</item>
 	<!-- Kamael-exclusive Weapon: Santa's Sirra Blade Conversion -->
-	<item id="14632" type="Weapon" name="Santa's Ã‰clair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
+	<item id="14632" type="Weapon" name="Santa's Éclair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="1300" enchant4Skill="3426-1"
 			isTradable="false" isDropable="false" isSellable="false" time="180">
 		<cond msgId="1518">

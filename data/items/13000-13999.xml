@@ -1329,8 +1329,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. Has a chance of increasing P. Atk., M. Atk., and Recovery Rate and decreasing Skill MP consumption of self and party members during a Critical when enchanted to + 4. -->
-	<item id="13175" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e - PC-exclusive Weapon" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. Has a chance of increasing P. Atk., M. Atk., and Recovery Rate and decreasing Skill MP consumption of self and party members during a Critical when enchanted to + 4. -->
+	<item id="13175" type="Weapon" name="Player Commendation - Grand Épée - PC-exclusive Weapon" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120"
 			immediateEffect="1" crystalType="d" weight="1440" soulshots="3" spiritshots="3" enchantEnabled="2" enchant4Skill="3426-1"
 			isTradable="false" isDropable="false" isSellable="false" duration="180" time="21600">
@@ -2151,11 +2151,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou with limited ability enhancement. <Soul Crystal Enhancement>
 		Atk. Spd. Increases by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="13222" type="Weapon" name="Player Commendation - Ã‰clair Bijou - PC-exclusive Weapon" icon="icon.weapon_greed_stinger_i00"
+	<item id="13222" type="Weapon" name="Player Commendation - Éclair Bijou - PC-exclusive Weapon" icon="icon.weapon_greed_stinger_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120"
 			immediateEffect="1" crystalType="a" weight="1300" soulshots="1" spiritshots="1" enchantEnabled="2" enchant4Skill="3426-1"
 			isTradable="false" isDropable="false" isSellable="false" duration="180" time="21600">

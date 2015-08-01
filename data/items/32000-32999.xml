@@ -821,8 +821,8 @@
 			weight="0" price="479123" handler="ItemSkills" standardItem="231" boundItem="31535">
 		<skill id="12748" level="1" /> <!-- Check Item -->
 	</item>
-	<!-- Kamael-exclusive weapon: Elven Long Sword conversion, Unidentified Grand Ã‰pÃ©e. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon type: rapier) -->
-	<item id="32166" type="EtcItem" name="Unidentified Grand Ã‰pÃ©e" icon="icon.weapon_rapier_i00" immediateEffect="1" weight="0"
+	<!-- Kamael-exclusive weapon: Elven Long Sword conversion, Unidentified Grand Épée. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon type: rapier) -->
+	<item id="32166" type="EtcItem" name="Unidentified Grand Épée" icon="icon.weapon_rapier_i00" immediateEffect="1" weight="0"
 			price="201115" handler="ItemSkills" standardItem="9225" boundItem="31539">
 		<skill id="12749" level="1" /> <!-- Check Item -->
 	</item>
@@ -965,6 +965,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.3" />
 		<enchant stat="mEvasRate" val="0.3" />
+		<baseAdd stat="rEvas" val="1.05" />
+		<baseAdd stat="mEvasRate" val="1.05" />
 		<crystallizeReward id="36164" count="1" chance="23.127" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="2.778" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="2" chance="66.567" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1003,6 +1005,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.3" />
 		<enchant stat="accMagic" val="0.3" />
+		<baseAdd stat="accCombat" val="1" />
+		<baseAdd stat="accMagic" val="1" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1013,6 +1017,7 @@
 		<baseAdd stat="pDef" val="84" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="1.0" />
+		<baseAdd stat="runSpd" val="15" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1038,6 +1043,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.3" />
 		<enchant stat="mEvasRate" val="0.3" />
+		<baseAdd stat="rEvas" val="1.05" />
+		<baseAdd stat="mEvasRate" val="1.05" />
 		<crystallizeReward id="36164" count="1" chance="23.127" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="2.778" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="2" chance="66.567" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1080,6 +1087,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.3" />
 		<enchant stat="accMagic" val="0.3" />
+		<baseAdd stat="accCombat" val="1" />
+		<baseAdd stat="accMagic" val="1" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1090,6 +1099,7 @@
 		<baseAdd stat="pDef" val="84" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="1.0" />
+		<baseAdd stat="runSpd" val="15" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1101,6 +1111,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.3" />
 		<enchant stat="mEvasRate" val="0.3" />
+		<baseAdd stat="rEvas" val="1.05" />
+		<baseAdd stat="mEvasRate" val="1.05" />
 		<crystallizeReward id="36164" count="1" chance="23.127" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="2.778" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="2" chance="66.567" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1143,6 +1155,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.3" />
 		<enchant stat="accMagic" val="0.3" />
+		<baseAdd stat="accCombat" val="1" />
+		<baseAdd stat="accMagic" val="1" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1153,6 +1167,7 @@
 		<baseAdd stat="pDef" val="84" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="1.0" />
+		<baseAdd stat="runSpd" val="15" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1164,6 +1179,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.3" />
 		<enchant stat="mEvasRate" val="0.3" />
+		<baseAdd stat="rEvas" val="1.05" />
+		<baseAdd stat="mEvasRate" val="1.05" />
 		<crystallizeReward id="36164" count="1" chance="23.127" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="2.778" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="2" chance="66.567" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1202,6 +1219,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.3" />
 		<enchant stat="accMagic" val="0.3" />
+		<baseAdd stat="accCombat" val="1" />
+		<baseAdd stat="accMagic" val="1" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1212,6 +1231,7 @@
 		<baseAdd stat="pDef" val="84" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="1.0" />
+		<baseAdd stat="runSpd" val="15" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1237,6 +1257,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.3" />
 		<enchant stat="mEvasRate" val="0.3" />
+		<baseAdd stat="rEvas" val="1.05" />
+		<baseAdd stat="mEvasRate" val="1.05" />
 		<crystallizeReward id="36164" count="1" chance="23.127" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="2.778" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="2" chance="66.567" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1279,6 +1301,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.3" />
 		<enchant stat="accMagic" val="0.3" />
+		<baseAdd stat="accCombat" val="1" />
+		<baseAdd stat="accMagic" val="1" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1289,6 +1313,7 @@
 		<baseAdd stat="pDef" val="84" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="1.0" />
+		<baseAdd stat="runSpd" val="15" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1300,6 +1325,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.3" />
 		<enchant stat="mEvasRate" val="0.3" />
+		<baseAdd stat="rEvas" val="1.05" />
+		<baseAdd stat="mEvasRate" val="1.05" />
 		<crystallizeReward id="36164" count="1" chance="23.127" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="2.778" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="2" chance="66.567" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1342,6 +1369,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.3" />
 		<enchant stat="accMagic" val="0.3" />
+		<baseAdd stat="accCombat" val="1" />
+		<baseAdd stat="accMagic" val="1" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -1352,6 +1381,7 @@
 		<baseAdd stat="pDef" val="84" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="1.0" />
+		<baseAdd stat="runSpd" val="15" />
 		<crystallizeReward id="36164" count="1" chance="15.374" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="19448" count="1" chance="1.847" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="17527" count="1" chance="88.506" /> <!-- Scroll: Enchant Armor (R-grade) -->
@@ -6325,10 +6355,9 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Fire) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
-	<item id="32891" type="Weapon" name="Grand Ã‰pÃ©e of Destiny (Fire)" icon="icon.weapon_rapier_i00" defaultAction="equip"
-			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3"
-			spiritshots="3">
+	<!-- Grand Épée (Fire) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32891" type="Weapon" name="Grand Épée of Destiny (Fire)" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3" spiritshots="3">
 		<set stat="pAtk" val="83" />
 		<set stat="mAtk" val="54" />
 		<set stat="rCrit" val="10" />
@@ -6486,8 +6515,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Water) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
-	<item id="32904" type="Weapon" name="Grand Ã‰pÃ©e of Destiny (Water)" icon="icon.weapon_rapier_i00" defaultAction="equip"
+	<!-- Grand Épée (Water) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32904" type="Weapon" name="Grand Épée of Destiny (Water)" icon="icon.weapon_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3"
 			spiritshots="3">
 		<set stat="pAtk" val="83" />
@@ -6648,10 +6677,9 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Wind) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
-	<item id="32917" type="Weapon" name="Grand Ã‰pÃ©e of Destiny (Wind)" icon="icon.weapon_rapier_i00" defaultAction="equip"
-			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3"
-			spiritshots="3">
+	<!-- Grand Épée (Wind) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32917" type="Weapon" name="Grand Épée of Destiny (Wind)" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3" spiritshots="3">
 		<set stat="pAtk" val="83" />
 		<set stat="mAtk" val="54" />
 		<set stat="rCrit" val="10" />
@@ -6809,8 +6837,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Earth) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
-	<item id="32930" type="Weapon" name="Grand Ã‰pÃ©e of Destiny (Earth)" icon="icon.weapon_rapier_i00" defaultAction="equip"
+	<!-- Grand Épée (Earth) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32930" type="Weapon" name="Grand Épée of Destiny (Earth)" icon="icon.weapon_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3"
 			spiritshots="3">
 		<set stat="pAtk" val="83" />
@@ -6971,10 +6999,9 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Holy) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
-	<item id="32943" type="Weapon" name="Grand Ã‰pÃ©e of Destiny (Holy)" icon="icon.weapon_rapier_i00" defaultAction="equip"
-			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3"
-			spiritshots="3">
+	<!-- Grand Épée (Holy) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32943" type="Weapon" name="Grand Épée of Destiny (Holy)" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3" spiritshots="3">
 		<set stat="pAtk" val="83" />
 		<set stat="mAtk" val="54" />
 		<set stat="rCrit" val="10" />
@@ -7132,10 +7159,9 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Dark) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
-	<item id="32956" type="Weapon" name="Grand Ã‰pÃ©e of Destiny (Dark)" icon="icon.weapon_rapier_i00" defaultAction="equip"
-			weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3"
-			spiritshots="3">
+	<!-- Grand Épée (Dark) with limited ability enhancement. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
+	<item id="32956" type="Weapon" name="Grand Épée of Destiny (Dark)" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144" soulshots="3" spiritshots="3">
 		<set stat="pAtk" val="83" />
 		<set stat="mAtk" val="54" />
 		<set stat="rCrit" val="10" />

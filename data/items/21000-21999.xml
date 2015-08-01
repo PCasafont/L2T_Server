@@ -597,7 +597,7 @@
 		<capsuledItem id="21086" min="1" max="1" chance="100.0" /> <!-- SP Rune 30% -->
 	</item>
 	<!-- Sweet mount made by Dwarven science and engineering. This item enables you to drive a Jet Bike. -->
-	<item id="21088" type="Armor" name="Mount - Jet BikeÂ " icon="BranchSys2.icon.br_z_bike_i00" defaultAction="equip" bodypart="lbracelet"
+	<item id="21088" type="Armor" name="Mount - Jet Bike " icon="BranchSys2.icon.br_z_bike_i00" defaultAction="equip" bodypart="lbracelet"
 			immediateEffect="1" weight="30" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isPremium="true"
 			isOlyRestricted="true" unequipSkill="619-1">
 		<skill id="21171" level="1" /> <!-- Ride Jet Bike -->
@@ -606,7 +606,7 @@
 	<item id="21089" type="EtcItem" name="Jet Bike Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" defaultAction="peel"
 			immediateEffect="1" weight="100" isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
 			isPremium="true">
-		<capsuledItem id="21088" min="1" max="1" chance="100.0" /> <!-- Mount - Jet BikeÂ  -->
+		<capsuledItem id="21088" min="1" max="1" chance="100.0" /> <!-- Mount - Jet Bike  -->
 	</item>
 	<!-- Plastic hair. It changes to an attractive pink wig for women and a blue wig for men. Uses 2 accessory slots. -->
 	<item id="21090" type="Armor" name="Plastic Hair" icon="BranchSys.icon.br_plastic_hair_f_i00" defaultAction="equip" bodypart="hairall"
@@ -3124,7 +3124,7 @@
 	-->
 	<item id="21644" type="EtcItem" name="Jet Bike Pack" icon="BranchSys.icon.br_four_leaf_clover_box_i00" defaultAction="peel"
 			immediateEffect="1" weight="100" isDepositable="false" isStackable="true" isPremium="true">
-		<capsuledItem id="21088" min="1" max="1" chance="100.0" /> <!-- Mount - Jet BikeÂ  -->
+		<capsuledItem id="21088" min="1" max="1" chance="100.0" /> <!-- Mount - Jet Bike  -->
 	</item>
 	<!-- Wrapped Pack containing Napoleon Hat (7-day). -->
 	<item id="21645" type="EtcItem" name="Napoleon Hat Pack (7-day) - Mana Regeneration" icon="BranchSys.icon.br_four_leaf_clover_box_i00"
@@ -3632,8 +3632,8 @@
 		<baseSub stat="accMagic" val="3.75" />
 		<set stat="pAtkSpd" val="227" />
 	</item>
-	<!-- Letter Collector's Ã‰pÃ©e of Memory -->
-	<item id="21740" type="Weapon" name="Ã‰pÃ©e - Event" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+	<!-- Letter Collector's Épée of Memory -->
+	<item id="21740" type="Weapon" name="Épée - Event" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="1450" soulshots="3" spiritshots="3">
 		<set stat="pAtk" val="72" />
 		<set stat="mAtk" val="47" />

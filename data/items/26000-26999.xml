@@ -1021,13 +1021,13 @@
 	<item id="26248" type="Weapon" name="Returning Hero's Support Cube" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
-	<!-- Cloak of Light for those who have proven themselves as testers in Lineage II. P. Def. + 50, M. Def. + 40, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
+	<!-- Cloak of Light for those who have proven themselves as testers in Lineage II. P. Def. + 100, M. Def. + 80, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
 	<item id="26249" type="Weapon" name="Cloak of Light for the Chosen" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 		<baseAdd stat="pDef" val="50" />
 		<baseAdd stat="mDef" val="40" />
 	</item>
-	<!-- Cloak of Darkness for those who have proven themselves as testers in Lineage II. P. Def. + 50, M. Def. + 40, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
+	<!-- Cloak of Darkness for those who have proven themselves as testers in Lineage II. P. Def. + 100, M. Def. + 80, and STR/MEN/DEX/WIT/INT/CON +2. Damage received during PvP decreases by 5%. Can use Blessed Escape. -->
 	<item id="26250" type="Weapon" name="Cloak of Darkness for the Chosen" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 		<baseAdd stat="pDef" val="50" />
@@ -1327,7 +1327,10 @@
 	<item id="26291" type="Weapon" name="Kaliel's Energy - Longing" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
-	<!-- Can summon Agathion - Minion Eye. -->
+	<!--
+		Can summon Agathion - Minion Eye. You can receive Minion Eye's Encouragement (CON + 3, MEN + 3, Weight Gauge + 10000, Max HP/MP/CP/ + 300, Skill Cooldown - 3%, Skill Consumption MP - 3%).
+		Active Skill: Minion Eye's Blessed Resurrection.
+	-->
 	<item id="26292" type="Weapon" name="Agathion - Minion Eye - 7-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
@@ -1337,11 +1340,14 @@
 		Matryoshka's Gift - Receive a special gift from matryoshka every 12 hours.
 		Matryoshka's Blessing - XP/SP + 30% for 60 minutes.
 	-->
-	<item id="26293" type="Weapon" name="Agathion - Matryoshka - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
+	<item id="26293" type="Weapon" name="Agathion - Matryoshka - 7-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
-	<!-- Can summon Agathion - Minion Eye. -->
-	<item id="26294" type="Weapon" name="Agathion - Minion Eye - 7-day" icon="" bodypart="none" crystalType="none" material="steel"
+	<!--
+		Can summon Agathion - Minion Eye. You can receive Minion Eye's Encouragement (CON + 3, MEN + 3, Weight Gauge + 10000, Max HP/MP/CP/ + 300, Skill Cooldown - 3%, Skill Consumption MP - 3%).
+		Active Skill: Minion Eye's Blessed Resurrection.
+	-->
+	<item id="26294" type="Weapon" name="Agathion - Minion Eye - 30-day" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
 	<!--
@@ -1554,19 +1560,19 @@
 		<skill id="21364" level="12" /> <!-- Talisman - Abundance -->
 		<skill id="21477" level="4" /> <!-- Power of Abundance - Lv. 4 -->
 	</item>
-	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 1. Requires Create Item - Skill Lv. 14. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 1. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
 	<item id="26342" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 1 (High-grade)" icon="" defaultAction="recipe" etcitemType="recipe"
 			immediateEffect="1" weight="30" recipeId="26342" isStackable="true" handler="Recipes" etcitem_type="recipe">
 	</item>
-	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 2. Requires Create Item - Skill Lv. 14. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 2. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
 	<item id="26343" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 2 (High-grade)" icon="" defaultAction="recipe" etcitemType="recipe"
 			immediateEffect="1" weight="30" recipeId="26343" isStackable="true" handler="Recipes" etcitem_type="recipe">
 	</item>
-	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 3. Requires Create Item - Skill Lv. 14. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 3. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
 	<item id="26344" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 3 (High-grade)" icon="" defaultAction="recipe" etcitemType="recipe"
 			immediateEffect="1" weight="30" recipeId="26344" isStackable="true" handler="Recipes" etcitem_type="recipe">
 	</item>
-	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 4. Requires Create Item - Skill Lv. 14. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 4. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
 	<item id="26345" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 4 (High-grade)" icon="" defaultAction="recipe" etcitemType="recipe"
 			immediateEffect="1" weight="30" recipeId="26345" isStackable="true" handler="Recipes" etcitem_type="recipe">
 	</item>
@@ -1587,7 +1593,7 @@
 	<item id="26350" type="Weapon" name="Scroll: Enchant Weapon (A-grade)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
-	<!-- P. Def. + 1 for armor and accessories (A-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
+	<!-- When enchanted, P. Def. + 1 for armor and accessories (A-grade). Increases by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4. HP gradually increases with each enchant level starting from + 4. -->
 	<item id="26351" type="Weapon" name="Scroll: Enchant Armor (A-grade)" icon="" bodypart="none" crystalType="none" material="steel"
 			weight="0">
 	</item>
@@ -1819,7 +1825,7 @@
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get a Shadow Dualsword. Cannot be exchanged or dropped once open. -->
-	<item id="26404" type="EtcItem" name="Sealed Shadoe Dualsword" icon="icon.weapon_shadow_dual_sword" immediateEffect="1"
+	<item id="26404" type="EtcItem" name="Sealed Shadow Dualsword" icon="icon.weapon_shadow_dual_sword" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
 	<!-- Double-click to get an Energy of Destruction or one of the ingredients. -->

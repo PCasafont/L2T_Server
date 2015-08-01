@@ -4653,7 +4653,7 @@
 	<!-- Legendary yellow crystal containing the light of absorbed souls. R-grade . Can bestow an additional special ability on a weapon with a Red Soul Crystal. -->
 	<item id="19502" type="EtcItem" name="Yellow Soul Crystal (R-grade)" icon="icon.r_soul_stone_i03" immediateEffect="1" weight="20">
 	</item>
-	<!-- Legendary Teal crystal containing the light of absorbed souls. R-grade . Can bestow an additional special ability on a weapon with a Green Soul Crystal.Â  -->
+	<!-- Legendary Teal crystal containing the light of absorbed souls. R-grade . Can bestow an additional special ability on a weapon with a Green Soul Crystal.  -->
 	<item id="19503" type="EtcItem" name="Teal Soul Crystal (R-grade)" icon="icon.r_soul_stone_i04" immediateEffect="1" weight="20">
 	</item>
 	<!-- Legendary purple crystal containing the light of absorbed souls. R-grade . Can bestow an additional special ability on a weapon with a Blue Soul Crystal. -->
@@ -4663,7 +4663,7 @@
 	<item id="19505" type="EtcItem" name="Yellow Soul Crystal (R95-grade)" icon="icon.r95_soul_stone_i03" immediateEffect="1"
 			weight="20">
 	</item>
-	<!-- Legendary Teal crystal containing the light of absorbed souls. R95-grade . Can bestow an additional special ability on a weapon with a Green Soul Crystal.Â  -->
+	<!-- Legendary Teal crystal containing the light of absorbed souls. R95-grade . Can bestow an additional special ability on a weapon with a Green Soul Crystal.  -->
 	<item id="19506" type="EtcItem" name="Teal Soul Crystal (R95-grade)" icon="icon.r95_soul_stone_i04" immediateEffect="1"
 			weight="20">
 	</item>
@@ -7202,6 +7202,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="19715" type="Armor" name="Blessed Durandia Breastplate - Attack Type / Heavy" icon="icon.armor_t97_u_i00" defaultAction="equip"
@@ -7227,12 +7229,15 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<item id="19718" type="Armor" name="Blessed Durandia Boots - Attack Type / Heavy" icon="icon.armor_t97_b_i00" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalType="r99" weight="1070" price="182835000">
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="19719" type="Armor" name="Blessed Durandia Shield - Attack Type / Heavy" icon="icon.weapon_vesper_verteidiger_i01"
@@ -7249,6 +7254,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 	<item id="19721" type="Armor" name="Blessed Durandia Leather Armor - Assassin Type / Light" icon="icon.armor_t98_u_i00"
@@ -7278,12 +7285,15 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<item id="19724" type="Armor" name="Blessed Durandia Leather Boots - Assassin Type / Light" icon="icon.armor_t98_b_i00"
 			defaultAction="equip" bodypart="feet" immediateEffect="1" crystalType="r99" weight="1070" price="182835000">
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<item id="19725" type="Armor" name="Blessed Durandia Circlet - Magic Type / Robe" icon="icon.armor_circlet_i00" defaultAction="equip"
 			bodypart="head" immediateEffect="1" crystalType="r99" weight="530" price="274252000">
@@ -7291,6 +7301,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 	<item id="19726" type="Armor" name="Blessed Durandia Tunic - Magic Type / Robe" icon="icon.armor_t99_u_i00" defaultAction="equip"
@@ -7320,12 +7332,15 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<item id="19729" type="Armor" name="Blessed Durandia Shoes - Magic Type / Robe" icon="icon.armor_t99_b_i00" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalType="r99" weight="1070" price="182835000">
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<item id="19730" type="Armor" name="Immortal Helmet - Defense Type / Heavy" icon="icon.armor_helmet_i00" defaultAction="equip"
 			bodypart="head" immediateEffect="1" crystalCount="146" crystalType="r" weight="530" price="6878552" armorSet="19731"
@@ -9802,6 +9817,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="19923" type="Armor" name="Blessed Durandia Breastplate - Defense Type / Heavy" icon="icon.armor_t97_u_i00" defaultAction="equip"
@@ -9827,12 +9844,15 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<item id="19926" type="Armor" name="Blessed Durandia Boots - Defense Type / Heavy" icon="icon.armor_t97_b_i00" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalType="r99" weight="1070" price="182835000">
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<!-- Additionally increases Shield Defense. -->
 	<item id="19927" type="Armor" name="Blessed Durandia Shield - Defense Type / Heavy" icon="icon.weapon_vesper_verteidiger_i01"
@@ -9849,6 +9869,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 	<item id="19929" type="Armor" name="Blessed Durandia Leather Armor - Enchant Type / Light" icon="icon.armor_t98_u_i00" defaultAction="equip"
@@ -9878,12 +9900,15 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<item id="19932" type="Armor" name="Blessed Durandia Leather Boots - Enchant Type / Light" icon="icon.armor_t98_b_i00" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalType="r99" weight="1070" price="182835000">
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<item id="19933" type="Armor" name="Blessed Durandia Circlet - Recovery Type / Robe" icon="icon.armor_circlet_i00" defaultAction="equip"
 			bodypart="head" immediateEffect="1" crystalType="r99" weight="530" price="274252000">
@@ -9891,6 +9916,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 	<item id="19934" type="Armor" name="Blessed Durandia Tunic - Recovery Type / Robe" icon="icon.armor_t99_u_i00" defaultAction="equip"
@@ -9920,12 +9947,15 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<item id="19937" type="Armor" name="Blessed Durandia Shoes - Recovery Type / Robe" icon="icon.armor_t99_b_i00" defaultAction="equip"
 			bodypart="feet" immediateEffect="1" crystalType="r99" weight="1070" price="182835000">
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<!--
 		<Soul Crystal Enhancement>

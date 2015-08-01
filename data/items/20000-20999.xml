@@ -841,8 +841,8 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="21027" level="1" /> <!-- Holiday Dream Weapon -->
 	</item>
-	<!-- Ã‰pÃ©e for events. Cannot be enchanted, augmented, or enhanced with a soul crystal. -->
-	<item id="20120" type="Weapon" name="Ã‰pÃ©e (Event) - 4-hour" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+	<!-- Épée for events. Cannot be enchanted, augmented, or enhanced with a soul crystal. -->
+	<item id="20120" type="Weapon" name="Épée (Event) - 4-hour" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalType="d" weight="483"
 			soulshots="3" spiritshots="3" enchant4Skill="3426-1" isTradable="false" isDropable="false" isSellable="false" isOlyRestricted="true"
 			time="240">
@@ -4127,7 +4127,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. It can be safely enchanted up to + 3. For one-piece armor, it can be safely enchanted up to + 4. Increases HP according to level when armor is enchanted above + 4.
+		Defense for S-grade armor or accessory by 1 and by 3 starting from + 4. Increases HP according to level when armor is enchanted above + 4. Can enchant to + 7.
 	-->
 	<item id="20522" type="EtcItem" name="Heavenly Scroll: Enchant Armor (S-grade)" icon="BranchSys.icon.br_holy_cry_of_ench_am_s_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"

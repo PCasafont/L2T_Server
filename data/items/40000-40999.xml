@@ -1020,7 +1020,7 @@
 	<item id="40225" type="EtcItem" name="Scroll of Escape: Pagan Temple" icon="icon.etc_scroll_of_return_i03" immediateEffect="1"
 			crystalType="c" weight="30">
 	</item>
-	<!-- Double-click to obtain a Freya's Frozen Scroll and a Freyaâ€™s Recovery Potion. Has a chance of obtaining one of the following items: Freya's Wish Box, Sirra's Wish Box, or a Snowman's Wish Box. -->
+	<!-- Double-click to obtain a Freya's Frozen Scroll and a Freya’s Recovery Potion. Has a chance of obtaining one of the following items: Freya's Wish Box, Sirra's Wish Box, or a Snowman's Wish Box. -->
 	<item id="40226" type="EtcItem" name="Freya's Frozen Lamp" icon="icon.freya_lamp" immediateEffect="1" crystalType="c" weight="0">
 	</item>
 	<!-- Vitality consumption + 100% and XP/SP acquisition + 100% while hunting. Remains after death. Duration is 10 min. Cooldown is 10 min. Only usable when 1 or more Vitality slot is full. Cannot be used in the Olympiad. -->
@@ -1030,10 +1030,10 @@
 	<!-- Double-click to obtain a very rare item at a random rate. -->
 	<item id="40228" type="EtcItem" name="Freya's Wish Box" icon="icon.freya_box_i01" immediateEffect="1" crystalType="c" weight="0">
 	</item>
-	<!-- Double-click for a chance to obtain one of the following items: Lucky Enchant Stone, High-grade Lucky Enchant Stone, Blessed Lucky Enchant Stone, Elemental Shirt Pack, Dark/Bloody Eternal Enhancement Stone, Blessed High-grade Lucky Enchant Stone, Freyaâ€™s Lucky Enchant Stone, or a Dark/Bloody Amaranthine Enhancement Stone. -->
+	<!-- Double-click for a chance to obtain one of the following items: Lucky Enchant Stone, High-grade Lucky Enchant Stone, Blessed Lucky Enchant Stone, Elemental Shirt Pack, Dark/Bloody Eternal Enhancement Stone, Blessed High-grade Lucky Enchant Stone, Freya’s Lucky Enchant Stone, or a Dark/Bloody Amaranthine Enhancement Stone. -->
 	<item id="40229" type="EtcItem" name="Sirra's Wish Box" icon="icon.freya_box_i02" immediateEffect="1" crystalType="c" weight="0">
 	</item>
-	<!-- Double-click for a chance to obtain one of the following items: Energy of Destruction, Giantâ€™s Energy, Kalielâ€™s Energy, Elemental Shirt Pack, Sealed Talisman â€“ Longing, Seven Signsâ€™ Energy, Talisman â€“ Anakim, Talisman â€“ Lilith, or Talisman â€“ Seven Signs. -->
+	<!-- Double-click for a chance to obtain one of the following items: Energy of Destruction, Giant’s Energy, Kaliel’s Energy, Elemental Shirt Pack, Sealed Talisman – Longing, Seven Signs’ Energy, Talisman – Anakim, Talisman – Lilith, or Talisman – Seven Signs. -->
 	<item id="40230" type="EtcItem" name="Snowman's Wish Box" icon="icon.freya_box_i03" immediateEffect="1" crystalType="c"
 			weight="0">
 	</item>

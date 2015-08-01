@@ -5995,7 +5995,7 @@
 			weight="10" isStackable="true">
 	</item>
 	<!-- Superior Giant's Codex. Item needed for skill enchantment after Awakening. -->
-	<item id="30301" type="EtcItem" name="Superior Giant's Codex ManuscriptÂ " icon="icon.codex_of_incuse" immediateEffect="1"
+	<item id="30301" type="EtcItem" name="Superior Giant's Codex Manuscript " icon="icon.codex_of_incuse" immediateEffect="1"
 			weight="10" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Superior Giant's Codex. Item needed for blessed skill enchantment after Awakening. -->
@@ -12685,8 +12685,8 @@
 		<crystallizeReward id="6577" count="1" chance="0.106" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="1" chance="3.188" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Kamael-exclusive Weapon: Sword of Revolution, Bound Ã‰pÃ©e. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="30863" type="Weapon" name="Bound Ã‰pÃ©e" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+	<!-- Kamael-exclusive Weapon: Sword of Revolution, Bound Épée. Can use an Unbind Scroll to change this item into a Standard item. -->
+	<item id="30863" type="Weapon" name="Bound Épée" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalCount="99" crystalType="d" weight="1450" price="53700"
 			soulshots="3" spiritshots="3" isTradable="false" isDropable="false" isSellable="false">
 		<set stat="pAtk" val="72" />

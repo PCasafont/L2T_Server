@@ -464,13 +464,13 @@
 	<item id="37091" type="EtcItem" name="Dimensional Potion" icon="icon.etc_potion_red_i00" immediateEffect="1" weight="0"
 			isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<!-- Cloak that symbolizes glory and light. With the power of dimension, characters of all levels can wear it. Defense + 50, M. Def. + 40 and STR/MEN/DEX/WIT/INT/CON + 2. Damage received during PvP decreases by 5%. Can use Escape:Â Castle skill. Part of its effect does not apply when you are chaotic. Cannot be used while in a chaotic state. Cannot be transferred between servers. -->
+	<!-- Cloak that symbolizes glory and light. With the power of dimension, characters of all levels can wear it. Defense + 50, M. Def. + 40 and STR/MEN/DEX/WIT/INT/CON + 2. Damage received during PvP decreases by 5%. Can use Escape: Castle skill. Part of its effect does not apply when you are chaotic. Cannot be used while in a chaotic state. Cannot be transferred between servers. -->
 	<item id="37092" type="Armor" name="Dimensional Cloak of Light" icon="icon.amor_goodness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="19" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="mDef" val="40" />
 		<baseAdd stat="pDef" val="50" />
 	</item>
-	<!-- Cloak that symbolizes avarice and darkness. With the power of dimension, characters of all levels can wear it. Defense + 50, M. Def. + 40 and STR/MEN/DEX/WIT/INT/CON + 2. Damage received during PvP decreases by 5%. Can use Escape:Â Castle skill. Cannot be used while in a chaotic state. Cannot be transferred between servers. -->
+	<!-- Cloak that symbolizes avarice and darkness. With the power of dimension, characters of all levels can wear it. Defense + 50, M. Def. + 40 and STR/MEN/DEX/WIT/INT/CON + 2. Damage received during PvP decreases by 5%. Can use Escape: Castle skill. Cannot be used while in a chaotic state. Cannot be transferred between servers. -->
 	<item id="37093" type="Armor" name="Dimensional Cloak of Darkness" icon="icon.amor_evilness_cloak" defaultAction="equip"
 			bodypart="back" immediateEffect="1" weight="19" isTradable="false" isDropable="false" isSellable="false">
 		<baseAdd stat="mDef" val="40" />
@@ -3140,7 +3140,7 @@
 	<item id="37554" type="EtcItem" name="Kisung's Cherry Nose Buff Scroll - Event" icon="icon.etc_star_scroll_baekisung" immediateEffect="1"
 			weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<!-- PC event item for 2013. One received per hour spent in a PC CafÃ©. The more you have, the better your chances to win! -->
+	<!-- PC event item for 2013. One received per hour spent in a PC Café. The more you have, the better your chances to win! -->
 	<item id="37555" type="EtcItem" name="Snow Crystal" icon="icon.etc_int_symbol_i01" immediateEffect="1" weight="0" isTradable="false"
 			isDropable="false" isSellable="false">
 	</item>

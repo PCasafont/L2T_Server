@@ -995,7 +995,7 @@
 	<item id="10143" type="EtcItem" name="Battleground Scroll: Shield Master" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind -->
+		<skill id="2379" level="1" /> <!-- Wind Walk -->
 		<skill id="2380" level="1" /> <!-- Shield -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2382" level="1" /> <!-- Blessed Shield -->
@@ -1005,7 +1005,7 @@
 	<item id="10144" type="EtcItem" name="Battleground Scroll: Wizard" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind -->
+		<skill id="2379" level="1" /> <!-- Wind Walk -->
 		<skill id="2380" level="1" /> <!-- Shield -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2384" level="1" /> <!-- Acumen -->
@@ -1015,7 +1015,7 @@
 	<item id="10145" type="EtcItem" name="Battleground Scroll: Healer" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind -->
+		<skill id="2379" level="1" /> <!-- Wind Walk -->
 		<skill id="2380" level="1" /> <!-- Shield -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2384" level="1" /> <!-- Acumen -->
@@ -1025,7 +1025,7 @@
 	<item id="10146" type="EtcItem" name="Battleground Scroll: Dagger Master" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind -->
+		<skill id="2379" level="1" /> <!-- Wind Walk -->
 		<skill id="2387" level="1" /> <!-- Might -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2388" level="1" /> <!-- Focus -->
@@ -1035,7 +1035,7 @@
 	<item id="10147" type="EtcItem" name="Battleground Scroll: Bow Master" icon="icon.etc_scroll_white_i00" defaultAction="skill_reduce"
 			etcitemType="scroll" immediateEffect="1" weight="5" reuseDelay="3000" isStackable="true" isOlyRestricted="true" handler="ItemSkills"
 			useCondition="{{uc_in_residence_siege_field}}">
-		<skill id="2379" level="1" /> <!-- Wind -->
+		<skill id="2379" level="1" /> <!-- Wind Walk -->
 		<skill id="2387" level="1" /> <!-- Might -->
 		<skill id="2381" level="1" /> <!-- Magic Barrier -->
 		<skill id="2389" level="1" /> <!-- Guidance -->
@@ -1210,7 +1210,7 @@
 			weight="1" price="10" isStackable="true" handler="Seed">
 		<skill id="2097" level="1" /> <!-- Sowing -->
 	</item>
-	<!-- Gold colored, Goblin shaped hair accessory. Event item. -->
+	<!-- Gold colored, Goblin shaped hair accessory. -->
 	<item id="10175" type="Armor" name="Goblin Circlet (Event)" icon="icon.accessory_taiwan_i00" defaultAction="equip" bodypart="hair"
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
@@ -1220,7 +1220,7 @@
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
 	</item>
-	<!-- Mysterious black mask. Don't you wish you knew where you could find the other half? 4th Anniversary commemorative item. -->
+	<!-- Mysterious black mask. Don't you wish you knew where you could find the other half? -->
 	<item id="10177" type="Armor" name="Black Half Mask (Event)" icon="icon.Accessary_black_half_mask_i00" defaultAction="equip"
 			bodypart="hair" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
@@ -4680,7 +4680,7 @@
 	<item id="10612" type="EtcItem" name="Certificate - Master Ability" icon="icon.etc_all_subjob_skillbook_i00" immediateEffect="1"
 			weight="120" isTradable="false" isDropable="false" isDestroyable="false" isSellable="false" isDepositable="false" isStackable="true">
 	</item>
-	<!-- Bird nest shaped hair accessory. Uses 2 hair accessory slots. Event item. -->
+	<!-- Bird nest shaped hair accessory. Uses 2 hair accessory slots. -->
 	<item id="10613" type="Armor" name="Bird Nest (Event)" icon="icon.accessory_nest_hat_i00" defaultAction="equip" bodypart="hairall"
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
@@ -4695,7 +4695,7 @@
 			bodypart="hairall" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
 	</item>
-	<!-- Straw Hat. Uses 2 hair accessory slots. Event item. -->
+	<!-- Straw Hat. Uses 2 hair accessory slots. -->
 	<item id="10616" type="Armor" name="Straw Hat (Event)" icon="icon.accessory_straw_hat_i00" defaultAction="equip" bodypart="hairall"
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
@@ -5718,7 +5718,7 @@
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
 	-->
-	<item id="10700" type="Weapon" name="Ã‰clair Bijou {PvP} - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="10700" type="Weapon" name="Éclair Bijou {PvP} - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="2157" crystalType="a" weight="1300" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3426-1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -5747,7 +5747,7 @@
 		Increases Max HP by 25%. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
 	-->
-	<item id="10701" type="Weapon" name="Ã‰clair Bijou {PvP} - Health" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="10701" type="Weapon" name="Éclair Bijou {PvP} - Health" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="2157" crystalType="a" weight="1300" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3426-1"
 			isTradable="false" isDropable="false" isSellable="false">
@@ -5776,7 +5776,7 @@
 		Has a 15% chance of casting Poison on the target during a Critical Attack. Increases damage inflicted during PvP. Has a chance of recovering CP during an attack.
 		When enchanted to 4 or more, there is a chance that party members including yourself will get increased P. Atk., M. Atk., and the amount of received heal, and decreased MP consumption during skill use.
 	-->
-	<item id="10702" type="Weapon" name="Ã‰clair Bijou {PvP} - Critical Poison" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="10702" type="Weapon" name="Éclair Bijou {PvP} - Critical Poison" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="2157" crystalType="a" weight="1300" price="0" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="3426-1"
 			isTradable="false" isDropable="false" isSellable="false" oncritSkill="3061-3">

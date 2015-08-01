@@ -406,7 +406,7 @@
 	<item id="46091" type="EtcItem" name="Treasure Map - Leona Blackbird" icon="icon.etc_map_yellow_i01" immediateEffect="1"
 			weight="1" isStackable="true">
 	</item>
-	<!-- A map showing the location of some treasure. It says, "The legacy of the great Elf queen Beora is hereâ€¦". Double-click to receive the quest. -->
+	<!-- A map showing the location of some treasure. It says, "The legacy of the great Elf queen Beora is here…". Double-click to receive the quest. -->
 	<item id="46092" type="EtcItem" name="Treasure Map - Beora" icon="icon.etc_map_yellow_i02" immediateEffect="1" weight="1"
 			isStackable="true">
 	</item>
@@ -430,7 +430,7 @@
 	<item id="46097" type="EtcItem" name="Treasure Map - Leona Blackbird" icon="icon.etc_map_yellow_i01" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<!-- A map showing the location of some treasure. It says, "The legacy of the great Elf queen Beora is hereâ€¦". -->
+	<!-- A map showing the location of some treasure. It says, "The legacy of the great Elf queen Beora is here…". -->
 	<item id="46098" type="EtcItem" name="Treasure Map - Beora" icon="icon.etc_map_yellow_i02" immediateEffect="1" crystalType="c"
 			isStackable="true">
 	</item>
@@ -964,7 +964,7 @@
 	<item id="46220" type="EtcItem" name="Membership Card - Market Eleven - Event" icon="icon.ev_buff_11th" immediateEffect="1"
 			crystalType="c" weight="1" isStackable="true">
 	</item>
-	<!-- 1st place prize for the L2 Market giveaway. Get a Bloody or Dark Eternal Enhancement Stone. Will be deleted once the event ends. -->
+	<!-- 1st place prize for the L2 Market giveaway. Get 20 Bloody or Dark Eternal Enhancement Stones. Will be deleted once the event ends. -->
 	<item id="46221" type="EtcItem" name="L2 Market R99 Armor Enhancement Stone Pack - Event" icon="icon.etc_treasure_box_i00"
 			immediateEffect="1" crystalType="c" isStackable="true">
 	</item>
@@ -972,7 +972,7 @@
 	<item id="46222" type="EtcItem" name="L2 Market +8 Amaranthine Weapon Pack - Event" icon="icon.etc_treasure_box_i01" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<!-- 1st place prize for the L2 Market giveaway. Get a Desire, Insanity, or Venir's Talisman. Will be deleted once the event ends. -->
+	<!-- 1st place prize for the L2 Market giveaway. Get a Longing, Insanity, or Venir's Talisman. Will be deleted once the event ends. -->
 	<item id="46223" type="EtcItem" name="L2 Market Seed Talisman Pack - Event" icon="icon.etc_treasure_box_i02" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
@@ -984,7 +984,7 @@
 	<item id="46225" type="EtcItem" name="L2 Market Rare Accessory Pack - Event" icon="icon.etc_treasure_box_i04" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
-	<!-- 1st place prize for the L2 Market giveaway. Get a Bottle of Antharas, Valakas or Baium's Soul. Will be deleted once the event ends. -->
+	<!-- 1st place prize for the L2 Market giveaway. Get a Bottle of Antharas (10), Valakas (10) or Baium's Soul. Will be deleted once the event ends. -->
 	<item id="46226" type="EtcItem" name="L2 Market Soul Bottle Pack - Event" icon="icon.etc_treasure_box_i05" immediateEffect="1"
 			crystalType="c" isStackable="true">
 	</item>
@@ -1592,7 +1592,7 @@
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
-		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, M. Atk. + 7%, NPC Damage + 10% when equipped. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
 	<item id="46334" type="Weapon" name="Shadow Buster" icon="" defaultAction="equip" weaponType="sword" bodypart="rhand" crystalType="r99"
@@ -1607,7 +1607,7 @@
 	</item>
 	<!--
 		Weapon of the Ashen Shadow Revolutionaries. 
-		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, P. Atk. + 7%, NPC Damage + 10% when equipped. 
+		Casting Spd. + 15%, M. Critical Rate + 100, Max HP/MP + 15%, M. Atk. + 7%, NPC Damage + 10% when equipped. 
 		Soul Crystal enhancement, augmentation, crystallization, modification is impossible.
 	-->
 	<item id="46335" type="Weapon" name="Shadow Retributer" icon="" defaultAction="equip" weaponType="bigblunt" bodypart="lrhand"

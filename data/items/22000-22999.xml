@@ -144,7 +144,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		Increases P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 3 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 4. Increases P. Atk. for bows by 6. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4.
+		Increases P. Atk. for B-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 3 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 4. Increases P. Atk. for bows by 6. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4. Can enchant to + 16.
 	-->
 	<item id="22018" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (B-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_b_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
@@ -153,7 +153,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		Increases P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 4 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 5. Increases P. Atk. for bows by 8. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4.
+		Increases P. Atk. for A-grade sword, one-handed blunt, one-handed dagger, spear, and other weapons by 4 when enchanted. Increases P. Atk. for two-handed sword, two-handed blunt, dualswords/daggers, and fist weapons by 5. Increases P. Atk. for bows by 8. Increases M. Atk. for all weapons by 3. P. Atk. and M. Atk. double each time after + 4. Can enchant to + 16.
 	-->
 	<item id="22019" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (A-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_wp_a_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_wp" immediateEffect="1" isTradable="false" isDropable="false"
@@ -162,7 +162,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		Defense for B-grade armor or accessory increases by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+		Defense for B-grade armor or accessory increases by 1 and by 3 starting from + 4. Can enchant to + 7.
 	-->
 	<item id="22020" type="EtcItem" name="Heavenly Scroll: Enchant Armor (B-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_am_b_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
@@ -171,7 +171,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		Defense for B-grade armor or accessory by 1 and by 3 starting from + 4. It can safely be enchanted up to + 3. For one-piece armor, it can safely be enchanted up to + 4.
+		Defense for B-grade armor or accessory by 1 and by 3 starting from + 4. Can enchant to + 7.
 	-->
 	<item id="22021" type="EtcItem" name="Heavenly Scroll: Enchant Armor (A-grade)" icon="br_cashtex.item.br_cash_blessed_cry_of_ench_am_a_i00"
 			defaultAction="skill_reduce" etcitemType="ancient_crystal_enchant_am" immediateEffect="1" isTradable="false" isDropable="false"
@@ -1850,7 +1850,7 @@
 	<item id="22349" type="EtcItem" name="Adventurer's Song - Eva's Protection" icon="BranchSys3.Icon.g_sing_of_adventurer_eva_r"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
-	<!-- Receives the power of a mysterious song of a great adventurer to decrease the duration of the 'Shilen's Breath' de-buff upon death. The effect lasts for 30 minutes upon use. Can only be used by characters level 85 - 99. -->
+	<!-- Receives the power of a mysterious song of a great adventurer to decrease the duration of the 'Shilen's Breath' de-buff upon death. The effect lasts for 30 minutes upon use. Can only be used by characters level 85 and above. -->
 	<item id="22350" type="EtcItem" name="Adventurer's Song - Eva's Protection - R-grade" icon="BranchSys3.Icon.g_sing_of_adventurer_eva_r"
 			immediateEffect="1" weight="120" isTradable="false" isDropable="false" isSellable="false" isStackable="true">
 	</item>
@@ -2204,7 +2204,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. Normal weapons can be enchanted to + 12 and magic weapons can be enchanted to + 7.
+		P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. Can enchant standard weapons to + 12 and magical weapons to + 7.
 	-->
 	<item id="22427" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (R-grade)" icon="BranchSys.icon.br_holy_cry_of_ench_wp_s_i00"
 			immediateEffect="1" isStackable="true">
@@ -2226,7 +2226,7 @@
 	</item>
 	<!--
 		Enchant success rate is 100%. 
-		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. Can be safely enchanted to + 3. When enchanted to + 4 or more, HP also increases according to the enchant value.
+		When enchanted, P. Def. + 2 for R-grade armor and accessories. It is greatly increased starting at + 4. When enchanted to + 4 or more, HP also increases according to the enchant value. Can enchant to + 7.
 	-->
 	<item id="22430" type="EtcItem" name="Heavenly Scroll: Enchant Armor (R-grade)" icon="BranchSys.icon.br_holy_cry_of_ench_am_s_i00"
 			immediateEffect="1" isStackable="true">
@@ -4430,7 +4430,7 @@
 		<crystallizeReward id="6577" count="1" chance="10.286" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		<crystallizeReward id="36513" count="4" chance="77.148" /> <!-- Elcyum Powder -->
 	</item>
-	<!-- Fist weapon with special powers used by Spezion. Bestows eitherÂ Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. and P. Atk. also increase. -->
+	<!-- Fist weapon with special powers used by Spezion. Bestows either Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. and P. Atk. also increase. -->
 	<item id="22807" type="Weapon" name="Spezion's Claw" icon="BranchSys3.Icon.g_spacia_claw_i00" defaultAction="equip" weaponType="dualfist"
 			bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="1451" crystalType="r" weight="1550" price="136041000"
 			soulshots="0" spiritshots="0">
@@ -4546,7 +4546,7 @@
 		<crystallizeReward id="36514" count="1" chance="13.604" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="1" chance="42.511" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Spear used by Maliss. Bestows eitherÂ HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack also increases. -->
+	<!-- Spear used by Maliss. Bestows either HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack also increases. -->
 	<item id="22814" type="Weapon" name="Maliss Stormer" icon="BranchSys3.Icon.g_melisa_stormer_i00" defaultAction="equip" weaponType="pole"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" weight="2010" price="293442000" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="567" />
@@ -4661,7 +4661,7 @@
 		<crystallizeReward id="36514" count="1" chance="29.346" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="1" chance="91.701" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Dagger used by Steregos. Bestows eitherÂ Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- Dagger used by Steregos. Bestows either Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="22821" type="Weapon" name="Steregos' Dagger" icon="BranchSys3.Icon.g_dainsleif_i00" defaultAction="equip" weaponType="dagger"
 			bodypart="rhand" randomDamage="5" immediateEffect="1" weight="1520" price="136041000" soulshots="0" spiritshots="0">
 		<set stat="pAtk" val="496" />
@@ -4776,7 +4776,7 @@
 		<crystallizeReward id="36514" count="1" chance="29.346" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="1" chance="91.701" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- Dual blunt with special powers used by Ron. Bestows eitherÂ Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, also increases P. Skill Power and P. Atk. -->
+	<!-- Dual blunt with special powers used by Ron. Bestows either Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, also increases P. Skill Power and P. Atk. -->
 	<item id="22828" type="Weapon" name="Ron's Dual Blunt Weapon" icon="BranchSys3.Icon.g_urukmash_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" weight="1740" price="352130400" soulshots="0"
 			spiritshots="0">

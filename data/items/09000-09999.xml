@@ -1606,7 +1606,7 @@
 		Kamael-exclusive Weapon: Sword of Revolution Conversion
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
-	<item id="9222" type="Weapon" name="Ã‰pÃ©e" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier" bodypart="rhand"
+	<item id="9222" type="Weapon" name="Épée" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier" bodypart="rhand"
 			randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1983" crystalType="d"
 			weight="1450" price="214800" changeWeaponId="129" soulshots="3" spiritshots="3" enchantEnabled="1" enchant4Skill="3426-1">
 		<cond msgId="1518">
@@ -1657,7 +1657,7 @@
 		Kamael-exclusive Weapon: Elven Long Sword Conversion
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
-	<item id="9225" type="Weapon" name="Grand Ã‰pÃ©e" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+	<item id="9225" type="Weapon" name="Grand Épée" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2561"
 			crystalType="d" weight="1440" price="277400" changeWeaponId="2499" soulshots="3" spiritshots="3" enchantEnabled="1"
 			enchant4Skill="3426-1">
@@ -4508,7 +4508,7 @@
 		Bestows one of the following functions-Haste, Health, or Critical Poison.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
-	<item id="9352" type="Weapon" name="Ã‰clair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
+	<item id="9352" type="Weapon" name="Éclair Bijou" icon="icon.weapon_greed_stinger_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1300" price="26968400" changeWeaponId="8678" soulshots="1" spiritshots="1" enchantEnabled="1"
 			enchant4Skill="3426-1">
@@ -4534,7 +4534,7 @@
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
-	<item id="9353" type="Weapon" name="Ã‰clair Bijou - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip" weaponType="rapier"
+	<item id="9353" type="Weapon" name="Éclair Bijou - Haste" icon="icon.weapon_greed_stinger_i01" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1300" price="26968400" changeWeaponId="8788" soulshots="1" spiritshots="1" enchantEnabled="1"
 			enchant4Skill="3426-1">
@@ -4561,7 +4561,7 @@
 		Increases Max HP by 25%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
-	<item id="9354" type="Weapon" name="Ã‰clair Bijou - Health" icon="icon.weapon_greed_stinger_i01" defaultAction="equip" weaponType="rapier"
+	<item id="9354" type="Weapon" name="Éclair Bijou - Health" icon="icon.weapon_greed_stinger_i01" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2157"
 			crystalType="a" weight="1300" price="26968400" changeWeaponId="8789" soulshots="1" spiritshots="1" enchantEnabled="1"
 			enchant4Skill="3426-1">
@@ -4588,7 +4588,7 @@
 		Has a 15% chance of casting Poison on the target during a standard Critical Attack. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and healing power, and of decreasing MP consumption for skill use for you and your party members during a Critical Attack.
 	-->
-	<item id="9355" type="Weapon" name="Ã‰clair Bijou - Critical Poison" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="9355" type="Weapon" name="Éclair Bijou - Critical Poison" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalCount="2157" crystalType="a" weight="1300" price="26968400" changeWeaponId="8790" soulshots="1" spiritshots="1"
 			enchantEnabled="1" enchant4Skill="3426-1" oncritChance="10" oncritSkill="3061-3">

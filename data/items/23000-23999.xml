@@ -1638,7 +1638,7 @@
 			immediateEffect="1" weight="0">
 	</item>
 	<!--
-		100% Enchant success rate. 
+		Enchant success rate is 100%. 
 		When enchanted, P. Atk. for one-handed sword/blunt, dagger, spear, etc. (R-grade) + 6, and two-handed sword/blunt/fist, dagger, crossbow + 7. P. Atk. for bows + 12. M. Atk. for all weapons + 5. When enchanted to +4 or above, P. Atk. and M. Atk. Increase greatly. Blessed weapons have greater increases than standard weapons. Can enchant standard weapons to +12, and magic weapons to +7.
 	-->
 	<item id="23343" type="EtcItem" name="Heavenly Scroll: Enchant Weapon (R-grade)" icon="BranchSys.icon.br_holy_cry_of_ench_wp_s_i00"
@@ -1653,8 +1653,8 @@
 			immediateEffect="1" weight="0">
 	</item>
 	<!--
-		100% Enchant success rate. 
-		When enchanted, P. Def. for armor/accessories (R-grade) + 2. When enchanted to + 4 or above, P. Def. Increases greatly. Can be safely enchanted up to + 3. HP gradually increases with each enchant level starting from + 4.
+		Enchant success rate is 100%. 
+		When enchanted, P. Def. for armor/accessories (R-grade) + 2. When enchanted to + 4 or above, P. Def. Increases greatly. HP gradually increases with each enchant level starting from + 4. Can enchant to + 7.
 	-->
 	<item id="23345" type="EtcItem" name="Heavenly Scroll: Enchant Armor (R-grade)" icon="BranchSys.icon.br_holy_cry_of_ench_am_s_i00"
 			immediateEffect="1" weight="0">

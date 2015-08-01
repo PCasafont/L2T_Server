@@ -1588,7 +1588,7 @@
 		<crystallizeReward id="17527" count="9" chance="93.839" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<crystallizeReward id="36514" count="1" chance="21.114" /> <!-- Elcyum Crystal -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35095" type="Weapon" name="Dark Amaranthine Shaper" icon="icon.weapon_R99_dagger_pvp_i10" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13282-3" isBlessed="true">
@@ -1606,7 +1606,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
 	<item id="35096" type="Weapon" name="Dark Amaranthine Cutter" icon="icon.weapon_R99_onehand_sword_pvp_i10" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13252-3" isBlessed="true">
@@ -1622,7 +1622,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
 	<item id="35097" type="Weapon" name="Dark Amaranthine Slasher" icon="icon.weapon_R99_twohand_sword_pvp_i10" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1740" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13261-3" isBlessed="true">
@@ -1638,7 +1638,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Haste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35098" type="Weapon" name="Dark Amaranthine Avenger" icon="icon.weapon_R99_onehand_blunt_pvp_i10" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1740"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13256-3" isBlessed="true">
@@ -1656,7 +1656,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
 	<item id="35099" type="Weapon" name="Dark Amaranthine Fighter" icon="icon.weapon_R99_fist_pvp_i10" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1550" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13267-3" isBlessed="true">
@@ -1674,7 +1674,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
 	<item id="35100" type="Weapon" name="Dark Amaranthine Stormer" icon="icon.weapon_R99_spear_pvp_i10" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="2010"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13263-3" isBlessed="true">
@@ -1692,7 +1692,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
 	<item id="35101" type="Weapon" name="Dark Amaranthine Thrower" icon="icon.weapon_R99_bow_pvp_i10" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13292-3" reuseDelay="1500" isBlessed="true">
@@ -1710,7 +1710,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
 	<item id="35102" type="Weapon" name="Dark Amaranthine Shooter" icon="icon.weapon_R99_crossbow_pvp_i10" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1580" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13294-3" reuseDelay="400"
@@ -1729,7 +1729,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
 	<item id="35103" type="Weapon" name="Dark Amaranthine Buster" icon="icon.weapon_R99_onehand_magic_sword_pvp_i10" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13295-3" isMagicWeapon="true" isBlessed="true">
@@ -1745,7 +1745,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
 	<item id="35104" type="Weapon" name="Dark Amaranthine Caster" icon="icon.weapon_R99_onehand_magic_blunt_pvp_i10" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1080"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13299-3" isMagicWeapon="true" isBlessed="true">
@@ -1763,7 +1763,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
 	<item id="35105" type="Weapon" name="Dark Amaranthine Retributer" icon="icon.weapon_R99_twohand_magic_blunt_pvp_i10" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1080" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13304-3" isMagicWeapon="true"
@@ -1782,7 +1782,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
 	<item id="35106" type="Weapon" name="Dark Amaranthine Dualsword" icon="icon.weapon_R99_dual_sword_pvp_i10" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99" weight="1520"
 			price="969954000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13277-3" isBlessed="true">
@@ -1798,7 +1798,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
 	<item id="35107" type="Weapon" name="Dark Amaranthine Dual Dagger" icon="icon.weapon_R99_dual_dagger_pvp_i10" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="2050" price="969954000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13287-3" isBlessed="true">
@@ -1816,7 +1816,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
+	<!-- PvP enchant type item. When equipped, damage to a PC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
 	<item id="35108" type="Weapon" name="Dark Amaranthine Dual Blunt Weapon" icon="icon.weapon_R99_dual_blunt_pvp_i10" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="1740" price="969954000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13272-3" isBlessed="true">
@@ -3728,7 +3728,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Guidance, Haste, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35193" type="Weapon" name="Bloody Amaranthine Shaper" icon="icon.weapon_R99_dagger_pve_i00" defaultAction="equip"
 			weaponType="dagger" bodypart="rhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13282-3" isBlessed="true">
@@ -3746,7 +3746,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Focus, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Accuracy and P. Critical Rate increase. -->
 	<item id="35194" type="Weapon" name="Bloody Amaranthine Cutter" icon="icon.weapon_R99_onehand_sword_pve_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13252-3" isBlessed="true">
@@ -3762,7 +3762,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Atk. additionally increases. -->
 	<item id="35195" type="Weapon" name="Bloody Amaranthine Slasher" icon="icon.weapon_R99_twohand_sword_pve_i00" defaultAction="equip"
 			weaponType="bigsword" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1740" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13261-3" isBlessed="true">
@@ -3778,7 +3778,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Haste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Critical Damage, or Focus. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases. -->
 	<item id="35196" type="Weapon" name="Bloody Amaranthine Avenger" icon="icon.weapon_R99_onehand_blunt_pve_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1740"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13256-3" isBlessed="true">
@@ -3796,7 +3796,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Damage Up, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases and P. Atk. additionally increases. -->
 	<item id="35197" type="Weapon" name="Bloody Amaranthine Fighter" icon="icon.weapon_R99_fist_pve_i00" defaultAction="equip"
 			weaponType="dualfist" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1550" price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13267-3" isBlessed="true">
@@ -3814,7 +3814,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: HP Drain, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Multi-attack additionally increases. -->
 	<item id="35198" type="Weapon" name="Bloody Amaranthine Stormer" icon="icon.weapon_R99_spear_pve_i00" defaultAction="equip"
 			weaponType="pole" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="2010"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13263-3" isBlessed="true">
@@ -3832,7 +3832,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Long Blow. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases. -->
 	<item id="35199" type="Weapon" name="Bloody Amaranthine Thrower" icon="icon.weapon_R99_bow_pve_i00" defaultAction="equip"
 			weaponType="bow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchantEnabled="1" enchant4Skill="13292-3" reuseDelay="1500" isBlessed="true">
@@ -3850,7 +3850,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Critical Slow, or Haste. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Atk. Spd. Increases. -->
 	<item id="35200" type="Weapon" name="Bloody Amaranthine Shooter" icon="icon.weapon_R99_crossbow_pve_i00" defaultAction="equip"
 			weaponType="crossbow" bodypart="lrhand" randomDamage="5" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1580" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13294-3" reuseDelay="400" isBlessed="true">
@@ -3868,7 +3868,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Acumen, Magic Hold, or Mana Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Rate increase. -->
 	<item id="35201" type="Weapon" name="Bloody Amaranthine Buster" icon="icon.weapon_R99_onehand_magic_sword_pve_i00" defaultAction="equip"
 			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1520"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13295-3" isMagicWeapon="true" isBlessed="true">
@@ -3884,7 +3884,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Empower, Acumen, or Magic Hold. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, Magical Accuracy and M. Critical Damage increase. -->
 	<item id="35202" type="Weapon" name="Bloody Amaranthine Caster" icon="icon.weapon_R99_onehand_magic_blunt_pve_i00" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99" weight="1080"
 			price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13299-3" isMagicWeapon="true" isBlessed="true">
@@ -3902,7 +3902,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: MP Regeneration, Acumen, or Empower. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, M. Atk. M. Critical Damage, and Casting Spd. Increase. -->
 	<item id="35203" type="Weapon" name="Bloody Amaranthine Retributer" icon="icon.weapon_R99_twohand_magic_blunt_pve_i00" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="17243" crystalType="r99"
 			weight="1080" price="808295000" soulshots="1" spiritshots="1" enchant4Skill="13304-3" isMagicWeapon="true" isBlessed="true">
@@ -3920,7 +3920,7 @@
 		<crystallizeReward id="36514" count="2" chance="80.834" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="6" chance="84.196" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Haste, Damage Up, or Health. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Rate increases and P. Atk. additionally increases. -->
 	<item id="35204" type="Weapon" name="Bloody Amaranthine Dualsword" icon="icon.weapon_R99_dual_sword_pve_i00" defaultAction="equip"
 			weaponType="dual" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99" weight="1520"
 			price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13277-3" isBlessed="true">
@@ -3936,7 +3936,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Damage Up, Focus, or Guidance. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Critical Damage increases and P. Atk. additionally increases. -->
 	<item id="35205" type="Weapon" name="Bloody Amaranthine Dual Dagger" icon="icon.weapon_R99_dual_dagger_pve_i00" defaultAction="equip"
 			weaponType="dualdagger" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="2050" price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13287-3" isBlessed="true">
@@ -3954,7 +3954,7 @@
 		<crystallizeReward id="36514" count="2" chance="97.002" /> <!-- Elcyum Crystal -->
 		<crystallizeReward id="17526" count="7" chance="86.603" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</item>
-	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions:Â Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
+	<!-- PvE enchant type item. When equipped, damage to an NPC + 15% and Max HP/MP/CP + 10%. Bestows one of the following functions: Focus, Guidance, or Damage Up. Two functions can be bestowed through a rare soul crystal. When enchanted to + 4, P. Skill Power increases and P. Atk. additionally increases. -->
 	<item id="35206" type="Weapon" name="Bloody Amaranthine Dual Blunt Weapon" icon="icon.weapon_R99_dual_blunt_pve_i00" defaultAction="equip"
 			weaponType="dualblunt" bodypart="lrhand" randomDamage="20" immediateEffect="1" crystalCount="20692" crystalType="r99"
 			weight="1740" price="969954000" soulshots="1" spiritshots="1" enchant4Skill="13272-3" isBlessed="true">
@@ -5840,7 +5840,7 @@
 		<baseAdd stat="pDef" val="60" />
 	</item>
 	<!-- Magical scroll that relocates you to the Guillotine Fortress. Cannot be sold in shops. -->
-	<item id="35292" type="EtcItem" name="Scroll of Escape:Â Guillotine Fortress" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
+	<item id="35292" type="EtcItem" name="Scroll of Escape: Guillotine Fortress" icon="icon.etc_scroll_of_return_i00" immediateEffect="1"
 			weight="30">
 	</item>
 	<!-- MP + 216. Activates 5 talisman slots when equipped. -->
@@ -6357,499 +6357,499 @@
 			weight="60" price="549860" isStackable="true" isBlessed="true">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Shaper. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35420" type="EtcItem" name="Recipe:Â Specter Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35420" type="EtcItem" name="Recipe: Specter Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1166" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Cutter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35421" type="EtcItem" name="Recipe:Â Specter Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35421" type="EtcItem" name="Recipe: Specter Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1167" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Slasher. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35422" type="EtcItem" name="Recipe:Â Specter Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35422" type="EtcItem" name="Recipe: Specter Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1168" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Avenger. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35423" type="EtcItem" name="Recipe:Â Specter Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35423" type="EtcItem" name="Recipe: Specter Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1169" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Fighter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35424" type="EtcItem" name="Recipe:Â Specter Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35424" type="EtcItem" name="Recipe: Specter Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1170" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Stormer. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35425" type="EtcItem" name="Recipe:Â Specter Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35425" type="EtcItem" name="Recipe: Specter Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1171" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Thrower. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35426" type="EtcItem" name="Recipe:Â Specter Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35426" type="EtcItem" name="Recipe: Specter Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1172" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Shooter. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35427" type="EtcItem" name="Recipe:Â Specter Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35427" type="EtcItem" name="Recipe: Specter Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1173" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Buster. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35428" type="EtcItem" name="Recipe:Â Specter Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35428" type="EtcItem" name="Recipe: Specter Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1174" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Caster. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35429" type="EtcItem" name="Recipe:Â Specter Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35429" type="EtcItem" name="Recipe: Specter Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1175" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Specter Retributer. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35430" type="EtcItem" name="Recipe:Â Specter Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35430" type="EtcItem" name="Recipe: Specter Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="29344200" recipeId="1176" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35431" type="EtcItem" name="Recipe:Â Seraph Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35431" type="EtcItem" name="Recipe: Seraph Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5749000" recipeId="1177" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Breastplate. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35432" type="EtcItem" name="Recipe:Â Seraph Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35432" type="EtcItem" name="Recipe: Seraph Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15330800" recipeId="1178" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Gaiters. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35433" type="EtcItem" name="Recipe:Â Seraph Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35433" type="EtcItem" name="Recipe: Seraph Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="14372700" recipeId="1179" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Gauntlets. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35434" type="EtcItem" name="Recipe:Â Seraph Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35434" type="EtcItem" name="Recipe: Seraph Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5749050" recipeId="1180" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35435" type="EtcItem" name="Recipe:Â Seraph Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35435" type="EtcItem" name="Recipe: Seraph Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="3832700" recipeId="1181" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Shield. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35436" type="EtcItem" name="Recipe:Â Seraph Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35436" type="EtcItem" name="Recipe: Seraph Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4024300" recipeId="1182" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Leather Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35437" type="EtcItem" name="Recipe:Â Seraph Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35437" type="EtcItem" name="Recipe: Seraph Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5749000" recipeId="1183" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Leather Armor. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35438" type="EtcItem" name="Recipe:Â Seraph Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35438" type="EtcItem" name="Recipe: Seraph Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15330800" recipeId="1184" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Leather Leggings. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35439" type="EtcItem" name="Recipe:Â Seraph Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35439" type="EtcItem" name="Recipe: Seraph Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="14372700" recipeId="1185" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Leather Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35440" type="EtcItem" name="Recipe:Â Seraph Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35440" type="EtcItem" name="Recipe: Seraph Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5749050" recipeId="1186" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Leather Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35441" type="EtcItem" name="Recipe:Â Seraph Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35441" type="EtcItem" name="Recipe: Seraph Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="3832700" recipeId="1187" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Circlet. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35442" type="EtcItem" name="Recipe:Â Seraph Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35442" type="EtcItem" name="Recipe: Seraph Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5749000" recipeId="1188" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Tunic. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35443" type="EtcItem" name="Recipe:Â Seraph Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35443" type="EtcItem" name="Recipe: Seraph Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15330800" recipeId="1189" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Stockings. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35444" type="EtcItem" name="Recipe:Â Seraph Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35444" type="EtcItem" name="Recipe: Seraph Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="14372700" recipeId="1190" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35445" type="EtcItem" name="Recipe:Â Seraph Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35445" type="EtcItem" name="Recipe: Seraph Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5749050" recipeId="1191" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Seraph Shoes. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35446" type="EtcItem" name="Recipe:Â Seraph Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35446" type="EtcItem" name="Recipe: Seraph Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="3832700" recipeId="1192" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Sigil. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35447" type="EtcItem" name="Recipe:Â Seraph Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35447" type="EtcItem" name="Recipe: Seraph Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4024300" recipeId="1193" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Necklace. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35448" type="EtcItem" name="Recipe:Â Seraph Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35448" type="EtcItem" name="Recipe: Seraph Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="3992400" recipeId="1194" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Earring. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35449" type="EtcItem" name="Recipe:Â Seraph Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35449" type="EtcItem" name="Recipe: Seraph Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="2994300" recipeId="1195" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Seraph Ring. Requires Create Item - Skill Lv. 13. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35450" type="EtcItem" name="Recipe:Â Seraph Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35450" type="EtcItem" name="Recipe: Seraph Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="1996200" recipeId="1196" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Shaper. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35451" type="EtcItem" name="Recipe:Â Amaranthine Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35451" type="EtcItem" name="Recipe: Amaranthine Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1197" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Cutter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35452" type="EtcItem" name="Recipe:Â Amaranthine Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35452" type="EtcItem" name="Recipe: Amaranthine Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1198" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Slasher. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35453" type="EtcItem" name="Recipe:Â Amaranthine Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35453" type="EtcItem" name="Recipe: Amaranthine Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1199" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Avenger. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35454" type="EtcItem" name="Recipe:Â Amaranthine Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35454" type="EtcItem" name="Recipe: Amaranthine Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1200" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Fighter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35455" type="EtcItem" name="Recipe:Â Amaranthine Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35455" type="EtcItem" name="Recipe: Amaranthine Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1201" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Stormer. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35456" type="EtcItem" name="Recipe:Â Amaranthine Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35456" type="EtcItem" name="Recipe: Amaranthine Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1202" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Thrower. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35457" type="EtcItem" name="Recipe:Â Amaranthine Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35457" type="EtcItem" name="Recipe: Amaranthine Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1203" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Shooter. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35458" type="EtcItem" name="Recipe:Â Amaranthine Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35458" type="EtcItem" name="Recipe: Amaranthine Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1204" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Buster. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35459" type="EtcItem" name="Recipe:Â Amaranthine Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35459" type="EtcItem" name="Recipe: Amaranthine Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1205" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Caster. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35460" type="EtcItem" name="Recipe:Â Amaranthine Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35460" type="EtcItem" name="Recipe: Amaranthine Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1206" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Amaranthine Retributer. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35461" type="EtcItem" name="Recipe:Â Amaranthine Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35461" type="EtcItem" name="Recipe: Amaranthine Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="64663600" recipeId="1207" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35462" type="EtcItem" name="Recipe:Â Eternal Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35462" type="EtcItem" name="Recipe: Eternal Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="12668700" recipeId="1208" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Breastplate. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35463" type="EtcItem" name="Recipe:Â Eternal Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35463" type="EtcItem" name="Recipe: Eternal Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="33783400" recipeId="1209" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Gaiters. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35464" type="EtcItem" name="Recipe:Â Eternal Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35464" type="EtcItem" name="Recipe: Eternal Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="31671900" recipeId="1210" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Gauntlets. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35465" type="EtcItem" name="Recipe:Â Eternal Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35465" type="EtcItem" name="Recipe: Eternal Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="12668700" recipeId="1211" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35466" type="EtcItem" name="Recipe:Â Eternal Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35466" type="EtcItem" name="Recipe: Eternal Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8445800" recipeId="1212" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Shield. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35467" type="EtcItem" name="Recipe:Â Eternal Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35467" type="EtcItem" name="Recipe: Eternal Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8868100" recipeId="1213" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Leather Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35468" type="EtcItem" name="Recipe:Â Eternal Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35468" type="EtcItem" name="Recipe: Eternal Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="12668700" recipeId="1214" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Leather Armor. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35469" type="EtcItem" name="Recipe:Â Eternal Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35469" type="EtcItem" name="Recipe: Eternal Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="33783400" recipeId="1215" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Leather Leggings. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35470" type="EtcItem" name="Recipe:Â Eternal Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35470" type="EtcItem" name="Recipe: Eternal Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="31671900" recipeId="1216" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Leather Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35471" type="EtcItem" name="Recipe:Â Eternal Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35471" type="EtcItem" name="Recipe: Eternal Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="12668700" recipeId="1217" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Leather Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35472" type="EtcItem" name="Recipe:Â Eternal Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35472" type="EtcItem" name="Recipe: Eternal Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8445800" recipeId="1218" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Circlet. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35473" type="EtcItem" name="Recipe:Â Eternal Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35473" type="EtcItem" name="Recipe: Eternal Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="12668700" recipeId="1219" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Tunic. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35474" type="EtcItem" name="Recipe:Â Eternal Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35474" type="EtcItem" name="Recipe: Eternal Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="33783400" recipeId="1220" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Stockings. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35475" type="EtcItem" name="Recipe:Â Eternal Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35475" type="EtcItem" name="Recipe: Eternal Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="31671900" recipeId="1221" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35476" type="EtcItem" name="Recipe:Â Eternal Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35476" type="EtcItem" name="Recipe: Eternal Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="12668700" recipeId="1222" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Eternal Shoes. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35477" type="EtcItem" name="Recipe:Â Eternal Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35477" type="EtcItem" name="Recipe: Eternal Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8445800" recipeId="1223" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Sigil. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35478" type="EtcItem" name="Recipe:Â Eternal Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35478" type="EtcItem" name="Recipe: Eternal Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8868100" recipeId="1224" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Necklace. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35479" type="EtcItem" name="Recipe:Â Eternal Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35479" type="EtcItem" name="Recipe: Eternal Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8797700" recipeId="1225" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Earring. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35480" type="EtcItem" name="Recipe:Â Eternal Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35480" type="EtcItem" name="Recipe: Eternal Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="6598300" recipeId="1226" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for an Eternal Ring. Requires Create Item - Skill Lv. 14. The success rate is 60%. Has a very low chance of obtaining a Blessed item upon success. -->
-	<item id="35481" type="EtcItem" name="Recipe:Â Eternal Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35481" type="EtcItem" name="Recipe: Eternal Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4398800" recipeId="1227" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Shaper. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35482" type="EtcItem" name="Recipe:Â Blessed Specter Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35482" type="EtcItem" name="Recipe: Blessed Specter Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1228" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Cutter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35483" type="EtcItem" name="Recipe:Â Blessed Specter Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35483" type="EtcItem" name="Recipe: Blessed Specter Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1229" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Slasher. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35484" type="EtcItem" name="Recipe:Â Blessed Specter Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35484" type="EtcItem" name="Recipe: Blessed Specter Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1230" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Avenger. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35485" type="EtcItem" name="Recipe:Â Blessed Specter Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35485" type="EtcItem" name="Recipe: Blessed Specter Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1231" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Fighter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35486" type="EtcItem" name="Recipe:Â Blessed Specter Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35486" type="EtcItem" name="Recipe: Blessed Specter Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1232" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Stormer. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35487" type="EtcItem" name="Recipe:Â Blessed Specter Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35487" type="EtcItem" name="Recipe: Blessed Specter Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1233" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Thrower. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35488" type="EtcItem" name="Recipe:Â Blessed Specter Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35488" type="EtcItem" name="Recipe: Blessed Specter Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1234" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Shooter. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35489" type="EtcItem" name="Recipe:Â Blessed Specter Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35489" type="EtcItem" name="Recipe: Blessed Specter Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1235" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Buster. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35490" type="EtcItem" name="Recipe:Â Blessed Specter Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35490" type="EtcItem" name="Recipe: Blessed Specter Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1236" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Caster. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35491" type="EtcItem" name="Recipe:Â Blessed Specter Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35491" type="EtcItem" name="Recipe: Blessed Specter Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1237" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Specter Retributer. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35492" type="EtcItem" name="Recipe:Â Blessed Specter Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35492" type="EtcItem" name="Recipe: Blessed Specter Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="36680300" recipeId="1238" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35493" type="EtcItem" name="Recipe:Â Blessed Seraph Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35493" type="EtcItem" name="Recipe: Blessed Seraph Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="7186300" recipeId="1239" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Breastplate. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35494" type="EtcItem" name="Recipe:Â Blessed Seraph Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35494" type="EtcItem" name="Recipe: Blessed Seraph Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="19163600" recipeId="1240" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Gaiters. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35495" type="EtcItem" name="Recipe:Â Blessed Seraph Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35495" type="EtcItem" name="Recipe: Blessed Seraph Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="17965800" recipeId="1241" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Gauntlets. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35496" type="EtcItem" name="Recipe:Â Blessed Seraph Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35496" type="EtcItem" name="Recipe: Blessed Seraph Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="7186350" recipeId="1242" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35497" type="EtcItem" name="Recipe:Â Blessed Seraph Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35497" type="EtcItem" name="Recipe: Blessed Seraph Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4790900" recipeId="1243" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Shield. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35498" type="EtcItem" name="Recipe:Â Blessed Seraph Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35498" type="EtcItem" name="Recipe: Blessed Seraph Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5030400" recipeId="1244" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Leather Helmet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35499" type="EtcItem" name="Recipe:Â Blessed Seraph Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35499" type="EtcItem" name="Recipe: Blessed Seraph Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="7186300" recipeId="1245" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Leather Armor. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35500" type="EtcItem" name="Recipe:Â Blessed Seraph Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35500" type="EtcItem" name="Recipe: Blessed Seraph Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="19163600" recipeId="1246" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Leather Leggings. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35501" type="EtcItem" name="Recipe:Â Blessed Seraph Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35501" type="EtcItem" name="Recipe: Blessed Seraph Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="17965800" recipeId="1247" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Leather Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35502" type="EtcItem" name="Recipe:Â Blessed Seraph Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35502" type="EtcItem" name="Recipe: Blessed Seraph Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="7186350" recipeId="1248" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Leather Boots. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35503" type="EtcItem" name="Recipe:Â Blessed Seraph Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35503" type="EtcItem" name="Recipe: Blessed Seraph Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4790900" recipeId="1249" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Circlet. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35504" type="EtcItem" name="Recipe:Â Blessed Seraph Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35504" type="EtcItem" name="Recipe: Blessed Seraph Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="7186300" recipeId="1250" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Tunic. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35505" type="EtcItem" name="Recipe:Â Blessed Seraph Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35505" type="EtcItem" name="Recipe: Blessed Seraph Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="19163600" recipeId="1251" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Stockings. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35506" type="EtcItem" name="Recipe:Â Blessed Seraph Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35506" type="EtcItem" name="Recipe: Blessed Seraph Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="17965800" recipeId="1252" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Gloves. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35507" type="EtcItem" name="Recipe:Â Blessed Seraph Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35507" type="EtcItem" name="Recipe: Blessed Seraph Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="7186350" recipeId="1253" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Seraph Shoes. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35508" type="EtcItem" name="Recipe:Â Blessed Seraph Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35508" type="EtcItem" name="Recipe: Blessed Seraph Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4790900" recipeId="1254" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Sigil. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35509" type="EtcItem" name="Recipe:Â Blessed Seraph Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35509" type="EtcItem" name="Recipe: Blessed Seraph Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5030400" recipeId="1255" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Necklace. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35510" type="EtcItem" name="Recipe:Â Blessed Seraph Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35510" type="EtcItem" name="Recipe: Blessed Seraph Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="4990500" recipeId="1256" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Earring. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35511" type="EtcItem" name="Recipe:Â Blessed Seraph Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35511" type="EtcItem" name="Recipe: Blessed Seraph Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="3742800" recipeId="1257" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Seraph Ring. Requires Create Item - Skill Lv. 13. The success rate is 60%. -->
-	<item id="35512" type="EtcItem" name="Recipe:Â Blessed Seraph Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35512" type="EtcItem" name="Recipe: Blessed Seraph Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="2495200" recipeId="1258" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Shaper. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35513" type="EtcItem" name="Recipe:Â Blessed Amaranthine Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35513" type="EtcItem" name="Recipe: Blessed Amaranthine Shaper (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1259" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Cutter. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35514" type="EtcItem" name="Recipe:Â Blessed Amaranthine Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35514" type="EtcItem" name="Recipe: Blessed Amaranthine Cutter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1260" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Slasher. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35515" type="EtcItem" name="Recipe:Â Blessed Amaranthine Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35515" type="EtcItem" name="Recipe: Blessed Amaranthine Slasher (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1261" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Avenger. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35516" type="EtcItem" name="Recipe:Â Blessed Amaranthine Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35516" type="EtcItem" name="Recipe: Blessed Amaranthine Avenger (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1262" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Fighter. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35517" type="EtcItem" name="Recipe:Â Blessed Amaranthine Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35517" type="EtcItem" name="Recipe: Blessed Amaranthine Fighter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1263" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Stormer. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35518" type="EtcItem" name="Recipe:Â Blessed Amaranthine Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35518" type="EtcItem" name="Recipe: Blessed Amaranthine Stormer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1264" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Thrower. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35519" type="EtcItem" name="Recipe:Â Blessed Amaranthine Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35519" type="EtcItem" name="Recipe: Blessed Amaranthine Thrower (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1265" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Shooter. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35520" type="EtcItem" name="Recipe:Â Blessed Amaranthine Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35520" type="EtcItem" name="Recipe: Blessed Amaranthine Shooter (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1266" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Buster. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35521" type="EtcItem" name="Recipe:Â Blessed Amaranthine Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35521" type="EtcItem" name="Recipe: Blessed Amaranthine Buster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1267" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Caster. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35522" type="EtcItem" name="Recipe:Â Blessed Amaranthine Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35522" type="EtcItem" name="Recipe: Blessed Amaranthine Caster (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1268" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Amaranthine Retributer. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35523" type="EtcItem" name="Recipe:Â Blessed Amaranthine Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35523" type="EtcItem" name="Recipe: Blessed Amaranthine Retributer (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="80829500" recipeId="1269" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35524" type="EtcItem" name="Recipe:Â Blessed Eternal Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35524" type="EtcItem" name="Recipe: Blessed Eternal Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15835900" recipeId="1270" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Breastplate. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35525" type="EtcItem" name="Recipe:Â Blessed Eternal Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35525" type="EtcItem" name="Recipe: Blessed Eternal Breastplate (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="42229200" recipeId="1271" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Gaiters. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35526" type="EtcItem" name="Recipe:Â Blessed Eternal Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35526" type="EtcItem" name="Recipe: Blessed Eternal Gaiters (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="39589950" recipeId="1272" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Gauntlets. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35527" type="EtcItem" name="Recipe:Â Blessed Eternal Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35527" type="EtcItem" name="Recipe: Blessed Eternal Gauntlets (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15835950" recipeId="1273" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35528" type="EtcItem" name="Recipe:Â Blessed Eternal Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35528" type="EtcItem" name="Recipe: Blessed Eternal Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="10557300" recipeId="1274" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Shield. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35529" type="EtcItem" name="Recipe:Â Blessed Eternal Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35529" type="EtcItem" name="Recipe: Blessed Eternal Shield (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="11085100" recipeId="1275" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Leather Helmet. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35530" type="EtcItem" name="Recipe:Â Blessed Eternal Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35530" type="EtcItem" name="Recipe: Blessed Eternal Leather Helmet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15835900" recipeId="1276" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Leather Armor. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35531" type="EtcItem" name="Recipe:Â Blessed Eternal Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35531" type="EtcItem" name="Recipe: Blessed Eternal Leather Armor (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="42229200" recipeId="1277" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Leather Leggings. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35532" type="EtcItem" name="Recipe:Â Blessed Eternal Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35532" type="EtcItem" name="Recipe: Blessed Eternal Leather Leggings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="39589950" recipeId="1278" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Leather Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35533" type="EtcItem" name="Recipe:Â Blessed Eternal Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35533" type="EtcItem" name="Recipe: Blessed Eternal Leather Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15835950" recipeId="1279" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Leather Boots. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35534" type="EtcItem" name="Recipe:Â Blessed Eternal Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35534" type="EtcItem" name="Recipe: Blessed Eternal Leather Boots (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="10557300" recipeId="1280" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Circlet. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35535" type="EtcItem" name="Recipe:Â Blessed Eternal Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35535" type="EtcItem" name="Recipe: Blessed Eternal Circlet (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15835900" recipeId="1281" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Tunic. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35536" type="EtcItem" name="Recipe:Â Blessed Eternal Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35536" type="EtcItem" name="Recipe: Blessed Eternal Tunic (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="42229200" recipeId="1282" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Stockings. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35537" type="EtcItem" name="Recipe:Â Blessed Eternal Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35537" type="EtcItem" name="Recipe: Blessed Eternal Stockings (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="39589950" recipeId="1283" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Gloves. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35538" type="EtcItem" name="Recipe:Â Blessed Eternal Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35538" type="EtcItem" name="Recipe: Blessed Eternal Gloves (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="15835950" recipeId="1284" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Blessed Eternal Shoes. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35539" type="EtcItem" name="Recipe:Â Blessed Eternal Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35539" type="EtcItem" name="Recipe: Blessed Eternal Shoes (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="10557300" recipeId="1285" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Sigil. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35540" type="EtcItem" name="Recipe:Â Blessed Eternal Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35540" type="EtcItem" name="Recipe: Blessed Eternal Sigil (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="11085100" recipeId="1286" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Necklace. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35541" type="EtcItem" name="Recipe:Â Blessed Eternal Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35541" type="EtcItem" name="Recipe: Blessed Eternal Necklace (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="10997200" recipeId="1287" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Earring. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35542" type="EtcItem" name="Recipe:Â Blessed Eternal Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35542" type="EtcItem" name="Recipe: Blessed Eternal Earring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="8247900" recipeId="1288" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Blessed Eternal Ring. Requires Create Item - Skill Lv. 14. The success rate is 60%. -->
-	<item id="35543" type="EtcItem" name="Recipe:Â Blessed Eternal Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
+	<item id="35543" type="EtcItem" name="Recipe: Blessed Eternal Ring (60%)" icon="icon.etc_recipe_gold_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="5498600" recipeId="1289" isStackable="true" handler="Recipes">
 	</item>
 	<!-- A mysterious mark. It is used at the Mysterious Mansion in the Mysterious Suggestion quest as proof of participation in the tournament. -->
@@ -7969,12 +7969,12 @@
 			weight="10">
 	</item>
 	<!-- A cute Draco's Hat. 7-day. STR + 2, DEX + 2, CON + 2. Can use the blessed resurrection skill (1 hour cooldown). Temporary event item. -->
-	<item id="35746" type="Armor" name="Draco's Hat:Â Warrior (7-day) - Event" icon="icon.etc_ev_draco_hair_acc" defaultAction="equip"
+	<item id="35746" type="Armor" name="Draco's Hat: Warrior (7-day) - Event" icon="icon.etc_ev_draco_hair_acc" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
 	</item>
 	<!-- A cute Draco's Hat. 7-day. INT + 2, WIT + 2, MEN + 2. Can use the blessed resurrection skill (1 hour cooldown). Temporary event item. -->
-	<item id="35747" type="Armor" name="Draco's Hat:Â Wizard (7-day) - Event" icon="icon.etc_ev_draco_hair_acc" defaultAction="equip"
+	<item id="35747" type="Armor" name="Draco's Hat: Wizard (7-day) - Event" icon="icon.etc_ev_draco_hair_acc" defaultAction="equip"
 			bodypart="hairall" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
 	</item>
@@ -7991,7 +7991,7 @@
 	<item id="35750" type="EtcItem" name="Draco's Blessing (30-minute) - Event" icon="icon.etc_ev_draco_exp_up" immediateEffect="1"
 			weight="0">
 	</item>
-	<!-- Double-click to acquire one of the following:Â Antharas' Earring, Valakas' Necklace, Earth Wyrm Heart Ring, Bottle of Antharas' Soul, or Bottle of Valakas' Soul. -->
+	<!-- Double-click to acquire one of the following: Antharas' Earring, Valakas' Necklace, Earth Wyrm Heart Ring, Bottle of Antharas' Soul, or Bottle of Valakas' Soul. -->
 	<item id="35751" type="EtcItem" name="Draco's Shiny Accessory Pack - Event" icon="icon.etc_ev_draco_gift_box" immediateEffect="1"
 			weight="0">
 	</item>
@@ -8871,46 +8871,46 @@
 		<enchant stat="mDef" val="0" />
 		<skill id="9564" level="1" /> <!-- Hair Accessory: Evasion -->
 	</item>
-	<!-- You can bestow STR + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow STR + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35901" type="EtcItem" name="STR Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow DEX + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow DEX + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35902" type="EtcItem" name="DEX Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow CON + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow CON + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35903" type="EtcItem" name="CON Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow MEN + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow MEN + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35904" type="EtcItem" name="MEN Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow INT + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow INT + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35905" type="EtcItem" name="INT Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow WIT + 3 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow WIT + 3 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35906" type="EtcItem" name="WIT Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow Critical Rate + 50 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow Critical Rate + 50 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35907" type="EtcItem" name="Critical Rate Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow Critical Damage + 90 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow Critical Damage + 90 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35908" type="EtcItem" name="Critical Damage Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow P. Def. + 5% when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow P. Def. + 5% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35909" type="EtcItem" name="P. Def. Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow M. Def. + 5% when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow M. Def. + 5% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35910" type="EtcItem" name="M. Def. Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow Evasion + 5 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow Evasion + 5 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35911" type="EtcItem" name="Evasion Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow P. Atk. + 5% when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow P. Atk. + 5% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35912" type="EtcItem" name="P. Atk. Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow M. Atk. + 10% when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow M. Atk. + 10% when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35913" type="EtcItem" name="M. Atk. Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
-	<!-- You can bestow Accuracy + 5 when one of the following are equipped:Â Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
+	<!-- You can bestow Accuracy + 5 when one of the following are equipped: Rabbit Ears, Raccoon Ears, Cat Ears, Lady's Hairpin, Party Mask, Monocle, Maiden's Hairpin, Forget-me-not Hairpin, Daisy Hairpin,  Little Angel Wings, Fairy Antennae, Artisan's Goggles, Arrow-pierced Apple, Chapeau, Romantic Chapeau, Angel Circlet, Demon Circlet, Pirate's Eyepatch, Outlaw's Eyepatch, Eyepatch, Party Hat, Refined Angel Ring, Refined Devil Horn, Red Horns, or 9th Anniversary Rocket Gun Hat. -->
 	<item id="35914" type="EtcItem" name="Accuracy Pendant" icon="icon.etc_hairacc_pandent_i00" immediateEffect="1" weight="10">
 	</item>
 	<!-- STR + 3 when equipped. -->
@@ -9011,7 +9011,7 @@
 	<item id="35932" type="EtcItem" name="Dragon Vitality Replenishing Potion" icon="icon.etc_potion_of_energy_i00" immediateEffect="1"
 			weight="0" isTradable="false" isDropable="false" isSellable="false">
 	</item>
-	<!-- Wrapped Pack containing XP Rune II (Lv. 1-95) 100%Â 7-day. Can only be used by characters level 95 or below. -->
+	<!-- Wrapped Pack containing XP Rune II (Lv. 1-95) 100% 7-day. Can only be used by characters level 95 or below. -->
 	<item id="35933" type="EtcItem" name="XP Rune II (Lv. 1-95) 100% Pack (7-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
 			weight="100">
 	</item>
@@ -9024,7 +9024,7 @@
 	<!--
 		15-day
 		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, M. Def. 5%, Max HP 5%, and Attribute Resistance + 10. 
-		Used skill:Â Blessed Escape ability.
+		Used skill: Blessed Escape ability.
 	-->
 	<item id="35936" type="Armor" name="Star Agathion - Heejin Jang - 15-day" icon="icon.bracelet_agathion_bm_i01" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
@@ -9032,7 +9032,7 @@
 	<!--
 		15-day
 		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Def. 5%, and Attribute Resistance + 10. 
-		Used skill:Â Blessed Escape ability.
+		Used skill: Blessed Escape ability.
 	-->
 	<item id="35937" type="Armor" name="Star Agathion - Hyuk Jang - 15-day" icon="icon.bracelet_agathion_bm_i01" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
@@ -9040,7 +9040,7 @@
 	<!--
 		15-day
 		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Def. 5%, Max HP 5%, and Attribute Resistance + 10. 
-		Used skill:Â Blessed Escape ability.
+		Used skill: Blessed Escape ability.
 	-->
 	<item id="35938" type="Armor" name="Star Agathion - Sooro Kim - 15-day" icon="icon.bracelet_agathion_bm_i01" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
@@ -9048,7 +9048,7 @@
 	<!--
 		15-day
 		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, P. Atk. 6%, and Attribute Resistance + 10. 
-		Used skill:Â Blessed Escape ability.
+		Used skill: Blessed Escape ability.
 	-->
 	<item id="35939" type="Armor" name="Star Agathion - Jaebum Park - 15-day" icon="icon.bracelet_agathion_bm_i01" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">
@@ -9056,7 +9056,7 @@
 	<!--
 		15-day
 		When equipped, it increases CON + 3, MEN + 3, weight gauge + 10000, Max HP, MP, and CP 300, and Attribute Resistance + 10. Skill cooldown 3% and skill MP consumption - 3%. 
-		Used skill:Â Blessed Escape ability.
+		Used skill: Blessed Escape ability.
 	-->
 	<item id="35940" type="Armor" name="Star Agathion - Shin-young Kim - 15-day" icon="icon.bracelet_agathion_bm_i01" defaultAction="equip"
 			bodypart="shirt" immediateEffect="1" weight="150" isTradable="false" isDropable="false" isSellable="false">

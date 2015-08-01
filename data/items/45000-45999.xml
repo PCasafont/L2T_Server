@@ -1938,27 +1938,27 @@
 		<baseAdd stat="pDef" val="50" />
 		<baseSub stat="rEvas" val="8" />
 	</item>
-	<!-- Get a + 6 Seraph Attack Type Heavy set. Expires after 30 days if not used. -->
+	<!-- Get a + 6 Seraph Attack Type Heavy set. Expires after 14 days if not used. -->
 	<item id="45757" type="EtcItem" name="Seraph Attack Type Heavy Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Get a + 6 Seraph Defense Type Heavy set. Expires after 30 days if not used. -->
+	<!-- Get a + 6 Seraph Defense Type Heavy set. Expires after 14 days if not used. -->
 	<item id="45758" type="EtcItem" name="Seraph Defense Type Heavy Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Get a + 6 Seraph Assassin Type Light set. Expires after 30 days if not used. -->
+	<!-- Get a + 6 Seraph Assassin Type Light set. Expires after 14 days if not used. -->
 	<item id="45759" type="EtcItem" name="Seraph Assassin Type Light Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Get a + 6 Seraph Enchant Type Light set. Expires after 30 days if not used. -->
+	<!-- Get a + 6 Seraph Enchant Type Light set. Expires after 14 days if not used. -->
 	<item id="45760" type="EtcItem" name="Seraph Enchant Type Light Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Get a + 6 Seraph Magic Type Robe set. Expires after 30 days if not used. -->
+	<!-- Get a + 6 Seraph Magic Type Robe set. Expires after 14 days if not used. -->
 	<item id="45761" type="EtcItem" name="Seraph Magic Type Robe Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
-	<!-- Get a + 6 Seraph Recovery Type Robe set. Expires after 30 days if not used. -->
+	<!-- Get a + 6 Seraph Recovery Type Robe set. Expires after 14 days if not used. -->
 	<item id="45762" type="EtcItem" name="Seraph Recovery Type Robe Set Pack - 14-day" icon="icon.etc_equip_item_box_i00" immediateEffect="1"
 			isStackable="true">
 	</item>
@@ -3289,8 +3289,8 @@
 	<item id="45985" type="EtcItem" name="Dynasty Ancient Sword of Fortune Capsule - Event" icon="icon.weapon_dynasty_ancient_sword_i01"
 			immediateEffect="1" isStackable="true">
 	</item>
-	<!-- Double-click to get a + 4 enchanted Ã‰clair Bijou of Fortune. -->
-	<item id="45986" type="EtcItem" name="Ã‰clair Bijou of Fortune Capsule - Event" icon="icon.weapon_greed_stinger_i01" immediateEffect="1"
+	<!-- Double-click to get a + 4 enchanted Éclair Bijou of Fortune. -->
+	<item id="45986" type="EtcItem" name="Éclair Bijou of Fortune Capsule - Event" icon="icon.weapon_greed_stinger_i01" immediateEffect="1"
 			isStackable="true">
 	</item>
 	<!-- Double-click to get a + 4 enchanted Colichemarde of Fortune. -->

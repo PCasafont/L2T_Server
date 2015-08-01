@@ -7612,7 +7612,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Kamael-exclusive Weapon: Elven Sword conversion, Bound grand epee. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="31539" type="Weapon" name="Bound Grand Ã‰pÃ©e" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
+	<item id="31539" type="Weapon" name="Bound Grand Épée" icon="icon.weapon_rapier_i00" defaultAction="equip" weaponType="rapier"
 			bodypart="rhand" randomDamage="40" immediateEffect="1" crystalCount="128" crystalType="d" weight="1440" price="69350"
 			soulshots="3" spiritshots="3" isTradable="false" isDropable="false" isSellable="false" standardItem="9225">
 		<set stat="pAtk" val="83" />
@@ -9323,8 +9323,8 @@
 		<skill id="12423" level="1" /> <!-- Check Item -->
 	</item>
 	<!-- Kamael-exclusive weapon: Sword of revolution conversion, Unidentified epee. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon type: rapier) -->
-	<item id="31822" type="EtcItem" name="Unidentified Ã‰pÃ©e" icon="icon.weapon_rapier_i00" immediateEffect="1" weight="0"
-			price="155730" handler="ItemSkills" standardItem="9222">
+	<item id="31822" type="EtcItem" name="Unidentified Épée" icon="icon.weapon_rapier_i00" immediateEffect="1" weight="0" price="155730"
+			handler="ItemSkills" standardItem="9222">
 		<skill id="12424" level="1" /> <!-- Check Item -->
 	</item>
 	<!-- Kamael-exclusive weapon: Crimson Sword conversion, Unidentified Estoc. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: one-handed weapon type: rapier) -->

@@ -3316,7 +3316,7 @@
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />
 	</item>
-	<!-- Event item. -->
+	<!-- Eva's Mark hair accessory. -->
 	<item id="8558" type="Armor" name="Eva's Mark (Event)" icon="icon.accessory_soaring_bird_i00" defaultAction="equip" bodypart="hair"
 			immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
 		<enchant stat="mDef" val="0" />

@@ -6832,7 +6832,7 @@
 		<set stat="pAtkSpd" val="350" />
 	</item>
 	<!-- Kamael-exclusive Weapon. Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP. Has a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. -->
-	<item id="16960" type="Weapon" name="Ã‰clair Bijou of Fortune - 90-day" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
+	<item id="16960" type="Weapon" name="Éclair Bijou of Fortune - 90-day" icon="icon.weapon_greed_stinger_i01" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalType="a" weight="1300" soulshots="1" spiritshots="1" enchant4Skill="3426-1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" time="129600">
@@ -6880,7 +6880,7 @@
 		<skill id="3036" level="4" /> <!-- Special Ability: Haste -->
 	</item>
 	<!-- Kamael-exclusive Weapon. Has a chance that party members including yourself will get increased P. Atk., M. Atk. and the amount of received heal, and decreased MP consumption per skill during a Critical Attack. -->
-	<item id="16963" type="Weapon" name="Grand Ã‰pÃ©e of Fortune - 90-day" icon="icon.weapon_rapier_i00" defaultAction="equip"
+	<item id="16963" type="Weapon" name="Grand Épée of Fortune - 90-day" icon="icon.weapon_rapier_i00" defaultAction="equip"
 			weaponType="rapier" bodypart="rhand" randomDamage="40" attackRange="40" damageRange="0;0;40;120" immediateEffect="1"
 			crystalType="d" weight="1440" soulshots="3" spiritshots="3" enchant4Skill="3426-1" isTradable="false" isDropable="false"
 			isSellable="false" isDepositable="false" time="129600">
@@ -7280,10 +7280,10 @@
 	<item id="16997" type="EtcItem" name="Short Sword of Fortune Set - 90-day" icon="icon.etc_equip_item_box_i03" defaultAction="peel"
 			immediateEffect="1" reuseDelay="3000" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
 			time="129600">
-		<capsuledItem id="16960" min="1" max="1" chance="100.0" /> <!-- Ã‰clair Bijou of Fortune -->
+		<capsuledItem id="16960" min="1" max="1" chance="100.0" /> <!-- Éclair Bijou of Fortune -->
 		<capsuledItem id="16961" min="1" max="1" chance="100.0" /> <!-- Colichemarde of Fortune -->
 		<capsuledItem id="16962" min="1" max="1" chance="100.0" /> <!-- Admiral's Estoc of Fortune -->
-		<capsuledItem id="16963" min="1" max="1" chance="100.0" /> <!-- Grand Ã‰pÃ©e of Fortune -->
+		<capsuledItem id="16963" min="1" max="1" chance="100.0" /> <!-- Grand Épée of Fortune -->
 	</item>
 	<!-- When used, you acquire 6 crossbows at S~D-grade s. Expires after 90 days if not used. -->
 	<item id="16998" type="EtcItem" name="Crossbow of Fortune Set - 90-day" icon="icon.etc_equip_item_box_i03" defaultAction="peel"

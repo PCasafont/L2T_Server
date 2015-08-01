@@ -5159,19 +5159,19 @@
 			etcitemType="recipe" immediateEffect="1" weight="30" price="348000" recipeId="665" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Sealed Draconic Leather Gloves. Requires Create Item - Skill Lv. 9. The success rate is 60%. -->
-	<item id="6867" type="EtcItem" name="Recipe: Sealed DraconicÂ LeatherÂ Gloves (60%)" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
+	<item id="6867" type="EtcItem" name="Recipe: Sealed Draconic Leather Gloves (60%)" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="71600" recipeId="666" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Sealed Draconic Leather Gloves. Requires Create Item - Skill Lv. 9. The success rate is 100%. -->
-	<item id="6868" type="EtcItem" name="Recipe: Sealed DraconicÂ LeatherÂ Gloves" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
+	<item id="6868" type="EtcItem" name="Recipe: Sealed Draconic Leather Gloves" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="71600" recipeId="667" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Sealed Draconic Leather Boots. Requires Create Item - Skill Lv. 9. The success rate is 60%. -->
-	<item id="6869" type="EtcItem" name="Recipe: Sealed DraconicÂ LeatherÂ Boots (60%)" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
+	<item id="6869" type="EtcItem" name="Recipe: Sealed Draconic Leather Boots (60%)" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="71600" recipeId="668" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for Sealed Draconic Leather Boots. Requires Create Item - Skill Lv. 9. The success rate is 100%. -->
-	<item id="6870" type="EtcItem" name="Recipe: Sealed DraconicÂ LeatherÂ Boots" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
+	<item id="6870" type="EtcItem" name="Recipe: Sealed Draconic Leather Boots" icon="icon.etc_recipe_black_i00" defaultAction="recipe"
 			etcitemType="recipe" immediateEffect="1" weight="30" price="71600" recipeId="669" isStackable="true" handler="Recipes">
 	</item>
 	<!-- For Dwarves only. Recipe for a Sealed Draconic Leather Helmet. Requires Create Item - Skill Lv. 9. The success rate is 60%. -->

@@ -316,8 +316,8 @@
 	<!-- For 60 minutes, receives the following Lv. 2 effects: Horn Melody, Guitar Melody, Pipe Organ Melody, Lute Melody, Harp Melody, and Drum Melody. Cooldown is 60 min. -->
 	<item id="34082" type="EtcItem" name="Heavenly Cocktail" icon="icon.etc_fruit_cocktail_i01" immediateEffect="1" weight="0">
 	</item>
-	<!-- Grand Ã‰pÃ©e (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
-	<item id="34083" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e (Earth) - PC-exclusive" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée (Earth) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
+	<item id="34083" type="Weapon" name="Player Commendation - Grand Épée (Earth) - PC-exclusive" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144"
 			soulshots="3" spiritshots="3" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="83" />
@@ -328,8 +328,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
-	<item id="34084" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e (Water) - PC-exclusive" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée (Water) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
+	<item id="34084" type="Weapon" name="Player Commendation - Grand Épée (Water) - PC-exclusive" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144"
 			soulshots="3" spiritshots="3" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="83" />
@@ -340,8 +340,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
-	<item id="34085" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e (Wind) - PC-exclusive" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée (Wind) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
+	<item id="34085" type="Weapon" name="Player Commendation - Grand Épée (Wind) - PC-exclusive" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144"
 			soulshots="3" spiritshots="3" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="83" />
@@ -352,8 +352,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
-	<item id="34086" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e (Fire) - PC-exclusive" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée (Fire) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
+	<item id="34086" type="Weapon" name="Player Commendation - Grand Épée (Fire) - PC-exclusive" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144"
 			soulshots="3" spiritshots="3" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="83" />
@@ -364,8 +364,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
-	<item id="34087" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e (Holy) - PC-exclusive" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée (Holy) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
+	<item id="34087" type="Weapon" name="Player Commendation - Grand Épée (Holy) - PC-exclusive" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144"
 			soulshots="3" spiritshots="3" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="83" />
@@ -376,8 +376,8 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<!-- Grand Ã‰pÃ©e (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
-	<item id="34088" type="Weapon" name="Player Commendation - Grand Ã‰pÃ©e (Dark) - PC-exclusive" icon="icon.weapon_rapier_i00"
+	<!-- Grand Épée (Dark) with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls. When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. -->
+	<item id="34088" type="Weapon" name="Player Commendation - Grand Épée (Dark) - PC-exclusive" icon="icon.weapon_rapier_i00"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="d" weight="144"
 			soulshots="3" spiritshots="3" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="83" />
@@ -4619,11 +4619,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou (Earth) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="34383" type="Weapon" name="Player Commendation - Ã‰clair Bijou (Earth) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
+	<item id="34383" type="Weapon" name="Player Commendation - Éclair Bijou (Earth) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130"
 			soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="228" />
@@ -4635,11 +4635,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou (Water) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou (Water) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="34384" type="Weapon" name="Player Commendation - Ã‰clair Bijou (Water) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
+	<item id="34384" type="Weapon" name="Player Commendation - Éclair Bijou (Water) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130"
 			soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="228" />
@@ -4651,11 +4651,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou (Wind) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="34385" type="Weapon" name="Player Commendation - Ã‰clair Bijou (Wind) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
+	<item id="34385" type="Weapon" name="Player Commendation - Éclair Bijou (Wind) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130"
 			soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="228" />
@@ -4667,11 +4667,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou (Fire) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="34386" type="Weapon" name="Player Commendation - Ã‰clair Bijou (Fire) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
+	<item id="34386" type="Weapon" name="Player Commendation - Éclair Bijou (Fire) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130"
 			soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="228" />
@@ -4683,11 +4683,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou (Holy) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="34387" type="Weapon" name="Player Commendation - Ã‰clair Bijou (Holy) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
+	<item id="34387" type="Weapon" name="Player Commendation - Éclair Bijou (Holy) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130"
 			soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="228" />
@@ -4699,11 +4699,11 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!--
-		Ã‰clair Bijou (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
+		Éclair Bijou (Dark) with limited ability enhancement. <Soul Crystal Enhancement>
 		Increases Atk. Spd. by about 6%. Increases damage inflicted during PvP.
 		When enchanted to 4 or more, it Has a chance of increasing P. Atk., M. Atk., and received healing amount, and decreasing MP consumption for skill use for you and your party members during a Critical Attack. Expiratory. Cannot be crystallized or granted functions besides enchantment. This item cannot be enhanced except with Destiny Enchant Scrolls.
 	-->
-	<item id="34388" type="Weapon" name="Player Commendation - Ã‰clair Bijou (Dark) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
+	<item id="34388" type="Weapon" name="Player Commendation - Éclair Bijou (Dark) - Haste (PC-exclusive)" icon="icon.weapon_greed_stinger_i01"
 			defaultAction="equip" weaponType="rapier" bodypart="rhand" randomDamage="40" immediateEffect="1" crystalType="a" weight="130"
 			soulshots="1" spiritshots="1" enchantEnabled="1" isTradable="false" isDropable="false" isSellable="false" duration="180">
 		<set stat="pAtk" val="228" />
@@ -9068,7 +9068,7 @@
 		<baseAdd stat="accCombat" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<!-- Cloak that symbolizes glory and light. STR/MEN/DEX/WIT/INT/CON + 2, and Damage Received - 5%. Can use Escape:Â Castle skill. Cannot be used while in a chaotic state. Can only be equipped by marquis or higher. Cannot be transferred between servers. -->
+	<!-- Cloak that symbolizes glory and light. STR/MEN/DEX/WIT/INT/CON + 2, and Damage Received - 5%. Can use Escape: Castle skill. Cannot be used while in a chaotic state. Can only be equipped by marquis or higher. Cannot be transferred between servers. -->
 	<item id="34925" type="Armor" name="Cloak of Light" icon="icon.amor_goodness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="0" isTradable="false">
 		<cond msgId="1518">
@@ -9101,7 +9101,7 @@
 		<skill id="19039" level="1" /> <!-- Cloak of Light -->
 		<skill id="19041" level="1" /> <!-- King's Call -->
 	</item>
-	<!-- Cloak that symbolizes avarice and darkness. STR/MEN/DEX/WIT/INT/CON + 2, and Damage Received - 5%. Can use Escape:Â Castle skill. Can only be equipped by marquis or higher. Cannot be transferred between servers. -->
+	<!-- Cloak that symbolizes avarice and darkness. STR/MEN/DEX/WIT/INT/CON + 2, and Damage Received - 5%. Can use Escape: Castle skill. Can only be equipped by marquis or higher. Cannot be transferred between servers. -->
 	<item id="34926" type="Armor" name="Cloak of Darkness" icon="icon.amor_evilness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="0" isTradable="false">
 		<cond msgId="1518">
@@ -9409,7 +9409,7 @@
 	<item id="34995" type="EtcItem" name="Hair Accessory Exchange Certificate" icon="icon.etc_piece_of_paper_white_i00" immediateEffect="1"
 			weight="0">
 	</item>
-	<!-- Cloak that symbolizes glory and light. STR/MEN/DEX/WIT/INT/CON/LUC/CHA + 3, and Damage Received - 15%. Can use Escape:Â Castle skill. Cannot be used while in a chaotic state. Can only be equipped by a lord. Cannot be transferred between servers. -->
+	<!-- Cloak that symbolizes glory and light. STR/MEN/DEX/WIT/INT/CON/LUC/CHA + 3, and Damage Received - 15%. Can use Escape: Castle skill. Cannot be used while in a chaotic state. Can only be equipped by a lord. Cannot be transferred between servers. -->
 	<item id="34996" type="Armor" name="Cloak of Radiant Light" icon="icon.amor_goodness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="0" isTradable="false">
 		<cond msgId="1518">
@@ -9442,7 +9442,7 @@
 		<skill id="19037" level="1" /> <!-- Cloak of Radiant Light -->
 		<skill id="19042" level="1" /> <!-- King's Summon -->
 	</item>
-	<!-- Cloak that symbolizes avarice and darkness. STR/MEN/DEX/WIT/INT/CON/LUC/CHA + 3, and Damage Received - 15%. Can use Escape:Â Castle skill. Can only be equipped by a lord. Cannot be transferred between servers. -->
+	<!-- Cloak that symbolizes avarice and darkness. STR/MEN/DEX/WIT/INT/CON/LUC/CHA + 3, and Damage Received - 15%. Can use Escape: Castle skill. Can only be equipped by a lord. Cannot be transferred between servers. -->
 	<item id="34997" type="Armor" name="Cloak of Cold Darkness" icon="icon.amor_evilness_cloak" defaultAction="equip" bodypart="back"
 			immediateEffect="1" weight="0" isTradable="false">
 		<cond msgId="1518">

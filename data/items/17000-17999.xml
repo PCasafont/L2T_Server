@@ -970,7 +970,7 @@
 			etcitemType="scroll" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
 		<skill id="9153" level="1" /> <!-- June Bug (Event) -->
 	</item>
-	<!-- Gourmet cheesecake that is soft like a soufflÃ© and delightfully sweet. If used against a chaotic character or a character whose name is purple, your name will turn purple. Can also be used on Event Manager Freya in town. -->
+	<!-- Gourmet cheesecake that is soft like a soufflé and delightfully sweet. If used against a chaotic character or a character whose name is purple, your name will turn purple. Can also be used on Event Manager Freya in town. -->
 	<item id="17134" type="EtcItem" name="Soft Cheesecake (Event)" icon="icon.etc_herb_of_cheesecake" defaultAction="skill_reduce"
 			etcitemType="scroll" isStackable="true" isOlyRestricted="true" handler="ItemSkills">
 		<skill id="9154" level="1" /> <!-- Soft Cheesecake (Event) -->
@@ -3909,6 +3909,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- Bestows an attack or defense type set option. Increases P. Def. and decreases P. Critical Damage when enchanted to + 4. -->
 	<item id="17465" type="Armor" name="Blessed Durandia Breastplate - Heavy Armor" icon="icon.armor_t97_u_i00" defaultAction="equip"
@@ -3936,6 +3938,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<!-- Bestows an attack or defense type set option. -->
 	<item id="17468" type="Armor" name="Blessed Durandia Boots - Heavy Armor" icon="icon.armor_t97_b_i00" defaultAction="equip"
@@ -3943,6 +3947,7 @@
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<!-- Bestows an attack or defense type set option. -->
 	<item id="17469" type="Armor" name="Blessed Durandia Shield - Heavy Armor" icon="icon.weapon_vesper_verteidiger_i01" defaultAction="equip"
@@ -3960,6 +3965,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- Bestows an assassin or enchant type set option. When enchanted to + 4, increases Evasion, Speed and P. Atk. Resistance, and decreases the chance of receiving P. Critical Hit. -->
 	<item id="17471" type="Armor" name="Blessed Durandia Leather Armor - Light Armor" icon="icon.armor_t98_u_i00" defaultAction="equip"
@@ -3991,6 +3998,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<!-- Bestows an assassin or enchant type set option. -->
 	<item id="17474" type="Armor" name="Blessed Durandia Leather Boots - Light Armor" icon="icon.armor_t98_b_i00" defaultAction="equip"
@@ -3998,6 +4007,7 @@
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<!-- Bestows a magic or recovery type set option. -->
 	<item id="17475" type="Armor" name="Blessed Durandia Circlet - Robe" icon="icon.armor_circlet_i00" defaultAction="equip"
@@ -4006,6 +4016,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="rEvas" val="0.2" />
 		<enchant stat="mEvasRate" val="0.2" />
+		<baseAdd stat="rEvas" val="1.2" />
+		<baseAdd stat="mEvasRate" val="1.2" />
 	</item>
 	<!-- Bestows a magic or recovery type set option. When enchanted to + 4, increases M. Evasion and Mental Attack Resistance, and decreases Damage and the chance of receiving P. Critical Hit. -->
 	<item id="17476" type="Armor" name="Blessed Durandia Tunic - Robe" icon="icon.armor_t99_u_i00" defaultAction="equip" armorType="magic"
@@ -4037,6 +4049,8 @@
 		<enchant stat="pDef" val="0" />
 		<enchant stat="accCombat" val="0.2" />
 		<enchant stat="accMagic" val="0.2" />
+		<baseAdd stat="accCombat" val="1.15" />
+		<baseAdd stat="accMagic" val="1.15" />
 	</item>
 	<!-- Bestows a magic or recovery type set option. -->
 	<item id="17479" type="Armor" name="Blessed Durandia Shoes - Robe" icon="icon.armor_t99_b_i00" defaultAction="equip" bodypart="feet"
@@ -4044,6 +4058,7 @@
 		<baseAdd stat="pDef" val="108" />
 		<enchant stat="pDef" val="0" />
 		<enchant stat="runSpd" val="0.6" />
+		<baseAdd stat="runSpd" val="30" />
 	</item>
 	<item id="17480" type="Armor" name="Blessed Durandia Sigil - Robe" icon="icon.verper_sigil_i00" defaultAction="equip" armorType="sigil"
 			bodypart="lhand" immediateEffect="1" crystalType="r99" weight="920" price="191976000">

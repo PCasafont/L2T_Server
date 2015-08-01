@@ -151,7 +151,7 @@
 	<!-- Special key that opens the Lesser Giant's Box -->
 	<item id="3030" type="EtcItem" name="Lesser Giant's Key" icon="icon.etc_key_i00" immediateEffect="1" weight="10" isStackable="true">
 	</item>
-	<!-- Material used by Dwarves in item manufacturing. Also used to summon and maintain servitors.Â  Can be sold in any shop. -->
+	<!-- Material used by Dwarves in item manufacturing. Also used to summon and maintain servitors.  Can be sold in any shop. -->
 	<item id="3031" type="EtcItem" name="Spirit Ore" icon="icon.etc_stone_gray_i00" etcitemType="material" immediateEffect="1"
 			price="400" isStackable="true">
 	</item>
