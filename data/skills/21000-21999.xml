@@ -4191,13 +4191,13 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
-	<!-- Decreases Damage by 3%, LUC +1, and all Attribute Resistance + 10. -->
+	<!-- Decreases all Received Damage by 3%, LUC +1, and all Attribute Resistance + 10. -->
 	<skill id="21414" levels="1" name="NoSkillName">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- Increases Damage by 3%, LUC +1, and Attack Attribute + 30. -->
+	<!-- Increases all Damage by 3%, LUC +1, and Attack Attribute + 30. -->
 	<skill id="21415" levels="1" name="NoSkillName">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

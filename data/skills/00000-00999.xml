@@ -1414,13 +1414,13 @@
 	<!-- 
 		Level 1: Uses 143 Power to restore your own HP.
 		Level 2: Uses 150 Power to restore your own HP.
-		Level 3: Uses 157 Power to restore your .
-		Level 4: Uses 172 Power to restore your .
-		Level 5: Uses 179 Power to restore your .
-		Level 6: Uses 187 Power to restore your .
-		Level 7: Uses 203 Power to restore your .
-		Level 8: Uses 211 Power to restore your .
-		Level 9: Uses 219 Power to restore your .
+		Level 3: Uses 157 Power to restore your own HP.
+		Level 4: Uses 172 Power to restore your own HP.
+		Level 5: Uses 179 Power to restore your own HP.
+		Level 6: Uses 187 Power to restore your own HP.
+		Level 7: Uses 203 Power to restore your own HP.
+		Level 8: Uses 211 Power to restore your own HP.
+		Level 9: Uses 219 Power to restore your own HP.
 	-->
 	<skill id="45" levels="9" name="Divine Heal">
 		<table name="#mpConsume"> 75 79 83 88 88 92 99 103 107 </table>

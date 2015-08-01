@@ -1933,7 +1933,7 @@
 			</abnormal>
 		</for>
 	</skill>
-	<!-- Speed and P. Def. have a chance to increase every time you receive damage. -->
+	<!-- Speed and P/M. Def. have a chance to increase every time you receive damage. -->
 	<skill id="30522" levels="1" name="Eminent Attack Movement">
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />

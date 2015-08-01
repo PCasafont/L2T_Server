@@ -6780,7 +6780,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
-	<!-- For 10 sec., P. Atk. + 20%, M. Atk. + 20%, Skill Critical Rate + 20%, and Skill Critical Damage + 20%. Cooldown is 120 seconds. Cannot be used in the Olympiad/Ceremony of Chaos. -->
+	<!-- For 10 sec., P. Atk. + 20%, M. Atk. + 20%, Skill Critical Rate + 20%, and Skill Critical Damage + 20%. Cooldown is 120 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13691" levels="1" name="Talisman - Battle: Attack">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6788,7 +6788,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
-	<!-- For 10 sec., Atk. Spd. + 20%, Casting Spd. + 20%, Speed + 60, and Skill Cooldown - 20%. Cooldown is 120 seconds. Cannot be used in the Olympiad/Ceremony of Chaos. -->
+	<!-- For 10 sec., Atk. Spd. + 20%, Casting Spd. + 20%, Speed + 60, and Skill Cooldown - 20%. Cooldown is 120 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13692" levels="1" name="Talisman - Battle: Speed">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6796,7 +6796,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
-	<!-- Cancels hiding, invincibility, Talisman buffs of enemies within range, and prevents them from obtaining those effects for 9 seconds. Cooldown is 90 seconds. Cannot be used in the Olympiad/Ceremony of Chaos. -->
+	<!-- Cancels hiding, invincibility, Talisman buffs of enemies within range, and prevents them from obtaining those effects for 9 seconds. Cooldown is 90 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13693" levels="1" name="Talisman - Battle: Support">
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

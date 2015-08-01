@@ -2529,13 +2529,13 @@
 		Level 1: M. Def. + 9.
 		Level 2: M. Def. + 10.
 		Level 3: M. Def. + 11.
-		Level 4: M. Def. + 12, Speed + 7, Max HP/MP + 510. Attribute Resistance + 6. STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1.
-		Level 5: M. Def. + 13, Speed + 7, Max HP/MP + 520. Attribute Resistance + 12. STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2.
-		Level 6: M. Def. + 14, Speed + 7, Max HP/MP + 531. Attribute Resistance + 18. STR + 3, DEX + 3, CON + 2, INT + 3, WIT + 3, MEN + 2.
-		Level 7: M. Def. + 15, Speed + 7, Max HP/MP + 536. Attribute Resistance + 24. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3.
-		Level 8: M. Def. + 16, Speed + 7, Max HP/MP + 541. Attribute Resistance + 30. STR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, MEN + 3.
-		Level 9: M. Def. + 17, Speed + 7, Max HP/MP + 547. Attribute Resistance + 36. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4.
-		Level 10: M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribute Resistance + 42. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4.
+		Level 4: M. Def. + 12, Speed + 7, Max HP/MP + 510. Attribute Resistance + 6. STR + 1, DEX + 1, CON + 1, INT + 1, WIT + 1, MEN + 1
+		Level 5: M. Def. + 13, Speed + 7, Max HP/MP + 520. Attribute Resistance + 12. STR + 2, DEX + 2, CON + 2, INT + 2, WIT + 2, MEN + 2
+		Level 6: M. Def. + 14, Speed + 7, Max HP/MP + 531. Attribute Resistance + 18. STR + 3, DEX + 3, CON + 2, INT + 3, WIT + 3, MEN + 2
+		Level 7: M. Def. + 15, Speed + 7, Max HP/MP + 536. Attribute Resistance + 24. STR + 3, DEX + 3, CON + 3, INT + 3, WIT + 3, MEN + 3
+		Level 8: M. Def. + 16, Speed + 7, Max HP/MP + 541. Attribute Resistance + 30. STR + 4, DEX + 4, CON + 3, INT + 4, WIT + 4, MEN + 3
+		Level 9: M. Def. + 17, Speed + 7, Max HP/MP + 547. Attribute Resistance + 36. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4
+		Level 10: M. Def. + 18, Speed + 7, Max HP/MP + 552. Attribute Resistance + 42. STR + 4, DEX + 4, CON + 4, INT + 4, WIT + 4, MEN + 4
 	-->
 	<skill id="18447" levels="10" name="Reflect T-shirt Basic Effect">
 		<set name="target" val="TARGET_NONE" />
