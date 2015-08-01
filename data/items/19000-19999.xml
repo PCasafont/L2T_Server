@@ -4317,7 +4317,7 @@
 			handler="Recipes">
 	</item>
 	<item id="19440" type="EtcItem" name="Gemstone (R-grade)" icon="icon.etc_bead_gold_i00" etcitemType="material" immediateEffect="1"
-			weight="2" price="300000" isStackable="true">
+			weight="0" price="300000" isStackable="true">
 	</item>
 	<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing its M. Atk. Can be used with an R-grade weapon. -->
 	<item id="19441" type="EtcItem" name="Spiritshot (R-grade)" icon="icon.spiritshot_r_i00" defaultAction="spiritshot" immediateEffect="1"
