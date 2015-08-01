@@ -2321,6 +2321,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="1200000" />
+		<set name="staticReuse" val="true" />
 	</skill>
 	<!-- 
 		Level 1: Resistance to Damage Shield + 10.

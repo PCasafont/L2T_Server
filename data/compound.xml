@@ -59,4 +59,24 @@
 	<combination item1="39654" item2="39654" result="39655" chance="20" />	<!-- Venir's Talisman > Venir's Talisman -->
 	<combination item1="39655" item2="39655" result="39656" chance="16" />	<!-- Venir's Talisman > Venir's Talisman -->
 	<combination item1="39656" item2="39656" result="39657" chance="12" />	<!-- Venir's Talisman > Venir's Talisman -->
+	<combination item1="26476" item2="26476" result="26477" chance="50" />	<!-- Vital Stone - Lv. 1 > Vital Stone - Lv. 2 -->
+	<combination item1="26477" item2="26477" result="26478" chance="50" />	<!-- Vital Stone - Lv. 2 > Vital Stone - Lv. 3 -->
+	<combination item1="26478" item2="26478" result="26479" chance="50" />	<!-- Vital Stone - Lv. 3 > Vital Stone - Lv. 4 -->
+	<combination item1="26479" item2="26479" result="26480" chance="50" />	<!-- Vital Stone - Lv. 4 > Vital Stone - Lv. 5 -->
+	<combination item1="26481" item2="26481" result="26482" chance="50" />	<!-- Garnet - Lv. 1 > Garnet - Lv. 2 -->
+	<combination item1="26482" item2="26482" result="26483" chance="50" />	<!-- Garnet - Lv. 2 > Garnet - Lv. 3 -->
+	<combination item1="26483" item2="26483" result="26484" chance="50" />	<!-- Garnet - Lv. 3 > Garnet - Lv. 4 -->
+	<combination item1="26484" item2="26484" result="26485" chance="50" />	<!-- Garnet - Lv. 4 > Garnet - Lv. 5 -->
+	<combination item1="26486" item2="26486" result="26487" chance="50" />	<!-- Tanzanite - Lv. 1 > Tanzanite - Lv. 2 -->
+	<combination item1="26487" item2="26487" result="26488" chance="50" />	<!-- Tanzanite - Lv. 2 > Tanzanite - Lv. 3 -->
+	<combination item1="26488" item2="26488" result="26489" chance="50" />	<!-- Tanzanite - Lv. 3 > Tanzanite - Lv. 4 -->
+	<combination item1="26489" item2="26489" result="26490" chance="50" />	<!-- Tanzanite - Lv. 4 > Tanzanite - Lv. 5 -->
+	<combination item1="26497" item2="26497" result="26498" chance="50" />	<!-- Cat's Eye - Lv. 1 > Cat's Eye - Lv. 2 -->
+	<combination item1="26498" item2="26498" result="26499" chance="50" />	<!-- Cat's Eye - Lv. 2 > Cat's Eye - Lv. 3 -->
+	<combination item1="26499" item2="26499" result="26500" chance="50" />	<!-- Cat's Eye - Lv. 3 > Cat's Eye - Lv. 4 -->
+	<combination item1="26500" item2="26500" result="26501" chance="50" />	<!-- Cat's Eye - Lv. 4 > Cat's Eye - Lv. 5 -->
+	<combination item1="26502" item2="26502" result="26503" chance="50" />	<!-- Amethyst - Lv. 1 > Amethyst - Lv. 2 -->
+	<combination item1="26503" item2="26503" result="26504" chance="50" />	<!-- Amethyst - Lv. 2 > Amethyst - Lv. 3 -->
+	<combination item1="26504" item2="26504" result="26505" chance="50" />	<!-- Amethyst - Lv. 3 > Amethyst - Lv. 4 -->
+	<combination item1="26505" item2="26505" result="26506" chance="50" />	<!-- Amethyst - Lv. 4 > Amethyst - Lv. 5 -->
 </list>

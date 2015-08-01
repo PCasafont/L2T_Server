@@ -9171,8 +9171,11 @@
 	</skill>
 	<!-- Expands inventory. -->
 	<skill id="13924" levels="1" name="La Vie En Rose's Radiant Brooch">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<add stat="inventoryLimit" val="12" />
+		</for>
 	</skill>
 </list>

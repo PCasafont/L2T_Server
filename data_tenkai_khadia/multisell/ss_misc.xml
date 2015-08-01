@@ -40,6 +40,11 @@
 		<ingredient id="4357" count="7500000" />
 		<production id="38768" count="1" />
 	</item>
+	<!-- La Vie En Rose's Radiant Brooch -->
+	<item>
+		<ingredient id="4357" count="500000000" />
+		<production id="26474" count="1" />
+	</item>
 	<!-- La Vie En Rose's Jewelry Box -->
 	<item>
 		<ingredient id="4357" count="150000" />

@@ -1832,4 +1832,518 @@
 	<item id="26405" type="EtcItem" name="Alien's Ingredient Box - Event" icon="icon.event_hero_treasure_box_i00" immediateEffect="1"
 			crystalType="c" weight="10" isStackable="true">
 	</item>
+	<!-- Wrapped Pack containing XP Rune I (Dragon's Ascension) (1-hr). -->
+	<item id="26406" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (1-hr)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 XP Rune 1 (Dragon's Ascension) (1-hr). -->
+	<item id="26407" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (1-hr)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- When possessed in inventory, increases XP and SP acquired through hunting by 100%. The effect only applies to characters Lv. 99 or below. 1-hr. -->
+	<item id="26408" type="EtcItem" name="XP Rune (Dragon's Ascension) - 1-hr" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing XP Rune I (Dragon's Ascension) (1-day). -->
+	<item id="26409" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (1-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 XP Rune 1 (Dragon's Ascension) (1-day). -->
+	<item id="26410" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (1-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- When possessed in inventory, increases XP and SP acquired through hunting by 100%. The effect only applies to characters Lv. 99 or below. 1-day. -->
+	<item id="26411" type="EtcItem" name="XP Rune (Dragon's Ascension) - 1-day" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing XP Rune I (Dragon's Ascension) (7-day). -->
+	<item id="26412" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (7-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 XP Rune 1 (Dragon's Ascension) (7-day). -->
+	<item id="26413" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (7-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- When possessed in inventory, increases XP and SP acquired through hunting by 100%. The effect only applies to characters Lv. 99 or below. 7-day. -->
+	<item id="26414" type="EtcItem" name="XP Rune (Dragon's Ascension) - 7-day" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing XP Rune I (Dragon's Ascension) (30-day). -->
+	<item id="26415" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (30-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing 1 XP Rune 1 (Dragon's Ascension) (30-day). -->
+	<item id="26416" type="EtcItem" name="XP Rune (Dragon's Ascension) Pack (30-day)" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- When possessed in inventory, increases XP and SP acquired through hunting by 100%. The effect only applies to characters Lv. 99 or below. 30-day. -->
+	<item id="26417" type="EtcItem" name="XP Rune (Dragon's Ascension) - 30-day" icon="br_cashtex.item.br_cash_rune_of_feather_i00"
+			immediateEffect="1" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 1. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26418" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 1 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 2. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26419" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 2 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 3. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26420" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 3 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 4. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26421" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 4 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- Get 1 of the following: Recipe: Talisman - Abundance Lv. 1-4 (High-grade), Hunter/Slaughterer/Conqueror/Outlaw Talisman, Valakas' Necklace, Istina's Necklace, Octavis' Necklace, Antharas' Earring, Istina's Earring, Octavis' Earring,  Baiu's Ring, Queen Ant's Ring, Istina's Ring, Octavis' Ring, Lilith/Anakim Talisman, Orfen's Earring, Elcyum Crystal x5, Elcyum x2, Giant's Energy x10, Tempest Stone, Lv. 5 Legendary Dye Pack, Fortune Pocket - Stage 5, Gemstone (R-grade) x30. -->
+	<item id="26422" type="EtcItem" name="Luck Box 1 - Journey's Prelude" icon="icon.event_big_july_seven_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Get 1 of the following: Seven Signs' Energy, Freya's Lucky Enchant Stone: Armor/Weapon (R-grade), Windy Lucky Enchant Stone: Armor/Weapon (R-grade), Blessed Giant's Lucky Enchant Stone: Armor/Weapon Pack (R-grade), Giant's Scroll: Enchant Weapon (R-grade), Blessed Lucky Enchant Stone: Armor/Weapon Pack (R-grade), Blessed High-grade Lucky Enchant Stone: Armor/Weapon (R-grade), Lesser Giant's Lucky Enchant Stone: Armor/Weapon Pack (R-grade),  Bottle of Antharas/Valakas/Queen Ant/Orfen/Baium's Soul, Blessed Scroll: Enchant Armor/Weapon (R-grade), High-grade Lucky Enchant Stone: Weapon (R-grade), Blessed High-grade Lucky Enchant Stone: Armor (R-grade), Giant's Scroll: Enchant Armor (R-grade), Scroll: Enchant Weapon Pack (R-grade), Scroll: Enchant Armor (R-grade) x3, Lucky Box 1. -->
+	<item id="26423" type="EtcItem" name="Luck Box 2 - Journey's Prelude" icon="icon.event_big_july_seven_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Get 1 of the following: Talisman - Annihilation Crafting Pack, Hellfire/Desire/Longing/Insanity Talisman Upgrade Pack,  XP Rune III 100% Pack (30-day), Prestige Rune 100% Pack (30-day), Pa'agrio's Warm Breeze (1-hour) Pack, Ghost Potion, Emperor's Growth Scroll x2, Feather of Blessing Pack x3, Letter Collector's Gift x2, Gemstone (R-grade) x10, Heavenly Recovery Potion x30, Life Stone Instilled with Giants' Power, Immortal Scroll/Chapter 1/Chapter 2, Elcyum Powder, Lucky Box 1, Luck Box 2. -->
+	<item id="26424" type="EtcItem" name="Luck Box 3 - Journey's Prelude" icon="icon.event_big_july_seven_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Energy of Destruction that allows one to craft up to a Talisman - Annihilation. -->
+	<item id="26425" type="EtcItem" name="Talisman - Annihilation Crafting Pack" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Energy of Destruction and Kaliel's Energy that allows one to upgrade a Talisman - Annihilation up to a Talisman - Hellfire. -->
+	<item id="26426" type="EtcItem" name="Talisman - Hellfire Upgrade Pack" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Energy of Destruction and Kaliel's Energy that allows one to upgrade a Talisman - Hellfire up to a Talisman - Desire. -->
+	<item id="26427" type="EtcItem" name="Talisman - Desire Upgrade Pack" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Energy of Destruction and Kaliel's Energy that allows one to upgrade a Talisman - Desire up to a Talisman - Longing. -->
+	<item id="26428" type="EtcItem" name="Talisman - Longing Upgrade Pack" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Wrapped Pack containing Energy of Destruction and Kaliel's Energy that allows one to upgrade a Talisman - Longing up to a Talisman - Insanity. -->
+	<item id="26429" type="EtcItem" name="Talisman - Insanity Upgrade Pack" icon="icon.etc_pi_gift_box_i04" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Enchants a skill +1~+10 to the next grade with a success rate of 100% without consuming extra materials. -->
+	<item id="26430" type="EtcItem" name="Immortal Scroll" icon="icon.esagira_telepo_01" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+	<!-- Enchants a skill between + 11~+ 20 to the next grade with a success rate of 100% without consuming extra materials. -->
+	<item id="26431" type="EtcItem" name="Immortal Scroll Chapter 1" icon="icon.esagira_telepo_01" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+	<!-- Enchants a skill between + 21~+ 30 to the next grade with a success rate of 100% without consuming extra materials. -->
+	<item id="26432" type="EtcItem" name="Immortal Scroll Chapter 2" icon="icon.esagira_telepo_01" immediateEffect="1" crystalType="c"
+			weight="10" isStackable="true">
+	</item>
+	<!-- For testing. -->
+	<item id="26433" type="EtcItem" name="Star Bottle For Testing - Test" icon="BranchIcon.Icon.etc_sign_agathion_feed_yellow_i00"
+			immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26434" type="Armor" name="Test Card - Talisman" icon="icon.card2_event_giyotine" defaultAction="equip" bodypart="shirt"
+			immediateEffect="1" weight="150">
+	</item>
+	<item id="26435" type="Armor" name="Test Card - Bracelet" icon="icon.card2_event_giyotine" defaultAction="equip" bodypart="shirt"
+			immediateEffect="1" weight="150">
+	</item>
+	<item id="26436" type="EtcItem" name="Test Card - Rune" icon="icon.card2_event_giyotine" immediateEffect="1" isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Shaper. -->
+	<item id="26437" type="EtcItem" name="Shadow Shaper Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Cutter. -->
+	<item id="26438" type="EtcItem" name="Shadow Cutter Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Slasher. -->
+	<item id="26439" type="EtcItem" name="Shadow Slasher Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Fighter. -->
+	<item id="26440" type="EtcItem" name="Shadow Fighter Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Stormer. -->
+	<item id="26441" type="EtcItem" name="Shadow Stormer Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Thrower. -->
+	<item id="26442" type="EtcItem" name="Shadow Thrower Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Shooter. -->
+	<item id="26443" type="EtcItem" name="Shadow Shooter Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Buster. -->
+	<item id="26444" type="EtcItem" name="Shadow Buster Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Retributer. -->
+	<item id="26445" type="EtcItem" name="Shadow Retributer Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Double-click to get a + 1 ~ + 9 Shadow Dualsword. -->
+	<item id="26446" type="EtcItem" name="Shadow Dualsword Box" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!--
+		P. Atk. + 154, M. Atk. + 181, and P. Evasion/M. Evasion + 4.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26447" type="Armor" name="Talisman - Abundance - War" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Attribute Resistance + 10 and Debuff Resistance + 10%.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26448" type="Armor" name="Talisman - Abundance - Tactics" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		P./M. Critical Rate + 8%, Received P. Critical Damage - 10%, Received Skill Damage in PvP - 10%.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26449" type="Armor" name="Talisman - Abundance - Morale" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Max HP/MP/CP + 325 and HP/MP/CP Recovery Rate + 5.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26450" type="Armor" name="Talisman - Abundance - Physique" icon="BranchSys2.icon.g_giant_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		P. Atk. + 231, M. Atk. 271, P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, P./M. Critical Rate + 13%. Received P. Critical Damage - 15%, Received Skill Damage in PvP - 15%. Additionally, received damage in PvP is reduced. 
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26451" type="Armor" name="Talisman - Abundance - Hunter" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		P. Atk. + 231, M. Atk. + 271 P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 13%, Max HP, MP, and CP + 490, and HP, MP, and CP Recovery + 7.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26452" type="Armor" name="Talisman - Abundance - Slaughterer" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		P. Atk. + 231, M. Atk. + 271, P. Evasion/M. Evasion + 7, P./M. Critical Rate + 13%, Max HP, MP, and CP + 490, HP, MP, and CP Recovery + 7. Received P. Critical Damage - 15%, Received Skill Damage in PvP - 15%.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26453" type="Armor" name="Talisman - Abundance - Conquerer" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Attribute Resistance + 15, Debuff Resistance + 13%, P./M. Critical Rate + 13%, Max HP, MP, and CP + 490, HP, MP, and CP Recovery + 7. Received P. Critical Damage - 15%, Received Skill Damage in PvP - 15%.
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26454" type="Armor" name="Talisman - Abundance - Outlaw" icon="BranchSys2.icon.g_twilight_gem" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Max HP/MP/CP + 510, P. Def. + 971, M. Def. + 552, P. Evasion/M. Evasion + 7, Attribute Resistance + 15, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 15%, M. Atk. + 15%, Skill Power + 15%, Skill Critical Rate + 15%. Duration 1 minute. Cooldown 10 minutes.)
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26455" type="Armor" name="Talisman - Abundance Lv. 1 (High-grade)" icon="BranchIcon.Icon.g_therich_i00" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		HP/MP/CP + 531, P. Def. + 1051, M. Def. + 609, P. Evasion/M. Evasion + 8, Attribute Resistance + 17, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 16%, M. Atk. + 16%, Skill Power + 16%, Skill Critical Rate + 16%. Duration 1 minute. Cooldown 10 minutes.)
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26456" type="Armor" name="Talisman - Abundance Lv. 2 (High-grade)" icon="BranchIcon.Icon.g_therich_i01" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		Max HP/MP/CP + 563, P. Def. + 1184, M. Def. + 706, P. Evasion/M. Evasion + 9, Attribute Resistance + 20, Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 17%, M. Atk. + 17%, Skill Power + 17%, Skill Critical Rate + 17%. Duration 1 minute. Cooldown 10 minutes.)
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26457" type="Armor" name="Talisman - Abundance Lv. 3 (High-grade)" icon="BranchIcon.Icon.g_therich_i02" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!--
+		HP/MP/CP + 591, P. Def. + 1307, M. Def. + 799, P. Evasion/M. Evasion + 10, Attribute Resistance + 25,  Debuff Resistance + 15%, Received P. Critical Damage - 15%, PVP Damage - 15% when equipped. Can use the Power of Abundance skill. (P. Atk. + 20%, M. Atk. + 20%, Skill Power + 20%, Skill Critical Rate + 20%. Duration 1 minute. Cooldown 10 minutes.)
+		Note: Effect for the Talisman of Abundance does not stack even when 2 or more are equipped.
+	-->
+	<item id="26458" type="Armor" name="Talisman - Abundance Lv. 4 (High-grade)" icon="BranchIcon.Icon.g_therich_i02" defaultAction="equip"
+			bodypart="shirt" immediateEffect="1" weight="150">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 1. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26459" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 1 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 2. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26460" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 2 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 3. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26461" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 3 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 4. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26462" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 4 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 1. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26463" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 1 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 2. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26464" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 2 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 3. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26465" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 3 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- For 4th class only. Recipe for Talisman - Abundance (High-grade) Lv. 4. Requires Create Common Item - Skill Lv. 10. The success rate is 25%. Use offerings to increase the success rate to 100%. -->
+	<item id="26466" type="EtcItem" name="Recipe: Talisman - Abundance Lv. 4 (High-grade)" icon="BranchIcon.Icon.etc_recipe_black_i00"
+			immediateEffect="1" crystalType="c" weight="30" isStackable="true">
+	</item>
+	<!-- Get 1 of the following:  1 type of Talisman - Abundance, Seven Signs' Energy, Antharas' Earring, Talisman - Lilith, Talisman - Anakim, Baium's Soul Ring, Valakas' Necklace, Bottle of Antharas' Soul, Bottle of Valakas' Soul, Baium's Ring, Octavis' Ring, Bottle of Queen Ant's Soul, Istina's Earring, Queen Ant's Ring, Istina's Necklace, Bottle of Orfen's Soul, Octavis' Earring, Istina's Earring, Octavis' Necklace, Immortal Scroll Chapter 1, Superior Giant's Codex - Mastery Chapter 1, Superior Giant's Codex Chapter 1, Lv. 5 Legendary Dye Pack, Elcyum x2, Superior Giant's Codex - Discipline Chapter 1, Giant's Energy x10, Orfen's Earring, Elcyum Crystal x5, Tempest Stone, Gemstone (R-grade) x30, 1 of 2 Fortune Pocket - Stage 5. -->
+	<item id="26467" type="EtcItem" name="Abundance Box" icon="icon.etc_pi_gift_box_i03" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
+	<item id="26468" type="Armor" name="Lindvior's Earring - 3-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
+			bodypart="rear;lear" immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="170" />
+	</item>
+	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
+	<item id="26469" type="Armor" name="Lindvior's Earring - 7-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
+			bodypart="rear;lear" immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="170" />
+	</item>
+	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
+	<item id="26470" type="Armor" name="Lindvior's Earring - 15-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
+			bodypart="rear;lear" immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="170" />
+	</item>
+	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
+	<item id="26471" type="Armor" name="Lindvior's Earring - 30-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
+			bodypart="rear;lear" immediateEffect="1" weight="150">
+		<baseAdd stat="mDef" val="170" />
+	</item>
+	<!-- Get 1 of the following: Lindvior's Earring (3-day, 7-day, 15-day, or 30-day). -->
+	<item id="26472" type="EtcItem" name="Lindvior's Earring Random Box" icon="icon.event_big_july_seven_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Get 1 of the following: Lindvior's Earring (3-day, 7-day, 15-day, or 30-day). -->
+	<item id="26473" type="EtcItem" name="Lindvior's Earring Random Box" icon="icon.event_big_july_seven_park_i00" immediateEffect="1"
+			crystalType="c" weight="10" isStackable="true">
+	</item>
+	<!-- Activates 5 jewel slots when equipped. Inventory Slot + 12. -->
+	<item id="26474" type="Armor" name="La Vie En Rose's Radiant Brooch" icon="icon.etc_bm_brooch_lavianrose_i03" defaultAction="equip"
+			bodypart="brooch" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
+		<baseAdd stat="mDef" val="101" />
+		<skill id="13659" level="1" /> <!-- Top-Grade Brooch -->
+		<skill id="13924" level="1" /> <!-- La Vie En Rose's Brilliant Brooch -->
+	</item>
+	<!-- Main ingredient for making a La Vie En Rose's Radiant Brooch. -->
+	<item id="26475" type="EtcItem" name="Radiant Gemstone Fragment" icon="icon.etc_bm_brooch_lavianrose_piece" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 3%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26476" type="Armor" name="Vital Stone - Lv. 1" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18568" level="1" /> <!-- Vital Stone -->
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 6%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26477" type="Armor" name="Vital Stone - Lv. 2" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18568" level="2" /> <!-- Vital Stone -->
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 12%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
+	<item id="26478" type="Armor" name="Vital Stone - Lv. 3" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18568" level="3" /> <!-- Vital Stone -->
+		<skill id="27439" level="1" /> <!-- Vital Stone - Vital Wind -->
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 20% and decreases Vitality Point Consumption Speed by 7%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
+	<item id="26479" type="Armor" name="Vital Stone - Lv. 4" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18568" level="4" /> <!-- Vital Stone -->
+		<skill id="27439" level="2" /> <!-- Vital Stone - Vital Wind -->
+	</item>
+	<!-- Increases Vitality Status Bonus EXP by 30% and decreases Vitality Point Consumption Speed by 15%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
+	<item id="26480" type="Armor" name="Vital Stone - Lv. 5" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18568" level="5" /> <!-- Vital Stone -->
+		<skill id="27439" level="3" /> <!-- Vital Stone - Vital Wind -->
+	</item>
+	<!-- Resistance to Debuffs + 3%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26481" type="Armor" name="Garnet - Lv. 1" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18566" level="1" /> <!-- Garnet -->
+		<skill id="18567" level="1" /> <!-- Garnet - Purge -->
+	</item>
+	<!-- Resistance to Debuffs + 6%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26482" type="Armor" name="Garnet - Lv. 2" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18566" level="2" /> <!-- Garnet -->
+		<skill id="18567" level="1" /> <!-- Garnet - Purge -->
+	</item>
+	<!-- Resistance to Debuffs + 12%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26483" type="Armor" name="Garnet - Lv. 3" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18566" level="3" /> <!-- Garnet -->
+		<skill id="18567" level="1" /> <!-- Garnet - Purge -->
+	</item>
+	<!-- Resistance to Debuffs + 20%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26484" type="Armor" name="Garnet - Lv. 4" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18566" level="4" /> <!-- Garnet -->
+		<skill id="18567" level="1" /> <!-- Garnet - Purge -->
+	</item>
+	<!-- Resistance to Debuffs + 30%. Cancels your debuffs. Effect does not stack with additional jewels of the same type. -->
+	<item id="26485" type="Armor" name="Garnet - Lv. 5" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18566" level="5" /> <!-- Garnet -->
+		<skill id="18567" level="1" /> <!-- Garnet - Purge -->
+	</item>
+	<!-- Creates a protection shield that absorbs 5,000 damage for 5 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="26486" type="Armor" name="Tanzanite - Lv. 1" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18565" level="1" /> <!-- Tanzanite - Barrier -->
+	</item>
+	<!-- Creates a protection shield that absorbs 10,000 damage for 5 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="26487" type="Armor" name="Tanzanite - Lv. 2" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18565" level="2" /> <!-- Tanzanite - Barrier -->
+	</item>
+	<!-- Creates a protection shield that absorbs 15,000 damage for 10 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="26488" type="Armor" name="Tanzanite - Lv. 3" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18565" level="3" /> <!-- Tanzanite - Barrier -->
+	</item>
+	<!-- Creates a protection shield that absorbs 30,000 damage for 10 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="26489" type="Armor" name="Tanzanite - Lv. 4" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18565" level="4" /> <!-- Tanzanite - Barrier -->
+	</item>
+	<!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Effect does not stack with additional jewels of the same type. -->
+	<item id="26490" type="Armor" name="Tanzanite - Lv. 5" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="jewel"
+			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="18565" level="5" /> <!-- Tanzanite - Barrier -->
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Vital Stone. -->
+	<item id="26491" type="EtcItem" name="La Vie En Rose's Vital Stone Chest" icon="icon.etc_bm_jewelbox_vital" immediateEffect="1"
+			weight="0" isStackable="true" handler="ExtractableItems">
+		<capsuledItem id="26476" min="1" max="1" chance="100.0" /> <!-- Vital Stone - Lv. 1 -->
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Garnet. -->
+	<item id="26492" type="EtcItem" name="La Vie En Rose's Garnet Chest" icon="icon.etc_bm_jewelbox_garnet" immediateEffect="1"
+			weight="0" isStackable="true" handler="ExtractableItems">
+		<capsuledItem id="26481" min="1" max="1" chance="100.0" /> <!-- Garnet - Lv. 1 -->
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Tanzanite. -->
+	<item id="26493" type="EtcItem" name="La Vie En Rose's Tanzanite Chest" icon="icon.etc_bm_jewelbox_tanzanite" immediateEffect="1"
+			weight="0" isStackable="true" handler="ExtractableItems">
+		<capsuledItem id="26486" min="1" max="1" chance="100.0" /> <!-- Tanzanite - Lv. 1 -->
+	</item>
+	<!-- Double-click to acquire a La Vie En Rose's Radiant Brooch. -->
+	<item id="26494" type="EtcItem" name="La Vie En Rose's Radiant Brooch Chest" icon="icon.etc_pi_box_belief_pack" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Double-click to acquire 1 of the La Vie En Rose's Jewelry Boxes. Has a very low chance of obtaining a Radiant Gemstone Fragment or a La Vie En Rose's Radiant Brooch. -->
+	<item id="26495" type="EtcItem" name="Shadai's Jewelry Box" icon="icon.etc_bm_jewelbox_main_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
+	<!-- Main ingredient for making a La Vie En Rose's Radiant Brooch. -->
+	<item id="26496" type="EtcItem" name="Shiny Gemstone Fragment" icon="icon.etc_bm_brooch_lavianrose_piece" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Resistance to Damage Shield + 10. Effect does not stack with additional jewels of the same type. -->
+	<item id="26497" type="Armor" name="Cat's Eye - Lv. 1" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27440" level="1" /> <!-- Cat's Eye -->
+	</item>
+	<!-- Resistance to Damage Shield + 20. Effect does not stack with additional jewels of the same type. -->
+	<item id="26498" type="Armor" name="Cat's Eye - Lv. 2" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27440" level="2" /> <!-- Cat's Eye -->
+	</item>
+	<!-- Resistance to Damage Shield + 30. Effect does not stack with additional jewels of the same type. -->
+	<item id="26499" type="Armor" name="Cat's Eye - Lv. 3" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27440" level="3" /> <!-- Cat's Eye -->
+	</item>
+	<!-- Resistance to Damage Shield + 40. Effect does not stack with additional jewels of the same type. -->
+	<item id="26500" type="Armor" name="Cat's Eye - Lv. 4" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27440" level="4" /> <!-- Cat's Eye -->
+	</item>
+	<!-- Resistance to Damage Shield + 50. Can remove invincibility. Effect does not stack with additional jewels of the same type. -->
+	<item id="26501" type="Armor" name="Cat's Eye - Lv. 5" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27440" level="5" /> <!-- Cat's Eye -->
+		<skill id="27441" level="1" /> <!-- Cat's Eye - Invincibility -->
+	</item>
+	<!-- PvP Damage + 3%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26502" type="Armor" name="Amethyst - Lv. 1" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27442" level="1" /> <!-- Amethyst -->
+	</item>
+	<!-- PvP Damage + 5%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26503" type="Armor" name="Amethyst - Lv. 2" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27442" level="2" /> <!-- Amethyst -->
+	</item>
+	<!-- PvP Damage + 7%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26504" type="Armor" name="Amethyst - Lv. 3" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27442" level="3" /> <!-- Amethyst -->
+	</item>
+	<!-- PvP Damage + 10%. Effect does not stack with additional jewels of the same type. -->
+	<item id="26505" type="Armor" name="Amethyst - Lv. 4" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27442" level="4" /> <!-- Amethyst -->
+	</item>
+	<!-- PvP Damage + 15%. Can remove invincibility. Effect does not stack with additional jewels of the same type. -->
+	<item id="26506" type="Armor" name="Amethyst - Lv. 5" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
+			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+		<skill id="27442" level="5" /> <!-- Amethyst -->
+		<skill id="27443" level="1" /> <!-- Amethyst - Remove Invincibility -->
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Cat's Eye. -->
+	<item id="26507" type="EtcItem" name="La Vie En Rose's Cat's Eye Chest" icon="BranchIcon.Icon.etc_bm_jewelbox_catseye_i00"
+			immediateEffect="1" weight="0" isStackable="true" handler="ExtractableItems">
+		<capsuledItem id="26497" min="1" max="1" chance="100.0" /> <!-- Cat's Eye - Lv. 1 -->
+	</item>
+	<!-- Double-click to acquire a Lv. 1 Amethyst. -->
+	<item id="26508" type="EtcItem" name="La Vie En Rose's Amethyst Chest" icon="BranchIcon.Icon.etc_bm_jewelbox_amethyst_i00"
+			immediateEffect="1" weight="0" isStackable="true" handler="ExtractableItems">
+		<capsuledItem id="26502" min="1" max="1" chance="100.0" /> <!-- Amethyst - Lv. 1 -->
+	</item>
+	<!-- Scroll for summoning Pomona once. You receive a power-up buff -->
+	<item id="26509" type="EtcItem" name="Summon Scroll: Pomona KKK - Event" icon="icon.etc_star_scroll_baekisung" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<!-- Attendance Vitality Tonic. 1 out of 4 bars on the vitality gauge are replenished. Cooldown 60 minutes. Cannot be used in the Olympiad. Can be used more than 5 times a week. -->
+	<item id="26510" type="EtcItem" name="Attendance Vitality Tonic - Event" icon="icon.etc_recall_potion3" immediateEffect="1"
+			crystalType="c" isStackable="true">
+	</item>
+	<item id="26511" type="EtcItem" name="NoItemName" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26512" type="EtcItem" name="NoItemName" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26513" type="EtcItem" name="NoItemName" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26514" type="EtcItem" name="NoItemName" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26515" type="EtcItem" name="NoItemName" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26516" type="EtcItem" name="NoItemName" icon="icon.etc_pi_gift_box_i04" immediateEffect="1" crystalType="c" isStackable="true">
+	</item>
+	<item id="26517" type="EtcItem" name="NoItemName" icon="icon.etc_life_stone_of_begining_i00" immediateEffect="1" crystalType="c"
+			isStackable="true">
+	</item>
 </list>
