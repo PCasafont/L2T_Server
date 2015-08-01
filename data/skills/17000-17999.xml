@@ -4598,12 +4598,7 @@
 		<set name="ignoreImmunity" val="true" />
 		<for>
 			<cond>
-				<and>
-					<player olympiad="false" />
-					<not>
-						<target hp="50" />
-					</not>
-				</and>
+				<player olympiad="false" />
 			</cond>
 			<abnormal>
 				<effect type="AbortCast" val="0" />

@@ -1903,7 +1903,7 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2000" />
-		<set name="reuseDelay" val="72000000" />
+		<set name="reuseDelay" val="43200000" />
 	</skill>
 	<!-- For 60 min., obtained XP/SP + 30%. -->
 	<skill id="27366" levels="1" name="Matryoshka's Blessing">
@@ -1996,7 +1996,7 @@
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
-		<set name="reuseDelay" val="3600000" />
+		<set name="reuseDelay" val="600000" />
 	</skill>
 	<!-- The warmth of Kotatsu can be felt. Speed + 20, MP Consumption of skills decreases, and PVE Damage - 10%. -->
 	<skill id="27378" levels="1" name="Warmth of Kotatsu">
@@ -2224,5 +2224,182 @@
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- Increases XP/SP by 100%. (Lv. 99 or below) -->
+	<skill id="27422" levels="1" name="XP Rune (Dragon's Ascension)">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<skill id="27423" levels="1" name="Luck Box 1">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27424" levels="1" name="Luck Box 2">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27425" levels="1" name="Luck Box 3">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27426" levels="1" name="Shadow Shaper Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27427" levels="1" name="Shadow Cutter Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27428" levels="1" name="Shadow Slasher Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27429" levels="1" name="Shadow Fighter Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27430" levels="1" name="Shadow Stormer Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27431" levels="1" name="Shadow Thrower Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27432" levels="1" name="Shadow Shooter Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27433" levels="1" name="Shadow Buster Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27434" levels="1" name="Shadow Retributer Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27435" levels="1" name="Shadow Dualsword Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27436" levels="1" name="Abundance Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27437" levels="1" name="Lindvior's Earring Random Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<skill id="27438" levels="1" name="Lindvior's Earring Random Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+	</skill>
+	<!-- 
+		Level 1: For 15 seconds when hunting monsters, Vitality Consumption + 20%, XP/SP Gain + 20%. Cooldown 20 minutes.
+		Level 2: For 15 seconds when hunting monsters, Vitality Consumption + 50%, XP/SP Gain + 50%. Cooldown 20 minutes.
+		Level 3: For 15 seconds when hunting monsters, Vitality Consumption + 100%, XP/SP Gain + 100%. Cooldown 20 minutes.
+	-->
+	<skill id="27439" levels="3" name="Vital Stone - Vital Wind">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="1200000" />
+	</skill>
+	<!-- 
+		Level 1: Resistance to Damage Shield + 10.
+		Level 2: Resistance to Damage Shield + 20.
+		Level 3: Resistance to Damage Shield + 30.
+		Level 4: Resistance to Damage Shield + 40.
+		Level 5: Resistance to Damage Shield + 50.
+	-->
+	<skill id="27440" levels="5" name="Cat's Eye">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Invincinble for 10 seconds. Cooldown 30 minutes. -->
+	<skill id="27441" levels="1" name="Cat's Eye - Invincibility">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="staticReuse" val="true" />
+	</skill>
+	<!-- Increases Damage in PvP. -->
+	<skill id="27442" levels="5" name="Amethyst">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Removes invincibility of target. Cooldown 30 minutes. -->
+	<skill id="27443" levels="1" name="Amethyst - Remove Invincibility">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="2110" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="staticReuse" val="true" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+	</skill>
+	<!-- For 30 min., obtained XP + 10%, Max HP/MP/CP + 30%, P. Def./M. Def. + 30%, Speed + 20, P. Atk. + 10%, and M. Atk. + 20%. Skill MP Consumption - 15%. Cannot use with the Art of Seduction buff. -->
+	<skill id="27444" levels="1" name="Summon Scroll: Pomona">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="15000" />
+	</skill>
+	<skill id="27445" levels="1" name="Attendance Vitality Tonic">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="3600000" />
+	</skill>
+	<skill id="27446" levels="1" name="NoSkillName">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27447" levels="1" name="NoSkillName">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27448" levels="1" name="NoSkillName">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<skill id="27449" levels="1" name="NoSkillName">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
 	</skill>
 </list>

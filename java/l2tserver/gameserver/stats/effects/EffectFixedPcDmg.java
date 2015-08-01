@@ -41,7 +41,7 @@ public class EffectFixedPcDmg extends L2Effect
 	public boolean onStart()
 	{
 		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance)
-				|| getEffected().getLevel() < 85)
+				|| getEffected().getLevel() < 85 || getEffected().isInvul())
 			return false;
 		
 		double damage = calc();

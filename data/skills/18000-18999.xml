@@ -2948,4 +2948,62 @@
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
+	<skill id="18564" levels="1" name="Shadai's Jewelry Box">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+	</skill>
+	<!-- 
+		Level 1: Creates a protection shield that absorbs 5,000 damage for 5 seconds.
+		Level 2: Creates a protection shield that absorbs 10,000 damage for 5 seconds.
+		Level 3: Creates a protection shield that absorbs 15,000 damage for 10 seconds.
+		Level 4: Creates a protection shield that absorbs 30,000 damage for 10 seconds.
+		Level 5: Creates a protection shield that absorbs 50,000 damage for 15 seconds.
+	-->
+	<skill id="18565" levels="5" name="Tanzanite - Barrier">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="30000" />
+		<set name="staticReuse" val="true" />
+		<set name="sharedReuse" val="18565-1" />
+	</skill>
+	<!-- 
+		Level 1: Resistance to Debuffs + 3%.
+		Level 2: Resistance to Debuffs + 6%.
+		Level 3: Resistance to Debuffs + 12%.
+		Level 4: Resistance to Debuffs + 20%.
+		Level 5: Resistance to Debuffs + 30%.
+	-->
+	<skill id="18566" levels="5" name="Garnet">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
+	<!-- Cancels your debuffs. -->
+	<skill id="18567" levels="1" name="Garnet - Purge">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="30000" />
+		<set name="staticReuse" val="true" />
+	</skill>
+	<!-- 
+		Level 1: Increases Vitality Status Bonus EXP by 3%.
+		Level 2: Increases Vitality Status Bonus EXP by 6%.
+		Level 3: Increases Vitality Status Bonus EXP by 12%.
+		Level 4: Increases Vitality Status Bonus EXP by 20% and decreases Vitality Point Consumption Speed by 7%.
+		Level 5: Increases Vitality Status Bonus EXP by 30% and decreases Vitality Point Consumption Speed by 15%.
+	-->
+	<skill id="18568" levels="5" name="Vital Stone">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+	</skill>
 </list>
