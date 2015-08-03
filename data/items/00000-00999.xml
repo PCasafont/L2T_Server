@@ -757,14 +757,14 @@
 		<crystallizeReward id="36513" count="1" chance="21.155" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="99" type="Weapon" name="Apprentice's Spellbook" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="650"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="650"
 			price="1920" soulshots="1" spiritshots="1" isMagicWeapon="true">
 		<set stat="pAtk" val="9" />
 		<set stat="mAtk" val="12" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<item id="100" type="Weapon" name="Voodoo Doll" icon="icon.weapon_voodoo_doll_i00" defaultAction="equip" weaponType="etc"
+	<item id="100" type="Weapon" name="Voodoo Doll" icon="icon.weapon_voodoo_doll_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="630" price="37600"
 			soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="25" />
@@ -772,7 +772,7 @@
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<item id="101" type="Weapon" name="Scroll of Wisdom" icon="icon.weapon_scroll_of_wisdom_i00" defaultAction="equip" weaponType="etc"
+	<item id="101" type="Weapon" name="Scroll of Wisdom" icon="icon.weapon_scroll_of_wisdom_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="582"
 			crystalType="d" weight="610" price="63000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
@@ -2973,7 +2973,7 @@
 		<enchant stat="mAtk" val="0" />
 		<skill id="3599" level="1" /> <!-- Polearm Multi-attack -->
 	</item>
-	<item id="308" type="Weapon" name="Buffalo's Horn" icon="icon.weapon_buffalo_horn_i00" defaultAction="equip" weaponType="etc"
+	<item id="308" type="Weapon" name="Buffalo's Horn" icon="icon.weapon_buffalo_horn_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="660" price="118"
 			soulshots="1" spiritshots="1" isMagicWeapon="true">
 		<set stat="pAtk" val="6" />
@@ -2981,7 +2981,7 @@
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<item id="309" type="Weapon" name="Tears of Eva" icon="icon.weapon_tears_of_eva_i00" defaultAction="equip" weaponType="etc"
+	<item id="309" type="Weapon" name="Tears of Eva" icon="icon.weapon_tears_of_eva_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="630" price="21000"
 			soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="19" />
@@ -2990,7 +2990,7 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<item id="310" type="Weapon" name="Relic of the Saints" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="610"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="610"
 			price="21000" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="19" />
 		<set stat="mAtk" val="22" />
@@ -2998,14 +2998,14 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<item id="311" type="Weapon" name="Crucifix of Blessing" icon="icon.weapon_crucifix_of_blessing_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="620"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="620"
 			price="37600" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="25" />
 		<set stat="mAtk" val="28" />
 		<set stat="rCrit" val="8" />
 		<set stat="pAtkSpd" val="379" />
 	</item>
-	<item id="312" type="Weapon" name="Branch of Life" icon="icon.weapon_branch_of_life_i00" defaultAction="equip" weaponType="etc"
+	<item id="312" type="Weapon" name="Branch of Life" icon="icon.weapon_branch_of_life_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="582"
 			crystalType="d" weight="620" price="63000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
@@ -3016,7 +3016,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="313" type="Weapon" name="Temptation of Abyss" icon="icon.weapon_temptation_of_abyss_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="582"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="582"
 			crystalType="d" weight="610" price="63000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
 		<set stat="mAtk" val="35" />
@@ -3025,7 +3025,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="314" type="Weapon" name="Proof of Revenge" icon="icon.weapon_proof_of_revenge_i00" defaultAction="equip" weaponType="etc"
+	<item id="314" type="Weapon" name="Proof of Revenge" icon="icon.weapon_proof_of_revenge_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="582"
 			crystalType="d" weight="600" price="63000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
@@ -3035,7 +3035,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="315" type="Weapon" name="Divine Tome" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="etc"
+	<item id="315" type="Weapon" name="Divine Tome" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="915"
 			crystalType="d" weight="570" price="99100" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="41" />
@@ -3045,7 +3045,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="316" type="Weapon" name="Sage's Blood" icon="icon.weapon_blood_of_saints_i00" defaultAction="equip" weaponType="etc"
+	<item id="316" type="Weapon" name="Sage's Blood" icon="icon.weapon_blood_of_saints_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1373"
 			crystalType="d" weight="580" price="148700" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="51" />
@@ -3055,7 +3055,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="317" type="Weapon" name="Tome of Blood" icon="icon.weapon_tome_of_blood_i00" defaultAction="equip" weaponType="etc"
+	<item id="317" type="Weapon" name="Tome of Blood" icon="icon.weapon_tome_of_blood_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1373"
 			crystalType="d" weight="570" price="148700" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="51" />
@@ -3065,7 +3065,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="318" type="Weapon" name="Crucifix of Blood" icon="icon.weapon_crucifix_of_blood_i00" defaultAction="equip" weaponType="etc"
+	<item id="318" type="Weapon" name="Crucifix of Blood" icon="icon.weapon_crucifix_of_blood_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1983"
 			crystalType="d" weight="540" price="214800" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="63" />
@@ -3086,7 +3086,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="320" type="Weapon" name="Blue Crystal Skull" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2763"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2763"
 			crystalType="d" weight="1600" price="304000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="67" />
 		<set stat="mAtk" val="66" />
@@ -3095,7 +3095,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="321" type="Weapon" name="Demon's Fangs" icon="icon.weapon_demon_fangs_i00" defaultAction="equip" weaponType="etc"
+	<item id="321" type="Weapon" name="Demon's Fangs" icon="icon.weapon_demon_fangs_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2164"
 			crystalType="d" weight="1600" price="234380" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="67" />
@@ -3105,7 +3105,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="322" type="Weapon" name="Vajra Wand" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="322" type="Weapon" name="Vajra Wand" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3272"
 			crystalType="d" weight="1600" price="360000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="74" />
@@ -3115,7 +3115,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="323" type="Weapon" name="Ancient Reagent" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="323" type="Weapon" name="Ancient Reagent" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="3272"
 			crystalType="d" weight="1600" price="360000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="74" />
@@ -3125,7 +3125,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="324" type="Weapon" name="Tears of Fairy" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="324" type="Weapon" name="Tears of Fairy" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1148"
 			crystalType="c" weight="1600" price="574000" soulshots="2" spiritshots="2" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="98" />
@@ -3145,7 +3145,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="326" type="Weapon" name="Heathen's Book" icon="icon.weapon_heathens_book_i00" defaultAction="equip" weaponType="etc"
+	<item id="326" type="Weapon" name="Heathen's Book" icon="icon.weapon_heathens_book_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1322"
 			crystalType="c" weight="560" price="660860" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="111" />
@@ -3155,7 +3155,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="327" type="Weapon" name="Hex Doll" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="327" type="Weapon" name="Hex Doll" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1720"
 			crystalType="c" weight="1600" price="860000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="111" />
@@ -3166,7 +3166,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="328" type="Weapon" name="Candle of Wisdom" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
@@ -3175,7 +3175,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="329" type="Weapon" name="Blessed Branch" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="329" type="Weapon" name="Blessed Branch" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="800" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
@@ -3185,7 +3185,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="330" type="Weapon" name="Phoenix Feather" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="330" type="Weapon" name="Phoenix Feather" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="800" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
@@ -3195,7 +3195,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="331" type="Weapon" name="Cerberus Eye" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="331" type="Weapon" name="Cerberus Eye" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
@@ -3206,7 +3206,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="332" type="Weapon" name="Scroll of Destruction" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
@@ -3216,7 +3216,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="333" type="Weapon" name="Black Dragon Claw" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
@@ -3226,7 +3226,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<item id="334" type="Weapon" name="Three Eyed Crow's Feather" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2452"
 			crystalType="c" weight="1600" price="1226000" soulshots="3" spiritshots="3" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="125" />
 		<set stat="mAtk" val="111" />
@@ -3235,7 +3235,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="335" type="Weapon" name="Soul Crystal" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="335" type="Weapon" name="Soul Crystal" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1746"
 			crystalType="b" weight="1600" price="2620000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="155" />
@@ -3245,7 +3245,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="336" type="Weapon" name="Scroll of Mana" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="336" type="Weapon" name="Scroll of Mana" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2440"
 			crystalType="b" weight="1600" price="3660000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="170" />
@@ -3255,7 +3255,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="337" type="Weapon" name="Hit List" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="337" type="Weapon" name="Hit List" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2440"
 			crystalType="b" weight="1600" price="3660000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="170" />
@@ -3265,7 +3265,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="338" type="Weapon" name="Wyvern's Skull" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="338" type="Weapon" name="Wyvern's Skull" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2440"
 			crystalType="b" weight="4800" price="3660000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="170" />
@@ -3275,7 +3275,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="339" type="Weapon" name="Blood Crystal" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="339" type="Weapon" name="Blood Crystal" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2440"
 			crystalType="b" weight="1600" price="3660000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="170" />
@@ -3285,7 +3285,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="340" type="Weapon" name="Unicorn's Horn" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="340" type="Weapon" name="Unicorn's Horn" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2440"
 			crystalType="b" weight="1600" price="3660000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="170" />
@@ -3295,7 +3295,7 @@
 		<enchant stat="pAtk" val="0" />
 		<enchant stat="mAtk" val="0" />
 	</item>
-	<item id="341" type="Weapon" name="Forgotten Tome" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="341" type="Weapon" name="Forgotten Tome" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
 			crystalType="a" weight="1600" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
@@ -3309,7 +3309,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.524" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
-	<item id="342" type="Weapon" name="Enchanted Flute" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="342" type="Weapon" name="Enchanted Flute" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
 			crystalType="a" weight="1600" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
@@ -3323,7 +3323,7 @@
 		<crystallizeReward id="36388" count="1" chance="67.524" /> <!-- Giant's Scroll: Enchant Weapon (A-grade) -->
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
-	<item id="343" type="Weapon" name="Headless Arrow" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="etc"
+	<item id="343" type="Weapon" name="Headless Arrow" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
 			crystalType="a" weight="1600" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
@@ -3338,7 +3338,7 @@
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="344" type="Weapon" name="Proof of Overlord" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
 			crystalType="a" weight="1600" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
 		<set stat="mAtk" val="152" />
@@ -3352,7 +3352,7 @@
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="345" type="Weapon" name="Deathbringer Sword" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="2160"
 			crystalType="a" weight="4800" price="27000000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="186" />
 		<set stat="mAtk" val="152" />
@@ -3366,7 +3366,7 @@
 		<crystallizeReward id="36513" count="1" chance="40.509" /> <!-- Elcyum Powder -->
 	</item>
 	<item id="346" type="Weapon" name="Tears of Fallen Angel" icon="icon.weapon_apprentices_spellbook_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1765"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="1765"
 			crystalType="s" weight="1600" price="35300000" soulshots="1" spiritshots="1" enchantEnabled="1" isMagicWeapon="true">
 		<set stat="pAtk" val="201" />
 		<set stat="mAtk" val="162" />

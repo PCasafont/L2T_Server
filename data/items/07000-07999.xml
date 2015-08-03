@@ -4133,7 +4133,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Traveler's Scroll. This item cannot be crystallized or enchanted. If one's PK count is 1 or more, it cannot be used. -->
-	<item id="7827" type="Weapon" name="Traveler's Scroll" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="etc"
+	<item id="7827" type="Weapon" name="Traveler's Scroll" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalType="d" weight="570"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isEnchantable="false" isAttributable="false"
 			isMagicWeapon="true">

@@ -3528,7 +3528,7 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!-- For the Player Commendation coupon event. This item cannot be crystallized or enchanted. If one's PK count is 1 or more, it cannot be used. -->
-	<item id="8587" type="Weapon" name="Divine Tome (Event)" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="etc"
+	<item id="8587" type="Weapon" name="Divine Tome (Event)" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalType="d" weight="570"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true">
 		<set stat="pAtk" val="41" />
@@ -6537,7 +6537,7 @@
 		<set stat="pAtkSpd" val="379" />
 	</item>
 	<!-- This Shadow Item contains the mirrored power of a Voodoo Doll. It cannot be crystallized or granted functions besides enchantment. -->
-	<item id="8975" type="Weapon" name="Shadow Item: Voodoo Doll" icon="icon.weapon_voodoo_doll_i00" defaultAction="equip" weaponType="etc"
+	<item id="8975" type="Weapon" name="Shadow Item: Voodoo Doll" icon="icon.weapon_voodoo_doll_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="210" soulshots="2"
 			spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" duration="600">
 		<set stat="pAtk" val="25" />
@@ -6604,7 +6604,7 @@
 	</item>
 	<!-- This Shadow Item contains the mirrored power of a Crucifix of Blessing. It cannot be crystallized or granted functions besides enchantment. -->
 	<item id="8981" type="Weapon" name="Shadow Item: Crucifix of Blessing" icon="icon.weapon_crucifix_of_blessing_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="207"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" weight="207"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" duration="600">
 		<set stat="pAtk" val="25" />
 		<set stat="mAtk" val="28" />

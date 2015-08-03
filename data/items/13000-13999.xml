@@ -1088,7 +1088,7 @@
 	</item>
 	<!-- A Voodoo Doll with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. -->
 	<item id="13156" type="Weapon" name="Player Commendation - Voodoo Doll - PC-exclusive Weapon" icon="icon.weapon_voodoo_doll_i00"
-			defaultAction="equip" weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
+			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
 			immediateEffect="1" weight="630" soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false"
 			isMagicWeapon="true" duration="180" time="21600">
 		<set stat="pAtk" val="25" />
@@ -1158,7 +1158,7 @@
 	</item>
 	<!-- A Crucifix of Blessing with limited ability enhancement. Expiratory. Cannot be crystallized or granted functions besides enchantment. -->
 	<item id="13162" type="Weapon" name="Player Commendation - Crucifix of Blessing - PC-exclusive Weapon" icon="icon.weapon_crucifix_of_blessing_i00"
-			defaultAction="equip" weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
+			defaultAction="equip" weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120"
 			immediateEffect="1" weight="620" soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false"
 			isMagicWeapon="true" duration="180" time="21600">
 		<set stat="pAtk" val="25" />

@@ -961,7 +961,7 @@
 	</item>
 	<!-- Beautiful wedding bouquet. Female only. -->
 	<item id="21163" type="Weapon" name="Wedding Bouquet" icon="BranchSys2.icon.br_wedding_bouquet_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="1" immediateEffect="1" weight="1600" soulshots="1" spiritshots="1" isTradable="false"
+			weaponType="sword" bodypart="rhand" randomDamage="1" immediateEffect="1" weight="1600" soulshots="1" spiritshots="1" isTradable="false"
 			isDropable="false" isSellable="false">
 		<set stat="pAtk" val="1" />
 		<set stat="mAtk" val="1" />

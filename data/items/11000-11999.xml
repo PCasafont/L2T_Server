@@ -10976,7 +10976,7 @@
 	</item>
 	<!-- Proof of Revenge with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11609" type="Weapon" name="Common Item - Proof of Revenge" icon="icon.weapon_proof_of_revenge_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
 			crystalType="d" weight="200" price="3492" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
 		<set stat="mAtk" val="35" />
@@ -11005,7 +11005,7 @@
 	</item>
 	<!-- Branch of Life with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11612" type="Weapon" name="Common Item - Branch of Life" icon="icon.weapon_branch_of_life_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
 			crystalType="d" weight="207" price="3492" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
 		<set stat="mAtk" val="35" />
@@ -11045,7 +11045,7 @@
 	</item>
 	<!-- Temptation of Abyss with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11616" type="Weapon" name="Common Item - Temptation of Abyss" icon="icon.weapon_temptation_of_abyss_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
 			crystalType="d" weight="203" price="3492" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
 		<set stat="mAtk" val="35" />
@@ -11076,7 +11076,7 @@
 	</item>
 	<!-- Scroll of Wisdom with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11619" type="Weapon" name="Common Item - Scroll of Wisdom" icon="icon.weapon_scroll_of_wisdom_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="32"
 			crystalType="d" weight="203" price="3492" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="32" />
 		<set stat="mAtk" val="35" />
@@ -11275,7 +11275,7 @@
 	</item>
 	<!-- Divine Tome with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11637" type="Weapon" name="Common Item - Divine Tome" icon="icon.weapon_divine_tome_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="48"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="48"
 			crystalType="d" weight="190" price="5204" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="41" />
 		<set stat="mAtk" val="43" />
@@ -11722,7 +11722,7 @@
 	</item>
 	<!-- Tome of Blood with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11676" type="Weapon" name="Common Item - Tome of Blood" icon="icon.weapon_tome_of_blood_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="69"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="69"
 			crystalType="d" weight="190" price="7480" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="51" />
 		<set stat="mAtk" val="52" />
@@ -11745,7 +11745,7 @@
 	</item>
 	<!-- Sage's Blood with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11678" type="Weapon" name="Common Item - Sage's Blood" icon="icon.weapon_blood_of_saints_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="69"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="69"
 			crystalType="d" weight="193" price="7480" soulshots="2" spiritshots="2" isMagicWeapon="true">
 		<set stat="pAtk" val="51" />
 		<set stat="mAtk" val="52" />
@@ -12060,7 +12060,7 @@
 	</item>
 	<!-- Crucifix of Blood with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11709" type="Weapon" name="Common Item - Crucifix of Blood" icon="icon.weapon_crucifix_of_blood_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="96"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="96"
 			crystalType="d" weight="180" price="10410" soulshots="3" spiritshots="3" isMagicWeapon="true">
 		<set stat="pAtk" val="63" />
 		<set stat="mAtk" val="63" />
@@ -12121,7 +12121,7 @@
 	</item>
 	<!-- Demon's Fangs with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11715" type="Weapon" name="Common Item - Demon's Fangs" icon="icon.weapon_demon_fangs_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="104"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="104"
 			crystalType="d" weight="533" price="11262" soulshots="3" spiritshots="3" isMagicWeapon="true">
 		<set stat="pAtk" val="67" />
 		<set stat="mAtk" val="66" />
@@ -13211,7 +13211,7 @@
 	</item>
 	<!-- Heathen's Book with limited enhancement options. Enchantment, soul storing and augmenting are impossible. -->
 	<item id="11817" type="Weapon" name="Common Item - Heathen's Book" icon="icon.weapon_heathens_book_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="73"
+			weaponType="sword" bodypart="rhand" randomDamage="10" attackRange="40" damageRange="0;0;40;120" immediateEffect="1" crystalCount="73"
 			crystalType="c" weight="187" price="36440" soulshots="3" spiritshots="3" isMagicWeapon="true">
 		<set stat="pAtk" val="111" />
 		<set stat="mAtk" val="101" />

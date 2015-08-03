@@ -2012,7 +2012,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Bound Branch of Life. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="31144" type="Weapon" name="Bound Branch of Life" icon="icon.weapon_branch_of_life_i00" defaultAction="equip" weaponType="etc"
+	<item id="31144" type="Weapon" name="Bound Branch of Life" icon="icon.weapon_branch_of_life_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="620" price="15750"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" standardItem="312">
 		<set stat="pAtk" val="32" />
@@ -3083,7 +3083,7 @@
 	</item>
 	<!-- Bound Proof of Revenge. Can use an Unbind Scroll to change this item into a Standard item. -->
 	<item id="31220" type="Weapon" name="Bound Proof of Revenge" icon="icon.weapon_proof_of_revenge_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="600"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="600"
 			price="15750" soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true"
 			standardItem="314">
 		<set stat="pAtk" val="32" />

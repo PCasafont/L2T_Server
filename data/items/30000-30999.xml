@@ -7074,7 +7074,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Bound Sage's Blood. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="30449" type="Weapon" name="Bound Sage's Blood" icon="icon.weapon_blood_of_saints_i00" defaultAction="equip" weaponType="etc"
+	<item id="30449" type="Weapon" name="Bound Sage's Blood" icon="icon.weapon_blood_of_saints_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="68" crystalType="d" weight="580" price="37175"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true">
 		<set stat="pAtk" val="51" />
@@ -7967,7 +7967,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Bound Tome of Blood. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="30513" type="Weapon" name="Bound Tome of Blood" icon="icon.weapon_tome_of_blood_i00" defaultAction="equip" weaponType="etc"
+	<item id="30513" type="Weapon" name="Bound Tome of Blood" icon="icon.weapon_tome_of_blood_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="68" crystalType="d" weight="570" price="37175"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" standardItem="317">
 		<set stat="pAtk" val="51" />
@@ -7979,7 +7979,7 @@
 	</item>
 	<!-- Bound Crucifix of Blood. Can use an Unbind Scroll to change this item into a Standard item. -->
 	<item id="30514" type="Weapon" name="Bound Crucifix of Blood" icon="icon.weapon_crucifix_of_blood_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="99" crystalType="d" weight="540"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="99" crystalType="d" weight="540"
 			price="53700" soulshots="3" spiritshots="3" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true"
 			standardItem="318">
 		<set stat="pAtk" val="63" />
@@ -10770,7 +10770,7 @@
 	</item>
 	<!-- Bound Scroll of Wisdom. Can use an Unbind Scroll to change this item into a Standard item. -->
 	<item id="30726" type="Weapon" name="Bound Scroll of Wisdom" icon="icon.weapon_scroll_of_wisdom_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="610"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="610"
 			price="15750" soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true"
 			standardItem="101">
 		<set stat="pAtk" val="32" />
@@ -11610,7 +11610,7 @@
 		<crystallizeReward id="36513" count="1" chance="9.503" /> <!-- Elcyum Powder -->
 	</item>
 	<!-- Bound Heathen's Book. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="30787" type="Weapon" name="Bound Heathen's Book" icon="icon.weapon_heathens_book_i00" defaultAction="equip" weaponType="etc"
+	<item id="30787" type="Weapon" name="Bound Heathen's Book" icon="icon.weapon_heathens_book_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="66" crystalType="c" weight="560" price="165215"
 			soulshots="3" spiritshots="3" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" standardItem="326">
 		<set stat="pAtk" val="111" />
@@ -13371,7 +13371,7 @@
 		<enchant stat="pDef" val="0" />
 	</item>
 	<!-- Bound Demon's Fang. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="30913" type="Weapon" name="Bound Demon's Fangs" icon="icon.weapon_demon_fangs_i00" defaultAction="equip" weaponType="etc"
+	<item id="30913" type="Weapon" name="Bound Demon's Fangs" icon="icon.weapon_demon_fangs_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="108" crystalType="d" weight="1600" price="58595"
 			soulshots="3" spiritshots="3" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true">
 		<set stat="pAtk" val="67" />
@@ -14161,7 +14161,7 @@
 	</item>
 	<!-- Bound Temptation of Abyss. Can use an Unbind Scroll to change this item into a Standard item. -->
 	<item id="30976" type="Weapon" name="Bound Temptation of Abyss" icon="icon.weapon_temptation_of_abyss_i00" defaultAction="equip"
-			weaponType="etc" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="610"
+			weaponType="sword" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="29" crystalType="d" weight="610"
 			price="15750" soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true"
 			standardItem="313">
 		<set stat="pAtk" val="32" />
@@ -14233,7 +14233,7 @@
 		<enchant stat="mAtk" val="0" />
 	</item>
 	<!-- Bound Divine Tome. Can use an Unbind Scroll to change this item into a Standard item. -->
-	<item id="30981" type="Weapon" name="Bound Divine Tome" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="etc"
+	<item id="30981" type="Weapon" name="Bound Divine Tome" icon="icon.weapon_divine_tome_i00" defaultAction="equip" weaponType="sword"
 			bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="45" crystalType="d" weight="570" price="24775"
 			soulshots="2" spiritshots="2" isTradable="false" isDropable="false" isSellable="false" isMagicWeapon="true" standardItem="315">
 		<set stat="pAtk" val="41" />
