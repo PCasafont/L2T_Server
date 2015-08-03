@@ -2824,6 +2824,7 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1600" />
+		<set name="ignoreResists" val="true" />
 		<for>
 			<abnormal>
 				<effect type="Reset" val="0" />
@@ -13124,6 +13125,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="ignoreResists" val="true" />
 		<for>
 			<abnormal>
 				<effect type="Reset" val="0" />
