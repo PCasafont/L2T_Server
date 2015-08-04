@@ -2616,9 +2616,12 @@ public final class Formulas
 			return false;
 		}
 		
-		final double failureModifier = attacker.calcStat(Stats.MAGIC_FAILURE_RATE, 1, target, skill);
-		if (failureModifier > 100)
-			return false;
+		if (skill.isMagic())
+		{
+			final double failureModifier = attacker.calcStat(Stats.MAGIC_FAILURE_RATE, 1, target, skill);
+			if (failureModifier > 100)
+				return false;
+		}
 		
 		int rate = 0;
 		
