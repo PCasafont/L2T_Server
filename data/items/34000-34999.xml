@@ -8465,19 +8465,19 @@
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Requiem or Immortal equipment for Blessed equipment. Small fee is charged. -->
 	<item id="34774" type="EtcItem" name="Scroll of Blessing (R1-grade) - Event" icon="icon.bless_scroll_r1" immediateEffect="1"
-			weight="100">
+			weight="100" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Apocalypse or Twilight equipment for Blessed equipment. Small fee is charged. -->
 	<item id="34775" type="EtcItem" name="Scroll of Blessing (R2-grade) - Event" icon="icon.bless_scroll_r2" immediateEffect="1"
-			weight="100">
+			weight="100" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Specter or Seraph equipment for Blessed equipment. Small fee is charged. -->
 	<item id="34776" type="EtcItem" name="Scroll of Blessing (R95-grade) - Event" icon="icon.bless_scroll_r95" immediateEffect="1"
-			weight="100">
+			weight="100" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Amaranthine or Eternal equipment for Blessed equipment. Small fee is charged. -->
 	<item id="34777" type="EtcItem" name="Scroll of Blessing (R99-grade) - Event" icon="icon.bless_scroll_r99" immediateEffect="1"
-			weight="100">
+			weight="100" isStackable="true">
 	</item>
 	<!-- Squash ring, warrior-type. Increases P. Critical Damage by 15% and P. Accuracy by 2. 15-day. When two identical rings are equipped, only one effect is applied. -->
 	<item id="34778" type="Armor" name="Squash Ring (Warrior) - Event" icon="icon.accessory_ring_of_gourd_i00" defaultAction="equip"

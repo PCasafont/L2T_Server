@@ -4247,11 +4247,12 @@
 			isDropable="false" isSellable="false">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Requiem or Apocalypse equipment for Blessed equipment. -->
-	<item id="37770" type="EtcItem" name="Scroll of Blessing: Weapon (R-grade)" icon="icon.bless_scroll_r2" weight="100" price="5267574">
+	<item id="37770" type="EtcItem" name="Scroll of Blessing: Weapon (R-grade)" icon="icon.bless_scroll_r2" weight="100" price="5267574"
+			isStackable="true">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Specter equipment for Blessed equipment. -->
 	<item id="37771" type="EtcItem" name="Scroll of Blessing: Weapon (R95-grade)" icon="icon.bless_scroll_r95" weight="100"
-			price="70637960">
+			price="70637960" isStackable="true">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Amaranthine equipment for Blessed equipment. -->
 	<item id="37772" type="EtcItem" name="Scroll of Blessing: Weapon (R99-grade)" icon="icon.bless_scroll_r99" weight="100"
@@ -4282,10 +4283,10 @@
 			weight="10" price="1400931">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Immortal or Hell equipment for Blessed equipment. -->
-	<item id="37779" type="EtcItem" name="Scroll of Blessing: Armor (R-grade)" icon="icon.bless_scroll_r2" weight="100" price="1371850">
+	<item id="37779" type="EtcItem" name="Scroll of Blessing: Armor (R-grade)" icon="icon.bless_scroll_r2" weight="100" price="1371850" isStackable="true">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Seraph equipment for Blessed equipment. -->
-	<item id="37780" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade)" icon="icon.bless_scroll_r95" weight="100" price="19162980">
+	<item id="37780" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade)" icon="icon.bless_scroll_r95" weight="100" price="19162980" isStackable="true">
 	</item>
 	<!-- There is a small chance that the Blacksmith of Mammon will exchange for you standard Eternal equipment for Blessed equipment. -->
 	<item id="37781" type="EtcItem" name="Scroll of Blessing: Armor (R99-grade)" icon="icon.bless_scroll_r99" weight="100" price="42227840"

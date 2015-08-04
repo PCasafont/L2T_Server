@@ -675,11 +675,11 @@
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Requiem, Immortal, Apocalypse or Twilight equipment for Blessed equipment for you at a low probability. Small fee is charged. -->
 	<item id="36116" type="EtcItem" name="Scroll of Blessing (R-grade) - Campaign" icon="icon.bless_scroll_r1" immediateEffect="1"
-			weight="100">
+			weight="100" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Specter or Seraph equipment for Blessed equipment for you at a low probability. Small fee is charged. -->
 	<item id="36117" type="EtcItem" name="Scroll of Blessing (R95-grade) - Campaign" icon="icon.bless_scroll_r95" immediateEffect="1"
-			weight="100">
+			weight="100" isStackable="true">
 	</item>
 	<item id="36118" type="Armor" name="Elegia Sigil - Ceremony of Chaos" icon="icon.weapon_pricklelotus_i01" defaultAction="equip"
 			bodypart="none" immediateEffect="1" crystalCount="844" crystalType="s80" weight="920" enchantEnabled="1">
@@ -868,19 +868,19 @@
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Requiem or Immortal equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36159" type="EtcItem" name="Scroll of Blessing (R1-grade)" icon="icon.bless_scroll_r1" immediateEffect="1" crystalType="r"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls">
+			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Apocalypse or Twilight equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36160" type="EtcItem" name="Scroll of Blessing (R2-grade)" icon="icon.bless_scroll_r2" immediateEffect="1" crystalType="r"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls">
+			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Specter or Seraph equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36161" type="EtcItem" name="Scroll of Blessing (R95-grade)" icon="icon.bless_scroll_r95" immediateEffect="1" crystalType="r95"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls">
+			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Amaranthine or Eternal equipment for Blessed equipment for you. Small fee is charged. -->
 	<item id="36162" type="EtcItem" name="Scroll of Blessing (R99-grade)" icon="icon.bless_scroll_r99" immediateEffect="1" crystalType="r99"
-			weight="0" isOlyRestricted="true" handler="BlessingScrolls">
+			weight="0" isOlyRestricted="true" handler="BlessingScrolls" isStackable="true">
 	</item>
 	<!-- P. Atk. + 6 for R-grade one-handed swords, one-handed blunts, daggers, spears, and other weapons when enchanted. P. Atk. + 7 for two-handed swords, two-handed blunts, dualswords, two-handed fist weapons, and crossbows. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases at + 4. All amounts are increased for blessed weapons. Randomly adds between + 1 and + 3 enchant value. -->
 	<item id="36163" type="EtcItem" name="Giant's Scroll: Enchant Weapon (R-grade)" icon="icon.giant_scrl_of_ench_wp_r" immediateEffect="1"
@@ -1623,43 +1623,43 @@
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Requiem/Apocalypse weapons for Blessed equipment for you at a low probability. A small fee is charged. -->
 	<item id="36293" type="EtcItem" name="Scroll of Blessing: Weapon (R-grade) - Campaign" icon="icon.bless_scroll_r1" immediateEffect="1"
-			weight="2">
+			weight="2" isStackable="true">
 	</item>
 	<!-- Transforms an R-grade bound weapon item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36294" type="EtcItem" name="Unbind Scroll: Weapon (R-grade) - Event" icon="icon.cursed_free_r_armor" immediateEffect="1"
-			weight="2" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Transforms an R95-grade bound weapon item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36295" type="EtcItem" name="Unbind Scroll: Weapon (R95-grade) - Event" icon="icon.cursed_free_r95" immediateEffect="1"
-			weight="2" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Has a low chance to transform an R-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36296" type="EtcItem" name="Unbind Scroll: Armor (R-grade) - Campaign" icon="icon.cursed_free_r" immediateEffect="1"
-			weight="2" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Has a low chance to transform an R95-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36297" type="EtcItem" name="Unbind Scroll: Armor (R95-grade) - Campaign" icon="icon.cursed_free_r95_armor" immediateEffect="1"
-			weight="2" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange a standard Specter weapon for Blessed equipment for you at a low probability. A small fee is charged. -->
 	<item id="36298" type="EtcItem" name="Scroll of Blessing: Weapon (R95-grade) - Campaign" icon="icon.bless_scroll_r95" immediateEffect="1"
-			weight="2">
+			weight="2" isStackable="true">
 	</item>
 	<!-- Transforms an R-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36299" type="EtcItem" name="Unbind Scroll: Armor (R-grade) - Event" icon="icon.cursed_free_r" immediateEffect="1"
-			weight="2" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- Transforms an R95-grade bound armor item into a standard item through the Blacksmith of Mammon. -->
 	<item id="36300" type="EtcItem" name="Unbind Scroll: Armor (R95-grade) - Event" icon="icon.cursed_free_r95_armor" immediateEffect="1"
-			weight="2" isTradable="false" isDropable="false" isSellable="false">
+			weight="2" isStackable="true" isTradable="false" isDropable="false" isSellable="false">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Immortal/Hell armor for Blessed equipment for you at a low probability. A small fee is charged. -->
 	<item id="36302" type="EtcItem" name="Scroll of Blessing: Armor (R-grade) - Campaign" icon="icon.bless_scroll_r1_armor"
-			immediateEffect="1" weight="2">
+			immediateEffect="1" weight="2" isStackable="true">
 	</item>
 	<!-- The Blacksmith of Mammon can exchange standard Seraph armor for Blessed equipment for you at a low probability. A small fee is charged. -->
 	<item id="36303" type="EtcItem" name="Scroll of Blessing: Armor (R95-grade) - Campaign" icon="icon.bless_scroll_r95_armor"
-			immediateEffect="1" weight="2">
+			immediateEffect="1" weight="2" isStackable="true">
 	</item>
 	<!-- Use in the Beauty Shop to purchase various hair and face styles. -->
 	<item id="36308" type="EtcItem" name="Beauty Shop Ticket" icon="icon.royal_beauty_item" immediateEffect="1" weight="5" isStackable="true">
