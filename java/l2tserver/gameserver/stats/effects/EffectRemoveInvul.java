@@ -66,6 +66,7 @@ public class EffectRemoveInvul extends L2Effect
 				}
 			}
 		}
+		
 		return true;
 	}
 	

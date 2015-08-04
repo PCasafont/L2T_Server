@@ -1742,7 +1742,8 @@ public final class Formulas
 		// Failure calculation
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
 		{
-			if (target.getLevel() - attacker.getLevel() > 9)
+			final double failureModifier = attacker.calcStat(Stats.MAGIC_FAILURE_RATE, 1, target, skill);
+			if (target.getLevel() - attacker.getLevel() > 9 || failureModifier > 100)
 			{
 				if (attacker instanceof L2PcInstance)
 				{
@@ -2614,6 +2615,10 @@ public final class Formulas
 			target.stopEffectsOnDebuffBlock();
 			return false;
 		}
+		
+		final double failureModifier = attacker.calcStat(Stats.MAGIC_FAILURE_RATE, 1, target, skill);
+		if (failureModifier > 100)
+			return false;
 		
 		int rate = 0;
 		
