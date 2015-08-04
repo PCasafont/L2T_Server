@@ -17,10 +17,8 @@ package l2tserver.gameserver.network.clientpackets;
 import l2tserver.gameserver.ThreadPoolManager;
 import l2tserver.gameserver.model.L2ItemInstance;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
 import l2tserver.gameserver.network.serverpackets.ExPutTargetResultForItemAppearance;
 import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author Pere
@@ -52,12 +50,6 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 		L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 			return;
-		
-		if (!item.getItem().canBeUsedAsApp())
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_CANNOT_APPEARENCE_WEAPON));
-			return;
-		}
 
 		int type = stone.getStoneType();
 		
