@@ -2636,7 +2636,7 @@ public abstract class L2Character extends L2Object
 	/** Set the overloaded status of the L2Character is overloaded (if True, the L2PcInstance can't take more item). */
 	public final void setIsOverloaded(boolean value) { _isOverloaded = value; }
 	
-	public final boolean isParalyzed() { return _isParalyzed || isAffected(L2EffectType.PARALYZE.getMask()); }
+	public final boolean isParalyzed() { return _isParalyzed || isAffected(L2EffectType.PARALYZE.getMask()) || isAffected(L2EffectType.PETRIFY.getMask()); }
 	public final void setIsParalyzed(boolean value) { _isParalyzed = value; }
 	
 	public final boolean isPendingRevive() { return isDead() && _isPendingRevive; }
