@@ -2175,7 +2175,7 @@
 	</item>
 	<!-- Increases Vitality Status Bonus EXP by 30% and decreases Vitality Point Consumption Speed by 15%. Can use Vital Wind skill. Effect does not stack with additional jewels of the same type. -->
 	<item id="26480" type="Armor" name="Vital Stone - Lv. 5" icon="icon.etc_bm_jewel_vital" defaultAction="equip" bodypart="jewel"
-			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+			immediateEffect="1" weight="5">
 		<skill id="18568" level="5" /> <!-- Vital Stone -->
 		<skill id="27439" level="3" /> <!-- Vital Stone - Vital Wind -->
 	</item>
@@ -2205,7 +2205,7 @@
 	</item>
 	<!-- Resistance to Debuffs + 30%. Cancels your debuffs. Effect does not stack with additional jewels of the same type. -->
 	<item id="26485" type="Armor" name="Garnet - Lv. 5" icon="icon.etc_bm_jewel_garnet" defaultAction="equip" bodypart="jewel"
-			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+			immediateEffect="1" weight="5">
 		<skill id="18566" level="5" /> <!-- Garnet -->
 		<skill id="18567" level="1" /> <!-- Garnet - Purge -->
 	</item>
@@ -2231,7 +2231,7 @@
 	</item>
 	<!-- Creates a protection shield that absorbs 50,000 damage for 15 seconds. Effect does not stack with additional jewels of the same type. -->
 	<item id="26490" type="Armor" name="Tanzanite - Lv. 5" icon="icon.etc_bm_jewel_tanzanite" defaultAction="equip" bodypart="jewel"
-			immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+			immediateEffect="1" weight="5">
 		<skill id="18565" level="5" /> <!-- Tanzanite - Barrier -->
 	</item>
 	<!-- Double-click to acquire a Lv. 1 Vital Stone. -->
@@ -2283,7 +2283,7 @@
 	</item>
 	<!-- Resistance to Damage Shield + 50. Can remove invincibility. Effect does not stack with additional jewels of the same type. -->
 	<item id="26501" type="Armor" name="Cat's Eye - Lv. 5" icon="BranchIcon.Icon.etc_bm_jewel_catseye_i00" defaultAction="equip"
-			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+			bodypart="jewel" immediateEffect="1" weight="5">
 		<skill id="27440" level="5" /> <!-- Cat's Eye -->
 		<skill id="27441" level="1" /> <!-- Cat's Eye - Invincibility -->
 	</item>
@@ -2309,7 +2309,7 @@
 	</item>
 	<!-- PvP Damage + 15%. Can remove invincibility. Effect does not stack with additional jewels of the same type. -->
 	<item id="26506" type="Armor" name="Amethyst - Lv. 5" icon="BranchIcon.Icon.etc_bm_jewel_amethyst_i00" defaultAction="equip"
-			bodypart="jewel" immediateEffect="1" weight="5" isTradable="false" isDropable="false" isSellable="false">
+			bodypart="jewel" immediateEffect="1" weight="5">
 		<skill id="27442" level="5" /> <!-- Amethyst -->
 		<skill id="27443" level="1" /> <!-- Amethyst - Remove Invincibility -->
 	</item>
