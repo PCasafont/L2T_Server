@@ -457,8 +457,9 @@ public class MultiSellChoose extends L2GameClientPacket
 		if (list == null || player.getObjectId() == storePlayer.getObjectId() || _amount < 1 || storePlayer.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL)
 			return;
 		
-		TradeItem item = null;
+		storePlayer.hasBeenStoreActive();
 		
+		TradeItem item = null;
 		int index = 1;
 		for (TradeItem it : list.getItems())
 		{
