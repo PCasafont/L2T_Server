@@ -152,29 +152,11 @@ public class AdminTeleport implements IAdminCommandHandler
 					_log.info("admin_walk: " + e);
 			}
 		}
-		else if (command.startsWith("admin_move_to"))
+		else if (command.startsWith("admin_move_to") || command.startsWith("admin_teleport"))
 		{
 			try
 			{
-				String val = command.substring(14);
-				teleportTo(activeChar, val);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				//Case of empty or missing coordinates
-				AdminHelpPage.showHelpPage(activeChar, "teleports.htm");
-			}
-			catch (NumberFormatException nfe)
-			{
-				activeChar.sendMessage("Usage: //move_to <x> <y> <z>");
-				AdminHelpPage.showHelpPage(activeChar, "teleports.htm");
-			}
-		}
-		else if (command.startsWith("admin_teleport"))
-		{
-			try
-			{
-				String val = command.substring(15);
+				String val = command.substring(14).trim();
 				teleportTo(activeChar, val);
 			}
 			catch (StringIndexOutOfBoundsException e)
