@@ -240,7 +240,11 @@ public class CharInfo extends L2GameServerPacket
 			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
 			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
 			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
-			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
+			int cloakApp = _inv.getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK);
+			if (cloakApp != 0)
+				writeD(cloakApp);
+			else
+				writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
 			writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
 			if (_activeChar.isShowingHat())
 			{

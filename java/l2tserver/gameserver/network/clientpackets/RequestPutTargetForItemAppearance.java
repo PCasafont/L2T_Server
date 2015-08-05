@@ -19,6 +19,7 @@ import l2tserver.gameserver.model.L2ItemInstance;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import l2tserver.gameserver.network.serverpackets.ExPutTargetResultForItemAppearance;
 import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2tserver.gameserver.templates.item.L2Item;
 
 /**
  * @author Pere
@@ -52,9 +53,12 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 			return;
 
 		int type = stone.getStoneType();
+		int itemType = item.getItem().getType2();
+		if (item.getItem().getBodyPart() == L2Item.SLOT_BACK)
+			itemType = L2Item.TYPE2_SHIELD_ARMOR;
 		
 		if (item.getItem().getItemGradePlain() != stone.getItem().getItemGradePlain()
-				|| (type != -1 && item.getItem().getType2() != type))
+				|| (type != -1 && itemType != type))
 		{
 			sendPacket(new ExPutTargetResultForItemAppearance(0, 0));
 			return;

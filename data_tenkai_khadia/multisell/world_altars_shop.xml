@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
 	<item>
-		<ingredient id="4355" count="1500" /> <!-- Blue Eva -->
-		<production id="4357" count="120000" /> <!-- Silver Shilen -->
+		<ingredient id="4355" count="15" /> <!-- Blue Eva -->
+		<production id="4357" count="165000" /> <!-- Silver Shilen -->
 	</item>
 	<item>
 		<ingredient id="4355" count="1000" /> <!-- Blue Eva -->
-		<production id="4358" count="15" /> <!-- Bloody Pa'agrio -->
+		<production id="4358" count="840" /> <!-- Bloody Pa'agrio -->
 	</item>
 	<item>
 		<ingredient count="10" id="4355" /> <!-- Blue Eva -->

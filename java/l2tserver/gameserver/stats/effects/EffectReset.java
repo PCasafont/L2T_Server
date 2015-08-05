@@ -60,7 +60,7 @@ public class EffectReset extends L2Effect
 					case SLEEP:
 					case FEAR:
 					case STUN:
-					//case PETRIFY:
+					case PETRIFY:
 					case DISARM:
 						break;
 					default:

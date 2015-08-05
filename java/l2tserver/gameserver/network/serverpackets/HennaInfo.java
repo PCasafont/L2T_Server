@@ -43,14 +43,14 @@ public final class HennaInfo extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeC(0xe5);
-		writeC(_activeChar.getHennaStatINT()); //equip INT
-		writeC(_activeChar.getHennaStatSTR()); //equip STR
-		writeC(_activeChar.getHennaStatCON()); //equip CON
-		writeC(_activeChar.getHennaStatMEN()); //equip MEM
-		writeC(_activeChar.getHennaStatDEX()); //equip DEX
-		writeC(_activeChar.getHennaStatWIT()); //equip WIT
-		writeC(_activeChar.getHennaStatLUC()); //equip LUC
-		writeC(_activeChar.getHennaStatCHA()); //equip CHA
+		writeD(_activeChar.getHennaStatINT()); //equip INT
+		writeD(_activeChar.getHennaStatSTR()); //equip STR
+		writeD(_activeChar.getHennaStatCON()); //equip CON
+		writeD(_activeChar.getHennaStatMEN()); //equip MEM
+		writeD(_activeChar.getHennaStatDEX()); //equip DEX
+		writeD(_activeChar.getHennaStatWIT()); //equip WIT
+		writeD(_activeChar.getHennaStatLUC()); //equip LUC
+		writeD(_activeChar.getHennaStatCHA()); //equip CHA
 		
 		writeD(4); // slots?
 		writeD(_count); //size
@@ -59,6 +59,11 @@ public final class HennaInfo extends L2GameServerPacket
 			writeD(_hennas[i].getSymbolId());
 			writeD(0x01); // Enabled
 		}
+
+		writeD(0x00);
+		writeD(0x03);
+		writeD(0x00);
+		
 		//4rth Slot dye information
 		L2Henna dye = _activeChar.getHenna(4);
 		if (dye != null)

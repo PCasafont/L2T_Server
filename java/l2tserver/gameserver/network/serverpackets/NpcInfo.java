@@ -55,7 +55,7 @@ public final class NpcInfo extends L2GameServerPacket
 		{
 			String t = "Lv " + npc.getLevel() + (npc.getAggroRange() > 0 ? "*" : "");
 			
-			title = npc.getTemplate().Title;
+			title = npc.getTitle();
 			
 			if (title != null)
 				t += " " + title;
@@ -124,7 +124,7 @@ public final class NpcInfo extends L2GameServerPacket
 		
 		String name = null;
 		if (npc.getTemplate().ServerSideName)
-			name = npc.getTemplate().Name;
+			name = npc.getName();
 		if (name != null)
 		{
 			for (char c : name.toCharArray())
