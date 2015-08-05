@@ -23,6 +23,7 @@ import java.util.logging.Logger;
 
 import l2tserver.Config;
 import l2tserver.L2DatabaseFactory;
+import l2tserver.gameserver.GeoData;
 import l2tserver.gameserver.ai.CtrlIntention;
 import l2tserver.gameserver.datatables.MapRegionTable;
 import l2tserver.gameserver.datatables.NpcTable;
@@ -69,6 +70,7 @@ public class AdminTeleport implements IAdminCommandHandler
 		"admin_teleport_to_character",
 		"admin_teleportto",
 		"admin_move_to",
+		"admin_teleport",
 		"admin_teleport_character",
 		"admin_recall",
 		"admin_walk",
@@ -155,6 +157,24 @@ public class AdminTeleport implements IAdminCommandHandler
 			try
 			{
 				String val = command.substring(14);
+				teleportTo(activeChar, val);
+			}
+			catch (StringIndexOutOfBoundsException e)
+			{
+				//Case of empty or missing coordinates
+				AdminHelpPage.showHelpPage(activeChar, "teleports.htm");
+			}
+			catch (NumberFormatException nfe)
+			{
+				activeChar.sendMessage("Usage: //move_to <x> <y> <z>");
+				AdminHelpPage.showHelpPage(activeChar, "teleports.htm");
+			}
+		}
+		else if (command.startsWith("admin_teleport"))
+		{
+			try
+			{
+				String val = command.substring(15);
 				teleportTo(activeChar, val);
 			}
 			catch (StringIndexOutOfBoundsException e)
@@ -355,8 +375,12 @@ public class AdminTeleport implements IAdminCommandHandler
 			int x = Integer.parseInt(x1);
 			String y1 = st.nextToken();
 			int y = Integer.parseInt(y1);
-			String z1 = st.nextToken();
-			int z = Integer.parseInt(z1);
+			int z = 0;
+			if (st.hasMoreTokens())
+				z = Integer.parseInt(st.nextToken());
+			else
+				z = GeoData.getInstance().getHeight(x, y, z);
+			
 			int instId = 0;
 			if (st.hasMoreTokens())
 				instId = Integer.parseInt(st.nextToken());
