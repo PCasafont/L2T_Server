@@ -2331,29 +2331,48 @@
 		Level 5: Resistance to Damage Shield + 50.
 	-->
 	<skill id="27440" levels="5" name="Cat's Eye">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<table name="#reflectRes"> 10 20 30 40 50 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<subPercent stat="reflectVuln" val="#reflectRes" />
+		</for>
 	</skill>
 	<!-- Invincinble for 10 seconds. Cooldown 30 minutes. -->
 	<skill id="27441" levels="1" name="Cat's Eye - Invincibility">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="staticReuse" val="true" />
+		<set name="removedOnAction" val="true" />
+		<for>
+			<cond>
+				<player olympiad="false" />
+			</cond>
+			<abnormal duration="10" stackLvl="1" stackType="invincibility" visualEffect="invincible">
+				<effect type="Invincible" val="0" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- Increases Damage in PvP. -->
 	<skill id="27442" levels="5" name="Amethyst">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<table name="#pvpDam"> 3 5 7 10 15 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="pvpPhysDmg" val="#pvpDam" />
+			<addPercent stat="pvpMagicalDmg" val="#pvpDam" />
+			<addPercent stat="pvpPhysSkillsDmg" val="#pvpDam" />
+		</for>
 	</skill>
 	<!-- Removes invincibility of target. Cooldown 30 minutes. -->
 	<skill id="27443" levels="1" name="Amethyst - Remove Invincibility">
 		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2110" />
 		<set name="coolTime" val="500" />
@@ -2361,6 +2380,15 @@
 		<set name="staticReuse" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
+		<set name="ignoreImmunity" val="true" />
+		<for>
+			<cond>
+				<player olympiad="false" />
+			</cond>
+			<abnormal>
+				<effect type="RemoveInvul" val="0" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- For 30 min., obtained XP + 10%, Max HP/MP/CP + 30%, P. Def./M. Def. + 30%, Speed + 20, P. Atk. + 10%, and M. Atk. + 20%. Skill MP Consumption - 15%. Cannot use with the Art of Seduction buff. -->
 	<skill id="27444" levels="1" name="Summon Scroll: Pomona">

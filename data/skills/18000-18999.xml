@@ -2963,7 +2963,7 @@
 		Level 5: Creates a protection shield that absorbs 50,000 damage for 15 seconds.
 	-->
 	<skill id="18565" levels="5" name="Tanzanite - Barrier">
-		<set name="target" val="TARGET_NONE" />
+		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
@@ -2980,19 +2980,30 @@
 		Level 5: Resistance to Debuffs + 30%.
 	-->
 	<skill id="18566" levels="5" name="Garnet">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<table name="#debuffRes"> 3 6 12 20 30 </table>
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<addPercent stat="debuffRes" val="#debuffRes" />
+		</for>
 	</skill>
 	<!-- Cancels your debuffs. -->
 	<skill id="18567" levels="1" name="Garnet - Purge">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="staticReuse" val="true" />
+		<set name="excludedFromCheck" val="true" />
+		<set name="canBeUsedWhenDisabled" val="true" />
+		<for>
+			<abnormal>
+				<effect type="CancelDebuff" val="0" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- 
 		Level 1: Increases Vitality Status Bonus EXP by 3%.
