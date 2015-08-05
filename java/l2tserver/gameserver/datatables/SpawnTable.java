@@ -419,7 +419,7 @@ public class SpawnTable
 			if (npc == null)
 				continue;
 			
-			int knownChars = npc.getKnownList().getKnownCharactersInRadius(1000).size();
+			int knownChars = npc.getKnownList().getKnownCharactersInRadius(1000).size() + 1;
 			double weight = 1.0 / knownChars;
 			
 			_totalDistributedSpawnWeight += weight;
