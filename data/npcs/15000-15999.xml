@@ -1654,21 +1654,21 @@
 		<skill id="4121" level="7" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="5038" level="16" /> <!-- Servitor PvP Penalty -->
 	</npc>
-	<npc id="15200" name="Death Gate" level="101" type="L2Npc" atkRange="40" hpMax="52952" hpReg="0.0" mpMax="3250" mpReg="0.0"
+	<npc id="15200" name="Death Gate" level="101" type="L2Monster" atkRange="40" hpMax="52952" hpReg="0.0" mpMax="3250" mpReg="0.0"
 			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="1029" mAtk="703" pDef="361" mDef="265" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="260" waterRes="260"
 			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced">
 		<skill id="11291" level="2" /> <!-- Gate Vortex -->
 		<skill id="11289" level="2" /> <!-- Gate Root -->
 	</npc>
-	<npc id="15201" name="Death Gate" level="103" type="L2Npc" atkRange="40" hpMax="53482" hpReg="0.0" mpMax="3283" mpReg="0.0"
+	<npc id="15201" name="Death Gate" level="103" type="L2Monster" atkRange="40" hpMax="53482" hpReg="0.0" mpMax="3283" mpReg="0.0"
 			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="1039" mAtk="710" pDef="365" mDef="268" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="260" waterRes="260"
 			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced">
 		<skill id="11291" level="3" /> <!-- Gate Vortex -->
 		<skill id="11289" level="3" /> <!-- Gate Root -->
 	</npc>
-	<npc id="15202" name="Death Gate" level="105" type="L2Npc" atkRange="40" hpMax="54017" hpReg="0.0" mpMax="3316" mpReg="0.0"
+	<npc id="15202" name="Death Gate" level="105" type="L2Monster" atkRange="40" hpMax="54017" hpReg="0.0" mpMax="3316" mpReg="0.0"
 			STR="88" CON="82" DEX="55" INT="79" WIT="40" MEN="78" pAtk="1049" mAtk="717" pDef="369" mDef="271" pAtkSpd="253" mAtkSpd="333"
 			pCritRate="120" mCritRate="120" walkSpd="80" runSpd="160" collisionRadius="10" collisionHeight="24" fireRes="260" waterRes="260"
 			windRes="260" earthRes="260" holyRes="260" darkRes="260" aiType="balanced">

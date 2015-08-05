@@ -158,8 +158,18 @@ public class HiddenChests
 					
 					while (!GeoData.getInstance().canSeeTarget(loc.getNpc(), chestSpawn.getNpc()))
 						chestSpawn.getNpc().setXYZ(loc.getNpc().getX() + Rnd.get(300), loc.getNpc().getY() + Rnd.get(300), loc.getNpc().getZ() + 10);
+
+					String name = "";
+					for (int j = 0; j < 10; j++)
+					{
+						int rnd = (int)(Math.random() * 36);
+						char c = (char)('0' + rnd);
+						if (rnd >= 10)
+							c = (char)('a' + rnd - 10);
+						name += c;
+					}
 					
-					//_specialChestSpawns[fIndex].getNpc().setName(tmpl.getName() + " #" + (fIndex + 1));
+					chestSpawn.getNpc().setName(name);
 					
 					_specialChestTasks[fIndex].setStartTime(System.currentTimeMillis() + 3600000L * 5);
 					

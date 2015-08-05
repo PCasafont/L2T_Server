@@ -160,7 +160,11 @@ public final class ExUserPaperdoll extends L2GameServerPacket
 		// Cloak
 		buffer.putShort((short)22);
 		buffer.putInt(character.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_CLOAK));
-		buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
+		int cloakApp = character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK);
+		if (cloakApp != 0)
+			buffer.putInt(cloakApp);
+		else
+			buffer.putInt(character.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
 		buffer.putLong(character.getInventory().getPaperdollAugmentationId(Inventory.PAPERDOLL_CLOAK));
 		buffer.putInt(character.getInventory().getPaperdollAppearance(Inventory.PAPERDOLL_CLOAK));
 

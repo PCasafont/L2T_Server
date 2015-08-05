@@ -71,9 +71,13 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 		}
 		
 		int type = stone.getStoneType();
+		int itemType = target.getItem().getType2();
+		if (target.getItem().getBodyPart() == L2Item.SLOT_BACK)
+			itemType = L2Item.TYPE2_SHIELD_ARMOR;
+		
 		if (target.getItem().getItemGradePlain() != stone.getItem().getItemGradePlain()
 				|| target.getItem().getItemGrade() < template.getItem().getItemGrade()
-				|| (type != -1 && target.getItem().getType2() != type)
+				|| (type != -1 && itemType != type)
 				|| target.getItem().getType2() != template.getItem().getType2()
 				|| (target.getItem().getItemType() != template.getItem().getItemType()
 						&& template.getItem().getItemType() != L2ArmorType.NONE
