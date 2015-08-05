@@ -16,7 +16,10 @@ package l2tserver.gameserver.datatables;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -382,7 +385,48 @@ public class SpawnTable
 		}
 		return spawn;
 	}
+
+	private double _totalDistributedSpawnWeight = 0.0;
+	private Map<L2Spawn, Double> _distributedSpawnWeights = new LinkedHashMap<L2Spawn, Double>();
 	
+	public L2Spawn getRandomDistributedSpawn()
+	{
+		if (_distributedSpawnWeights.isEmpty())
+			calculateDistributedSpawnWeights();
+
+		double random = Rnd.get() * _totalDistributedSpawnWeight;
+		double current = 0.0;
+		for (Entry<L2Spawn, Double> entry : _distributedSpawnWeights.entrySet())
+		{
+			current += entry.getValue();
+			if (current > random)
+				return entry.getKey();
+		}
+		
+		return null;
+	}
+	
+	private void calculateDistributedSpawnWeights()
+	{
+		_totalDistributedSpawnWeight = 0.0;
+		_distributedSpawnWeights.clear();
+		for (L2Spawn spawn : _spawnTable)
+		{
+			if (spawn == null)
+				continue;
+			
+			L2Npc npc = spawn.getNpc();
+			if (npc == null)
+				continue;
+			
+			int knownChars = npc.getKnownList().getKnownCharactersInRadius(1000).size();
+			double weight = 1.0 / knownChars;
+			
+			_totalDistributedSpawnWeight += weight;
+			_distributedSpawnWeights.put(spawn, weight);
+		}
+	}
+
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{

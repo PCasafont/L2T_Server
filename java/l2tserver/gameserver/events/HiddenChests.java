@@ -7,11 +7,10 @@ import l2tserver.gameserver.TimeController;
 import l2tserver.gameserver.datatables.NpcTable;
 import l2tserver.gameserver.datatables.SkillTable;
 import l2tserver.gameserver.datatables.SpawnTable;
-import l2tserver.gameserver.instancemanager.ZoneManager;
 import l2tserver.gameserver.model.L2Spawn;
+import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.L2Npc;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.zone.type.L2ClanHallZone;
 import l2tserver.gameserver.network.serverpackets.MagicSkillLaunched;
 import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
 import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -49,17 +48,21 @@ public class HiddenChests
 			{
 				L2Spawn chestSpawn = new L2Spawn(tmpl);
 				
-				L2Spawn loc = SpawnTable.getInstance().getRandomMonsterSpawn();
-				L2ClanHallZone zone = ZoneManager.getInstance().getZone(loc.getX(), loc.getY(), loc.getZ(), L2ClanHallZone.class);
-				while (loc.getNpc().getX() < 150000 || loc.getNpc().getY() > 227000 || zone != null)
-				{
-					loc = SpawnTable.getInstance().getRandomMonsterSpawn();
-					zone = ZoneManager.getInstance().getZone(loc.getX(), loc.getY(), loc.getZ(), L2ClanHallZone.class);
-				}
+				L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
+				L2Npc randomNpc = randomSpawn.getNpc();
+				while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000
+						|| randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE)
+						|| randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL)
+						|| randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT))
+					randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
+
+				int x = randomNpc.getX() + Rnd.get(800) - 400;
+				int y = randomNpc.getY() + Rnd.get(800) - 400;
+				int z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
 				
-				chestSpawn.setX(loc.getNpc().getX() + Rnd.get(300));
-				chestSpawn.setY(loc.getNpc().getY() + Rnd.get(300));
-				chestSpawn.setZ(loc.getNpc().getZ() + 10);
+				chestSpawn.setX(x);
+				chestSpawn.setY(y);
+				chestSpawn.setZ(z);
 				chestSpawn.setHeading(Rnd.get(65536));
 				chestSpawn.setRespawnDelay(10);
 				chestSpawn.setInstanceId(0);
@@ -69,8 +72,13 @@ public class HiddenChests
 				chestSpawn.stopRespawn();
 				chestSpawn.doSpawn();
 				
-				while (!GeoData.getInstance().canSeeTarget(loc.getNpc(), chestSpawn.getNpc()))
-					chestSpawn.getNpc().setXYZ(loc.getNpc().getX() + Rnd.get(300), loc.getNpc().getY() + Rnd.get(300), loc.getNpc().getZ() + 10);
+				while (!GeoData.getInstance().canSeeTarget(randomSpawn.getNpc(), chestSpawn.getNpc()))
+				{
+					x = randomNpc.getX() + Rnd.get(800) - 400;
+					y = randomNpc.getY() + Rnd.get(800) - 400;
+					z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
+					chestSpawn.getNpc().setXYZ(x, y, z);
+				}
 				
 				String name = "";
 				for (int j = 0; j < 10; j++)
@@ -143,21 +151,37 @@ public class HiddenChests
 					//L2MonsterInstance mob = new L2MonsterInstance(monsterTemplate, template1);
 					
 					L2Spawn chestSpawn = new L2Spawn(tmpl);
-					L2Spawn loc = SpawnTable.getInstance().getRandomMonsterSpawn();
-					while (loc.getNpc().getX() < 150000 || loc.getNpc().getY() > 227000)
-						loc = SpawnTable.getInstance().getRandomMonsterSpawn();
-					chestSpawn.setX(loc.getNpc().getX() + Rnd.get(300));
-					chestSpawn.setY(loc.getNpc().getY() + Rnd.get(300));
-					chestSpawn.setZ(loc.getNpc().getZ() + 10);
+					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
+					L2Npc randomNpc = randomSpawn.getNpc();
+					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000
+							|| randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE)
+							|| randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL)
+							|| randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT))
+						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
+
+					int x = randomNpc.getX() + Rnd.get(800) - 400;
+					int y = randomNpc.getY() + Rnd.get(800) - 400;
+					int z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
+					
+					chestSpawn.setX(x);
+					chestSpawn.setY(y);
+					chestSpawn.setZ(z);
 					chestSpawn.setHeading(Rnd.get(65536));
 					chestSpawn.setRespawnDelay(respawnTime);
 					chestSpawn.setInstanceId(0);
+					
 					SpawnTable.getInstance().addNewSpawn(chestSpawn, false);
+
 					chestSpawn.stopRespawn();
 					chestSpawn.doSpawn();
 					
-					while (!GeoData.getInstance().canSeeTarget(loc.getNpc(), chestSpawn.getNpc()))
-						chestSpawn.getNpc().setXYZ(loc.getNpc().getX() + Rnd.get(300), loc.getNpc().getY() + Rnd.get(300), loc.getNpc().getZ() + 10);
+					while (!GeoData.getInstance().canSeeTarget(randomSpawn.getNpc(), chestSpawn.getNpc()))
+					{
+						x = randomNpc.getX() + Rnd.get(800) - 400;
+						y = randomNpc.getY() + Rnd.get(800) - 400;
+						z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
+						chestSpawn.getNpc().setXYZ(x, y, z);
+					}
 
 					String name = "";
 					for (int j = 0; j < 10; j++)
