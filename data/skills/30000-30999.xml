@@ -1902,7 +1902,6 @@
 		<set name="weaponsAllowed" val="Dual Fist" />
 		<for>
 			<abnormal duration="#duration" stackLvl="2" stackType="steel_mind" visualEffect="ertheiaRunPower">
-				<effect type="Buff" val="0" />
 				<effect type="Immortal" val="0" />
 				<effect chanceType="ON_EXIT" triggeredId="23607" triggeredLevel="#trigLevel" type="ChanceSkillTrigger" val="0" />
 				<add stat="runSpd" val="#runSpd" />

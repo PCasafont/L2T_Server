@@ -3372,7 +3372,7 @@ public final class Formulas
 					//	multiplier *= 1.3;
 					break;
 				case 142: // Yul Archer
-					multiplier *= 1.2;
+					multiplier *= 1.0;
 					break;
 				case 143: // Feoh Wizard
 					multiplier *= 1.4;

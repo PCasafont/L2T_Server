@@ -203,7 +203,7 @@ public class StalkedStalkers extends EventInstance
 				hint = "Hint 1: Your target is a " + (player.getAppearance().getSex() ? "Woman" : "Man") + ".";
 				break;
 			case 2:
-				hint = "Hint 2: Your target's race is " + player.getRace().toString() + ".";
+				hint = "Hint 2: Your target's race is " + player.getVisibleTemplate().race.toString() + ".";
 				break;
 			case 3:
 				if (player.getActiveClass() != player.getBaseClass())
