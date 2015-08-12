@@ -3352,7 +3352,7 @@ public final class Formulas
 		if (!Config.isServer(Config.TENKAI))
 			return 1.0;
 
-		double multiplier = 0.75;
+		double multiplier = 1.0;
 		PlayerClass attackerClass = attacker.getCurrentClass();
 		if (attackerClass.getParent() != null
 				&& attackerClass.getParent().getAwakeningClassId() > 0)
