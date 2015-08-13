@@ -105,28 +105,28 @@
 	<item id="36486" type="Weapon" name="Lindvior Cutter - High-grade" canBeUsedAsApp="true" />
 	<item id="36487" type="Weapon" name="Lindvior Shooter - High-grade" canBeUsedAsApp="true" />
 	<item id="36488" type="Weapon" name="Lindvior Dual Dagger - High-grade" canBeUsedAsApp="true" />
-	<item id="36489" type="Weapon" name="Antharas Shaper - Top-grade" canBeUsedAsApp="true" />
-	<item id="36490" type="Weapon" name="Antharas Slasher - Top-grade" canBeUsedAsApp="true" />
-	<item id="36491" type="Weapon" name="Antharas Thrower - Top-grade" canBeUsedAsApp="true" />
-	<item id="36492" type="Weapon" name="Antharas Buster - Top-grade" canBeUsedAsApp="true" />
-	<item id="36493" type="Weapon" name="Antharas Cutter - Top-grade" canBeUsedAsApp="true" />
-	<item id="36494" type="Weapon" name="Antharas Stormer - Top-grade" canBeUsedAsApp="true" />
-	<item id="36495" type="Weapon" name="Antharas Fighter - Top-grade" canBeUsedAsApp="true" />
-	<item id="36496" type="Weapon" name="Antharas Avenger - Top-grade" canBeUsedAsApp="true" />
-	<item id="36497" type="Weapon" name="Antharas Dual Blunt Weapon - Top-grade" canBeUsedAsApp="true" />
-	<item id="36498" type="Weapon" name="Antharas Dualsword - Top-grade" canBeUsedAsApp="true" />
-	<item id="36499" type="Weapon" name="Valakas Shaper - Top-grade" canBeUsedAsApp="true" />
-	<item id="36500" type="Weapon" name="Valakas Cutter - Top-grade" canBeUsedAsApp="true" />
-	<item id="36501" type="Weapon" name="Valakas Slasher - Top-grade" canBeUsedAsApp="true" />
-	<item id="36502" type="Weapon" name="Valakas Thrower - Top-grade" canBeUsedAsApp="true" />
-	<item id="36503" type="Weapon" name="Valakas Buster - Top-grade" canBeUsedAsApp="true" />
-	<item id="36504" type="Weapon" name="Valakas Caster - Top-grade" canBeUsedAsApp="true" />
-	<item id="36505" type="Weapon" name="Valakas Retributer - Top-grade" canBeUsedAsApp="true" />
-	<item id="36506" type="Weapon" name="Lindvior Shaper - Top-grade" canBeUsedAsApp="true" />
-	<item id="36507" type="Weapon" name="Lindvior Thrower - Top-grade" canBeUsedAsApp="true" />
-	<item id="36508" type="Weapon" name="Lindvior Slasher - Top-grade" canBeUsedAsApp="true" />
-	<item id="36509" type="Weapon" name="Lindvior Caster - Top-grade" canBeUsedAsApp="true" />
-	<item id="36510" type="Weapon" name="Lindvior Cutter - Top-grade" canBeUsedAsApp="true" />
-	<item id="36511" type="Weapon" name="Lindvior Shooter - Top-grade" canBeUsedAsApp="true" />
-	<item id="36512" type="Weapon" name="Lindvior Dual Dagger - Top-grade" canBeUsedAsApp="true" />
+	<item id="36489" type="Weapon" name="Antharas Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36490" type="Weapon" name="Antharas Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36491" type="Weapon" name="Antharas Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36492" type="Weapon" name="Antharas Buster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36493" type="Weapon" name="Antharas Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36494" type="Weapon" name="Antharas Stormer - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36495" type="Weapon" name="Antharas Fighter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36496" type="Weapon" name="Antharas Avenger - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36497" type="Weapon" name="Antharas Dual Blunt Weapon - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36498" type="Weapon" name="Antharas Dualsword - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36499" type="Weapon" name="Valakas Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36500" type="Weapon" name="Valakas Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36501" type="Weapon" name="Valakas Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36502" type="Weapon" name="Valakas Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36503" type="Weapon" name="Valakas Buster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36504" type="Weapon" name="Valakas Caster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36505" type="Weapon" name="Valakas Retributer - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36506" type="Weapon" name="Lindvior Shaper - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36507" type="Weapon" name="Lindvior Thrower - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36508" type="Weapon" name="Lindvior Slasher - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36509" type="Weapon" name="Lindvior Caster - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36510" type="Weapon" name="Lindvior Cutter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36511" type="Weapon" name="Lindvior Shooter - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
+	<item id="36512" type="Weapon" name="Lindvior Dual Dagger - Top-grade" canBeUsedAsApp="true" overrideStats="true" overrideSkills="true" />
 </list>
