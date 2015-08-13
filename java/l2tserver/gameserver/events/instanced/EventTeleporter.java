@@ -168,6 +168,9 @@ public class EventTeleporter implements Runnable
 					y = _playerInstance.getEventSavedPosition().getY();
 					z = _playerInstance.getEventSavedPosition().getZ();
 				}
+				
+				// Remove all skills' reuse when the event ends
+				_playerInstance.removeSkillReuse(true);
 			}
 			_playerInstance.teleToLocation(x, y, z, false);
 		}

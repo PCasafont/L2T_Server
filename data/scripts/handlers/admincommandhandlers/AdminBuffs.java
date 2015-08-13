@@ -10,7 +10,6 @@ import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import l2tserver.gameserver.network.SystemMessageId;
 import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.SkillCoolTime;
 import l2tserver.gameserver.util.GMAudit;
 import l2tserver.util.StringUtil;
 
@@ -181,9 +180,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			
 			try
 			{
-				player.getReuseTimeStamp().clear();
-				player.getDisabledSkills().clear();
-				player.sendPacket(new SkillCoolTime(player));
+				player.removeSkillReuse(true);
 				activeChar.sendMessage("Skill reuse was removed from " + player.getName() + ".");
 				return true;
 			}

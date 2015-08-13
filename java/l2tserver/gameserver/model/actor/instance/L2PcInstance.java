@@ -783,9 +783,14 @@ public class L2PcInstance extends L2Playable
 	
 	// Used for protection after teleport
 	private long _protectEndTime = 0;
-	public boolean isSpawnProtected() { return  _protectEndTime > TimeController.getGameTicks() && _event != null; }
+	public boolean isSpawnProtected() { return  _protectEndTime > TimeController.getGameTicks(); }
 	private long _teleportProtectEndTime = 0;
-	public boolean isTeleportProtected() { return  _teleportProtectEndTime > TimeController.getGameTicks(); }
+	public boolean isTeleportProtected()
+	{
+		return  _teleportProtectEndTime > TimeController.getGameTicks()
+				&& (_event == null || _event.isType(EventType.Survival)
+				|| _event.isType(EventType.VIP) || _event.isType(EventType.StalkedSalkers));
+	}
 	
 	// protects a char from agro mobs when getting up from fake death
 	private long _recentFakeDeathEndTime = 0;

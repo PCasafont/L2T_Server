@@ -174,6 +174,8 @@ public abstract class EventInstance
 					new EventTeleporter(playerInstance, team.getCoords(), false, false);
 					// Tenkai anti-idle system for events
 					playerInstance.startHasMovedTask();
+					// Remove all skills' reuse when the event starts
+					playerInstance.removeSkillReuse(true);
 				}
 			}
 		}

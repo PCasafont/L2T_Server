@@ -1107,7 +1107,7 @@
 		Teleport spawn protection time. It will protect the player in the
 		teleport spawn for the given time. 0 to disable feature
 	-->
-	<config name="PlayerTeleportProtection" var="PLAYER_TELEPORT_PROTECTION" default="0" />
+	<config name="PlayerTeleportProtection" var="PLAYER_TELEPORT_PROTECTION" default="30" />
 	
 	<!--
 		If enabled, players respawn in town on different locations defined in zone.xml for given town.
