@@ -14,20 +14,31 @@
  */
 package l2tserver.gameserver.instancemanager;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 
 import l2tserver.Config;
+import l2tserver.L2DatabaseFactory;
 import l2tserver.gameserver.Reloadable;
 import l2tserver.gameserver.ReloadableManager;
+import l2tserver.gameserver.ThreadPoolManager;
 import l2tserver.gameserver.datatables.CharNameTable;
 import l2tserver.gameserver.datatables.CharTemplateTable;
+import l2tserver.gameserver.datatables.PlayerClassTable;
 import l2tserver.gameserver.idfactory.IdFactory;
 import l2tserver.gameserver.model.L2ItemInstance;
 import l2tserver.gameserver.model.L2Party;
+import l2tserver.gameserver.model.L2World;
+import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.instance.L2ApInstance;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2tserver.gameserver.model.base.PlayerClass;
 import l2tserver.gameserver.model.base.Race;
 import l2tserver.gameserver.templates.chars.L2PcTemplate;
 import l2tserver.gameserver.templates.chars.L2PcTemplate.PcTemplateItem;
@@ -59,7 +70,7 @@ public class ArtificialPlayersManager implements Reloadable
 	{
 		_players.clear();
 		
-		/*Connection con = null;
+		Connection con = null;
 		try
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -120,7 +131,6 @@ public class ArtificialPlayersManager implements Reloadable
 				}
 				
 				_partiesSent.clear();
-				
 				if (_partiesSent.isEmpty())
 					return;
 				
@@ -188,7 +198,7 @@ public class ArtificialPlayersManager implements Reloadable
 						member.deleteMe();
 				}
 			}
-		}, 100000L, 100000L);*/
+		}, 100000L, 100000L);
 		
 		return true;
 	}
@@ -201,8 +211,8 @@ public class ArtificialPlayersManager implements Reloadable
 	public L2ApInstance createChar(int classId)
 	{
 		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
-
-		switch (classId)
+		PlayerClass cl = PlayerClassTable.getInstance().getClassById(classId);
+		switch (cl.getParent().getAwakeningClassId())
 		{
 			case 139:
 			case 141:
@@ -213,37 +223,14 @@ public class ArtificialPlayersManager implements Reloadable
 				break;
 		}
 		
+		String name = cl.getName();
+		if (!name.contains("Sayha") && !name.contains("Evis"))
+			name = name.substring(name.indexOf(" ") + 1);
+		else
+			template = CharTemplateTable.getInstance().getTemplate(15);
+		
 		if (template == null)
 			return null;
-		
-		String name = "";
-		switch (classId)
-		{
-			case 139:
-				name = "Sigel";
-				break;
-			case 140:
-				name = "Tyrr";
-				break;
-			case 141:
-				name = "Othell";
-				break;
-			case 142:
-				name = "Yul";
-				break;
-			case 143:
-				name = "Feoh";
-				break;
-			case 144:
-				name = "Iss";
-				break;
-			case 145:
-				name = "Wynn";
-				break;
-			case 146:
-				name = "Aeore";
-				break;
-		}
 		
 		int objectId = IdFactory.getInstance().getNextId();
 		L2PcInstance newChar = L2PcInstance.create(objectId, template, "!", name, (byte)Rnd.get(5), (byte)Rnd.get(4), (byte)Rnd.get(3), Rnd.get(2) == 0, classId);
@@ -259,7 +246,7 @@ public class ArtificialPlayersManager implements Reloadable
 		
 		newChar.setTitle("");
 				
-		newChar.getStat().addLevel((byte)98);
+		newChar.getStat().addLevel((byte)104);
 		
 		for (PcTemplateItem ia : template.getItems())
 		{
@@ -316,7 +303,6 @@ public class ArtificialPlayersManager implements Reloadable
 		}
 		
 		List<L2ApInstance> members = new ArrayList<L2ApInstance>();
-		
 		for (L2ApInstance player : available)
 		{
 			if (classCombination.contains(player.getClassId()))
@@ -361,21 +347,43 @@ public class ArtificialPlayersManager implements Reloadable
 		List<Integer> classCombination = new ArrayList<Integer>();
 		
 		// The healer is the leader
-		classCombination.add(146);
+		classCombination.add(179 + Rnd.get(3));
 		
 		// There must be an enchanter too
-		classCombination.add(144);
+		classCombination.add(171 + Rnd.get(5));
 		
 		// The rest, purely random for now
 		//for (int i = 0; i < 5; i++)
 		//	classCombination.add(139 + Rnd.get(5));
 		
 		// ..or not
-		classCombination.add(139);
-		classCombination.add(140);
-		classCombination.add(141);
-		classCombination.add(142);
-		classCombination.add(143);
+		int rnd = Rnd.get(100);
+		if (rnd < 60)
+		{
+			// Tank
+			classCombination.add(148 + Rnd.get(4));
+		}
+		else
+		{
+			// Ertheia
+			classCombination.add(188 + Rnd.get(2));
+		}
+		if (rnd > 30)
+		{
+			// Warrior
+			classCombination.add(152 + Rnd.get(5));
+		}
+		else
+		{
+			// Ertheia
+			classCombination.add(188 + Rnd.get(2));
+		}
+		// Rogue
+		classCombination.add(158 + Rnd.get(4));
+		// Archer
+		classCombination.add(162 + Rnd.get(4));
+		// Wizard
+		classCombination.add(166 + Rnd.get(5));
 		
 		return createParty(classCombination);
 	}

@@ -287,6 +287,7 @@ public class AntiBotsManager
 			_hardwareId = hardwareId;
 		}
 		
+		@SuppressWarnings("unused")
 		private final long getBanTime()
 		{
 			return _banTime;
@@ -556,7 +557,7 @@ public class AntiBotsManager
 			}
 			
 			// We're now going to look if there's any player that should gtfo...
-			if (_pendingBans.size() != 0)
+			/*if (_pendingBans.size() != 0)
 			{
 				final long currentTime = System.currentTimeMillis();
 				PlayerBanTrace toBan = null;
@@ -571,7 +572,7 @@ public class AntiBotsManager
 				
 				if (toBan != null)
 					banPlayer(toBan);
-			}
+			}*/
 		}
 	}
 	
@@ -669,6 +670,7 @@ public class AntiBotsManager
 		_pendingBans.add(new PlayerBanTrace(System.currentTimeMillis() + delay, characterBanDuration, hardwareBanDuration, reason, accountName, hardwareId));
 	}
 	
+	@SuppressWarnings("unused")
 	private final void banPlayer(final PlayerBanTrace playerBanTrace)
 	{
 		final String hardwareId = playerBanTrace.getHardwareId();

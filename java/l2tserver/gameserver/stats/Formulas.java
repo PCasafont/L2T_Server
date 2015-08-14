@@ -17,7 +17,6 @@ package l2tserver.gameserver.stats;
 import java.util.logging.Level;
 
 import l2tserver.Config;
-import l2tserver.gameserver.datatables.PlayerClassTable;
 import l2tserver.gameserver.datatables.SkillTable;
 import l2tserver.gameserver.instancemanager.CastleManager;
 import l2tserver.gameserver.instancemanager.ClanHallManager;
@@ -1351,7 +1350,7 @@ public final class Formulas
 				damage *= pveDamageMultiplier(attacker.getActingPlayer(), (L2Attackable)target);
 		}
 		
-		if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
+		/*if (attacker instanceof L2PcInstance && target instanceof L2PcInstance && damage > 30000)
 		{
 			Log.info("Blow: " + skill.getName());
 			Log.info("\tDamage: " + damage);
@@ -1380,7 +1379,7 @@ public final class Formulas
 					continue;
 				Log.info("\t\t" + eff.getSkill().getName());
 			}
-		}
+		}*/
 
 		return damage < 1 ? 1. : damage;
 	}

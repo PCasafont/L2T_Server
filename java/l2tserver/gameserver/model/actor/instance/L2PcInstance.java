@@ -5893,8 +5893,8 @@ public class L2PcInstance extends L2Playable
 			if (getIsInsideGMEvent() && pk.getIsInsideGMEvent())
 				GMEventManager.getInstance().onKill(killer, this);
 			
-			if (pk != null && getEvent() == null && !isInOlympiadMode())
-				GmListTable.broadcastMessageToGMs(getName() + " was killed by " + pk.getName());
+			//if (pk != null && getEvent() == null && !isInOlympiadMode())
+			//	GmListTable.broadcastMessageToGMs(getName() + " was killed by " + pk.getName());
 			
 			//announce pvp/pk
 			if (Config.ANNOUNCE_PK_PVP && pk != null && !pk.isGM())
@@ -7730,9 +7730,9 @@ public class L2PcInstance extends L2Playable
 				final L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(raceId * 2 + (isMage ? 1 : 0));
 				PcAppearance app = new PcAppearance(rset.getInt("face"), rset.getInt("hairColor"), rset.getInt("hairStyle"), female);
 				
-				/*if (rset.getString("account_name").startsWith("!"))
+				if (rset.getString("account_name").startsWith("!"))
 					player = new L2ApInstance(objectId, template, rset.getString("account_name"), app);
-				else*/
+				else
 					player = new L2PcInstance(objectId, template, rset.getString("account_name"), app);
 				player.setName(rset.getString("char_name"));
 				player._lastAccess = rset.getLong("lastAccess");

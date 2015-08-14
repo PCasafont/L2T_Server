@@ -34,6 +34,7 @@ import l2tserver.gameserver.model.actor.L2Attackable;
 import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.L2Playable;
 import l2tserver.gameserver.model.actor.L2Summon;
+import l2tserver.gameserver.model.actor.instance.L2ApInstance;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import l2tserver.gameserver.model.actor.instance.L2PetInstance;
 import l2tserver.gameserver.model.actor.instance.L2SummonInstance;
@@ -1093,10 +1094,32 @@ public class L2Party
 					allies.add((L2PcInstance)cha);
 			}
 		}
+
+		boolean playerFound = false;
+		for (L2Character enemy : enemies)
+		{
+			if (!(enemy instanceof L2ApInstance))
+			{
+				playerFound = true;
+				break;
+			}
+		}
+		
+		if (playerFound)
+		{
+			List<L2Character> toIterate = new ArrayList<L2Character>(enemies);
+			for (L2Character enemy : toIterate)
+			{
+				if (enemy instanceof L2ApInstance)
+					enemies.remove(enemy);
+			}
+		}
 		
 		if (_target != null && _target.isVisible() && !_target.isDead()
 				&& leader.getDistanceSq(_target) < 2000 * 2000
-				&& _target.isAutoAttackable(leader) && allies.size() > 0)
+				&& _target.isAutoAttackable(leader) && allies.size() > 0
+				&& ((!playerFound && _target instanceof L2ApInstance)
+						|| !(_target instanceof L2ApInstance)))
 		{
 			//_target = null;
 			return;
@@ -1110,6 +1133,8 @@ public class L2Party
 			_target = null;
 			return;
 		}*/
+		
+		//System.out.println(enemies);
 		
 		for (L2PcInstance healer : allies)
 		{
