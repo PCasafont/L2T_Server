@@ -93,7 +93,7 @@ public class L2AWizardAI extends L2APlayerAI
 			
 			for (L2Skill skill : _player.getAllSkills())
 			{
-				if (skill.isStanceSwitch())
+				if (!skill.isStanceSwitch())
 					continue;
 				
 				_player.setElementalStance(1);

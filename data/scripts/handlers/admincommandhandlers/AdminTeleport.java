@@ -152,7 +152,7 @@ public class AdminTeleport implements IAdminCommandHandler
 					_log.info("admin_walk: " + e);
 			}
 		}
-		else if (command.startsWith("admin_move_to") || command.startsWith("admin_teleport"))
+		else if (command.startsWith("admin_move_to") || command.startsWith("admin_teleport "))
 		{
 			try
 			{

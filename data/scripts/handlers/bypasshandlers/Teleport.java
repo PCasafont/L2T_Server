@@ -138,6 +138,7 @@ public class Teleport implements IBypassHandler
 				
 				activeChar.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
 				activeChar.setInstanceId(0);
+				activeChar.startPvPFlag();
 			}
 			else
 				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "Sorry, I can't find anyone in flag status right now."));

@@ -48,7 +48,13 @@ public class L2ApInstance extends L2PcInstance
 			{
 				if (_ai == null)
 				{
-					switch (getClassId())
+					int classId = getCurrentClass().getParent().getAwakeningClassId();
+					if (getClassId() == 188)
+						classId = 140;
+					else if (getClassId() == 189)
+						classId = 143;
+					
+					switch (classId)
 					{
 						case 139:
 							_ai = new L2AKnightAI(new L2PcInstance.AIAccessor());

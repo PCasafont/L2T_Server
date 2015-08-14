@@ -32,6 +32,7 @@ import l2tserver.L2DatabaseFactory;
 import l2tserver.gameserver.GeoData;
 import l2tserver.gameserver.datatables.NpcTable;
 import l2tserver.gameserver.datatables.SpawnTable;
+import l2tserver.gameserver.events.HiddenChests;
 import l2tserver.gameserver.events.chess.ChessEvent;
 import l2tserver.gameserver.handler.IAdminCommandHandler;
 import l2tserver.gameserver.instancemanager.DiscussionManager;
@@ -323,6 +324,7 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_loc"))
 		{
+			HiddenChests.getInstance().spawnChests();
 			//activeChar.setHasCoCAura(true);
 			////activeChar.sendPacket(new ExCallToChangeClass(activeChar.getClassId(), false));
 			/*int id = CharNameTable.getInstance().getIdByName("trollL33t");

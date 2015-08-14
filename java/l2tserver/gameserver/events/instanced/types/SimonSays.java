@@ -64,7 +64,7 @@ public class SimonSays extends EventInstance
 		if (!_winners.isEmpty())
 		{
 			rewardPlayers(_winners);
-			Announcements.getInstance().announceToAll("The event has ended. The player " + _winners.get(0).getName() + " has won being the last participant!");
+			Announcements.getInstance().announceToAll("The event has ended. The player " + _winners.get(0).getName() + " has won being the last one standing!");
 			return;
 		}
 		else

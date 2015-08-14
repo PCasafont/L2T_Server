@@ -419,6 +419,21 @@ public class SpawnTable
 			if (npc == null)
 				continue;
 			
+			/*int radiusToCheck = 3000;
+			int knownChars = 1;
+			for (L2Spawn toCheck : _spawnTable)
+			{
+				if (toCheck == null)
+					continue;
+				
+				L2Npc npcToCheck = toCheck.getNpc();
+				if (npcToCheck == null)
+					continue;
+				
+				if (Util.checkIfInRange(radiusToCheck, npc, npcToCheck, true))
+					knownChars++;
+			}*/
+			
 			int knownChars = npc.getKnownList().getKnownCharactersInRadius(1000).size() + 1;
 			double weight = 1.0 / knownChars;
 			

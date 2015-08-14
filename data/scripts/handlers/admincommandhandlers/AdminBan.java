@@ -195,7 +195,7 @@ public class AdminBan implements IAdminCommandHandler {
 				statement.execute();
 				statement.close();
 				
-				if (hwId != null && hwId.length() > 0)
+				if (hwId != null && hwId.length() > 0 && !Config.isServer(Config.TENKAI))
 				{
 					statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 					
