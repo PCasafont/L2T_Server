@@ -2666,6 +2666,9 @@
 		<set name="skillRadius" val="1000" />
 		<set name="aggroPoints" val="1" />
 		<for>
+			<cond addName="1">
+				<target playable="true" />
+			</cond>
 			<abnormal duration="30" stackLvl="1" stackType="signal_a">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pDef" val="300" />
@@ -2683,6 +2686,9 @@
 		<set name="skillRadius" val="1000" />
 		<set name="aggroPoints" val="1" />
 		<for>
+			<cond addName="1">
+				<target playable="true" />
+			</cond>
 			<abnormal duration="30" stackLvl="1" stackType="signal_b">
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="200" />
