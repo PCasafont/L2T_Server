@@ -450,7 +450,17 @@ public class LoginServerThread extends Thread
 	
 	public boolean addGameServerLogin(String account, L2GameClient client)
 	{
-		return _accountsInGameServer.put(account, client) == null;
+		L2GameClient prevClient = _accountsInGameServer.put(account, client);
+		if (prevClient != null)
+		{
+			LogRecord record = new LogRecord(Level.WARNING, "Kicked by login");
+			record.setParameters(new Object[]{client});
+			_logAccounting.log(record);
+			client.setAditionalClosePacket(SystemMessage.getSystemMessage(SystemMessageId.ANOTHER_LOGIN_WITH_ACCOUNT));
+			client.closeNow();
+		}
+		
+		return true;
 	}
 	
 	public void sendAccessLevel(String account, int level)
