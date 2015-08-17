@@ -1001,7 +1001,7 @@ public class AntiBotsManager
 	{
 		synchronized(_conflictiveUserIps)
 		{
-			if(_conflictiveUserIps.containsKey(ip))
+			if (_conflictiveUserIps.containsKey(ip))
 				return _conflictiveUserIps.remove(ip) != null;
 		}
 		

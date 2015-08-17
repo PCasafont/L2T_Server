@@ -18,18 +18,16 @@ import java.util.Map.Entry;
 
 import l2tserver.Config;
 import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.datatables.SpawnTable;
 import l2tserver.gameserver.handler.IActionHandler;
 import l2tserver.gameserver.model.Elementals;
 import l2tserver.gameserver.model.L2DropCategory;
 import l2tserver.gameserver.model.L2DropData;
 import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Spawn;
 import l2tserver.gameserver.model.L2Object.InstanceType;
 import l2tserver.gameserver.model.actor.L2Attackable;
+import l2tserver.gameserver.model.actor.L2Attackable.AggroInfo;
 import l2tserver.gameserver.model.actor.L2Character;
 import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Attackable.AggroInfo;
 import l2tserver.gameserver.model.actor.instance.L2MerchantInstance;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import l2tserver.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
@@ -91,10 +89,6 @@ public class L2NpcActionShift implements IActionHandler
 			//System.out.println(targetNpc.getPDef(null));
 			//System.out.println(targetNpc.getTemplate().basePDef);
 			//System.out.println(targetNpc.getKnownList().getDistanceToWatchObject(targetNpc));
-			
-			L2Spawn spawn = SpawnTable.getInstance().getRandomDistributedSpawn();
-			activeChar.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
-			activeChar.sendMessage(spawn.getNpc().getName());
 			
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
 			html.replace("%class%", target.getClass().getSimpleName());

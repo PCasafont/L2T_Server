@@ -317,7 +317,7 @@
 	</item>
 	<!-- A basic for appearance modification. -->
 	<item id="40058" type="Weapon" name="Cat Staff" icon="icon.ert_custom_staff_b" defaultAction="equip" weaponType="bigblunt"
-			bodypart="rhand" immediateEffect="1" weight="101" soulshots="1" spiritshots="0" mpConsume="2">
+			bodypart="lrhand" immediateEffect="1" weight="101" soulshots="1" spiritshots="0" mpConsume="2">
 		<cond msgId="1518">
 			<player races="Ertheia" />
 		</cond>

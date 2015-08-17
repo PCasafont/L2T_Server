@@ -9470,21 +9470,21 @@ public class L2PcInstance extends L2Playable
 			return false;
 		}
 		
+		boolean lastCast1 = true;
 		if (canDoubleCast())
 		{
 			if (isCastingNow1())
 			{
 				setIsCastingNow2(true);
-				setLastCast1(false);
+				lastCast1 = false;
 			}
 			else
-			{
 				setIsCastingNow(true);
-				setLastCast1(true);
-			}
 		}
 		else
 			setIsCastingNow(true);
+
+		setLastCast1(lastCast1);
 		// Create a new SkillDat object and set the player _currentSkill
 		// This is used mainly to save & queue the button presses, since L2Character has
 		// _lastSkillCast which could otherwise replace it
@@ -9495,7 +9495,7 @@ public class L2PcInstance extends L2Playable
 		
 		if (!checkUseMagicConditions(skill, forceUse, dontMove))
 		{
-			if (wasLastCast1())
+			if (lastCast1)
 				setIsCastingNow(false);
 			else
 				setIsCastingNow2(false);

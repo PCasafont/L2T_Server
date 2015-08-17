@@ -355,6 +355,7 @@
 	<command name="admin_summon_setlvl" accessLevels="3" />
 	<command name="admin_target" accessLevels="6" />
 	<command name="admin_tele" accessLevels="6" />
+	<command name="admin_teleport" accessLevels="6" />
 	<command name="admin_teleportto" accessLevels="6" />
 	<command name="admin_teleport_character" accessLevels="3" />
 	<command name="admin_teleport_character_to_menu" accessLevels="3" />
