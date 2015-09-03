@@ -6832,7 +6832,7 @@
 			<abnormal duration="9" stackLvl="1" stackType="talisman_battle_support">
 				<effect type="RemoveInvul" val="0" />
 				<effect type="RemoveHide" val="0" />
-				<effect type="RemoveTalisman" val="0" />
+				<effect type="RemoveTalismans" val="0" />
 			</abnormal>
 		</for>
 	</skill>
