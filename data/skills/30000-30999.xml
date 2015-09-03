@@ -112,7 +112,7 @@
 		<table name="#power"> 110 120 130 140 150 157 162 167 172 501 515 543 571 599 627 655 683 711 725 739 
 			<enchantRoute id="1" level="16,17,18,19,20" type="ADD_PERCENT"> 1 1.4 1.8 2.2 2.6 2.8 3.3 3.6 4 4.4 4.8 5.1 5.5 5.9 6.2 6.6 7 7.4 7.7 8.1 8.5 8.8 9.2 9.6 10 10.3 10.7 11.1 11.4 11.8 </enchantRoute>
 		</table>
-		<table name="#chance"> 0 0 0 0 0 0 0 0 0 10 10 10 10 10 10 10 10 10 10 10 </table>
+		<table name="#chance"> 0 0 0 0 0 0 0 0 0 33 33 33 33 33 33 33 33 33 33 33 </table>
 		<table name="#baseCritRate"> 0 
 			<enchantRoute id="2" level="16,17,18,19,20"> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 </enchantRoute>
 		</table>

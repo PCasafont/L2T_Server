@@ -42,11 +42,8 @@ import l2tserver.gameserver.ThreadPoolManager;
 import l2tserver.gameserver.model.L2World;
 import l2tserver.gameserver.model.actor.instance.L2PcInstance;
 import l2tserver.gameserver.network.L2GameClient;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
 import l2tserver.gameserver.util.Util;
 import l2tserver.log.Log;
-import l2tserver.util.Rnd;
 
 /**
  * @author Zakaxx
@@ -494,7 +491,7 @@ public class AntiBotsManager
 							processesIterator.remove();
 					}
 					
-					if (illegalProcesses.size() != 0)
+					/*if (illegalProcesses.size() != 0)
 					{
 						final String accountName = player.getClient().getAccountName();
 						
@@ -535,7 +532,7 @@ public class AntiBotsManager
 							"The use of third party software to automate (even just parts of) gameplay is prohibited.", // Reason...
 							player.getClient().getAccountName(),  // We ban the account...
 							clientInfo.getHardwareId()); // and the hardware.
-					}
+					}*/
 				}
 				
 				// If the Anti Bots did not send any information to us for over 10 minutes, it was likely closed.
@@ -594,6 +591,7 @@ public class AntiBotsManager
 		player.sendPacket(htmlMsg);*/
 	}
 	
+	@SuppressWarnings("unused")
 	private int getBannedTimes(String hwId)
 	{
 		int bannedTimes = 0;
@@ -665,6 +663,7 @@ public class AntiBotsManager
 		return forumIp;
 	}
 	
+	@SuppressWarnings("unused")
 	private final void addToPendingBanLists(final int delay, final int characterBanDuration, final int hardwareBanDuration, final String reason, final String accountName, final String hardwareId)
 	{
 		_pendingBans.add(new PlayerBanTrace(System.currentTimeMillis() + delay, characterBanDuration, hardwareBanDuration, reason, accountName, hardwareId));
