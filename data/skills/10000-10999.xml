@@ -3724,76 +3724,21 @@
 	</skill>
 	<!-- Immediately increases Momentum to its maximum level. -->
 	<skill id="10276" levels="1" name="Force of Nature">
-		<!-- TODO: Major:
-			Recovers HP by 1936.
-			Recovers HP by 2072.
-			Recovers HP by 2207.
-			Recovers HP by 2342.
-			Recovers HP by 2477.
-			Recovers HP by 2612.
-			Recovers HP by 2747.
-			Recovers HP by 2882.
-			Recovers HP by 3017.
-			Recovers HP by 3152.
-			Recovers HP by 3288.
-			Recovers HP by 3423.
-			Recovers HP by 3558.
-			Recovers HP by 3693.
-			Recovers HP by 3828.
-			Recovers HP by 3964.
-			Recovers HP by 4099.
-			Recovers HP by 4234.
-			Recovers HP by 4369.
-			Recovers HP by 4504.
-			Recovers HP by 4594.
-			Recovers HP by 4684.
-			Recovers HP by 4774.
-			Recovers HP by 4864.
-			Recovers HP by 4955.
-			Recovers HP by 5044.
-			Recovers HP by 5135.
-			Recovers HP by 5224.
-			Recovers HP by 5315.
-			Recovers HP by 5405.
-		-->
-		<enchantRoute id="1" level="1" enabled="false" />
-		<!-- TODO: Honor:
-			Recovers CP by 2421.
-			Recovers CP by 2590.
-			Recovers CP by 2759.
-			Recovers CP by 2928.
-			Recovers CP by 3097.
-			Recovers CP by 3265.
-			Recovers CP by 3434.
-			Recovers CP by 3603.
-			Recovers CP by 3772.
-			Recovers CP by 3941.
-			Recovers CP by 4110.
-			Recovers CP by 4279.
-			Recovers CP by 4448.
-			Recovers CP by 4617.
-			Recovers CP by 4786.
-			Recovers CP by 4955.
-			Recovers CP by 5124.
-			Recovers CP by 5293.
-			Recovers CP by 5462.
-			Recovers CP by 5631.
-			Recovers CP by 5743.
-			Recovers CP by 5856.
-			Recovers CP by 5968.
-			Recovers CP by 6081.
-			Recovers CP by 6194.
-			Recovers CP by 6306.
-			Recovers CP by 6419.
-			Recovers CP by 6531.
-			Recovers CP by 6644.
-			Recovers CP by 6757.
-		-->
-		<enchantRoute id="2" level="1" enabled="false" />
+		<table name="#skillType"> BUFF
+			<enchantRoute id="1" level="1"> HEAL_STATIC </enchantRoute>
+			<enchantRoute id="2" level="1"> COMBATPOINTHEAL </enchantRoute>
+		</table>
+		<table name="#power"> 0
+			<enchantRoute id="1" level="1"> 1936 2072 2207 2342 2477 2612 2747 2882 3017 3152 3288 3423 3558 3693 3828 3964 4099 4234 4369 4504 4594 4684 4744 4864 4955 5044 5135 5224 5315 5405 </enchantRoute>
+			<enchantRoute id="2" level="1"> 2421 2590 2759 2928 3097 3265 3434 3603 3772 3941 4110 4279 4448 4617 4786 4955 5124 5293 5462 5631 5743 5856 5968 6081 6194 6306 6419 6531 6644 6757 </enchantRoute>
+		</table>
+		<enchantRoute id="1" level="1" /> <!-- Major -->
+		<enchantRoute id="2" level="1" /> <!-- Honor -->
 		<set name="target" val="TARGET_SELF" />
-		<set name="skillType" val="BUFF" />
+		<set name="skillType" val="#skillType" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="mpConsume" val="38" />
+		<set name="power" val="#power" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />

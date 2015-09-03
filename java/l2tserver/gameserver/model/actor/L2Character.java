@@ -2120,10 +2120,7 @@ public abstract class L2Character extends L2Object
 			{
 				Future<?> future = _simultSkillCast;
 				if (future != null)
-				{
 					future.cancel(true);
-					_simultSkillCast = null;
-				}
 				
 				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (hitTime)
 				// For client animation reasons (party buffs especially) 400 ms before!
@@ -2133,10 +2130,7 @@ public abstract class L2Character extends L2Object
 			{
 				Future<?> future = _skillCast2;
 				if (future != null)
-				{
 					future.cancel(true);
-					_skillCast2 = null;
-				}
 				
 				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (hitTime)
 				// For client animation reasons (party buffs especially) 400 ms before!
@@ -2146,10 +2140,7 @@ public abstract class L2Character extends L2Object
 			{
 				Future<?> future = _skillCast;
 				if (future != null)
-				{
 					future.cancel(true);
-					_skillCast = null;
-				}
 				
 				// Create a task MagicUseTask to launch the MagicSkill at the end of the casting time (hitTime)
 				// For client animation reasons (party buffs especially) 400 ms before!
@@ -4266,12 +4257,16 @@ public abstract class L2Character extends L2Object
 	public final boolean canCastNow(L2Skill skill)
 	{
 		// Horrible hotfix
-		if (!canDoubleCast() && _isCastingNow
+		/*if (!canDoubleCast() && _isCastingNow
 				&& (_skillCast == null || _skillCast.isDone()))
 		{
-			
-			_isCastingNow = false;
-		}
+			System.out.println(getName() + "'s cast fixed by the horrible hotfix");
+			System.out.println("The fixing cast is " + skill);
+			System.out.println("His last cast was " + _skillCast);
+			if (_skillCast != null)
+				System.out.println("Cancelled " + _skillCast.isCancelled());
+			//_isCastingNow = false;
+		}*/
 		
 		if (canDoubleCast() && skill.isElemental())
 			return !_isCastingNow || !_isCastingNow2;

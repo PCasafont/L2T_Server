@@ -2371,7 +2371,7 @@
 	</skill>
 	<!-- Removes invincibility of target. Cooldown 30 minutes. -->
 	<skill id="27443" levels="1" name="Amethyst - Remove Invincibility">
-		<set name="target" val="TARGET_NONE" />
+		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="2110" />
