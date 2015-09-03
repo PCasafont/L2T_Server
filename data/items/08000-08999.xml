@@ -1499,7 +1499,7 @@
 	<!-- MP + 42, Sleep/Paralysis/Stun Resistance + 15%, Sleep/Paralysis/Stun Attack Rate + 15%, Poison/Bleed Resistance + 25%, Poison /Bleed Attack Rate + 25%. Decreases skill cooldown. Damage Shield effect. Increases Dark Resistance. -->
 	<item id="8191" type="Armor" name="Frintezza's Necklace" icon="icon.accessory_necklace_of_frintessa_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" crystalCount="230" crystalType="a" weight="150" price="3450000" enchantEnabled="1"
-			isAugmentable="false">
+			isEpic="true">
 		<baseAdd stat="mDef" val="95" />
 		<add stat="maxMp" val="42" />
 		<enchant stat="mDef" val="0" />

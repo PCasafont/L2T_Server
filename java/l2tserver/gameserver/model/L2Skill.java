@@ -244,6 +244,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 	private final double _power;
 	private final double _pvpPower;
 	private final double _pvePower; //FIXME: remove?
+	private final double _stunPower;
 	private final int _magicLevel;
 	private final int _levelDepend;
 	private final boolean _ignoreResists;
@@ -531,6 +532,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		_power = set.getFloat("power", 0.f);
 		_pvpPower = set.getFloat("pvpPower", (float)getPower());
 		_pvePower = set.getFloat("pvePower", (float)getPower());
+		_stunPower = set.getFloat("stunPower", (float)getPower());
 		_magicLevel = set.getInteger("magicLvl", PlayerClassTable.getInstance().getMinSkillLevel(_id, _level));
 		_levelDepend = set.getInteger("lvlDepend", 0);
 		_ignoreResists = set.getBool("ignoreResists", false);
@@ -764,11 +766,15 @@ public abstract class L2Skill implements IChanceSkillTrigger
 		if (activeChar == null)
 			return getPower(isPvP, isPvE);
 		
+		double power = getPower(isPvP, isPvE);
+		if (target != null && target.isStunned())
+			power = _stunPower;
+		
 		switch (_skillType)
 		{
 			case DEATHLINK:
 			{
-				return getPower(isPvP, isPvE) * Math.pow(1.7165 - activeChar.getCurrentHp() / activeChar.getMaxHp(), 2) * 0.577;
+				return power * Math.pow(1.7165 - activeChar.getCurrentHp() / activeChar.getMaxHp(), 2) * 0.577;
 				/*
 				 * DrHouse:
 				 * Rolling back to old formula (look below) for DEATHLINK due to this one based on logarithm is not
@@ -781,7 +787,7 @@ public abstract class L2Skill implements IChanceSkillTrigger
 			}
 			case FATAL:
 			{
-				return getPower(isPvP, isPvE)*3.5*(1-target.getCurrentHp()/target.getMaxHp());
+				return power * 3.5 * (1 - target.getCurrentHp() / target.getMaxHp());
 			}
 			default:
 				return getPower(isPvP, isPvE);

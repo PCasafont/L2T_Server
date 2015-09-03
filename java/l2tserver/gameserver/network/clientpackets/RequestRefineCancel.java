@@ -122,7 +122,15 @@ public final class RequestRefineCancel extends L2GameClientPacket
 		
 		// unequip item
 		if (targetItem.isEquipped())
-			activeChar.disarmWeapons();
+		{
+			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
+			InventoryUpdate iu = new InventoryUpdate();
+			for (L2ItemInstance itm : unequiped)
+				iu.addModifiedItem(itm);
+			
+			activeChar.sendPacket(iu);
+			activeChar.broadcastUserInfo();
+		}
 		
 		// remove the augmentation
 		targetItem.removeAugmentation();

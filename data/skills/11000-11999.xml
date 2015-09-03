@@ -2085,6 +2085,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="15000" />
+		<set name="skillRadius" val="300" />
 		<set name="flyCourse" val="0" />
 		<set name="flyRadius" val="#flyRadius" />
 		<for>
@@ -2796,6 +2797,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="15000" />
+		<set name="skillRadius" val="150" />
 		<set name="flyCourse" val="180" />
 		<set name="flyRadius" val="#flyRadius" />
 		<for>
@@ -8666,7 +8668,7 @@
 			<abnormal duration="30">
 				<effect type="Buff" val="0" />
 				<addPercent stat="mAtk" val="30" />
-				<addPercentBase stat="mCritDmg" val="30" />
+				<addPercent stat="mCritDmg" val="30" />
 			</abnormal>
 		</for>
 	</skill>

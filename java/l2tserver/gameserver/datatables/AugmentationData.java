@@ -223,11 +223,13 @@ public class AugmentationData
 	public static final int GRADE_TOP = 3;
 	public static final int GRADE_LEG = 5;
 	public static final int GRADE_ACC = 4; // Accessory LS
+	public static final int GRADE_ARIA = 5; // Aria's LS
 	
 	protected static final int GEMSTONE_D = 2130;
 	protected static final int GEMSTONE_C = 2131;
 	protected static final int GEMSTONE_B = 2132;
 	protected static final int GEMSTONE_A = 2133;
+	protected static final int GEMSTONE_R = 19440;
 
 	private final Map<Integer, Augment> _augments = new HashMap<Integer, Augment>();
 	private final Map<Integer, LifeStone> _lifeStones = new HashMap<Integer, LifeStone>();
@@ -332,7 +334,7 @@ public class AugmentationData
 						if (!groupNode.getName().equalsIgnoreCase("augmentGroup"))
 							continue;
 						
-						String weaponType = groupNode.getString("weaponType");
+						String[] weaponTypes = groupNode.getString("weaponType").split(",");
 						int order = groupNode.getInt("order");
 						
 						List<AugmentSet> sets = new ArrayList<AugmentSet>();
@@ -360,7 +362,8 @@ public class AugmentationData
 							sets.add(new AugmentSet(augments, chance));
 						}
 						
-						lifeStone.setAugmentGroup(weaponType, order, new AugmentGroup(sets));
+						for (String weaponType : weaponTypes)
+							lifeStone.setAugmentGroup(weaponType, order, new AugmentGroup(sets));
 					}
 					
 					_lifeStones.put(id, lifeStone);
@@ -438,7 +441,7 @@ public class AugmentationData
 		final LifeStone ls = getLifeStone(refinerItem.getItemId());
 		
 		// Check for item id
-		if (getGemStoneId(grade) != gemStones.getItemId())
+		if (getGemStoneId(grade, ls.getGrade()) != gemStones.getItemId())
 			return false;
 		// Count must be greater or equal of required number
 		if (getGemStoneCount(grade, ls.getGrade()) > gemStones.getCount())
@@ -465,11 +468,15 @@ public class AugmentationData
 		final LifeStone ls = getLifeStone(refinerItem.getItemId());
 		if (ls == null)
 			return false;
+		
+		if (item.getItem().isEpic() && ls.getGrade() != GRADE_ARIA)
+			return false;
+		
 		// weapons can't be augmented with accessory ls
-		if (item.getItem() instanceof L2Weapon && ls.getGrade() == GRADE_ACC)
+		if (item.getItem() instanceof L2Weapon && (ls.getGrade() == GRADE_ACC || ls.getGrade() == GRADE_ARIA))
 			return false;
 		// and accessory can't be augmented with weapon ls
-		if (item.getItem() instanceof L2Armor && ls.getGrade() != GRADE_ACC)
+		if (item.getItem() instanceof L2Armor && ls.getGrade() < GRADE_ACC)
 			return false;
 		// check for level of the lifestone
 		if (player.getLevel() < ls.getPlayerLevel())
@@ -596,8 +603,11 @@ public class AugmentationData
 	/*
 	 * Returns GemStone itemId based on item grade
 	 */
-	public static final int getGemStoneId(int itemGrade)
+	public static final int getGemStoneId(int itemGrade, int lifeStoneGrade)
 	{
+		if (lifeStoneGrade == GRADE_ARIA)
+			return GEMSTONE_R;
+		
 		switch (itemGrade)
 		{
 			case L2Item.CRYSTAL_C:
@@ -626,6 +636,8 @@ public class AugmentationData
 	{
 		switch (lifeStoneGrade)
 		{
+			case GRADE_ARIA:
+				return 100;
 			case GRADE_ACC:
 				switch (itemGrade)
 				{

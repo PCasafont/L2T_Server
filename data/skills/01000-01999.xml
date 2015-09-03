@@ -6920,7 +6920,7 @@
 				<effect type="Buff" val="0" />
 				<addPercent stat="maxHp" val="20" />
 				<addPercentBase stat="rCrit" val="20" />
-				<addPercentBase stat="mCritDmg" val="20" />
+				<addPercent stat="mCritDmg" val="20" />
 				<addPercent stat="pAtk" val="10" />
 				<addPercent stat="pDef" val="20" />
 				<addPercent stat="pAtkSpd" val="20" />
@@ -8211,7 +8211,7 @@
 				<addPercent stat="regCp" val="20" />
 				<addPercent stat="maxMp" val="20" />
 				<addPercentBase stat="rCrit" val="20" />
-				<addPercentBase stat="mCritDmg" val="20" />
+				<addPercent stat="mCritDmg" val="20" />
 				<addPercent stat="pAtk" val="10" />
 				<addPercent stat="pDef" val="20" />
 				<addPercent stat="pAtkSpd" val="20" />
@@ -13709,7 +13709,7 @@
 		<set name="operateType" val="OP_PASSIVE" />
 		<for>
 			<addPercent stat="pCritDmg" val="1" />
-			<addPercentBase stat="mCritDmg" val="1" />
+			<addPercent stat="mCritDmg" val="1" />
 		</for>
 	</skill>
 	<!-- STR and INT + 1 at night. -->

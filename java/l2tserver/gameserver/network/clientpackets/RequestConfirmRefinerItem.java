@@ -65,7 +65,7 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket
 		final int refinerItemId = refinerItem.getItem().getItemId();
 		final int grade = targetItem.getItem().getItemGrade();
 		final LifeStone ls = AugmentationData.getInstance().getLifeStone(refinerItemId);
-		final int gemStoneId = AugmentationData.getGemStoneId(grade);
+		final int gemStoneId = AugmentationData.getGemStoneId(grade, ls.getGrade());
 		final int gemStoneCount = AugmentationData.getGemStoneCount(grade, ls.getGrade());
 		
 		activeChar.sendPacket(new ExPutIntensiveResultForVariationMake(_refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));

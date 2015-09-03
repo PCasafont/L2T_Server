@@ -3533,7 +3533,7 @@
 		<for>
 			<add stat="windRes" val="20" />
 			<addPercent stat="pCritDmg" val="1" />
-			<addPercentBase stat="mCritDmg" val="1" />
+			<addPercent stat="mCritDmg" val="1" />
 		</for>
 	</skill>
 	<!-- Fire Resistance + 20, HP, MP, and CP + 1%. -->

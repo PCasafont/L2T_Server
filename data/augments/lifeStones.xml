@@ -2115,19 +2115,30 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone Instilled with Giants' Power -->
-	<!-- Copied from lvl 86 one -->
 	<lifeStone id="36731" grade="2" level="13">
 		<augmentGroup weaponType="warrior" order="0">
 			<augments ids="23338-23428,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
-		<augmentGroup weaponType="warrior" order="1">
-			<augments ids="30268-30277" chance="100.0" /> <!-- 30277: Active: Increases the target's Critical Damage received and the chance of receiving critical attacks by 90% for 10 seconds -->
-		</augmentGroup>
 		<augmentGroup weaponType="mage" order="0">
 			<augments ids="23702-23792,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
-		<augmentGroup weaponType="mage" order="1">
+		<augmentGroup weaponType="warrior,mage" order="1">
 			<augments ids="30268-30277" chance="100.0" /> <!-- 30277: Active: Increases the target's Critical Damage received and the chance of receiving critical attacks by 90% for 10 seconds -->
+		</augmentGroup>
+	</lifeStone>
+	<!-- Aria's Life Stone -->
+	<lifeStone id="38571" grade="5" level="0">
+		<augmentGroup weaponType="ring,earring,necklace" order="0">
+			<augments ids="30336-30339" chance="55.0" />
+			<augments ids="30330-30335" chance="35.0" />
+			<augments ids="30324-30329" chance="7.0" />
+			<augments ids="30315-30323" chance="3.0" />
+		</augmentGroup>
+		<augmentGroup weaponType="ring,earring,necklace" order="1">
+			<augments ids="30374-30376" chance="55.0" />
+			<augments ids="30363-30373" chance="35.0" />
+			<augments ids="30352-30362" chance="7.0" />
+			<augments ids="30340-30351" chance="3.0" />
 		</augmentGroup>
 	</lifeStone>
 </list>

@@ -90,7 +90,7 @@ public class Sell implements IVoicedCommandHandler
 						}
 						else
 						{
-							player.sendPacket(new ExShowScreenMessage("Click on the item you want to sell!", 5000));
+							player.sendPacket(new ExShowScreenMessage("Click on the item you want to sell", 5000));
 							player.setIsAddSellItem(true);
 						}
 					}	
@@ -106,7 +106,7 @@ public class Sell implements IVoicedCommandHandler
 							
 							int itemObjId = Integer.valueOf(values[1]);
 							
-							player.sendPacket(new ExShowScreenMessage("Click on the item you want to add as a price!", 5000));
+							player.sendPacket(new ExShowScreenMessage("Click on the item you want to add as a price", 5000));
 							player.setAddSellPrice(itemObjId);
 						}
 						else
@@ -170,7 +170,7 @@ public class Sell implements IVoicedCommandHandler
 							{	
 								if (player.checkItemManipulation(itemObjId, priceCount, "Custom Sell") == null)
 								{
-									player.sendMessage("Sell: You don't have enought: " + targetItem.getName()+"!");
+									player.sendMessage("Sell: You don't have enough " + targetItem.getName()+"!");
 									return false;	
 								}
 								
@@ -188,7 +188,7 @@ public class Sell implements IVoicedCommandHandler
 							}
 							else
 							{	
-								player.sendMessage("Sell: Something is wrong...!");
+								player.sendMessage("Sell: Something is wrong...");
 								return false;
 							}	
 						}	
@@ -206,7 +206,7 @@ public class Sell implements IVoicedCommandHandler
 							
 							if (priceCount < 1)
 							{
-								player.sendMessage("Sell: You can't set: " + priceCount + "!");
+								player.sendMessage("Sell: You can't set " + priceCount + "");
 								return false;
 							}
 							

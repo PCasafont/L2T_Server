@@ -1180,7 +1180,7 @@
 	</item>
 	<!-- Dark Resistance + 30, MP + 31. -->
 	<item id="10170" type="Armor" name="Baylor's Earring" icon="icon.accessary_dynasty_earing_i00" defaultAction="equip" bodypart="rear;lear"
-			immediateEffect="1" crystalCount="487" crystalType="s80" weight="150" price="12185000" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="487" crystalType="s80" weight="150" price="12185000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="71" />
 		<add stat="maxMp" val="31" />
 		<add stat="darkRes" val="30" />
@@ -2338,7 +2338,7 @@
 	</item>
 	<!-- MP + 38, HP + 105, M. Def. + 12%, increases Mental Attack Resistance by 10, increases abnormal Mental state Attack Rate by 10, increases MP cooldown power by 0.23. Increases Dark Resistance by 30. Effect does not stack. -->
 	<item id="10314" type="Armor" name="Beleth's Ring" icon="icon.accessary_dynasty_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="152" crystalType="s" weight="150" price="2400000" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="152" crystalType="s" weight="150" price="2400000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<enchant stat="mDef" val="0" />
