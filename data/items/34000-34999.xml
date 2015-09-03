@@ -9465,7 +9465,7 @@
 	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
 	<item id="34998" type="Weapon" name="Tauti's One-handed Axe" icon="icon.weapon_tauti_one_hand_axe_i01" defaultAction="equip"
 			weaponType="blunt" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1000"
-			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
+			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isEpic="true" canBeUsedAsApp="false">
 		<set stat="pAtk" val="638" />
 		<set stat="mAtk" val="278" />
 		<set stat="rCrit" val="8" />
@@ -9482,7 +9482,7 @@
 	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
 	<item id="34999" type="Weapon" name="Tauti's Axe" icon="icon.weapon_tauti_one_hand_magic_axe_i01" defaultAction="equip"
 			weaponType="bigblunt" bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1000"
-			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
+			soulshots="1" spiritshots="1" isEnchantable="false" isAttributable="false" isEpic="true" canBeUsedAsApp="false">
 		<set stat="pAtk" val="776" />
 		<set stat="mAtk" val="278" />
 		<set stat="rCrit" val="8" />

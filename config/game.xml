@@ -2787,11 +2787,11 @@
 	-->
 	<config name="AntharasWaitTime" var="ANTHARAS_WAIT_TIME" default="30" />
 	
-	<!-- Random interval. Range 1-192 -->
-	<config name="RandomOfAntharasSpawn" var="ANTHARAS_RANDOM_SPAWN" default="72" />
-	
 	<!-- Interval time of Antharas. Value is hour. Range 1-480 -->
 	<config name="IntervalOfAntharasSpawn" var="ANTHARAS_INTERVAL_SPAWN" default="264" />
+	
+	<!-- Random interval. Range 1-192 -->
+	<config name="RandomOfAntharasSpawn" var="ANTHARAS_RANDOM_SPAWN" default="72" />
 	
 	<!--
 		Valakas
@@ -2807,9 +2807,7 @@
 	
 	<!-- 
 		Lindvior
-		Delay of appearance time of Lindvior. Value is minute. Range 3-60
-	 -->
-	 <!-- Interval time of Lindvior. Value is hour. Range 1-480 -->
+		Interval time of Lindvior. Value is hour. Range 1-480 -->
 	<config name="IntervalOfLindviorSpawn" var="LINDVIOR_INTERVAL_SPAWN" default="264" />
 	
 	<!-- Random interval. Range 1-192 -->
@@ -2817,9 +2815,7 @@
 	
 	<!-- 
 		Kelbim
-		Delay of appearance time of Kelbim. Value is minute. Range 3-60
-	 -->
-	 <!-- Interval time of Kelbim. Value is hour. Range 1-480 -->
+		Interval time of Kelbim. Value is hour. Range 1-480 -->
 	<config name="IntervalOfKelbimSpawn" var="KELBIM_INTERVAL_SPAWN" default="264" />
 	
 	<!-- Random interval. Range 1-192 -->

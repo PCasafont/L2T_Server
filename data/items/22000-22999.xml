@@ -1664,7 +1664,7 @@
 	<!-- MP + 21, Poison Resistance + 40%, Poison Attack Rate + 40%, Hold Resistance + 30%, Hold attack rate + 30%, and increases Accuracy, Critical Damage, P. Atk., and Casting Spd. Only one effect is applied when two of the same ring are equipped. -->
 	<item id="22304" type="Armor" name="Baium's Ring - 3-day (Event)" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalType="s" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isAugmentable="false" isOlyRestricted="true" time="4320">
+			isDepositable="false" isEpic="true" isOlyRestricted="true" time="4320">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<skill id="3561" level="1" /> <!-- Baium's Ring -->

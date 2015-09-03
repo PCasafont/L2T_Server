@@ -1912,7 +1912,7 @@
 	<!-- Event Queen Ant's Ring. MP+ 21, Poison Resistance + 30%, Poison Atk. Rate + 30%, Accuracy increase, P. Critical Damage increase, hold tolerance + 20%, and hold Atk. Rate + 20%. Only one effect is applied even when the two identical rings are worn. -->
 	<item id="20204" type="Armor" name="Queen Ant's Ring (Event) - 3-day" icon="icon.accessory_ring_of_queen_ant_i00" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalType="b" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isAugmentable="false" isOlyRestricted="true" time="4320">
+			isDepositable="false" isEpic="true" isOlyRestricted="true" time="4320">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<skill id="3562" level="1" /> <!-- Queen Ant's Ring -->
@@ -1938,7 +1938,7 @@
 	<!-- Event Zaken's Earring. MP+ 31, Bleed Resistance + 30%, Bleed Atk. Rate + 30%, Heal Amount increase, Vampiric Rage Effect, Stun/Mental Attack Resistance + 20%, and Stun/Mental Atk. Rate + 20%. Only one effect is applied even when the two identical earrings are worn. -->
 	<item id="20207" type="Armor" name="Zaken's Earring (Event) - 3-day" icon="icon.accessory_earring_of_zaken_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalType="s" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isAugmentable="false" isOlyRestricted="true" time="4320">
+			isDepositable="false" isEpic="true" isOlyRestricted="true" time="4320">
 		<baseAdd stat="mDef" val="71" />
 		<add stat="maxMp" val="31" />
 		<skill id="3559" level="1" /> <!-- Zaken's Earring -->

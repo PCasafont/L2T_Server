@@ -6,6 +6,10 @@
 	<reward itemId="21084" description="Increases acquired XP by 30%. 24hours time-limited item." />
 	<reward itemId="21086" description="It increases acquired SP by 30%. 24hours time-limited item." />
 	<reward itemId="22752" description="Item acquisition through hunting + 30%. 5hours time-limited item." />
+	<!-- Talismans -->
+	<reward itemId="45614" description="Active Skill: P. Atk/M. Atk/Skill Critical Rate/ Skill Critical Damage + 20% for 10 seconds. Olympiad Only." />
+	<reward itemId="45617" description="Active Skill: Atk. Spd/Casting Spd. +20%, Speed +60 and Skill Cooldown Time - 20% for 10 seconds. Olympiad Only." />
+	<reward itemId="45620" description="Active Skill: Cancels hide, invincibility and talisman buffs of nearby targets for 9 seconds. Olympiad Only." />
 	<!-- Instance Reuses -->
 	<reward itemId="36270" description="Double-click to reset cooldown to Teredor's dungeon. 24hours reuse." />
 	<reward itemId="36271" description="Double-click to reset cooldown to Spezion's (normal) dungeon. 24hours reuse." />

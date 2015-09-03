@@ -1544,7 +1544,7 @@
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="5" />
 				<addPercent stat="mAtk" val="5" />
-				<addPercentBase stat="mCritDmg" val="5" />
+				<addPercent stat="mCritDmg" val="5" />
 				<addPercent stat="pAtkSpd" val="5" />
 				<addPercent stat="mAtkSpd" val="5" />
 			</abnormal>
@@ -1562,7 +1562,7 @@
 				<effect type="Buff" val="0" />
 				<addPercent stat="pAtk" val="5" />
 				<addPercent stat="mAtk" val="5" />
-				<addPercentBase stat="mCritDmg" val="5" />
+				<addPercent stat="mCritDmg" val="5" />
 				<addPercent stat="pAtkSpd" val="5" />
 				<addPercent stat="mAtkSpd" val="5" />
 			</abnormal>

@@ -10555,7 +10555,7 @@
 			<addPercent stat="mAtkSpd" val="30" />
 			<add stat="mCritRate" val="100" />
 			<addPercentBase stat="mCritRate" val="30" />
-			<addPercentBase stat="mCritDmg" val="30" />
+			<addPercent stat="mCritDmg" val="30" />
 			<addPercent stat="pAtk-dragons" val="100" />
 		</for>
 	</skill>
@@ -10574,7 +10574,7 @@
 			<addPercent stat="mAtkSpd" val="100" />
 			<add stat="mCritRate" val="500" />
 			<addPercentBase stat="mCritRate" val="50" />
-			<addPercentBase stat="mCritDmg" val="50" />
+			<addPercent stat="mCritDmg" val="50" />
 			<addPercent stat="pAtk-dragons" val="300" />
 		</for>
 	</skill>

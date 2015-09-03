@@ -4365,7 +4365,7 @@
 	</item>
 	<!-- MP + 37, Accuracy + 3, Critical + 54.4, Water Resistance + 20. Only one effect is applied when two of the same Ring are equipped. -->
 	<item id="19451" type="Armor" name="Istina's Ring" icon="icon.istina_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="46311000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="46311000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="103" />
 		<add stat="maxMp" val="37" />
 		<enchant stat="mDef" val="0" />
@@ -4377,7 +4377,7 @@
 	</item>
 	<!-- MP + 56, Stun Resistance + 30%, Shock attack + 30%, Vampiric Rage, Wind Resistance. Only one effect is applied when two of the same Earring are equipped. -->
 	<item id="19452" type="Armor" name="Istina's Earring" icon="icon.istina_earring_i00" defaultAction="equip" bodypart="rear;lear"
-			immediateEffect="1" crystalCount="1482" crystalType="r" weight="150" price="69466000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="1482" crystalType="r" weight="150" price="69466000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="154" />
 		<add stat="maxMp" val="56" />
 		<enchant stat="mDef" val="0" />
@@ -4389,7 +4389,7 @@
 	</item>
 	<!-- MP + 74, Holy Resistance + 35, skill cooldown decrease, Damage Shield effect. -->
 	<item id="19453" type="Armor" name="Istina's Necklace" icon="icon.istina_necklace_i00" defaultAction="equip" bodypart="neck"
-			immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="92622000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="92622000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="205" />
 		<add stat="maxMp" val="74" />
 		<enchant stat="mDef" val="0" />
@@ -4401,27 +4401,27 @@
 	</item>
 	<!-- HP Recovery increases, item slot + 6. -->
 	<item id="19454" type="Armor" name="Istina's Belt" icon="icon.istina_belt_i00" defaultAction="equip" bodypart="waist" immediateEffect="1"
-			crystalCount="41" crystalType="r" weight="440" price="1917000" enchantEnabled="1">
+			crystalCount="41" crystalType="r" weight="440" price="1917000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="pDef" val="32" />
 		<enchant stat="pDef" val="0" />
 		<skill id="13323" level="1" /> <!-- Istina's Belt -->
 	</item>
 	<!-- MP + 216. Activates 5 talisman slots when equipped. -->
 	<item id="19455" type="Armor" name="Istina's Bracelet" icon="icon.istina_bracelet_i00" defaultAction="equip" bodypart="rbracelet"
-			immediateEffect="1" crystalCount="76" crystalType="r" weight="150" price="3556000">
+			immediateEffect="1" crystalCount="76" crystalType="r" weight="150" price="3556000" isEpic="true">
 		<add stat="maxMp" val="216" />
 		<skill id="8779" level="1" /> <!-- Istina's Bracelet -->
 	</item>
 	<!-- When equipped with Istina's Shirt, STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2 , Speed + 7 and Water Resistance + 30. -->
 	<item id="19456" type="Armor" name="Istina's Shirt" icon="icon.istina_shirt_i00" defaultAction="equip" bodypart="shirt"
-			immediateEffect="1" crystalCount="54" crystalType="r" weight="130" price="2540000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="54" crystalType="r" weight="130" price="2540000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="pDef" val="48" />
 		<enchant stat="pDef" val="0" />
 		<skill id="13324" level="1" /> <!-- Istina's Shirt -->
 	</item>
 	<!-- MP + 37, increases P. Critical Damage, Fire Resistance + 20. Only one effect is applied when two of the same Ring are equipped. -->
 	<item id="19457" type="Armor" name="Octavis' Ring" icon="icon.octavis_ring_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="46311000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="46311000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="103" />
 		<add stat="maxMp" val="37" />
 		<enchant stat="mDef" val="0" />
@@ -4433,7 +4433,7 @@
 	</item>
 	<!-- MP + 56, Hold/Sleep Resistance + 40%, hold/Sleep attack + 40%, Earth Resistance 30. Only one effect is applied when two of the same Earring are equipped. -->
 	<item id="19458" type="Armor" name="Octavis' Earring" icon="icon.octavis_earring_i00" defaultAction="equip" bodypart="rear;lear"
-			immediateEffect="1" crystalCount="1482" crystalType="r" weight="150" price="69466000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="1482" crystalType="r" weight="150" price="69466000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="154" />
 		<add stat="maxMp" val="56" />
 		<enchant stat="mDef" val="0" />
@@ -4445,7 +4445,7 @@
 	</item>
 	<!-- MP + 74, Dark Resistance + 35, P. Skill Power increase. -->
 	<item id="19459" type="Armor" name="Octavis' Necklace" icon="icon.octavis_necklace_i00" defaultAction="equip" bodypart="neck"
-			immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="92622000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="92622000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="205" />
 		<add stat="maxMp" val="74" />
 		<enchant stat="mDef" val="0" />
@@ -4457,27 +4457,27 @@
 	</item>
 	<!-- MP Recovery increase, increased weight by 13000. -->
 	<item id="19460" type="Armor" name="Octavis' Belt" icon="icon.octavis_belt_i00" defaultAction="equip" bodypart="waist" immediateEffect="1"
-			crystalCount="41" crystalType="r" weight="440" price="1917000" enchantEnabled="1">
+			crystalCount="41" crystalType="r" weight="440" price="1917000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="pDef" val="32" />
 		<enchant stat="pDef" val="0" />
 		<skill id="13328" level="1" /> <!-- Octavis' Belt -->
 	</item>
 	<!-- MP + 216. Activates 5 talisman slots when equipped. -->
 	<item id="19461" type="Armor" name="Octavis' Bracelet" icon="icon.octavis_bracelet_i00" defaultAction="equip" bodypart="rbracelet"
-			immediateEffect="1" crystalCount="76" crystalType="r" weight="150" price="3556000">
+			immediateEffect="1" crystalCount="76" crystalType="r" weight="150" price="3556000" isEpic="true">
 		<add stat="maxMp" val="216" />
 		<skill id="8780" level="1" /> <!-- Octavis' Bracelet -->
 	</item>
 	<!-- When equipped with Octavis' Shirt, STR + 2, DEX + 1, CON + 2, INT + 2, WIT + 1, MEN + 2 , Speed + 7 and Dark Resistance + 30. -->
 	<item id="19462" type="Armor" name="Octavis' Shirt" icon="icon.octavis_shirt_i00" defaultAction="equip" bodypart="shirt"
-			immediateEffect="1" crystalCount="54" crystalType="r" weight="130" price="2540000">
+			immediateEffect="1" crystalCount="54" crystalType="r" weight="130" price="2540000" isEpic="true">
 		<baseAdd stat="pDef" val="48" />
 		<enchant stat="pDef" val="0" />
 		<skill id="13541" level="1" /> <!-- Octavis' Shirt -->
 	</item>
 	<!-- MP + 59, Bleed Resistance + 50%, Bleed Atk. Rate + 50%. Increases Heal Amount, Vampiric Rage Effect, Stun/Mental Attack Resistance + 40%, Stun/Mental Atk. Rate + 40%. Decreases physical/magic skill MP consumption. Increases Earth/Holy defense. CON + 3, MEN + 3. Increases P. Def. and M. Def. Can use Stun canceling skills. Momentarily increases Stun Resistance + 100%. Only one effect is applied when two of the same earrings are equipped. -->
 	<item id="19463" type="Armor" name="Blessed Antharas' Earring" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000" enchantEnabled="1">
+			bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="r" weight="150" price="3700000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 		<add stat="maxMp" val="59" />
 		<enchant stat="mDef" val="0" />
@@ -4490,7 +4490,7 @@
 	</item>
 	<!-- HP + 625, MP + 79, Sleep Resistance + 50%, Sleep Rate + 50%, decreased P./M. Skill cooldown, Wild Magic Effect, Damage Shield effect, Fire Resistance + 30, Dark Resistance + 20, STR + 3, INT + 3, P. Skill Power + 5%, P. Atk. + 10%, M. Atk. + 20%, can use hold canceling skills, and momentarily increases Hold Resistance by 100%. -->
 	<item id="19464" type="Armor" name="Blessed Valakas' Necklace" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
-			bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000" enchantEnabled="1">
+			bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="4940000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="226" />
 		<add stat="maxMp" val="79" />
 		<enchant stat="mDef" val="0" />

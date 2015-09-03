@@ -3,7 +3,7 @@
 	<!-- Weapon augmented from Tauti's Fragment. When equipped, can use Tauti's Rage skill. When equipped, increases Atk. Spd. by about 15%, critical by 150, Max HP by 25%, and P. Atk. by 415. Increases damage inflicted during PvP. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
 	<item id="35000" type="Weapon" name="Tauti's Two-handed Axe" icon="icon.weapon_tauti_two_hand_pole_i01" defaultAction="equip"
 			weaponType="pole" bodypart="rhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1300"
-			soulshots="0" spiritshots="0" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
+			soulshots="0" spiritshots="0" isEnchantable="false" isAttributable="false" isEpic="true" canBeUsedAsApp="false">
 		<set stat="pAtk" val="629" />
 		<set stat="mAtk" val="322" />
 		<set stat="rCrit" val="8" />
@@ -20,7 +20,7 @@
 	<!-- Weapon augmented from Tauti's Fragment. When equipped, PvP Damage by 15%, Max HP by 25%, P. Atk. by 10%, Atk. Spd. by 15%, and P. Critical Rate by 150. Can use Tauti's Rage skill. Enchantment, attribute, crystallization, augmentation or modification is impossible. -->
 	<item id="35001" type="Weapon" name="Tauti's Dual Axe" icon="icon.weapon_tauti_dual_axe_i01" defaultAction="equip" weaponType="dualblunt"
 			bodypart="lrhand" randomDamage="10" immediateEffect="1" crystalCount="22440" crystalType="r" weight="1700" soulshots="1"
-			spiritshots="1" isEnchantable="false" isAttributable="false" isAugmentable="false" canBeUsedAsApp="false">
+			spiritshots="1" isEnchantable="false" isAttributable="false" isEpic="true" canBeUsedAsApp="false">
 		<set stat="pAtk" val="776" />
 		<set stat="mAtk" val="278" />
 		<set stat="rCrit" val="8" />

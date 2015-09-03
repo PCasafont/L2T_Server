@@ -645,7 +645,7 @@
 	-->
 	<item id="16025" type="Armor" name="Freya's Necklace" icon="icon.accessary_queen_of_ice_necklace_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" crystalCount="729" crystalType="s80" weight="150" price="15192000" enchantEnabled="1"
-			isAugmentable="false">
+			isEpic="true">
 		<baseAdd stat="mDef" val="125" />
 		<add stat="maxMp" val="50" />
 		<enchant stat="mDef" val="0" />

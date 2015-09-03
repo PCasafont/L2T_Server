@@ -90,6 +90,7 @@ public final class RequestRefine extends L2GameClientPacket
 			InventoryUpdate iu = new InventoryUpdate();
 			for (L2ItemInstance itm : unequiped)
 				iu.addModifiedItem(itm);
+			
 			activeChar.sendPacket(iu);
 			activeChar.broadcastUserInfo();
 		}

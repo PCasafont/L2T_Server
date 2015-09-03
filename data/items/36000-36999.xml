@@ -1453,7 +1453,7 @@
 	</item>
 	<!-- Ring containing Queen Ant's soul. MP + 31, Stun/Poison/Bleed Resistance + 25%, Stun/Poison/Bleed Attack Rate + 20%, P./M. Critical Damage + 15%, P./M. Critical Rate + 20, and P./M. Accuracy + 4. Wearing two of these rings will give you the effect of wearing one. -->
 	<item id="36254" type="Armor" name="Queen Ant's Soul Ring" icon="icon.accessory_ring_of_queen_ant_i00" defaultAction="equip"
-			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="212" crystalType="r" weight="150" price="46311000" enchantEnabled="1">
+			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="212" crystalType="r" weight="150" price="46311000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="79" />
 		<add stat="maxMp" val="31" />
 		<enchant stat="mDef" val="0" />
@@ -1465,7 +1465,7 @@
 	</item>
 	<!-- Earring containing Orfen's soul. MP + 46, Sleep/Paralysis/Mental Attack Resistance + 25%, Sleep/Paralysis/Mental attack rate + 25%, received Heal Amount + 10%, MP Consumption - 5% and 4% Vampiric Rage Effect. Wearing two of these earrings will give you the effect of wearing one. -->
 	<item id="36255" type="Armor" name="Orfen's Soul Earring" icon="icon.accessory_earring_of_orfen_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" crystalCount="319" crystalType="r" weight="150" price="69466000" enchantEnabled="1">
+			bodypart="rear;lear" immediateEffect="1" crystalCount="319" crystalType="r" weight="150" price="69466000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="118" />
 		<add stat="maxMp" val="46" />
 		<enchant stat="mDef" val="0" />
@@ -1481,7 +1481,7 @@
 	</item>
 	<!-- Necklace containing Lilith's soul. Increases MP by 62, Mental Attack/Paralysis Resistance by 20%, Mental/Paralysis attack rate by 20%, and M. Critical Rate by 20. -->
 	<item id="36257" type="Armor" name="Lilith's Soul Necklace" icon="icon.accessary_blessed_lilith" defaultAction="equip" bodypart="neck"
-			immediateEffect="1" crystalCount="425" crystalType="r" weight="150" price="92622000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="425" crystalType="r" weight="150" price="92622000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="158" />
 		<add stat="maxMp" val="62" />
 		<enchant stat="mDef" val="0" />
@@ -5391,7 +5391,7 @@
 	</item>
 	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
 	<item id="36946" type="Armor" name="Lindvior's Earring" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="192622000">
+			bodypart="rear;lear" immediateEffect="1" crystalCount="237" crystalType="r" weight="150" price="192622000" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 		<add stat="maxMp" val="59" />
 		<enchant stat="mDef" val="0" />

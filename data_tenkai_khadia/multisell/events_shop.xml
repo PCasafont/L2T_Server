@@ -9,6 +9,10 @@
 		<production id="4355" count="20" /> <!-- Blue Eva -->
 	</item>
 	<item>
+		<ingredient id="4358" count="55000" /> <!-- Bloody Pa'agrio -->
+		<production id="38571" count="1" /> <!-- Aria's Life Stone -->
+	</item>
+	<item>
 		<ingredient id="4358" count="100000" /> <!-- Bloody Pa'agrio -->
 		<production id="6656" count="1" /> <!-- Antharas' Earring -->
 	</item>

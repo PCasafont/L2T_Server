@@ -1001,9 +1001,9 @@
 			<addPercentBase stat="mCritRate" val="#mCritRate">
 				<using kind="Blunt,Big Blunt" />
 			</addPercentBase>
-			<addPercentBase stat="mCritDmg" val="#mCritRate">
+			<addPercent stat="mCritDmg" val="#mCritRate">
 				<using kind="Blunt,Big Blunt" />
-			</addPercentBase>
+			</addPercent>
 		</for>
 	</skill>
 	<!-- 

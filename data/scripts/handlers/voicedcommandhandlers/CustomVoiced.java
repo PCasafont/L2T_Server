@@ -307,6 +307,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("Magical Debuff Res", player.calcStat(Stats.MENTAL_DEBUFF_RES, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Stun Res", player.calcStat(Stats.STUN_RES, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Paralysis Res", player.calcStat(Stats.PARALYSIS_RES, 100, null, null) - 100, 0, true, "%");
+		html += getStatHtm("Petrify Res", player.calcStat(Stats.PETRIFY_RES, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Hold Res", player.calcStat(Stats.HOLD_RES, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Sleep Res", player.calcStat(Stats.SLEEP_RES, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Knock Down Res", player.calcStat(Stats.KNOCK_DOWN_RES, 100, null, null) - 100, 0, true, "%");
@@ -322,6 +323,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("Magical Debuff Prof", player.calcStat(Stats.MENTAL_DEBUFF_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Stun Prof", player.calcStat(Stats.STUN_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Paralysis Prof", player.calcStat(Stats.PARALYSIS_PROF, 100, null, null) - 100, 0, true, "%");
+		html += getStatHtm("Petrify Prof", player.calcStat(Stats.PETRIFY_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Hold Prof", player.calcStat(Stats.HOLD_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Sleep Prof", player.calcStat(Stats.SLEEP_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Knock Down Prof", player.calcStat(Stats.KNOCK_DOWN_PROF, 100, null, null) - 100, 0, true, "%");

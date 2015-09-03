@@ -3956,7 +3956,7 @@
 	<!-- MP + 37, Bleed Resistance + 40%, Bleed Atk. Rate + 40%, Vampiric Rage Effect, Stun/Mental Attack Resistance + 30%, Stun/Mental Atk. Rate + 30%, decreases MP consumption. Increases Heal Amount and Earth Resistance. Only one effect is applied when two of the same earrings are equipped. -->
 	<item id="6656" type="Armor" name="Antharas' Earring" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="178" crystalType="s" weight="150" price="3700000" enchantEnabled="1"
-			isAugmentable="false">
+			isEpic="true">
 		<baseAdd stat="mDef" val="94" />
 		<add stat="maxMp" val="37" />
 		<enchant stat="mDef" val="0" />
@@ -3969,7 +3969,7 @@
 	<!-- MP + 50, Sleep Resistance + 40%, Sleep Attack Rate + 40%, HP + 445. Decreases skill cooldown. Increases P. Atk. and M. Atk. Wild Magic Effect and Damage Shield effect. Increases Fire Resistance. -->
 	<item id="6657" type="Armor" name="Valakas' Necklace" icon="icon.accessory_necklace_of_valakas_i00" defaultAction="equip"
 			bodypart="neck" immediateEffect="1" crystalCount="237" crystalType="s" weight="150" price="4940000" enchantEnabled="1"
-			isAugmentable="false">
+			isEpic="true">
 		<baseAdd stat="mDef" val="125" />
 		<add stat="maxMp" val="50" />
 		<enchant stat="mDef" val="0" />
@@ -3981,7 +3981,7 @@
 	</item>
 	<!-- MP + 21, Poison Resistance + 40%, Poison Atk. Rate + 40%, Hold Resistance + 30%, Hold Atk. Rate + 30%, increases Accuracy, P. Critical Damage, Atk. Spd. and Casting Spd. When two identical rings are equipped, the effect of only one ring will be applied. -->
 	<item id="6658" type="Armor" name="Baium's Ring" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="83" crystalType="s" weight="150" price="1730000" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="83" crystalType="s" weight="150" price="1730000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<enchant stat="mDef" val="0" />
@@ -3993,7 +3993,7 @@
 	</item>
 	<!-- MP+ 31; Bleed Resistance + 30%; Bleed Atk. Rate + 30%; increases Heal Amount; Vampiric Rage Effect; Stun/Mental Attack Resistance + 20%; Stun/Mental Atk. Rate + 20%. When equipped with two identical earrings, only one effect is applied. When equipped together with Blessed Zaken's Earring, only the effect of Zaken's Earring will be applied. -->
 	<item id="6659" type="Armor" name="Zaken's Earring" icon="icon.accessory_earring_of_zaken_i00" defaultAction="equip" bodypart="rear;lear"
-			immediateEffect="1" crystalCount="124" crystalType="s" weight="150" price="2590000" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="124" crystalType="s" weight="150" price="2590000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="71" />
 		<add stat="maxMp" val="31" />
 		<enchant stat="mDef" val="0" />
@@ -4005,7 +4005,7 @@
 	</item>
 	<!-- MP + 21, Poison Resistance + 30%, Poison Atk. Rate + 30%, increases Accuracy, increases P. Critical Damage, Hold Resistance + 20%, and Hold Atk. Rate + 20%. When two identical rings are equipped, the effect of only one ring will be applied. -->
 	<item id="6660" type="Armor" name="Queen Ant's Ring" icon="icon.accessory_ring_of_queen_ant_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="82" crystalType="b" weight="150" price="123200" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="82" crystalType="b" weight="150" price="123200" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<enchant stat="mDef" val="0" />
@@ -4013,7 +4013,7 @@
 	</item>
 	<!-- MP + 31, Bleed Resistance + 20%, chance of Bleed attack + 20%. Increases healing effects. When equipped with two identical earrings, the effect of only one earring will be applied. -->
 	<item id="6661" type="Armor" name="Orfen's Earring" icon="icon.accessory_earring_of_orfen_i00" defaultAction="equip" bodypart="rear;lear"
-			immediateEffect="1" crystalCount="104" crystalType="a" weight="150" price="1300000" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="104" crystalType="a" weight="150" price="1300000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="71" />
 		<add stat="maxMp" val="31" />
 		<enchant stat="mDef" val="0" />
@@ -4025,7 +4025,7 @@
 	</item>
 	<!-- MP + 21, Poison Resistance + 20%, Poison Atk. Rate + 20%. Increases Accuracy. When equipped with two identical rings, the effect of only one ring will be applied. -->
 	<item id="6662" type="Armor" name="Ring of Core" icon="icon.accessory_ring_of_core_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="69" crystalType="a" weight="150" price="870000" enchantEnabled="1" isAugmentable="false">
+			immediateEffect="1" crystalCount="69" crystalType="a" weight="150" price="870000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="48" />
 		<add stat="maxMp" val="21" />
 		<enchant stat="mDef" val="0" />

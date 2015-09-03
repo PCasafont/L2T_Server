@@ -166,6 +166,7 @@ public enum Stats
 	POISON_RES("poisonRes"),
 	STUN_RES("stunRes"),
 	PARALYSIS_RES("paralysisRes"),
+	PETRIFY_RES("petrifyRes"),
 	HOLD_RES("holdRes"),
 	SLEEP_RES("sleepRes"),
 	KNOCK_DOWN_RES("knockDownRes"),
@@ -183,6 +184,7 @@ public enum Stats
 	POISON_PROF("poisonProf"),
 	STUN_PROF("stunProf"),
 	PARALYSIS_PROF("paralysisProf"),
+	PETRIFY_PROF("paralysisProf"),
 	HOLD_PROF("holdProf"),
 	SLEEP_PROF("sleepProf"),
 	KNOCK_DOWN_PROF("knockDownProf"),
@@ -197,8 +199,8 @@ public enum Stats
 	
 	// ELEMENTS
 	FIRE_RES("fireRes"),
-	WIND_RES("windRes"),
 	WATER_RES("waterRes"),
+	WIND_RES("windRes"),
 	EARTH_RES("earthRes"),
 	HOLY_RES("holyRes"),
 	DARK_RES("darkRes"),

@@ -2994,7 +2994,7 @@
 	</item>
 	<!-- MP + 31, Shock/Hold/Mental Resistance + 25%, Shock/Hold/Mental Attack Rate + 25%, P./M. Critical Damage + 15%, Atk./Casting Spd. + 5%, and P./M. Accuracy + 4. Wearing two of these rings will give you the effect of wearing one. -->
 	<item id="37521" type="Armor" name="Baium's Soul Ring" icon="icon.accessory_ring_of_baium_i00" defaultAction="equip" bodypart="rfinger;lfinger"
-			immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1">
+			immediateEffect="1" crystalCount="988" crystalType="r" weight="150" price="1730000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="79" />
 		<add stat="maxMp" val="31" />
 		<enchant stat="mDef" val="0" />
@@ -3006,7 +3006,7 @@
 	</item>
 	<!-- MP + 62, Poison/Bleed/Shock/Hold/Paralysis Resistance + 20%, Poison/Bleed/Shock/Hold/Paralysis Attack Rate + 20%, Skill Cooldown - 10%, Damage Reflection + 5%, and Speed + 5. -->
 	<item id="37522" type="Armor" name="Frintezza's Soul Necklace" icon="icon.accessory_necklace_of_frintessa_i00" defaultAction="equip"
-			bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000" enchantEnabled="1">
+			bodypart="neck" immediateEffect="1" crystalCount="1976" crystalType="r" weight="150" price="3450000" enchantEnabled="1" isEpic="true">
 		<baseAdd stat="mDef" val="158" />
 		<add stat="maxMp" val="62" />
 		<enchant stat="mDef" val="0" />
@@ -4094,7 +4094,7 @@
 	<!-- Tauti's Ring. Fire/Dark Resistance 25 increase, MP 38 increase, Critical Damage 15% increase, skill attack 5% increase, damage inflicted during PvP 5% increase, paralysis/yoke/exile resistance 10 increase, damage reflect resistance 5 increase, HP drain resistance 5 increase, damage received during PvP 5% decrease. Critical 54 increase when equipped with a blunt. Only one effect is applied even when the same two rings are worn (excluding attributes/M. Def.) Cannot be used in the Olympiad. -->
 	<item id="37734" type="Armor" name="Tauti's Ring - 7-day" icon="icon.accessary_tauti_ring" defaultAction="equip" bodypart="rfinger;lfinger"
 			immediateEffect="1" crystalCount="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isAugmentable="false" isOlyRestricted="true" time="10080">
+			isDepositable="false" isEpic="true" isOlyRestricted="true" time="10080">
 		<baseAdd stat="mDef" val="108" />
 		<add stat="fireRes" val="25" />
 		<add stat="darkRes" val="25" />
@@ -4103,7 +4103,7 @@
 	<!-- MP +38, increases physical attack resistance, Mental Attack Resistance, MP Regeneration, P. Critical Damage, and Accuracy. Poison Resistance 50% increase, Poison Attack Rate 50% increase, Knock Back, Knock Down, pulling resistance 20 increase, Atk. Spd. Increase, Casting Spd. Increase, and Wind/Water Resistance increase. Can use skills that affect party members' Atk. Spd., Casting Spd., and Vampiric Rage. Can use Poison removal. Only one effect is applied even when the same two rings are worn. Cannot be used in the Olympiad. -->
 	<item id="37735" type="Armor" name="Earth Wyrm Heart Ring - 7-day" icon="icon.ring_earthworm_heart" defaultAction="equip"
 			bodypart="rfinger;lfinger" immediateEffect="1" crystalCount="0" crystalType="r" weight="150" isTradable="false" isDropable="false"
-			isSellable="false" isDepositable="false" isEnchantable="false" isAugmentable="false" isOlyRestricted="true" time="10080">
+			isSellable="false" isDepositable="false" isEnchantable="false" isEpic="true" isOlyRestricted="true" time="10080">
 		<baseAdd stat="mDef" val="108" />
 		<add stat="maxMp" val="38" />
 		<skill id="13317" level="1" /> <!-- Earth Wyrm Heart Ring -->

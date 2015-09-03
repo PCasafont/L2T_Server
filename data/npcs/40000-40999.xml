@@ -41,12 +41,11 @@
 			runSpd="120" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0"
 			darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="40009" templateId="35692" name="Patrol" serverSideName="true" serverSideTitle="true" level="99" type="L2Guard"
-			atkRange="1500" hpMax="1562998" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
-			MEN="31" pAtk="205054" mAtk="129003" pDef="146922" mDef="106383" pAtkSpd="359" mAtkSpd="377" pCritRate="40" mCritRate="40"
-			walkSpd="80" runSpd="200" aggroRange="2000" rHand="10212" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
+	<npc id="40009" templateId="35692" name="Patrol" serverSideName="true" title="L2Tenkai" serverSideTitle="true" level="99" type="L2Guard"
+			atkRange="1500" hpMax="156299800" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
+			MEN="31" pAtk="20505400" mAtk="12900300" pDef="14692200" mDef="10638300" pAtkSpd="1359" mAtkSpd="1377" pCritRate="340" mCritRate="240"
+			walkSpd="80" runSpd="300" aggroRange="1000" rHand="10212" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
-		<skill id="9960" level="1" /> <!-- Lute Melody (9th Anniversary) -->
 	</npc>
 	<npc id="40014" templateId="32236" name="Ornus" serverSideName="true" title="Aden Guard" serverSideTitle="true" level="70"
 			type="L2Npc" atkRange="40" hpMax="1585" hpReg="0.0" mpMax="2444" mpReg="0.0" STR="20" CON="1" DEX="1" INT="6" WIT="23"

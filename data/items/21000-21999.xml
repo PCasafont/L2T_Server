@@ -3388,7 +3388,7 @@
 	<!-- MP+ 37, Bleed Resistance + 30%, Bleed Atk. Rate + 30%, Heal Amount + 15%, Vampiric Rage Effect, Stun/Mental Attack Resistance + 30%, Stun/Mental Atk. Rate + 30%, and Dark Resistance + 15. Only one effect is applied even when the same two earrings are worn. If it is equipped together with a standard Zaken's Earring, only the effect of Blessed Zaken's Earring will be applied. -->
 	<item id="21712" type="Armor" name="Blessed Zaken's Earring" icon="icon.accessory_earring_of_zaken_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalCount="547" crystalType="s" weight="150" price="11394000" enchantEnabled="1"
-			isAugmentable="false">
+			isEpic="true">
 		<baseAdd stat="mDef" val="94" />
 		<add stat="maxMp" val="37" />
 		<enchant stat="mDef" val="0" />

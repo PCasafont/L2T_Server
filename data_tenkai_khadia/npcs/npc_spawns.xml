@@ -36,4 +36,10 @@
 	<npc id="80215">
 		<spawn x="83285" y="149323" z="-3405" heading="49095" respawn="0" />
 	</npc>
+	<!-- Patrol -->
+	<npc id="40009">
+		<spawn x="-47965" y="60332" z="-3229" heading="18616" respawn="0" />
+		<spawn x="-47406" y="60446" z="-3228" heading="21592" respawn="0" />
+		<spawn x="-47578" y="62131" z="-3371" heading="21592" respawn="0" />
+	</npc>
 </list>

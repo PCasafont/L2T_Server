@@ -159,9 +159,10 @@ public abstract class L2Item
 	private final boolean _isOlyRestricted;
 	private final boolean _isBlessed;
 	private final boolean _isEnchantable;
-	private final boolean _isAttributable;	//wtf name
+	private final boolean _isAttributable;
 	private final boolean _isAugmentable;
 	private final boolean _canBeUsedAsApp;
+	private final boolean _isEpic;
 	private final L2ActionType _defaultAction;
 	private boolean _isForPet = false;
 	private final String _bodyPartName;
@@ -215,6 +216,7 @@ public abstract class L2Item
 		_isEnchantable = set.getBool("isEnchantable", true);
 		_isAttributable = set.getBool("isAttributable", true);
 		_isAugmentable = set.getBool("isAugmentable", true);
+		_isEpic = set.getBool("isEpic", false);
 		
 		//_immediate_effect - herb
 		_ex_immediate_effect = set.getInteger("exImmediateEffect", 0) > 0;
@@ -1003,5 +1005,10 @@ public abstract class L2Item
 	public boolean isAugmentable()
 	{
 		return _isAugmentable;
+	}
+	
+	public boolean isEpic()
+	{
+		return _isEpic;
 	}
 }

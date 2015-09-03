@@ -25,6 +25,7 @@ import l2tserver.gameserver.instancemanager.SiegeManager;
 import l2tserver.gameserver.instancemanager.ZoneManager;
 import l2tserver.gameserver.model.Elementals;
 import l2tserver.gameserver.model.L2Abnormal;
+import l2tserver.gameserver.model.L2Effect;
 import l2tserver.gameserver.model.L2ItemInstance;
 import l2tserver.gameserver.model.L2SiegeClan;
 import l2tserver.gameserver.model.L2Skill;
@@ -57,6 +58,7 @@ import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
 import l2tserver.gameserver.network.serverpackets.SystemMessage;
 import l2tserver.gameserver.stats.conditions.ConditionLogicOr;
 import l2tserver.gameserver.stats.conditions.ConditionUsingItemType;
+import l2tserver.gameserver.stats.effects.EffectInvincible;
 import l2tserver.gameserver.stats.funcs.Func;
 import l2tserver.gameserver.templates.item.L2Armor;
 import l2tserver.gameserver.templates.item.L2ArmorType;
@@ -64,6 +66,7 @@ import l2tserver.gameserver.templates.item.L2Item;
 import l2tserver.gameserver.templates.item.L2Weapon;
 import l2tserver.gameserver.templates.item.L2WeaponType;
 import l2tserver.gameserver.templates.skills.L2AbnormalType;
+import l2tserver.gameserver.templates.skills.L2EffectType;
 import l2tserver.gameserver.templates.skills.L2SkillType;
 import l2tserver.gameserver.util.Util;
 import l2tserver.log.Log;
@@ -2409,6 +2412,9 @@ public final class Formulas
 				case PARALYZE:
 					multiplier = target.calcStat(Stats.PARALYSIS_RES, multiplier, target, null);
 					break;
+				case PETRIFY:
+					multiplier = target.calcStat(Stats.PETRIFY_RES, multiplier, target, null);
+					break;
 				case HOLD:
 					multiplier = target.calcStat(Stats.HOLD_RES, multiplier, target, null);
 					break;
@@ -2447,7 +2453,7 @@ public final class Formulas
 				case KNOCK_DOWN:
 				case HOLD:
 				case DISARM:
-				//case PETRIFY:
+				case PETRIFY:
 					multiplier = target.calcStat(Stats.PHYS_DEBUFF_RES, multiplier, target, null);
 					break;
 				case SLEEP:
@@ -2483,6 +2489,9 @@ public final class Formulas
 					break;
 				case PARALYZE:
 					multiplier = attacker.calcStat(Stats.PARALYSIS_PROF, multiplier, target, null);
+					break;
+				case PETRIFY:
+					multiplier = attacker.calcStat(Stats.PETRIFY_PROF, multiplier, target, null);
 					break;
 				case HOLD:
 					multiplier = attacker.calcStat(Stats.HOLD_PROF, multiplier, target, null);
@@ -2602,12 +2611,29 @@ public final class Formulas
 	}
 	
 	public static boolean calcEffectSuccess(L2Character attacker, L2Character target, L2Abnormal effect, L2Skill skill, byte shld, double ssMul)
-	{
-		if (target.calcStat(Stats.BUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
-			return false;
-		
+	{	
 		if (!skill.isOffensive())
+		{
+			if (target.calcStat(Stats.BUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
+				return false;
+			
+			if (target.isAffected(L2EffectType.BLOCK_INVUL.getMask()))
+			{
+				for (L2Effect eff : effect.getEffects())
+				{
+					if (eff instanceof EffectInvincible)
+						return false;
+				}
+			}
+			
+			if (target.isAffected(L2EffectType.BLOCK_HIDE.getMask()) && effect.getType() == L2AbnormalType.HIDE)
+				return false;
+			
+			if (target.isAffected(L2EffectType.BLOCK_TALISMANS.getMask()) && skill.getName().contains("Talisman"))
+				return false;
+			
 			return true;
+		}
 		
 		if (target.calcStat(Stats.DEBUFF_IMMUNITY, 0.0, attacker, null) > 0.0)
 		{
@@ -3371,7 +3397,7 @@ public final class Formulas
 					//	multiplier *= 1.3;
 					break;
 				case 142: // Yul Archer
-					multiplier *= 1.0;
+					multiplier *= 0.75;
 					break;
 				case 143: // Feoh Wizard
 					multiplier *= 1.4;
@@ -3391,7 +3417,7 @@ public final class Formulas
 		switch (attackerClass.getId())
 		{
 			case 188: // Eviscerator
-				//multiplier *= 0.8;
+				multiplier *= 0.8;
 				break;
 			case 189: // Sayha's Seer
 				multiplier *= 1.4;

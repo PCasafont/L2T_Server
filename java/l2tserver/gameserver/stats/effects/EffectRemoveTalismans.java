@@ -22,9 +22,9 @@ import l2tserver.gameserver.templates.skills.L2AbnormalType;
 import l2tserver.gameserver.templates.skills.L2EffectTemplate;
 import l2tserver.gameserver.templates.skills.L2EffectType;
 
-public class EffectRemoveInvul extends L2Effect
+public class EffectRemoveTalismans extends L2Effect
 {
-	public EffectRemoveInvul(Env env, L2EffectTemplate template)
+	public EffectRemoveTalismans(Env env, L2EffectTemplate template)
 	{
 		super(env, template);
 	}
@@ -38,7 +38,7 @@ public class EffectRemoveInvul extends L2Effect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.BLOCK_INVUL;
+		return L2EffectType.BLOCK_TALISMANS;
 	}
 	
 	/**
@@ -51,25 +51,13 @@ public class EffectRemoveInvul extends L2Effect
 		if (!(getEffected() instanceof L2Playable))
 			return false;
 		
-		if (getEffected().isInvul(getEffector()))
+		for (L2Abnormal e : getEffected().getAllEffects())
 		{
-			for (L2Abnormal e : getEffected().getAllEffects())
+			if (e != null && e.getSkill().getName().contains("Talisman"))
 			{
-				if (e == null)
-					continue;
-				
-				for (L2Effect eff : e.getEffects())
-				{
-					if (eff == null)
-						continue;
-					
-					if (eff.getEffectType() == L2EffectType.INVINCIBLE)
-					{
-						getEffected().onExitChanceEffect(e.getSkill(), e.getSkill().getElement());
-						e.exit();
-						break;
-					}
-				}
+				getEffected().onExitChanceEffect(e.getSkill(), e.getSkill().getElement());
+				e.exit();
+				break;
 			}
 		}
 		

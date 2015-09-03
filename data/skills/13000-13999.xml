@@ -4716,7 +4716,7 @@
 			<addPercent stat="poisonRes" val="25" />
 			<addPercent stat="bleedRes" val="25" />
 			<addPercent stat="pCritDmg" val="15" />
-			<addPercentBase stat="mCritDmg" val="15" />
+			<addPercent stat="mCritDmg" val="15" />
 			<add stat="rCrit" val="20" />
 			<add stat="mCritRate" val="20" />
 			<add stat="accCombat" val="4" />
@@ -5369,7 +5369,7 @@
 			<addPercent stat="pullRes" val="40" />
 			<addPercent stat="pullProf" val="40" />
 			<addPercent stat="pCritDmg" val="10" />
-			<addPercentBase stat="mCritDmg" val="10" />
+			<addPercent stat="mCritDmg" val="10" />
 			<add stat="runSpd" val="5" />
 			<baseAdd stat="DEX" val="3" />
 			<baseAdd stat="WIT" val="3" />
@@ -5465,7 +5465,7 @@
 		<for>
 			<addPercent stat="mAtkSpd" val="2" />
 			<add stat="mCritRate" val="10" />
-			<addPercentBase stat="mCritDmg" val="10" />
+			<addPercent stat="mCritDmg" val="10" />
 		</for>
 	</skill>
 	<!-- M. Def. + 2%, M. Skill MP Consumption - 3%, Vampiric Rage + 5%. Wearing two of the items will only give the effect of one. -->
@@ -5534,7 +5534,7 @@
 			<addPercent stat="holdProf" val="25" />
 			<addPercent stat="derangementProf" val="25" />
 			<addPercent stat="pCritDmg" val="15" />
-			<addPercentBase stat="mCritDmg" val="15" />
+			<addPercent stat="mCritDmg" val="15" />
 			<addPercent stat="pAtkSpd" val="5" />
 			<addPercent stat="mAtkSpd" val="5" />
 			<add stat="accCombat" val="4" />
@@ -6782,27 +6782,59 @@
 	</skill>
 	<!-- For 10 sec., P. Atk. + 20%, M. Atk. + 20%, Skill Critical Rate + 20%, and Skill Critical Damage + 20%. Cooldown is 120 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13691" levels="1" name="Talisman - Battle: Attack">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="120000" />
+		<set name="staticHitTime" val="true" />
+		<for>
+			<abnormal duration="10" stackLvl="1" stackType="talisman_battle">
+				<addPercent stat="pAtk" val="20" />
+				<addPercent stat="mAtk" val="20" />
+				<addPercent stat="mAtk" val="20" />
+				<addPercent stat="pSkillCritRate" val="20" />
+				<addPercent stat="mCritRate" val="20" />
+				<addPercent stat="pCritDmg" val="20" />
+				<addPercent stat="mCritDmg" val="20" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- For 10 sec., Atk. Spd. + 20%, Casting Spd. + 20%, Speed + 60, and Skill Cooldown - 20%. Cooldown is 120 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13692" levels="1" name="Talisman - Battle: Speed">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="120000" />
+		<set name="staticHitTime" val="true" />
+		<for>
+			<abnormal duration="10" stackLvl="1" stackType="talisman_battle">
+				<addPercent stat="pAtkSpd" val="20" />
+				<addPercent stat="mAtkSpd" val="20" />
+				<add stat="runSpd" val="60" />
+				<subPercent stat="MagicalMpConsumeRate" val="20" />
+				<subPercent stat="PhysicalMpConsumeRate" val="20" />
+				<subPercent stat="DanceMpConsumeRate" val="20" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- Cancels hiding, invincibility, Talisman buffs of enemies within range, and prevents them from obtaining those effects for 9 seconds. Cooldown is 90 seconds. Can only be used in the Olympiad/Ceremony of Chaos. -->
 	<skill id="13693" levels="1" name="Talisman - Battle: Support">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_AURA" />
+		<set name="skillType" val="DEBUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="90000" />
+		<set name="skillRadius" val="300" />
+		<set name="staticHitTime" val="true" />
+		<for>
+			<abnormal duration="9" stackLvl="1" stackType="talisman_battle_support">
+				<effect type="RemoveInvul" val="0" />
+				<effect type="RemoveHide" val="0" />
+				<effect type="RemoveTalisman" val="0" />
+			</abnormal>
+		</for>
 	</skill>
 	<!-- Summon Pippi. -->
 	<skill id="13694" levels="1" name="Summon Pippi">

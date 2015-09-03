@@ -2114,22 +2114,22 @@
 	</item>
 	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
 	<item id="26468" type="Armor" name="Lindvior's Earring - 3-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" weight="150">
+			bodypart="rear;lear" immediateEffect="1" weight="150" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
 	<item id="26469" type="Armor" name="Lindvior's Earring - 7-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" weight="150">
+			bodypart="rear;lear" immediateEffect="1" weight="150" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
 	<item id="26470" type="Armor" name="Lindvior's Earring - 15-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" weight="150">
+			bodypart="rear;lear" immediateEffect="1" weight="150" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!-- MP + 59, Petrification and Resistance to it + 50%, Knock Back/Knock Down and Resistance to it + 40%, Pulling and Resistance to it + 40%, P. Critical Damage + 10%, M. Critical Damage + 10%, P./M. Abnormal Status Reflection + 10%. Reflect damage magic back to the attacker with the probability of 10%. Movement Speed + 5, DEX + 3, and WIT + 3. Increases Wind/Dark Resistance. Enables the skill of cancelling Knock Back/Knock Down and increases Knock Back/Knock Down Resistance to 100% instantly. When two identical earrings are equipped, only one effect is applied. -->
 	<item id="26471" type="Armor" name="Lindvior's Earring - 30-day" icon="icon.accessory_earring_of_lind_i00" defaultAction="equip"
-			bodypart="rear;lear" immediateEffect="1" weight="150">
+			bodypart="rear;lear" immediateEffect="1" weight="150" isEpic="true">
 		<baseAdd stat="mDef" val="170" />
 	</item>
 	<!-- Get 1 of the following: Lindvior's Earring (3-day, 7-day, 15-day, or 30-day). -->

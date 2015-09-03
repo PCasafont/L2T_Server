@@ -198,7 +198,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			//if (_selfAnalysis.cannotMoveOnLand && !target.isInsideZone(L2Character.ZONE_WATER))
 			//	return false;
 			
-			if (((L2PcInstance)target).getEvent() != null)
+			if (((L2PcInstance)target).isInEvent())
 				return false;
 			
 			if (me.getClonedPlayer() != null
@@ -235,7 +235,7 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 			//	return ((L2Summon)target).getKarma() > 0;
 			
 			// Check if the L2MonsterInstance target is aggressive
-			if (target instanceof L2MonsterInstance && Config.GUARD_ATTACK_AGGRO_MOB && ((L2MonsterInstance)target).isAggressive())
+			if (target instanceof L2MonsterInstance && Config.GUARD_ATTACK_AGGRO_MOB && target.getAI().getAttackTarget() != null)
 				return GeoData.getInstance().canSeeTarget(me, target);
 			
 			if (!(target instanceof L2Npc) || getActiveChar().getEnemyClan() == null || ((L2Npc)target).getClan() == null)

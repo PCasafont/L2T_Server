@@ -2976,7 +2976,7 @@
 		<skill id="13589" level="1" /> <!-- Aria's Bracelet: INT -->
 	</item>
 	<!-- Stone containing Aria's power. Can be used as an ingredient for augmenting a special accessory. -->
-	<item id="38571" type="EtcItem" name="Aria's Life Stone" icon="BranchSys3.icon1.g_life_dust_general_adenia" weight="2">
+	<item id="38571" type="EtcItem" name="Aria's Life Stone" icon="BranchSys3.icon1.g_life_dust_general_adenia" weight="2" isStackable="true">
 	</item>
 	<!-- Made of a fake soul, this can summon Terakan at the Altar of Souls near Faeron Village. -->
 	<item id="38572" type="EtcItem" name="Apparition Stone (Lv. 88)" icon="icon.etc_life_stone_of_begining_i00" immediateEffect="1"

@@ -2897,7 +2897,7 @@
 	<!-- MP + 59, Bleed Resistance + 50%, Bleed Attack Rate + 50%, Stun/Mental Resistance + 40%, Stun/Mental Attack + 40%, CON + 3, and MEN + 3. Increases Heal Amount, Vampiric Rage Effect, Earth Resistance, Holy Resistance, P. Def., and M. Def. Decreases P. Skill MP Consumption and M. Skill MP Consumption. Can use Cancel Stun skill, and Stun Resistance + 100% temporarily. 3-day. Equipping two will only give the effect of one. -->
 	<item id="23637" type="Armor" name="Blessed Antharas' Earring - 3-day" icon="icon.accessory_earring_of_antaras_i00" defaultAction="equip"
 			bodypart="rear;lear" immediateEffect="1" crystalType="r" weight="150" isTradable="false" isDropable="false" isSellable="false"
-			isDepositable="false" isAugmentable="false" isOlyRestricted="true" time="4320">
+			isDepositable="false" isEpic="true" isOlyRestricted="true" time="4320">
 		<baseAdd stat="mDef" val="170" />
 		<add stat="maxMp" val="59" />
 		<skill id="13313" level="1" /> <!-- Blessed Antharas' Earring -->
