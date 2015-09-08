@@ -907,39 +907,7 @@
 		Level 32: Recovers MP with up to 136 Power, depending on the target's level. Cannot be used by classes that have Recharge skill.
 	-->
 	<skill id="1013" levels="32" name="Recharge">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="32" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="32" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 4.
 			Decreases MP Consumption by 2.
@@ -974,7 +942,9 @@
 		-->
 		<enchantRoute id="2" level="32" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 49 53 57 60 67 70 74 78 82 87 90 94 98 103 104 107 109 110 113 115 117 119 120 123 124 127 128 130 132 133 135 137 </table>
-		<table name="#power"> 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 </table>
+		<table name="#power"> 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 
+			<enchantRoute id="1" level="32" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 9 10 10 11 12 12 13 14 14 15 16 16 17 18 18 19 20 20 </enchantRoute>
+		</table>
 		<table name="#aggro"> 268 285 313 331 360 379 399 418 438 457 477 495 514 532 541 549 558 566 574 582 590 597 604 611 617 624 630 635 641 646 650 655 </table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MANARECHARGE" />
@@ -1111,44 +1081,14 @@
 		Level 27: Recovers HP with 780 Power and cures severe poison/bleeding.
 	-->
 	<skill id="1020" levels="27" name="Vitalize">
-		<!-- TODO: Power:
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-		-->
-		<enchantRoute id="1" level="27" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="27" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 3.
 		-->
 		<enchantRoute id="2" level="27" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 87 89 92 97 97 99 104 107 109 112 114 117 118 118 120 123 124 127 129 132 133 135 137 139 140 142 144 </table>
-		<table name="#power"> 440 454 467 494 508 521 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
+		<table name="#power"> 440 454 467 494 508 521 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 
+			<enchantRoute id="1" level="27" type="ADD"> 5 9 14 18 23 27 32 36 41 45 49 54 58 63 67 72 76 81 85 90 94 99 103 107 112 116 121 125 130 134 </enchantRoute>
+		</table>
 		<table name="#negateAbnormals">
 			poison,3;bleeding,3
 			poison,3;bleeding,3
@@ -1250,39 +1190,7 @@
 		Level 19: Inflicts holy damage on the undead with 87 Power added to M. Atk.
 	-->
 	<skill id="1028" levels="19" name="Might of Heaven">
-		<!-- TODO: Power:
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="19" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="19" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2, and increases Power by 1 and Holy Damage by 1.
 			Decreases MP Consumption by 1, and increases Power and Holy Damage.
@@ -1321,7 +1229,9 @@
 		<enchantRoute id="3" level="19" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 54 55 58 60 62 64 65 67 69 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 66 68 71 74 77 79 82 84 87 </table>
+		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 66 68 71 74 77 79 82 84 87 
+			<enchantRoute id="1" level="19" type="ADD"> 87 88 88 89 89 90 90 91 91 92 92 93 93 94 94 95 95 96 96 97 97 98 98 99 99 100 100 101 102 102 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_UNDEAD" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4383,39 +4293,7 @@
 		Level 34: Recovers the servitor's MP with up to 136 Power depending on the servitor's level.
 	-->
 	<skill id="1126" levels="34" name="Servitor Recharge">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="34" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="34" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 4.
 			Decreases MP Consumption by 2.
@@ -4450,7 +4328,9 @@
 		-->
 		<enchantRoute id="2" level="34" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 42 44 49 53 57 60 67 70 74 78 82 87 90 94 98 103 104 107 109 110 113 115 117 119 120 123 124 127 128 130 132 133 135 137 </table>
-		<table name="#power"> 41 44 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 </table>
+		<table name="#power"> 41 44 49 52 57 60 66 70 73 77 81 86 90 94 98 102 104 106 108 110 113 115 116 118 120 122 124 126 128 129 131 133 134 136 
+			<enchantRoute id="1" level="34" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 9 10 10 11 12 12 13 14 14 15 16 16 17 18 18 19 20 20 </enchantRoute>
+		</table>
 		<table name="#aggroPoints"> 227 243 268 285 313 331 360 379 399 418 438 457 477 495 514 532 541 549 558 566 574 582 590 597 604 611 617 624 630 635 641 646 650 655 </table>
 		<set name="target" val="TARGET_SUMMON" />
 		<set name="skillType" val="MANARECHARGE" />
@@ -4512,39 +4392,7 @@
 		Level 45: Recovers the servitor's HP with 1092 Power.
 	-->
 	<skill id="1127" levels="45" name="Servitor Heal">
-		<!-- TODO: Power:
-			Recovers the servitor's HP with 1096 Power. | + 1 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1100 Power. | + 2 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1104 Power. | + 3 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1108 Power. | + 4 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1112 Power. | + 5 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1116 Power. | + 6 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1120 Power. | + 7 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1124 Power. | + 8 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1128 Power. | + 9 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1132 Power. | + 10 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1136 Power. | + 11 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1140 Power. | + 12 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1144 Power. | + 13 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1148 Power. | + 14 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1153 Power. | + 15 Power: Increases Power by 5.
-			Recovers the servitor's HP with 1157 Power. | + 16 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1161 Power. | + 17 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1165 Power. | + 18 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1169 Power. | + 19 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1173 Power. | + 20 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1177 Power. | + 21 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1181 Power. | + 22 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1185 Power. | + 23 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1189 Power. | + 24 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1193 Power. | + 25 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1197 Power. | + 26 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1201 Power. | + 27 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1205 Power. | + 28 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1209 Power. | + 29 Power: Increases Power by 4.
-			Recovers the servitor's HP with 1214 Power. | + 30 Power: Increases Power by 5.
-		-->
-		<enchantRoute id="1" level="45" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="45" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 2.
@@ -4581,7 +4429,9 @@
 		<table name="#aggroPoints"> 121 135 151 176 185 195 224 234 245 278 289 301 337 349 362 388 401 414 440 454 467 494 508 521 548 562 575 588 602 615 627 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
 		<table name="#magicLvl"> 16 18 20 23 24 25 28 29 30 33 34 35 38 39 40 42 43 44 46 47 48 50 51 52 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 24 27 30 33 35 37 42 44 44 48 50 52 58 60 62 64 65 68 72 74 77 80 80 83 87 89 90 93 95 97 98 98 100 102 104 105 108 109 112 113 114 115 117 119 120 </table>
-		<table name="#power"> 169 189 211 247 259 272 313 328 343 389 405 421 472 489 507 542 561 579 616 635 654 692 711 730 768 786 805 824 842 860 878 896 913 931 947 964 980 996 1011 1026 1040 1054 1067 1080 1092 </table>
+		<table name="#power"> 169 189 211 247 259 272 313 328 343 389 405 421 472 489 507 542 561 579 616 635 654 692 711 730 768 786 805 824 842 860 878 896 913 931 947 964 980 996 1011 1026 1040 1054 1067 1080 1092 
+			<enchantRoute id="1" level="45" type="ADD"> 4 8 12 16 20 24 28 32 36 40 44 48 52 56 61 65 69 73 77 81 85 89 93 97 101 105 109 113 117 122 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_SUMMON" />
 		<set name="skillType" val="HEAL" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4650,9 +4500,6 @@
 		Level 8: Summons a Reanimated Man.
 	-->
 	<skill id="1129" levels="16" name="Summon Reanimated Man">
-		<!-- TODO: Power: Increases the servitor's Power.
-		-->
-		<enchantRoute id="1" level="13" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 78 94 110 119 127 133 137 423 435 447 459 471 483 495 507 519 </table>
 		<table name="#itemConsumeCount"> 3 3 5 5 7 7 9 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#npcIds"> 14001 14002 14003 14004 14005 14006 14007 15148 15149 15150 15151 15152 15153 15197 15198 15199 </table>
@@ -5271,39 +5118,7 @@
 		Level 13: Throws a bone to inflict dark damage on the enemy with 108 Power added to M. Atk.
 	-->
 	<skill id="1148" levels="13" name="Death Spike">
-		<!-- TODO: Power:
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="13" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="13" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power.
 			Decreases MP Consumption and increases Power.
@@ -5342,7 +5157,9 @@
 		<enchantRoute id="3" level="13" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 23 27 30 35 36 38 40 41 43 45 46 47 50 </table>
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 58 65 72 78 82 85 89 92 96 99 102 105 108 </table>
+		<table name="#power"> 58 65 72 78 82 85 89 92 96 99 102 105 108 
+			<enchantRoute id="1" level="13" type="ADD"> 108 109 109 110 110 110 111 111 111 112 112 112 113 113 113 114 114 114 115 115 116 116 116 117 117 117 118 118 118 119 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5424,39 +5241,7 @@
 		Level 15: Detonates a corpse to inflict dark damage on the enemies using 108 Power added to M. Atk.
 	-->
 	<skill id="1155" levels="15" name="Corpse Burst">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="15" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="15" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -5492,7 +5277,9 @@
 		<enchantRoute id="2" level="15" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 42 44 45 48 49 52 54 55 58 60 62 64 65 67 69 </table>
 		<table name="#magicLvl"> 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 61 65 68 72 75 78 82 85 89 92 96 99 102 105 108 </table>
+		<table name="#power"> 61 65 68 72 75 78 82 85 89 92 96 99 102 105 108 
+			<enchantRoute id="1" level="15" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA_CORPSE_MOB" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5667,39 +5454,7 @@
 		Level 22: Transfers your pain. Inflicts Dark damage on the enemy with 108 Power added to M. Atk. Power increases as HP decreases.
 	-->
 	<skill id="1159" levels="22" name="Curse Death Link">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="22" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="22" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -5735,7 +5490,9 @@
 		<enchantRoute id="2" level="22" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
 		<table name="#magicLvl"> 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
-		<table name="#power"> 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<table name="#power"> 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 
+			<enchantRoute id="1" level="22" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DEATHLINK" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6281,39 +6038,7 @@
 		Level 19: Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 64 Power added to M. Atk.
 	-->
 	<skill id="1171" levels="19" name="Blazing Circle">
-		<!-- TODO: Power:
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 65 Power added to M. Atk. | + 1 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 66 Power added to M. Atk. | + 2 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 66 Power added to M. Atk. | + 3 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 67 Power added to M. Atk. | + 4 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 67 Power added to M. Atk. | + 5 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 67 Power added to M. Atk. | + 6 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 68 Power added to M. Atk. | + 7 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 68 Power added to M. Atk. | + 8 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 69 Power added to M. Atk. | + 9 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 69 Power added to M. Atk. | + 10 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 69 Power added to M. Atk. | + 11 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 70 Power added to M. Atk. | + 12 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 70 Power added to M. Atk. | + 13 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 70 Power added to M. Atk. | + 14 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 71 Power added to M. Atk. | + 15 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 71 Power added to M. Atk. | + 16 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 72 Power added to M. Atk. | + 17 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 72 Power added to M. Atk. | + 18 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 72 Power added to M. Atk. | + 19 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 73 Power added to M. Atk. | + 20 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 73 Power added to M. Atk. | + 21 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 74 Power added to M. Atk. | + 22 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 74 Power added to M. Atk. | + 23 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 74 Power added to M. Atk. | + 24 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 75 Power added to M. Atk. | + 25 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 75 Power added to M. Atk. | + 26 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 75 Power added to M. Atk. | + 27 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 76 Power added to M. Atk. | + 28 Power: Increases Power by 1.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 76 Power added to M. Atk. | + 29 Power: Increases Power.
-			Spreads ring-shaped flames to inflict Fire damage on nearby enemies with 77 Power added to M. Atk. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="19" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="19" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3 and increases Power by 1.
 			Decreases MP Consumption by 2 and increases Power.
@@ -6352,7 +6077,9 @@
 		<enchantRoute id="3" level="19" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 50 53 55 59 62 65 68 70 74 77 80 83 87 89 93 95 98 100 103 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 29 30 32 34 36 38 40 42 44 46 48 50 52 55 57 58 60 62 64 </table>
+		<table name="#power"> 29 30 32 34 36 38 40 42 44 46 48 50 52 55 57 58 60 62 64 
+			<enchantRoute id="1" level="19" type="ADD"> 1 2 2 3 3 3 4 4 5 5 5 6 6 6 7 7 8 8 8 9 9 10 10 10 11 11 11 12 12 13 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6417,39 +6144,7 @@
 		Level 22: Raises a wall of ice that inflicts Water damage on enemies with 76 Power added to M. Atk.
 	-->
 	<skill id="1174" levels="22" name="Frost Wall">
-		<!-- TODO: Power:
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="22" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="22" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3 and increases Power by 1.
 			Decreases MP Consumption by 2 and increases Power by 1.
@@ -6488,7 +6183,9 @@
 		<enchantRoute id="3" level="22" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 68 70 74 77 79 80 82 83 85 87 88 89 90 93 94 95 97 98 99 100 102 103 </table>
 		<table name="#magicLvl"> 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
-		<table name="#power"> 48 50 53 55 56 57 59 60 61 62 63 65 66 67 68 69 70 72 73 74 75 76 </table>
+		<table name="#power"> 48 50 53 55 56 57 59 60 61 62 63 65 66 67 68 69 70 72 73 74 75 76 
+			<enchantRoute id="1" level="22" type="ADD"> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_FRONT_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -6551,39 +6248,7 @@
 		Level 15: Stirs up a hurricane that inflicts Wind damage near the enemy with 54 Power added to M. Atk.
 	-->
 	<skill id="1176" levels="15" name="Tempest">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="15" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="15" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 2.
@@ -6622,7 +6287,9 @@
 		<enchantRoute id="3" level="15" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 62 65 68 70 74 77 80 83 87 89 93 95 98 100 103 </table>
 		<table name="#magicLvl"> 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 31 33 34 36 38 39 41 43 45 46 48 50 51 53 54 </table>
+		<table name="#power"> 31 33 34 36 38 39 41 43 45 46 48 50 51 53 54 
+			<enchantRoute id="1" level="15" type="ADD"> 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 16 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7569,39 +7236,7 @@
 		Level 33: Restores the target's HP with 472 Power, and additionally restores 32 HP per second for 15 seconds.
 	-->
 	<skill id="1217" levels="33" name="Greater Heal">
-		<!-- TODO: Power:
-			Restores the target's HP with 477 Power, and additionally restores 32 HP per second for 15 seconds. | + 1 Power: Increases Power by 5.
-			Restores the target's HP with 482 Power, and additionally restores 32 HP per second for 15 seconds. | + 2 Power: Increases Power by 5.
-			Restores the target's HP with 487 Power, and additionally restores 32 HP per second for 15 seconds. | + 3 Power: Increases Power by 5.
-			Restores the target's HP with 493 Power, and additionally restores 32 HP per second for 15 seconds. | + 4 Power: Increases Power by 6.
-			Restores the target's HP with 498 Power, and additionally restores 32 HP per second for 15 seconds. | + 5 Power: Increases Power by 5.
-			Restores the target's HP with 503 Power, and additionally restores 32 HP per second for 15 seconds. | + 6 Power: Increases Power by 5.
-			Restores the target's HP with 509 Power, and additionally restores 32 HP per second for 15 seconds. | + 7 Power: Increases Power by 6.
-			Restores the target's HP with 514 Power, and additionally restores 32 HP per second for 15 seconds. | + 8 Power: Increases Power by 5.
-			Restores the target's HP with 519 Power, and additionally restores 32 HP per second for 15 seconds. | + 9 Power: Increases Power by 5.
-			Restores the target's HP with 525 Power, and additionally restores 32 HP per second for 15 seconds. | + 10 Power: Increases Power by 6.
-			Restores the target's HP with 530 Power, and additionally restores 32 HP per second for 15 seconds. | + 11 Power: Increases Power by 5.
-			Restores the target's HP with 535 Power, and additionally restores 32 HP per second for 15 seconds. | + 12 Power: Increases Power by 5.
-			Restores the target's HP with 540 Power, and additionally restores 32 HP per second for 15 seconds. | + 13 Power: Increases Power by 5.
-			Restores the target's HP with 546 Power, and additionally restores 32 HP per second for 15 seconds. | + 14 Power: Increases Power by 6.
-			Restores the target's HP with 551 Power, and additionally restores 32 HP per second for 15 seconds. | + 15 Power: Increases Power by 5.
-			Restores the target's HP with 556 Power, and additionally restores 32 HP per second for 15 seconds. | + 16 Power: Increases Power by 5.
-			Restores the target's HP with 562 Power, and additionally restores 32 HP per second for 15 seconds. | + 17 Power: Increases Power by 6.
-			Restores the target's HP with 567 Power, and additionally restores 32 HP per second for 15 seconds. | + 18 Power: Increases Power by 5.
-			Restores the target's HP with 572 Power, and additionally restores 32 HP per second for 15 seconds. | + 19 Power: Increases Power by 5.
-			Restores the target's HP with 578 Power, and additionally restores 32 HP per second for 15 seconds. | + 20 Power: Increases Power by 6.
-			Restores the target's HP with 583 Power, and additionally restores 32 HP per second for 15 seconds. | + 21 Power: Increases Power by 5.
-			Restores the target's HP with 588 Power, and additionally restores 32 HP per second for 15 seconds. | + 22 Power: Increases Power by 5.
-			Restores the target's HP with 593 Power, and additionally restores 32 HP per second for 15 seconds. | + 23 Power: Increases Power by 5.
-			Restores the target's HP with 599 Power, and additionally restores 32 HP per second for 15 seconds. | + 24 Power: Increases Power by 6.
-			Restores the target's HP with 604 Power, and additionally restores 32 HP per second for 15 seconds. | + 25 Power: Increases Power by 5.
-			Restores the target's HP with 609 Power, and additionally restores 32 HP per second for 15 seconds. | + 26 Power: Increases Power by 5.
-			Restores the target's HP with 615 Power, and additionally restores 32 HP per second for 15 seconds. | + 27 Power: Increases Power by 6.
-			Restores the target's HP with 620 Power, and additionally restores 32 HP per second for 15 seconds. | + 28 Power: Increases Power by 5.
-			Restores the target's HP with 625 Power, and additionally restores 32 HP per second for 15 seconds. | + 29 Power: Increases Power by 5.
-			Restores the target's HP with 631 Power, and additionally restores 32 HP per second for 15 seconds. | + 30 Power: Increases Power by 6.
-		-->
-		<enchantRoute id="1" level="33" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="33" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 2.
@@ -7636,7 +7271,9 @@
 		-->
 		<enchantRoute id="2" level="33" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 58 60 62 64 65 68 72 74 77 80 80 83 87 89 90 93 95 97 98 98 100 102 104 105 108 109 112 113 114 115 117 119 120 </table>
-		<table name="#power"> 204 212 219 235 243 251 267 275 283 299 307 316 332 340 348 356 364 372 380 388 395 402 410 417 424 431 437 444 450 456 462 467 472 </table>
+		<table name="#power"> 204 212 219 235 243 251 267 275 283 299 307 316 332 340 348 356 364 372 380 388 395 402 410 417 424 431 437 444 450 456 462 467 472 
+			<enchantRoute id="1" level="33" type="ADD"> 5 10 15 21 26 31 37 42 47 53 58 63 68 74 79 84 90 95 100 106 111 116 121 127 132 137 143 148 153 159 </enchantRoute>
+		</table>
 		<table name="#hotValue"> 14 15 15 16 17 17 18 19 19 20 21 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 30 30 30 31 31 32 32 </table>
 		<table name="#aggroPoints"> 337 349 362 388 401 414 440 454 467 494 508 521 548 562 575 588 602 615 627 640 653 665 677 689 700 711 722 733 743 753 763 772 780 </table>
 		<table name="#abnormalLvl"> 2 2 2 3 3 3 3 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 7 7 </table>
@@ -7693,39 +7330,7 @@
 		Level 33: Immediately restores the target's HP with 858 Power.
 	-->
 	<skill id="1218" levels="33" name="Greater Battle Heal">
-		<!-- TODO: Power:
-			Immediately restores the target's HP with 863 Power. | + 1 Power: Increases Power by 5.
-			Immediately restores the target's HP with 868 Power. | + 2 Power: Increases Power by 5.
-			Immediately restores the target's HP with 873 Power. | + 3 Power: Increases Power by 5.
-			Immediately restores the target's HP with 878 Power. | + 4 Power: Increases Power by 5.
-			Immediately restores the target's HP with 883 Power. | + 5 Power: Increases Power by 5.
-			Immediately restores the target's HP with 887 Power. | + 6 Power: Increases Power by 4.
-			Immediately restores the target's HP with 892 Power. | + 7 Power: Increases Power by 5.
-			Immediately restores the target's HP with 897 Power. | + 8 Power: Increases Power by 5.
-			Immediately restores the target's HP with 902 Power. | + 9 Power: Increases Power by 5.
-			Immediately restores the target's HP with 907 Power. | + 10 Power: Increases Power by 5.
-			Immediately restores the target's HP with 912 Power. | + 11 Power: Increases Power by 5.
-			Immediately restores the target's HP with 917 Power. | + 12 Power: Increases Power by 5.
-			Immediately restores the target's HP with 921 Power. | + 13 Power: Increases Power by 4.
-			Immediately restores the target's HP with 926 Power. | + 14 Power: Increases Power by 5.
-			Immediately restores the target's HP with 931 Power. | + 15 Power: Increases Power by 5.
-			Immediately restores the target's HP with 936 Power. | + 16 Power: Increases Power by 5.
-			Immediately restores the target's HP with 941 Power. | + 17 Power: Increases Power by 5.
-			Immediately restores the target's HP with 946 Power. | + 18 Power: Increases Power by 5.
-			Immediately restores the target's HP with 950 Power. | + 19 Power: Increases Power by 4.
-			Immediately restores the target's HP with 955 Power. | + 20 Power: Increases Power by 5.
-			Immediately restores the target's HP with 960 Power. | + 21 Power: Increases Power by 5.
-			Immediately restores the target's HP with 965 Power. | + 22 Power: Increases Power by 5.
-			Immediately restores the target's HP with 970 Power. | + 23 Power: Increases Power by 5.
-			Immediately restores the target's HP with 975 Power. | + 24 Power: Increases Power by 5.
-			Immediately restores the target's HP with 980 Power. | + 25 Power: Increases Power by 5.
-			Immediately restores the target's HP with 984 Power. | + 26 Power: Increases Power by 4.
-			Immediately restores the target's HP with 989 Power. | + 27 Power: Increases Power by 5.
-			Immediately restores the target's HP with 994 Power. | + 28 Power: Increases Power by 5.
-			Immediately restores the target's HP with 999 Power. | + 29 Power: Increases Power by 5.
-			Immediately restores the target's HP with 1004 Power. | + 30 Power: Increases Power by 5.
-		-->
-		<enchantRoute id="1" level="33" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="33" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 4.
@@ -7760,7 +7365,9 @@
 		-->
 		<enchantRoute id="2" level="33" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 87 90 92 95 98 102 108 110 114 120 121 123 129 133 135 139 142 145 147 147 150 153 155 158 160 164 167 168 170 173 175 178 179 </table>
-		<table name="#power"> 371 384 398 426 441 455 484 499 514 544 559 573 603 618 633 647 662 676 690 704 718 731 745 758 770 782 795 806 817 828 839 849 858 </table>
+		<table name="#power"> 371 384 398 426 441 455 484 499 514 544 559 573 603 618 633 647 662 676 690 704 718 731 745 758 770 782 795 806 817 828 839 849 858 
+			<enchantRoute id="1" level="33" type="ADD"> 5 10 15 20 25 29 34 39 44 49 54 59 63 68 73 78 83 88 92 97 102 107 112 117 122 126 131 136 141 146 </enchantRoute>
+		</table>
 		<table name="#aggroPoints"> 270 280 290 310 321 331 352 363 374 396 406 417 439 450 460 471 481 492 502 512 522 532 542 551 560 569 578 586 595 603 610 617 624 </table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="HEAL" />
@@ -7810,39 +7417,7 @@
 		Level 33: Restores all party members' HP with 378 Power, and additionally restores 26 HP per second for 15 seconds.
 	-->
 	<skill id="1219" levels="33" name="Greater Group Heal">
-		<!-- TODO: Power:
-			Restores all party members' HP with 382 Power, and additionally restores 26 HP per second for 15 seconds. | + 1 Power: Increases Power by 4.
-			Restores all party members' HP with 386 Power, and additionally restores 26 HP per second for 15 seconds. | + 2 Power: Increases Power by 4.
-			Restores all party members' HP with 391 Power, and additionally restores 26 HP per second for 15 seconds. | + 3 Power: Increases Power by 5.
-			Restores all party members' HP with 395 Power, and additionally restores 26 HP per second for 15 seconds. | + 4 Power: Increases Power by 4.
-			Restores all party members' HP with 400 Power, and additionally restores 26 HP per second for 15 seconds. | + 5 Power: Increases Power by 5.
-			Restores all party members' HP with 404 Power, and additionally restores 26 HP per second for 15 seconds. | + 6 Power: Increases Power by 4.
-			Restores all party members' HP with 408 Power, and additionally restores 26 HP per second for 15 seconds. | + 7 Power: Increases Power by 4.
-			Restores all party members' HP with 413 Power, and additionally restores 26 HP per second for 15 seconds. | + 8 Power: Increases Power by 5.
-			Restores all party members' HP with 417 Power, and additionally restores 26 HP per second for 15 seconds. | + 9 Power: Increases Power by 4.
-			Restores all party members' HP with 422 Power, and additionally restores 26 HP per second for 15 seconds. | + 10 Power: Increases Power by 5.
-			Restores all party members' HP with 426 Power, and additionally restores 26 HP per second for 15 seconds. | + 11 Power: Increases Power by 4.
-			Restores all party members' HP with 430 Power, and additionally restores 26 HP per second for 15 seconds. | + 12 Power: Increases Power by 4.
-			Restores all party members' HP with 435 Power, and additionally restores 26 HP per second for 15 seconds. | + 13 Power: Increases Power by 5.
-			Restores all party members' HP with 439 Power, and additionally restores 26 HP per second for 15 seconds. | + 14 Power: Increases Power by 4.
-			Restores all party members' HP with 444 Power, and additionally restores 26 HP per second for 15 seconds. | + 15 Power: Increases Power by 5.
-			Restores all party members' HP with 448 Power, and additionally restores 26 HP per second for 15 seconds. | + 16 Power: Increases Power by 4.
-			Restores all party members' HP with 452 Power, and additionally restores 26 HP per second for 15 seconds. | + 17 Power: Increases Power by 4.
-			Restores all party members' HP with 457 Power, and additionally restores 26 HP per second for 15 seconds. | + 18 Power: Increases Power by 5.
-			Restores all party members' HP with 461 Power, and additionally restores 26 HP per second for 15 seconds. | + 19 Power: Increases Power by 4.
-			Restores all party members' HP with 466 Power, and additionally restores 26 HP per second for 15 seconds. | + 20 Power: Increases Power by 5.
-			Restores all party members' HP with 470 Power, and additionally restores 26 HP per second for 15 seconds. | + 21 Power: Increases Power by 4.
-			Restores all party members' HP with 474 Power, and additionally restores 26 HP per second for 15 seconds. | + 22 Power: Increases Power by 4.
-			Restores all party members' HP with 479 Power, and additionally restores 26 HP per second for 15 seconds. | + 23 Power: Increases Power by 5.
-			Restores all party members' HP with 483 Power, and additionally restores 26 HP per second for 15 seconds. | + 24 Power: Increases Power by 4.
-			Restores all party members' HP with 488 Power, and additionally restores 26 HP per second for 15 seconds. | + 25 Power: Increases Power by 5.
-			Restores all party members' HP with 492 Power, and additionally restores 26 HP per second for 15 seconds. | + 26 Power: Increases Power by 4.
-			Restores all party members' HP with 496 Power, and additionally restores 26 HP per second for 15 seconds. | + 27 Power: Increases Power by 4.
-			Restores all party members' HP with 501 Power, and additionally restores 26 HP per second for 15 seconds. | + 28 Power: Increases Power by 5.
-			Restores all party members' HP with 505 Power, and additionally restores 26 HP per second for 15 seconds. | + 29 Power: Increases Power by 4.
-			Restores all party members' HP with 510 Power, and additionally restores 26 HP per second for 15 seconds. | + 30 Power: Increases Power by 5.
-		-->
-		<enchantRoute id="1" level="33" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="33" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 6.
 			Decreases MP Consumption by 3.
@@ -7877,7 +7452,9 @@
 		-->
 		<enchantRoute id="2" level="33" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 115 119 122 127 130 134 143 148 152 159 159 164 173 177 180 185 189 193 195 195 199 203 207 210 214 218 222 224 228 230 233 237 239 </table>
-		<table name="#power"> 163 169 175 188 194 201 213 220 226 239 246 253 266 272 279 285 291 298 304 310 316 322 328 334 339 345 350 355 360 365 369 374 378 </table>
+		<table name="#power"> 163 169 175 188 194 201 213 220 226 239 246 253 266 272 279 285 291 298 304 310 316 322 328 334 339 345 350 355 360 365 369 374 378 
+			<enchantRoute id="1" level="33" type="ADD"> 4 8 13 17 22 26 30 35 39 44 48 52 57 61 66 70 74 79 83 88 92 96 101 105 110 114 118 123 127 132 </enchantRoute>
+		</table>
 		<table name="#hotValue"> 11 12 12 13 13 14 15 15 16 16 17 17 18 19 19 19 20 20 21 21 21 22 22 23 23 23 24 24 24 25 25 25 26 </table>
 		<table name="#abnormalLvl"> 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 </table>
 		<set name="target" val="TARGET_PARTY" />
@@ -8390,39 +7967,7 @@
 		Level 28: Ignites flames to inflict Fire damage on the enemy with 108 Power added to M. Atk.
 	-->
 	<skill id="1230" levels="28" name="Prominence">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="28" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="28" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -8464,7 +8009,9 @@
 		<enchantRoute id="4" level="28" isClassic="true" enabled="false" />
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
-		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 
+			<enchantRoute id="1" level="28" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -8511,39 +8058,7 @@
 		Level 28: Inflicts non-attribute damage on the enemy using 87 Power added to M. Atk. and increases the target's Magic Damage Resistance by 50% for 3 seconds during PvP.
 	-->
 	<skill id="1231" levels="28" name="Aura Flare">
-		<!-- TODO: Power:
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="28" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="28" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -8579,7 +8094,9 @@
 		<enchantRoute id="2" level="28" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
-		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 64 66 67 68 70 71 72 74 75 77 78 79 80 82 83 84 85 87 </table>
+		<table name="#power"> 39 42 44 47 49 52 55 57 60 63 64 66 67 68 70 71 72 74 75 77 78 79 80 82 83 84 85 87 
+			<enchantRoute id="1" level="28" type="ADD"> 87 88 88 89 89 90 90 91 91 92 92 93 93 94 94 95 95 96 96 97 97 98 98 99 99 100 100 101 102 102 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -8790,39 +8307,7 @@
 		Level 28: Inflicts dark damage on the enemy with 108 Power added to M. Atk. Absorbs 40% of the damage as HP.
 	-->
 	<skill id="1234" levels="28" name="Vampiric Claw">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="28" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="28" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2.
 			Decreases MP Consumption by 3.
@@ -8924,7 +8409,9 @@
 		<enchantRoute id="4" level="28" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 60 63 67 70 74 78 82 85 89 93 94 97 98 100 102 104 105 107 109 110 112 114 115 117 119 120 122 123 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
-		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 
+			<enchantRoute id="1" level="28" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -8971,39 +8458,7 @@
 		Level 28: Releases a high pressure current to inflict Water damage on the enemy with 108 Power added to M. Atk.
 	-->
 	<skill id="1235" levels="28" name="Hydro Blast">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="28" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="28" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -9045,7 +8500,9 @@
 		<enchantRoute id="4" level="28" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
-		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 
+			<enchantRoute id="1" level="28" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -9083,39 +8540,7 @@
 		Level 19: Momentarily freezes the surrounding air, inflicting Water damage with 65 Power added to M. Atk. and decreasing the enemy's Speed by 20% for 1 minute.
 	-->
 	<skill id="1236" levels="19" name="Frost Bolt">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="19" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="19" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -9157,7 +8582,9 @@
 		<enchantRoute id="4" level="19" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 54 55 58 60 62 64 65 67 69 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 30 31 33 35 37 39 41 43 45 47 49 51 53 56 58 59 61 63 65 </table>
+		<table name="#power"> 30 31 33 35 37 39 41 43 45 47 49 51 53 56 58 59 61 63 65 
+			<enchantRoute id="1" level="19" type="ADD"> 1 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -9202,39 +8629,7 @@
 		Level 17: Hurls a blade of ice with 54 Power added to M. Atk., inflicting water damage and causing loss of 67 HP per second for 15 seconds.
 	-->
 	<skill id="1237" levels="17" name="Ice Dagger">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="17" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="17" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 2 and increases Power.
@@ -9278,6 +8673,7 @@
 		<table name="#magicLvl"> 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#power"> 28 29 31 33 34 36 38 39 41 43 45 46 48 50 51 53 54 
 			<enchantRoute id="3,4" level="17"> 64 </enchantRoute>
+			<enchantRoute id="1" level="17" type="ADD"> 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 16 </enchantRoute>
 		</table>
 		<table name="#dot"> 132 132 132 132 162 162 162 162 162 186 186 186 186 186 201 201 201 </table>
 		<table name="#abnormalLvl"> 5 5 5 5 6 6 6 6 6 7 7 7 7 7 8 8 8 </table>
@@ -9463,39 +8859,7 @@
 		Level 28: Creates a whirlwind that uses 108 Power to inflict Wind damage to the enemy.
 	-->
 	<skill id="1239" levels="28" name="Hurricane">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="28" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="28" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Wind Attack: Increases Wind Attribute by 1.
 		-->
 		<enchantRoute id="2" level="28" isClassic="true" enabled="false" />
@@ -9504,7 +8868,9 @@
 		<enchantRoute id="3" level="28" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 34 35 38 39 42 44 45 48 49 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 </table>
 		<table name="#magicLvl"> 38 40 42 44 46 48 50 52 54 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
-		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<table name="#power"> 49 52 55 58 61 65 68 72 75 78 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 
+			<enchantRoute id="1" level="28" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -9875,39 +9241,7 @@
 		Level 14: Inflicts non-attribute damage on the enemy with 108 Power added to M. Atk. Absorbs 80% of the damage as HP.
 	-->
 	<skill id="1245" levels="14" name="Steal Essence">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="14" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="14" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 4.
 			Decreases MP Consumption by 1.
@@ -9976,7 +9310,9 @@
 		<enchantRoute id="3" level="14" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 92 100 112 122 133 138 144 149 154 159 164 169 173 177 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 52 58 65 72 78 82 85 89 92 96 99 102 105 108 </table>
+		<table name="#power"> 52 58 65 72 78 82 85 89 92 96 99 102 105 108 
+			<enchantRoute id="1" level="14" type="ADD"> 1 1 2 3 3 4 5 5 6 7 7 8 8 9 10 10 11 12 12 13 14 14 15 16 16 17 17 18 19 19 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="DRAIN" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -11262,39 +10598,7 @@
 		Level 14: Inflicts holy damage on the enemy with 135 Power added to M. Atk. Over-hit is possible.
 	-->
 	<skill id="1265" levels="14" name="Solar Flare">
-		<!-- TODO: Power:
-			Inflicts holy damage on the enemy with 136 Power added to M. Atk. Over-hit is possible. | + 1 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 137 Power added to M. Atk. Over-hit is possible. | + 2 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 137 Power added to M. Atk. Over-hit is possible. | + 3 Power: Increases Power.
-			Inflicts holy damage on the enemy with 138 Power added to M. Atk. Over-hit is possible. | + 4 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 139 Power added to M. Atk. Over-hit is possible. | + 5 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 140 Power added to M. Atk. Over-hit is possible. | + 6 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 141 Power added to M. Atk. Over-hit is possible. | + 7 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 141 Power added to M. Atk. Over-hit is possible. | + 8 Power: Increases Power.
-			Inflicts holy damage on the enemy with 142 Power added to M. Atk. Over-hit is possible. | + 9 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 143 Power added to M. Atk. Over-hit is possible. | + 10 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 144 Power added to M. Atk. Over-hit is possible. | + 11 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 145 Power added to M. Atk. Over-hit is possible. | + 12 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 145 Power added to M. Atk. Over-hit is possible. | + 13 Power: Increases Power.
-			Inflicts holy damage on the enemy with 146 Power added to M. Atk. Over-hit is possible. | + 14 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 147 Power added to M. Atk. Over-hit is possible. | + 15 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 148 Power added to M. Atk. Over-hit is possible. | + 16 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 149 Power added to M. Atk. Over-hit is possible. | + 17 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 149 Power added to M. Atk. Over-hit is possible. | + 18 Power: Increases Power.
-			Inflicts holy damage on the enemy with 150 Power added to M. Atk. Over-hit is possible. | + 19 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 151 Power added to M. Atk. Over-hit is possible. | + 20 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 152 Power added to M. Atk. Over-hit is possible. | + 21 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 153 Power added to M. Atk. Over-hit is possible. | + 22 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 153 Power added to M. Atk. Over-hit is possible. | + 23 Power: Increases Power.
-			Inflicts holy damage on the enemy with 154 Power added to M. Atk. Over-hit is possible. | + 24 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 155 Power added to M. Atk. Over-hit is possible. | + 25 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 156 Power added to M. Atk. Over-hit is possible. | + 26 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 157 Power added to M. Atk. Over-hit is possible. | + 27 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 158 Power added to M. Atk. Over-hit is possible. | + 28 Power: Increases Power by 1.
-			Inflicts holy damage on the enemy with 158 Power added to M. Atk. Over-hit is possible. | + 29 Power: Increases Power.
-			Inflicts holy damage on the enemy with 159 Power added to M. Atk. Over-hit is possible. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="14" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="14" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2.
 			Decreases MP Consumption by 1.
@@ -11333,7 +10637,9 @@
 		<enchantRoute id="3" level="14" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 44 49 54 59 64 67 69 73 74 77 79 82 84 85 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 </table>
+		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 
+			<enchantRoute id="1" level="14" type="ADD"> 1 2 2 3 4 5 6 6 7 8 9 10 10 11 12 13 14 14 15 16 17 18 18 19 20 21 22 23 23 24 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -11390,39 +10696,7 @@
 		Level 14: Inflicts dark damage on the enemy with 135 Power added to M. Atk. Over-hit is possible.
 	-->
 	<skill id="1267" levels="14" name="Shadow Flare">
-		<!-- TODO: Power:
-			Inflicts dark damage on the enemy with 136 Power added to M. Atk. Over-hit is possible. | + 1 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 137 Power added to M. Atk. Over-hit is possible. | + 2 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 137 Power added to M. Atk. Over-hit is possible. | + 3 Power: Increases Power.
-			Inflicts dark damage on the enemy with 138 Power added to M. Atk. Over-hit is possible. | + 4 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 139 Power added to M. Atk. Over-hit is possible. | + 5 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 140 Power added to M. Atk. Over-hit is possible. | + 6 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 141 Power added to M. Atk. Over-hit is possible. | + 7 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 141 Power added to M. Atk. Over-hit is possible. | + 8 Power: Increases Power.
-			Inflicts dark damage on the enemy with 142 Power added to M. Atk. Over-hit is possible. | + 9 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 143 Power added to M. Atk. Over-hit is possible. | + 10 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 144 Power added to M. Atk. Over-hit is possible. | + 11 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 145 Power added to M. Atk. Over-hit is possible. | + 12 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 145 Power added to M. Atk. Over-hit is possible. | + 13 Power: Increases Power.
-			Inflicts dark damage on the enemy with 146 Power added to M. Atk. Over-hit is possible. | + 14 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 147 Power added to M. Atk. Over-hit is possible. | + 15 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 148 Power added to M. Atk. Over-hit is possible. | + 16 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 149 Power added to M. Atk. Over-hit is possible. | + 17 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 149 Power added to M. Atk. Over-hit is possible. | + 18 Power: Increases Power.
-			Inflicts dark damage on the enemy with 150 Power added to M. Atk. Over-hit is possible. | + 19 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 151 Power added to M. Atk. Over-hit is possible. | + 20 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 152 Power added to M. Atk. Over-hit is possible. | + 21 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 153 Power added to M. Atk. Over-hit is possible. | + 22 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 153 Power added to M. Atk. Over-hit is possible. | + 23 Power: Increases Power.
-			Inflicts dark damage on the enemy with 154 Power added to M. Atk. Over-hit is possible. | + 24 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 155 Power added to M. Atk. Over-hit is possible. | + 25 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 156 Power added to M. Atk. Over-hit is possible. | + 26 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 157 Power added to M. Atk. Over-hit is possible. | + 27 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 158 Power added to M. Atk. Over-hit is possible. | + 28 Power: Increases Power by 1.
-			Inflicts dark damage on the enemy with 158 Power added to M. Atk. Over-hit is possible. | + 29 Power: Increases Power.
-			Inflicts dark damage on the enemy with 159 Power added to M. Atk. Over-hit is possible. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="14" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="14" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2.
 			Decreases MP Consumption by 1.
@@ -11461,7 +10735,9 @@
 		<enchantRoute id="3" level="14" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 44 49 54 59 64 67 69 73 74 77 79 82 84 85 </table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 </table>
+		<table name="#power"> 65 73 81 89 98 102 107 111 115 119 123 127 131 135 
+			<enchantRoute id="1" level="14" type="ADD"> 1 2 2 3 4 5 6 6 7 8 9 10 10 11 12 13 14 14 15 16 17 18 18 19 20 21 22 23 23 24 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -11824,39 +11100,7 @@
 		Level 14: Inflicts non-attribute damage on the enemy using 54 Power added to M. Atk.
 	-->
 	<skill id="1275" levels="14" name="Aura Bolt">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="14" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="14" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption and increases Power.
@@ -11894,7 +11138,9 @@
 		-->
 		<enchantRoute id="3" level="14" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 18 20 23 24 27 28 28 29 30 32 33 33 34 35 </table>
-		<table name="#power"> 26 29 33 36 39 41 43 45 46 48 50 51 53 54 </table>
+		<table name="#power"> 26 29 33 36 39 41 43 45 46 48 50 51 53 54 
+			<enchantRoute id="1" level="14" type="ADD"> 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 16 </enchantRoute>
+		</table>
 		<table name="#magicLvl"> 40 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -12380,39 +11626,7 @@
 	</skill>
 	<!-- Inflicts non-attribute damage on the enemy with 150 Power added to M. Atk. -->
 	<skill id="1288" levels="1" name="Aura Symphony">
-		<!-- TODO: Power:
-			Inflicts non-attribute damage on the enemy with 151 Power added to M. Atk. | + 1 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 152 Power added to M. Atk. | + 2 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 153 Power added to M. Atk. | + 3 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 154 Power added to M. Atk. | + 4 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 155 Power added to M. Atk. | + 5 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 156 Power added to M. Atk. | + 6 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 157 Power added to M. Atk. | + 7 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 158 Power added to M. Atk. | + 8 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 159 Power added to M. Atk. | + 9 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 160 Power added to M. Atk. | + 10 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 161 Power added to M. Atk. | + 11 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 162 Power added to M. Atk. | + 12 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 163 Power added to M. Atk. | + 13 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 164 Power added to M. Atk. | + 14 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 165 Power added to M. Atk. | + 15 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 166 Power added to M. Atk. | + 16 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 167 Power added to M. Atk. | + 17 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 168 Power added to M. Atk. | + 18 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 169 Power added to M. Atk. | + 19 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 170 Power added to M. Atk. | + 20 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 171 Power added to M. Atk. | + 21 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 172 Power added to M. Atk. | + 22 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 173 Power added to M. Atk. | + 23 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 174 Power added to M. Atk. | + 24 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 175 Power added to M. Atk. | + 25 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 176 Power added to M. Atk. | + 26 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 177 Power added to M. Atk. | + 27 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 178 Power added to M. Atk. | + 28 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 179 Power added to M. Atk. | + 29 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 180 Power added to M. Atk. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 4.
@@ -12493,39 +11707,7 @@
 	</skill>
 	<!-- Inflicts fire damage on the enemy with 150 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. -->
 	<skill id="1289" levels="1" name="Inferno">
-		<!-- TODO: Power:
-			Inflicts fire damage on the enemy with 151 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 1 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 152 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 2 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 153 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 3 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 154 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 4 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 155 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 5 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 156 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 6 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 157 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 7 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 158 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 8 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 159 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 9 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 160 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 10 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 161 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 11 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 162 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 12 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 163 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 13 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 164 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 14 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 165 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 15 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 166 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 16 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 167 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 17 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 168 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 18 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 169 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 19 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 170 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 20 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 171 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 21 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 172 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 22 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 173 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 23 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 174 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 24 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 175 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 25 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 176 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 26 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 177 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 27 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 178 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 28 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 179 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 29 Power: Increases Power by 1.
-			Inflicts fire damage on the enemy with 180 Power added to M. Atk., and decreases HP by 60 per second for 15 seconds. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 4.
@@ -12584,39 +11766,7 @@
 	</skill>
 	<!-- Inflicts water damage on the enemy with 150 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. -->
 	<skill id="1290" levels="1" name="Blizzard">
-		<!-- TODO: Power:
-			Inflicts water damage on the enemy with 151 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 1 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 152 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 2 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 153 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 3 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 154 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 4 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 155 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 5 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 156 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 6 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 157 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 7 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 158 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 8 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 159 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 9 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 160 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 10 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 161 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 11 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 162 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 12 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 163 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 13 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 164 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 14 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 165 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 15 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 166 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 16 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 167 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 17 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 168 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 18 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 169 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 19 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 170 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 20 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 171 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 21 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 172 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 22 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 173 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 23 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 174 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 24 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 175 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 25 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 176 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 26 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 177 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 27 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 178 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 28 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 179 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 29 Power: Increases Power by 1.
-			Inflicts water damage on the enemy with 180 Power added to M. Atk., and decreases their Speed by 50% for 30 seconds. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 4.
@@ -12678,39 +11828,7 @@
 	</skill>
 	<!-- Inflicts wind damage on the enemy with 150 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. -->
 	<skill id="1291" levels="1" name="Demon Wind">
-		<!-- TODO: Power:
-			Inflicts wind damage on the enemy with 151 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 1 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 152 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 2 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 153 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 3 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 154 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 4 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 155 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 5 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 156 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 6 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 157 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 7 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 158 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 8 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 159 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 9 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 160 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 10 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 161 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 11 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 162 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 12 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 163 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 13 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 164 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 14 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 165 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 15 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 166 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 16 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 167 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 17 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 168 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 18 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 169 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 19 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 170 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 20 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 171 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 21 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 172 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 22 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 173 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 23 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 174 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 24 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 175 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 25 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 176 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 26 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 177 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 27 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 178 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 28 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 179 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 29 Power: Increases Power by 1.
-			Inflicts wind damage on the enemy with 180 Power added to M. Atk., and decreases their HP recovery magic effect by 50% for 2 minutes. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 4.
@@ -12770,39 +11888,7 @@
 	</skill>
 	<!-- Inflicts non-attribute damage on the enemy with 200 Power added to M. Atk. Over-hit is possible. -->
 	<skill id="1292" levels="1" name="Elemental Assault">
-		<!-- TODO: Power:
-			Inflicts non-attribute damage on the enemy with 201 Power added to M. Atk. Over-hit is possible. | + 1 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 202 Power added to M. Atk. Over-hit is possible. | + 2 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 203 Power added to M. Atk. Over-hit is possible. | + 3 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 204 Power added to M. Atk. Over-hit is possible. | + 4 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 205 Power added to M. Atk. Over-hit is possible. | + 5 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 206 Power added to M. Atk. Over-hit is possible. | + 6 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 207 Power added to M. Atk. Over-hit is possible. | + 7 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 208 Power added to M. Atk. Over-hit is possible. | + 8 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 209 Power added to M. Atk. Over-hit is possible. | + 9 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 210 Power added to M. Atk. Over-hit is possible. | + 10 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 211 Power added to M. Atk. Over-hit is possible. | + 11 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 212 Power added to M. Atk. Over-hit is possible. | + 12 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 213 Power added to M. Atk. Over-hit is possible. | + 13 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 214 Power added to M. Atk. Over-hit is possible. | + 14 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 215 Power added to M. Atk. Over-hit is possible. | + 15 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 216 Power added to M. Atk. Over-hit is possible. | + 16 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 217 Power added to M. Atk. Over-hit is possible. | + 17 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 218 Power added to M. Atk. Over-hit is possible. | + 18 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 219 Power added to M. Atk. Over-hit is possible. | + 19 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 220 Power added to M. Atk. Over-hit is possible. | + 20 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 221 Power added to M. Atk. Over-hit is possible. | + 21 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 222 Power added to M. Atk. Over-hit is possible. | + 22 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 223 Power added to M. Atk. Over-hit is possible. | + 23 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 224 Power added to M. Atk. Over-hit is possible. | + 24 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 225 Power added to M. Atk. Over-hit is possible. | + 25 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 226 Power added to M. Atk. Over-hit is possible. | + 26 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 227 Power added to M. Atk. Over-hit is possible. | + 27 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 228 Power added to M. Atk. Over-hit is possible. | + 28 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 229 Power added to M. Atk. Over-hit is possible. | + 29 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 230 Power added to M. Atk. Over-hit is possible. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 4.
@@ -12884,39 +11970,7 @@
 	</skill>
 	<!-- Inflicts non-attribute damage on the enemy with 200 Power added to M. Atk. Over-hit is possible. -->
 	<skill id="1293" levels="1" name="Elemental Symphony">
-		<!-- TODO: Power:
-			Inflicts non-attribute damage on the enemy with 201 Power added to M. Atk. Over-hit is possible. | + 1 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 202 Power added to M. Atk. Over-hit is possible. | + 2 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 203 Power added to M. Atk. Over-hit is possible. | + 3 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 204 Power added to M. Atk. Over-hit is possible. | + 4 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 205 Power added to M. Atk. Over-hit is possible. | + 5 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 206 Power added to M. Atk. Over-hit is possible. | + 6 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 207 Power added to M. Atk. Over-hit is possible. | + 7 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 208 Power added to M. Atk. Over-hit is possible. | + 8 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 209 Power added to M. Atk. Over-hit is possible. | + 9 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 210 Power added to M. Atk. Over-hit is possible. | + 10 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 211 Power added to M. Atk. Over-hit is possible. | + 11 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 212 Power added to M. Atk. Over-hit is possible. | + 12 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 213 Power added to M. Atk. Over-hit is possible. | + 13 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 214 Power added to M. Atk. Over-hit is possible. | + 14 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 215 Power added to M. Atk. Over-hit is possible. | + 15 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 216 Power added to M. Atk. Over-hit is possible. | + 16 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 217 Power added to M. Atk. Over-hit is possible. | + 17 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 218 Power added to M. Atk. Over-hit is possible. | + 18 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 219 Power added to M. Atk. Over-hit is possible. | + 19 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 220 Power added to M. Atk. Over-hit is possible. | + 20 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 221 Power added to M. Atk. Over-hit is possible. | + 21 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 222 Power added to M. Atk. Over-hit is possible. | + 22 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 223 Power added to M. Atk. Over-hit is possible. | + 23 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 224 Power added to M. Atk. Over-hit is possible. | + 24 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 225 Power added to M. Atk. Over-hit is possible. | + 25 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 226 Power added to M. Atk. Over-hit is possible. | + 26 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 227 Power added to M. Atk. Over-hit is possible. | + 27 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 228 Power added to M. Atk. Over-hit is possible. | + 28 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 229 Power added to M. Atk. Over-hit is possible. | + 29 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 230 Power added to M. Atk. Over-hit is possible. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 4.
@@ -12998,39 +12052,7 @@
 	</skill>
 	<!-- Inflicts non-attribute damage on the enemy with 200 Power added to M. Atk. -->
 	<skill id="1294" levels="1" name="Elemental Storm">
-		<!-- TODO: Power:
-			Inflicts non-attribute damage on the enemy with 201 Power added to M. Atk. Over-hit is possible. | + 1 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 202 Power added to M. Atk. Over-hit is possible. | + 2 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 203 Power added to M. Atk. Over-hit is possible. | + 3 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 204 Power added to M. Atk. Over-hit is possible. | + 4 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 205 Power added to M. Atk. Over-hit is possible. | + 5 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 206 Power added to M. Atk. Over-hit is possible. | + 6 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 207 Power added to M. Atk. Over-hit is possible. | + 7 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 208 Power added to M. Atk. Over-hit is possible. | + 8 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 209 Power added to M. Atk. Over-hit is possible. | + 9 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 210 Power added to M. Atk. Over-hit is possible. | + 10 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 211 Power added to M. Atk. Over-hit is possible. | + 11 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 212 Power added to M. Atk. Over-hit is possible. | + 12 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 213 Power added to M. Atk. Over-hit is possible. | + 13 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 214 Power added to M. Atk. Over-hit is possible. | + 14 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 215 Power added to M. Atk. Over-hit is possible. | + 15 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 216 Power added to M. Atk. Over-hit is possible. | + 16 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 217 Power added to M. Atk. Over-hit is possible. | + 17 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 218 Power added to M. Atk. Over-hit is possible. | + 18 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 219 Power added to M. Atk. Over-hit is possible. | + 19 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 220 Power added to M. Atk. Over-hit is possible. | + 20 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 221 Power added to M. Atk. Over-hit is possible. | + 21 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 222 Power added to M. Atk. Over-hit is possible. | + 22 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 223 Power added to M. Atk. Over-hit is possible. | + 23 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 224 Power added to M. Atk. Over-hit is possible. | + 24 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 225 Power added to M. Atk. Over-hit is possible. | + 25 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 226 Power added to M. Atk. Over-hit is possible. | + 26 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 227 Power added to M. Atk. Over-hit is possible. | + 27 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 228 Power added to M. Atk. Over-hit is possible. | + 28 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 229 Power added to M. Atk. Over-hit is possible. | + 29 Power: Increases Power by 1.
-			Inflicts non-attribute damage on the enemy with 230 Power added to M. Atk. Over-hit is possible. | + 30 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 1.
@@ -13121,39 +12143,7 @@
 		Level 9: Creates a massive tidal wave and inflicts water damage on the enemy's surroundings with 54 Power added to M. Atk.
 	-->
 	<skill id="1295" levels="9" name="Aqua Splash">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="9" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="9" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3 and increases Power by 1.
 			Decreases MP Consumption by 2 and increases Power.
@@ -13192,7 +12182,9 @@
 		<enchantRoute id="3" level="9" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 80 83 87 89 93 95 98 100 103 </table>
 		<table name="#magicLvl"> 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 41 43 45 46 48 50 51 53 54 </table>
+		<table name="#power"> 41 43 45 46 48 50 51 53 54 
+			<enchantRoute id="1" level="9" type="ADD"> 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 16 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -13220,39 +12212,7 @@
 		Level 9: Creates a massive explosion and inflicts fire damage on the enemy's surroundings with 54 Power added to M. Atk.
 	-->
 	<skill id="1296" levels="9" name="Rain of Fire">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="9" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="9" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2 and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -13291,7 +12251,9 @@
 		<enchantRoute id="3" level="9" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 54 55 58 60 62 64 65 67 69 </table>
 		<table name="#magicLvl"> 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 41 43 45 46 48 50 51 53 54 </table>
+		<table name="#power"> 41 43 45 46 48 50 51 53 54 
+			<enchantRoute id="1" level="9" type="ADD"> 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 16 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -13693,45 +12655,15 @@
 		Level 5: Restores nearby clan members' CP by 687 Power.
 	-->
 	<skill id="1305" levels="5" name="Pa'agrio's Honor">
-		<!-- TODO: Power:
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 3.
-			Increases Power by 4.
-			Increases Power by 3.
-			Increases Power by 4.
-		-->
-		<enchantRoute id="1" level="5" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="5" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 3.
 		-->
 		<enchantRoute id="2" level="5" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 214 222 228 233 239 </table>
 		<table name="#aggro"> 689 722 743 763 780 </table>
-		<table name="#power"> 616 636 654 671 687 </table>
+		<table name="#power"> 616 636 654 671 687 
+			<enchantRoute id="1" level="5" type="ADD"> 3 7 10 13 17 20 24 27 30 34 37 40 44 47 51 54 57 61 64 68 71 74 78 81 85 88 91 95 98 102 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_PARTY_CLAN" />
 		<set name="skillType" val="COMBATPOINTHEAL" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -13752,39 +12684,7 @@
 		Level 6: Restores CP by 858 Power.
 	-->
 	<skill id="1306" levels="6" name="Ritual of Life">
-		<!-- TODO: Power:
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 4.
-			Increases Power by 5.
-		-->
-		<enchantRoute id="1" level="6" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="6" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 2.
@@ -13820,7 +12720,9 @@
 		<enchantRoute id="2" level="6" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 104 108 112 114 117 120 </table>
 		<table name="#aggro"> 677 700 722 743 763 780 </table>
-		<table name="#power"> 745 767 789 811 834 858 </table>
+		<table name="#power"> 745 767 789 811 834 858 
+			<enchantRoute id="1" level="6" type="ADD"> 5 9 13 17 22 26 30 34 39 43 47 51 55 60 64 68 72 77 81 85 89 94 98 102 106 111 115 119 123 128 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="COMBATPOINTHEAL" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -14671,9 +13573,6 @@
 		Level 8: Summons a Cursed Man.
 	-->
 	<skill id="1334" levels="16" name="Summon Cursed Man">
-		<!-- TODO: Power: Increases the servitor's Power.
-		-->
-		<enchantRoute id="1" level="13" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 103 110 119 127 130 133 137 423 435 447 459 471 483 495 507 519 </table>
 		<table name="#itemConsumeCount"> 1 1 2 2 3 3 4 0 0 0 0 0 0 0 0 0 </table>
 		<table name="#npcIds"> 14074 14075 14076 14077 14078 14079 14080 15142 15143 15144 15145 15146 15147 15194 15195 15196 </table>
@@ -14845,24 +13744,7 @@
 	</skill>
 	<!-- Stirs up a vortex connecting to the dimension of Fire and inflicts Fire damage on the enemy with 140 Power added to M. Atk. For 30 sec., decreases Speed by 10%, Atk. Spd. by 30%, Casting Spd. by 10%, and Fire Resistance by 20. Consumes 12 MP every second. Over-hit is possible. -->
 	<skill id="1339" levels="1" name="Fire Vortex">
-		<!-- TODO: Power:
-			Increases Power by 7.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 4.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -14901,24 +13783,7 @@
 	</skill>
 	<!-- Stirs up a vortex connecting to the dimension of Water and inflicts Water damage on the enemy with 140 Power added to M. Atk. For 30 sec., decreases Speed by 30%, Atk. Spd. by 10%, Casting Spd. by 10%, and resistance against Water by 20. Consumes 12 MP every second. Over-hit is possible. -->
 	<skill id="1340" levels="1" name="Ice Vortex">
-		<!-- TODO: Power:
-			Increases Power by 7.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 4.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -14972,24 +13837,7 @@
 	</skill>
 	<!-- Stirs up a vortex connecting to the dimension of Wind and inflicts Wind damage on the enemy with 140 Power added to M. Atk. For 30 sec., decreases Speed by 10%, Atk. Spd. by 10%, Casting Spd. by 30%, and resistance against Wind by 20. Consumes 12 MP every second. Over-hit is possible. -->
 	<skill id="1341" levels="1" name="Wind Vortex">
-		<!-- TODO: Power:
-			Increases Power by 7.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 4.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -15043,24 +13891,7 @@
 	</skill>
 	<!-- Stirs up a vortex connecting to the holy dimension and inflicts Holy damage on the enemy with 139 Power added to M. Atk. For 30 sec., decreases Accuracy by 6 and Holy Attack Resistance by 30. Consumes 12 MP every second. -->
 	<skill id="1342" levels="1" name="Light Vortex">
-		<!-- TODO: Power:
-			Increases Power by 8.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 4.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -15111,24 +13942,7 @@
 	</skill>
 	<!-- Stirs up a vortex connecting to the dimension of darkness and inflicts dark damage on the enemy with 139 Power added to M. Atk. Absorbs 25% as HP. For 30 sec., decreases Accuracy by 6 and Dark Attack Resistance by 30. Consumes 12 MP every second. -->
 	<skill id="1343" levels="1" name="Dark Vortex">
-		<!-- TODO: Power:
-			Increases Power by 8.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 4.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -18086,44 +16900,14 @@
 		Level 10: Consumes the enemy's MP with 162 Power added to M. Atk.
 	-->
 	<skill id="1398" levels="10" name="Mana Burn">
-		<!-- TODO: Power:
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="10" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="10" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 3.
 		-->
 		<enchantRoute id="2" level="10" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 77 80 83 87 89 93 95 98 100 103 </table>
-		<table name="#power"> 117 123 128 133 138 143 148 153 157 162 </table>
+		<table name="#power"> 117 123 128 133 138 143 148 153 157 162 
+			<enchantRoute id="1" level="10" type="ADD"> 162 163 164 164 165 166 166 167 168 168 169 170 170 171 172 172 173 174 174 175 176 176 177 178 178 179 180 180 181 182 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MANADAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -18144,14 +16928,14 @@
 		Level 5: Consumes nearby enemies' MP with 81 Power added to M. Atk.
 	-->
 	<skill id="1399" levels="5" name="Mana Storm">
-		<!-- TODO: Power: Increases Power.
-		-->
-		<enchantRoute id="1" level="5" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="5" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 3.
 		-->
 		<enchantRoute id="2" level="5" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 120 129 138 147 153 </table>
-		<table name="#power"> 62 67 72 77 81 </table>
+		<table name="#power"> 62 67 72 77 81 
+			<enchantRoute id="1" level="5" type="ADD"> 81 81 82 82 82 83 83 83 84 84 84 85 85 85 86 86 86 87 87 87 88 88 88 89 89 89 90 90 90 91 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="MANADAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -18279,39 +17063,7 @@
 		Level 11: Restores the target's HP with 946 Power. Consumes 1 Spirit Ore.
 	-->
 	<skill id="1401" levels="11" name="Major Heal">
-		<!-- TODO: Power:
-			Increases Power by 12.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 13.
-			Increases Power by 14.
-			Increases Power by 14.
-		-->
-		<enchantRoute id="1" level="11" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="11" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 1.
@@ -18346,7 +17098,9 @@
 		-->
 		<enchantRoute id="2" level="11" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 60 64 65 67 69 72 74 77 78 80 80 </table>
-		<table name="#power"> 0 0 0 0 0 0 0 0 0 0 946 </table>
+		<table name="#power"> 0 0 0 0 0 0 0 0 0 0 946 
+			<enchantRoute id="1" level="11" type="ADD"> 12 26 39 53 66 80 93 107 121 134 148 161 175 188 202 216 229 243 256 270 283 297 311 324 338 351 365 378 392 406 </enchantRoute>
+		</table>
 		<table name="#aggro"> 403 421 439 457 474 490 506 520 534 546 546 </table>
 		<table name="#magicLvl"> 56 58 60 62 64 66 68 70 72 74 75 </table>
 		<set name="target" val="TARGET_ONE" />
@@ -18372,39 +17126,7 @@
 		Level 5: Restores all party members' HP by 1170 Power. Consumes 4 Spirit Ore.
 	-->
 	<skill id="1402" levels="5" name="Major Group Heal">
-		<!-- TODO: Power:
-			Restores all party members' HP by 1183 Power. Consumes 4 Spirit Ore. | + 1 Power: Increases Power by 13.
-			Restores all party members' HP by 1196 Power. Consumes 4 Spirit Ore. | + 2 Power: Increases Power by 13.
-			Restores all party members' HP by 1209 Power. Consumes 4 Spirit Ore. | + 3 Power: Increases Power by 13.
-			Restores all party members' HP by 1222 Power. Consumes 4 Spirit Ore. | + 4 Power: Increases Power by 13.
-			Restores all party members' HP by 1235 Power. Consumes 4 Spirit Ore. | + 5 Power: Increases Power by 13.
-			Restores all party members' HP by 1248 Power. Consumes 4 Spirit Ore. | + 6 Power: Increases Power by 13.
-			Restores all party members' HP by 1261 Power. Consumes 4 Spirit Ore. | + 7 Power: Increases Power by 13.
-			Restores all party members' HP by 1274 Power. Consumes 4 Spirit Ore. | + 8 Power: Increases Power by 13.
-			Restores all party members' HP by 1287 Power. Consumes 4 Spirit Ore. | + 9 Power: Increases Power by 13.
-			Restores all party members' HP by 1300 Power. Consumes 4 Spirit Ore. | + 10 Power: Increases Power by 13.
-			Restores all party members' HP by 1313 Power. Consumes 4 Spirit Ore. | + 11 Power: Increases Power by 13.
-			Restores all party members' HP by 1326 Power. Consumes 4 Spirit Ore. | + 12 Power: Increases Power by 13.
-			Restores all party members' HP by 1339 Power. Consumes 4 Spirit Ore. | + 13 Power: Increases Power by 13.
-			Restores all party members' HP by 1352 Power. Consumes 4 Spirit Ore. | + 14 Power: Increases Power by 13.
-			Restores all party members' HP by 1365 Power. Consumes 4 Spirit Ore. | + 15 Power: Increases Power by 13.
-			Restores all party members' HP by 1378 Power. Consumes 4 Spirit Ore. | + 16 Power: Increases Power by 13.
-			Restores all party members' HP by 1391 Power. Consumes 4 Spirit Ore. | + 17 Power: Increases Power by 13.
-			Restores all party members' HP by 1404 Power. Consumes 4 Spirit Ore. | + 18 Power: Increases Power by 13.
-			Restores all party members' HP by 1417 Power. Consumes 4 Spirit Ore. | + 19 Power: Increases Power by 13.
-			Restores all party members' HP by 1430 Power. Consumes 4 Spirit Ore. | + 20 Power: Increases Power by 13.
-			Restores all party members' HP by 1443 Power. Consumes 4 Spirit Ore. | + 21 Power: Increases Power by 13.
-			Restores all party members' HP by 1456 Power. Consumes 4 Spirit Ore. | + 22 Power: Increases Power by 13.
-			Restores all party members' HP by 1469 Power. Consumes 4 Spirit Ore. | + 23 Power: Increases Power by 13.
-			Restores all party members' HP by 1482 Power. Consumes 4 Spirit Ore. | + 24 Power: Increases Power by 13.
-			Restores all party members' HP by 1495 Power. Consumes 4 Spirit Ore. | + 25 Power: Increases Power by 13.
-			Restores all party members' HP by 1508 Power. Consumes 4 Spirit Ore. | + 26 Power: Increases Power by 13.
-			Restores all party members' HP by 1521 Power. Consumes 4 Spirit Ore. | + 27 Power: Increases Power by 13.
-			Restores all party members' HP by 1534 Power. Consumes 4 Spirit Ore. | + 28 Power: Increases Power by 13.
-			Restores all party members' HP by 1547 Power. Consumes 4 Spirit Ore. | + 29 Power: Increases Power by 13.
-			Restores all party members' HP by 1561 Power. Consumes 4 Spirit Ore. | + 30 Power: Increases Power by 14.
-		-->
-		<enchantRoute id="1" level="5" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="5" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 6.
 			Decreases MP Consumption by 3.
@@ -18507,7 +17229,9 @@
 		<table name="#aggro"> 421 457 490 520 546 </table>
 		<table name="#magicLvl"> 58 62 66 70 74 </table>
 		<table name="#mpConsume"> 189 199 214 228 239 </table>
-		<table name="#power"> 902 979 1050 1115 1170 </table>
+		<table name="#power"> 902 979 1050 1115 1170 
+			<enchantRoute id="1" level="5" type="ADD"> 13 26 39 52 65 78 91 104 117 130 143 156 169 182 195 208 221 234 247 260 273 286 299 312 325 338 351 364 377 391 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_PARTY" />
 		<set name="skillType" val="HEAL" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -18971,46 +17695,16 @@
 		Level 5: Inflicts non-attribute damage on nearby enemies with 65 Power added to M. Atk. Consumes 4 Spirit Ore. Cancel target.
 	-->
 	<skill id="1417" levels="5" name="Aura Flash">
-		<!-- TODO: Power:
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="5" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="5" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Chance: Increases Success Rate.
 		-->
 		<enchantRoute id="2" level="5" isClassic="true" enabled="false" />
 		<table name="#itemConsumeCount"> 2 2 3 3 4 </table>
 		<table name="#magicLvl"> 58 62 66 70 74 </table>
 		<table name="#mpConsume"> 54 58 62 65 69 </table>
-		<table name="#power"> 49 53 58 61 65 </table>
+		<table name="#power"> 49 53 58 61 65 
+			<enchantRoute id="1" level="5" type="ADD"> 65 66 67 67 68 69 69 70 71 71 72 73 73 74 75 75 76 77 77 78 79 79 80 81 81 82 83 83 84 85 </enchantRoute>
+		</table>
 		<table name="#landRate"> 20 25 30 35 40 </table>
 		<set name="target" val="TARGET_AURA" />
 		<set name="skillType" val="MDAM" />
@@ -19551,39 +18245,7 @@
 		Level 30: Throws a soul to inflict dark damage on the enemy with 108 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. Cancels target.
 	-->
 	<skill id="1436" levels="30" name="Soul of Pain">
-		<!-- TODO: Power:
-			Increases Power by 3.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="30" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="30" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -19654,7 +18316,9 @@
 		-->
 		<enchantRoute id="4" level="30" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 23 23 24 25 27 27 28 29 30 30 32 33 34 35 35 37 37 38 38 39 39 40 40 42 42 43 43 43 44 44 </table>
-		<table name="#power"> 50 52 55 57 60 61 65 66 70 72 75 77 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 </table>
+		<table name="#power"> 50 52 55 57 60 61 65 66 70 72 75 77 80 82 84 85 87 89 90 92 94 96 97 99 100 102 104 105 107 108 
+			<enchantRoute id="1" level="30" type="ADD"> 3 4 4 4 5 5 5 6 6 7 7 7 8 8 8 9 9 9 10 10 11 11 11 12 12 12 13 13 13 14 </enchantRoute>
+		</table>
 		<table name="#magicLvl"> 39 40 42 43 45 46 48 49 51 52 54 55 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
@@ -19706,39 +18370,7 @@
 		Level 26: Inflicts dark damage on the enemies in front with 76 Power added to M. Atk. For 5 seconds, decreases Speed by 30%. Increases Power upon the consumption of up to 5 souls.
 	-->
 	<skill id="1437" levels="26" name="Dark Flame">
-		<!-- TODO: Power:
-			Increases Power by 2.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power.
-		-->
-		<enchantRoute id="1" level="26" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="26" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -19782,7 +18414,9 @@
 		-->
 		<enchantRoute id="5" level="26" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 52 54 57 58 60 62 64 65 68 69 72 73 74 75 77 78 79 80 82 83 84 85 85 87 88 89 </table>
-		<table name="#power"> 42 43 45 47 49 50 53 54 56 57 59 60 61 62 63 65 66 67 68 69 70 72 73 74 75 76 </table>
+		<table name="#power"> 42 43 45 47 49 50 53 54 56 57 59 60 61 62 63 65 66 67 68 69 70 72 73 74 75 76 
+			<enchantRoute id="1" level="26" type="ADD"> 2 2 3 3 3 3 4 4 4 4 5 5 5 5 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9 9 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_FRONT_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -19819,39 +18453,7 @@
 		Level 9: Inflicts dark damage on the enemy's surroundings with 108 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls.
 	-->
 	<skill id="1438" levels="9" name="Annihilation Circle">
-		<!-- TODO: Power:
-			Increases Power by 3.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="9" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="9" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption and increases Power by 1.
 			Decreases MP Consumption by 1 and increases Power.
@@ -19953,7 +18555,9 @@
 		<enchantRoute id="4" level="9" isClassic="true" enabled="false" />
 		<table name="#magicLvl"> 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 55 58 60 63 64 67 68 70 72 </table>
-		<table name="#power"> 82 85 89 92 96 99 102 105 108 </table>
+		<table name="#power"> 82 85 89 92 96 99 102 105 108 
+			<enchantRoute id="1" level="9" type="ADD"> 3 4 4 4 5 5 5 6 6 7 7 7 8 8 8 9 9 9 10 10 11 11 11 12 12 12 13 13 13 14 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_AREA" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -20664,24 +19268,7 @@
 	</skill>
 	<!-- Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 200 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
 	<skill id="1450" levels="1" name="Chain Lightning">
-		<!-- TODO: Power:
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 202 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 1 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 204 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 2 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 206 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 3 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 208 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 4 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 210 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 5 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 212 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 6 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 214 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 7 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 216 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 8 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 218 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 9 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 220 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 10 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 222 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 11 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 224 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 12 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 226 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 13 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 228 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 14 Power: Increases Power by 2.
-			Hurls thunderbolts and inflicts non-attribute damage on the enemy's surroundings with 230 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 15 Power: Increases Power by 2.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 4.
 			Decreases MP Consumption by 2.
@@ -20737,24 +19324,7 @@
 	</skill>
 	<!-- Expends spirit points so that for 60 seconds, Increases Max HP by 35%, HP Recovery Bonus by 15%, P. Atk. by 25%, P. Def. by 30%, Atk. Spd. 10%, and Speed by 10%. Can be used when CP is more than 80%. -->
 	<skill id="1451" levels="1" name="Fire Vortex Buster">
-		<!-- TODO: Power:
-			Increases Power by 3.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 3.
@@ -20849,24 +19419,7 @@
 	</skill>
 	<!-- Creates an Ice Vortex that inflicts Water damage on the enemy with 195 Power added to M. Atk. -->
 	<skill id="1453" levels="1" name="Ice Vortex Crusher">
-		<!-- TODO: Power:
-			Increases Power by 3.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 3.
@@ -20913,24 +19466,7 @@
 	</skill>
 	<!-- Summons a bitter ice storm that inflicts Water damage on the enemy with 70 Power added to M. Atk. Decreases nearby enemies' Speed by 40% for 15 seconds. -->
 	<skill id="1454" levels="1" name="Diamond Dust">
-		<!-- TODO: Power:
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power by 2.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 3.
 			Decreases MP Consumption by 1.
@@ -21038,24 +19574,7 @@
 	</skill>
 	<!-- Creates a powerful Wind Vortex that inflicts Wind damage on the enemy with 195 Power added to M. Atk. -->
 	<skill id="1456" levels="1" name="Wind Vortex Slug">
-		<!-- TODO: Power:
-			Increases Power by 3.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 5.
 			Decreases MP Consumption by 3.
@@ -21497,24 +20016,7 @@
 	</skill>
 	<!-- Summons the devastating cannon Leopold to inflict Fire damage with 224 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
 	<skill id="1469" levels="1" name="Leopold">
-		<!-- TODO: Power:
-			Increases Power by 11.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 2.
 			Decreases MP Consumption by 4.
@@ -23204,24 +21706,7 @@
 	</skill>
 	<!-- Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 112 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. -->
 	<skill id="1512" levels="1" name="Soul Vortex">
-		<!-- TODO: Power:
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 113 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 1 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 114 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 2 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 115 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 3 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 116 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 4 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 117 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 5 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 118 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 6 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 119 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 7 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 119 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 8 Power: Increases Power.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 120 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 9 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 121 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 10 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 122 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 11 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 123 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 12 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 124 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 13 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 125 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 14 Power: Increases Power by 1.
-			Stirs up a vortex connecting to the dimension of souls and inflicts non-attribute damage on the enemy with 126 Power added to M. Atk. For 30 sec., decreases Speed by 20%, Atk. Spd. by 30%, and Casting Spd. by 30%. Consumes 12 MP every second. Over-hit is possible. | + 15 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost: Decreases MP Consumption by 4.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -23258,24 +21743,7 @@
 	</skill>
 	<!-- Detonates an Soul Vortex to inflict non-attribute damage on the enemy with 195 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
 	<skill id="1513" levels="1" name="Soul Vortex Extinction">
-		<!-- TODO: Power:
-			Increases Power by 2.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-			Increases Power.
-			Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Cost:
 			Decreases MP Consumption by 6.
 			Decreases MP Consumption by 4.
@@ -23399,24 +21867,7 @@
 	</skill>
 	<!-- Consecutively throws souls to inflict non-attribute damage on the enemy using 166 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. -->
 	<skill id="1516" levels="1" name="Soul Strike">
-		<!-- TODO: Power:
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 167 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 1 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 168 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 2 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 169 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 3 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 170 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 4 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 171 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 5 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 173 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 6 Power: Increases Power by 2.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 174 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 7 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 175 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 8 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 176 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 9 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 177 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 10 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 178 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 11 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 180 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 12 Power: Increases Power by 2.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 181 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 13 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 182 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 14 Power: Increases Power by 1.
-			Consecutively throws souls to inflict non-attribute damage on the enemy using 183 Power added to M. Atk. Increases Power upon the consumption of up to 5 souls. | + 15 Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="1" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="1" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Duel: Increases Power during PvP by 2.
 		-->
 		<enchantRoute id="2" level="1" isClassic="true" enabled="false" />
@@ -23850,9 +22301,7 @@
 		Level 13: Throws a bone to inflict dark damage on the enemy with 65 Power added to M. Atk.
 	-->
 	<skill id="1530" levels="13" name="Death Spike">
-		<!-- TODO: Power: Increases Power by 1.
-		-->
-		<enchantRoute id="1" level="13" isClassic="true" enabled="false" />
+		<enchantRoute id="1" level="13" isClassic="true" /> <!-- Power -->
 		<!-- TODO: Dark Attack: Increases Dark Damage by 1.
 		-->
 		<enchantRoute id="2" level="13" isClassic="true" enabled="false" />
@@ -23891,7 +22340,9 @@
 		<enchantRoute id="3" level="13" isClassic="true" enabled="false" />
 		<table name="#mpConsume"> 23 27 30 35 36 38 40 41 43 45 46 47 50 </table>
 		<table name="#magicLvl"> 44 48 52 56 58 60 62 64 66 68 70 72 74 </table>
-		<table name="#power"> 35 39 43 47 49 51 53 56 58 59 61 63 65 </table>
+		<table name="#power"> 35 39 43 47 49 51 53 56 58 59 61 63 65 
+			<enchantRoute id="1" level="13" type="ADD"> 1 2 2 3 3 4 4 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 14 14 15 15 16 16 17 </enchantRoute>
+		</table>
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="MDAM" />
 		<set name="operateType" val="OP_ACTIVE" />

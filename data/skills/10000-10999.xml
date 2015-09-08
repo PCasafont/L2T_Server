@@ -3724,16 +3724,16 @@
 	</skill>
 	<!-- Immediately increases Momentum to its maximum level. -->
 	<skill id="10276" levels="1" name="Force of Nature">
-		<table name="#skillType"> BUFF
+		<enchantRoute id="1" level="1" /> <!-- Major -->
+		<enchantRoute id="2" level="1" /> <!-- Honor -->
+		<table name="#skillType"> BUFF 
 			<enchantRoute id="1" level="1"> HEAL_STATIC </enchantRoute>
 			<enchantRoute id="2" level="1"> COMBATPOINTHEAL </enchantRoute>
 		</table>
-		<table name="#power"> 0
+		<table name="#power"> 0 
 			<enchantRoute id="1" level="1"> 1936 2072 2207 2342 2477 2612 2747 2882 3017 3152 3288 3423 3558 3693 3828 3964 4099 4234 4369 4504 4594 4684 4744 4864 4955 5044 5135 5224 5315 5405 </enchantRoute>
 			<enchantRoute id="2" level="1"> 2421 2590 2759 2928 3097 3265 3434 3603 3772 3941 4110 4279 4448 4617 4786 4955 5124 5293 5462 5631 5743 5856 5968 6081 6194 6306 6419 6531 6644 6757 </enchantRoute>
 		</table>
-		<enchantRoute id="1" level="1" /> <!-- Major -->
-		<enchantRoute id="2" level="1" /> <!-- Honor -->
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="#skillType" />
 		<set name="operateType" val="OP_ACTIVE" />
