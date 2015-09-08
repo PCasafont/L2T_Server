@@ -286,9 +286,8 @@ public class Pdam implements ISkillHandler
 							sm.addCharName(target);
 							activeChar.sendPacket(sm);
 						}
-						// Formula from Diego post, 700 from rpg tests
-						double vegdamage = (700 * target.getPAtk(activeChar) / activeChar.getPDef(target));
-						activeChar.reduceCurrentHp(vegdamage, target, skill);
+
+						activeChar.reduceCurrentHp(damage, target, skill);
 					}
 				}
 				else // No damage
