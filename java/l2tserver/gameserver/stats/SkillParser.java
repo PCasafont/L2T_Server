@@ -225,7 +225,11 @@ public final class SkillParser extends StatsParser
 		// Enchant routes
 		for (XmlNode n : _node.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("enchantRoute") && n.getBool("enabled", true))
+			boolean enabled = n.getBool("enabled", true);
+			if (Config.isServer(Config.TENKAI))
+				enabled &= !n.getBool("isClassic", false);
+			
+			if (n.getName().equalsIgnoreCase("enchantRoute") && enabled)
 			{
 				int route = n.getInt("id");
 				String[] routeLevels = n.getString("level").split(",");
