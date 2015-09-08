@@ -667,6 +667,17 @@ public class L2AttackableAI extends L2CharacterAI implements Runnable
 		if (npc.isCastingNow())
 			return;
 		
+		if ((npc.getName().equals("Fortress Raider") || npc.getName().contains("Atelia"))
+				&& npc.getY() > 60000)
+		{
+			L2Character hated = npc.getMostHated();
+			if (hated != null && npc.getHating(hated) > 1)
+				hated.doDie(null);
+			
+			npc.clearAggroList();
+			npc.teleToLocation(npc.getSpawn().getX(), npc.getSpawn().getY(), npc.getSpawn().getZ());
+		}
+		
 		L2Character originalAttackTarget = getAttackTarget();
 		
 		// Check if target is dead or if timeout is expired to stop this attack

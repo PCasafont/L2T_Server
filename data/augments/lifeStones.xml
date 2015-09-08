@@ -1008,7 +1008,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 46 -->
-	<lifeStone id="12754" grade="4" level="0">
+	<lifeStone id="12754" grade="5" level="0">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="16687-16704" chance="100.00" /> <!-- 16704: M. Atk. + 1.25 / MP Recovery + 0.015 -->
 		</augmentGroup>
@@ -1038,7 +1038,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 49 -->
-	<lifeStone id="12755" grade="4" level="1">
+	<lifeStone id="12755" grade="5" level="1">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="16789-16806" chance="100.00" /> <!-- 16806: M. Atk. + 1.4 / MP Recovery + 0.018 -->
 		</augmentGroup>
@@ -1068,7 +1068,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 52 -->
-	<lifeStone id="12756" grade="4" level="2">
+	<lifeStone id="12756" grade="5" level="2">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="16891-16908" chance="100.00" /> <!-- 16908: M. Atk. + 1.6 / MP Recovery + 0.02 -->
 		</augmentGroup>
@@ -1098,7 +1098,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 55 -->
-	<lifeStone id="12757" grade="4" level="3">
+	<lifeStone id="12757" grade="5" level="3">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="16993-17010" chance="100.00" /> <!-- 17010: M. Atk. + 1.75 / MP Recovery + 0.02 -->
 		</augmentGroup>
@@ -1128,7 +1128,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 58 -->
-	<lifeStone id="12758" grade="4" level="4">
+	<lifeStone id="12758" grade="5" level="4">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="17095-17112" chance="100.00" /> <!-- 17112: M. Atk. + 1.9 / MP Recovery + 0.02 -->
 		</augmentGroup>
@@ -1158,7 +1158,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 61 -->
-	<lifeStone id="12759" grade="4" level="5">
+	<lifeStone id="12759" grade="5" level="5">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="17197-17214" chance="100.00" /> <!-- 17214: M. Atk. + 2.0 / MP Recovery + 0.025 -->
 		</augmentGroup>
@@ -1188,7 +1188,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 64 -->
-	<lifeStone id="12760" grade="4" level="6">
+	<lifeStone id="12760" grade="5" level="6">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="17299-17316" chance="100.00" /> <!-- 17316: M. Atk. + 2.2 / MP Recovery + 0.025 -->
 		</augmentGroup>
@@ -1218,7 +1218,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 67 -->
-	<lifeStone id="12761" grade="4" level="7">
+	<lifeStone id="12761" grade="5" level="7">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="17401-17418" chance="100.00" /> <!-- 17418: M. Atk. + 2.3 / MP Recovery + 0.025 -->
 		</augmentGroup>
@@ -1248,10 +1248,10 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Corroded Life Stone: Accessory (Lv. 70) -->
-	<lifeStone id="12762" grade="4" level="8">
+	<lifeStone id="12762" grade="5" level="8">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 76 -->
-	<lifeStone id="12763" grade="4" level="9">
+	<lifeStone id="12763" grade="5" level="9">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="17503-17520" chance="100.00" /> <!-- 17520: M. Atk. + 2.6 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -1281,7 +1281,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 80 -->
-	<lifeStone id="12821" grade="4" level="10">
+	<lifeStone id="12821" grade="5" level="10">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="17605-17622" chance="100.00" /> <!-- 17622: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -1311,46 +1311,46 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 82 -->
-	<lifeStone id="12822" grade="4" level="11">
+	<lifeStone id="12822" grade="5" level="11">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 46 -->
-	<lifeStone id="12840" grade="4" level="0">
+	<lifeStone id="12840" grade="5" level="0">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 49 -->
-	<lifeStone id="12841" grade="4" level="1">
+	<lifeStone id="12841" grade="5" level="1">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 52 -->
-	<lifeStone id="12842" grade="4" level="2">
+	<lifeStone id="12842" grade="5" level="2">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 55 -->
-	<lifeStone id="12843" grade="4" level="3">
+	<lifeStone id="12843" grade="5" level="3">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 58 -->
-	<lifeStone id="12844" grade="4" level="4">
+	<lifeStone id="12844" grade="5" level="4">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 61 -->
-	<lifeStone id="12845" grade="4" level="5">
+	<lifeStone id="12845" grade="5" level="5">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 64 -->
-	<lifeStone id="12846" grade="4" level="6">
+	<lifeStone id="12846" grade="5" level="6">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 67 -->
-	<lifeStone id="12847" grade="4" level="7">
+	<lifeStone id="12847" grade="5" level="7">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 70 -->
-	<lifeStone id="12848" grade="4" level="8">
+	<lifeStone id="12848" grade="5" level="8">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 76 -->
-	<lifeStone id="12849" grade="4" level="9">
+	<lifeStone id="12849" grade="5" level="9">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 80 -->
-	<lifeStone id="12850" grade="4" level="10">
+	<lifeStone id="12850" grade="5" level="10">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 82 -->
-	<lifeStone id="12851" grade="4" level="11">
+	<lifeStone id="12851" grade="5" level="11">
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 84 -->
-	<lifeStone id="14008" grade="4" level="12">
+	<lifeStone id="14008" grade="5" level="12">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="24721-24738" chance="100.00" /> <!-- 24738: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -1548,7 +1548,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 85 -->
-	<lifeStone id="16177" grade="4" level="13">
+	<lifeStone id="16177" grade="5" level="13">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="24721-24738" chance="100.00" /> <!-- 24738: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -1662,7 +1662,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Life Stone: Accessory - Lv. 86 -->
-	<lifeStone id="16178" grade="4" level="13">
+	<lifeStone id="16178" grade="5" level="13">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="24721-24738" chance="100.00" /> <!-- 24738: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -1781,7 +1781,7 @@
 	</lifeStone>
 	<!-- Legendary Life Stone (R-grade) -->
 	<!-- Copied from lvl 86 one -->
-	<lifeStone id="18567" grade="5" level="13">
+	<lifeStone id="18567" grade="4" level="13">
 		<augmentGroup weaponType="warrior" order="0">
 			<augments ids="23338-23428,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
@@ -1891,7 +1891,7 @@
 	</lifeStone>
 	<!-- Legendary Life Stone (R95-grade) -->
 	<!-- Copied from lvl 86 one -->
-	<lifeStone id="18572" grade="5" level="14">
+	<lifeStone id="18572" grade="4" level="14">
 		<augmentGroup weaponType="warrior" order="0">
 			<augments ids="23338-23428,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
@@ -2001,7 +2001,7 @@
 	</lifeStone>
 	<!-- Legendary Life Stone (R99-grade) -->
 	<!-- Copied from lvl 86 one -->
-	<lifeStone id="18577" grade="5" level="15">
+	<lifeStone id="18577" grade="4" level="15">
 		<augmentGroup weaponType="warrior" order="0">
 			<augments ids="23338-23428,24700-24702" chance="100.00" /> <!-- 24702: MEN +1 -->
 		</augmentGroup>
@@ -2023,7 +2023,7 @@
 	</lifeStone>
 	<!-- Life Stone: Accessory (R-grade) -->
 	<!-- Copied from lvl 86 one -->
-	<lifeStone id="19166" grade="4" level="13">
+	<lifeStone id="19166" grade="5" level="13">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="24721-24738" chance="100.00" /> <!-- 24738: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -2054,7 +2054,7 @@
 	</lifeStone>
 	<!-- Life Stone: Accessory (R95-grade) -->
 	<!-- Copied from lvl 86 one -->
-	<lifeStone id="19167" grade="4" level="14">
+	<lifeStone id="19167" grade="5" level="14">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="24721-24738" chance="100.00" /> <!-- 24738: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -2085,7 +2085,7 @@
 	</lifeStone>
 	<!-- Life Stone: Accessory (R99-grade) -->
 	<!-- Copied from lvl 86 one -->
-	<lifeStone id="19168" grade="4" level="15">
+	<lifeStone id="19168" grade="5" level="15">
 		<augmentGroup weaponType="ring" order="0">
 			<augments ids="24721-24738" chance="100.00" /> <!-- 24738: M. Atk. + 2.8 / MP Recovery + 0.03 -->
 		</augmentGroup>
@@ -2127,7 +2127,7 @@
 		</augmentGroup>
 	</lifeStone>
 	<!-- Aria's Life Stone -->
-	<lifeStone id="38571" grade="5" level="0">
+	<lifeStone id="38571" grade="6" level="0">
 		<augmentGroup weaponType="ring,earring,necklace" order="0">
 			<augments ids="30336-30339" chance="55.0" />
 			<augments ids="30330-30335" chance="35.0" />
