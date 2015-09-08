@@ -6789,6 +6789,9 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="staticHitTime" val="true" />
 		<for>
+			<cond msgId="1509">
+				<player olympiad="false" />
+			</cond>
 			<abnormal duration="10" stackLvl="1" stackType="talisman_battle">
 				<addPercent stat="pAtk" val="20" />
 				<addPercent stat="mAtk" val="20" />
@@ -6809,6 +6812,9 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="staticHitTime" val="true" />
 		<for>
+			<cond msgId="1509">
+				<player olympiad="false" />
+			</cond>
 			<abnormal duration="10" stackLvl="1" stackType="talisman_battle">
 				<addPercent stat="pAtkSpd" val="20" />
 				<addPercent stat="mAtkSpd" val="20" />
@@ -6826,9 +6832,12 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="90000" />
-		<set name="skillRadius" val="300" />
+		<set name="skillRadius" val="3000" />
 		<set name="staticHitTime" val="true" />
 		<for>
+			<cond msgId="1509">
+				<player olympiad="false" />
+			</cond>
 			<abnormal duration="9" stackLvl="1" stackType="talisman_battle_support">
 				<effect type="RemoveInvul" val="0" />
 				<effect type="RemoveHide" val="0" />

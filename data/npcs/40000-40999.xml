@@ -42,8 +42,8 @@
 			darkRes="0" aiType="fighter">
 	</npc>
 	<npc id="40009" templateId="35692" name="Patrol" serverSideName="true" title="L2Tenkai" serverSideTitle="true" level="99" type="L2Guard"
-			atkRange="1500" hpMax="156299800" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80" CON="74" DEX="61" INT="28" WIT="53"
-			MEN="31" pAtk="20505400" mAtk="12900300" pDef="14692200" mDef="10638300" pAtkSpd="1359" mAtkSpd="1377" pCritRate="340" mCritRate="240"
+			atkRange="1500" hpMax="156299800" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="180" CON="174" DEX="161" INT="128" WIT="153"
+			MEN="131" pAtk="600505400" mAtk="302900300" pDef="14692200" mDef="10638300" pAtkSpd="1359" mAtkSpd="1377" pCritRate="340" mCritRate="240"
 			walkSpd="80" runSpd="300" aggroRange="1000" rHand="10212" collisionRadius="10" collisionHeight="24" fireRes="0" waterRes="0"
 			windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>

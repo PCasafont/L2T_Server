@@ -221,9 +221,9 @@ public class AugmentationData
 	public static final int GRADE_MID = 1;
 	public static final int GRADE_HIGH = 2;
 	public static final int GRADE_TOP = 3;
-	public static final int GRADE_LEG = 5;
-	public static final int GRADE_ACC = 4; // Accessory LS
-	public static final int GRADE_ARIA = 5; // Aria's LS
+	public static final int GRADE_LEG = 4;
+	public static final int GRADE_ACC = 5; // Accessory LS
+	public static final int GRADE_ARIA = 6; // Aria's LS
 	
 	protected static final int GEMSTONE_D = 2130;
 	protected static final int GEMSTONE_C = 2131;
