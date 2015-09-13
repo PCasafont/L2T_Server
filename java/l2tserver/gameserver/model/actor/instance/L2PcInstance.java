@@ -9320,7 +9320,8 @@ public class L2PcInstance extends L2Playable
 			return true;
 		
 		// Check if the attacker is in olympia and olympia start
-		if (attacker instanceof L2PcInstance && ((L2PcInstance)attacker).isInOlympiadMode() ){
+		if (attacker instanceof L2PcInstance && ((L2PcInstance)attacker).isInOlympiadMode())
+		{
 			if (isInOlympiadMode() && isOlympiadStart() && ((L2PcInstance)attacker).getOlympiadGameId() == getOlympiadGameId())
 				return true;
 			else
@@ -9360,10 +9361,6 @@ public class L2PcInstance extends L2Playable
 			// is AutoAttackable if both players are in the same duel and the duel is still going on
 			if (getDuelState() == Duel.DUELSTATE_DUELLING && getDuelId() == cha.getDuelId())
 				return true;
-						
-			// Check if the attacker is not in the same clan
-			if (sameClan)
-				return false;
 			
 			// Check if the attacker is not in the same party
 			if (sameParty)
@@ -9372,6 +9369,10 @@ public class L2PcInstance extends L2Playable
 			// Check if the L2PcInstance is in an arena or a siege area
 			if (isInsideZone(ZONE_PVP) && cha.isInsideZone(ZONE_PVP))
 				return true;
+						
+			// Check if the attacker is not in the same clan
+			if (sameClan)
+				return false;
 			
 			if (getClan() != null)
 			{
