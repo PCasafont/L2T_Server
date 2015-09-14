@@ -14,20 +14,20 @@
  */
 package ai.group_template;
 
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.instancemanager.ZoneManager;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.zone.type.L2EffectZone;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.util.Util;
-import l2tserver.log.Log;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.instancemanager.ZoneManager;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.zone.type.L2EffectZone;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.util.Util;
+import l2server.log.Log;
+import l2server.util.Rnd;
 
 /**
  ** @author Gnacik

@@ -19,13 +19,13 @@
 
 package handlers.itemhandlers;
 
-import l2tserver.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 public class MagicVisor implements IItemHandler
 {

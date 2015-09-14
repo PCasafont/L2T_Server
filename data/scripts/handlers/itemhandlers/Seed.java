@@ -14,23 +14,23 @@
  */
 package handlers.itemhandlers;
 
-import l2tserver.gameserver.datatables.MapRegionTable;
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.instancemanager.CastleManorManager;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Manor;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2ChestInstance;
-import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ActionFailed;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.stats.SkillHolder;
+import l2server.gameserver.datatables.MapRegionTable;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.instancemanager.CastleManorManager;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Manor;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2ChestInstance;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.SkillHolder;
 
 /**
  * @author  l3x
@@ -39,7 +39,7 @@ public class Seed implements IItemHandler
 {
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IItemHandler#useItem(l2tserver.gameserver.model.actor.L2Playable, l2tserver.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{

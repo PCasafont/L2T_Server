@@ -3,12 +3,12 @@
 
 import sys
 import time
-from l2tserver.gameserver.datatables					import SkillTable
-from l2tserver.gameserver.model.actor.instance		import L2PcInstance
-from l2tserver.gameserver.model.quest					import State
-from l2tserver.gameserver.model.quest					import QuestState
-from l2tserver.gameserver.model.quest.jython		import QuestJython as JQuest
-from l2tserver.gameserver.network.serverpackets	import ExStartScenePlayer
+from l2server.gameserver.datatables					import SkillTable
+from l2server.gameserver.model.actor.instance		import L2PcInstance
+from l2server.gameserver.model.quest					import State
+from l2server.gameserver.model.quest					import QuestState
+from l2server.gameserver.model.quest.jython		import QuestJython as JQuest
+from l2server.gameserver.network.serverpackets	import ExStartScenePlayer
 
 qn = "194_SevenSignContractOfMammon"
 

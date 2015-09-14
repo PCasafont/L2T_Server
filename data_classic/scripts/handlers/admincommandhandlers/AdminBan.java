@@ -20,15 +20,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.StringTokenizer;
 
-import l2tserver.Config;
-import l2tserver.L2DatabaseFactory;
-import l2tserver.gameserver.LoginServerThread;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.util.GMAudit;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.LoginServerThread;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.util.GMAudit;
 
 /**
  * This class handles following admin commands:

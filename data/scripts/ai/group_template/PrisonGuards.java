@@ -17,16 +17,16 @@ package ai.group_template;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Attackable;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.util.Rnd;
 
 
 public class PrisonGuards extends L2AttackableAIScript

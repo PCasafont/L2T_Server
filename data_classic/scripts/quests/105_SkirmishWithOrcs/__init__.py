@@ -1,10 +1,10 @@
 # Made by Mr. Have fun! Version 0.3 updated by Sh1ning for www.l2jdp.com 
 import sys
-from l2tserver import Config
-from l2tserver.gameserver.model.quest import State 
-from l2tserver.gameserver.model.quest import QuestState 
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest 
-from l2tserver.gameserver.network.serverpackets      import SocialAction
+from l2server import Config
+from l2server.gameserver.model.quest import State 
+from l2server.gameserver.model.quest import QuestState 
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest 
+from l2server.gameserver.network.serverpackets      import SocialAction
 
 qn = "105_SkirmishWithOrcs" 
 

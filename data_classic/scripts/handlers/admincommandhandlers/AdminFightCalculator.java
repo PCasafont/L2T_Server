@@ -16,19 +16,19 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import l2tserver.gameserver.datatables.NpcTable;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.idfactory.IdFactory;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.stats.Formulas;
-import l2tserver.gameserver.templates.chars.L2NpcTemplate;
-import l2tserver.util.StringUtil;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.Formulas;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.util.StringUtil;
 
 
 /**

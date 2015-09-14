@@ -3,23 +3,23 @@ package instances.DarkCloudMansion;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.instancemanager.InstanceManager;
-import l2tserver.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2tserver.gameserver.model.L2Party;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2DoorInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.entity.Instance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestState;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.log.Log;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
+import l2server.gameserver.model.L2Party;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.entity.Instance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.log.Log;
+import l2server.util.Rnd;
 
 
 public class DarkCloudMansion extends Quest

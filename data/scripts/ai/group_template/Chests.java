@@ -14,15 +14,15 @@
  */
 package ai.group_template;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2ChestInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.util.Util;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2ChestInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 
 /**
  * Chest AI implementation.

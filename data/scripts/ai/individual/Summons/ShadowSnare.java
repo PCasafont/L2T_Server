@@ -16,10 +16,10 @@ package ai.individual.Summons;
 
 import java.util.concurrent.ScheduledFuture;
 
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Npc;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Npc;
 import ai.group_template.L2AttackableAIScript;
 
 /**

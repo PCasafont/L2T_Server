@@ -1,9 +1,9 @@
 package ai.zones;
 
-import l2tserver.gameserver.datatables.DoorTable;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.datatables.DoorTable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.zone.L2ZoneType;
 
 /**
  * @author LasTravel

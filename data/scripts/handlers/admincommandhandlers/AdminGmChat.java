@@ -14,15 +14,15 @@
  */
 package handlers.admincommandhandlers;
 
-import l2tserver.gameserver.GmListTable;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.clientpackets.Say2;
-import l2tserver.gameserver.network.serverpackets.CreatureSay;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.GmListTable;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.clientpackets.Say2;
+import l2server.gameserver.network.serverpackets.CreatureSay;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * This class handles following admin commands:

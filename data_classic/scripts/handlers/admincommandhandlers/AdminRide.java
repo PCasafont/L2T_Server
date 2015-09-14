@@ -14,9 +14,9 @@
  */
 package handlers.admincommandhandlers;
 
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.instancemanager.TransformationManager;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.TransformationManager;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author

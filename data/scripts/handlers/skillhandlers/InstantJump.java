@@ -14,23 +14,23 @@
  */
 package handlers.skillhandlers;
 
-import l2tserver.Config;
-import l2tserver.gameserver.GeoData;
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.handler.ISkillHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.Location;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.FlyToLocation;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.network.serverpackets.ValidateLocation;
-import l2tserver.gameserver.network.serverpackets.FlyToLocation.FlyType;
-import l2tserver.gameserver.stats.Formulas;
-import l2tserver.gameserver.templates.skills.L2SkillType;
-import l2tserver.gameserver.util.Util;
+import l2server.Config;
+import l2server.gameserver.GeoData;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Location;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.FlyToLocation;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
+import l2server.gameserver.stats.Formulas;
+import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.util.Util;
 
 /**
  *
@@ -119,7 +119,7 @@ public class InstantJump implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

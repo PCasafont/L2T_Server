@@ -1,9 +1,9 @@
 package transformations;
 
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.instancemanager.TransformationManager;
-import l2tserver.gameserver.model.L2Abnormal;
-import l2tserver.gameserver.model.L2Transformation;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.instancemanager.TransformationManager;
+import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.L2Transformation;
 
 public class VanguardShilienKnight extends L2Transformation
 {

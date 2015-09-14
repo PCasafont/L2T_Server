@@ -14,14 +14,14 @@
  */
 package handlers.skillhandlers;
 
-import l2tserver.gameserver.handler.ISkillHandler;
-import l2tserver.gameserver.model.L2Abnormal;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.templates.skills.L2AbnormalType;
-import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.templates.skills.L2AbnormalType;
+import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * @author ZaKax

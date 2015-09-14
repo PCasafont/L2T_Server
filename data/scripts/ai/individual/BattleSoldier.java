@@ -17,9 +17,9 @@ package ai.individual;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2tserver.gameserver.ai.L2NpcWalkerAI;
-import l2tserver.gameserver.model.L2NpcWalkerNode;
-import l2tserver.gameserver.model.actor.L2Npc;
+import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.model.L2NpcWalkerNode;
+import l2server.gameserver.model.actor.L2Npc;
 import ai.group_template.L2AttackableAIScript;
 
 /**

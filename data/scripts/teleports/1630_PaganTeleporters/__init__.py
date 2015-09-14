@@ -3,11 +3,11 @@
 # v1.1 Done by BiTi
 
 import sys
-from l2tserver.gameserver.datatables import DoorTable
-from l2tserver.gameserver.model.actor.instance import L2PcInstance
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.datatables import DoorTable
+from l2server.gameserver.model.actor.instance import L2PcInstance
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "1630_PaganTeleporters"
 NPCS=[32034,32035,32036,32037,32039,32040]
 

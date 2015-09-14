@@ -21,15 +21,15 @@
 
 package handlers.itemhandlers;
 
-import l2tserver.gameserver.datatables.NpcTable;
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ConfirmDlg;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ConfirmDlg;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class MobSummonItems implements IItemHandler
 {

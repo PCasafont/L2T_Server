@@ -14,27 +14,27 @@
  */
 package handlers.skillhandlers;
 
-import l2tserver.Config;
-import l2tserver.gameserver.GeoData;
-import l2tserver.gameserver.handler.ISkillHandler;
-import l2tserver.gameserver.instancemanager.ZoneManager;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.itemcontainer.Inventory;
-import l2tserver.gameserver.model.zone.L2ZoneType;
-import l2tserver.gameserver.model.zone.type.L2FishingZone;
-import l2tserver.gameserver.model.zone.type.L2WaterZone;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.InventoryUpdate;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.templates.item.L2Weapon;
-import l2tserver.gameserver.templates.item.L2WeaponType;
-import l2tserver.gameserver.templates.skills.L2SkillType;
-import l2tserver.gameserver.util.Util;
-import l2tserver.util.Rnd;
+import l2server.Config;
+import l2server.gameserver.GeoData;
+import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.instancemanager.ZoneManager;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.itemcontainer.Inventory;
+import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.type.L2FishingZone;
+import l2server.gameserver.model.zone.type.L2WaterZone;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.InventoryUpdate;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 
 public class Fishing implements ISkillHandler
 {
@@ -45,7 +45,7 @@ public class Fishing implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#useSkill(l2tserver.gameserver.model.actor.L2Character, l2tserver.gameserver.model.L2Skill, l2tserver.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
@@ -212,7 +212,7 @@ public class Fishing implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

@@ -17,19 +17,19 @@ package handlers.voicedcommandhandlers;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
-import l2tserver.Config;
-import l2tserver.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2tserver.gameserver.events.HiddenChests;
-import l2tserver.gameserver.handler.IVoicedCommandHandler;
-import l2tserver.gameserver.instancemanager.CustomOfflineBuffersManager;
-import l2tserver.gameserver.instancemanager.DiscussionManager;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.CharInfo;
-import l2tserver.gameserver.network.serverpackets.ExVoteSystemInfo;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.UserInfo;
-import l2tserver.gameserver.stats.Stats;
+import l2server.Config;
+import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
+import l2server.gameserver.events.HiddenChests;
+import l2server.gameserver.handler.IVoicedCommandHandler;
+import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
+import l2server.gameserver.instancemanager.DiscussionManager;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.CharInfo;
+import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.stats.Stats;
 
 public class CustomVoiced implements IVoicedCommandHandler
 {
@@ -59,7 +59,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	public boolean useVoicedCommand(String command, L2PcInstance player, String params)
 	{
@@ -381,7 +381,7 @@ public class CustomVoiced implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	public String[] getVoicedCommandList()
 	{

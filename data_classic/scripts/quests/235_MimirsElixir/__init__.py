@@ -1,10 +1,10 @@
 # Mimir's Elixir version 0.1 
 # by Fulminus
 import sys
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
-from l2tserver.gameserver.model.base import Race
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.model.base import Race
 #Quest info
 qn = "235_MimirsElixir"
 QUEST_NUMBER,QUEST_NAME,QUEST_DESCRIPTION = 235,"MimirsElixir","Mimir's Elixir"

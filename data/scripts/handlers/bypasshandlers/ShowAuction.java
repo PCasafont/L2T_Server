@@ -14,10 +14,10 @@
  */
 package handlers.bypasshandlers;
 
-import l2tserver.gameserver.handler.IBypassHandler;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.ExShowCommission;
+import l2server.gameserver.handler.IBypassHandler;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.ExShowCommission;
 
 public class ShowAuction implements IBypassHandler
 {

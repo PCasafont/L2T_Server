@@ -14,12 +14,12 @@
  */
 package handlers.admincommandhandlers;
 
-import l2tserver.gameserver.datatables.SpawnTable;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Spawn;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - delete = deletes target

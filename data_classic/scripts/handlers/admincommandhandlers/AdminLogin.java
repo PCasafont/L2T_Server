@@ -16,12 +16,12 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import l2tserver.Config;
-import l2tserver.gameserver.LoginServerThread;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.gameserverpackets.ServerStatus;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.Config;
+import l2server.gameserver.LoginServerThread;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.gameserverpackets.ServerStatus;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 
 /**
@@ -43,7 +43,7 @@ public class AdminLogin implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
@@ -239,7 +239,7 @@ public class AdminLogin implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{

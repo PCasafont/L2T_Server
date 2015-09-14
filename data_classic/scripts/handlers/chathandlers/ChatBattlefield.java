@@ -14,8 +14,8 @@
  */
 package handlers.chathandlers;
 
-import l2tserver.gameserver.handler.IChatHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.handler.IChatHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * A chat handler
@@ -31,7 +31,7 @@ public class ChatBattlefield implements IChatHandler
 	
 	/**
 	 * Handle chat type 'battlefield'
-	 * @see l2tserver.gameserver.handler.IChatHandler#handleChat(int, l2tserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IChatHandler#handleChat(int, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
 	{
@@ -47,7 +47,7 @@ public class ChatBattlefield implements IChatHandler
 	
 	/**
 	 * Returns the chat types registered to this handler
-	 * @see l2tserver.gameserver.handler.IChatHandler#getChatTypeList()
+	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	public int[] getChatTypeList()
 	{

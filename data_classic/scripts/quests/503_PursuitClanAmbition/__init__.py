@@ -3,12 +3,12 @@
 
 import sys
 from java.util                                 			import Iterator
-from l2tserver.util                           			import Rnd
-from l2tserver.gameserver.network.serverpackets       	import NpcSay
-from l2tserver.gameserver.model.quest         			import State
-from l2tserver.gameserver.model.quest         			import QuestState
-from l2tserver.gameserver.model.quest.jython  			import QuestJython as JQuest
-from l2tserver                                			import L2DatabaseFactory
+from l2server.util                           			import Rnd
+from l2server.gameserver.network.serverpackets       	import NpcSay
+from l2server.gameserver.model.quest         			import State
+from l2server.gameserver.model.quest         			import QuestState
+from l2server.gameserver.model.quest.jython  			import QuestJython as JQuest
+from l2server                                			import L2DatabaseFactory
 
 qn = "503_PursuitClanAmbition"
 qd = "Pursuit Clan Ambition"

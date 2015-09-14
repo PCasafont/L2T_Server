@@ -14,17 +14,17 @@
  */
 package handlers.itemhandlers;
 
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.L2Summon;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.actor.instance.L2PetInstance;
-import l2tserver.gameserver.model.actor.instance.L2SummonInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.util.Broadcast;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.util.Broadcast;
 
 /**
  * Beast SpiritShot Handler
@@ -35,7 +35,7 @@ public class BeastSpiritShot implements IItemHandler
 {
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IItemHandler#useItem(l2tserver.gameserver.model.actor.L2Playable, l2tserver.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{

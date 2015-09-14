@@ -14,12 +14,12 @@
  */
 package handlers.usercommandhandlers;
 
-import l2tserver.gameserver.handler.IUserCommandHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.olympiad.Olympiad;
-import l2tserver.gameserver.model.olympiad.OlympiadNobleInfo;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.handler.IUserCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.olympiad.Olympiad;
+import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Support for /olympiadstat command
@@ -34,7 +34,7 @@ public class OlympiadStat implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
@@ -67,7 +67,7 @@ public class OlympiadStat implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#getUserCommandList()
+	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	public int[] getUserCommandList()
 	{

@@ -18,17 +18,17 @@ package handlers.itemhandlers;
 import java.util.List;
 import java.util.logging.Logger;
 
-import l2tserver.Config;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.model.L2ExtractableProduct;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.templates.item.L2EtcItem;
-import l2tserver.util.Rnd;
+import l2server.Config;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.model.L2ExtractableProduct;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.templates.item.L2EtcItem;
+import l2server.util.Rnd;
 
 
 /**

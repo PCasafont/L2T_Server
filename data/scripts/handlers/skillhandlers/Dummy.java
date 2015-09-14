@@ -14,15 +14,15 @@
  */
 package handlers.skillhandlers;
 
-import l2tserver.gameserver.handler.ISkillHandler;
-import l2tserver.gameserver.instancemanager.HandysBlockCheckerManager;
-import l2tserver.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2BlockInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
+import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2BlockInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * This class ...
@@ -39,7 +39,7 @@ public class Dummy implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#useSkill(l2tserver.gameserver.model.actor.L2Character, l2tserver.gameserver.model.L2Skill, l2tserver.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
@@ -61,7 +61,7 @@ public class Dummy implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

@@ -18,23 +18,23 @@ import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import javolution.text.TextBuilder;
-import l2tserver.Config;
-import l2tserver.gameserver.GmListTable;
-import l2tserver.gameserver.ReloadableManager;
-import l2tserver.gameserver.datatables.AccessLevels;
-import l2tserver.gameserver.datatables.AdminCommandAccessRights;
-import l2tserver.gameserver.datatables.CoreMessageTable;
-import l2tserver.gameserver.datatables.DoorTable;
-import l2tserver.gameserver.datatables.EventLocationTable;
-import l2tserver.gameserver.datatables.NpcTable;
-import l2tserver.gameserver.datatables.NpcWalkersTable;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.instancemanager.QuestManager;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.olympiad.Olympiad;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.Config;
+import l2server.gameserver.GmListTable;
+import l2server.gameserver.ReloadableManager;
+import l2server.gameserver.datatables.AccessLevels;
+import l2server.gameserver.datatables.AdminCommandAccessRights;
+import l2server.gameserver.datatables.CoreMessageTable;
+import l2server.gameserver.datatables.DoorTable;
+import l2server.gameserver.datatables.EventLocationTable;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.NpcWalkersTable;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.olympiad.Olympiad;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 
 /**

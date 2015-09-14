@@ -1,9 +1,9 @@
 # Contributed by t0rm3nt0r (tormentor2000@mail.ru) to the Official L2J Datapack Project
 # Visit http://www.l2jdp.com/forum/ for more details.
 import sys
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 #Complete - 100%.
 qn = "172_NewHorizons"

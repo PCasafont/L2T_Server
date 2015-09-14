@@ -2,11 +2,11 @@
 # Shadow Weapon Coupons contributed by BiTi for the Official L2J Datapack Project
 # Visit http://www.l2jdp.com/forum/ for more details
 import sys
-from l2tserver.gameserver.model.itemcontainer import Inventory
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
-from l2tserver.gameserver.network.serverpackets      import SocialAction
+from l2server.gameserver.model.itemcontainer import Inventory
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.network.serverpackets      import SocialAction
 
 qn = "403_PathToRogue"
 

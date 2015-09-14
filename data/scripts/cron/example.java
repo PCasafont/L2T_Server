@@ -1,6 +1,6 @@
 package cron;
 
-import l2tserver.log.Log;
+import l2server.log.Log;
 
 public class example
 {

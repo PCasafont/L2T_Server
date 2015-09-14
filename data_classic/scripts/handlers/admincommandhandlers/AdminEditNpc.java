@@ -25,26 +25,26 @@ import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import javolution.util.FastMap;
-import l2tserver.L2DatabaseFactory;
-import l2tserver.gameserver.TradeController;
-import l2tserver.gameserver.cache.HtmCache;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
-import l2tserver.gameserver.datatables.NpcTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.L2TradeList;
-import l2tserver.gameserver.model.L2TradeList.L2TradeItem;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2MerchantInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.templates.chars.L2NpcTemplate;
-import l2tserver.gameserver.templates.item.L2Item;
-import l2tserver.gameserver.templates.skills.L2SkillType;
-import l2tserver.util.StringUtil;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.TradeController;
+import l2server.gameserver.cache.HtmCache;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2TradeList;
+import l2server.gameserver.model.L2TradeList.L2TradeItem;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2MerchantInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.util.StringUtil;
 
 /**
  * @author terry
@@ -692,7 +692,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 				npc.Level = Byte.parseByte(value);
 			else if (statToSet.equals("type"))
 			{
-				Class.forName("l2tserver.gameserver.model.actor.instance." + value + "Instance");
+				Class.forName("l2server.gameserver.model.actor.instance." + value + "Instance");
 				npc.Type = value;
 			}
 			else if (statToSet.equals("attackRange"))

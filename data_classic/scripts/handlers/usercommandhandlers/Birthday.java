@@ -16,10 +16,10 @@ package handlers.usercommandhandlers;
 
 import java.util.Calendar;
 
-import l2tserver.gameserver.handler.IUserCommandHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.handler.IUserCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author JIV

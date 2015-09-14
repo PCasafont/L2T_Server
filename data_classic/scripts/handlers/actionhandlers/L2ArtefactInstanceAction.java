@@ -14,15 +14,15 @@
  */
 package handlers.actionhandlers;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.handler.IActionHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Object.InstanceType;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
-import l2tserver.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.handler.IActionHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Object.InstanceType;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.MyTargetSelected;
+import l2server.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2ArtefactInstanceAction implements IActionHandler
 {

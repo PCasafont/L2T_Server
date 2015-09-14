@@ -1,9 +1,9 @@
 # Created by DrLecter
 import sys
 
-from l2tserver.gameserver.model.quest        import State
-from l2tserver.gameserver.model.quest        import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.model.quest        import State
+from l2server.gameserver.model.quest        import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "4000_ShadowWeapons"
 #NPCs that would need to figure out what to show when asked about coupons exchange

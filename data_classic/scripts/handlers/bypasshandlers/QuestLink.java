@@ -17,19 +17,19 @@ package handlers.bypasshandlers;
 import java.util.List;
 
 import javolution.util.FastList;
-import l2tserver.Config;
-import l2tserver.gameserver.cache.HtmCache;
-import l2tserver.gameserver.handler.IBypassHandler;
-import l2tserver.gameserver.instancemanager.QuestManager;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestState;
-import l2tserver.gameserver.model.quest.State;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ActionFailed;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.util.StringUtil;
+import l2server.Config;
+import l2server.gameserver.cache.HtmCache;
+import l2server.gameserver.handler.IBypassHandler;
+import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.model.quest.State;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.util.StringUtil;
 
 public class QuestLink implements IBypassHandler
 {

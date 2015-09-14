@@ -1,5 +1,5 @@
 import sys
-from l2tserver.gameserver.model.quest.jython import QuestJython
+from l2server.gameserver.model.quest.jython import QuestJython
 
 class Quest (QuestJython) :
 

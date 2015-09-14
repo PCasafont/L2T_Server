@@ -32,32 +32,32 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import l2tserver.Config;
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.bots.BotMode;
-import l2tserver.gameserver.bots.BotType;
-import l2tserver.gameserver.bots.BotsManager;
-import l2tserver.gameserver.bots.controllers.BotController;
-import l2tserver.gameserver.datatables.CharNameTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.base.Experience;
-import l2tserver.gameserver.model.base.Race;
-import l2tserver.gameserver.network.L2GameClient;
-import l2tserver.gameserver.network.L2GameClient.GameClientState;
-import l2tserver.gameserver.network.serverpackets.ActionFailed;
-import l2tserver.gameserver.network.serverpackets.CharSelected;
-import l2tserver.gameserver.network.serverpackets.CharSelectionInfo;
-import l2tserver.gameserver.network.serverpackets.ExOlympiadMode;
-import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
-import l2tserver.gameserver.network.serverpackets.RestartResponse;
-import l2tserver.log.Log;
-import l2tserver.util.Rnd;
+import l2server.Config;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.bots.BotMode;
+import l2server.gameserver.bots.BotType;
+import l2server.gameserver.bots.BotsManager;
+import l2server.gameserver.bots.controllers.BotController;
+import l2server.gameserver.datatables.CharNameTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.base.Experience;
+import l2server.gameserver.model.base.Race;
+import l2server.gameserver.network.L2GameClient;
+import l2server.gameserver.network.L2GameClient.GameClientState;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.CharSelected;
+import l2server.gameserver.network.serverpackets.CharSelectionInfo;
+import l2server.gameserver.network.serverpackets.ExOlympiadMode;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.RestartResponse;
+import l2server.log.Log;
+import l2server.util.Rnd;
 
 
 /**
@@ -78,7 +78,7 @@ public class AdminTest implements IAdminCommandHandler
 	};
 	
 	/* (non-Javadoc)
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
@@ -714,7 +714,7 @@ public class AdminTest implements IAdminCommandHandler
 	}
 	
 	/* (non-Javadoc)
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{

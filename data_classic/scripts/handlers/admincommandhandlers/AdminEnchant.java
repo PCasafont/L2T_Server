@@ -16,17 +16,17 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import l2tserver.Config;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.itemcontainer.Inventory;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.CharInfo;
-import l2tserver.gameserver.network.serverpackets.InventoryUpdate;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.network.serverpackets.UserInfo;
+import l2server.Config;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.itemcontainer.Inventory;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.CharInfo;
+import l2server.gameserver.network.serverpackets.InventoryUpdate;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.UserInfo;
 
 
 /**

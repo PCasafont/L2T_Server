@@ -15,20 +15,20 @@
 package handlers.itemhandlers;
 
 import javolution.util.FastMap;
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
-import l2tserver.gameserver.model.actor.instance.L2PetInstance;
-import l2tserver.gameserver.model.actor.instance.L2SummonInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ExUseSharedGroupItem;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.stats.SkillHolder;
-import l2tserver.gameserver.templates.item.L2EtcItemType;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ExUseSharedGroupItem;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.SkillHolder;
+import l2server.gameserver.templates.item.L2EtcItemType;
 
 /**
  * Template for item skills handler
@@ -38,7 +38,7 @@ public class ItemSkillsTemplate implements IItemHandler
 {
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IItemHandler#useItem(l2tserver.gameserver.model.actor.L2Playable, l2tserver.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{

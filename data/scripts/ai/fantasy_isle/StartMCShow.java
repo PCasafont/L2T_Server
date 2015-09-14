@@ -1,6 +1,6 @@
 package ai.fantasy_isle;
 
-import l2tserver.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.instancemanager.QuestManager;
 
 public class StartMCShow implements Runnable
 {

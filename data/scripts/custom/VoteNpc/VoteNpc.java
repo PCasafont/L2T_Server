@@ -23,22 +23,22 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2tserver.Config;
-import l2tserver.L2DatabaseFactory;
-import l2tserver.gameserver.cache.HtmCache;
-import l2tserver.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.instancemanager.AntiBotsManager;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.templates.item.L2Item;
-import l2tserver.gameserver.util.Util;
-import l2tserver.log.Log;
-import l2tserver.util.xml.XmlDocument;
-import l2tserver.util.xml.XmlNode;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.cache.HtmCache;
+import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.instancemanager.AntiBotsManager;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.util.Util;
+import l2server.log.Log;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
 
 /**
  * @author LasTravel

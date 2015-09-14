@@ -18,16 +18,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.StringTokenizer;
 
-import l2tserver.Config;
-import l2tserver.gameserver.handler.IBypassHandler;
-import l2tserver.gameserver.instancemanager.ItemAuctionManager;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.itemauction.ItemAuction;
-import l2tserver.gameserver.model.itemauction.ItemAuctionInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.Config;
+import l2server.gameserver.handler.IBypassHandler;
+import l2server.gameserver.instancemanager.ItemAuctionManager;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.itemauction.ItemAuction;
+import l2server.gameserver.model.itemauction.ItemAuctionInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ItemAuctionLink implements IBypassHandler
 {

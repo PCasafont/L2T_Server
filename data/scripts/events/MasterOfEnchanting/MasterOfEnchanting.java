@@ -14,15 +14,15 @@
  */
 package events.MasterOfEnchanting;
 
-import l2tserver.gameserver.instancemanager.QuestManager;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.itemcontainer.Inventory;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestState;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.util.Rnd;
+import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.itemcontainer.Inventory;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.util.Rnd;
 
 /**
  * Event Code for "Master of Enchanting"

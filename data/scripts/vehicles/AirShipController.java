@@ -18,24 +18,24 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.instancemanager.AirShipManager;
-import l2tserver.gameserver.instancemanager.ZoneManager;
-import l2tserver.gameserver.model.L2Clan;
-import l2tserver.gameserver.model.Location;
-import l2tserver.gameserver.model.VehiclePathPoint;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2AirShipInstance;
-import l2tserver.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.zone.L2ZoneType;
-import l2tserver.gameserver.model.zone.type.L2ScriptZone;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.clientpackets.Say2;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.instancemanager.AirShipManager;
+import l2server.gameserver.instancemanager.ZoneManager;
+import l2server.gameserver.model.L2Clan;
+import l2server.gameserver.model.Location;
+import l2server.gameserver.model.VehiclePathPoint;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2AirShipInstance;
+import l2server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.type.L2ScriptZone;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.clientpackets.Say2;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public abstract class AirShipController extends Quest
 {

@@ -14,16 +14,16 @@
  */
 package handlers.actionhandlers;
 
-import l2tserver.gameserver.handler.AdminCommandHandler;
-import l2tserver.gameserver.handler.IActionHandler;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Object.InstanceType;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
-import l2tserver.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.handler.AdminCommandHandler;
+import l2server.gameserver.handler.IActionHandler;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Object.InstanceType;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
+import l2server.gameserver.network.serverpackets.MyTargetSelected;
+import l2server.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2SummonActionShift implements IActionHandler
 {

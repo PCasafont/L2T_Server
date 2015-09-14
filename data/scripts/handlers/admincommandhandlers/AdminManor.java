@@ -17,13 +17,13 @@ package handlers.admincommandhandlers;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.instancemanager.CastleManager;
-import l2tserver.gameserver.instancemanager.CastleManorManager;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.entity.Castle;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.util.StringUtil;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.CastleManorManager;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.entity.Castle;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.util.StringUtil;
 
 /**
  * Admin comand handler for Manor System

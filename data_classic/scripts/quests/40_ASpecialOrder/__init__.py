@@ -1,9 +1,9 @@
 # Made by L2Emu Team
 import sys
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
-from l2tserver.util import Rnd
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.util import Rnd
 
 qn = "40_ASpecialOrder"
 

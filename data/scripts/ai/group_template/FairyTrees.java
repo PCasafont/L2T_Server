@@ -14,15 +14,15 @@
  */
 package ai.group_template;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Attackable;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2NpcInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.util.Util;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2NpcInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 
 public class FairyTrees extends L2AttackableAIScript
 {

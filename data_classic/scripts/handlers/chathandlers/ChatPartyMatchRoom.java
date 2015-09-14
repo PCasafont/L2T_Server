@@ -14,11 +14,11 @@
  */
 package handlers.chathandlers;
 
-import l2tserver.gameserver.handler.IChatHandler;
-import l2tserver.gameserver.model.PartyMatchRoom;
-import l2tserver.gameserver.model.PartyMatchRoomList;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.CreatureSay;
+import l2server.gameserver.handler.IChatHandler;
+import l2server.gameserver.model.PartyMatchRoom;
+import l2server.gameserver.model.PartyMatchRoomList;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.CreatureSay;
 
 /**
  * A chat handler

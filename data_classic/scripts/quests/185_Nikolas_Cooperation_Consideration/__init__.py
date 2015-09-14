@@ -5,11 +5,11 @@
 import sys
 import time
 
-from l2tserver.gameserver.instancemanager		import QuestManager
-from l2tserver.gameserver.model.quest			import State
-from l2tserver.gameserver.model.quest			import QuestState
-from l2tserver.gameserver.model.quest.jython		import QuestJython as JQuest
-from l2tserver.gameserver.network.serverpackets	import NpcSay
+from l2server.gameserver.instancemanager		import QuestManager
+from l2server.gameserver.model.quest			import State
+from l2server.gameserver.model.quest			import QuestState
+from l2server.gameserver.model.quest.jython		import QuestJython as JQuest
+from l2server.gameserver.network.serverpackets	import NpcSay
 
 qn = "185_Nikolas_Cooperation_Consideration"
 

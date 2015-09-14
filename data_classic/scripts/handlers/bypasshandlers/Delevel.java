@@ -14,13 +14,13 @@
  */
 package handlers.bypasshandlers;
 
-import l2tserver.Config;
-import l2tserver.gameserver.handler.IBypassHandler;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.base.Experience;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.Config;
+import l2server.gameserver.handler.IBypassHandler;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.base.Experience;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class Delevel implements IBypassHandler
 {

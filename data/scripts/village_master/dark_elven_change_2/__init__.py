@@ -5,9 +5,9 @@
 # Let us know if you did not receive a copy of such files.
 import sys
 
-from l2tserver.gameserver.model.quest        import State
-from l2tserver.gameserver.model.quest        import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.model.quest        import State
+from l2server.gameserver.model.quest        import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "dark_elven_change_2"
 #Quest items

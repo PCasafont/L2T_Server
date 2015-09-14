@@ -1,7 +1,7 @@
 package transformations;
 
-import l2tserver.gameserver.instancemanager.TransformationManager;
-import l2tserver.gameserver.model.L2Transformation;
+import l2server.gameserver.instancemanager.TransformationManager;
+import l2server.gameserver.model.L2Transformation;
 
 public class Zariche extends L2Transformation
 {

@@ -14,11 +14,11 @@
  */
 package handlers.voicedcommandhandlers;
 
-import l2tserver.gameserver.handler.IVoicedCommandHandler;
-import l2tserver.gameserver.instancemanager.CastleManager;
-import l2tserver.gameserver.model.actor.instance.L2DoorInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.entity.Castle;
+import l2server.gameserver.handler.IVoicedCommandHandler;
+import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.entity.Castle;
 
 /**
  *
@@ -35,7 +35,7 @@ public class castle implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
 	{
@@ -75,7 +75,7 @@ public class castle implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	public String[] getVoicedCommandList()
 	{

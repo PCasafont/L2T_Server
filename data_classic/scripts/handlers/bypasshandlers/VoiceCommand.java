@@ -14,11 +14,11 @@
  */
 package handlers.bypasshandlers;
 
-import l2tserver.gameserver.handler.IBypassHandler;
-import l2tserver.gameserver.handler.IVoicedCommandHandler;
-import l2tserver.gameserver.handler.VoicedCommandHandler;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.handler.IBypassHandler;
+import l2server.gameserver.handler.IVoicedCommandHandler;
+import l2server.gameserver.handler.VoicedCommandHandler;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * 

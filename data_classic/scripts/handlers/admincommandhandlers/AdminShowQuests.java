@@ -21,20 +21,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javolution.text.TextBuilder;
-import l2tserver.L2DatabaseFactory;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.instancemanager.QuestManager;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestState;
-import l2tserver.gameserver.model.quest.State;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ExShowQuestMark;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.QuestList;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.model.quest.State;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ExShowQuestMark;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.QuestList;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author Korvin

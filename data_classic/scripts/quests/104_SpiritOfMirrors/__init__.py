@@ -1,10 +1,10 @@
 # Made by Mr. Have fun! - Version 0.5 updated by Censor for www.l2jdp.com 
 import sys 
-from l2tserver.gameserver.model.itemcontainer import Inventory
-from l2tserver.gameserver.model.quest import State 
-from l2tserver.gameserver.model.quest import QuestState 
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest 
-from l2tserver import Config 
+from l2server.gameserver.model.itemcontainer import Inventory
+from l2server.gameserver.model.quest import State 
+from l2server.gameserver.model.quest import QuestState 
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest 
+from l2server import Config 
 
 qn = "104_SpiritOfMirrors" 
 

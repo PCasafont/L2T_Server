@@ -14,17 +14,17 @@
  */
 package handlers.skillhandlers;
 
-import l2tserver.gameserver.datatables.ClanTable;
-import l2tserver.gameserver.datatables.SkillTable.FrequentSkill;
-import l2tserver.gameserver.handler.ISkillHandler;
-import l2tserver.gameserver.instancemanager.CastleManager;
-import l2tserver.gameserver.model.L2Clan;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.entity.Castle;
-import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.datatables.ClanTable;
+import l2server.gameserver.datatables.SkillTable.FrequentSkill;
+import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.model.L2Clan;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.entity.Castle;
+import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * @author _drunk_
@@ -39,7 +39,7 @@ public class TakeCastle implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#useSkill(l2tserver.gameserver.model.actor.L2Character, l2tserver.gameserver.model.L2Skill, l2tserver.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
@@ -76,7 +76,7 @@ public class TakeCastle implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

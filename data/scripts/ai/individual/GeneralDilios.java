@@ -17,13 +17,13 @@ package ai.individual;
 import java.util.ArrayList;
 import java.util.List;
 
-import l2tserver.gameserver.datatables.SpawnTable;
-import l2tserver.gameserver.model.L2Spawn;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
-import l2tserver.gameserver.network.serverpackets.SocialAction;
-import l2tserver.util.Rnd;
+import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
 
 /**

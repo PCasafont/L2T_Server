@@ -23,34 +23,34 @@ package handlers.itemhandlers;
 import java.util.Collection;
 import java.util.logging.Level;
 
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.datatables.NpcTable;
-import l2tserver.gameserver.datatables.SummonItemsData;
-import l2tserver.gameserver.handler.IItemHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Spawn;
-import l2tserver.gameserver.model.L2SummonItem;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.actor.instance.L2PetInstance;
-import l2tserver.gameserver.model.actor.instance.L2XmassTreeInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
-import l2tserver.gameserver.network.serverpackets.PetItemList;
-import l2tserver.gameserver.network.serverpackets.SetupGauge;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.templates.chars.L2NpcTemplate;
-import l2tserver.gameserver.util.Broadcast;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.SummonItemsData;
+import l2server.gameserver.handler.IItemHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2SummonItem;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.L2XmassTreeInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.PetItemList;
+import l2server.gameserver.network.serverpackets.SetupGauge;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.util.Broadcast;
 
 public class SummonItems implements IItemHandler
 {
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IItemHandler#useItem(l2tserver.gameserver.model.actor.L2Playable, l2tserver.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{

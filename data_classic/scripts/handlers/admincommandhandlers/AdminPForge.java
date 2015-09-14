@@ -18,15 +18,15 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.StringTokenizer;
 
-import l2tserver.gameserver.Server;
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.clientpackets.L2GameClientPacket;
-import l2tserver.gameserver.network.serverpackets.AdminForgePacket;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.network.NioNetStringBuffer;
-import l2tserver.util.StringUtil;
+import l2server.gameserver.Server;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.clientpackets.L2GameClientPacket;
+import l2server.gameserver.network.serverpackets.AdminForgePacket;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.network.NioNetStringBuffer;
+import l2server.util.StringUtil;
 
 
 /**

@@ -14,21 +14,21 @@
  */
 package ai.individual.Apherus;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.DoorTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.datatables.MapRegionTable.TeleportWhereType;
-import l2tserver.gameserver.instancemanager.BossManager;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.actor.instance.L2RaidBossInstance;
-import l2tserver.gameserver.model.zone.L2ZoneType;
-import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.DoorTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
+import l2server.gameserver.instancemanager.BossManager;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.util.Rnd;
 import ai.group_template.L2AttackableAIScript;
 
 /**

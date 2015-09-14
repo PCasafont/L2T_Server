@@ -15,25 +15,25 @@
 package quests.Q511_AwlUnderFoot;
 
 import gnu.trove.TIntObjectHashMap;
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.instancemanager.InstanceManager;
-import l2tserver.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2tserver.gameserver.model.L2Party;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Playable;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.actor.instance.L2RaidBossInstance;
-import l2tserver.gameserver.model.entity.Fort;
-import l2tserver.gameserver.model.entity.Instance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestState;
-import l2tserver.gameserver.model.quest.State;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.stats.SkillHolder;
-import l2tserver.gameserver.util.Util;
-import l2tserver.log.Log;
-import l2tserver.util.Rnd;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
+import l2server.gameserver.model.L2Party;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.entity.Fort;
+import l2server.gameserver.model.entity.Instance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.model.quest.State;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.SkillHolder;
+import l2server.gameserver.util.Util;
+import l2server.log.Log;
+import l2server.util.Rnd;
 
 /**
  * 

@@ -16,22 +16,22 @@ package handlers.voicedcommandhandlers;
 
 import java.util.Map.Entry;
 
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.handler.IVoicedCommandHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.TradeList;
-import l2tserver.gameserver.model.TradeList.TradeItem;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.PrivateStoreMsgSell;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.taskmanager.AttackStanceTaskManager;
-import l2tserver.gameserver.templates.item.L2Item;
-import l2tserver.gameserver.util.Util;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.handler.IVoicedCommandHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.TradeList;
+import l2server.gameserver.model.TradeList.TradeItem;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.PrivateStoreMsgSell;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.taskmanager.AttackStanceTaskManager;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.util.Util;
 
 /**
  * @author Pere
@@ -49,7 +49,7 @@ public class Sell implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	public boolean useVoicedCommand(String command, L2PcInstance player, String params)
 	{
@@ -466,7 +466,7 @@ public class Sell implements IVoicedCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	public String[] getVoicedCommandList()
 	{

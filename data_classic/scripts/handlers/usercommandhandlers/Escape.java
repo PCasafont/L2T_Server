@@ -16,20 +16,20 @@ package handlers.usercommandhandlers;
 
 import java.util.logging.Level;
 
-import l2tserver.Config;
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.TimeController;
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.MapRegionTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.handler.IUserCommandHandler;
-import l2tserver.gameserver.instancemanager.GrandBossManager;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.ActionFailed;
-import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
-import l2tserver.gameserver.network.serverpackets.SetupGauge;
-import l2tserver.gameserver.util.Broadcast;
+import l2server.Config;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.TimeController;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.MapRegionTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.handler.IUserCommandHandler;
+import l2server.gameserver.instancemanager.GrandBossManager;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.SetupGauge;
+import l2server.gameserver.util.Broadcast;
 
 
 /**
@@ -45,7 +45,7 @@ public class Escape implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
@@ -164,7 +164,7 @@ public class Escape implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#getUserCommandList()
+	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	public int[] getUserCommandList()
 	{

@@ -4,12 +4,12 @@
 
 import sys
 
-from l2tserver.gameserver.datatables import SkillTable
-from l2tserver.gameserver.model						import Elementals
-from l2tserver.gameserver.model.itemcontainer import Inventory
-from l2tserver.gameserver.model.quest        			import State
-from l2tserver.gameserver.model.quest        			import QuestState
-from l2tserver.gameserver.model.quest.jython 			import QuestJython as JQuest
+from l2server.gameserver.datatables import SkillTable
+from l2server.gameserver.model						import Elementals
+from l2server.gameserver.model.itemcontainer import Inventory
+from l2server.gameserver.model.quest        			import State
+from l2server.gameserver.model.quest        			import QuestState
+from l2server.gameserver.model.quest.jython 			import QuestJython as JQuest
 
 qn = "10275_ContainingTheAttributePower"
 

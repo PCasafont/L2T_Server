@@ -20,26 +20,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import l2tserver.Config;
-import l2tserver.gameserver.Announcements;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.instancemanager.GrandBossManager;
-import l2tserver.gameserver.model.L2Abnormal;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Summon;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestTimer;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
-import l2tserver.gameserver.templates.item.L2Weapon;
-import l2tserver.gameserver.util.Util;
-import l2tserver.log.Log;
-import l2tserver.util.Rnd;
-import l2tserver.util.xml.XmlDocument;
-import l2tserver.util.xml.XmlNode;
+import l2server.Config;
+import l2server.gameserver.Announcements;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.instancemanager.GrandBossManager;
+import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestTimer;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.util.Util;
+import l2server.log.Log;
+import l2server.util.Rnd;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
 
 /**
  * @author LasTravel

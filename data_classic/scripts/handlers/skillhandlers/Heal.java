@@ -14,28 +14,28 @@
  */
 package handlers.skillhandlers;
 
-import l2tserver.Config;
-import l2tserver.gameserver.events.instanced.EventInstance.EventState;
-import l2tserver.gameserver.handler.ISkillHandler;
-import l2tserver.gameserver.handler.SkillHandler;
-import l2tserver.gameserver.model.L2ItemInstance;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.L2Skill.SkillTargetType;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.L2Summon;
-import l2tserver.gameserver.model.actor.instance.L2ArmyMonsterInstance;
-import l2tserver.gameserver.model.actor.instance.L2DoorInstance;
-import l2tserver.gameserver.model.actor.instance.L2EventGolemInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.actor.instance.L2SiegeFlagInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.stats.Formulas;
-import l2tserver.gameserver.stats.Stats;
-import l2tserver.gameserver.templates.item.L2Item;
-import l2tserver.gameserver.templates.skills.L2SkillType;
+import l2server.Config;
+import l2server.gameserver.events.instanced.EventInstance.EventState;
+import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.handler.SkillHandler;
+import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2Skill.SkillTargetType;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.instance.L2ArmyMonsterInstance;
+import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.L2EventGolemInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.L2SiegeFlagInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.Formulas;
+import l2server.gameserver.stats.Stats;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * This class ...
@@ -55,7 +55,7 @@ public class Heal implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#useSkill(l2tserver.gameserver.model.actor.L2Character, l2tserver.gameserver.model.L2Skill, l2tserver.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
 	{
@@ -287,7 +287,7 @@ public class Heal implements ISkillHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.ISkillHandler#getSkillIds()
+	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	public L2SkillType[] getSkillIds()
 	{

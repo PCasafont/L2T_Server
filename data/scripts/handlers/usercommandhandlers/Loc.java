@@ -14,11 +14,11 @@
  */
 package handlers.usercommandhandlers;
 
-import l2tserver.gameserver.datatables.MapRegionTable;
-import l2tserver.gameserver.handler.IUserCommandHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.datatables.MapRegionTable;
+import l2server.gameserver.handler.IUserCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class Loc implements IUserCommandHandler
 {
@@ -29,7 +29,7 @@ public class Loc implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
@@ -161,7 +161,7 @@ public class Loc implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#getUserCommandList()
+	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	public int[] getUserCommandList()
 	{

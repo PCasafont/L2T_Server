@@ -5,24 +5,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import l2tserver.gameserver.Announcements;
-import l2tserver.gameserver.GmListTable;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestTimer;
-import l2tserver.gameserver.network.NpcStringId;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
-import l2tserver.gameserver.network.serverpackets.PlaySound;
-import l2tserver.gameserver.network.serverpackets.SocialAction;
-import l2tserver.gameserver.util.Util;
-import l2tserver.util.Rnd;
+import l2server.gameserver.Announcements;
+import l2server.gameserver.GmListTable;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestTimer;
+import l2server.gameserver.network.NpcStringId;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.network.serverpackets.PlaySound;
+import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 
 /**
  * @author LasTravel

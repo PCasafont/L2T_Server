@@ -1,12 +1,12 @@
 # Created by Emperorc
 # Finished by Kerberos_20 10/23/07
 import sys
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
-from l2tserver.gameserver.datatables import SkillTable
-from l2tserver.gameserver.network.serverpackets import WareHouseWithdrawalList
-from l2tserver.gameserver.network.serverpackets import ActionFailed
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.datatables import SkillTable
+from l2server.gameserver.network.serverpackets import WareHouseWithdrawalList
+from l2server.gameserver.network.serverpackets import ActionFailed
 
 qn = "6051_VarkaSilenosSupport"
 

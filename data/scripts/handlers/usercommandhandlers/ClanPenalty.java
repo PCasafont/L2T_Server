@@ -17,10 +17,10 @@ package handlers.usercommandhandlers;
 
 import java.text.SimpleDateFormat;
 
-import l2tserver.gameserver.handler.IUserCommandHandler;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.util.StringUtil;
+import l2server.gameserver.handler.IUserCommandHandler;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.util.StringUtil;
 
 
 /**
@@ -36,7 +36,7 @@ public class ClanPenalty implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
@@ -102,7 +102,7 @@ public class ClanPenalty implements IUserCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IUserCommandHandler#getUserCommandList()
+	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	public int[] getUserCommandList()
 	{

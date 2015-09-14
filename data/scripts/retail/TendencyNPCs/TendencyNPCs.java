@@ -1,18 +1,18 @@
 package retail.TendencyNPCs;
 
-import l2tserver.gameserver.datatables.ClanTable;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.instancemanager.CastleManager;
-import l2tserver.gameserver.instancemanager.QuestManager;
-import l2tserver.gameserver.model.L2Clan;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.entity.Castle;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.QuestState;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.datatables.ClanTable;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.L2Clan;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.entity.Castle;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.NpcSay;
 
 /**
  * @author LasTravel

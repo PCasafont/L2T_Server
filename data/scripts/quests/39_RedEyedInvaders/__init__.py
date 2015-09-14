@@ -3,10 +3,10 @@
 # http://www.l2jdp.com/forum/ to meet the community behind it, or
 # http://l2jdp.com/trac if you need to report a bug.
 import sys
-from l2tserver import Config 
-from l2tserver.gameserver.model.quest import State
-from l2tserver.gameserver.model.quest import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server import Config 
+from l2server.gameserver.model.quest import State
+from l2server.gameserver.model.quest import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 
 qn = "39_RedEyedInvaders"
 

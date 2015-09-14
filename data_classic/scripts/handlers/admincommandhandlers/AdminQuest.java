@@ -28,10 +28,10 @@ import java.io.File;
 
 import javax.script.ScriptException;
 
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.instancemanager.QuestManager;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.scripting.L2ScriptEngineManager;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.scripting.L2ScriptEngineManager;
 
 
 public class AdminQuest implements IAdminCommandHandler
@@ -44,7 +44,7 @@ public class AdminQuest implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
@@ -140,7 +140,7 @@ public class AdminQuest implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{

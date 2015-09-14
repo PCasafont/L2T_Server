@@ -17,12 +17,12 @@ package ai.individual.GenesisStatues;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 import ai.group_template.L2AttackableAIScript;
 
 /**

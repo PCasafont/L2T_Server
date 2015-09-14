@@ -20,28 +20,28 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import l2tserver.Config;
-import l2tserver.L2DatabaseFactory;
-import l2tserver.gameserver.ThreadPoolManager;
-import l2tserver.gameserver.TimeController;
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.SkillTable;
-import l2tserver.gameserver.handler.IVoicedCommandHandler;
-import l2tserver.gameserver.instancemanager.CoupleManager;
-import l2tserver.gameserver.instancemanager.GrandBossManager;
-import l2tserver.gameserver.instancemanager.SiegeManager;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.L2World;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.SystemMessageId;
-import l2tserver.gameserver.network.serverpackets.ActionFailed;
-import l2tserver.gameserver.network.serverpackets.ConfirmDlg;
-import l2tserver.gameserver.network.serverpackets.MagicSkillUse;
-import l2tserver.gameserver.network.serverpackets.SetupGauge;
-import l2tserver.gameserver.network.serverpackets.SystemMessage;
-import l2tserver.gameserver.stats.VisualEffect;
-import l2tserver.gameserver.util.Broadcast;
+import l2server.Config;
+import l2server.L2DatabaseFactory;
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.TimeController;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.handler.IVoicedCommandHandler;
+import l2server.gameserver.instancemanager.CoupleManager;
+import l2server.gameserver.instancemanager.GrandBossManager;
+import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ActionFailed;
+import l2server.gameserver.network.serverpackets.ConfirmDlg;
+import l2server.gameserver.network.serverpackets.MagicSkillUse;
+import l2server.gameserver.network.serverpackets.SetupGauge;
+import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.stats.VisualEffect;
+import l2server.gameserver.util.Broadcast;
 
 
 /**
@@ -59,7 +59,7 @@ public class Wedding implements IVoicedCommandHandler
 	};
 	
 	/**
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
 	{
@@ -428,7 +428,7 @@ public class Wedding implements IVoicedCommandHandler
 	}
 	
 	/**
-	 * @see l2tserver.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	public String[] getVoicedCommandList()
 	{

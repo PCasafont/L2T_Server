@@ -16,28 +16,28 @@ package handlers.actionhandlers;
 
 import java.util.Map.Entry;
 
-import l2tserver.Config;
-import l2tserver.gameserver.datatables.ItemTable;
-import l2tserver.gameserver.handler.IActionHandler;
-import l2tserver.gameserver.model.Elementals;
-import l2tserver.gameserver.model.L2DropCategory;
-import l2tserver.gameserver.model.L2DropData;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Object.InstanceType;
-import l2tserver.gameserver.model.actor.L2Attackable;
-import l2tserver.gameserver.model.actor.L2Attackable.AggroInfo;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2MerchantInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2tserver.gameserver.network.serverpackets.MyTargetSelected;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2tserver.gameserver.network.serverpackets.StatusUpdate;
-import l2tserver.gameserver.stats.BaseStats;
-import l2tserver.gameserver.stats.Stats;
-import l2tserver.gameserver.templates.item.L2Item;
-import l2tserver.util.StringUtil;
+import l2server.Config;
+import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.handler.IActionHandler;
+import l2server.gameserver.model.Elementals;
+import l2server.gameserver.model.L2DropCategory;
+import l2server.gameserver.model.L2DropData;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Object.InstanceType;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.L2Attackable.AggroInfo;
+import l2server.gameserver.model.actor.instance.L2MerchantInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
+import l2server.gameserver.network.serverpackets.MyTargetSelected;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.network.serverpackets.StatusUpdate;
+import l2server.gameserver.stats.BaseStats;
+import l2server.gameserver.stats.Stats;
+import l2server.gameserver.templates.item.L2Item;
+import l2server.util.StringUtil;
 
 public class L2NpcActionShift implements IActionHandler
 {

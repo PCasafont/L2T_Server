@@ -4,9 +4,9 @@
 
 import sys
 
-from l2tserver.gameserver.model.quest        import State
-from l2tserver.gameserver.model.quest        import QuestState
-from l2tserver.gameserver.model.quest.jython import QuestJython as JQuest
+from l2server.gameserver.model.quest        import State
+from l2server.gameserver.model.quest        import QuestState
+from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 qn = "30565_kakai_occupation_change"
 KAKAI_LORD_OF_FLAME = 30565
 

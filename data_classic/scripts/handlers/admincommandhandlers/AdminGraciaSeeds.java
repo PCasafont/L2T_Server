@@ -27,10 +27,10 @@ package handlers.admincommandhandlers;
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.instancemanager.GraciaSeedsManager;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.instancemanager.GraciaSeedsManager;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class AdminGraciaSeeds implements IAdminCommandHandler
 {
@@ -43,7 +43,7 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2tserver.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
@@ -84,7 +84,7 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 	
 	/**
 	 * 
-	 * @see l2tserver.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	public String[] getAdminCommandList()
 	{

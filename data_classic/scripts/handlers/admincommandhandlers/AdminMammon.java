@@ -14,11 +14,11 @@
  */
 package handlers.admincommandhandlers;
 
-import l2tserver.gameserver.handler.IAdminCommandHandler;
-import l2tserver.gameserver.model.AutoSpawnHandler;
-import l2tserver.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.handler.IAdminCommandHandler;
+import l2server.gameserver.model.AutoSpawnHandler;
+import l2server.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Admin Command Handler for Mammon NPCs

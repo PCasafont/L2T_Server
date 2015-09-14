@@ -14,25 +14,25 @@
  */
 package ai.group_template;
 
-import static l2tserver.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
-import l2tserver.Config;
-import l2tserver.gameserver.ai.CtrlEvent;
-import l2tserver.gameserver.ai.CtrlIntention;
-import l2tserver.gameserver.datatables.NpcTable;
-import l2tserver.gameserver.model.L2Object;
-import l2tserver.gameserver.model.L2Skill;
-import l2tserver.gameserver.model.actor.L2Attackable;
-import l2tserver.gameserver.model.actor.L2Character;
-import l2tserver.gameserver.model.actor.L2Npc;
-import l2tserver.gameserver.model.actor.instance.L2MonsterInstance;
-import l2tserver.gameserver.model.actor.instance.L2PcInstance;
-import l2tserver.gameserver.model.quest.Quest;
-import l2tserver.gameserver.model.quest.jython.QuestJython;
-import l2tserver.gameserver.templates.chars.L2NpcTemplate;
-import l2tserver.gameserver.util.MinionList;
-import l2tserver.gameserver.util.Util;
-import l2tserver.log.Log;
-import l2tserver.util.Rnd;
+import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
+import l2server.Config;
+import l2server.gameserver.ai.CtrlEvent;
+import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.quest.Quest;
+import l2server.gameserver.model.quest.jython.QuestJython;
+import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.util.MinionList;
+import l2server.gameserver.util.Util;
+import l2server.log.Log;
+import l2server.util.Rnd;
 
 /**
  * 
@@ -234,7 +234,7 @@ public class L2AttackableAIScript extends QuestJython
 				{
 					try
 					{
-						if ( L2Attackable.class.isAssignableFrom(Class.forName("l2tserver.gameserver.model.actor.instance."+t.Type+"Instance")))
+						if ( L2Attackable.class.isAssignableFrom(Class.forName("l2server.gameserver.model.actor.instance."+t.Type+"Instance")))
 						{
 							ai.addEventId(t.NpcId, Quest.QuestEventType.ON_ATTACK);
 							ai.addEventId(t.NpcId, Quest.QuestEventType.ON_KILL);
